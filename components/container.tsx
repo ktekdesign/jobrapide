@@ -1,3 +1,12 @@
-export default function Container({ children }) {
-  return <div className="container mx-auto px-5">{children}</div>
+import React, { memo } from 'react'
+
+const Container = ({ children, className = '' }) => {
+  return (
+    <div
+      className={`flex flex-col mb-4 container justify-between mx-auto lg:flex-row ${className}`}
+    >
+      {children}
+    </div>
+  )
 }
+export default memo(Container)

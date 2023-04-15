@@ -1,0 +1,12 @@
+.feature {
+  height: 200px;
+  display: flex;
+}
+.feature a {
+  display: flex;
+  width: 100%;
+}
+.feature img {
+  object-fit: scale-down;
+  width: 100%;
+}

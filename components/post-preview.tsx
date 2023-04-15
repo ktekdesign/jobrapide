@@ -1,38 +1,46 @@
-import Avatar from './avatar'
 import Date from './date'
 import CoverImage from './cover-image'
 import Link from 'next/link'
+import parse from 'html-react-parser'
+import truncate from '../utils/truncate'
+import { PostProps } from '../interfaces'
+import Terms from './terms'
+import { memo } from 'react'
 
-export default function PostPreview({
+const PostPreview = ({
   title,
-  coverImage,
+  featuredImage,
   date,
   excerpt,
-  author,
-  slug,
-}) {
+  uri,
+  categories,
+}: PostProps) => {
   return (
     <div>
-      <div className="mb-5">
-        {coverImage && (
-          <CoverImage title={title} coverImage={coverImage} slug={slug} />
+      <div className="mb-5 bg-white">
+        {featuredImage && (
+          <CoverImage title={title} featuredImage={featuredImage} uri={uri} />
         )}
       </div>
-      <h3 className="text-3xl mb-3 leading-snug">
-        <Link
-          href={`/posts/${slug}`}
-          className="hover:underline"
-          dangerouslySetInnerHTML={{ __html: title }}
-        ></Link>
+      <h3 className="text-sm mb-3 leading-snug">
+        <Link href={uri} className="text-white hover:underline">
+          {truncate(title)}
+        </Link>
       </h3>
-      <div className="text-lg mb-4">
-        <Date dateString={date} />
-      </div>
-      <div
-        className="text-lg leading-relaxed mb-4"
-        dangerouslySetInnerHTML={{ __html: excerpt }}
-      />
-      <Avatar author={author} />
+      {date && (
+        <div className="text-lg mb-4">
+          <Date dateString={date} />
+        </div>
+      )}
+      {categories?.edges?.length && (
+        <div className="text-xs mb-4">
+          <Terms terms={categories.edges} name="Categories : " />
+        </div>
+      )}
+      {excerpt && (
+        <div className="text-xs leading-relaxed mb-4">{parse(excerpt)}</div>
+      )}
     </div>
   )
 }
+export default memo(PostPreview)

@@ -1,34 +1,39 @@
-import Avatar from './avatar'
 import Date from './date'
 import CoverImage from './cover-image'
 import PostTitle from './post-title'
-import Categories from './categories'
+import Terms from './terms'
+import { memo } from 'react'
 
-export default function PostHeader({
+const PostHeader = ({
   title,
   coverImage,
   date,
-  author,
   categories,
-}) {
+  secteurs,
+  regions,
+}) => {
   return (
     <>
       <PostTitle>{title}</PostTitle>
-      <div className="hidden md:block md:mb-12">
-        <Avatar author={author} />
-      </div>
       <div className="mb-8 md:mb-16 sm:mx-0">
-        <CoverImage title={title} coverImage={coverImage} />
+        <CoverImage title={title} featuredImage={coverImage} />
       </div>
-      <div className="max-w-2xl mx-auto">
-        <div className="block md:hidden mb-6">
-          <Avatar author={author} />
+      <div className="max-w-2xl">
+        <div className="mb-2 text-sm">
+          <Date dateString={date} />
         </div>
-        <div className="mb-6 text-lg">
-          Posted <Date dateString={date} />
-          <Categories categories={categories} />
+        <div className="mb-2 text-sm">
+          <Terms terms={categories.edges} name="Categories : " />
+        </div>
+        <div className="mb-2 text-sm">
+          <Terms terms={secteurs.edges} name="Domaines : " />
+        </div>
+        <div className="mb-2 text-sm">
+          <Terms terms={regions.edges} name="Regions : " />
         </div>
       </div>
     </>
   )
 }
+
+export default memo(PostHeader)

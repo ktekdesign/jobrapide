@@ -1,45 +1,107 @@
 import Head from 'next/head'
 import { GetStaticProps } from 'next'
-import Container from '../components/container'
-import MoreStories from '../components/more-stories'
-import HeroPost from '../components/hero-post'
-import Intro from '../components/intro'
 import Layout from '../components/layout'
-import { getAllPostsForHome } from '../lib/api'
 import { CMS_NAME } from '../lib/constants'
+import SwiperContainer from '../components/swiperContainer'
+import Column from '../components/column'
+import Container from '../components/container'
+import { populatePosts } from '../utils/populateContext'
 
-export default function Index({ allPosts: { edges }, preview }) {
-  const heroPost = edges[0]?.node
-  const morePosts = edges.slice(1)
+export const getStaticProps: GetStaticProps = async () => {
+  const posts = await populatePosts(
+    '/recrutement/offres/avis-recrutement/',
+    'category'
+  )
 
+  return {
+    props: {
+      posts,
+    },
+  }
+}
+export default function Index({ posts }) {
   return (
-    <Layout preview={preview}>
+    <Layout>
       <Head>
-        <title>{`Next.js Blog Example with ${CMS_NAME}`}</title>
+        <title>{CMS_NAME}</title>
       </Head>
       <Container>
-        <Intro />
-        {heroPost && (
-          <HeroPost
-            title={heroPost.title}
-            coverImage={heroPost.featuredImage}
-            date={heroPost.date}
-            author={heroPost.author}
-            slug={heroPost.slug}
-            excerpt={heroPost.excerpt}
+        <Column>
+          <SwiperContainer
+            term="/recrutement/offres/avis-recrutement/"
+            type="category"
+            posts={posts}
           />
-        )}
-        {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+        </Column>
+      </Container>
+      <Container>
+        <Column className="lg:w-1/3 mb-4 lg:mb-0">
+          <SwiperContainer
+            term="/recrutement/offres/stage/"
+            type="category"
+            slides={1}
+            alternate
+          />
+        </Column>
+        <Column className="lg:w-2/3">
+          <SwiperContainer
+            term="/recrutement/offres/bourses-etude/"
+            type="category"
+            slides={2}
+            alternate
+          />
+        </Column>
+      </Container>
+      <Container>
+        <Column className="lg:w-2/3 mb-4 lg:mb-0">
+          <SwiperContainer
+            term="/recrutement/offres/avis-appel-offres/"
+            type="category"
+            slides={2}
+          />
+        </Column>
+        <Column className="lg:w-1/3">
+          <SwiperContainer
+            term="/recrutement/offres/call-for-papers/"
+            type="category"
+            slides={1}
+          />
+        </Column>
+      </Container>
+      <Container>
+        <Column className="lg:w-1/3 mb-4 lg:mb-0">
+          <SwiperContainer
+            term="/recrutement/offres/concours/"
+            type="category"
+            slides={1}
+            alternate
+          />
+        </Column>
+        <Column className="lg:w-2/3">
+          <SwiperContainer
+            term="/recrutement/offres/formations/"
+            type="category"
+            slides={2}
+            alternate
+          />
+        </Column>
+      </Container>
+      <Container>
+        <Column className="lg:w-2/3 mb-4 lg:mb-0">
+          <SwiperContainer
+            term="/recrutement/actualites/"
+            type="category"
+            slides={2}
+          />
+        </Column>
+        <Column className="lg:w-1/3">
+          <SwiperContainer
+            term="/recrutement/offres/volontaire/"
+            type="category"
+            slides={1}
+          />
+        </Column>
       </Container>
     </Layout>
   )
-}
-
-export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
-  const allPosts = await getAllPostsForHome(preview)
-
-  return {
-    props: { allPosts, preview },
-    revalidate: 10,
-  }
 }

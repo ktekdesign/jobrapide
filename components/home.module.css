@@ -1,0 +1,9 @@
+.home_sliders .alternate {
+  width: 100%;
+}
+.home_sliders .alternate:nth-of-type(odd) h2 {
+  background: var(--color-primary);
+}
+.home_sliders .alternate:nth-of-type(even) h2 {
+  background: var(--color-secondary);
+}

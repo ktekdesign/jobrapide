@@ -1,0 +1,14 @@
+.tab div {
+  display: none;
+  background: var(--color-dark);
+}
+.tab li > span {
+  cursor: pointer;
+}
+.tab > li.active > span {
+  background: var(--color-secondary);
+  cursor: initial;
+}
+.active > div {
+  display: block;
+}

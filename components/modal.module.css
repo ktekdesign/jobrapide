@@ -1,0 +1,3 @@
+.notactive {
+  @apply uppercase rounded bg-secondary px-4 py-2 border-white text-xs font-medium leading-normal text-white shadow transition duration-150 ease-in-out hover:bg-primary;
+}

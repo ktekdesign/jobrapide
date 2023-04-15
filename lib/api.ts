@@ -1,4 +1,4 @@
-const API_URL = process.env.WORDPRESS_API_URL
+const API_URL = process.env.NEXT_PUBLIC_WORDPRESS_API_URL
 
 async function fetchAPI(query = '', { variables }: Record<string, any> = {}) {
   const headers = { 'Content-Type': 'application/json' }
@@ -22,6 +22,7 @@ async function fetchAPI(query = '', { variables }: Record<string, any> = {}) {
   const json = await res.json()
   if (json.errors) {
     console.error(json.errors)
+    console.error(query)
     throw new Error('Failed to fetch API')
   }
   return json.data
@@ -68,8 +69,24 @@ export async function getAllPostsForHome(preview) {
           node {
             title
             excerpt
-            slug
+            uri
             date
+            categories {
+              edges {
+                node {
+                  name,
+                  uri
+                }
+              }
+            }
+            tags {
+              edges {
+                node {
+                  name,
+                  uri
+                }
+              }
+            }
             featuredImage {
               node {
                 sourceUrl
@@ -101,7 +118,11 @@ export async function getAllPostsForHome(preview) {
   return data?.posts
 }
 
-export async function getPostAndMorePosts(slug, preview, previewData) {
+export async function getPostAndMorePosts(
+  slug,
+  preview = false,
+  previewData = null
+) {
   const postPreview = preview && previewData?.post
   // The slug may be the id of an unpublished post
   const isId = Number.isInteger(Number(slug))
@@ -125,6 +146,7 @@ export async function getPostAndMorePosts(slug, preview, previewData) {
       excerpt
       slug
       date
+      uri
       featuredImage {
         node {
           sourceUrl
@@ -138,14 +160,24 @@ export async function getPostAndMorePosts(slug, preview, previewData) {
       categories {
         edges {
           node {
-            name
+            name,
+            uri
           }
         }
       }
-      tags {
+      secteurs{
         edges {
           node {
             name
+            uri
+          }
+        }
+      }
+      regions{
+        edges {
+          node {
+            name
+            uri
           }
         }
       }
@@ -176,7 +208,7 @@ export async function getPostAndMorePosts(slug, preview, previewData) {
             : ''
         }
       }
-      posts(first: 3, where: { orderby: { field: DATE, order: DESC } }) {
+      posts(first: 4, where: { orderby: { field: DATE, order: DESC } }) {
         edges {
           node {
             ...PostFields
@@ -188,7 +220,7 @@ export async function getPostAndMorePosts(slug, preview, previewData) {
     {
       variables: {
         id: isDraft ? postPreview.id : slug,
-        idType: isDraft ? 'DATABASE_ID' : 'SLUG',
+        idType: isDraft ? 'DATABASE_ID' : 'URI',
       },
     }
   )
@@ -207,6 +239,111 @@ export async function getPostAndMorePosts(slug, preview, previewData) {
   data.posts.edges = data.posts.edges.filter(({ node }) => node.slug !== slug)
   // If there are still 3 posts, remove the last one
   if (data.posts.edges.length > 2) data.posts.edges.pop()
+
+  return data
+}
+
+export async function getTermAndPosts(term, type) {
+  const data = await fetchAPI(
+    `
+    query TermAndPosts {
+      ${type} (id: "${term}", idType: URI) {
+        id
+        databaseId
+        name
+        count
+        slug
+        uri
+        ${type !== 'tag' ? 'parentDatabaseId' : ''}
+  			posts(first: 10, where: { orderby: { field: DATE, order: DESC } }) {
+          pageInfo {
+            hasNextPage
+            endCursor
+          }
+          edges {
+            node {
+              id
+              databaseId
+              title
+              excerpt
+              slug
+              date
+              categories{
+                edges {
+                  node {
+                    name
+                    uri
+                  }
+                }
+              }
+              secteurs{
+                edges {
+                  node {
+                    name
+                    uri
+                  }
+                }
+              }
+              regions{
+                edges {
+                  node {
+                    name
+                    uri
+                  }
+                }
+              }
+              uri
+              featuredImage {
+                node {
+                  sourceUrl
+                }
+              }
+            }
+          }
+    		}
+  		}
+    }
+  `
+  )
+
+  return data
+}
+export async function getTerms(type) {
+  const data = await fetchAPI(
+    `
+    query Terms {
+      ${type} (first: 300) {
+        nodes {
+          id
+          databaseId
+          name
+          uri
+          count
+        }
+      }
+    }
+  `
+  )
+
+  return data
+}
+
+export async function getCategories() {
+  const data = await fetchAPI(
+    `
+    query Category {
+      categories (where: { parent: 16 }) {
+        nodes {
+          id
+          databaseId
+          name
+          uri
+          count
+        }
+      }
+    }
+  `
+  )
 
   return data
 }

@@ -1,3 +1,13 @@
+:root {
+  --color-primary: #18a096;
+  --color-secondary: #f8b333;
+  --swiper-pagination-color: #18a096;
+  --swiper-pagination-bullet-inactive-color: #ffffff;
+  --swiper-pagination-bullet-inactive-opacity: 0.7;
+  --swiper-pagination-bottom: 2px;
+  /* ... */
+}
+
 @tailwind base;
 
 /* Write your own custom base styles here */
@@ -101,4 +111,8 @@
 
 .wp-block-media-text {
   @apply grid grid-cols-2 gap-4;
+}
+
+main {
+  max-width: 90%;
 }

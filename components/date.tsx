@@ -1,6 +1,16 @@
-import { parseISO, format } from 'date-fns'
+import { parseISO } from 'date-fns'
+import React, { memo } from 'react'
 
-export default function Date({ dateString }) {
+const Date = ({ dateString }) => {
   const date = parseISO(dateString)
-  return <time dateTime={dateString}>{format(date, 'LLLL	d, yyyy')}</time>
+  return (
+    <span>
+      Publié :&nbsp;
+      <time dateTime={dateString} className="text-primary">
+        {Intl.DateTimeFormat('fr-FR', { dateStyle: 'long' }).format(date)}
+      </time>
+    </span>
+  )
 }
+
+export default memo(Date)

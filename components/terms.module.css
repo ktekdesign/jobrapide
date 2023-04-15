@@ -1,0 +1,3 @@
+.terms > span:nth-of-type(n + 4) {
+  display: none;
+}
