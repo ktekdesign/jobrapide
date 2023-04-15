@@ -1,10 +1,8 @@
-import { TermsListProps } from '../interfaces'
-
 export const initialState = {
-  secteurs: {} as TermsListProps,
-  regions: {} as TermsListProps,
-  categories: {} as TermsListProps,
-  niveaux: {} as TermsListProps,
+  secteurs: [],
+  regions: [],
+  categories: [],
+  niveaux: [],
   posts: [],
 }
 export const initialModalState = {
@@ -18,7 +16,7 @@ export const actions = {
   SET_TOGGLE_SEARCHFRORM: 'SET_TOGGLE_SEARCHFRORM',
 }
 const postIndex = (uri, posts) => {
-  return posts.findIndex((term) => term?.uri === uri)
+  return posts?.findIndex((term) => term?.uri === uri)
 }
 
 export const termsReducer = (state, action) => {

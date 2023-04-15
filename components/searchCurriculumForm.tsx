@@ -1,24 +1,13 @@
-import React, { memo, useEffect, useState } from 'react'
+import React, { memo } from 'react'
+import useModal from '../context/useModal'
 import useTerms from '../context/useTerms'
-import { populateTerms } from '../utils/populateContext'
 
 const SearchCurriculumForm = () => {
-  const { state, dispatch } = useTerms()
-  const [secteurs, setSecteurs] = useState(state.secteurs?.nodes)
-  const [regions, setRegions] = useState(state.regions?.nodes)
-  const [niveaux, setNiveaux] = useState(state.niveaux?.nodes)
+  const { state: stateTerms } = useTerms()
+  const { state } = useModal()
+  const { secteurs, regions, niveaux } = stateTerms
 
-  useEffect(() => {
-    if (!regions?.length) {
-      populateTerms('regions', dispatch, setRegions)
-    }
-    if (!secteurs?.length) {
-      populateTerms('secteurs', dispatch, setSecteurs)
-    }
-    if (!niveaux?.length) {
-      populateTerms('niveaux', dispatch, setNiveaux)
-    }
-  }, [secteurs, niveaux, regions])
+  if (!state.toggleSearchForm) return <></>
 
   return (
     <>
@@ -78,7 +67,7 @@ const SearchCurriculumForm = () => {
           </div>
         </div>
       )}
-      {!!regions && (
+      {!!regions?.length && (
         <div className="w-full px-4 mb-4">
           <label
             className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"

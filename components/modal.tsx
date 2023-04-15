@@ -1,13 +1,35 @@
 import Link from 'next/link'
-import React, { memo } from 'react'
+import React, { memo, useEffect } from 'react'
 import { actions } from '../context/dataReducer'
 import useModal from '../context/useModal'
+import useTerms from '../context/useTerms'
+import { populateTerms } from '../utils/populateContext'
 import styles from './modal.module.css'
 
 const Modal = ({ children }) => {
   const { state, dispatch } = useModal()
+  const { state: stateTerms, dispatch: dispatchTerms } = useTerms()
   const closeModal = () => dispatch({ type: actions.SET_TOGGLE_MODAL })
   const toggleForm = () => dispatch({ type: actions.SET_TOGGLE_SEARCHFRORM })
+
+  const { secteurs, regions, categories, niveaux } = stateTerms
+
+  useEffect(() => {
+    if (!secteurs?.length) {
+      populateTerms('secteurs', dispatchTerms)
+    }
+    if (!regions?.length) {
+      populateTerms('regions', dispatchTerms)
+    }
+    if (!categories?.length) {
+      populateTerms('categories', dispatchTerms)
+    }
+    if (!niveaux?.length) {
+      populateTerms('niveaux', dispatchTerms)
+    }
+  }, [])
+
+  if (!state.toggleModal) return <></>
   return (
     <div
       className="fixed left-0 top-0 z-[1055] h-full w-full overflow-y-auto overflow-x-hidden outline-none dark:bg-neutral-800 dark:bg-opacity-80"
@@ -27,7 +49,7 @@ const Modal = ({ children }) => {
               >
                 <button
                   type="button"
-                  className={state.toggleSearchForm && styles.notactive}
+                  className={state.toggleSearchForm ? styles.notactive : ''}
                   onClick={toggleForm}
                   disabled={!state.toggleSearchForm}
                 >
@@ -35,7 +57,7 @@ const Modal = ({ children }) => {
                 </button>
                 <button
                   type="button"
-                  className={!state.toggleSearchForm && styles.notactive}
+                  className={!state.toggleSearchForm ? styles.notactive : ''}
                   onClick={toggleForm}
                   disabled={state.toggleSearchForm}
                 >
@@ -53,13 +75,13 @@ const Modal = ({ children }) => {
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke-width="1.5"
+                  strokeWidth={1.5}
                   stroke="currentColor"
-                  className="h-6 w-6"
+                  className="w-6 h-6"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     d="M6 18L18 6M6 6l12 12"
                   />
                 </svg>

@@ -35,9 +35,9 @@ const MoreStories = ({ posts }) => {
             <p className="mt-2 tracking-wide text-xs font-bold">
               <Date dateString={node.date} />
             </p>
-            <p className="mt-2 mb-2 text-gray-600 text-xs">
+            <div className="mt-2 mb-2 text-gray-600 text-xs">
               {parse(node.excerpt)}
-            </p>
+            </div>
             <p className="tracking-wide text-xs font-bold">
               <Terms terms={node.secteurs.edges} name="Domaines : " />
             </p>

@@ -27,7 +27,7 @@ export const Pub = ({ term, withTitle = false }) => {
     <>
       {withTitle && (
         <h2 className="p-4 font-bold text-white bg-secondary">
-          {termWithPosts?.name}
+          {termWithPosts.name}
         </h2>
       )}
       <Swiper

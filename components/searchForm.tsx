@@ -1,31 +1,13 @@
-import React, { memo, useEffect, useState } from 'react'
+import React, { memo } from 'react'
+import useModal from '../context/useModal'
 import useTerms from '../context/useTerms'
-import { populateTerms } from '../utils/populateContext'
 
 const SearchForm = () => {
-  const { state, dispatch } = useTerms()
-  const [categories, setCategories] = useState(state.categories?.nodes)
-  const [secteurs, setSecteurs] = useState(state.secteurs?.nodes)
-  const [regions, setRegions] = useState(state.regions?.nodes)
+  const { state: stateTerms } = useTerms()
+  const { state: stateModal } = useModal()
+  const { categories, secteurs, regions } = stateTerms
 
-  useEffect(() => {
-    if (!secteurs?.length) {
-      populateTerms('secteurs', dispatch, setSecteurs)
-    }
-  }, [secteurs])
-
-  useEffect(() => {
-    if (!regions?.length) {
-      populateTerms('regions', dispatch, setRegions)
-    }
-  }, [regions])
-
-  useEffect(() => {
-    if (!categories?.length) {
-      populateTerms('categories', dispatch, setCategories)
-    }
-  }, [categories])
-
+  if (stateModal.toggleSearchForm) return <></>
   return (
     <>
       <div className="w-full px-4 mb-4">
@@ -41,7 +23,7 @@ const SearchForm = () => {
           type="text"
         />
       </div>
-      {categories?.length && (
+      {!!categories?.length && (
         <div className="w-full px-4 mb-4">
           <label
             className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"

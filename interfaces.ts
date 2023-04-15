@@ -12,16 +12,13 @@ export interface TermsProps {
   ]
 }
 export interface TermsListProps {
-  nodes: [
-    {
-      id: string
-      databaseId: number
-      name: string
-      uri: string
-      count: string
-    }
-  ]
+  id: string
+  databaseId: number
+  name: string
+  uri: string
+  count: string
 }
+
 export interface PostProps {
   id: string
   title: string
@@ -32,6 +29,7 @@ export interface PostProps {
   categories?: TermsProps
   secteurs?: TermsProps
   regions?: TermsProps
+  priority?: boolean
 }
 export interface PostsProps {
   edges: [
@@ -51,10 +49,10 @@ export interface TermProps {
   posts: PostsProps
 }
 export interface InitialStateType {
-  secteurs: TermsListProps
-  regions: TermsListProps
-  categories: TermsListProps
-  niveaux?: TermsListProps
+  secteurs: TermsListProps[]
+  regions: TermsListProps[]
+  categories: TermsListProps[]
+  niveaux?: TermsListProps[]
   posts?: TermProps[]
 }
 export interface InitialModalStateType {

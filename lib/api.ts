@@ -273,6 +273,7 @@ export async function getTermAndPosts(term, type) {
                   node {
                     name
                     uri
+                    id
                   }
                 }
               }
@@ -281,6 +282,7 @@ export async function getTermAndPosts(term, type) {
                   node {
                     name
                     uri
+                    id
                   }
                 }
               }
@@ -289,6 +291,7 @@ export async function getTermAndPosts(term, type) {
                   node {
                     name
                     uri
+                    id
                   }
                 }
               }

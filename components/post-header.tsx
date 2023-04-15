@@ -18,19 +18,17 @@ const PostHeader = ({
       <div className="mb-8 md:mb-16 sm:mx-0">
         <CoverImage title={title} featuredImage={coverImage} />
       </div>
-      <div className="max-w-2xl">
-        <div className="mb-2 text-sm">
-          <Date dateString={date} />
-        </div>
-        <div className="mb-2 text-sm">
-          <Terms terms={categories.edges} name="Categories : " />
-        </div>
-        <div className="mb-2 text-sm">
-          <Terms terms={secteurs.edges} name="Domaines : " />
-        </div>
-        <div className="mb-2 text-sm">
-          <Terms terms={regions.edges} name="Regions : " />
-        </div>
+      <div className="mb-2 text-sm font-bold">
+        <Date dateString={date} />
+      </div>
+      <div className="mb-2 text-xs">
+        <Terms terms={categories.edges} name="Categories : " />
+      </div>
+      <div className="mb-2 text-xs">
+        <Terms terms={secteurs.edges} name="Domaines : " />
+      </div>
+      <div className="mb-2 text-xs">
+        <Terms terms={regions.edges} name="Regions : " />
       </div>
     </>
   )

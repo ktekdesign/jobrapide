@@ -6,7 +6,7 @@ import { populateTerms } from '../utils/populateContext'
 
 const SecteursList = () => {
   const { state, dispatch } = useTerms()
-  const [secteurs, setSecteurs] = useState(state.secteurs?.nodes)
+  const [secteurs, setSecteurs] = useState(state.secteurs)
 
   useEffect(() => {
     if (!secteurs?.length) {

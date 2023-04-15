@@ -17,8 +17,8 @@ import SearchCurriculumForm from './searchCurriculumForm'
 import Pub from './pub'
 
 const Header = () => {
+  const { dispatch } = useModal()
   const [showMenu, setShowMenu] = useState(false)
-  const { state, dispatch } = useModal()
   const [currentPath, setCurrentPath]: [
     string,
     Dispatch<SetStateAction<string>>
@@ -258,11 +258,10 @@ const Header = () => {
           </div>
         </div>
       </nav>
-      {state.toggleModal && (
-        <Modal>
-          {state.toggleSearchForm ? <SearchCurriculumForm /> : <SearchForm />}
-        </Modal>
-      )}
+      <Modal>
+        <SearchCurriculumForm />
+        <SearchForm />
+      </Modal>
       <Pub term="/recrutement/publicite/pub-niveau-2/" />
     </>
   )

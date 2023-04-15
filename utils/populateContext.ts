@@ -1,11 +1,12 @@
 import { actions } from '../context/dataReducer'
 import { getCategories, getTermAndPosts, getTerms } from '../lib/api'
 
-export const populateTerms = async (type, dispatch, setTerms = null) => {
+export const populateTerms = async (type, dispatch = null, setTerms = null) => {
   const data = await (type === 'categories' ? getCategories() : getTerms(type))
-  dispatch({ type: actions.SET_TERMS, payload: [data[type], type] })
-  if (setTerms) setTerms(data[type])
-  return data[type]
+  if (dispatch)
+    dispatch({ type: actions.SET_TERMS, payload: [data[type].nodes, type] })
+  if (setTerms) setTerms(data[type].nodes)
+  return data[type].nodes
 }
 
 export const populatePosts = async (

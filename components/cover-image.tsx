@@ -1,4 +1,3 @@
-import cn from 'classnames'
 import Image from 'next/image'
 import Link from 'next/link'
 import { memo } from 'react'
@@ -12,6 +11,7 @@ interface Props {
   className?: string
   width?: number
   height?: number
+  priority?: boolean
 }
 
 const CoverImage = ({
@@ -21,6 +21,7 @@ const CoverImage = ({
   className,
   width,
   height,
+  priority,
 }: Props) => {
   const image = (
     <Image
@@ -28,16 +29,12 @@ const CoverImage = ({
       height={height || 200}
       alt={title}
       src={featuredImage?.node.sourceUrl}
-      className={
-        className ||
-        cn('shadow-small', {
-          'hover:shadow-medium transition-shadow duration-200': className,
-        })
-      }
+      priority={priority}
+      className={className}
     />
   )
   return (
-    <div className={!className && `sm:mx-0 ${styles.feature}`}>
+    <div className={`sm:mx-0 ${styles.feature}`}>
       {uri ? (
         <Link href={uri} aria-label={title}>
           {image}

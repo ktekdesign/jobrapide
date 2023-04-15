@@ -1,12 +1,3 @@
-.feature {
-  height: 200px;
-  display: flex;
-}
-.feature a {
-  display: flex;
-  width: 100%;
-}
 .feature img {
-  object-fit: scale-down;
-  width: 100%;
+  @apply w-full flex object-scale-down h-48 sm:h-60 md:h-72 lg:h-48;
 }

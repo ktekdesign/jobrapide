@@ -24,15 +24,18 @@ export const SwiperContainer = ({
   const [termWithPosts, setTermsWithPosts] = useState(
     posts || state.posts.find((termPosts) => termPosts?.uri === term)
   )
-  if (posts) {
+  const priority = posts !== null
+  if (priority) {
     dispatch({ type: actions.SET_POSTS, payload: [posts, term] })
   }
   useEffect(() => {
-    if (!termWithPosts && !posts) {
+    if (!termWithPosts) {
       populatePosts(term, type, dispatch, setTermsWithPosts)
     }
-  }, [state.posts])
+  }, [termWithPosts])
+
   if (!termWithPosts) return <></>
+
   return (
     <div
       className={`shadow-lg ${
@@ -64,10 +67,10 @@ export const SwiperContainer = ({
           0: {
             slidesPerView: 1,
           },
-          768: {
+          640: {
             slidesPerView: Math.max(slides - 1, 2),
           },
-          992: {
+          1024: {
             slidesPerView: slides,
           },
         }}
@@ -89,6 +92,7 @@ export const SwiperContainer = ({
                 title={node.title}
                 featuredImage={node.featuredImage}
                 uri={node.uri}
+                priority={priority}
               />
             )}
           </SwiperSlide>

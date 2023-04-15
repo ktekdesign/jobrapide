@@ -8,7 +8,7 @@ const Terms = ({ terms, name }) => {
   if (!terms.length) return <></>
 
   return (
-    <span className={`mb-2 block text-dark ${hideTerms && styles.terms}`}>
+    <span className={`mb-2 block text-dark ${hideTerms ? styles.terms : ''}`}>
       {name}
       {terms.map(({ node }) => (
         <span
