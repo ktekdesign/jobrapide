@@ -16,7 +16,7 @@ export const getStaticProps = async () => {
     props: {
       posts,
     },
-    revalidate: 3600
+    revalidate: 3600,
   }
 }
 export default function Index({ posts }) {
