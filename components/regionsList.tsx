@@ -21,7 +21,10 @@ const RegionsList = () => {
       <ul className="flex flex-wrap text-xs justify-around">
         {regions.map(({ id, uri, name, count }) => (
           <li className="p-1 w-1/2 md:w-1/5" key={id}>
-            <Link href={uri}>
+            <Link
+              href={uri}
+              className="hover:font-bold transition-all duration-200"
+            >
               {name} ({count})
             </Link>
           </li>

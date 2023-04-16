@@ -10,10 +10,10 @@ const MoreStories = ({ posts }) => {
     <section className="flex flex-col gap-4">
       {posts.map(({ node }) => (
         <article
-          className="border md:flex hover:shadow-lg"
+          className="border flex-col sm:flex sm:flex-row hover:shadow-lg hover:bg-slate-100 transition-all duration-200"
           key={node.databaseId}
         >
-          <div className="md:flex-shrink-0">
+          <div className="sm:w-1/3 md:w-1/4 flex items-center justify-center">
             <CoverImage
               featuredImage={node.featuredImage}
               title={node.title}
@@ -22,7 +22,7 @@ const MoreStories = ({ posts }) => {
               className="object-cover w-full md:w-56"
             />
           </div>
-          <div className="md:ml-4 md:mr-4 py-4">
+          <div className="sm:w-2/3 md:w-3/4 sm:ml-4 sm:mr-4 py-4">
             <p className="uppercase tracking-wide text-xs text-indigo-600 font-bold">
               <Terms terms={node.categories.edges} name="Categories : " />
             </p>

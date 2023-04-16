@@ -21,7 +21,10 @@ const SecteursList = () => {
       <ul className="flex flex-wrap text-xs md:justify-around">
         {secteurs.map(({ id, uri, name, count }) => (
           <li className="p-1 md:w-1/3" key={id}>
-            <Link href={uri}>
+            <Link
+              href={uri}
+              className="hover:font-bold transition-all duration-200"
+            >
               {name} ({count})
             </Link>
           </li>

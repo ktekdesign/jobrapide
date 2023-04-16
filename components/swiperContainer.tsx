@@ -25,10 +25,11 @@ export const SwiperContainer = ({
     posts || state.posts.find((termPosts) => termPosts?.uri === term)
   )
   const priority = posts !== null
-  if (priority) {
-    dispatch({ type: actions.SET_POSTS, payload: [posts, term] })
-  }
+
   useEffect(() => {
+    if (priority) {
+      dispatch({ type: actions.SET_POSTS, payload: [posts, term] })
+    }
     if (!termWithPosts) {
       populatePosts(term, type, dispatch, setTermsWithPosts)
     }
@@ -40,7 +41,7 @@ export const SwiperContainer = ({
     <div
       className={`shadow-lg ${
         !light ? 'bg-dark' : ''
-      } hover:border hover:bg-gray-600 hover:shadow-2xl transition-all duration-200`}
+      } hover:border hover:bg-slate-500 hover:shadow-2xl transition-all duration-200`}
     >
       {!light && (
         <h2
