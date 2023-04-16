@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import { GetStaticProps } from 'next'
 import Layout from '../components/layout'
 import { CMS_NAME } from '../lib/constants'
 import SwiperContainer from '../components/swiperContainer'
@@ -7,7 +6,7 @@ import Column from '../components/column'
 import Container from '../components/container'
 import { populatePosts } from '../utils/populateContext'
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps = async () => {
   const posts = await populatePosts(
     '/recrutement/offres/avis-recrutement/',
     'category'
@@ -17,6 +16,7 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       posts,
     },
+    revalidate: 3600
   }
 }
 export default function Index({ posts }) {
