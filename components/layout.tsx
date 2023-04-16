@@ -7,6 +7,7 @@ import Facebook from './facebook'
 import Pub from './pub'
 import SwiperContainer from './swiperContainer'
 import { TwitterTimelineEmbed } from 'react-twitter-embed'
+import GoTop from './gotop'
 
 const Layout = ({ children }) => (
   <>
@@ -16,7 +17,11 @@ const Layout = ({ children }) => (
       <main className="flex lg:gap-4 mb-4 mt-4 mx-auto flex-col lg:flex-row">
         <Column left>{children}</Column>
         <Column right>
-          <Pub term="/recrutement/publicite/pub-niveau-1/" />
+          <Pub
+            term="/recrutement/publicite/pub-niveau-1/"
+            width={320}
+            height={250}
+          />
           <div className="w-full mt-4">
             <SwiperContainer
               term="/emploi/sponsorisees/"
@@ -28,7 +33,11 @@ const Layout = ({ children }) => (
             <Pub term="/recrutement/publicite/partenaires/" withTitle />
           </div>
           <div className="w-full mt-4">
-            <Pub term="/recrutement/publicite/pub-niveau-3/" />
+            <Pub
+              term="/recrutement/publicite/pub-niveau-3/"
+              width={320}
+              height={250}
+            />
           </div>
           <div className="w-full mt-4">
             <Facebook />
@@ -44,6 +53,7 @@ const Layout = ({ children }) => (
       </main>
     </div>
     <Footer />
+    <GoTop />
   </>
 )
 export default memo(Layout)

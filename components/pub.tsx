@@ -5,12 +5,12 @@ import 'swiper/css'
 import 'swiper/css/bundle'
 import 'swiper/css/pagination'
 import 'swiper/css/effect-flip'
-import CoverImage from './cover-image'
 import Link from 'next/link'
+import Image from 'next/image'
 import useTerms from '../context/useTerms'
 import { populatePosts } from '../utils/populateContext'
 
-export const Pub = ({ term, withTitle = false }) => {
+export const Pub = ({ term, withTitle = false, width = 0, height = 0 }) => {
   const { state, dispatch } = useTerms()
   const [termWithPosts, setTermsWithPosts] = useState(
     state.posts.find((termPosts) => termPosts?.uri === term)
@@ -35,6 +35,8 @@ export const Pub = ({ term, withTitle = false }) => {
           clickable: true,
         }}
         spaceBetween={30}
+        centeredSlides={true}
+        centeredSlidesBounds={true}
         autoplay={{
           delay: 5000,
           disableOnInteraction: true,
@@ -50,10 +52,18 @@ export const Pub = ({ term, withTitle = false }) => {
       >
         {termWithPosts.posts.edges.map(({ node }) => (
           <SwiperSlide key={node.id}>
-            <Link href={node.uri} target="_blank">
-              <CoverImage
-                title={node.title}
-                featuredImage={node.featuredImage}
+            <Link
+              href={node.uri}
+              className="flex justify-center"
+              target="_blank"
+            >
+              <Image
+                width={width || 200}
+                height={height || 200}
+                alt={node.title}
+                src={node.featuredImage?.node.sourceUrl}
+                className="max-h-max h-auto"
+                priority
               />
             </Link>
           </SwiperSlide>

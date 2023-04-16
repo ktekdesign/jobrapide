@@ -9,7 +9,7 @@ const Column = ({ children, left = false, right = false, className = '' }) => {
 
   return (
     <div className={`container w-full mx-auto ${outputClasses}`}>
-      <div className="w-full px-2">{children}</div>
+      <div className="w-full lg:px-2">{children}</div>
     </div>
   )
 }

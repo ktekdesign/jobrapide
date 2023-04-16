@@ -20,7 +20,7 @@ export interface TermsListProps {
 }
 
 export interface PostProps {
-  id: string
+  id?: string
   title: string
   featuredImage: ImageProps
   date?: string

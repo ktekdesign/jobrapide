@@ -38,8 +38,8 @@ const Header = () => {
             <Image
               className="bg-white rounded-3xl shadow-xl hover:animate-pulse"
               src="https://www.jobrapide.org/wp-content/uploads/2022/12/cropped-Job-6-270x270.png"
-              width={50}
-              height={50}
+              width={40}
+              height={40}
               alt="Logo"
             />
             <svg
@@ -262,7 +262,13 @@ const Header = () => {
         <SearchCurriculumForm />
         <SearchForm />
       </Modal>
-      <Pub term="/recrutement/publicite/pub-niveau-2/" />
+      <div className="mb-4 mt-4">
+        <Pub
+          term="/recrutement/publicite/pub-niveau-2/"
+          width={768}
+          height={90}
+        />
+      </div>
     </>
   )
 }

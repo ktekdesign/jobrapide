@@ -142,6 +142,7 @@ export async function getPostAndMorePosts(
       }
     }
     fragment PostFields on Post {
+      id
       title
       excerpt
       slug
@@ -162,6 +163,7 @@ export async function getPostAndMorePosts(
           node {
             name,
             uri
+            id
           }
         }
       }
@@ -170,6 +172,7 @@ export async function getPostAndMorePosts(
           node {
             name
             uri
+            id
           }
         }
       }
@@ -178,6 +181,7 @@ export async function getPostAndMorePosts(
           node {
             name
             uri
+            id
           }
         }
       }

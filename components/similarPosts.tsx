@@ -26,21 +26,18 @@ export const SimilarPosts = ({ posts }) => {
             0: {
               slidesPerView: 1,
             },
-            768: {
+            640: {
               slidesPerView: 2,
             },
-            992: {
+            1024: {
               slidesPerView: 3,
             },
           }}
           modules={[Pagination, Autoplay]}
-          className="blog-slides"
         >
           {posts.map(({ node }) => (
             <SwiperSlide key={node.id}>
               <PostPreview
-                key={node.id}
-                id={node.id}
                 title={node.title}
                 featuredImage={node.featuredImage}
                 uri={node.uri}
