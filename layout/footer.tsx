@@ -4,6 +4,8 @@ import RegionsList from '@components/regionsList'
 import SecteursList from '@components/secteursList'
 import Container from '@layout/container'
 import Copyright from '@components/copyright'
+import { CMS_NAME, FOOTER_MENU_ITEMS } from '@lib/constants'
+import FooterMenu from '@components/footerMenu'
 
 const Footer = () => {
   const [active, setActive] = useState(1)
@@ -21,7 +23,7 @@ const Footer = () => {
           </span>
         </li>
         <li className={active === 3 ? 'active' : ''}>
-          <span onClick={() => setActive(3)}>JobRapide / Contact</span>
+          <span onClick={() => setActive(3)}>{CMS_NAME} / Contact</span>
         </li>
       </ul>
       <Container>
@@ -30,6 +32,7 @@ const Footer = () => {
       <Container>
         <RegionsList active={active} />
       </Container>
+      <FooterMenu items={FOOTER_MENU_ITEMS} />
       <Copyright />
     </footer>
   )

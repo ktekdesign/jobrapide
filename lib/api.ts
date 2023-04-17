@@ -313,7 +313,7 @@ export async function getTermAndPosts(term, type) {
   `
   )
 
-  return data
+  return data[type]
 }
 export async function getTerms(type) {
   const data = await fetchAPI(
@@ -332,7 +332,7 @@ export async function getTerms(type) {
   `
   )
 
-  return data
+  return data[type]
 }
 
 export async function getCategories() {
@@ -352,5 +352,19 @@ export async function getCategories() {
   `
   )
 
-  return data
+  return data?.categories
+}
+
+export async function getPage(uri) {
+  const data = await fetchAPI(`
+  query page {
+    page (id: "${uri}", idType: URI) {      
+        id
+        databaseId
+        title
+        content
+      }
+    }
+  `)
+  return data?.page
 }

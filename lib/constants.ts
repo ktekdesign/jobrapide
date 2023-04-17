@@ -17,3 +17,16 @@ export const MENU_ITEMS = [
   { title: 'Actualités', uri: '/recrutement/actualites' },
   { title: 'Contact', uri: '/contact' },
 ]
+export const FOOTER_MENU_ITEMS = [
+  { title: 'Qui sommes-nous?', uri: '/qui-sommes-nous/' },
+  { title: 'Propriété intellectuelle', uri: '/propriete-intellectuelle/' },
+  {
+    title: `Conditions générales d’utilisation de ${CMS_NAME}`,
+    uri: '/condition-generale-dutilisation/',
+  },
+  { title: 'Mentions légales', uri: '/mentions-legales/' },
+  {
+    title: `Politique de confidentialité ${CMS_NAME}`,
+    uri: '/confidentialite/',
+  },
+]

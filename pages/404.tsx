@@ -1,9 +1,10 @@
 import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
+import Layout from '@layout/layout'
 
-const Error = () => (
-  <>
+const PageError = () => (
+  <Layout>
     <Head>
       <title>Page introuvable - JobRapide</title>
       <meta
@@ -24,7 +25,7 @@ const Error = () => (
         </Link>
       </div>
     </div>
-  </>
+  </Layout>
 )
 
-export default Error
+export default PageError

@@ -1,28 +1,15 @@
-import { useRouter } from 'next/router'
-import { getTermAndPosts } from '../../lib/api'
+import { getTermProps } from '@utils/getTermProps'
 import TermLayout from '@layout/termLayout'
 
-export default function Region({ term, current }) {
-  const router = useRouter()
-  const posts = term?.posts?.edges
-
-  if (!router.isFallback && !posts?.length) {
-    return {
-      notFound: true,
-    }
-  }
-
-  return <TermLayout term={term} current={current} />
-}
-
-export async function getServerSideProps({ resolvedUrl, params, res }) {
-  const { tag: term } = await getTermAndPosts(resolvedUrl, 'tag')
-  const current = parseInt(params.slug.pop()) || 1
-
+export const getServerSideProps = async ({ resolvedUrl, params, res }) => {
   res.setHeader(
     'Cache-Control',
     'public, s-maxage=3600, stale-while-revalidate=3659'
   )
-  // Pass data to the page via props
-  return { props: { term, current } }
+  const data = await getTermProps(resolvedUrl, params, 'tag')
+  return data
 }
+
+const Tag = ({ term, current }) => <TermLayout term={term} current={current} />
+
+export default Tag

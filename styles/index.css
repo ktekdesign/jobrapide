@@ -358,3 +358,17 @@ footer {
 .current-page {
   @apply border p-2 inline-block bg-primary text-white font-bold text-center text-xs md:text-sm;
 }
+
+/* FOOTER MENU */
+.navbar-footer {
+  @apply bg-primary text-white text-xs;
+}
+.footer-menu {
+  @apply container mx-auto;
+}
+.footer-menu-items {
+  @apply flex flex-wrap justify-center gap-x-2 lg:justify-between w-full items-center lg:flex-nowrap;
+}
+.footer-menu-items a {
+  @apply hover:font-bold hover:underline whitespace-nowrap py-1 inline-block;
+}
