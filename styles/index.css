@@ -112,7 +112,32 @@
 .wp-block-media-text {
   @apply grid grid-cols-2 gap-4;
 }
-
+/* Animation CSS */
+.animate-slideinup {
+  animation: slideinup 0.5s;
+}
+@keyframes slideinup {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.animate-backdrop {
+  animation: backdrop 0.5s linear 0.2s forwards;
+}
+@keyframes backdrop {
+  0% {
+    backdrop-filter: blur(0);
+  }
+  100% {
+    backdrop-filter: blur(8px);
+  }
+}
+body {
+  @apply selection:cursor-not-allowed;
+}
 main {
   @apply flex lg:gap-4 px-8 md:px-0 mb-4 mt-4 mx-auto flex-col lg:flex-row container;
 }
@@ -164,7 +189,7 @@ footer {
   @apply border-white bg-secondary border font-bold rounded px-2 hover:text-primary;
 }
 .menu-item-link {
-  @apply block mt-4 lg:inline-block lg:mt-0 text-white hover:text-secondary hover:font-bold lg:mr-4 py-2;
+  @apply block mt-4 lg:inline-block lg:mt-0 text-white hover:text-secondary hover:font-bold lg:mr-4 py-2 active:text-slate-400;
 }
 .menu-items {
   @apply text-sm flex flex-col flex-wrap lg:flex-row lg:items-center;
@@ -203,20 +228,14 @@ footer {
 }
 
 /* Modal */
-.modal {
-  @apply fixed -z-10 left-0 top-0 h-full w-full overflow-y-auto overflow-x-hidden outline-none dark:bg-neutral-800 dark:bg-opacity-80;
-}
-.modal.visible {
-  @apply z-30;
+#modal {
+  @apply fixed left-0 top-0 h-full w-full overflow-y-auto overflow-x-hidden outline-none dark:bg-neutral-800 dark:bg-opacity-60 open:z-30 animate-backdrop;
 }
 .modal-inner {
   @apply pointer-events-none relative flex min-h-max w-auto items-center transition-all duration-300 ease-in-out sm:mx-auto sm:mt-8 sm:max-w-xl;
 }
-.modal.visible .modal-form {
-  @apply translate-y-0 duration-200;
-}
-.modal .modal-form {
-  @apply translate-y-full transition-all pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none;
+#modal .modal-form {
+  @apply pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none;
 }
 .modal-header {
   @apply flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50;
@@ -265,6 +284,9 @@ footer {
 }
 .terms-hide > span:nth-of-type(n + 4) {
   @apply hidden;
+}
+.terms small {
+  @apply whitespace-nowrap hover:underline hover:font-bold;
 }
 .more-terms {
   @apply cursor-pointer font-normal;

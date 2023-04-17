@@ -113,7 +113,7 @@ const NavBar = ({ items }) => {
           </li>
           <li className="reveal">
             <Link
-              href="#"
+              href="#modal"
               onClick={(e) => {
                 e.preventDefault()
                 dispatchModal({ type: actions.SET_TOGGLE_MODAL })

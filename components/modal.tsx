@@ -34,12 +34,15 @@ const Modal = ({ children }) => {
   }, [])
 
   return (
-    <div
-      className={stateModal.toggleModal ? 'modal visible' : 'modal invisible'}
-      onClick={closeModal}
-    >
+    <dialog onClick={closeModal} id="modal" open={stateModal.toggleModal}>
       <div onClick={(e) => e.stopPropagation()} className="modal-inner">
-        <form className="modal-form">
+        <form
+          className={
+            stateModal.toggleModal
+              ? 'modal-form animate-slideinup'
+              : 'modal-form'
+          }
+        >
           <div className="modal-header">
             <div
               className={stateModal.toggleSearchForm ? 'flex-row-reverse' : ''}
@@ -95,7 +98,7 @@ const Modal = ({ children }) => {
           </div>
         </form>
       </div>
-    </div>
+    </dialog>
   )
 }
 
