@@ -3,7 +3,7 @@ import { getTermAndPosts } from '@lib/api'
 
 import TermLayout from '@layout/termLayout'
 
-export default function Region({ term }) {
+export default function Region({ term, current }) {
   const router = useRouter()
   const posts = term?.posts?.edges
 
@@ -13,15 +13,16 @@ export default function Region({ term }) {
     }
   }
 
-  return <TermLayout term={term} />
+  return <TermLayout term={term} current={current} />
 }
 
-export async function getServerSideProps({ resolvedUrl, res }) {
+export async function getServerSideProps({ resolvedUrl, params, res }) {
   const { region: term } = await getTermAndPosts(resolvedUrl, 'region')
+  const current = parseInt(params.slug.pop()) || 1
   res.setHeader(
     'Cache-Control',
     'public, s-maxage=3600, stale-while-revalidate=3659'
   )
 
-  return { props: { term } }
+  return { props: { term, current } }
 }

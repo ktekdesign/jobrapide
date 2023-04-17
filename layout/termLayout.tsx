@@ -4,23 +4,67 @@ import Layout from '@layout/layout'
 import { CMS_NAME } from '@lib/constants'
 
 import dynamic from 'next/dynamic'
+import Pagination from '@components/pagination'
 const MoreStories = dynamic(() => import('@components/more-stories'), {
   ssr: false,
 })
 
-const TermLayout = ({ term }) => (
-  <Layout>
-    <Head>
-      <title>{`${term.name} | ${CMS_NAME}`}</title>
-      <meta
-        property="og:image"
-        content={term?.posts?.edges?.shift().node.featuredImage?.node.sourceUrl}
-      />
-    </Head>
+const TermLayout = ({ term, current }) => {
+  const PER_PAGE = 10
+  const PAGE_BREAK = 3
+  const totalPages = Math.ceil(term.count / PER_PAGE)
 
-    <h1 className="bg-primary text-white text-2xl p-2">{term.name}</h1>
-    {term?.posts?.edges?.length && <MoreStories posts={term?.posts?.edges} />}
-  </Layout>
-)
+  const first = []
+  const middle = []
+  const last = []
+
+  for (let index = 1; index <= Math.min(PAGE_BREAK, totalPages); index++) {
+    first.push(index)
+  }
+  if (totalPages <= PER_PAGE && totalPages > PAGE_BREAK) {
+    for (let index = PAGE_BREAK + 1; index <= totalPages; index++) {
+      last.push(index)
+    }
+  } else if (totalPages > PER_PAGE) {
+    middle.push('...')
+    for (
+      let index = totalPages - PAGE_BREAK + 1;
+      index <= totalPages;
+      index++
+    ) {
+      last.push(index)
+    }
+  }
+  if (current >= first.splice(-1)[0] && current <= last[0]) {
+    first.pop()
+    last.shift()
+    if (current === 3 || current === 4) middle.splice(0, 1)
+    if (current - 1 !== first.splice(-1, 1)[0]) middle.push(current - 1)
+    middle.push(current)
+    if (current + 1 !== last[0]) {
+      middle.push(current + 1)
+      middle.push('...')
+    }
+  }
+  const pages = [...first, ...middle, ...last]
+
+  return (
+    <Layout>
+      <Head>
+        <title>{`${term.name} | ${CMS_NAME}`}</title>
+        <meta
+          property="og:image"
+          content={
+            term?.posts?.edges?.shift().node.featuredImage?.node.sourceUrl
+          }
+        />
+      </Head>
+
+      <h1 className="archive-main-title">{term.name}</h1>
+      <MoreStories posts={term?.posts?.edges} />
+      <Pagination uri={term.uri} currentPage={current} pages={pages} />
+    </Layout>
+  )
+}
 
 export default TermLayout

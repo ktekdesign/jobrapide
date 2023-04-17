@@ -17,7 +17,7 @@ const SearchForm = () => {
   if (toggleSearchForm) return <></>
 
   return (
-    <>
+    <div className="animate-slideinup">
       <div className="row">
         <Label title="Poste" htmlFor="grid-first-name" />
         <Input id="grid-first-name" />
@@ -40,7 +40,7 @@ const SearchForm = () => {
           <Select options={regions} />
         </div>
       )}
-    </>
+    </div>
   )
 }
 

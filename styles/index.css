@@ -310,6 +310,9 @@ footer {
 }
 
 /* Archive Component */
+.archive-main-title {
+  @apply bg-primary text-white text-xl md:text-2xl p-2;
+}
 .archive {
   @apply border flex flex-col sm:flex-row hover:shadow-lg hover:bg-slate-100 transition-all duration-200;
 }
@@ -340,4 +343,18 @@ footer {
 }
 .copyright {
   @apply text-center bg-secondary text-white py-2 text-xs;
+}
+
+/* Pagination */
+.pagination {
+  @apply flex flex-wrap sm:flex-nowrap gap-1 md:gap-2 justify-center py-1 md:py-4;
+}
+.pagination-item {
+  @apply border p-2 inline-block text-center text-xs md:text-sm hover:text-white hover:bg-secondary hover:font-bold;
+}
+.pagination-more {
+  @apply text-slate-400 p-2 inline-block text-center text-xs md:text-sm;
+}
+.current-page {
+  @apply border p-2 inline-block bg-primary text-white font-bold text-center text-xs md:text-sm;
 }

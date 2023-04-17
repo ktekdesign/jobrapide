@@ -16,7 +16,7 @@ const SearchCurriculumForm = () => {
   if (!toggleSearchForm) return <></>
 
   return (
-    <>
+    <div className="animate-slideinup">
       {!!niveaux?.length && (
         <div className="row">
           <Label title="Niveaux" htmlFor="grid-state" />
@@ -35,7 +35,7 @@ const SearchCurriculumForm = () => {
           <Select options={regions} />
         </div>
       )}
-    </>
+    </div>
   )
 }
 
