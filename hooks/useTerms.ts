@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { TermsContext } from './termsContext'
+import TermsContext from '@context/termsContext'
 
 const useTerms = () => {
   const context = useContext(TermsContext)
@@ -7,7 +7,6 @@ const useTerms = () => {
   if (context === undefined) {
     throw new Error('useTerms must be used within TermsContext')
   }
-
   return context
 }
 

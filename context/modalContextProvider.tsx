@@ -1,12 +1,15 @@
 import React, { memo, useReducer } from 'react'
-import { modalReducer, initialModalState } from './dataReducer'
-import ModalContext from './modalContext'
+import { modalReducer, initialModalState } from '@context/dataReducer'
+import ModalContext from '@context/modalContext'
 
 const ModalContextProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(modalReducer, initialModalState)
+  const [stateModal, dispatchModal] = useReducer(
+    modalReducer,
+    initialModalState
+  )
 
   return (
-    <ModalContext.Provider value={{ state, dispatch }}>
+    <ModalContext.Provider value={{ stateModal, dispatchModal }}>
       {children}
     </ModalContext.Provider>
   )

@@ -1,7 +1,7 @@
 import Head from 'next/head'
-import ContactForm from '../components/contactForm'
-import Layout from '../components/layout'
-import { CMS_NAME } from '../lib/constants'
+import ContactForm from '@components/contactForm'
+import Layout from '@layout/layout'
+import { CMS_NAME } from '@lib/constants'
 
 export default function Contact() {
   return (

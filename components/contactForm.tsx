@@ -1,56 +1,26 @@
 import React, { memo } from 'react'
+import Label from '@components/form/label'
+import Input from '@components/form/input'
 
 const ContactForm = () => {
   return (
-    <div className="border pt-8 pb-4">
-      <div className="w-full px-4 mb-4">
-        <label
-          className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-          htmlFor="grid-first-name"
-        >
-          Nom
-        </label>
-        <input
-          className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-          id="grid-first-name"
-          type="text"
-        />
+    <div className="border p-4">
+      <div className="row">
+        <Label title="Nom" />
+        <Input id="grid-first-name" />
       </div>
-      <div className="w-full px-4 mb-4">
-        <label
-          className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-          htmlFor="grid-first-name"
-        >
-          Email
-        </label>
-        <input
-          className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-          id="grid-first-name"
-          type="text"
-        />
+      <div className="row">
+        <Label title="email" type="email" />
+        <Input id="grid-first-name" />
       </div>
-      <div className="w-full px-4 mb-4">
-        <label
-          className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-          htmlFor="grid-first-name"
-        >
-          Téléphone
-        </label>
-        <input
-          className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-          id="grid-first-name"
-          type="text"
-        />
+      <div className="row">
+        <Label title="Téléphone" />
+        <Input id="grid-first-name" />
       </div>
-      <div className="w-full px-4 mb-4">
-        <label
-          className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-          htmlFor="grid-first-name"
-        >
-          Message
-        </label>
+      <div className="row">
+        <Label title="Message" />
         <textarea
-          className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+          className="form-input"
           id="grid-first-name"
           rows={5}
         ></textarea>

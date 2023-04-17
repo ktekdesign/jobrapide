@@ -1,35 +1,35 @@
 import React, { memo, useEffect, useState } from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
+
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Pagination, EffectFlip } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/bundle'
 import 'swiper/css/pagination'
 import 'swiper/css/effect-flip'
-import Link from 'next/link'
-import Image from 'next/image'
-import useTerms from '../context/useTerms'
-import { populatePosts } from '../utils/populateContext'
+
+import useTerms from '@hooks/useTerms'
+
+import { populatePosts } from '@utils/populateContext'
 
 export const Pub = ({ term, withTitle = false, width = 0, height = 0 }) => {
-  const { state, dispatch } = useTerms()
+  const { stateTerms, dispatchTerms } = useTerms()
   const [termWithPosts, setTermsWithPosts] = useState(
-    state.posts.find((termPosts) => termPosts?.uri === term)
+    stateTerms.posts.find((termPosts) => termPosts?.uri === term)
   )
 
   useEffect(() => {
     if (!termWithPosts) {
-      populatePosts(term, 'category', dispatch, setTermsWithPosts)
+      populatePosts(term, 'category', dispatchTerms, setTermsWithPosts)
     }
   }, [termWithPosts])
 
   if (!termWithPosts) return <></>
+
   return (
-    <>
-      {withTitle && (
-        <h2 className="p-4 font-bold text-white bg-secondary">
-          {termWithPosts.name}
-        </h2>
-      )}
+    <div className="swiper-container">
+      {withTitle && <h2 className="title-secondary">{termWithPosts.name}</h2>}
       <Swiper
         pagination={{
           clickable: true,
@@ -69,7 +69,7 @@ export const Pub = ({ term, withTitle = false, width = 0, height = 0 }) => {
           </SwiperSlide>
         ))}
       </Swiper>
-    </>
+    </div>
   )
 }
 export default memo(Pub)

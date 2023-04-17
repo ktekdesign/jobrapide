@@ -1,16 +1,16 @@
 import { createContext, Dispatch } from 'react'
-import { InitialStateType, TermProps, TermsListProps } from '../interfaces'
-import { initialState } from './dataReducer'
+import { InitialStateType, TermProps, TermsListProps } from '@utils/interfaces'
+import { initialState } from '@context/dataReducer'
 
 export const TermsContext = createContext<{
-  state: InitialStateType
-  dispatch: Dispatch<{
+  stateTerms: InitialStateType
+  dispatchTerms: Dispatch<{
     type: string
     payload: [TermProps | TermsListProps, string]
   } | null>
 }>({
-  state: initialState,
-  dispatch: () => null,
+  stateTerms: initialState,
+  dispatchTerms: () => null,
 })
 
 export default TermsContext

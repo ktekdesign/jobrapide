@@ -4,12 +4,7 @@ export interface ImageProps {
   }
 }
 export interface TermsProps {
-  edges: [
-    node: {
-      name: string
-      uri: string
-    }
-  ]
+  edges: [node: TermProps]
 }
 export interface TermsListProps {
   id: string
@@ -42,11 +37,11 @@ export interface TermProps {
   id: string
   databaseId: number
   name: string
-  count: number
-  slug: string
+  count?: number
+  slug?: string
   uri: string
-  parentDatabaseId: number
-  posts: PostsProps
+  parentDatabaseId?: number
+  posts?: PostsProps
 }
 export interface InitialStateType {
   secteurs: TermsListProps[]

@@ -1,8 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { memo } from 'react'
-import { ImageProps } from '../interfaces'
-import styles from './cover-image.module.css'
+import { ImageProps } from '@utils/interfaces'
 
 interface Props {
   title: string
@@ -34,7 +33,7 @@ const CoverImage = ({
     />
   )
   return (
-    <div className={`sm:mx-0 ${styles.feature}`}>
+    <div className="sm:mx-0 feature">
       {uri ? (
         <Link href={uri} aria-label={title}>
           {image}

@@ -1,10 +1,14 @@
 import Head from 'next/head'
-import Layout from '../components/layout'
-import { CMS_NAME } from '../lib/constants'
-import SwiperContainer from '../components/swiperContainer'
-import Column from '../components/column'
-import Container from '../components/container'
-import { populatePosts } from '../utils/populateContext'
+
+import Layout from '@layout/layout'
+import Column from '@layout/column'
+import Container from '@layout/container'
+
+import SwiperContainer from '@components/swiperContainer'
+
+import { CMS_NAME } from '@lib/constants'
+
+import { populatePosts } from '@utils/populateContext'
 
 export const getStaticProps = async () => {
   const posts = await populatePosts(
@@ -26,21 +30,22 @@ export default function Index({ posts }) {
         <title>{CMS_NAME}</title>
       </Head>
       <Container>
-        <Column>
+        <Column className="w-full">
           <SwiperContainer
             term="/recrutement/offres/avis-recrutement/"
             type="category"
             posts={posts}
+            className="title-primary"
           />
         </Column>
       </Container>
-      <Container>
+      <Container className="lg:pr-4">
         <Column className="lg:w-1/3 mb-4 lg:mb-0">
           <SwiperContainer
             term="/recrutement/offres/stage/"
             type="category"
             slides={1}
-            alternate
+            className="title-secondary"
           />
         </Column>
         <Column className="lg:w-2/3">
@@ -48,16 +53,17 @@ export default function Index({ posts }) {
             term="/recrutement/offres/bourses-etude/"
             type="category"
             slides={2}
-            alternate
+            className="title-secondary"
           />
         </Column>
       </Container>
-      <Container>
+      <Container className="lg:pr-4">
         <Column className="lg:w-2/3 mb-4 lg:mb-0">
           <SwiperContainer
             term="/recrutement/offres/avis-appel-offres/"
             type="category"
             slides={2}
+            className="title-primary"
           />
         </Column>
         <Column className="lg:w-1/3">
@@ -65,16 +71,17 @@ export default function Index({ posts }) {
             term="/recrutement/offres/call-for-papers/"
             type="category"
             slides={1}
+            className="title-primary"
           />
         </Column>
       </Container>
-      <Container>
+      <Container className="lg:pr-4">
         <Column className="lg:w-1/3 mb-4 lg:mb-0">
           <SwiperContainer
             term="/recrutement/offres/concours/"
             type="category"
             slides={1}
-            alternate
+            className="title-secondary"
           />
         </Column>
         <Column className="lg:w-2/3">
@@ -82,16 +89,17 @@ export default function Index({ posts }) {
             term="/recrutement/offres/formations/"
             type="category"
             slides={2}
-            alternate
+            className="title-secondary"
           />
         </Column>
       </Container>
-      <Container>
+      <Container className="lg:pr-4">
         <Column className="lg:w-2/3 mb-4 lg:mb-0">
           <SwiperContainer
             term="/recrutement/actualites/"
             type="category"
             slides={2}
+            className="title-primary"
           />
         </Column>
         <Column className="lg:w-1/3">
@@ -99,6 +107,7 @@ export default function Index({ posts }) {
             term="/recrutement/offres/volontaire/"
             type="category"
             slides={1}
+            className="title-primary"
           />
         </Column>
       </Container>

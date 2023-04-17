@@ -9,10 +9,7 @@ const GoTop = () => {
   }
 
   return (
-    <div
-      onClick={scrollToTop}
-      className="bg-dark w-10 h-10 rounded-full hover:bg-primary hover:animate-none fixed bottom-10 right-10 z-20 text-white flex items-center justify-center cursor-pointer animate-bounce transition-all duration-200"
-    >
+    <div onClick={scrollToTop} className="go-top">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"

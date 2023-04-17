@@ -1,36 +1,32 @@
-import Link from 'next/link'
 import React, { memo, useEffect, useState } from 'react'
-import useTerms from '../context/useTerms'
-import Container from './container'
-import { populateTerms } from '../utils/populateContext'
+import Link from 'next/link'
 
-const RegionsList = () => {
-  const { state, dispatch } = useTerms()
-  const [regions, setRegions] = useState(state.regions)
+import useTerms from '@hooks/useTerms'
+
+import { populateTerms } from '@utils/populateContext'
+
+const RegionsList = ({ active }) => {
+  const { stateTerms, dispatchTerms } = useTerms()
+  const [regions, setRegions] = useState(stateTerms.regions)
 
   useEffect(() => {
     if (!regions?.length) {
-      populateTerms('regions', dispatch, setRegions)
+      populateTerms('regions', dispatchTerms, setRegions)
     }
   }, [])
 
   if (!regions?.length) return <></>
 
   return (
-    <Container>
-      <ul className="flex flex-wrap text-xs justify-around">
-        {regions.map(({ id, uri, name, count }) => (
-          <li className="p-1 w-1/2 md:w-1/5" key={id}>
-            <Link
-              href={uri}
-              className="hover:font-bold transition-all duration-200"
-            >
-              {name} ({count})
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </Container>
+    <ul className={active === 2 ? 'terms-list flex' : 'terms-list hidden'}>
+      {regions.map(({ id, uri, name, count }) => (
+        <li className="regions-list" key={id}>
+          <Link href={uri}>
+            {name} ({count})
+          </Link>
+        </li>
+      ))}
+    </ul>
   )
 }
 export default memo(RegionsList)

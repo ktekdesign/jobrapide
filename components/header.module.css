@@ -1,6 +1,0 @@
-.reveal:hover a {
-  @apply lg:border-white lg:bg-secondary lg:border;
-}
-.active {
-  @apply border-white bg-secondary border font-bold rounded px-2 hover:text-primary;
-}

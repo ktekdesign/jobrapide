@@ -1,13 +1,13 @@
 import { createContext, Dispatch } from 'react'
-import { InitialModalStateType } from '../interfaces'
-import { initialModalState } from './dataReducer'
+import { InitialModalStateType } from '@utils/interfaces'
+import { initialModalState } from '@context/dataReducer'
 
 export const ModalContext = createContext<{
-  state: InitialModalStateType
-  dispatch: Dispatch<{ type: string } | null>
+  stateModal: InitialModalStateType
+  dispatchModal: Dispatch<{ type: string } | null>
 }>({
-  state: initialModalState,
-  dispatch: () => null,
+  stateModal: initialModalState,
+  dispatchModal: () => null,
 })
 
 export default ModalContext

@@ -1,57 +1,52 @@
 import React, { memo, useEffect, useState } from 'react'
+import Link from 'next/link'
+
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Pagination } from 'swiper'
-import PostPreview from './post-preview'
 import 'swiper/css'
 import 'swiper/css/bundle'
 import 'swiper/css/pagination'
-import CoverImage from './cover-image'
-import Link from 'next/link'
-import useTerms from '../context/useTerms'
-import { populatePosts } from '../utils/populateContext'
-import { actions } from '../context/dataReducer'
+
+import PostPreview from '@components/post-preview'
+import CoverImage from '@components/cover-image'
+
+import { actions } from '@context/dataReducer'
+
+import useTerms from '@hooks/useTerms'
+
+import { populatePosts } from '@utils/populateContext'
 
 export const SwiperContainer = ({
   term,
   type,
   slides = 3,
   light = false,
-  alternate = false,
-  redirect = '',
+  className = '',
   posts = null,
 }) => {
-  const { state, dispatch } = useTerms()
+  const { stateTerms, dispatchTerms } = useTerms()
   const [termWithPosts, setTermsWithPosts] = useState(
-    posts || state.posts.find((termPosts) => termPosts?.uri === term)
+    posts || stateTerms.posts.find((termPosts) => termPosts?.uri === term)
   )
   const priority = posts !== null
 
   useEffect(() => {
     if (priority) {
-      dispatch({ type: actions.SET_POSTS, payload: [posts, term] })
+      dispatchTerms({ type: actions.SET_POSTS, payload: [posts, term] })
     }
+
     if (!termWithPosts) {
-      populatePosts(term, type, dispatch, setTermsWithPosts)
+      populatePosts(term, type, dispatchTerms, setTermsWithPosts)
     }
   }, [termWithPosts])
 
   if (!termWithPosts) return <></>
 
   return (
-    <div
-      className={`shadow-lg ${
-        !light ? 'bg-dark' : ''
-      } hover:border hover:bg-slate-500 hover:shadow-2xl transition-all duration-200`}
-    >
+    <div className={light ? 'swiper-container' : 'swiper-container bg-dark'}>
       {!light && (
-        <h2
-          className={`p-4 text-white font-bold ${
-            alternate ? 'bg-secondary' : 'bg-primary'
-          }`}
-        >
-          <Link className="hover:underline" href={termWithPosts.uri}>
-            {termWithPosts.name}
-          </Link>
+        <h2 className={className}>
+          <Link href={termWithPosts.uri}>{termWithPosts.name}</Link>
         </h2>
       )}
       <Swiper
@@ -80,7 +75,7 @@ export const SwiperContainer = ({
         {termWithPosts.posts.edges.map(({ node }) => (
           <SwiperSlide key={node.id}>
             {light ? (
-              <Link href={redirect || node.uri} target={redirect && '_blank'}>
+              <Link href={node.uri}>
                 <CoverImage
                   title={node.title}
                   featuredImage={node.featuredImage}
@@ -102,4 +97,5 @@ export const SwiperContainer = ({
     </div>
   )
 }
+
 export default memo(SwiperContainer)

@@ -1,29 +1,25 @@
-import Link from 'next/link'
 import React, { memo, useState } from 'react'
-import styles from './terms.module.css'
+import Link from 'next/link'
 
 const Terms = ({ terms, name }) => {
-  const [hideTerms, setHideTerms] = useState(terms.length > 4)
+  const moreTerms = terms.length > 4
+  const [hideTerms, setHideTerms] = useState(moreTerms)
 
   if (!terms.length) return <></>
 
   return (
-    <span className={`mb-2 block text-dark ${hideTerms ? styles.terms : ''}`}>
+    <span className={hideTerms ? 'terms terms-hide' : 'terms'}>
       {name}
+
       {terms.map(({ node }) => (
-        <span
-          key={node.id}
-          className="mr-2 inline-block text-primary hover:text-secondary"
-        >
+        <span key={node.id}>
           <Link href={node.uri}>{node.name}</Link>
         </span>
       ))}
-      {terms.length > 4 && (
-        <small
-          className="cursor-pointer font-normal"
-          onClick={() => setHideTerms(!hideTerms)}
-        >
-          {!hideTerms ? 'Afficher moins' : '... Afficher plus'}
+
+      {moreTerms && (
+        <small className="more-terms" onClick={() => setHideTerms(!hideTerms)}>
+          {hideTerms ? '... Afficher plus' : 'Afficher moins'}
         </small>
       )}
     </span>

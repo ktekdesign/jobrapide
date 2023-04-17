@@ -1,13 +1,13 @@
 import React, { memo } from 'react'
 import parse from 'html-react-parser'
-import styles from './post-body.module.css'
 
-const PostBody = ({ content }) => {
-  return (
-    <div className="max-w-2xl">
-      <div className={styles.content}>{parse(content)}</div>
-    </div>
-  )
-}
+import styles from '@styles/post-body.module.css'
+import Container from '@layout/container'
+
+const PostBody = ({ content }) => (
+  <Container>
+    <div className={styles.content}>{parse(content)}</div>
+  </Container>
+)
 
 export default memo(PostBody)

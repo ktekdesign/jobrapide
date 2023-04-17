@@ -1,36 +1,32 @@
-import Link from 'next/link'
 import React, { memo, useEffect, useState } from 'react'
-import useTerms from '../context/useTerms'
-import Container from './container'
-import { populateTerms } from '../utils/populateContext'
+import Link from 'next/link'
 
-const SecteursList = () => {
-  const { state, dispatch } = useTerms()
-  const [secteurs, setSecteurs] = useState(state.secteurs)
+import useTerms from '@hooks/useTerms'
+
+import { populateTerms } from '@utils/populateContext'
+
+const SecteursList = ({ active }) => {
+  const { stateTerms, dispatchTerms } = useTerms()
+  const [secteurs, setSecteurs] = useState(stateTerms.secteurs)
 
   useEffect(() => {
     if (!secteurs?.length) {
-      populateTerms('secteurs', dispatch, setSecteurs)
+      populateTerms('secteurs', dispatchTerms, setSecteurs)
     }
   }, [secteurs])
 
   if (!secteurs?.length) return <></>
 
   return (
-    <Container>
-      <ul className="flex flex-wrap text-xs md:justify-around">
-        {secteurs.map(({ id, uri, name, count }) => (
-          <li className="p-1 md:w-1/3" key={id}>
-            <Link
-              href={uri}
-              className="hover:font-bold transition-all duration-200"
-            >
-              {name} ({count})
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </Container>
+    <ul className={active === 1 ? 'terms-list flex' : 'terms-list hidden'}>
+      {secteurs.map(({ id, uri, name, count }) => (
+        <li className="secteurs-list" key={id}>
+          <Link href={uri}>
+            {name} ({count})
+          </Link>
+        </li>
+      ))}
+    </ul>
   )
 }
 export default memo(SecteursList)

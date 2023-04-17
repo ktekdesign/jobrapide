@@ -1,11 +1,11 @@
 import React, { memo, useReducer } from 'react'
-import { termsReducer, initialState } from './dataReducer'
-import TermsContext from './termsContext'
+import { termsReducer, initialState } from '@context/dataReducer'
+import TermsContext from '@context/termsContext'
 
 const TermsContextProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(termsReducer, initialState)
+  const [stateTerms, dispatchTerms] = useReducer(termsReducer, initialState)
   return (
-    <TermsContext.Provider value={{ state, dispatch }}>
+    <TermsContext.Provider value={{ stateTerms, dispatchTerms }}>
       {children}
     </TermsContext.Provider>
   )
