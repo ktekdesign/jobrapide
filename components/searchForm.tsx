@@ -19,25 +19,25 @@ const SearchForm = () => {
   return (
     <div className="animate-slideinup">
       <div className="row">
-        <Label title="Poste" htmlFor="grid-first-name" />
-        <Input id="grid-first-name" />
+        <Label title="Poste" htmlFor="fonction" />
+        <Input id="fonction" />
       </div>
       {!!categories?.length && (
         <div className="row">
-          <Label title="Categorie" htmlFor="grid-state" />
-          <Select options={categories} />
+          <Label title="Categorie" htmlFor="category" />
+          <Select options={categories} id="category" />
         </div>
       )}
       {!!secteurs?.length && (
         <div className="row">
-          <Label title="Domaine" htmlFor="grid-state" />
-          <Select options={secteurs} />
+          <Label title="Domaine" htmlFor="secteur" />
+          <Select options={secteurs} id="secteur" />
         </div>
       )}
       {!!regions?.length && (
         <div className="row">
-          <Label title="Region" htmlFor="grid-state" />
-          <Select options={regions} />
+          <Label title="Region" htmlFor="region" />
+          <Select options={regions} id="region" />
         </div>
       )}
     </div>

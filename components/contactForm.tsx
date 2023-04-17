@@ -6,24 +6,20 @@ const ContactForm = () => {
   return (
     <div className="border p-4">
       <div className="row">
-        <Label title="Nom" />
-        <Input id="grid-first-name" />
+        <Label title="Nom" htmlFor="first-name" />
+        <Input id="first-name" />
       </div>
       <div className="row">
-        <Label title="email" type="email" />
-        <Input id="grid-first-name" />
+        <Label title="email" htmlFor="email" />
+        <Input id="email" type="email" />
       </div>
       <div className="row">
-        <Label title="Téléphone" />
-        <Input id="grid-first-name" />
+        <Label title="Téléphone" htmlFor="phone" />
+        <Input id="phone" />
       </div>
       <div className="row">
-        <Label title="Message" />
-        <textarea
-          className="form-input"
-          id="grid-first-name"
-          rows={5}
-        ></textarea>
+        <Label title="Message" htmlFor="message" />
+        <textarea className="form-input" id="message" rows={5}></textarea>
       </div>
     </div>
   )

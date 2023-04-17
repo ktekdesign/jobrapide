@@ -19,20 +19,20 @@ const SearchCurriculumForm = () => {
     <div className="animate-slideinup">
       {!!niveaux?.length && (
         <div className="row">
-          <Label title="Niveaux" htmlFor="grid-state" />
-          <Select options={niveaux} />
+          <Label title="Niveaux" htmlFor="niveau" />
+          <Select options={niveaux} id="niveau" />
         </div>
       )}
       {!!secteurs?.length && (
         <div className="row">
-          <Label title="Domaine" htmlFor="grid-state" />
-          <Select options={secteurs} />
+          <Label title="Domaine" htmlFor="secteur" />
+          <Select options={secteurs} id="secteur" />
         </div>
       )}
       {!!regions?.length && (
         <div className="row">
-          <Label title="Region" htmlFor="grid-state" />
-          <Select options={regions} />
+          <Label title="Region" htmlFor="region" />
+          <Select options={regions} id="region" />
         </div>
       )}
     </div>

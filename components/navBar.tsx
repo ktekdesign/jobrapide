@@ -81,7 +81,7 @@ const NavBar = ({ items }) => {
               <Link
                 href={item.uri}
                 className={`menu-item-link ${
-                  currentPath == item.uri ? 'menu-active' : ''
+                  currentPath.startsWith(item.uri) ? 'menu-active' : ''
                 }`}
               >
                 {item.title}

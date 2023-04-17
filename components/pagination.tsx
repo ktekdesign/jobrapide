@@ -1,17 +1,16 @@
+import { getLast, next, prev } from '@utils/manipulateArray'
 import Link from 'next/link'
 import React, { memo } from 'react'
 
 const Pagination = ({ currentPage, uri, pages }) => {
   const isFirstPage = (page) => page === 1
-  const isLastPage = currentPage === pages.slice(-1)[0]
-  const prevPage = currentPage - 1
-  const nextPage = currentPage + 1
+  const isLastPage = currentPage === getLast(pages)
   const url = (page) => `${uri}${!isFirstPage(page) && `page/${page}/`}`
 
   return (
     <div className="pagination">
       {!isFirstPage(currentPage) && (
-        <Link className="pagination-item" href={url(prevPage)}>
+        <Link className="pagination-item" href={url(prev(currentPage))}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -51,7 +50,7 @@ const Pagination = ({ currentPage, uri, pages }) => {
       })}
 
       {!isLastPage && (
-        <Link className="pagination-item" href={url(nextPage)}>
+        <Link className="pagination-item" href={url(next(currentPage))}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

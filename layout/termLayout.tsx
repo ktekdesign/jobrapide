@@ -5,6 +5,7 @@ import { CMS_NAME } from '@lib/constants'
 
 import dynamic from 'next/dynamic'
 import Pagination from '@components/pagination'
+import { getFirst, getLast, next, prev } from '@utils/manipulateArray'
 const MoreStories = dynamic(() => import('@components/more-stories'), {
   ssr: false,
 })
@@ -35,14 +36,14 @@ const TermLayout = ({ term, current }) => {
       last.push(index)
     }
   }
-  if (current >= first.splice(-1)[0] && current <= last[0]) {
+  if (current >= getLast(first) && current <= getFirst(last)) {
     first.pop()
     last.shift()
     if (current === 3 || current === 4) middle.splice(0, 1)
-    if (current - 1 !== first.splice(-1, 1)[0]) middle.push(current - 1)
+    if (prev(current) !== getLast(first)) middle.push(prev(current))
     middle.push(current)
-    if (current + 1 !== last[0]) {
-      middle.push(current + 1)
+    if (current + 1 !== getFirst(last)) {
+      middle.push(next(current))
       middle.push('...')
     }
   }
