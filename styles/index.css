@@ -304,7 +304,7 @@ footer {
   @apply uppercase tracking-wide text-xs text-indigo-600 font-bold;
 }
 .archive-post-title {
-  @apply block text-lg leading-tight font-semibold text-gray-900 hover:underline;
+  @apply block text-base leading-tight font-semibold text-gray-900 hover:underline;
 }
 .post-list-terms {
   @apply mt-2 tracking-wide text-xs font-bold;
