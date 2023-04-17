@@ -11,7 +11,7 @@ export const populateTerms = async (type, dispatch = null, setTerms = null) => {
 
 export const populatePosts = async (
   term,
-  type,
+  type = 'category',
   dispatch = null,
   setTermsWithPosts = null
 ) => {

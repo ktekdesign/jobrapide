@@ -124,13 +124,13 @@ main {
   @apply container;
 }
 .right {
-  @apply container lg:px-2 lg:w-1/4 gap-4 flex flex-col items-center;
+  @apply container lg:px-2 lg:w-1/4 flex flex-col items-center;
 }
 .left {
   @apply lg:w-3/4 container lg:px-2;
 }
 .row {
-  @apply w-full flex flex-col mb-4 mt-4;
+  @apply w-full flex flex-col mb-2 mt-2;
 }
 .title-primary {
   @apply p-4 text-white font-bold bg-primary;

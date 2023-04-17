@@ -30,7 +30,12 @@ const Layout = ({ children }) => (
           />
         </Row>
         <Row>
-          <SwiperContainer term="/emploi/sponsorisees/" type="tag" slides={1} />
+          <SwiperContainer
+            term="/emploi/sponsorisees/"
+            type="tag"
+            slides={1}
+            className="title-primary"
+          />
         </Row>
         <Row>
           <Pub term="/recrutement/publicite/partenaires/" withTitle />

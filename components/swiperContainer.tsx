@@ -18,7 +18,7 @@ import { populatePosts } from '@utils/populateContext'
 
 export const SwiperContainer = ({
   term,
-  type,
+  type = 'category',
   slides = 3,
   light = false,
   className = '',
