@@ -29,52 +29,53 @@ async function fetchAPI(query = '', { variables }: Record<string, any> = {}) {
   }
   return json.data
 }
-const post_response = `pageInfo {
+const post_response = `id
+databaseId
+title
+excerpt
+content
+slug
+date
+categories{
+  
+    nodes {
+      name
+      uri
+      databaseId
+    }
+  
+}
+secteurs{
+  
+    nodes {
+      name
+      uri
+      databaseId
+    }
+  
+}
+regions{
+  
+    nodes {
+      name
+      uri
+      databaseId
+    }
+  
+}
+uri
+featuredImage {
+  node {
+    sourceUrl
+  }
+}`
+const posts_response = `pageInfo {
   hasNextPage
   endCursor
 }
 
   nodes {
-    id
-    databaseId
-    title
-    excerpt
-    content
-    slug
-    date
-    categories{
-      
-        nodes {
-          name
-          uri
-          databaseId
-        }
-      
-    }
-    secteurs{
-      
-        nodes {
-          name
-          uri
-          databaseId
-        }
-      
-    }
-    regions{
-      
-        nodes {
-          name
-          uri
-          databaseId
-        }
-      
-    }
-    uri
-    featuredImage {
-      node {
-        sourceUrl
-      }
-    }
+    ${post_response}
   }`
 export async function getPreviewPost(id, idType = 'DATABASE_ID') {
   const data = await fetchAPI(
@@ -108,132 +109,40 @@ export async function getAllPagesWithSlug() {
   return data?.pages
 }
 
-export async function getPostAndMorePosts(
-  slug,
-  preview = false,
-  previewData = null
-) {
-  const postPreview = preview && previewData?.post
-  // The slug may be the id of an unpublished post
-  const isId = Number.isInteger(Number(slug))
-  const isSamePost = isId
-    ? Number(slug) === postPreview.id
-    : slug === postPreview.slug
-  const isDraft = isSamePost && postPreview?.status === 'draft'
-  const isRevision = isSamePost && postPreview?.status === 'publish'
+export async function getPostAndMorePosts(slug) {
   const data = await fetchAPI(
     `
-    fragment AuthorFields on User {
-      name
-      firstName
-      lastName
-      avatar {
-        url
-      }
-    }
-    fragment PostFields on Post {
-      id
-      title
-      excerpt
-      slug
-      date
-      uri
-      featuredImage {
-        node {
-          sourceUrl
-        }
-      }
-      author {
-        node {
-          ...AuthorFields
-        }
-      }
-      categories {
-          nodes {
-            name,
-            uri
-            id
-          }
-      }
-      secteurs{
-          nodes {
-            name
-            uri
-            id
-          }
-      }
-      regions{
-          nodes {
-            name
-            uri
-            id
-          }
-      }
-    }
     query PostBySlug($id: ID!, $idType: PostIdType!) {
       post(id: $id, idType: $idType) {
-        ...PostFields
-        content
-        ${
-          // Only some of the fields of a revision are considered as there are some inconsistencies
-          isRevision
-            ? `
-        revisions(first: 1, where: { orderby: { field: MODIFIED, order: DESC } }) {
-          edges {
-            node {
-              title
-              excerpt
-              content
-              author {
-                node {
-                  ...AuthorFields
-                }
-              }
-            }
-          }
-        }
-        `
-            : ''
-        }
+        ${post_response}
       }
       posts(first: 4, where: { orderby: { field: DATE, order: DESC } }) {
-          nodes {
-            ...PostFields
-          }
+          ${posts_response}
       }
     }
   `,
     {
       variables: {
-        id: isDraft ? postPreview.id : slug,
-        idType: isDraft ? 'DATABASE_ID' : 'URI',
+        id: slug,
+        idType: 'URI',
       },
     }
   )
 
-  // Draft posts may not have an slug
-  if (isDraft) data.post.slug = postPreview.id
-  // Apply a revision (changes in a published post)
-  if (isRevision && data.post.revisions) {
-    const revision = data.post.revisions.nodes[0]
-
-    if (revision) Object.assign(data.post, revision)
-    delete data.post.revisions
-  }
-
   // Filter out the main post
-  data.posts.nodes = data.posts.nodes.filter((post) => post.slug !== slug)
-  // If there are still 3 posts, remove the last one
-  if (data.posts.nodes.length > 2) data.posts.nodes.pop()
-  const response = data.posts.nodes.map((post) => mapPost(post))
-  return response?.nodes
+  data.posts = data.posts.nodes.filter((post) => post.slug !== slug)
+  // If there are still 4 posts, remove the last one
+  if (data.posts.length > 3) data.posts.pop()
+  const post = mapPost(data.post)
+  const posts = data.posts.map((post) => mapPost(post))
+  return { post: post, posts: posts }
 }
 
 export async function getTermAndPosts(term, type, page = 1) {
   const posts_query =
     page === 1
       ? `posts(first: 10, where: { orderby: { field: DATE, order: DESC } }) {
-    ${post_response}   
+    ${posts_response}   
   }`
       : ''
   const data = await fetchAPI(
@@ -392,7 +301,7 @@ export async function performSearch({
         }
       }
     ){
-      ${post_response}
+      ${posts_response}
     }
   }
   `)

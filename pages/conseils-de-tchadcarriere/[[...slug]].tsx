@@ -10,8 +10,6 @@ export const getServerSideProps = async ({ resolvedUrl, res }) => {
   return data
 }
 
-const Post = ({ post, posts }) => (
-  <PostLayout post={post} posts={posts?.edges} />
-)
+const Post = ({ post, posts }) => <PostLayout post={post} posts={posts} />
 
 export default Post

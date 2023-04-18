@@ -10,7 +10,7 @@ const PostLayout = ({ post, posts }) => (
   <Layout>
     <Head>
       <title>{`${post.title} | ${CMS_NAME}`}</title>
-      <meta property="og:image" content={post.featuredImage?.node.sourceUrl} />
+      <meta property="og:image" content={post.image} />
     </Head>
     <PostHeader
       title={post.title}
