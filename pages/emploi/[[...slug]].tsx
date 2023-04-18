@@ -10,6 +10,8 @@ export const getServerSideProps = async ({ resolvedUrl, params, res }) => {
   return data
 }
 
-const Tag = ({ term, current }) => <TermLayout term={term} current={current} />
+const Tag = ({ term, currentPage }) => (
+  <TermLayout term={term} currentPage={currentPage} />
+)
 
 export default Tag

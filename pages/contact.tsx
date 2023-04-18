@@ -2,6 +2,7 @@ import Head from 'next/head'
 import ContactForm from '@components/contactForm'
 import Layout from '@layout/layout'
 import { CMS_NAME } from '@lib/constants'
+import ArchiveTitle from '@components/archive-title'
 
 export default function Contact() {
   return (
@@ -9,7 +10,7 @@ export default function Contact() {
       <Head>
         <title>{`Contact - ${CMS_NAME}`}</title>
       </Head>
-      <h1 className="bg-primary text-white text-2xl p-2">Contact</h1>
+      <ArchiveTitle>Contact</ArchiveTitle>
       <ContactForm />
     </Layout>
   )

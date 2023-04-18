@@ -2,18 +2,18 @@ import React, { memo, useState } from 'react'
 import Link from 'next/link'
 
 const Terms = ({ terms, name }) => {
-  const moreTerms = terms.length > 4
+  const moreTerms = terms?.length > 4
   const [hideTerms, setHideTerms] = useState(moreTerms)
 
-  if (!terms.length) return <></>
+  if (!terms?.length) return <></>
 
   return (
     <span className={hideTerms ? 'terms terms-hide' : 'terms'}>
       {name}
 
-      {terms.map(({ node }) => (
-        <span key={node.id}>
-          <Link href={node.uri}>{node.name}</Link>
+      {terms.map(({ id, uri, name }) => (
+        <span key={id}>
+          <Link href={uri}>{name}</Link>
         </span>
       ))}
 

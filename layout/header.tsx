@@ -15,12 +15,8 @@ const Header = () => {
         <SearchCurriculumForm />
         <SearchForm />
       </Modal>
-      <div className="mb-4 mt-4">
-        <Pub
-          term="/recrutement/publicite/pub-niveau-2/"
-          width={768}
-          height={90}
-        />
+      <div className="pub-in-header">
+        <Pub term="/recrutement/publicite/pub-niveau-2/" />
       </div>
     </>
   )

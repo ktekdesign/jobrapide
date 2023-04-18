@@ -3,10 +3,9 @@ import { getCategories, getTermAndPosts, getTerms } from '../lib/api'
 
 export const populateTerms = async (type, dispatch = null, setTerms = null) => {
   const data = await (type === 'categories' ? getCategories() : getTerms(type))
-  if (dispatch)
-    dispatch({ type: actions.SET_TERMS, payload: [data.nodes, type] })
-  if (setTerms) setTerms(data.nodes)
-  return data.nodes
+  if (dispatch) dispatch({ type: actions.SET_TERMS, payload: [data, type] })
+  if (setTerms) setTerms(data)
+  return data
 }
 
 export const populatePosts = async (

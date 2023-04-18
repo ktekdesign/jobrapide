@@ -1,12 +1,12 @@
 import { createContext, Dispatch } from 'react'
-import { InitialStateType, TermProps, TermsListProps } from '@utils/interfaces'
+import { InitialStateType, Term } from '@utils/interfaces'
 import { initialState } from '@context/dataReducer'
 
 export const TermsContext = createContext<{
   stateTerms: InitialStateType
   dispatchTerms: Dispatch<{
     type: string
-    payload: [TermProps | TermsListProps, string]
+    payload: [Term | Term[], string]
   } | null>
 }>({
   stateTerms: initialState,

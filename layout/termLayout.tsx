@@ -6,11 +6,12 @@ import { CMS_NAME } from '@lib/constants'
 import dynamic from 'next/dynamic'
 import Pagination from '@components/pagination'
 import { getFirst, getLast, next, prev } from '@utils/manipulateArray'
+import ArchiveTitle from '@components/archive-title'
 const MoreStories = dynamic(() => import('@components/more-stories'), {
   ssr: false,
 })
 
-const TermLayout = ({ term, current }) => {
+const TermLayout = ({ term, currentPage }) => {
   const PER_PAGE = 10
   const PAGE_BREAK = 3
   const totalPages = Math.ceil(term.count / PER_PAGE)
@@ -36,14 +37,14 @@ const TermLayout = ({ term, current }) => {
       last.push(index)
     }
   }
-  if (current >= getLast(first) && current <= getFirst(last)) {
+  if (currentPage >= getLast(first) && currentPage <= getFirst(last)) {
     first.pop()
     last.shift()
-    if (current === 3 || current === 4) middle.splice(0, 1)
-    if (prev(current) !== getLast(first)) middle.push(prev(current))
-    middle.push(current)
-    if (current + 1 !== getFirst(last)) {
-      middle.push(next(current))
+    if (currentPage === 3 || currentPage === 4) middle.splice(0, 1)
+    if (prev(currentPage) !== getLast(first)) middle.push(prev(currentPage))
+    middle.push(currentPage)
+    if (currentPage + 1 !== getFirst(last)) {
+      middle.push(next(currentPage))
       middle.push('...')
     }
   }
@@ -53,17 +54,12 @@ const TermLayout = ({ term, current }) => {
     <Layout>
       <Head>
         <title>{`${term.name} | ${CMS_NAME}`}</title>
-        <meta
-          property="og:image"
-          content={
-            term?.posts?.edges?.shift().node.featuredImage?.node.sourceUrl
-          }
-        />
+        <meta property="og:image" content={term?.posts[0]?.image} />
       </Head>
 
-      <h1 className="archive-main-title">{term.name}</h1>
-      <MoreStories posts={term?.posts?.edges} />
-      <Pagination uri={term.uri} currentPage={current} pages={pages} />
+      <ArchiveTitle currentPage={currentPage}>{term.name}</ArchiveTitle>
+      <MoreStories posts={term?.posts} />
+      <Pagination uri={term.uri} currentPage={currentPage} pages={pages} />
     </Layout>
   )
 }

@@ -10,8 +10,8 @@ export const getServerSideProps = async ({ resolvedUrl, params, res }) => {
   return data
 }
 
-const Category = ({ term, current }) => (
-  <TermLayout term={term} current={current} />
+const Category = ({ term, currentPage }) => (
+  <TermLayout term={term} currentPage={currentPage} />
 )
 
 export default Category

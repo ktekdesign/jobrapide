@@ -37,6 +37,7 @@ const Modal = ({ children }) => {
     <dialog onClick={closeModal} id="modal" open={stateModal.toggleModal}>
       <div onClick={(e) => e.stopPropagation()} className="modal-inner">
         <form
+          action="/search/"
           className={
             stateModal.toggleModal
               ? 'modal-form animate-slideinup'
@@ -92,7 +93,7 @@ const Modal = ({ children }) => {
               Publier une Offre / Post a Job
             </Link>
 
-            <button type="button" className="modal-submit-button">
+            <button type="submit" className="modal-submit-button">
               Recherche
             </button>
           </div>

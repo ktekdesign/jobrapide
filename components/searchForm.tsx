@@ -20,24 +20,24 @@ const SearchForm = () => {
     <div className="animate-slideinup">
       <div className="row">
         <Label title="Poste" htmlFor="fonction" />
-        <Input id="fonction" />
+        <Input name="s" id="fonction" />
       </div>
       {!!categories?.length && (
         <div className="row">
           <Label title="Categorie" htmlFor="category" />
-          <Select options={categories} id="category" />
+          <Select name="category" options={categories} id="category" />
         </div>
       )}
       {!!secteurs?.length && (
         <div className="row">
           <Label title="Domaine" htmlFor="secteur" />
-          <Select options={secteurs} id="secteur" />
+          <Select name="secteur" options={secteurs} id="secteur" />
         </div>
       )}
       {!!regions?.length && (
         <div className="row">
           <Label title="Region" htmlFor="region" />
-          <Select options={regions} id="region" />
+          <Select name="region" options={regions} id="region" />
         </div>
       )}
     </div>

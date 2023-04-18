@@ -14,7 +14,7 @@ const PostLayout = ({ post, posts }) => (
     </Head>
     <PostHeader
       title={post.title}
-      coverImage={post.featuredImage}
+      image={post.image}
       date={post.date}
       categories={post.categories}
       secteurs={post.secteurs}

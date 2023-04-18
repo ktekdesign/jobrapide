@@ -15,6 +15,7 @@ import { actions } from '@context/dataReducer'
 import useTerms from '@hooks/useTerms'
 
 import { populatePosts } from '@utils/populateContext'
+import { Post, PostProps } from '@utils/interfaces'
 
 export const SwiperContainer = ({
   term,
@@ -29,6 +30,7 @@ export const SwiperContainer = ({
     posts || stateTerms.posts.find((termPosts) => termPosts?.uri === term)
   )
   const priority = posts !== null
+  const items: Post[] = termWithPosts?.posts
 
   useEffect(() => {
     if (priority) {
@@ -72,24 +74,14 @@ export const SwiperContainer = ({
         }}
         modules={[Pagination, Autoplay]}
       >
-        {termWithPosts.posts.edges.map(({ node }) => (
-          <SwiperSlide key={node.id}>
+        {items.map(({ id, uri, title, image }) => (
+          <SwiperSlide key={id}>
             {light ? (
-              <Link href={node.uri}>
-                <CoverImage
-                  title={node.title}
-                  featuredImage={node.featuredImage}
-                />
+              <Link href={uri}>
+                <CoverImage title={title} image={image} />
               </Link>
             ) : (
-              <PostPreview
-                key={node.id}
-                id={node.id}
-                title={node.title}
-                featuredImage={node.featuredImage}
-                uri={node.uri}
-                priority={priority}
-              />
+              <PostPreview key={id} title={title} image={image} uri={uri} />
             )}
           </SwiperSlide>
         ))}

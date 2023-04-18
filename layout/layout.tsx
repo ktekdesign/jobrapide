@@ -11,6 +11,7 @@ import Pub from '@components/pub'
 import SwiperContainer from '@components/swiperContainer'
 import GoTop from '@components/gotop'
 import Twitter from '@components/twitter'
+import ImageSlider from '@components/image-slider'
 
 const Layout = ({ children }) => (
   <>
@@ -23,11 +24,7 @@ const Layout = ({ children }) => (
       </Column>
       <Column className="right">
         <Row>
-          <Pub
-            term="/recrutement/publicite/pub-niveau-1/"
-            width={320}
-            height={250}
-          />
+          <Pub term="/recrutement/publicite/pub-niveau-1/" />
         </Row>
         <Row>
           <SwiperContainer
@@ -38,14 +35,10 @@ const Layout = ({ children }) => (
           />
         </Row>
         <Row>
-          <Pub term="/recrutement/publicite/partenaires/" withTitle />
+          <ImageSlider term="/recrutement/publicite/partenaires/" />
         </Row>
         <Row>
-          <Pub
-            term="/recrutement/publicite/pub-niveau-3/"
-            width={320}
-            height={250}
-          />
+          <Pub term="/recrutement/publicite/pub-niveau-3/" />
         </Row>
         <Row>
           <Facebook />

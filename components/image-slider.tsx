@@ -1,5 +1,7 @@
 import React, { memo, useEffect, useState } from 'react'
-import parse from 'html-react-parser'
+import Link from 'next/link'
+import Image from 'next/image'
+
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Pagination, EffectFlip } from 'swiper'
 import 'swiper/css'
@@ -11,7 +13,7 @@ import useTerms from '@hooks/useTerms'
 
 import { populatePosts } from '@utils/populateContext'
 
-export const Pub = ({ term }) => {
+export const ImageSlider = ({ term, width = 0, height = 0 }) => {
   const { stateTerms, dispatchTerms } = useTerms()
   const [termWithPosts, setTermsWithPosts] = useState(
     stateTerms.posts.find((termPosts) => termPosts?.uri === term)
@@ -27,6 +29,7 @@ export const Pub = ({ term }) => {
 
   return (
     <div className="swiper-container">
+      <h2 className="title-secondary">{termWithPosts.name}</h2>
       <Swiper
         pagination={{
           clickable: true,
@@ -47,11 +50,22 @@ export const Pub = ({ term }) => {
         }}
         modules={[Pagination, Autoplay, EffectFlip]}
       >
-        {termWithPosts.posts.map(({ id, content }) => (
-          <SwiperSlide key={id}>{parse(content)}</SwiperSlide>
+        {termWithPosts.posts.map(({ id, uri, title, image }) => (
+          <SwiperSlide key={id}>
+            <Link href={uri} className="flex justify-center" target="_blank">
+              <Image
+                width={width || 200}
+                height={height || 200}
+                alt={title}
+                src={image}
+                className="max-h-max h-auto"
+                priority
+              />
+            </Link>
+          </SwiperSlide>
         ))}
       </Swiper>
     </div>
   )
 }
-export default memo(Pub)
+export default memo(ImageSlider)
