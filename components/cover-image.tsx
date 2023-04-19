@@ -1,3 +1,4 @@
+import { isEmpty } from '@utils/manipulateArray'
 import Image from 'next/image'
 import Link from 'next/link'
 import { memo } from 'react'
@@ -21,6 +22,7 @@ const CoverImage = ({
   height,
   priority,
 }: Props) => {
+  if (isEmpty(image)) return <></>
   const imageFeature = (
     <Image
       width={width || 200}

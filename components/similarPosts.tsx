@@ -7,9 +7,10 @@ import 'swiper/css/bundle'
 import 'swiper/css/pagination'
 
 import PostPreview from '@components/post-preview'
+import { isEmpty } from '@utils/manipulateArray'
 
 export const SimilarPosts = ({ posts }) => {
-  if (!posts?.length) return <></>
+  if (isEmpty(posts)) return <></>
 
   return (
     <div className="swiper-container bg-dark">

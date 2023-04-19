@@ -185,7 +185,9 @@ footer {
 .reveal.download a {
   @apply p-1 bg-white;
 }
-
+.download {
+  @apply lg:hidden;
+}
 .reveal:hover a {
   @apply lg:border-white lg:bg-secondary lg:border;
 }
@@ -205,6 +207,9 @@ footer {
   @apply mb-4 flex items-center justify-end gap-4 lg:gap-1 lg:mb-0;
 }
 .menu-mobile {
+  @apply block lg:hidden;
+}
+.menu-mobile button {
   @apply flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white;
 }
 .navbar {
@@ -362,7 +367,7 @@ footer {
 
 /* Pagination */
 .pagination {
-  @apply flex flex-wrap sm:flex-nowrap gap-1 md:gap-2 justify-center py-1 md:py-4;
+  @apply flex flex-wrap sm:flex-nowrap gap-1 md:gap-2 justify-center py-4;
 }
 .pagination-item {
   @apply border p-2 inline-block text-center text-xs md:text-sm hover:text-white hover:bg-secondary hover:font-bold;
@@ -393,7 +398,24 @@ footer {
 .pub-in-header img {
   @apply w-full;
 }
-
 .facebook > div {
   @apply sm:flex justify-center lg:block;
+}
+.post-preview-image {
+  @apply mb-5 bg-white;
+}
+.post-preview-title {
+  @apply text-sm mb-3 leading-snug;
+}
+.post-preview-title a {
+  @apply text-white hover:underline;
+}
+.post-header-image {
+  @apply mb-8 md:mb-16 sm:mx-0;
+}
+.post-header-date {
+  @apply mb-2 text-sm font-bold;
+}
+.post-header-terms {
+  @apply mb-2 text-xs;
 }

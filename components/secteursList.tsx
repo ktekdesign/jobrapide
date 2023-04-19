@@ -4,18 +4,17 @@ import Link from 'next/link'
 import useTerms from '@hooks/useTerms'
 
 import { populateTerms } from '@utils/populateContext'
+import { isEmpty } from '@utils/manipulateArray'
 
 const SecteursList = ({ active }) => {
   const { stateTerms, dispatchTerms } = useTerms()
   const [secteurs, setSecteurs] = useState(stateTerms.secteurs)
 
   useEffect(() => {
-    if (!secteurs?.length) {
-      populateTerms('secteurs', dispatchTerms, setSecteurs)
-    }
+    if (isEmpty(secteurs)) populateTerms('secteurs', dispatchTerms, setSecteurs)
   }, [secteurs])
 
-  if (!secteurs?.length) return <></>
+  if (isEmpty(secteurs)) return <></>
 
   return (
     <ul className={active === 1 ? 'terms-list flex' : 'terms-list hidden'}>

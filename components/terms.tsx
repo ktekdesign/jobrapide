@@ -1,11 +1,12 @@
 import React, { memo, useState } from 'react'
 import Link from 'next/link'
+import { isEmpty } from '@utils/manipulateArray'
 
 const Terms = ({ terms, name }) => {
   const moreTerms = terms?.length > 4
   const [hideTerms, setHideTerms] = useState(moreTerms)
 
-  if (!terms?.length) return <></>
+  if (isEmpty(terms)) return <></>
 
   return (
     <span className={hideTerms ? 'terms terms-hide' : 'terms'}>

@@ -6,6 +6,7 @@ import useTerms from '@hooks/useTerms'
 import Select from '@components/form/select'
 import Label from '@components/form/label'
 import Input from '@components/form/input'
+import { isEmpty } from '@utils/manipulateArray'
 
 const SearchForm = () => {
   const { stateModal } = useModal()
@@ -22,19 +23,19 @@ const SearchForm = () => {
         <Label title="Poste" htmlFor="fonction" />
         <Input name="s" id="fonction" />
       </div>
-      {!!categories?.length && (
+      {!isEmpty(categories) && (
         <div className="row">
           <Label title="Categorie" htmlFor="category" />
           <Select name="category" options={categories} id="category" />
         </div>
       )}
-      {!!secteurs?.length && (
+      {!isEmpty(secteurs) && (
         <div className="row">
           <Label title="Domaine" htmlFor="secteur" />
           <Select name="secteur" options={secteurs} id="secteur" />
         </div>
       )}
-      {!!regions?.length && (
+      {!isEmpty(regions) && (
         <div className="row">
           <Label title="Region" htmlFor="region" />
           <Select name="region" options={regions} id="region" />

@@ -47,8 +47,8 @@ const NavBar = ({ items }) => {
           </span>
         </Link>
       </div>
-      <div className="block lg:hidden">
-        <button className="menu-mobile" onClick={() => setShowMenu(!showMenu)}>
+      <div className="menu-mobile">
+        <button onClick={() => setShowMenu(!showMenu)}>
           {showMenu ? (
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -138,7 +138,7 @@ const NavBar = ({ items }) => {
               </svg>
             </Link>
           </li>
-          <li className="lg:hidden reveal download">
+          <li className="reveal download">
             <Link
               href="https://play.google.com/store/apps/details?id=com.ktekdesign.app.tchadcarriere"
               title="Télecharger notre application Android"
@@ -146,7 +146,6 @@ const NavBar = ({ items }) => {
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="text-white"
                 height="h-4"
                 width="h-6"
                 y="0"
@@ -177,8 +176,8 @@ const NavBar = ({ items }) => {
                     id="path1192"
                     d="M33.7 29.2C12.3 52.2 0 87.6 0 133.6v1636.2c0 46 12.3 81.4 34.5 103.6l5.8 4.9 916.8-916.8v-20.6L39.5 24.3l-5.8 4.9z"
                     fill="url(#SVGID_1_)"
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                   />
                   <linearGradient
                     gradientTransform="matrix(9.145 0 0 -7.7 -25077.303 11907.105)"
@@ -198,8 +197,8 @@ const NavBar = ({ items }) => {
                     id="path1203"
                     d="M1262.1 1268.3L956.3 962.4V941l305.9-305.9 6.6 4.1 361.8 205.6c103.6 58.4 103.6 154.6 0 213.8l-361.8 205.6c-.1 0-6.7 4.1-6.7 4.1z"
                     fill="url(#SVGID_2_)"
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                   />
                   <linearGradient
                     gradientTransform="matrix(15.02 0 0 -11.5775 -43191.684 17692.937)"
@@ -217,8 +216,8 @@ const NavBar = ({ items }) => {
                     id="path1210"
                     d="M1268.7 1264.2L956.3 951.7 33.7 1874.3c33.7 36.2 90.4 40.3 153.8 4.9l1081.2-615"
                     fill="url(#SVGID_3_)"
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                   />
                   <linearGradient
                     gradientTransform="matrix(15.02 0 0 -11.5715 -43191.684 17672.391)"
@@ -239,29 +238,29 @@ const NavBar = ({ items }) => {
                     id="path1223"
                     d="M1268.7 639.3L187.5 25.1C124.2-11.1 67.4-6.2 33.7 30l922.5 921.7z"
                     fill="url(#SVGID_4_)"
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                   />
                   <path
                     id="path1225"
                     d="M1262.1 1257.6L188.3 1867.7c-60 34.5-113.5 32.1-148 .8l-5.8 5.8 5.8 4.9c34.5 31.2 88 33.7 148-.8l1081.2-614.2-7.4-6.6z"
                     opacity=".2"
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                   />
                   <path
                     id="path1227"
                     d="M1630.5 1047.9l-369.2 209.7 6.6 6.6 361.8-205.6c51.8-29.6 77.3-68.2 77.3-106.9-3.3 35.4-29.6 69.1-76.5 96.2z"
                     opacity=".12"
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                   />
                   <path
                     id="path1229"
                     d="M187.5 35.8l1443 819.8c46.9 26.3 73.2 60.8 77.3 96.2 0-38.6-25.5-77.3-77.3-106.9L187.5 25.1C83.9-34.1 0 15.2 0 133.6v10.7C0 25.9 83.9-22.6 187.5 35.8z"
                     opacity=".25"
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     fill="#fff"
                   />
                 </g>

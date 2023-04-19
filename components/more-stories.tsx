@@ -5,9 +5,10 @@ import parse from 'html-react-parser'
 import CoverImage from '@components/cover-image'
 import Terms from '@components/terms'
 import Date from '@components/date'
+import { isEmpty } from '@utils/manipulateArray'
 
 const MoreStories = ({ posts }) => {
-  if (!posts.length) return <></>
+  if (isEmpty(posts)) return <></>
 
   return (
     <section className="flex flex-col gap-4">

@@ -7,6 +7,7 @@ import useModal from '@hooks/useModal'
 import useTerms from '@hooks/useTerms'
 
 import { populateTerms } from '@utils/populateContext'
+import { isEmpty } from '@utils/manipulateArray'
 
 const Modal = ({ children }) => {
   const { stateTerms, dispatchTerms } = useTerms()
@@ -19,18 +20,13 @@ const Modal = ({ children }) => {
   const { secteurs, regions, categories, niveaux } = stateTerms
 
   useEffect(() => {
-    if (!secteurs?.length) {
-      populateTerms('secteurs', dispatchTerms)
-    }
-    if (!regions?.length) {
-      populateTerms('regions', dispatchTerms)
-    }
-    if (!categories?.length) {
-      populateTerms('categories', dispatchTerms)
-    }
-    if (!niveaux?.length) {
-      populateTerms('niveaux', dispatchTerms)
-    }
+    if (isEmpty(secteurs)) populateTerms('secteurs', dispatchTerms)
+
+    if (isEmpty(regions)) populateTerms('regions', dispatchTerms)
+
+    if (isEmpty(categories)) populateTerms('categories', dispatchTerms)
+
+    if (isEmpty(niveaux)) populateTerms('niveaux', dispatchTerms)
   }, [])
 
   return (

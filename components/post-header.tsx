@@ -8,19 +8,19 @@ import Terms from '@components/terms'
 const PostHeader = ({ title, image, date, categories, secteurs, regions }) => (
   <>
     <PostTitle>{title}</PostTitle>
-    <div className="mb-8 md:mb-16 sm:mx-0">
+    <div className="post-header-image">
       <CoverImage title={title} image={image} />
     </div>
-    <div className="mb-2 text-sm font-bold">
+    <div className="post-header-date">
       <Date dateString={date} />
     </div>
-    <div className="mb-2 text-xs">
+    <div className="post-header-terms">
       <Terms terms={categories} name="Categories : " />
     </div>
-    <div className="mb-2 text-xs">
+    <div className="post-header-terms">
       <Terms terms={secteurs} name="Domaines : " />
     </div>
-    <div className="mb-2 text-xs">
+    <div className="post-header-terms">
       <Terms terms={regions} name="Regions : " />
     </div>
   </>
