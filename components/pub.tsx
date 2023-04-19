@@ -18,9 +18,8 @@ export const Pub = ({ term }) => {
   )
 
   useEffect(() => {
-    if (!termWithPosts) {
+    if (!termWithPosts)
       populatePosts(term, 'category', dispatchTerms, setTermsWithPosts)
-    }
   }, [termWithPosts])
 
   if (!termWithPosts) return <></>

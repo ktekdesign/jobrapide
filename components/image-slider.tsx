@@ -20,9 +20,8 @@ export const ImageSlider = ({ term, width = 0, height = 0 }) => {
   )
 
   useEffect(() => {
-    if (!termWithPosts) {
+    if (!termWithPosts)
       populatePosts(term, 'category', dispatchTerms, setTermsWithPosts)
-    }
   }, [termWithPosts])
 
   if (!termWithPosts) return <></>

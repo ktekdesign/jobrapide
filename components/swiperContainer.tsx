@@ -8,14 +8,12 @@ import 'swiper/css/bundle'
 import 'swiper/css/pagination'
 
 import PostPreview from '@components/post-preview'
-import CoverImage from '@components/cover-image'
 
 import { actions } from '@context/dataReducer'
 
 import useTerms from '@hooks/useTerms'
 
 import { populatePosts } from '@utils/populateContext'
-import { Post } from '@utils/interfaces'
 import { isEmpty } from '@utils/manipulateArray'
 
 export const SwiperContainer = ({
@@ -29,7 +27,6 @@ export const SwiperContainer = ({
   const [termWithPosts, setTermsWithPosts] = useState(
     posts || stateTerms.posts.find((termPosts) => termPosts?.uri === term)
   )
-  const items: Post[] = termWithPosts?.posts
 
   useEffect(() => {
     if (!isEmpty(posts))
@@ -41,10 +38,12 @@ export const SwiperContainer = ({
 
   if (!termWithPosts) return <></>
 
+  const { posts: items, uri, name } = termWithPosts
+
   return (
     <div className="swiper-container bg-dark">
       <h2 className={className}>
-        <Link href={termWithPosts.uri}>{termWithPosts.name}</Link>
+        <Link href={uri}>{name}</Link>
       </h2>
       <Swiper
         pagination={{

@@ -17,9 +17,9 @@ const Modal = ({ children }) => {
   const toggleForm = () =>
     dispatchModal({ type: actions.SET_TOGGLE_SEARCHFRORM })
 
-  const { secteurs, regions, categories, niveaux } = stateTerms
-
   useEffect(() => {
+    const { secteurs, regions, categories, niveaux } = stateTerms
+
     if (isEmpty(secteurs)) populateTerms('secteurs', dispatchTerms)
 
     if (isEmpty(regions)) populateTerms('regions', dispatchTerms)

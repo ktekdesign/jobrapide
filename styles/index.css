@@ -161,7 +161,7 @@ main {
   @apply p-4 text-white font-bold bg-primary;
 }
 .title-secondary {
-  @apply p-4 text-white font-bold bg-primary;
+  @apply p-4 text-dark font-bold bg-secondary;
 }
 /* Footer CSS */
 footer {
@@ -183,10 +183,10 @@ footer {
   @apply h-14 flex p-3 lg:p-2 lg:h-auto border-white bg-secondary border rounded transition-all duration-200 items-center text-sm leading-none text-white hover:border-transparent hover:text-primary hover:bg-white mt-4 lg:mt-0 lg:bg-transparent lg:border-transparent;
 }
 .reveal.download a {
-  @apply p-1 bg-white;
+  @apply p-1 bg-white w-max;
 }
 .download {
-  @apply lg:hidden;
+  @apply lg:hidden flex-grow;
 }
 .reveal:hover a {
   @apply lg:border-white lg:bg-secondary lg:border;
@@ -204,7 +204,7 @@ footer {
   @apply w-full flex-grow flex-wrap flex-col-reverse lg:flex-row lg:flex-nowrap lg:flex lg:justify-between lg:items-center lg:w-auto;
 }
 .icons-menu {
-  @apply mb-4 flex items-center justify-end gap-4 lg:gap-1 lg:mb-0;
+  @apply mb-4 flex items-center justify-end gap-2 lg:gap-1 lg:mb-0;
 }
 .menu-mobile {
   @apply block lg:hidden;
@@ -228,10 +228,13 @@ footer {
   @apply font-semibold text-xl;
 }
 .home-active {
-  @apply lg:border-white lg:bg-secondary lg:border lg:font-bold lg:rounded lg:p-1 hover:text-primary gap-2 flex hover:text-dark;
+  @apply lg:border-white lg:bg-secondary lg:border lg:font-bold lg:rounded lg:p-1 gap-2 flex text-dark hover:text-primary;
 }
 .home {
   @apply flex gap-x-2 hover:text-dark;
+}
+.icon {
+  @apply h-6 w-6;
 }
 /* Swiper Container */
 .swiper-container {
@@ -276,7 +279,7 @@ footer {
   @apply inline-block rounded bg-primary p-2 text-xs font-medium uppercase leading-normal text-white shadow-lg transition duration-200 ease-in-out hover:bg-secondary;
 }
 .terms-list {
-  @apply flex-wrap text-xs md:justify-around;
+  @apply flex-wrap text-xs;
 }
 .terms-list li {
   @apply p-1;

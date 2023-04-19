@@ -193,7 +193,7 @@ export async function getTerms(type) {
   const data = await fetchAPI(
     `
     query Terms {
-      ${type} (first: 300) {
+      ${type} (first: 100) {
         nodes {
           id
           databaseId
@@ -228,7 +228,48 @@ export async function getCategories() {
   const response = data?.categories?.nodes?.map((category) => mapTerm(category))
   return response
 }
+export async function getRegions() {
+  const data = await fetchAPI(
+    `
+    query Regions {
+      regions (first: 100) {
+        pageInfo {
+          endCursor
+        }
+        nodes {
+          id
+          databaseId
+          name
+          uri
+          count
+        }
+      }
+    }
+  `
+  )
+  const data_last = await fetchAPI(
+    `
+    query Regions_last {
+      regions (first: 100, after: "${data?.regions?.pageInfo?.endCursor}") {
+        pageInfo {
+          endCursor
+        }
+        nodes {
+          id
+          databaseId
+          name
+          uri
+          count
+        }
+      }
+    }
+  `
+  )
+  const response = data.regions?.nodes?.map((term) => mapTerm(term))
+  const response_last = data_last.regions?.nodes?.map((term) => mapTerm(term))
 
+  return [...response, ...response_last]
+}
 export async function getPage(uri) {
   const data = await fetchAPI(`
   query page {
