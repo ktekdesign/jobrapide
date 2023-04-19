@@ -13,9 +13,9 @@ import GoTop from '@components/gotop'
 import Twitter from '@components/twitter'
 import ImageSlider from '@components/image-slider'
 
-const Layout = ({ children }) => (
+const Layout = ({ children, seo }) => (
   <>
-    <Meta />
+    <Meta seo={seo} />
     <Header />
 
     <main>

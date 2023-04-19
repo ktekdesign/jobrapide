@@ -3,7 +3,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 
-import GooglePlay from '/public/images/googleplay.svg'
 import MenuIcon from '/public/images/menu.svg'
 import HomeIcon from '/public/images/home.svg'
 import CloseIcon from '/public/images/close.svg'
@@ -13,6 +12,7 @@ import SearchIcon from '/public/images/search.svg'
 import useModal from '@hooks/useModal'
 
 import { actions } from '@context/dataReducer'
+import { CMS_NAME } from '@utils/constants'
 
 const NavBar = ({ items }) => {
   const { dispatchModal } = useModal()
@@ -29,15 +29,10 @@ const NavBar = ({ items }) => {
     <nav className="navbar">
       <div className="logo">
         <Link href="/">
-          <Image
-            src="https://www.jobrapide.org/wp-content/uploads/2022/12/cropped-Job-6-270x270.png"
-            width={40}
-            height={40}
-            alt="Logo"
-          />
+          <Image src="/images/logo.png" width={40} height={40} alt="Logo" />
           <span className={currentPath === '/' ? 'home-active' : 'home'}>
             <HomeIcon className="icon" />
-            <span>JobRapide</span>
+            <span>{CMS_NAME}</span>
           </span>
         </Link>
       </div>
@@ -66,13 +61,18 @@ const NavBar = ({ items }) => {
           ))}
         </ul>
         <ul className="icons-menu">
-          <li className="reveal download">
+          <li className="download">
             <Link
               href="https://play.google.com/store/apps/details?id=com.ktekdesign.app.tchadcarriere"
               title="Télecharger notre application Android"
               target="_blank"
             >
-              <GooglePlay />
+              <Image
+                src="/images/googleplay.png"
+                width={170}
+                height={64}
+                alt="download app"
+              />
             </Link>
           </li>
           <li className="reveal">

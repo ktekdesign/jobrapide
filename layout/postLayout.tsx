@@ -1,17 +1,11 @@
-import Head from 'next/head'
 import Layout from '@layout/layout'
 
-import { CMS_NAME } from '@lib/constants'
 import SimilarPosts from '@components/similarPosts'
 import PostBody from '@components/post-body'
 import PostHeader from '@components/post-header'
 
 const PostLayout = ({ post, posts }) => (
-  <Layout>
-    <Head>
-      <title>{`${post.title} | ${CMS_NAME}`}</title>
-      <meta property="og:image" content={post.image} />
-    </Head>
+  <Layout seo={post.seo}>
     <PostHeader
       title={post.title}
       image={post.image}

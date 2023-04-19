@@ -1,4 +1,4 @@
-import { getFirst, getLast, next, prev } from './manipulateArray'
+import { getFirst, getLast, next, prev } from '@utils/manipulateArray'
 
 export const getPagination = (count, currentPage) => {
   const PER_PAGE = 10

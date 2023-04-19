@@ -1,4 +1,4 @@
-import { performSearch } from '@lib/api'
+import { performSearch } from '@graphql/api'
 
 export const getSearchProps = async (query, params) => {
   const { s, category, secteur, region } = query

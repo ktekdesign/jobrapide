@@ -1,31 +1,27 @@
-import Head from 'next/head'
-
 import Layout from '@layout/layout'
 import Column from '@layout/column'
 import Container from '@layout/container'
 
 import SwiperContainer from '@components/swiperContainer'
 
-import { CMS_NAME } from '@lib/constants'
-
 import { populatePosts } from '@utils/populateContext'
+import { getPage } from '@graphql/api'
 
 export const getStaticProps = async () => {
   const posts = await populatePosts('/recrutement/offres/avis-recrutement/')
+  const page = await getPage('/')
 
   return {
     props: {
       posts,
+      page,
     },
     revalidate: 3600,
   }
 }
-export default function Index({ posts }) {
+export default function Index({ posts, page }) {
   return (
-    <Layout>
-      <Head>
-        <title>{CMS_NAME}</title>
-      </Head>
+    <Layout seo={page.seo}>
       <Container>
         <Column className="w-full">
           <SwiperContainer

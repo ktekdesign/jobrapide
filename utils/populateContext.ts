@@ -4,7 +4,7 @@ import {
   getRegions,
   getTermAndPosts,
   getTerms,
-} from '../lib/api'
+} from '@graphql/api'
 
 export const populateTerms = async (type, dispatch = null, setTerms = null) => {
   const data = await (type === 'categories'

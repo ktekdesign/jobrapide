@@ -5,7 +5,7 @@ import Modal from '@components/modal'
 import SearchForm from '@components/searchForm'
 import SearchCurriculumForm from '@components/searchCurriculumForm'
 import Pub from '@components/pub'
-import { MENU_ITEMS } from '@lib/constants'
+import { MENU_ITEMS } from '@utils/constants'
 
 const Header = () => {
   return (

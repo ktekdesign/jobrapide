@@ -1,4 +1,4 @@
-import { getPostAndMorePosts } from '@lib/api'
+import { getPostAndMorePosts } from '@graphql/api'
 
 export const getPostProps = async (resolvedUrl) => {
   const props = await getPostAndMorePosts(resolvedUrl)

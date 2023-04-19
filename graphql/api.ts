@@ -78,6 +78,46 @@ const posts_response = `
   nodes {
     ${post_response}
   }`
+const seo_response = `
+  seo {
+    breadcrumbs {
+      
+        text
+        url
+      
+    }
+    canonical
+    metaDesc
+    metaKeywords
+    metaRobotsNofollow
+    metaRobotsNoindex
+    opengraphAuthor
+    opengraphDescription
+    opengraphImage {
+      
+        sourceUrl
+      
+    }
+    opengraphModifiedTime
+    opengraphPublishedTime
+    opengraphPublisher
+    opengraphSiteName
+    opengraphTitle
+    opengraphType
+    opengraphUrl
+    schema {
+        raw
+    }
+    title
+    twitterDescription
+    twitterImage {
+      
+        sourceUrl
+      
+    }
+    twitterTitle
+  }
+`
 export async function getPreviewPost(id, idType = 'DATABASE_ID') {
   const data = await fetchAPI(
     `
@@ -115,6 +155,7 @@ export async function getPostAndMorePosts(slug) {
     `
     query PostBySlug($id: ID!, $idType: PostIdType!) {
       post(id: $id, idType: $idType) {
+        ${seo_response}
         ${post_response}
       }
       posts(first: 4, where: { orderby: { field: DATE, order: DESC } }) {
@@ -156,6 +197,7 @@ export async function getTermAndPosts(term, type, page = 1) {
         count
         slug
         uri
+        ${seo_response}
         ${type !== 'tag' ? 'parentDatabaseId' : ''}   
   			${posts_query}
   		}
@@ -278,6 +320,7 @@ export async function getPage(uri) {
         databaseId
         title
         content
+        ${seo_response}
       }
     }
   `)
@@ -344,7 +387,7 @@ export async function performSearch({
         }
       }
     ){
-      ${isSearch ? pageInfoSearch : ''}
+      ${isSearch ? `${pageInfoSearch}` : ''}
       ${posts_response}
     }
   }

@@ -1,7 +1,4 @@
-import Head from 'next/head'
 import Layout from '@layout/layout'
-
-import { CMS_NAME } from '@lib/constants'
 
 import dynamic from 'next/dynamic'
 import Pagination from '@components/pagination'
@@ -15,12 +12,7 @@ const TermLayout = ({ term, currentPage }) => {
   const pages = getPagination(term.count, currentPage)
 
   return (
-    <Layout>
-      <Head>
-        <title>{`${term.name} | ${CMS_NAME}`}</title>
-        <meta property="og:image" content={term?.posts[0]?.image} />
-      </Head>
-
+    <Layout seo={term.seo}>
       <ArchiveTitle currentPage={currentPage}>{term.name}</ArchiveTitle>
       <MoreStories posts={term?.posts} />
       <Pagination uri={term.uri} currentPage={currentPage} pages={pages} />

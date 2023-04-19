@@ -1,13 +1,13 @@
 import Head from 'next/head'
 import PostBody from '@components/post-body'
 import Layout from '@layout/layout'
-import { getPage } from '@lib/api'
-import { CMS_NAME } from '@lib/constants'
+import { getPage } from 'graphql/api'
+import { CMS_NAME } from '@utils/constants'
 import PostTitle from '@components/post-title'
 
 export default function Page({ page }) {
   return (
-    <Layout>
+    <Layout seo={page.seo}>
       <Head>
         <title>{`${page.title} | ${CMS_NAME}`}</title>
         <meta property="og:image" content="/images/logo.png" />

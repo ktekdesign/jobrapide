@@ -180,10 +180,10 @@ footer {
 
 /* NavBar CSS */
 .reveal a {
-  @apply h-14 flex p-3 lg:p-2 lg:h-auto border-white bg-secondary border rounded transition-all duration-200 items-center text-sm leading-none text-white hover:border-transparent hover:text-primary hover:bg-white mt-4 lg:mt-0 lg:bg-transparent lg:border-transparent;
+  @apply h-12 flex p-3 lg:p-2 lg:h-auto border-white bg-secondary border rounded transition-all duration-200 items-center text-sm leading-none text-white hover:border-transparent hover:text-primary hover:bg-white mt-4 lg:mt-0 lg:bg-transparent lg:border-transparent;
 }
-.reveal.download a {
-  @apply p-1 bg-white w-max;
+.download img {
+  @apply h-16 w-auto mt-4 animate-pulse;
 }
 .download {
   @apply lg:hidden flex-grow;
@@ -270,10 +270,10 @@ footer {
   @apply relative p-4 bg-slate-300;
 }
 .modal-footer {
-  @apply flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50;
+  @apply flex flex-shrink-0 justify-center items-center gap-y-2 flex-col-reverse sm:flex-nowrap sm:flex-row sm:justify-between items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50;
 }
 .cta-publish-job {
-  @apply mr-auto border-white bg-secondary border p-2 text-xs font-medium uppercase leading-normal rounded text-white shadow-lg transition duration-200 ease-in-out hover:bg-primary;
+  @apply border-white bg-secondary border p-2 text-xs font-medium uppercase leading-normal rounded text-white shadow-lg transition duration-200 ease-in-out hover:bg-primary;
 }
 .modal-submit-button {
   @apply inline-block rounded bg-primary p-2 text-xs font-medium uppercase leading-normal text-white shadow-lg transition duration-200 ease-in-out hover:bg-secondary;

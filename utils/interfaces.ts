@@ -20,6 +20,7 @@ export interface Post {
   categories?: Term[]
   secteurs?: Term[]
   regions?: Term[]
+  seo?: Seo
 }
 export interface Term {
   id: number
@@ -29,4 +30,28 @@ export interface Term {
   uri: string
   parentId?: number
   posts?: Post[]
+  seo?: Seo
+}
+export interface Seo {
+  breadcrumbs: { text: string; url: string }[]
+  canonical: string
+  metaDesc: string
+  metaKeywords: string
+  metaRobotsNofollow: string
+  metaRobotsNoindex: string
+  opengraphAuthor: string
+  opengraphDescription: string
+  opengraphImage: string
+  opengraphModifiedTime: string
+  opengraphPublishedTime: string
+  opengraphPublisher: string
+  opengraphSiteName: string
+  opengraphTitle: string
+  opengraphType: string
+  opengraphUrl: string
+  schema: string
+  title: string
+  twitterDescription: string
+  twitterImage: string
+  twitterTitle: string
 }

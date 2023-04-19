@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Layout from '@layout/layout'
 
 const PageError = () => (
-  <Layout>
+  <Layout seo={{}}>
     <Head>
       <title>Page introuvable - JobRapide</title>
       <meta

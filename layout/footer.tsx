@@ -4,7 +4,7 @@ import RegionsList from '@components/regionsList'
 import SecteursList from '@components/secteursList'
 import Container from '@layout/container'
 import Copyright from '@components/copyright'
-import { CMS_NAME, FOOTER_MENU_ITEMS } from '@lib/constants'
+import { CMS_NAME, FOOTER_MENU_ITEMS } from '@utils/constants'
 import FooterMenu from '@components/footerMenu'
 
 const Footer = () => {

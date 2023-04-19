@@ -8,3 +8,7 @@ export const isEmpty = (elt) => {
   if (elt instanceof Array) return elt.length === 0
   return elt === null
 }
+export const preventStringUndefined = (obj) => obj || ''
+export const preventArrayUndefined = (obj) => obj || []
+export const preventObjectUndefined = (obj) => obj || null
+export const preventNumberUndefined = (obj) => obj || 0
