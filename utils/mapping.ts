@@ -8,14 +8,14 @@ export const mapPost = (post): Post => {
   return {
     id: post.databaseId,
     title: post.title,
-    image: post.featuredImage?.node.sourceUrl,
+    image: post.featuredImage?.node.sourceUrl || '',
     date: post.date,
     excerpt: post.excerpt,
     content: post.content,
     uri: post.uri,
-    categories: categories,
-    secteurs: secteurs,
-    regions: regions,
+    categories: categories || null,
+    secteurs: secteurs || null,
+    regions: regions || null,
   }
 }
 export const mapTerm = (term): Term => {
@@ -29,6 +29,5 @@ export const mapTerm = (term): Term => {
     uri: term.uri,
     parentId: term.parentDatabaseId || 0,
     posts: posts || null,
-    info: term.posts?.pageInfo || null,
   }
 }

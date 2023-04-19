@@ -2,9 +2,16 @@ import { getLast, isFirstPage, next, prev } from '@utils/manipulateArray'
 import Link from 'next/link'
 import React, { memo } from 'react'
 
-const Pagination = ({ currentPage, uri, pages }) => {
+const Pagination = ({ currentPage, uri, pages, isSearch = false }) => {
   const isLastPage = currentPage === getLast(pages)
-  const url = (page) => `${uri}${!isFirstPage(page) ? `page/${page}/` : ''}`
+  const url = (page) =>
+    isSearch
+      ? `${
+          !isFirstPage(page)
+            ? uri.replace('_page_', `page/${page}/`)
+            : uri.replace('_page_', '')
+        }`
+      : `${uri}${!isFirstPage(page) ? `page/${page}/` : ''}`
 
   return (
     <div className="pagination">

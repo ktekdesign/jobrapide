@@ -189,7 +189,7 @@ footer {
   @apply border-white bg-secondary text-dark border font-bold rounded px-2 hover:text-primary;
 }
 .menu-item-link {
-  @apply block mt-4 lg:inline-block lg:mt-0 text-white hover:text-secondary hover:font-bold lg:mr-4 py-2 active:text-slate-400;
+  @apply block lg:inline-block text-white hover:text-secondary hover:font-bold lg:mr-4 py-2 active:text-slate-400;
 }
 .menu-items {
   @apply text-sm flex flex-col flex-wrap lg:flex-row lg:items-center;
@@ -198,7 +198,7 @@ footer {
   @apply w-full flex-grow flex-wrap flex-col-reverse lg:flex-row lg:flex-nowrap lg:flex lg:justify-between lg:items-center lg:w-auto;
 }
 .icons-menu {
-  @apply flex items-center justify-end gap-4 lg:gap-1;
+  @apply mb-4 flex items-center justify-end gap-4 lg:gap-1 lg:mb-0;
 }
 .menu-mobile {
   @apply flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white;
@@ -219,7 +219,7 @@ footer {
   @apply font-semibold text-xl;
 }
 .home-active {
-  @apply border-white bg-secondary border font-bold rounded p-1 hover:text-primary gap-2 flex text-dark;
+  @apply lg:border-white lg:bg-secondary lg:border lg:font-bold lg:rounded lg:p-1 hover:text-primary gap-2 flex hover:text-dark;
 }
 .home {
   @apply flex gap-x-2 hover:text-dark;

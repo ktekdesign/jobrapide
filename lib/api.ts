@@ -69,11 +69,12 @@ featuredImage {
     sourceUrl
   }
 }`
-const posts_response = `pageInfo {
-  hasNextPage
-  endCursor
-}
-
+const pageInfoSearch = `pageInfo {
+  offsetPagination {
+      total
+  }
+}`
+const posts_response = `
   nodes {
     ${post_response}
   }`
@@ -249,6 +250,7 @@ export async function performSearch({
   secteur = null,
   region = null,
   tag = null,
+  isSearch = false,
 }) {
   const wherePagination =
     page > 1 ? `offsetPagination: { size: 10, offset: ${10 * page - 10}}` : ''
@@ -301,11 +303,18 @@ export async function performSearch({
         }
       }
     ){
+      ${isSearch ? pageInfoSearch : ''}
       ${posts_response}
     }
   }
   `)
 
   const response = data?.posts?.nodes?.map((post) => mapPost(post))
-  return response
+
+  return isSearch
+    ? {
+        posts: response || [],
+        count: data.posts?.pageInfo?.offsetPagination?.total || 0,
+      }
+    : response
 }

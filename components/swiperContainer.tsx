@@ -15,7 +15,7 @@ import { actions } from '@context/dataReducer'
 import useTerms from '@hooks/useTerms'
 
 import { populatePosts } from '@utils/populateContext'
-import { Post, PostProps } from '@utils/interfaces'
+import { Post } from '@utils/interfaces'
 
 export const SwiperContainer = ({
   term,

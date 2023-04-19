@@ -4,7 +4,7 @@ const Select = ({ options, ...props }) => (
   <div className="relative">
     <select className="form-select" {...props}>
       {options?.map((option) => (
-        <option value={option.databaseId} key={option.id}>
+        <option value={option.id} key={option.id}>
           {option.name}
         </option>
       ))}
