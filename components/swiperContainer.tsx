@@ -16,12 +16,12 @@ import useTerms from '@hooks/useTerms'
 
 import { populatePosts } from '@utils/populateContext'
 import { Post } from '@utils/interfaces'
+import { isEmpty } from '@utils/manipulateArray'
 
 export const SwiperContainer = ({
   term,
   type = 'category',
   slides = 3,
-  light = false,
   className = '',
   posts = null,
 }) => {
@@ -29,28 +29,23 @@ export const SwiperContainer = ({
   const [termWithPosts, setTermsWithPosts] = useState(
     posts || stateTerms.posts.find((termPosts) => termPosts?.uri === term)
   )
-  const priority = posts !== null
   const items: Post[] = termWithPosts?.posts
 
   useEffect(() => {
-    if (priority) {
+    if (!isEmpty(posts))
       dispatchTerms({ type: actions.SET_POSTS, payload: [posts, term] })
-    }
 
-    if (!termWithPosts) {
+    if (!termWithPosts)
       populatePosts(term, type, dispatchTerms, setTermsWithPosts)
-    }
   }, [termWithPosts])
 
   if (!termWithPosts) return <></>
 
   return (
-    <div className={light ? 'swiper-container' : 'swiper-container bg-dark'}>
-      {!light && (
-        <h2 className={className}>
-          <Link href={termWithPosts.uri}>{termWithPosts.name}</Link>
-        </h2>
-      )}
+    <div className="swiper-container bg-dark">
+      <h2 className={className}>
+        <Link href={termWithPosts.uri}>{termWithPosts.name}</Link>
+      </h2>
       <Swiper
         pagination={{
           clickable: true,
@@ -76,13 +71,7 @@ export const SwiperContainer = ({
       >
         {items.map(({ id, uri, title, image }) => (
           <SwiperSlide key={id}>
-            {light ? (
-              <Link href={uri}>
-                <CoverImage title={title} image={image} />
-              </Link>
-            ) : (
-              <PostPreview key={id} title={title} image={image} uri={uri} />
-            )}
+            <PostPreview key={id} title={title} image={image} uri={uri} />
           </SwiperSlide>
         ))}
       </Swiper>

@@ -405,7 +405,7 @@ footer {
   @apply mb-5 bg-white;
 }
 .post-preview-title {
-  @apply text-sm mb-3 leading-snug;
+  @apply text-sm mb-3 leading-snug px-2;
 }
 .post-preview-title a {
   @apply text-white hover:underline;

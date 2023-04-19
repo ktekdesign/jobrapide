@@ -6,4 +6,5 @@ export const isFirstPage = (page) => page === 1
 export const isEmpty = (elt) => {
   if (typeof elt === 'string') return elt.trim() === ''
   if (elt instanceof Array) return elt.length === 0
+  return elt === null
 }
