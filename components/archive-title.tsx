@@ -5,7 +5,7 @@ import { isFirstPage } from '@utils/manipulateArray'
 const ArchiveTitle = ({ children, currentPage = 1 }) => (
   <h1 className="archive-main-title">
     {parse(children)}
-    {!isFirstPage(currentPage) && ` / Page ${currentPage}`}
+    <span>{!isFirstPage(currentPage) && ` / Page ${currentPage}`}</span>
   </h1>
 )
 

@@ -26,7 +26,7 @@ export const Pub = ({ term }) => {
   if (!termWithPosts) return <></>
 
   return (
-    <div className="swiper-container">
+    <div className="swiper-container pub">
       <Swiper
         pagination={{
           clickable: true,
