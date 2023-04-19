@@ -228,13 +228,13 @@ footer {
   @apply font-semibold text-xl;
 }
 .home-active {
-  @apply lg:border-white lg:bg-secondary lg:border lg:font-bold lg:rounded lg:p-1 gap-2 flex text-dark hover:text-primary;
+  @apply lg:border-white lg:bg-secondary lg:border lg:font-bold lg:rounded lg:p-1 gap-2 flex text-dark lg:hover:text-primary;
 }
 .home {
   @apply flex gap-x-2 hover:text-dark;
 }
 .icon {
-  @apply h-6 w-6;
+  @apply h-auto w-6;
 }
 /* Swiper Container */
 .swiper-container {

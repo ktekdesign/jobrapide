@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { FC, memo } from 'react'
 import { Seo } from '@utils/interfaces'
-import { preventStringUndefined } from '@utils/manipulateArray'
+import { isEmpty } from '@utils/manipulateArray'
 import Script from 'next/script'
 
 const Meta: FC<{ seo: Seo }> = ({ seo }) => {
@@ -13,7 +13,6 @@ const Meta: FC<{ seo: Seo }> = ({ seo }) => {
         <meta name="resource-type" content="document" />
         <meta name="distribution" content="Global" />
         <meta name="rating" content="general" />
-        <meta httpEquiv="last-modified" content={seo.opengraphModifiedTime} />
         <meta httpEquiv="content-language" content="fr_FR" />
         <meta name="copyright" content="© 2017 JobRapide" />
         <meta name="revisit-after" content="15 days" />
@@ -24,42 +23,8 @@ const Meta: FC<{ seo: Seo }> = ({ seo }) => {
           name="robots"
           content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
         />
-
-        <meta
-          name="description"
-          content={preventStringUndefined(seo.metaDesc)}
-        />
-        <link rel="canonical" href={seo.canonical} />
         <meta property="og:locale" content="fr_FR" />
         <meta property="og:type" content="website" />
-        <meta
-          property="og:title"
-          content={preventStringUndefined(seo.opengraphTitle)}
-        />
-        <meta
-          property="og:description"
-          content={preventStringUndefined(seo.opengraphDescription)}
-        />
-        <meta
-          property="og:url"
-          content={preventStringUndefined(seo.opengraphUrl)}
-        />
-        <meta
-          property="og:site_name"
-          content={preventStringUndefined(seo.opengraphSiteName)}
-        />
-        <meta
-          property="article:publisher"
-          content={preventStringUndefined(seo.opengraphPublisher)}
-        />
-        <meta
-          property="article:modified_time"
-          content={preventStringUndefined(seo.opengraphModifiedTime)}
-        />
-        <meta
-          property="og:image"
-          content={preventStringUndefined(seo.opengraphImage)}
-        />
         <meta property="og:image:width" content="512" />
         <meta property="og:image:height" content="512" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -70,18 +35,39 @@ const Meta: FC<{ seo: Seo }> = ({ seo }) => {
         <meta name="msapplication-TileImage" content="/images/logo.png" />
 
         <meta name="twitter:card" content="summary" />
-        <meta
-          name="twitter:title"
-          content={preventStringUndefined(seo.twitterTitle)}
-        />
-        <meta name="twitter:site" content="@tchadcarriere" />
-        <meta
-          name="twitter:description"
-          content={preventStringUndefined(seo.twitterDescription)}
-        />
+        {!isEmpty(seo) && (
+          <>
+            <meta name="twitter:title" content={seo.twitterTitle} />
+            <meta name="twitter:site" content="@tchadcarriere" />
+            <meta name="twitter:description" content={seo.twitterDescription} />
+            <meta
+              httpEquiv="last-modified"
+              content={seo.opengraphModifiedTime}
+            />
+            <meta name="description" content={seo.metaDesc} />
+            <link rel="canonical" href={seo.canonical} />
+            <meta property="og:title" content={seo.opengraphTitle} />
+            <meta
+              property="og:description"
+              content={seo.opengraphDescription}
+            />
+            <meta property="og:url" content={seo.opengraphUrl} />
+            <meta property="og:site_name" content={seo.opengraphSiteName} />
+            <meta
+              property="article:publisher"
+              content={seo.opengraphPublisher}
+            />
+            <meta
+              property="article:modified_time"
+              content={seo.opengraphModifiedTime}
+            />
+            <meta property="og:image" content={seo.opengraphImage} />
+            <title>{seo.title}</title>
+          </>
+        )}
       </Head>
       <Script type="application/ld+json" id="schema">
-        {typeof seo.schema === 'string' && JSON.parse(seo.schema)}
+        {typeof seo?.schema === 'string' && JSON.parse(seo.schema)}
       </Script>
     </>
   )

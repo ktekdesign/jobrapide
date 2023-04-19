@@ -5,13 +5,19 @@ import useTerms from '@hooks/useTerms'
 
 import { populateTerms } from '@utils/populateContext'
 import { isEmpty } from '@utils/manipulateArray'
+import { TermTypePlural } from '@utils/interfaces'
 
 const SecteursList = ({ active }) => {
   const { stateTerms, dispatchTerms } = useTerms()
   const [secteurs, setSecteurs] = useState(stateTerms.secteurs)
 
   useEffect(() => {
-    if (isEmpty(secteurs)) populateTerms('secteurs', dispatchTerms, setSecteurs)
+    if (isEmpty(secteurs))
+      populateTerms({
+        type: TermTypePlural.secteurs,
+        dispatch: dispatchTerms,
+        setTerms: setSecteurs,
+      })
   }, [secteurs])
 
   if (isEmpty(secteurs)) return <></>

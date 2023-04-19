@@ -35,7 +35,7 @@ const CoverImage = ({
   )
   return (
     <div className="sm:mx-0 feature">
-      {uri ? (
+      {!isEmpty(uri) ? (
         <Link href={uri} aria-label={title}>
           {imageFeature}
         </Link>

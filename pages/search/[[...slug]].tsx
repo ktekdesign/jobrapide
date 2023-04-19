@@ -19,7 +19,7 @@ const Search = ({ posts, count, currentPage, uri, search }) => {
   const pages = getPagination(count, currentPage)
 
   return (
-    <Layout seo={{}}>
+    <Layout seo={null}>
       <ArchiveTitle>{`Recherche pour ${search}`}</ArchiveTitle>
       <MoreStories posts={posts} />
       <Pagination currentPage={currentPage} uri={uri} pages={pages} isSearch />

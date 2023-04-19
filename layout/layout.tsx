@@ -12,6 +12,7 @@ import SwiperContainer from '@components/swiperContainer'
 import GoTop from '@components/gotop'
 import Twitter from '@components/twitter'
 import ImageSlider from '@components/image-slider'
+import { TermType } from '@utils/interfaces'
 
 const Layout = ({ children, seo }) => (
   <>
@@ -29,7 +30,7 @@ const Layout = ({ children, seo }) => (
         <Row>
           <SwiperContainer
             term="/emploi/sponsorisees/"
-            type="tag"
+            type={TermType.Tag}
             slides={1}
             className="title-primary"
           />

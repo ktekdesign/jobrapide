@@ -15,10 +15,11 @@ import useTerms from '@hooks/useTerms'
 
 import { populatePosts } from '@utils/populateContext'
 import { isEmpty } from '@utils/manipulateArray'
+import { TermType } from '@utils/interfaces'
 
 export const SwiperContainer = ({
   term,
-  type = 'category',
+  type = TermType.Category,
   slides = 3,
   className = '',
   posts = null,
@@ -33,7 +34,7 @@ export const SwiperContainer = ({
       dispatchTerms({ type: actions.SET_POSTS, payload: [posts, term] })
 
     if (!termWithPosts)
-      populatePosts(term, type, dispatchTerms, setTermsWithPosts)
+      populatePosts({ term, type, dispatch: dispatchTerms, setTermsWithPosts })
   }, [termWithPosts])
 
   if (!termWithPosts) return <></>

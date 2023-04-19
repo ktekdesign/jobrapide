@@ -9,6 +9,7 @@ import useTerms from '@hooks/useTerms'
 import { populateTerms } from '@utils/populateContext'
 import { isEmpty } from '@utils/manipulateArray'
 import CloseIcon from '/public/images/close.svg'
+import { TermTypePlural } from '@utils/interfaces'
 
 const Modal = ({ children }) => {
   const { stateTerms, dispatchTerms } = useTerms()
@@ -21,13 +22,20 @@ const Modal = ({ children }) => {
   useEffect(() => {
     const { secteurs, regions, categories, niveaux } = stateTerms
 
-    if (isEmpty(secteurs)) populateTerms('secteurs', dispatchTerms)
+    if (isEmpty(secteurs))
+      populateTerms({ type: TermTypePlural.secteurs, dispatch: dispatchTerms })
 
-    if (isEmpty(regions)) populateTerms('regions', dispatchTerms)
+    if (isEmpty(regions))
+      populateTerms({ type: TermTypePlural.regions, dispatch: dispatchTerms })
 
-    if (isEmpty(categories)) populateTerms('categories', dispatchTerms)
+    if (isEmpty(categories))
+      populateTerms({
+        type: TermTypePlural.categories,
+        dispatch: dispatchTerms,
+      })
 
-    if (isEmpty(niveaux)) populateTerms('niveaux', dispatchTerms)
+    if (isEmpty(niveaux))
+      populateTerms({ type: TermTypePlural.niveaux, dispatch: dispatchTerms })
   }, [])
 
   return (

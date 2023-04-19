@@ -8,7 +8,9 @@ import { populatePosts } from '@utils/populateContext'
 import { getPage } from '@graphql/api'
 
 export const getStaticProps = async () => {
-  const posts = await populatePosts('/recrutement/offres/avis-recrutement/')
+  const posts = await populatePosts({
+    term: '/recrutement/offres/avis-recrutement/',
+  })
   const page = await getPage('/')
 
   return {

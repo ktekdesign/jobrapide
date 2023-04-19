@@ -31,6 +31,7 @@ const MoreStories = ({ posts }) => {
                 title={title}
                 width={450}
                 height={300}
+                uri={uri}
               />
             </div>
             <div className="post-info">

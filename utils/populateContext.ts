@@ -5,11 +5,24 @@ import {
   getTermAndPosts,
   getTerms,
 } from '@graphql/api'
+import { Term, TermType, TermTypePlural } from './interfaces'
+import { Dispatch, SetStateAction } from 'react'
 
-export const populateTerms = async (type, dispatch = null, setTerms = null) => {
-  const data = await (type === 'categories'
+export const populateTerms = async ({
+  type,
+  dispatch,
+  setTerms,
+}: {
+  type: TermTypePlural
+  dispatch?: Dispatch<{
+    type: string
+    payload: [Term[], TermTypePlural]
+  } | null>
+  setTerms?: Dispatch<SetStateAction<Term[]>>
+}) => {
+  const data = await (type === TermTypePlural.categories
     ? getCategories()
-    : type === 'regions'
+    : type === TermTypePlural.regions
     ? getRegions()
     : getTerms(type))
 
@@ -19,13 +32,21 @@ export const populateTerms = async (type, dispatch = null, setTerms = null) => {
   return data
 }
 
-export const populatePosts = async (
+export const populatePosts = async ({
   term,
-  type = 'category',
-  dispatch = null,
-  setTermsWithPosts = null
-) => {
-  const data = await getTermAndPosts(term, type)
+  type = TermType.Category,
+  dispatch,
+  setTermsWithPosts,
+}: {
+  term: string
+  type?: TermType
+  dispatch?: Dispatch<{
+    type: string
+    payload: [Term, string]
+  } | null>
+  setTermsWithPosts?: Dispatch<SetStateAction<Term>>
+}) => {
+  const data = await getTermAndPosts({ term, type })
 
   if (dispatch) dispatch({ type: actions.SET_POSTS, payload: [data, term] })
   if (setTermsWithPosts) setTermsWithPosts(data)

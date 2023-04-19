@@ -55,3 +55,18 @@ export interface Seo {
   twitterImage: string
   twitterTitle: string
 }
+export enum TermType {
+  Category = 'Category',
+  Secteur = 'Secteur',
+  Region = 'Region',
+  Niveau = 'Niveau',
+  Tag = 'Tag',
+}
+
+export enum TermTypePlural {
+  categories = 'categories',
+  secteurs = 'secteurs',
+  regions = 'regions',
+  niveaux = 'niveaux',
+  tags = 'tags',
+}

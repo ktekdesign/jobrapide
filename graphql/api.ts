@@ -1,8 +1,9 @@
+import { isEmpty, preventUndefined } from '@utils/manipulateArray'
 import { mapPost, mapTerm } from '@utils/mapping'
 
 const API_URL = process.env.NEXT_PUBLIC_WORDPRESS_API_URL
 
-async function fetchAPI(query = '', { variables }: Record<string, any> = {}) {
+const fetchAPI = async (query = '', variables: Record<string, string> = {}) => {
   const headers = { 'Content-Type': 'application/json' }
 
   if (process.env.WORDPRESS_AUTH_REFRESH_TOKEN) {
@@ -27,7 +28,7 @@ async function fetchAPI(query = '', { variables }: Record<string, any> = {}) {
     console.error(query)
     throw new Error('Failed to fetch API')
   }
-  return json.data
+  return preventUndefined(json.data)
 }
 const post_response = `id
 databaseId
@@ -118,39 +119,8 @@ const seo_response = `
     twitterTitle
   }
 `
-export async function getPreviewPost(id, idType = 'DATABASE_ID') {
-  const data = await fetchAPI(
-    `
-    query PreviewPost($id: ID!, $idType: PostIdType!) {
-      post(id: $id, idType: $idType) {
-        databaseId
-        slug
-        status
-      }
-    }`,
-    {
-      variables: { id, idType },
-    }
-  )
-  return data.post
-}
 
-export async function getAllPagesWithSlug() {
-  const data = await fetchAPI(`
-    {
-      pages(first: 10000) {
-        
-          nodes {
-            slug
-          }
-        
-      }
-    }
-  `)
-  return data?.pages
-}
-
-export async function getPostAndMorePosts(slug) {
+export const getPostAndMorePosts = async (slug) => {
   const data = await fetchAPI(
     `
     query PostBySlug($id: ID!, $idType: PostIdType!) {
@@ -159,15 +129,13 @@ export async function getPostAndMorePosts(slug) {
         ${post_response}
       }
       posts(first: 4, where: { orderby: { field: DATE, order: DESC } }) {
-          ${posts_response}
+        ${posts_response}
       }
     }
   `,
     {
-      variables: {
-        id: slug,
-        idType: 'URI',
-      },
+      id: slug,
+      idType: 'URI',
     }
   )
 
@@ -176,11 +144,12 @@ export async function getPostAndMorePosts(slug) {
   // If there are still 4 posts, remove the last one
   if (data.posts.length > 3) data.posts.pop()
   const post = mapPost(data.post)
-  const posts = data.posts.map((post) => mapPost(post))
+  const posts = preventUndefined(data.posts.map((post) => mapPost(post)))
   return { post: post, posts: posts }
 }
 
-export async function getTermAndPosts(term, type, page = 1) {
+export const getTermAndPosts = async ({ term, type, page = 1 }) => {
+  const typeLower = type.toLowerCase()
   const posts_query =
     page === 1
       ? `posts(first: 10, where: { orderby: { field: DATE, order: DESC } }) {
@@ -189,8 +158,8 @@ export async function getTermAndPosts(term, type, page = 1) {
       : ''
   const data = await fetchAPI(
     `
-    query TermAndPosts {
-      ${type} (id: "${term}", idType: URI) {
+    query TermAndPosts($id: ID!, $idType: ${type}IdType!) {
+      ${typeLower} (id: $id, idType: $idType) {
         id
         databaseId
         name
@@ -198,40 +167,44 @@ export async function getTermAndPosts(term, type, page = 1) {
         slug
         uri
         ${seo_response}
-        ${type !== 'tag' ? 'parentDatabaseId' : ''}   
+        ${type !== 'Tag' ? 'parentDatabaseId' : ''}   
   			${posts_query}
   		}
     }
-  `
+  `,
+    {
+      id: term,
+      idType: 'URI',
+    }
   )
-  const taxonomy = mapTerm(data[type])
+  const taxonomy = mapTerm(data[typeLower])
 
-  if (page > 1) {
-    if (type === 'category') {
-      const category = await performSearch({
-        page,
-        category: taxonomy.id,
-      })
-      taxonomy.posts = category
-    } else if (type === 'secteur') {
-      const secteur = await performSearch({
-        page,
-        secteur: taxonomy.id,
-      })
-      taxonomy.posts = secteur
-    } else if (type === 'region') {
-      const region = await performSearch({ page, region: taxonomy.id })
-      taxonomy.posts = region
-    } else if (type === 'tag') {
-      const tag = await performSearch({ page, tag: taxonomy.id })
-      taxonomy.posts = tag
+  if (page > 1 && !isEmpty(taxonomy)) {
+    switch (type) {
+      case 'Secteur':
+        taxonomy.posts = await performSearch({
+          page,
+          secteur: taxonomy.id,
+        })
+        break
+      case 'Region':
+        taxonomy.posts = await performSearch({ page, region: taxonomy.id })
+        break
+      case 'Tag':
+        taxonomy.posts = await performSearch({ page, tag: taxonomy.id })
+        break
+      default:
+        taxonomy.posts = await performSearch({
+          page,
+          category: taxonomy.id,
+        })
+        break
     }
   }
-  const response = taxonomy
 
-  return response
+  return taxonomy
 }
-export async function getTerms(type) {
+export const getTerms = async (type) => {
   const data = await fetchAPI(
     `
     query Terms {
@@ -248,10 +221,10 @@ export async function getTerms(type) {
   `
   )
   const response = data[type]?.nodes?.map((term) => mapTerm(term))
-  return response
+  return preventUndefined(response)
 }
 
-export async function getCategories() {
+export const getCategories = async () => {
   const data = await fetchAPI(
     `
     query Category {
@@ -268,9 +241,10 @@ export async function getCategories() {
   `
   )
   const response = data?.categories?.nodes?.map((category) => mapTerm(category))
-  return response
+  return preventUndefined(response)
 }
-export async function getRegions() {
+
+export const getRegions = async () => {
   const data = await fetchAPI(
     `
     query Regions {
@@ -307,16 +281,20 @@ export async function getRegions() {
     }
   `
   )
-  const response = data.regions?.nodes?.map((term) => mapTerm(term))
-  const response_last = data_last.regions?.nodes?.map((term) => mapTerm(term))
+  const response = preventUndefined(
+    data.regions?.nodes?.map((term) => mapTerm(term))
+  )
+  const response_last = preventUndefined(
+    data_last.regions?.nodes?.map((term) => mapTerm(term))
+  )
 
   return [...response, ...response_last]
 }
-export async function getPage(uri) {
+
+export const getPage = async (uri) => {
   const data = await fetchAPI(`
   query page {
     page (id: "${uri}", idType: URI) {      
-        id
         databaseId
         title
         content
@@ -327,7 +305,7 @@ export async function getPage(uri) {
   return data?.page
 }
 
-export async function performSearch({
+export const performSearch = async ({
   page = 1,
   search = '',
   category = null,
@@ -335,7 +313,7 @@ export async function performSearch({
   region = null,
   tag = null,
   isSearch = false,
-}) {
+}) => {
   const wherePagination =
     page > 1 ? `offsetPagination: { size: 10, offset: ${10 * page - 10}}` : ''
   const category_query = category
@@ -397,8 +375,8 @@ export async function performSearch({
 
   return isSearch
     ? {
-        posts: response || [],
-        count: data.posts?.pageInfo?.offsetPagination?.total || 0,
+        posts: preventUndefined(response),
+        count: preventUndefined(data.posts?.pageInfo?.offsetPagination?.total),
       }
-    : response
+    : preventUndefined(response)
 }

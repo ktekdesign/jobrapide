@@ -5,13 +5,19 @@ import useTerms from '@hooks/useTerms'
 
 import { populateTerms } from '@utils/populateContext'
 import { isEmpty } from '@utils/manipulateArray'
+import { TermTypePlural } from '@utils/interfaces'
 
 const RegionsList = ({ active }) => {
   const { stateTerms, dispatchTerms } = useTerms()
   const [regions, setRegions] = useState(stateTerms.regions)
 
   useEffect(() => {
-    if (isEmpty(regions)) populateTerms('regions', dispatchTerms, setRegions)
+    if (isEmpty(regions))
+      populateTerms({
+        type: TermTypePlural.regions,
+        dispatch: dispatchTerms,
+        setTerms: setRegions,
+      })
   }, [])
 
   if (isEmpty(regions)) return <></>
