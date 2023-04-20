@@ -1,17 +1,12 @@
-import Head from 'next/head'
 import PostBody from '@components/post-body'
 import Layout from '@layout/layout'
-import { getAllPages, getPage } from 'graphql/api'
-import { CMS_NAME } from '@utils/constants'
+import { getAllPages, getPage } from '@graphql/api'
 import PostTitle from '@components/post-title'
+import { preventUndefined } from '@utils/manipulateArray'
 
 export default function Page({ page }) {
   return (
-    <Layout seo={page.seo}>
-      <Head>
-        <title>{`${page.title} | ${CMS_NAME}`}</title>
-        <meta property="og:image" content="/images/logo.png" />
-      </Head>
+    <Layout seo={preventUndefined(page?.seo)}>
       <PostTitle>{page.title}</PostTitle>
       <PostBody content={page.content} />
     </Layout>
@@ -20,7 +15,7 @@ export default function Page({ page }) {
 
 export async function getStaticProps({ params }) {
   const page = await getPage(`/${params?.slug}/`)
-  console.log(page)
+
   if (!page?.id) return { notFound: true }
 
   return {
