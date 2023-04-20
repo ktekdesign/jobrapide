@@ -7,8 +7,8 @@ import { preventUndefined } from '@utils/manipulateArray'
 export default function Page({ page }) {
   return (
     <Layout seo={preventUndefined(page?.seo)}>
-      <PostTitle>{page.title}</PostTitle>
-      <PostBody content={page.content} />
+      <PostTitle>{preventUndefined(page?.title)}</PostTitle>
+      <PostBody content={preventUndefined(page?.content)} />
     </Layout>
   )
 }
@@ -20,7 +20,7 @@ export async function getStaticProps({ params }) {
 
   return {
     props: {
-      page,
+      page: preventUndefined(page),
     },
   }
 }
