@@ -5,9 +5,9 @@ const FooterMenu = ({ items }) => (
   <nav className="navbar-footer">
     <div className="footer-menu">
       <ul className="footer-menu-items">
-        {items?.map((item, i) => (
+        {items?.map(({ uri, title }, i) => (
           <li key={i}>
-            <Link href={item.uri}>{item.title}</Link>
+            <Link href={uri}>{title}</Link>
           </li>
         ))}
       </ul>

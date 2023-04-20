@@ -1,7 +1,7 @@
-import { isEmpty } from '@utils/manipulateArray'
+import { FC, memo } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { memo } from 'react'
+import { isEmpty } from '@utils/manipulateArray'
 
 interface Props {
   title: string
@@ -13,7 +13,7 @@ interface Props {
   priority?: boolean
 }
 
-const CoverImage = ({
+const CoverImage: FC<Props> = ({
   title,
   image,
   uri,
@@ -21,27 +21,21 @@ const CoverImage = ({
   width,
   height,
   priority,
-}: Props) => {
+}) => {
   if (isEmpty(image)) return <></>
-  const imageFeature = (
-    <Image
-      width={width || 200}
-      height={height || 200}
-      alt={title}
-      src={image}
-      priority={priority}
-      className={className}
-    />
-  )
+
   return (
-    <div className="sm:mx-0 feature">
-      {!isEmpty(uri) ? (
-        <Link href={uri} aria-label={title}>
-          {imageFeature}
-        </Link>
-      ) : (
-        imageFeature
-      )}
+    <div className="feature">
+      <Link href={uri || '#'} aria-label={title}>
+        <Image
+          width={width || 200}
+          height={height || 200}
+          alt={title}
+          src={image}
+          priority={priority}
+          className={className}
+        />
+      </Link>
     </div>
   )
 }

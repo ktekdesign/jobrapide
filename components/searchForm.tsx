@@ -4,9 +4,7 @@ import useModal from '@hooks/useModal'
 import useTerms from '@hooks/useTerms'
 
 import Select from '@components/form/select'
-import Label from '@components/form/label'
 import Input from '@components/form/input'
-import { isEmpty } from '@utils/manipulateArray'
 
 const SearchForm = () => {
   const { stateModal } = useModal()
@@ -16,30 +14,11 @@ const SearchForm = () => {
 
   return (
     <div className="animate-slideinup">
-      <div className="row">
-        <Label title="Poste" htmlFor="fonction" />
-        <Input name="s" id="fonction" />
-      </div>
-      {!isEmpty(categories) && (
-        <div className="row">
-          <Label title="Categorie" htmlFor="category" />
-          <Select name="category" options={categories} id="category" />
-        </div>
-      )}
-      {!isEmpty(secteurs) && (
-        <div className="row">
-          <Label title="Domaine" htmlFor="secteur" />
-          <Select name="secteur" options={secteurs} id="secteur" />
-        </div>
-      )}
-      {!isEmpty(regions) && (
-        <div className="row">
-          <Label title="Region" htmlFor="region" />
-          <Select name="region" options={regions} id="region" />
-        </div>
-      )}
+      <Input name="s" id="fonction" label="Fonction" />
+      <Select options={categories} id="category" label="Categorie" />
+      <Select label="Secteur" options={secteurs} id="secteur" />
+      <Select label="Region" options={regions} id="region" />
     </div>
   )
 }
-
 export default memo(SearchForm)

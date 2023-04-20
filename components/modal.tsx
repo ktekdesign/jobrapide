@@ -93,7 +93,7 @@ const Modal = ({ children }) => {
               Publier une Offre / Post a Job
             </Link>
 
-            <Button type="submit" className="submit">
+            <Button type="submit" id="search" className="submit">
               Recherche
             </Button>
           </div>

@@ -2,30 +2,31 @@ import PostBody from '@components/post-body'
 import Layout from '@layout/layout'
 import { getAllPages, getPage } from '@graphql/api'
 import PostTitle from '@components/post-title'
-import { preventUndefined } from '@utils/manipulateArray'
+import { Page } from '@utils/interfaces'
 
-export default function Page({ page }) {
-  return (
-    <Layout seo={preventUndefined(page?.seo)}>
-      <PostTitle>{preventUndefined(page?.title)}</PostTitle>
-      <PostBody>{preventUndefined(page?.content)}</PostBody>
-    </Layout>
-  )
-}
+const Page = ({ seo, title, content }) => (
+  <Layout seo={seo}>
+    <PostTitle>{title}</PostTitle>
+    <PostBody>{content}</PostBody>
+  </Layout>
+)
 
-export async function getStaticProps({ params }) {
-  const page = await getPage(`/${params?.slug}/`)
+export const getStaticProps = async ({ params }) => {
+  const page: Page = await getPage(`/${params?.slug}/`)
+  const { title, seo, content } = page
 
-  if (!page?.id) return { notFound: true }
+  if (!title || !seo || !content) return { notFound: true }
 
   return {
     props: {
-      page: preventUndefined(page),
+      seo,
+      title,
+      content,
     },
   }
 }
 
-export async function getStaticPaths() {
+export const getStaticPaths = async () => {
   const slugs = await getAllPages()
   // remove contact slug
   const filteredSlugs = slugs.filter((slug) => slug.slug !== 'contact')
@@ -36,3 +37,5 @@ export async function getStaticPaths() {
     fallback: true,
   }
 }
+
+export default Page

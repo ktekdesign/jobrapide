@@ -18,7 +18,7 @@ const Meta: FC<{ seo: Seo }> = ({ seo }) => {
         <meta name="revisit-after" content="15 days" />
         <meta name="doc-class" content="Completed" />
         <meta name="doc-rights" content="Public" />
-        <meta name="viewport" content="width=device-width, user-scalable=no" />
+        <meta name="viewport" content="width=device-width, user-scalable=yes" />
         <meta
           name="robots"
           content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"

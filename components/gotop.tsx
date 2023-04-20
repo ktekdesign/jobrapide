@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import GoTopIcon from '/public/images/gotop.svg'
 
 const GoTop = () => {
@@ -16,4 +16,4 @@ const GoTop = () => {
   )
 }
 
-export default React.memo(GoTop)
+export default memo(GoTop)

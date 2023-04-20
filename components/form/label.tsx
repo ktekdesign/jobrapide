@@ -1,9 +1,16 @@
-import React, { memo } from 'react'
+import React, { FC, LabelHTMLAttributes, ReactNode, memo } from 'react'
 
-const Label = ({ title, ...props }) => (
-  <label className="form-label" htmlFor="grid-state" {...props}>
-    {title}
-  </label>
-)
+interface LabelProps extends LabelHTMLAttributes<HTMLLabelElement> {
+  htmlFor: string
+  children: ReactNode
+}
+const Label: FC<LabelProps> = ({ children, htmlFor, ...props }) => {
+  const { className, ...rest } = props
+  return (
+    <label className={`form-label ${className}`} htmlFor={htmlFor} {...rest}>
+      {children}
+    </label>
+  )
+}
 
 export default memo(Label)

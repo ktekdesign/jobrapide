@@ -1,11 +1,15 @@
-import React, { memo } from 'react'
-import parse from 'html-react-parser'
+import React, { FC, ReactNode, memo } from 'react'
 import { isFirstPage } from '@utils/manipulateArray'
 
-const ArchiveTitle = ({ children, currentPage = 1 }) => (
+const ArchiveTitle: FC<{ children: ReactNode; currentPage?: number }> = ({
+  children,
+  currentPage,
+}) => (
   <h1 className="archive-main-title">
-    {parse(children)}
-    <span>{!isFirstPage(currentPage) && ` / Page ${currentPage}`}</span>
+    {children}
+    <span className={isFirstPage(currentPage) ? 'hidden' : ''}>
+      &nbsp;/ Page {currentPage}
+    </span>
   </h1>
 )
 

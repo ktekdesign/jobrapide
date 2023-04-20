@@ -1,34 +1,18 @@
 import React, { memo } from 'react'
-import Label from '@components/form/label'
 import Input from '@components/form/input'
-import Button from './form/Button'
+import TextArea from '@components/form/textarea'
+import Button from '@components/form/Button'
 
-const ContactForm = () => {
-  return (
-    <div className="border p-4">
-      <div className="row">
-        <Label title="Nom" htmlFor="first-name" />
-        <Input id="first-name" />
-      </div>
-      <div className="row">
-        <Label title="email" htmlFor="email" />
-        <Input id="email" type="email" />
-      </div>
-      <div className="row">
-        <Label title="Téléphone" htmlFor="phone" />
-        <Input id="phone" />
-      </div>
-      <div className="row">
-        <Label title="Message" htmlFor="message" />
-        <textarea className="form-input" id="message" rows={5}></textarea>
-      </div>
-      <div className="row">
-        <Button type="submit" className="submit">
-          Envoyer
-        </Button>
-      </div>
-    </div>
-  )
-}
+const ContactForm = () => (
+  <div className="border p-4">
+    <Input id="first-name" label="Nom" />
+    <Input id="email" type="email" label="Email" />
+    <Input id="phone" type="tel" label="Téléphone" />
+    <TextArea id="message" label="Message"></TextArea>
+    <Button id="send-contact" type="submit">
+      Envoyer
+    </Button>
+  </div>
+)
 
 export default memo(ContactForm)
