@@ -1,10 +1,3 @@
-export interface InitialStateType {
-  secteurs: Term[]
-  regions: Term[]
-  categories: Term[]
-  niveaux?: Term[]
-  posts?: Term[]
-}
 export interface InitialModalStateType {
   toggleModal: boolean
   toggleSearchForm: boolean

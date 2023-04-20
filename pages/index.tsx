@@ -6,6 +6,7 @@ import SwiperContainer from '@components/swiperContainer'
 
 import { populatePosts } from '@utils/populateContext'
 import { getPage } from '@graphql/api'
+import { SwiperHome } from '@components/swiperHome'
 
 export const getStaticProps = async () => {
   const posts = await populatePosts({
@@ -28,8 +29,9 @@ export default function Index({ posts, page }) {
         <Column className="w-full">
           <SwiperContainer
             term="/recrutement/offres/avis-recrutement/"
-            posts={posts}
+            postsData={posts}
             className="title-primary"
+            component={SwiperHome}
           />
         </Column>
       </Container>
@@ -39,6 +41,8 @@ export default function Index({ posts, page }) {
             term="/recrutement/offres/stage/"
             slides={1}
             className="title-secondary"
+            component={SwiperHome}
+            postsPerPage={5}
           />
         </Column>
         <Column className="lg:w-2/3">
@@ -46,6 +50,7 @@ export default function Index({ posts, page }) {
             term="/recrutement/offres/bourses-etude/"
             slides={2}
             className="title-secondary"
+            component={SwiperHome}
           />
         </Column>
       </Container>
@@ -55,6 +60,7 @@ export default function Index({ posts, page }) {
             term="/recrutement/offres/avis-appel-offres/"
             slides={2}
             className="title-primary"
+            component={SwiperHome}
           />
         </Column>
         <Column className="lg:w-1/3">
@@ -62,6 +68,8 @@ export default function Index({ posts, page }) {
             term="/recrutement/offres/call-for-papers/"
             slides={1}
             className="title-primary"
+            component={SwiperHome}
+            postsPerPage={5}
           />
         </Column>
       </Container>
@@ -71,6 +79,8 @@ export default function Index({ posts, page }) {
             term="/recrutement/offres/concours/"
             slides={1}
             className="title-secondary"
+            component={SwiperHome}
+            postsPerPage={5}
           />
         </Column>
         <Column className="lg:w-2/3">
@@ -78,6 +88,7 @@ export default function Index({ posts, page }) {
             term="/recrutement/offres/formations/"
             slides={2}
             className="title-secondary"
+            component={SwiperHome}
           />
         </Column>
       </Container>
@@ -87,6 +98,7 @@ export default function Index({ posts, page }) {
             term="/recrutement/actualites/"
             slides={2}
             className="title-primary"
+            component={SwiperHome}
           />
         </Column>
         <Column className="lg:w-1/3">
@@ -94,6 +106,8 @@ export default function Index({ posts, page }) {
             term="/recrutement/offres/volontaire/"
             slides={1}
             className="title-primary"
+            component={SwiperHome}
+            postsPerPage={5}
           />
         </Column>
       </Container>

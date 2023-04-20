@@ -12,7 +12,16 @@ import CloseIcon from '/public/images/close.svg'
 import { TermTypePlural } from '@utils/interfaces'
 
 const Modal = ({ children }) => {
-  const { stateTerms, dispatchTerms } = useTerms()
+  const {
+    secteurs,
+    regions,
+    categories,
+    niveaux,
+    setSecteurs,
+    setCategories,
+    setNiveaux,
+    setRegions,
+  } = useTerms()
   const { stateModal, dispatchModal } = useModal()
 
   const closeModal = () => dispatchModal({ type: actions.SET_TOGGLE_MODAL })
@@ -20,23 +29,21 @@ const Modal = ({ children }) => {
     dispatchModal({ type: actions.SET_TOGGLE_SEARCHFRORM })
 
   useEffect(() => {
-    const { secteurs, regions, categories, niveaux } = stateTerms
-
     if (isEmpty(secteurs))
-      populateTerms({ type: TermTypePlural.secteurs, dispatch: dispatchTerms })
+      populateTerms({ type: TermTypePlural.secteurs, setTerms: setSecteurs })
 
     if (isEmpty(regions))
-      populateTerms({ type: TermTypePlural.regions, dispatch: dispatchTerms })
+      populateTerms({ type: TermTypePlural.regions, setTerms: setRegions })
 
     if (isEmpty(categories))
       populateTerms({
         type: TermTypePlural.categories,
-        dispatch: dispatchTerms,
+        setTerms: setCategories,
       })
 
     if (isEmpty(niveaux))
-      populateTerms({ type: TermTypePlural.niveaux, dispatch: dispatchTerms })
-  }, [])
+      populateTerms({ type: TermTypePlural.niveaux, setTerms: setNiveaux })
+  }, [secteurs, regions, categories, niveaux])
 
   return (
     <dialog onClick={closeModal} id="modal" open={stateModal.toggleModal}>

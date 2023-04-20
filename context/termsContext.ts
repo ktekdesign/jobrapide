@@ -1,21 +1,16 @@
-import { createContext, Dispatch } from 'react'
-import {
-  InitialStateType,
-  Term,
-  TermType,
-  TermTypePlural,
-} from '@utils/interfaces'
-import { initialState } from '@context/dataReducer'
+import { createContext, Dispatch, SetStateAction } from 'react'
+import { Term } from '@utils/interfaces'
 
-export const TermsContext = createContext<{
-  stateTerms: InitialStateType
-  dispatchTerms: Dispatch<{
-    type: string
-    payload: [Term | Term[], TermType | TermTypePlural | string]
-  } | null>
-}>({
-  stateTerms: initialState,
-  dispatchTerms: () => null,
-})
+type TermsContextData = {
+  categories: Term[]
+  setCategories: Dispatch<SetStateAction<Term[]>>
+  secteurs: Term[]
+  setSecteurs: Dispatch<SetStateAction<Term[]>>
+  regions: Term[]
+  setRegions: Dispatch<SetStateAction<Term[]>>
+  niveaux: Term[]
+  setNiveaux: Dispatch<SetStateAction<Term[]>>
+}
+export const TermsContext = createContext({} as TermsContextData)
 
 export default TermsContext

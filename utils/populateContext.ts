@@ -1,12 +1,7 @@
-import { actions } from '../context/dataReducer'
-import {
-  getCategories,
-  getRegions,
-  getTermAndPosts,
-  getTerms,
-} from '@graphql/api'
-import { Term, TermType, TermTypePlural } from './interfaces'
 import { Dispatch, SetStateAction } from 'react'
+import { actions } from '@context/dataReducer'
+import { getCategories, getPostsHome, getRegions, getTerms } from '@graphql/api'
+import { Term, TermType, TermTypePlural } from '@utils/interfaces'
 
 export const populateTerms = async ({
   type,
@@ -35,21 +30,19 @@ export const populateTerms = async ({
 export const populatePosts = async ({
   term,
   type = TermType.Category,
-  dispatch,
-  setTermsWithPosts,
+  isPub,
+  postsPerPage = 10,
 }: {
   term: string
   type?: TermType
   dispatch?: Dispatch<{
     type: string
     payload: [Term, string]
-  } | null>
+  }>
   setTermsWithPosts?: Dispatch<SetStateAction<Term>>
+  isPub?: boolean
+  postsPerPage?: number
 }) => {
-  const data = await getTermAndPosts({ term, type })
-
-  if (dispatch) dispatch({ type: actions.SET_POSTS, payload: [data, term] })
-  if (setTermsWithPosts) setTermsWithPosts(data)
-
+  const data = await getPostsHome({ term, type, isPub, postsPerPage })
   return data
 }

@@ -204,6 +204,39 @@ export const getTermAndPosts = async ({ term, type, page = 1 }) => {
 
   return taxonomy
 }
+export const getPostsHome = async ({ term, type, isPub, postsPerPage }) => {
+  const typeLower = type.toLowerCase()
+  const posts_query = `posts(first: ${postsPerPage}, where: { orderby: { field: DATE, order: DESC } }) {
+    nodes {  
+      databaseId
+      title
+      uri
+      ${isPub ? 'content' : ''}
+      featuredImage {
+        node {
+          sourceUrl
+        }
+      }  
+    }
+  }`
+  const data = await fetchAPI(
+    `
+    query PostsHome($id: ID!, $idType: ${type}IdType!) {
+      ${typeLower} (id: $id, idType: $idType) {
+        databaseId
+        name
+        uri
+        ${posts_query}
+  		}
+    }
+  `,
+    {
+      id: term,
+      idType: 'URI',
+    }
+  )
+  return mapTerm(data[typeLower])
+}
 export const getTerms = async (type) => {
   const data = await fetchAPI(
     `

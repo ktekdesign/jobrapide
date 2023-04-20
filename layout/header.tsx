@@ -6,6 +6,7 @@ import SearchForm from '@components/searchForm'
 import SearchCurriculumForm from '@components/searchCurriculumForm'
 import Pub from '@components/pub'
 import { MENU_ITEMS } from '@utils/constants'
+import SwiperContainer from '@components/swiperContainer'
 
 const Header = () => {
   return (
@@ -16,7 +17,11 @@ const Header = () => {
         <SearchForm />
       </Modal>
       <div className="pub-in-header">
-        <Pub term="/recrutement/publicite/pub-niveau-2/" />
+        <SwiperContainer
+          term="/recrutement/publicite/pub-niveau-2/"
+          component={Pub}
+          isPub
+        />
       </div>
     </>
   )

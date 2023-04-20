@@ -13,6 +13,7 @@ import GoTop from '@components/gotop'
 import Twitter from '@components/twitter'
 import ImageSlider from '@components/image-slider'
 import { TermType } from '@utils/interfaces'
+import SwiperHome from '@components/swiperHome'
 
 const Layout = ({ children, seo }) => (
   <>
@@ -25,7 +26,11 @@ const Layout = ({ children, seo }) => (
       </Column>
       <Column className="right">
         <Row>
-          <Pub term="/recrutement/publicite/pub-niveau-1/" />
+          <SwiperContainer
+            term="/recrutement/publicite/pub-niveau-1/"
+            component={Pub}
+            isPub
+          />
         </Row>
         <Row>
           <SwiperContainer
@@ -33,13 +38,21 @@ const Layout = ({ children, seo }) => (
             type={TermType.Tag}
             slides={1}
             className="title-primary"
+            component={SwiperHome}
           />
         </Row>
         <Row>
-          <ImageSlider term="/recrutement/publicite/partenaires/" />
+          <SwiperContainer
+            term="/recrutement/partenaires/"
+            component={ImageSlider}
+          />
         </Row>
         <Row>
-          <Pub term="/recrutement/publicite/pub-niveau-3/" />
+          <SwiperContainer
+            term="/recrutement/publicite/pub-niveau-3/"
+            component={Pub}
+            isPub
+          />
         </Row>
         <Row>
           <Facebook />

@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useState } from 'react'
+import React, { memo, useEffect } from 'react'
 import Link from 'next/link'
 
 import useTerms from '@hooks/useTerms'
@@ -8,14 +8,12 @@ import { isEmpty } from '@utils/manipulateArray'
 import { TermTypePlural } from '@utils/interfaces'
 
 const SecteursList = ({ active }) => {
-  const { stateTerms, dispatchTerms } = useTerms()
-  const [secteurs, setSecteurs] = useState(stateTerms.secteurs)
+  const { secteurs, setSecteurs } = useTerms()
 
   useEffect(() => {
     if (isEmpty(secteurs))
       populateTerms({
         type: TermTypePlural.secteurs,
-        dispatch: dispatchTerms,
         setTerms: setSecteurs,
       })
   }, [secteurs])

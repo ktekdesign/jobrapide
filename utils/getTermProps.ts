@@ -1,5 +1,5 @@
 import { getTermAndPosts } from '@graphql/api'
-import { TermType } from './interfaces'
+import { TermType } from '@utils/interfaces'
 
 export const getTermProps = async (resolvedUrl, params, type: TermType) => {
   const currentPage = parseInt(params.slug.pop()) || 1

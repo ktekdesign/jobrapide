@@ -1,6 +1,10 @@
-import { getLast, isFirstPage, next, prev } from '@utils/manipulateArray'
-import Link from 'next/link'
 import React, { memo } from 'react'
+import Link from 'next/link'
+
+import ArrowLeft from '/public/images/left.svg'
+import ArrowRight from '/public/images/right.svg'
+
+import { getLast, isFirstPage, next, prev } from '@utils/manipulateArray'
 
 const Pagination = ({ currentPage, uri, pages, isSearch = false }) => {
   const isLastPage = currentPage === getLast(pages)
@@ -15,24 +19,14 @@ const Pagination = ({ currentPage, uri, pages, isSearch = false }) => {
 
   return (
     <div className="pagination">
-      {!isFirstPage(currentPage) && (
-        <Link className="pagination-item" href={url(prev(currentPage))}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-3 md:w-6 h-3 md:h-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
-            />
-          </svg>
-        </Link>
-      )}
+      <Link
+        className={`pagination-item ${
+          isFirstPage(currentPage) ? 'hidden' : ''
+        }`}
+        href={url(prev(currentPage))}
+      >
+        <ArrowLeft className="icon" />
+      </Link>
       {pages.map((page, i) => {
         if (page == '...') {
           return (
@@ -54,25 +48,12 @@ const Pagination = ({ currentPage, uri, pages, isSearch = false }) => {
           )
         }
       })}
-
-      {!isLastPage && (
-        <Link className="pagination-item" href={url(next(currentPage))}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-3 md:w-6 h-3 md:h-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-            />
-          </svg>
-        </Link>
-      )}
+      <Link
+        className={`pagination-item ${isLastPage ? 'hidden' : ''}`}
+        href={url(next(currentPage))}
+      >
+        <ArrowRight className="icon" />
+      </Link>
     </div>
   )
 }

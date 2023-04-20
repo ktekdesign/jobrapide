@@ -9,9 +9,8 @@ import { isEmpty } from '@utils/manipulateArray'
 
 const SearchCurriculumForm = () => {
   const { stateModal } = useModal()
-  const { stateTerms } = useTerms()
+  const { secteurs, regions, niveaux } = useTerms()
 
-  const { secteurs, regions, niveaux } = stateTerms
   const { toggleSearchForm } = stateModal
 
   if (!toggleSearchForm) return <></>

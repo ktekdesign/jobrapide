@@ -1,82 +1,60 @@
 import React, { memo, useEffect, useState } from 'react'
-import Link from 'next/link'
-
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay, Pagination } from 'swiper'
-import 'swiper/css'
-import 'swiper/css/bundle'
-import 'swiper/css/pagination'
-
-import PostPreview from '@components/post-preview'
-
-import { actions } from '@context/dataReducer'
-
-import useTerms from '@hooks/useTerms'
 
 import { populatePosts } from '@utils/populateContext'
-import { isEmpty } from '@utils/manipulateArray'
+import { getFirst, isEmpty } from '@utils/manipulateArray'
 import { TermType } from '@utils/interfaces'
+import usePosts from '@hooks/usePosts'
+import { actions } from '@context/dataReducer'
 
 export const SwiperContainer = ({
   term,
   type = TermType.Category,
   slides = 3,
   className = '',
-  posts = null,
+  postsData = null,
+  width = 0,
+  height = 0,
+  isPub = false,
+  postsPerPage = 10,
+  component: Component,
 }) => {
-  const { stateTerms, dispatchTerms } = useTerms()
-  const [termWithPosts, setTermsWithPosts] = useState(
-    posts || stateTerms.posts.find((termPosts) => termPosts?.uri === term)
-  )
+  const { statePosts, dispatchPosts } = usePosts()
+  const getPost = () => statePosts?.filter((post) => post?.uri === term)
+  const [current, setCurrent] = useState(postsData)
 
   useEffect(() => {
-    if (!isEmpty(posts))
-      dispatchTerms({ type: actions.SET_POSTS, payload: [posts, term] })
+    const updatePosts = async () => {
+      if (!isEmpty(postsData?.posts)) {
+        return dispatchPosts({
+          type: actions.SET_POSTS,
+          payload: [postsData, term],
+        })
+      }
+      const termPosts = getFirst(getPost())
+      if (!termPosts?.id) {
+        const data = await populatePosts({
+          term,
+          type,
+          isPub,
+          postsPerPage,
+          dispatch: dispatchPosts,
+        })
+        dispatchPosts({ type: actions.SET_POSTS, payload: [data, term] })
+        setCurrent(data)
+        return
+      }
+      dispatchPosts({ type: actions.SET_POSTS, payload: [termPosts, term] })
+      setCurrent(termPosts)
+    }
+    updatePosts()
+  }, [current])
 
-    if (!termWithPosts)
-      populatePosts({ term, type, dispatch: dispatchTerms, setTermsWithPosts })
-  }, [termWithPosts])
+  if (isEmpty(current?.posts)) return <></>
 
-  if (!termWithPosts) return <></>
+  const { posts: items, uri, name } = current
+  const props = { items, uri, name, slides, width, height, className }
 
-  const { posts: items, uri, name } = termWithPosts
-
-  return (
-    <div className="swiper-container bg-dark">
-      <h2 className={className}>
-        <Link href={uri}>{name}</Link>
-      </h2>
-      <Swiper
-        pagination={{
-          clickable: true,
-        }}
-        spaceBetween={30}
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: true,
-          pauseOnMouseEnter: true,
-        }}
-        breakpoints={{
-          0: {
-            slidesPerView: 1,
-          },
-          640: {
-            slidesPerView: Math.max(slides - 1, 2),
-          },
-          1024: {
-            slidesPerView: slides,
-          },
-        }}
-        modules={[Pagination, Autoplay]}
-      >
-        {items.map(({ id, uri, title, image }) => (
-          <SwiperSlide key={id}>
-            <PostPreview key={id} title={title} image={image} uri={uri} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </div>
-  )
+  return <Component {...props} />
 }
 
 export default memo(SwiperContainer)
