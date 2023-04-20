@@ -18,11 +18,12 @@ const Terms = ({ terms, name }) => {
         </span>
       ))}
 
-      {moreTerms && (
-        <small className="more-terms" onClick={() => setHideTerms(!hideTerms)}>
-          {hideTerms ? '... Afficher plus' : 'Afficher moins'}
-        </small>
-      )}
+      <small
+        className={`more-terms ${moreTerms ? '' : 'hidden'}`}
+        onClick={() => setHideTerms(!hideTerms)}
+      >
+        {hideTerms ? '... Afficher plus' : 'Afficher moins'}
+      </small>
     </span>
   )
 }

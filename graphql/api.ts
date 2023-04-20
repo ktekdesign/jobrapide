@@ -337,7 +337,18 @@ export const getPage = async (uri) => {
   `)
   return data?.page
 }
-
+export const getAllPages = async () => {
+  const data = await fetchAPI(`
+  query pages {
+    pages (first: 100) { 
+      nodes {     
+        slug
+      }
+    }
+  }
+`)
+  return data?.pages?.nodes
+}
 export const performSearch = async ({
   page = 1,
   search = '',

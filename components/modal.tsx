@@ -10,6 +10,7 @@ import { populateTerms } from '@utils/populateContext'
 import { isEmpty } from '@utils/manipulateArray'
 import CloseIcon from '/public/images/close.svg'
 import { TermTypePlural } from '@utils/interfaces'
+import Button from '@components/form/Button'
 
 const Modal = ({ children }) => {
   const {
@@ -92,9 +93,9 @@ const Modal = ({ children }) => {
               Publier une Offre / Post a Job
             </Link>
 
-            <button type="submit" className="modal-submit-button">
+            <Button type="submit" className="submit">
               Recherche
-            </button>
+            </Button>
           </div>
         </form>
       </div>

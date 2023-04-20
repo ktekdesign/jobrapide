@@ -171,7 +171,7 @@ footer {
   @apply w-full flex flex-col text-base lg:flex-row;
 }
 .tab li {
-  @apply text-center block py-2 px-4 bg-primary hover:bg-secondary text-white cursor-pointer flex-grow flex-1;
+  @apply text-center block py-2 px-4 bg-primary hover:bg-dark text-white cursor-pointer flex-grow flex-1;
 }
 
 .tab li.active {
@@ -179,7 +179,8 @@ footer {
 }
 
 /* NavBar CSS */
-.reveal a {
+.reveal a,
+.reveal button {
   @apply h-12 flex p-3 lg:p-2 lg:h-auto border-white bg-secondary border rounded transition-all duration-200 items-center text-sm leading-none text-white hover:border-transparent hover:text-primary hover:bg-white mt-4 lg:mt-0 lg:bg-transparent lg:border-transparent;
 }
 .download img {
@@ -195,7 +196,7 @@ footer {
   @apply border-white bg-secondary text-dark border font-bold rounded px-2 hover:text-primary;
 }
 .menu-item-link {
-  @apply block lg:inline-block text-white hover:text-secondary hover:font-bold lg:mr-4 py-2 active:text-slate-400;
+  @apply block lg:inline-block text-white hover:text-dark hover:font-bold lg:mr-4 py-2 active:text-slate-400;
 }
 .menu-items {
   @apply text-sm flex flex-col flex-wrap lg:flex-row lg:items-center;
@@ -275,8 +276,11 @@ footer {
 .cta-publish-job {
   @apply border-white bg-secondary border p-2 text-xs font-medium uppercase leading-normal rounded text-white shadow-lg transition duration-200 ease-in-out hover:bg-primary;
 }
-.modal-submit-button {
-  @apply inline-block rounded bg-primary p-2 text-xs font-medium uppercase leading-normal text-white shadow-lg transition duration-200 ease-in-out hover:bg-secondary;
+.button {
+  @apply inline-block rounded p-2 text-xs font-medium uppercase leading-normal text-white shadow-lg transition duration-200 ease-in-out bg-slate-400 text-dark;
+}
+.submit {
+  @apply bg-primary hover:bg-secondary text-white;
 }
 .terms-list {
   @apply flex-wrap text-xs;
@@ -362,7 +366,7 @@ footer {
 }
 
 .go-top {
-  @apply bg-dark w-10 h-10 rounded-full hover:bg-primary hover:animate-none fixed bottom-10 right-10 z-20 text-white flex items-center justify-center cursor-pointer animate-bounce transition-all duration-200;
+  @apply bg-dark w-10 h-10 rounded-full hover:bg-primary hover:animate-none fixed bottom-10 right-5 z-20 text-white flex items-center justify-center cursor-pointer animate-bounce transition-all duration-200;
 }
 .copyright {
   @apply text-center bg-secondary text-dark py-2 text-xs;
@@ -411,7 +415,7 @@ footer {
   @apply text-sm mb-3 leading-snug px-2;
 }
 .post-preview-title a {
-  @apply text-white hover:underline;
+  @apply text-white hover:underline hover:font-bold visited:font-thin visited:underline;
 }
 .post-header-image {
   @apply mb-8 md:mb-16 sm:mx-0;
@@ -421,4 +425,19 @@ footer {
 }
 .post-header-terms {
   @apply mb-2 text-xs;
+}
+#google_translate_element {
+  @apply fixed left-5 bottom-10 lg:top-28 lg:left-0 lg:bottom-auto xl:top-20 xl:left-5 z-20;
+}
+#google_translate_element .goog-te-gadget-simple {
+  @apply flex rounded p-2;
+}
+#google_translate_element .goog-te-gadget-simple > span > a {
+  @apply flex;
+}
+#google_translate_element .skiptranslate > div select {
+  @apply form-select;
+}
+iframe .skiptranslate {
+  @apply w-4;
 }

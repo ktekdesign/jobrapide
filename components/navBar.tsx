@@ -84,8 +84,7 @@ const NavBar = ({ items }) => {
             </Link>
           </li>
           <li className="reveal">
-            <Link
-              href="#modal"
+            <button
               onClick={(e) => {
                 e.preventDefault()
                 dispatchModal({ type: actions.SET_TOGGLE_MODAL })
@@ -93,7 +92,7 @@ const NavBar = ({ items }) => {
               title="Faire une recherche"
             >
               <SearchIcon className="icon" />
-            </Link>
+            </button>
           </li>
         </ul>
       </div>

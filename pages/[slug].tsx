@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import PostBody from '@components/post-body'
 import Layout from '@layout/layout'
-import { getPage } from 'graphql/api'
+import { getAllPages, getPage } from 'graphql/api'
 import { CMS_NAME } from '@utils/constants'
 import PostTitle from '@components/post-title'
 
@@ -18,18 +18,24 @@ export default function Page({ page }) {
   )
 }
 
-export async function getServerSideProps({ resolvedUrl, res }) {
-  const data = await getPage(resolvedUrl)
+export async function getStaticProps({ params }) {
+  const page = await getPage(`/${params?.slug}/`)
 
-  if (!data?.id) return { notFound: true }
+  if (!page?.databaseId) return { notFound: true }
 
-  res.setHeader(
-    'Cache-Control',
-    'public, s-maxage=10, stale-while-revalidate=59'
-  )
   return {
     props: {
-      page: data,
+      page,
     },
+  }
+}
+
+export async function getStaticPaths() {
+  const slugs = await getAllPages()
+  const paths = slugs.map((slug) => ({ params: { slug: slug.slug } }))
+
+  return {
+    paths,
+    fallback: true,
   }
 }

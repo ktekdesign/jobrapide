@@ -1,6 +1,7 @@
 import React, { memo } from 'react'
 import Label from '@components/form/label'
 import Input from '@components/form/input'
+import Button from './form/Button'
 
 const ContactForm = () => {
   return (
@@ -20,6 +21,11 @@ const ContactForm = () => {
       <div className="row">
         <Label title="Message" htmlFor="message" />
         <textarea className="form-input" id="message" rows={5}></textarea>
+      </div>
+      <div className="row">
+        <Button type="submit" className="submit">
+          Envoyer
+        </Button>
       </div>
     </div>
   )

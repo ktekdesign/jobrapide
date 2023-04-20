@@ -12,9 +12,7 @@ const SearchForm = () => {
   const { stateModal } = useModal()
   const { categories, secteurs, regions } = useTerms()
 
-  const { toggleSearchForm } = stateModal
-
-  if (toggleSearchForm) return <></>
+  if (stateModal.toggleSearchForm) return <></>
 
   return (
     <div className="animate-slideinup">

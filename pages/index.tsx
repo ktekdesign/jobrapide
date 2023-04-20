@@ -4,32 +4,26 @@ import Container from '@layout/container'
 
 import SwiperContainer from '@components/swiperContainer'
 
-import { populatePosts } from '@utils/populateContext'
 import { getPage } from '@graphql/api'
 import { SwiperHome } from '@components/swiperHome'
 
 export const getStaticProps = async () => {
-  const posts = await populatePosts({
-    term: '/recrutement/offres/avis-recrutement/',
-  })
   const page = await getPage('/')
 
   return {
     props: {
-      posts,
       page,
     },
     revalidate: 3600,
   }
 }
-export default function Index({ posts, page }) {
+export default function Index({ page }) {
   return (
     <Layout seo={page.seo}>
       <Container>
         <Column className="w-full">
           <SwiperContainer
             term="/recrutement/offres/avis-recrutement/"
-            postsData={posts}
             className="title-primary"
             component={SwiperHome}
           />
