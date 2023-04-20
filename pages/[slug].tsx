@@ -20,8 +20,8 @@ export default function Page({ page }) {
 
 export async function getStaticProps({ params }) {
   const page = await getPage(`/${params?.slug}/`)
-
-  if (!page?.databaseId) return { notFound: true }
+  console.log(page)
+  if (!page?.id) return { notFound: true }
 
   return {
     props: {

@@ -25,6 +25,12 @@ export interface Term {
   posts?: Post[]
   seo?: Seo
 }
+export interface Page {
+  id: number
+  title: string
+  content: string
+  seo?: Seo
+}
 export interface Seo {
   breadcrumbs: { text: string; url: string }[]
   canonical: string

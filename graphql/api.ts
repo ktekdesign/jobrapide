@@ -1,5 +1,5 @@
 import { isEmpty, preventUndefined } from '@utils/manipulateArray'
-import { mapPost, mapTerm } from '@utils/mapping'
+import { mapPage, mapPost, mapTerm } from '@utils/mapping'
 
 const API_URL = process.env.NEXT_PUBLIC_WORDPRESS_API_URL
 
@@ -335,7 +335,7 @@ export const getPage = async (uri) => {
       }
     }
   `)
-  return data?.page
+  return mapPage(data?.page)
 }
 export const getAllPages = async () => {
   const data = await fetchAPI(`

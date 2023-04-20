@@ -1,4 +1,4 @@
-import { Post, Seo, Term } from '@utils/interfaces'
+import { Page, Post, Seo, Term } from '@utils/interfaces'
 import { isEmpty, preventUndefined } from './manipulateArray'
 
 export const mapSeo = (seo): Seo => {
@@ -63,5 +63,16 @@ export const mapTerm = (term): Term => {
     parentId: preventUndefined(term.parentDatabaseId),
     posts: preventUndefined(posts),
     seo: mapSeo(preventUndefined(term.seo)),
+  }
+}
+
+export const mapPage = (page): Page => {
+  if (isEmpty(page)) return null
+
+  return {
+    id: preventUndefined(page.databaseId),
+    title: preventUndefined(page.title),
+    content: preventUndefined(page.content),
+    seo: mapSeo(preventUndefined(page.seo)),
   }
 }

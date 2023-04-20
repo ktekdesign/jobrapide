@@ -5,6 +5,7 @@ import { getFirst, isEmpty } from '@utils/manipulateArray'
 import { TermType } from '@utils/interfaces'
 import usePosts from '@hooks/usePosts'
 import { actions } from '@context/dataReducer'
+import Loading from './loading'
 
 export const SwiperContainer = ({
   term,
@@ -49,7 +50,7 @@ export const SwiperContainer = ({
     updatePosts()
   }, [current])
 
-  if (isEmpty(current?.posts)) return <></>
+  if (isEmpty(current?.posts)) return <Loading />
 
   const { posts: items, uri, name } = current
   const props = { items, uri, name, slides, width, height, className }
