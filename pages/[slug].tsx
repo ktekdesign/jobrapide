@@ -32,7 +32,9 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
   const slugs = await getAllPages()
-  const paths = slugs.map((slug) => ({ params: { slug: slug.slug } }))
+  // remove contact slug
+  const filteredSlugs = slugs.filter((slug) => slug.slug !== 'contact')
+  const paths = filteredSlugs.map((slug) => ({ params: { slug: slug.slug } }))
 
   return {
     paths,
