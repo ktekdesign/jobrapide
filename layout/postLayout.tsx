@@ -14,7 +14,7 @@ const PostLayout = ({ post, posts }) => (
       secteurs={post.secteurs}
       regions={post.regions}
     />
-    <PostBody content={post.content} />
+    <PostBody>{post.content}</PostBody>
     <SimilarPosts posts={posts} />
   </Layout>
 )

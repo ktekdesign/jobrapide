@@ -8,7 +8,7 @@ export default function Page({ page }) {
   return (
     <Layout seo={preventUndefined(page?.seo)}>
       <PostTitle>{preventUndefined(page?.title)}</PostTitle>
-      <PostBody content={preventUndefined(page?.content)} />
+      <PostBody>{preventUndefined(page?.content)}</PostBody>
     </Layout>
   )
 }
