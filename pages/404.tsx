@@ -2,6 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import Layout from '@layout/layout'
+import ArchiveTitle from '@components/archive-title'
 
 const PageError = () => (
   <Layout seo={null}>
@@ -14,13 +15,11 @@ const PageError = () => (
     </Head>
 
     <div className="border border-gray-500 p-8">
-      <h1 className="bg-primary text-white text-2xl p-2">
-        Error 404 : page introuvable
-      </h1>
+      <ArchiveTitle>Error 404 : page introuvable</ArchiveTitle>
       <p>La page que vous recherchée a été supprimée ou est inexistante.</p>
 
-      <div className="back-btn">
-        <Link href="/" className="btn btn-primary">
+      <div className="text-center row">
+        <Link href="/" className="button">
           Retour
         </Link>
       </div>

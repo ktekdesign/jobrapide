@@ -17,8 +17,6 @@ export const getStaticPaths = async () => {
   })
   return paths
 }
-const Category = ({ term, currentPage }) => (
-  <TermLayout term={term} currentPage={currentPage} />
-)
+const Category = (props) => <TermLayout {...props} />
 
 export default Category

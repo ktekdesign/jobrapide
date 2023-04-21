@@ -9,14 +9,15 @@ const MoreStories = dynamic(() => import('@components/more-stories'), {
   ssr: false,
 })
 
-const TermLayout = ({ term, currentPage }) => {
-  if (isEmpty(term) || isEmpty(currentPage)) return <Loading />
+const TermLayout = ({ term, currentPage, pages }) => {
+  if (isEmpty(term) || isEmpty(currentPage) || isEmpty(pages))
+    return <Loading />
 
   return (
     <Layout seo={term.seo}>
       <ArchiveTitle currentPage={currentPage}>{term.name}</ArchiveTitle>
       <MoreStories posts={term.posts} />
-      <Pagination count={term.count} uri={term.uri} currentPage={currentPage} />
+      <Pagination pages={pages} uri={term.uri} currentPage={currentPage} />
     </Layout>
   )
 }

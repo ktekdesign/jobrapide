@@ -10,18 +10,11 @@ const MoreStories = ({ posts }) => {
   return (
     <section className="flex flex-col gap-4">
       {posts?.map(
-        ({
-          id,
-          image,
-          title,
-          categories,
-          uri,
-          excerpt,
-          date,
-          secteurs,
-          regions,
-        }) => (
-          <article className="archive" key={id}>
+        (
+          { image, title, categories, uri, excerpt, date, secteurs, regions },
+          key
+        ) => (
+          <article className="archive" key={key}>
             <div className="archive-post-feature">
               <CoverImage
                 image={image}

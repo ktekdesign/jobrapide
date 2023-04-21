@@ -1,11 +1,15 @@
 import { getPostAndMorePosts } from '@graphql/api'
+import { isEmpty } from './manipulateArray'
 
 export const getPostProps = async (resolvedUrl) => {
-  const props = await getPostAndMorePosts(resolvedUrl)
+  const { post, posts } = await getPostAndMorePosts(resolvedUrl)
 
-  if (!props?.post?.id) return { notFound: true }
+  if (isEmpty(post)) return { notFound: true }
 
   return {
-    props,
+    props: {
+      post,
+      posts,
+    },
   }
 }

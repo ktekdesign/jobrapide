@@ -12,8 +12,8 @@ const Terms = ({ terms, name }) => {
     <span className={hideTerms ? 'terms terms-hide' : 'terms'}>
       {name}
 
-      {terms.map(({ id, uri, name }) => (
-        <span key={id}>
+      {terms.map(({ uri, name }, key) => (
+        <span key={key}>
           <Link href={uri}>{name}</Link>
         </span>
       ))}

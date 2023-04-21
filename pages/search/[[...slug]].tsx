@@ -14,12 +14,14 @@ export const getServerSideProps = async ({ query, params, res }) => {
   return { props: { ...data, uri, search: query.s } }
 }
 
-const Search = ({ posts, count, currentPage, uri, search }) => {
+const Search = ({ posts, pages, currentPage, uri, search }) => {
   return (
     <Layout seo={null}>
-      <ArchiveTitle>{`Recherche pour ${search}`}</ArchiveTitle>
+      <ArchiveTitle
+        currentPage={currentPage}
+      >{`Recherche pour ${search}`}</ArchiveTitle>
       <MoreStories posts={posts} />
-      <Pagination currentPage={currentPage} uri={uri} count={count} isSearch />
+      <Pagination currentPage={currentPage} uri={uri} pages={pages} isSearch />
     </Layout>
   )
 }

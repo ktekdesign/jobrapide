@@ -1,5 +1,5 @@
 import React, { FC, ReactNode, memo } from 'react'
-import { isFirstPage } from '@utils/manipulateArray'
+import { isEmpty, isFirstPage } from '@utils/manipulateArray'
 
 const ArchiveTitle: FC<{ children: ReactNode; currentPage?: number }> = ({
   children,
@@ -7,7 +7,11 @@ const ArchiveTitle: FC<{ children: ReactNode; currentPage?: number }> = ({
 }) => (
   <h1 className="archive-main-title">
     {children}
-    <span className={isFirstPage(currentPage) ? 'hidden' : ''}>
+    <span
+      className={
+        isEmpty(currentPage) || isFirstPage(currentPage) ? 'hidden' : ''
+      }
+    >
       &nbsp;/ Page {currentPage}
     </span>
   </h1>

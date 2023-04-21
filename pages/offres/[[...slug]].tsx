@@ -7,6 +7,7 @@ export const getServerSideProps = async ({ resolvedUrl, res }) => {
     'public, s-maxage=3600, stale-while-revalidate=3659'
   )
   const data = await getPostProps(resolvedUrl)
+
   return data
 }
 

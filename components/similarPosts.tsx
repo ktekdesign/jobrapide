@@ -38,8 +38,8 @@ export const SimilarPosts = ({ posts }) => {
         }}
         modules={[Pagination, Autoplay]}
       >
-        {posts.map(({ id, title, image, uri }) => (
-          <SwiperSlide key={id}>
+        {posts.map(({ title, image, uri }, key) => (
+          <SwiperSlide key={key}>
             <PostPreview title={title} image={image} uri={uri} />
           </SwiperSlide>
         ))}

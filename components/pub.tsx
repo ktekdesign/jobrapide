@@ -29,8 +29,8 @@ export const Pub = ({ items }) => (
       }}
       modules={[Pagination, Autoplay, EffectFlip]}
     >
-      {items?.map(({ id, content }) => (
-        <SwiperSlide key={id}>{parse(content)}</SwiperSlide>
+      {items?.map(({ content }, key) => (
+        <SwiperSlide key={key}>{parse(content)}</SwiperSlide>
       ))}
     </Swiper>
   </div>

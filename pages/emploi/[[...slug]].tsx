@@ -1,18 +1,24 @@
 import { getTermProps } from '@utils/getTermProps'
 import TermLayout from '@layout/termLayout'
-import { TermType } from '@utils/interfaces'
+import { TermType, TermTypePlural } from '@utils/interfaces'
+import { generateTermsStaticPaths } from '@utils/generateTermsStaticPaths'
+import { generateTermsStaticProps } from '@utils/generateTermsStaticProps'
 
-export const getServerSideProps = async ({ resolvedUrl, params, res }) => {
-  res.setHeader(
-    'Cache-Control',
-    'public, s-maxage=3600, stale-while-revalidate=3659'
-  )
-  const data = await getTermProps(resolvedUrl, params, TermType.Tag)
+export const getStaticProps = async ({ params }) => {
+  const { currentPage, resolvedSlug } = generateTermsStaticProps(params)
+
+  const data = await getTermProps(resolvedSlug, TermType.Tag, currentPage)
   return data
 }
 
-const Tag = ({ term, currentPage }) => (
-  <TermLayout term={term} currentPage={currentPage} />
+export const getStaticPaths = async () => {
+  const paths = await generateTermsStaticPaths({
+    type: TermTypePlural.tags,
+  })
+  return paths
+}
+const Tag = ({ term, currentPage, pages }) => (
+  <TermLayout term={term} currentPage={currentPage} pages={pages} />
 )
 
 export default Tag

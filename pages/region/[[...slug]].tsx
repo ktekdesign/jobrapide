@@ -15,8 +15,6 @@ export const getStaticPaths = async () => {
   return paths
 }
 
-const Region = ({ term, currentPage }) => (
-  <TermLayout term={term} currentPage={currentPage} />
-)
+const Region = (props) => <TermLayout {...props} />
 
 export default Region

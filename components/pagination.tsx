@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useState } from 'react'
+import React, { memo } from 'react'
 import Link from 'next/link'
 
 import ArrowLeft from '/public/images/left.svg'
@@ -6,15 +6,13 @@ import ArrowRight from '/public/images/right.svg'
 
 import {
   getLast,
-  isEmpty,
+  isCurrentPage,
   isFirstPage,
   next,
   prev,
 } from '@utils/manipulateArray'
-import getPagination from '@utils/getPagination'
-import Loading from './loading'
 
-const Pagination = ({ count, uri, currentPage, isSearch = false }) => {
+const Pagination = ({ pages, uri, currentPage, isSearch = false }) => {
   const url = (page) =>
     isSearch
       ? `${
@@ -23,15 +21,6 @@ const Pagination = ({ count, uri, currentPage, isSearch = false }) => {
             : uri.replace('_page_', '')
         }`
       : `${uri}${!isFirstPage(page) ? `page/${page}/` : ''}`
-
-  const [pages, setPages] = useState([])
-  const isLastPage = currentPage === getLast(pages)
-
-  useEffect(() => {
-    setPages(getPagination(count, currentPage))
-  }, [count, currentPage])
-
-  if (isEmpty(pages)) return <Loading />
 
   return (
     <div className="pagination">
@@ -65,7 +54,9 @@ const Pagination = ({ count, uri, currentPage, isSearch = false }) => {
         }
       })}
       <Link
-        className={`pagination-item ${isLastPage ? 'hidden' : ''}`}
+        className={`pagination-item ${
+          isCurrentPage(currentPage, getLast(pages)) ? 'hidden' : ''
+        }`}
         href={url(next(currentPage))}
       >
         <ArrowRight className="icon" />

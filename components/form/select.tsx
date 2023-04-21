@@ -19,7 +19,7 @@ const Select: FC<SelectProps> = ({ id, label, options, ...props }) => {
     <div className="row">
       <Label htmlFor={id}>{label}</Label>
       <div className="relative">
-        <select id={id} className="form-select" {...props}>
+        <select id={id} name={id} className="form-select" {...props}>
           {options?.map(({ id, name }) => (
             <option value={id} key={id}>
               {name}

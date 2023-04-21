@@ -1,4 +1,5 @@
 import { performSearch } from '@graphql/api'
+import getPagination from './getPagination'
 
 export const getSearchProps = async (query, params) => {
   const { s, category, secteur, region } = query
@@ -11,6 +12,6 @@ export const getSearchProps = async (query, params) => {
     page: currentPage,
     isSearch: true,
   })
-
-  return { posts, count, currentPage }
+  const pages = getPagination(count, currentPage)
+  return { posts, pages, currentPage }
 }

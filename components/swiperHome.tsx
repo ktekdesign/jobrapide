@@ -38,9 +38,9 @@ export const SwiperHome = ({ items, uri, name, slides, className }) => {
         }}
         modules={[Pagination, Autoplay]}
       >
-        {items?.map(({ id, uri, title, image }) => (
-          <SwiperSlide key={id}>
-            <PostPreview key={id} title={title} image={image} uri={uri} />
+        {items?.map(({ uri, title, image }, key) => (
+          <SwiperSlide key={key}>
+            <PostPreview title={title} image={image} uri={uri} />
           </SwiperSlide>
         ))}
       </Swiper>

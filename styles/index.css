@@ -377,8 +377,9 @@ footer {
   @apply flex flex-wrap sm:flex-nowrap gap-1 md:gap-2 justify-center py-4;
 }
 .pagination-item {
-  @apply border p-2 inline-block text-center text-xs md:text-sm hover:text-white hover:bg-secondary hover:font-bold;
+  @apply border p-2 text-center text-xs md:text-sm hover:text-white hover:bg-secondary hover:font-bold;
 }
+
 .pagination-more {
   @apply text-slate-400 p-2 inline-block text-center text-xs md:text-sm;
 }

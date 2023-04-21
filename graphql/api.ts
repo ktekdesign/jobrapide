@@ -34,10 +34,8 @@ const fetchAPI = async (query = '', variables: Record<string, string> = {}) => {
 const terms_response = `nodes {
   name
   uri
-  databaseId
 }`
-const post_response = (isPostPage = false) => `id
-databaseId
+const post_response = (isPostPage = false) => `
 title
 excerpt
 ${isPostPage ? 'content slug' : ''}
@@ -141,15 +139,13 @@ export const getTermAndPosts = async ({ term, type, page = 1 }) => {
     `
     query TermAndPosts($id: ID!) {
       ${typeLower} (id: $id, idType: SLUG) {
-        id
         databaseId
         name
         count
         slug
         uri
         ${seo_response}
-        ${type !== TermType.Tag ? 'parentDatabaseId' : ''}   
-  			${posts_query}
+        ${posts_query}
   		}
     }
   `,
@@ -188,22 +184,25 @@ export const getPostsHome = async ({ term, type, isPub, postsPerPage }) => {
   const typeLower = type.toLowerCase()
   const posts_query = `posts(first: ${postsPerPage}, where: { orderby: { field: DATE, order: DESC } }) {
     nodes {  
-      databaseId
+      ${
+        isPub
+          ? 'content'
+          : `
       title
       uri
-      ${isPub ? 'content' : ''}
       featuredImage {
         node {
           sourceUrl
         }
-      }  
+      } 
+      `
+      } 
     }
   }`
   const data = await fetchAPI(
     `
     query PostsHome($id: ID!) {
       ${typeLower} (id: $id, idType: SLUG) {
-        databaseId
         name
         uri
         ${posts_query}
@@ -214,7 +213,6 @@ export const getPostsHome = async ({ term, type, isPub, postsPerPage }) => {
       id: term,
     }
   )
-  console.log(data)
   return mapTerm(data[typeLower])
 }
 export const getTerms = async (type) => {
@@ -223,7 +221,6 @@ export const getTerms = async (type) => {
     query Terms {
       ${type} (first: 100) {
         nodes {
-          id
           databaseId
           name
           slug
@@ -244,7 +241,6 @@ export const getCategories = async () => {
     query Category {
       categories (where: { parent: 16 }) {
         nodes {
-          id
           databaseId
           name
           slug
@@ -268,7 +264,6 @@ export const getRegions = async () => {
           endCursor
         }
         nodes {
-          id
           databaseId
           name
           uri
@@ -283,11 +278,7 @@ export const getRegions = async () => {
     `
     query Regions_last {
       regions (first: 100, after: "${data?.regions?.pageInfo?.endCursor}") {
-        pageInfo {
-          endCursor
-        }
         nodes {
-          id
           databaseId
           name
           uri
@@ -387,12 +378,12 @@ export const performSearch = async ({
         search: "${search}"
         ${wherePagination}
         taxQuery: {
-          relation: OR,
+          relation: AND,
           taxArray: [
-            ${category_query}
-            ${secteur_query}
-            ${region_query}
-            ${tag_query}
+            ${!isEmpty(category) ? category_query : ''}
+            ${!isEmpty(secteur) ? secteur_query : ''}
+            ${!isEmpty(region) ? region_query : ''}
+            ${!isEmpty(tag) ? tag_query : ''}
           ]
         }
       }
@@ -402,7 +393,6 @@ export const performSearch = async ({
     }
   }
   `)
-
   const response = data?.posts?.nodes?.map((post) => mapPost(post))
 
   return isSearch

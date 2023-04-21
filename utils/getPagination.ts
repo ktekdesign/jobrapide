@@ -32,7 +32,7 @@ const getPagination = (count, currentPage) => {
     if (currentPage === 3 || currentPage === 4) middle.splice(0, 1)
     if (prev(currentPage) !== getLast(first)) middle.push(prev(currentPage))
     middle.push(currentPage)
-    if (currentPage + 1 !== getFirst(last)) {
+    if (next(currentPage) !== getFirst(last)) {
       middle.push(next(currentPage))
       middle.push('...')
     }
