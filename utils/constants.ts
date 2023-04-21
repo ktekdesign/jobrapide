@@ -1,6 +1,3 @@
-export const CMS_NAME = 'JobRapide'
-export const CMS_URL = 'https://jobrapide.org'
-export const HOME_OG_IMAGE_URL = '/images/logo.png'
 export const MENU_ITEMS = [
   { title: 'Emploi', uri: '/recrutement/offres/avis-recrutement' },
   { title: 'Stage', uri: '/recrutement/offres/stage' },
@@ -20,13 +17,12 @@ export const FOOTER_MENU_ITEMS = [
   { title: 'Qui sommes-nous?', uri: '/qui-sommes-nous/' },
   { title: 'Propriété intellectuelle', uri: '/propriete-intellectuelle/' },
   {
-    title: `Conditions générales d’utilisation de ${CMS_NAME}`,
+    title: `Conditions générales d’utilisation de ${process.env.NEXT_PUBLIC_CMS_NAME}`,
     uri: '/condition-generale-dutilisation/',
   },
   { title: 'Mentions légales', uri: '/mentions-legales/' },
   {
-    title: `Politique de confidentialité ${CMS_NAME}`,
+    title: `Politique de confidentialité ${process.env.NEXT_PUBLIC_CMS_NAME}`,
     uri: '/confidentialite/',
   },
 ]
-export const PER_PAGE = 10

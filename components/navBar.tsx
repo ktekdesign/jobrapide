@@ -12,7 +12,6 @@ import SearchIcon from '/public/images/search.svg'
 import useModal from '@hooks/useModal'
 
 import { actions } from '@context/dataReducer'
-import { CMS_NAME } from '@utils/constants'
 
 const NavBar = ({ items }) => {
   const { dispatchModal } = useModal()
@@ -32,7 +31,7 @@ const NavBar = ({ items }) => {
           <Image src="/images/logo.png" width={40} height={40} alt="Logo" />
           <span className={currentPath === '/' ? 'home-active' : 'home'}>
             <HomeIcon className="icon" />
-            <span>{CMS_NAME}</span>
+            <span>{process.env.NEXT_PUBLIC_CMS_NAME}</span>
           </span>
         </Link>
       </div>

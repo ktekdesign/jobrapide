@@ -1,10 +1,10 @@
-import { PER_PAGE } from '@utils/constants'
 import { TermType } from '@utils/interfaces'
 import { isEmpty, preventUndefined } from '@utils/manipulateArray'
 import { mapPage, mapPost, mapTerm } from '@utils/mapping'
 import axios from 'axios'
 
 const API_URL = process.env.NEXT_PUBLIC_WORDPRESS_API_URL
+const PER_PAGE = parseInt(process.env.NEXT_PUBLIC_PER_PAGE)
 
 const fetchAPI = async (query = '', variables: Record<string, string> = {}) => {
   const headers = { 'Content-Type': 'application/json' }
