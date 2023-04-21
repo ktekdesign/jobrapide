@@ -3,7 +3,7 @@ import { PER_PAGE } from './constants'
 
 const getPagination = (count, currentPage) => {
   const PAGE_BREAK = 3
-  const totalPages = getAllPages(count)
+  const totalPages = Math.min(getAllPages(count), 50)
 
   const first = []
   const middle = []
