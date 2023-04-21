@@ -5,14 +5,11 @@ import parse from 'html-react-parser'
 import CoverImage from '@components/cover-image'
 import Terms from '@components/terms'
 import Date from '@components/date'
-import { isEmpty } from '@utils/manipulateArray'
 
 const MoreStories = ({ posts }) => {
-  if (isEmpty(posts)) return <></>
-
   return (
     <section className="flex flex-col gap-4">
-      {posts.map(
+      {posts?.map(
         ({
           id,
           image,

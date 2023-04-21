@@ -32,19 +32,25 @@ const Modal = ({ children }) => {
   useEffect(() => {
     if (isEmpty(secteurs))
       populateTerms({ type: TermTypePlural.secteurs, setTerms: setSecteurs })
+  }, [secteurs])
 
+  useEffect(() => {
     if (isEmpty(regions))
       populateTerms({ type: TermTypePlural.regions, setTerms: setRegions })
+  }, [regions])
 
+  useEffect(() => {
     if (isEmpty(categories))
       populateTerms({
         type: TermTypePlural.categories,
         setTerms: setCategories,
       })
+  }, [categories])
 
+  useEffect(() => {
     if (isEmpty(niveaux))
       populateTerms({ type: TermTypePlural.niveaux, setTerms: setNiveaux })
-  }, [secteurs, regions, categories, niveaux])
+  }, [niveaux])
 
   return (
     <dialog onClick={closeModal} id="modal" open={stateModal.toggleModal}>

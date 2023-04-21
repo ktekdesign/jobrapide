@@ -29,3 +29,4 @@ export const FOOTER_MENU_ITEMS = [
     uri: '/confidentialite/',
   },
 ]
+export const PER_PAGE = 8

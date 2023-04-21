@@ -18,11 +18,9 @@ const SecteursList = ({ active }) => {
       })
   }, [secteurs])
 
-  if (isEmpty(secteurs)) return <></>
-
   return (
     <ul className={active === 1 ? 'terms-list flex' : 'terms-list hidden'}>
-      {secteurs.map(({ id, uri, name, count }) => (
+      {secteurs?.map(({ id, uri, name, count }) => (
         <li className="secteurs-list" key={id}>
           <Link href={uri}>
             {name} ({count})

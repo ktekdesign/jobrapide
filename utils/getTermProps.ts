@@ -1,5 +1,6 @@
 import { getTermAndPosts } from '@graphql/api'
 import { TermType } from '@utils/interfaces'
+import { isEmpty } from './manipulateArray'
 
 export const getTermProps = async (
   resolvedUrl,
@@ -14,7 +15,7 @@ export const getTermProps = async (
     page: currentPage,
   })
 
-  if (!term?.id) return { notFound: true }
+  if (isEmpty(term)) return { notFound: true }
 
   return { props: { term, currentPage, revalidate: 3600 } }
 }

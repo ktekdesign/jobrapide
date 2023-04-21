@@ -3,7 +3,6 @@ import MoreStories from '@components/more-stories'
 import Pagination from '@components/pagination'
 import Layout from '@layout/layout'
 import ArchiveTitle from '@components/archive-title'
-import getPagination from '@utils/getPagination'
 
 export const getServerSideProps = async ({ query, params, res }) => {
   res.setHeader(
@@ -16,13 +15,11 @@ export const getServerSideProps = async ({ query, params, res }) => {
 }
 
 const Search = ({ posts, count, currentPage, uri, search }) => {
-  const pages = getPagination(count, currentPage)
-
   return (
     <Layout seo={null}>
       <ArchiveTitle>{`Recherche pour ${search}`}</ArchiveTitle>
       <MoreStories posts={posts} />
-      <Pagination currentPage={currentPage} uri={uri} pages={pages} isSearch />
+      <Pagination currentPage={currentPage} uri={uri} count={count} isSearch />
     </Layout>
   )
 }

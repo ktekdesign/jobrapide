@@ -1,6 +1,5 @@
 import { getFirst, getLast, next, prev } from '@utils/manipulateArray'
-
-const PER_PAGE = 10
+import { PER_PAGE } from './constants'
 
 const getPagination = (count, currentPage) => {
   const PAGE_BREAK = 3

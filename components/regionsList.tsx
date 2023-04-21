@@ -18,11 +18,9 @@ const RegionsList = ({ active }) => {
       })
   }, [regions])
 
-  if (isEmpty(regions)) return <></>
-
   return (
     <ul className={active === 2 ? 'terms-list flex' : 'terms-list hidden'}>
-      {regions.map(({ id, uri, name, count }) => (
+      {regions?.map(({ id, uri, name, count }) => (
         <li className="regions-list" key={id}>
           <Link href={uri}>
             {name} ({count})

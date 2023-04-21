@@ -1,13 +1,20 @@
-import React, { memo } from 'react'
+import React, { memo, useEffect, useState } from 'react'
 import Link from 'next/link'
 
 import ArrowLeft from '/public/images/left.svg'
 import ArrowRight from '/public/images/right.svg'
 
-import { getLast, isFirstPage, next, prev } from '@utils/manipulateArray'
+import {
+  getLast,
+  isEmpty,
+  isFirstPage,
+  next,
+  prev,
+} from '@utils/manipulateArray'
+import getPagination from '@utils/getPagination'
+import Loading from './loading'
 
-const Pagination = ({ currentPage, uri, pages, isSearch = false }) => {
-  const isLastPage = currentPage === getLast(pages)
+const Pagination = ({ count, uri, currentPage, isSearch = false }) => {
   const url = (page) =>
     isSearch
       ? `${
@@ -16,6 +23,15 @@ const Pagination = ({ currentPage, uri, pages, isSearch = false }) => {
             : uri.replace('_page_', '')
         }`
       : `${uri}${!isFirstPage(page) ? `page/${page}/` : ''}`
+
+  const [pages, setPages] = useState([])
+  const isLastPage = currentPage === getLast(pages)
+
+  useEffect(() => {
+    setPages(getPagination(count, currentPage))
+  }, [count, currentPage])
+
+  if (isEmpty(pages)) return <Loading />
 
   return (
     <div className="pagination">

@@ -3,6 +3,7 @@ import Layout from '@layout/layout'
 import { getAllPages, getPage } from '@graphql/api'
 import PostTitle from '@components/post-title'
 import { Page } from '@utils/interfaces'
+import { isEmpty } from '@utils/manipulateArray'
 
 const Page = ({ seo, title, content }) => (
   <Layout seo={seo}>
@@ -13,15 +14,12 @@ const Page = ({ seo, title, content }) => (
 
 export const getStaticProps = async ({ params }) => {
   const page: Page = await getPage(`/${params?.slug}/`)
-  const { title, seo, content } = page
 
-  if (!title || !seo || !content) return { notFound: true }
+  if (isEmpty(page)) return { notFound: true }
 
   return {
     props: {
-      seo,
-      title,
-      content,
+      ...page,
     },
   }
 }

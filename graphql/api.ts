@@ -1,3 +1,4 @@
+import { PER_PAGE } from '@utils/constants'
 import { isEmpty, preventUndefined } from '@utils/manipulateArray'
 import { mapPage, mapPost, mapTerm } from '@utils/mapping'
 import axios from 'axios'
@@ -151,7 +152,7 @@ export const getTermAndPosts = async ({ term, type, page = 1 }) => {
   const typeLower = type.toLowerCase()
   const posts_query =
     page === 1
-      ? `posts(first: 10, where: { orderby: { field: DATE, order: DESC } }) {
+      ? `posts(first: ${PER_PAGE}, where: { orderby: { field: DATE, order: DESC } }) {
     ${posts_response}   
   }`
       : ''
@@ -361,7 +362,11 @@ export const performSearch = async ({
   isSearch = false,
 }) => {
   const wherePagination =
-    page > 1 ? `offsetPagination: { size: 10, offset: ${10 * page - 10}}` : ''
+    page > 1
+      ? `offsetPagination: { size: ${PER_PAGE}, offset: ${
+          PER_PAGE * page - PER_PAGE
+        }}`
+      : ''
   const category_query = category
     ? `{
     terms: ["${category}"],
