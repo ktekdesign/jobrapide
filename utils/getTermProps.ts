@@ -4,11 +4,9 @@ import { isEmpty } from './manipulateArray'
 
 export const getTermProps = async (
   resolvedUrl,
-  params,
   type: TermType,
-  current = 1
+  currentPage
 ) => {
-  const currentPage = current || parseInt(params.slug.pop())
   const term = await getTermAndPosts({
     term: resolvedUrl,
     type,

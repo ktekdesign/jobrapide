@@ -17,11 +17,7 @@ const Header = () => {
         <SearchForm />
       </Modal>
       <div className="pub-in-header">
-        <SwiperContainer
-          term="/recrutement/publicite/pub-niveau-2/"
-          component={Pub}
-          isPub
-        />
+        <SwiperContainer term="pub-niveau-2" component={Pub} isPub />
       </div>
     </>
   )

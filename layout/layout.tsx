@@ -26,15 +26,11 @@ const Layout = ({ children, seo }) => (
       </Column>
       <Column className="right">
         <Row>
-          <SwiperContainer
-            term="/recrutement/publicite/pub-niveau-1/"
-            component={Pub}
-            isPub
-          />
+          <SwiperContainer term="pub-niveau-1" component={Pub} isPub />
         </Row>
         <Row>
           <SwiperContainer
-            term="/emploi/sponsorisees/"
+            term="sponsorisees"
             type={TermType.Tag}
             slides={1}
             className="title-primary"
@@ -42,17 +38,10 @@ const Layout = ({ children, seo }) => (
           />
         </Row>
         <Row>
-          <SwiperContainer
-            term="/recrutement/partenaires/"
-            component={ImageSlider}
-          />
+          <SwiperContainer term="partenaires" component={ImageSlider} />
         </Row>
         <Row>
-          <SwiperContainer
-            term="/recrutement/publicite/pub-niveau-3/"
-            component={Pub}
-            isPub
-          />
+          <SwiperContainer term="pub-niveau-3" component={Pub} isPub />
         </Row>
         <Row>
           <Facebook />

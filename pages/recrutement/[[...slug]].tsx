@@ -5,13 +5,9 @@ import { generateTermsStaticProps } from '@utils/generateTermsStaticProps'
 import { generateTermsStaticPaths } from '@utils/generateTermsStaticPaths'
 
 export const getStaticProps = async ({ params }) => {
-  const { currentPage, resolvedUrl } = generateTermsStaticProps(params)
-  const data = await getTermProps(
-    `/recrutement/offres/${resolvedUrl}/`,
-    params,
-    TermType.Category,
-    currentPage
-  )
+  const { currentPage, resolvedSlug } = generateTermsStaticProps(params)
+
+  const data = await getTermProps(resolvedSlug, TermType.Category, currentPage)
   return data
 }
 

@@ -55,11 +55,11 @@ export interface Seo {
   twitterTitle: string
 }
 export enum TermType {
-  Category = 'Category',
-  Secteur = 'Secteur',
-  Region = 'Region',
-  Niveau = 'Niveau',
-  Tag = 'Tag',
+  Category = 'CATEGORY',
+  Secteur = 'SECTEUR',
+  Region = 'REGION',
+  Niveau = 'NIVEAU',
+  Tag = 'TAG',
 }
 
 export enum TermTypePlural {

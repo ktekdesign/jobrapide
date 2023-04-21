@@ -23,7 +23,7 @@ export default function Index({ page }) {
       <Container>
         <Column className="w-full">
           <SwiperContainer
-            term="/recrutement/offres/avis-recrutement/"
+            term="avis-recrutement"
             className="title-primary"
             component={SwiperHome}
           />
@@ -32,7 +32,7 @@ export default function Index({ page }) {
       <Container className="lg:pr-4">
         <Column className="lg:w-1/3 mb-4 lg:mb-0">
           <SwiperContainer
-            term="/recrutement/offres/stage/"
+            term="stage"
             slides={1}
             className="title-secondary"
             component={SwiperHome}
@@ -41,7 +41,7 @@ export default function Index({ page }) {
         </Column>
         <Column className="lg:w-2/3">
           <SwiperContainer
-            term="/recrutement/offres/bourses-etude/"
+            term="bourses-etude"
             slides={2}
             className="title-secondary"
             component={SwiperHome}
@@ -51,7 +51,7 @@ export default function Index({ page }) {
       <Container className="lg:pr-4">
         <Column className="lg:w-2/3 mb-4 lg:mb-0">
           <SwiperContainer
-            term="/recrutement/offres/avis-appel-offres/"
+            term="avis-appel-offres"
             slides={2}
             className="title-primary"
             component={SwiperHome}
@@ -59,7 +59,7 @@ export default function Index({ page }) {
         </Column>
         <Column className="lg:w-1/3">
           <SwiperContainer
-            term="/recrutement/offres/call-for-papers/"
+            term="call-for-papers"
             slides={1}
             className="title-primary"
             component={SwiperHome}
@@ -70,7 +70,7 @@ export default function Index({ page }) {
       <Container className="lg:pr-4">
         <Column className="lg:w-1/3 mb-4 lg:mb-0">
           <SwiperContainer
-            term="/recrutement/offres/concours/"
+            term="concours"
             slides={1}
             className="title-secondary"
             component={SwiperHome}
@@ -79,7 +79,7 @@ export default function Index({ page }) {
         </Column>
         <Column className="lg:w-2/3">
           <SwiperContainer
-            term="/recrutement/offres/formations/"
+            term="formations"
             slides={2}
             className="title-secondary"
             component={SwiperHome}
@@ -89,7 +89,7 @@ export default function Index({ page }) {
       <Container className="lg:pr-4">
         <Column className="lg:w-2/3 mb-4 lg:mb-0">
           <SwiperContainer
-            term="/recrutement/actualites/"
+            term="actualites"
             slides={2}
             className="title-primary"
             component={SwiperHome}
@@ -97,7 +97,7 @@ export default function Index({ page }) {
         </Column>
         <Column className="lg:w-1/3">
           <SwiperContainer
-            term="/recrutement/offres/volontaire/"
+            term="volontaire"
             slides={1}
             className="title-primary"
             component={SwiperHome}

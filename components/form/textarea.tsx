@@ -14,7 +14,7 @@ const TextArea: FC<TextAreaProps> = ({ id, label, ...props }) => {
         id={id}
         name={id}
         rows={rows || 5}
-        className={`form-textarea ${className}`}
+        className={`form-input ${className}`}
         {...rest}
       ></textarea>
     </div>

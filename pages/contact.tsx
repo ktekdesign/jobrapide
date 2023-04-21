@@ -4,7 +4,7 @@ import ArchiveTitle from '@components/archive-title'
 import { getPage } from '@graphql/api'
 
 export const getStaticProps = async () => {
-  const { seo } = await getPage('/contact')
+  const { seo } = await getPage('contact')
 
   return {
     props: {

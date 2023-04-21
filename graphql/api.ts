@@ -1,4 +1,5 @@
 import { PER_PAGE } from '@utils/constants'
+import { TermType } from '@utils/interfaces'
 import { isEmpty, preventUndefined } from '@utils/manipulateArray'
 import { mapPage, mapPost, mapTerm } from '@utils/mapping'
 import axios from 'axios'
@@ -30,39 +31,25 @@ const fetchAPI = async (query = '', variables: Record<string, string> = {}) => {
   }
   return
 }
-const post_response = `id
+const terms_response = `nodes {
+  name
+  uri
+  databaseId
+}`
+const post_response = (isPostPage = false) => `id
 databaseId
 title
 excerpt
-content
-slug
+${isPostPage ? 'content slug' : ''}
 date
 categories{
-  
-    nodes {
-      name
-      uri
-      databaseId
-    }
-  
+  ${terms_response} 
 }
 secteurs{
-  
-    nodes {
-      name
-      uri
-      databaseId
-    }
-  
+  ${terms_response}
 }
 regions{
-  
-    nodes {
-      name
-      uri
-      databaseId
-    }
-  
+  ${terms_response}
 }
 uri
 featuredImage {
@@ -77,15 +64,13 @@ const pageInfoSearch = `pageInfo {
 }`
 const posts_response = `
   nodes {
-    ${post_response}
+    ${post_response()}
   }`
 const seo_response = `
   seo {
     breadcrumbs {
-      
         text
         url
-      
     }
     canonical
     metaDesc
@@ -94,10 +79,8 @@ const seo_response = `
     metaRobotsNoindex
     opengraphAuthor
     opengraphDescription
-    opengraphImage {
-      
+    opengraphImage { 
         sourceUrl
-      
     }
     opengraphModifiedTime
     opengraphPublishedTime
@@ -112,9 +95,7 @@ const seo_response = `
     title
     twitterDescription
     twitterImage {
-      
         sourceUrl
-      
     }
     twitterTitle
   }
@@ -126,7 +107,7 @@ export const getPostAndMorePosts = async (slug) => {
     query PostBySlug($id: ID!, $idType: PostIdType!) {
       post(id: $id, idType: $idType) {
         ${seo_response}
-        ${post_response}
+        ${post_response(true)}
       }
       posts(first: 4, where: { orderby: { field: DATE, order: DESC } }) {
         ${posts_response}
@@ -158,8 +139,8 @@ export const getTermAndPosts = async ({ term, type, page = 1 }) => {
       : ''
   const data = await fetchAPI(
     `
-    query TermAndPosts($id: ID!, $idType: ${type}IdType!) {
-      ${typeLower} (id: $id, idType: $idType) {
+    query TermAndPosts($id: ID!) {
+      ${typeLower} (id: $id, idType: SLUG) {
         id
         databaseId
         name
@@ -167,30 +148,30 @@ export const getTermAndPosts = async ({ term, type, page = 1 }) => {
         slug
         uri
         ${seo_response}
-        ${type !== 'Tag' ? 'parentDatabaseId' : ''}   
+        ${type !== TermType.Tag ? 'parentDatabaseId' : ''}   
   			${posts_query}
   		}
     }
   `,
     {
       id: term,
-      idType: 'URI',
     }
   )
+
   const taxonomy = mapTerm(data[typeLower])
 
   if (page > 1 && !isEmpty(taxonomy)) {
     switch (type) {
-      case 'Secteur':
+      case TermType.Secteur:
         taxonomy.posts = await performSearch({
           page,
           secteur: taxonomy.id,
         })
         break
-      case 'Region':
+      case TermType.Region:
         taxonomy.posts = await performSearch({ page, region: taxonomy.id })
         break
-      case 'Tag':
+      case TermType.Tag:
         taxonomy.posts = await performSearch({ page, tag: taxonomy.id })
         break
       default:
@@ -220,8 +201,8 @@ export const getPostsHome = async ({ term, type, isPub, postsPerPage }) => {
   }`
   const data = await fetchAPI(
     `
-    query PostsHome($id: ID!, $idType: ${type}IdType!) {
-      ${typeLower} (id: $id, idType: $idType) {
+    query PostsHome($id: ID!) {
+      ${typeLower} (id: $id, idType: SLUG) {
         databaseId
         name
         uri
@@ -231,9 +212,9 @@ export const getPostsHome = async ({ term, type, isPub, postsPerPage }) => {
   `,
     {
       id: term,
-      idType: 'URI',
     }
   )
+  console.log(data)
   return mapTerm(data[typeLower])
 }
 export const getTerms = async (type) => {
@@ -327,10 +308,10 @@ export const getRegions = async () => {
   return [...response, ...response_last]
 }
 
-export const getPage = async (uri) => {
+export const getPage = async (slug) => {
   const data = await fetchAPI(`
   query page {
-    page (id: "${uri}", idType: URI) {      
+    page (id: "${slug}", idType: URI) {      
         databaseId
         title
         content
