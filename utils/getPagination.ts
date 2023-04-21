@@ -1,9 +1,10 @@
 import { getFirst, getLast, next, prev } from '@utils/manipulateArray'
 
-export const getPagination = (count, currentPage) => {
-  const PER_PAGE = 10
+const PER_PAGE = 10
+
+const getPagination = (count, currentPage) => {
   const PAGE_BREAK = 3
-  const totalPages = Math.ceil(count / PER_PAGE)
+  const totalPages = getAllPages(count)
 
   const first = []
   const middle = []
@@ -39,5 +40,7 @@ export const getPagination = (count, currentPage) => {
   }
   return [...first, ...middle, ...last]
 }
+
+export const getAllPages = (count) => Math.ceil(count / PER_PAGE)
 
 export default getPagination

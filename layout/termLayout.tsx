@@ -4,11 +4,14 @@ import dynamic from 'next/dynamic'
 import Pagination from '@components/pagination'
 import ArchiveTitle from '@components/archive-title'
 import getPagination from '@utils/getPagination'
+import { isEmpty } from '@utils/manipulateArray'
 const MoreStories = dynamic(() => import('@components/more-stories'), {
   ssr: false,
 })
 
 const TermLayout = ({ term, currentPage }) => {
+  if (isEmpty(term) || isEmpty(currentPage)) return <></>
+
   const pages = getPagination(term.count, currentPage)
 
   return (

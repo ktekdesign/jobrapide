@@ -1,8 +1,13 @@
 import { getTermAndPosts } from '@graphql/api'
 import { TermType } from '@utils/interfaces'
 
-export const getTermProps = async (resolvedUrl, params, type: TermType) => {
-  const currentPage = parseInt(params.slug.pop()) || 1
+export const getTermProps = async (
+  resolvedUrl,
+  params,
+  type: TermType,
+  current = 1
+) => {
+  const currentPage = current || parseInt(params.slug.pop())
   const term = await getTermAndPosts({
     term: resolvedUrl,
     type,
@@ -11,5 +16,5 @@ export const getTermProps = async (resolvedUrl, params, type: TermType) => {
 
   if (!term?.id) return { notFound: true }
 
-  return { props: { term, currentPage } }
+  return { props: { term, currentPage, revalidate: 3600 } }
 }

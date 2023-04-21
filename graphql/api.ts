@@ -1,5 +1,6 @@
 import { isEmpty, preventUndefined } from '@utils/manipulateArray'
 import { mapPage, mapPost, mapTerm } from '@utils/mapping'
+import axios from 'axios'
 
 const API_URL = process.env.NEXT_PUBLIC_WORDPRESS_API_URL
 
@@ -11,24 +12,22 @@ const fetchAPI = async (query = '', variables: Record<string, string> = {}) => {
       'Authorization'
     ] = `Bearer ${process.env.WORDPRESS_AUTH_REFRESH_TOKEN}`
   }
-
-  // WPGraphQL Plugin must be enabled
-  const res = await fetch(API_URL, {
-    headers,
-    method: 'POST',
-    body: JSON.stringify({
-      query,
-      variables,
-    }),
+  const body = JSON.stringify({
+    query,
+    variables,
   })
 
-  const json = await res.json()
-  if (json.errors) {
-    console.error(json.errors)
+  try {
+    // WPGraphQL Plugin must be enabled
+    const { data } = await axios.post(API_URL, body, {
+      headers,
+    })
+    return data.data
+  } catch (err) {
+    console.error(err)
     console.error(query)
-    throw new Error('Failed to fetch API')
   }
-  return preventUndefined(json.data)
+  return
 }
 const post_response = `id
 databaseId
@@ -201,7 +200,6 @@ export const getTermAndPosts = async ({ term, type, page = 1 }) => {
         break
     }
   }
-
   return taxonomy
 }
 export const getPostsHome = async ({ term, type, isPub, postsPerPage }) => {
@@ -246,6 +244,7 @@ export const getTerms = async (type) => {
           id
           databaseId
           name
+          slug
           uri
           count
         }
@@ -266,6 +265,7 @@ export const getCategories = async () => {
           id
           databaseId
           name
+          slug
           uri
           count
         }
@@ -290,6 +290,7 @@ export const getRegions = async () => {
           databaseId
           name
           uri
+          slug
           count
         }
       }
@@ -308,6 +309,7 @@ export const getRegions = async () => {
           databaseId
           name
           uri
+          slug
           count
         }
       }

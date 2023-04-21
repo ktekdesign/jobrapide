@@ -1,14 +1,23 @@
 import { getTermProps } from '@utils/getTermProps'
 import TermLayout from '@layout/termLayout'
-import { TermType } from '@utils/interfaces'
+import { TermType, TermTypePlural } from '@utils/interfaces'
+import { generateTermsStaticProps } from '@utils/generateTermsStaticProps'
+import { generateTermsStaticPaths } from '@utils/generateTermsStaticPaths'
 
-export const getServerSideProps = async ({ resolvedUrl, params, res }) => {
-  res.setHeader(
-    'Cache-Control',
-    'public, s-maxage=3600, stale-while-revalidate=3659'
+export const getStaticProps = async ({ params }) => {
+  const { currentPage, resolvedUrl } = generateTermsStaticProps(params)
+  const data = await getTermProps(
+    `/${TermType.Region.toLowerCase()}/${resolvedUrl}/`,
+    params,
+    TermType.Region,
+    currentPage
   )
-  const data = await getTermProps(resolvedUrl, params, TermType.Region)
   return data
+}
+
+export const getStaticPaths = async () => {
+  const paths = await generateTermsStaticPaths({ type: TermTypePlural.regions })
+  return paths
 }
 
 const Region = ({ term, currentPage }) => (
