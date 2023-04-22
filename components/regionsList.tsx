@@ -6,17 +6,20 @@ import useTerms from '@hooks/useTerms'
 import { populateTerms } from '@utils/populateContext'
 import { isEmpty } from '@utils/manipulateArray'
 import { TermTypePlural } from '@utils/interfaces'
+import Loading from '@components/loading'
 
 const RegionsList = ({ active }) => {
   const { regions, setRegions } = useTerms()
 
   useEffect(() => {
-    if (isEmpty(regions))
+    if (active === 2 && isEmpty(regions))
       populateTerms({
         type: TermTypePlural.regions,
         setTerms: setRegions,
       })
-  }, [regions])
+  }, [active, regions])
+
+  if (active === 2 && isEmpty(regions)) return <Loading />
 
   return (
     <ul className={active === 2 ? 'terms-list flex' : 'terms-list hidden'}>

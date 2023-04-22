@@ -28,6 +28,7 @@ const Modal = ({ children }) => {
   const closeModal = () => dispatchModal({ type: actions.SET_TOGGLE_MODAL })
   const toggleForm = () =>
     dispatchModal({ type: actions.SET_TOGGLE_SEARCHFRORM })
+  const { toggleModal, toggleSearchForm } = stateModal
 
   useEffect(() => {
     if (isEmpty(secteurs))
@@ -53,33 +54,29 @@ const Modal = ({ children }) => {
   }, [niveaux])
 
   return (
-    <dialog onClick={closeModal} id="modal" open={stateModal.toggleModal}>
+    <dialog onClick={closeModal} id="modal" open={toggleModal}>
       <div onClick={(e) => e.stopPropagation()} className="modal-inner">
         <form
           action="/search/"
           className={
-            stateModal.toggleModal
-              ? 'modal-form animate-slideinup'
-              : 'modal-form'
+            toggleModal ? 'modal-form animate-slideinup' : 'modal-form'
           }
         >
           <div className="modal-header">
-            <div
-              className={stateModal.toggleSearchForm ? 'flex-row-reverse' : ''}
-            >
+            <div className={toggleSearchForm ? 'flex-row-reverse' : ''}>
               <button
                 type="button"
-                className={stateModal.toggleSearchForm ? 'notactive' : ''}
+                className={toggleSearchForm ? 'notactive' : ''}
                 onClick={toggleForm}
-                disabled={!stateModal.toggleSearchForm}
+                disabled={!toggleSearchForm}
               >
                 Recherche par poste
               </button>
               <button
                 type="button"
-                className={!stateModal.toggleSearchForm ? 'notactive' : ''}
+                className={!toggleSearchForm ? 'notactive' : ''}
                 onClick={toggleForm}
-                disabled={stateModal.toggleSearchForm}
+                disabled={toggleSearchForm}
               >
                 Recherche par curriculum
               </button>

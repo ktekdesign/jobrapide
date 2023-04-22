@@ -6,17 +6,20 @@ import useTerms from '@hooks/useTerms'
 import { populateTerms } from '@utils/populateContext'
 import { isEmpty } from '@utils/manipulateArray'
 import { TermTypePlural } from '@utils/interfaces'
+import Loading from './loading'
 
 const SecteursList = ({ active }) => {
   const { secteurs, setSecteurs } = useTerms()
 
   useEffect(() => {
-    if (isEmpty(secteurs))
+    if (active === 1 && isEmpty(secteurs))
       populateTerms({
         type: TermTypePlural.secteurs,
         setTerms: setSecteurs,
       })
-  }, [secteurs])
+  }, [secteurs, active])
+
+  if (active === 1 && isEmpty(secteurs)) return <Loading />
 
   return (
     <ul className={active === 1 ? 'terms-list flex' : 'terms-list hidden'}>

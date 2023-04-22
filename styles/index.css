@@ -142,12 +142,13 @@ button {
 body {
   @apply selection:cursor-not-allowed;
 }
+
 main {
   @apply flex lg:gap-4 px-8 md:px-0 mb-4 mt-4 mx-auto flex-col lg:flex-row container;
 }
 
 .inner-container {
-  @apply container flex flex-col mb-4 justify-between mx-auto lg:flex-row lg:gap-4;
+  @apply container flex flex-col pb-4 justify-between mx-auto lg:flex-row lg:gap-4;
 }
 .column {
   @apply container;
@@ -175,11 +176,13 @@ footer {
   @apply w-full flex flex-col text-base lg:flex-row;
 }
 .tab li {
-  @apply text-center block py-2 px-4 bg-primary hover:bg-dark text-white cursor-pointer flex-grow flex-1;
+  @apply text-center block py-2 px-4 bg-primary hover:text-dark text-white cursor-pointer flex-grow flex-1;
 }
-
+.tab li.region-tab {
+  @apply bg-secondary;
+}
 .tab li.active {
-  @apply bg-secondary cursor-default;
+  @apply bg-dark cursor-default hover:text-primary;
 }
 
 /* NavBar CSS */
@@ -402,7 +405,7 @@ footer {
 
 /* FOOTER MENU */
 .navbar-footer {
-  @apply bg-primary text-white text-xs;
+  @apply bg-primary text-white text-xs border-t-8 border-dark;
 }
 .footer-menu {
   @apply container mx-auto;
