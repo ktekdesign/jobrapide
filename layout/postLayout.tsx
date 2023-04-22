@@ -8,6 +8,7 @@ const PostLayout = ({ post, posts }) => (
   <Layout seo={post.seo}>
     <PostHeader
       title={post.title}
+      breadcrumbs={post.seo.breadcrumbs}
       image={post.image}
       date={post.date}
       categories={post.categories}

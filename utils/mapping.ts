@@ -1,8 +1,10 @@
 import { Page, Post, Seo, Term } from '@utils/interfaces'
-import { preventUndefined } from './manipulateArray'
+import { isEmpty, preventUndefined } from './manipulateArray'
 import { outputErrors } from './outputErrors'
 
 export const mapSeo = (seo): Seo => {
+  if (isEmpty(seo)) return null
+
   try {
     return {
       breadcrumbs: preventUndefined(seo.breadcrumbs),
@@ -32,6 +34,7 @@ export const mapSeo = (seo): Seo => {
   }
 }
 export const mapPost = (post): Post => {
+  if (isEmpty(post)) return null
   try {
     const categories = post.categories?.nodes?.map((term) => mapTerm(term))
     const secteurs = post.secteurs?.nodes?.map((term) => mapTerm(term))
@@ -55,6 +58,7 @@ export const mapPost = (post): Post => {
   }
 }
 export const mapTerm = (term): Term => {
+  if (isEmpty(term)) return null
   try {
     const posts = term.posts?.nodes?.map((post) => mapPost(post))
 
@@ -75,6 +79,7 @@ export const mapTerm = (term): Term => {
 }
 
 export const mapPage = (page): Page => {
+  if (isEmpty(page)) return null
   try {
     return {
       id: preventUndefined(page.databaseId),

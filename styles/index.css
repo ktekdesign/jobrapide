@@ -452,3 +452,12 @@ footer {
 .share-buttons button svg:hover rect {
   @apply fill-primary;
 }
+.breadcrumb {
+  @apply flex flex-wrap py-4 gap-x-1;
+}
+.breadcrumb-item {
+  @apply text-primary font-bold text-xs flex items-center gap-x-1 after:w-1 after:h-1 after:rounded-full after:bg-primary;
+}
+.breadcrumb-item:last-of-type {
+  @apply font-light text-dark italic after:hidden cursor-text;
+}

@@ -1,3 +1,4 @@
+import { BASE_URL } from '@utils/constants'
 import { isEmpty } from '@utils/manipulateArray'
 import { FacebookShareButton, FacebookIcon } from 'next-share'
 import { TelegramShareButton, TelegramIcon } from 'next-share'
@@ -7,9 +8,7 @@ import { TwitterShareButton, TwitterIcon } from 'next-share'
 import { FacebookMessengerShareButton, FacebookMessengerIcon } from 'next-share'
 import { EmailShareButton, EmailIcon } from 'next-share'
 import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
-
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL
+import { memo, useEffect, useState } from 'react'
 
 const ShareButtons = ({
   uri = '',
@@ -63,4 +62,4 @@ const ShareButtons = ({
     </div>
   )
 }
-export default ShareButtons
+export default memo(ShareButtons)

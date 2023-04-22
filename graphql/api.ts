@@ -186,7 +186,10 @@ export const getTermAndPosts = async ({ term, type, page = 1 }) => {
         })
         taxonomy.posts = posts
         return mapTerm(taxonomy)
-      } else if (type === TermType.Category && page > 1) {
+      } else if (
+        type === TermType.Category &&
+        (page > 1 || taxonomy.databaseId === 16)
+      ) {
         const { posts } = await performSearch({
           page,
           category: taxonomy.databaseId,

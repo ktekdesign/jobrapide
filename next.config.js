@@ -36,6 +36,7 @@ module.exports = {
     return config
   },
   reactStrictMode: true,
+  trailingSlash: true,
   images: {
     domains: [
       process.env.NEXT_PUBLIC_WORDPRESS_API_URL.match(

@@ -5,6 +5,7 @@ import { preventUndefined } from '@utils/manipulateArray'
 import dynamic from 'next/dynamic'
 import Pagination from '@components/pagination'
 import ArchiveTitle from '@components/archive-title'
+import Breadcrumb from '@components/breadcrumb'
 const MoreStories = dynamic(() => import('@components/more-stories'), {
   ssr: false,
 })
@@ -14,6 +15,7 @@ const TermLayout = ({ term, currentPage, pages }) => (
     <ArchiveTitle currentPage={preventUndefined(currentPage)}>
       {preventUndefined(term?.name)}
     </ArchiveTitle>
+    <Breadcrumb breadcrumbs={preventUndefined(term?.seo?.breadcrumbs)} />
     <MoreStories posts={preventUndefined(term?.posts)} />
     <Pagination
       pages={preventUndefined(pages)}
