@@ -17,7 +17,7 @@ import ShareButtons from '@components/share-buttons'
 const Layout = ({ children, seo, pubs, partners, sponsored }) => (
   <>
     <Meta seo={seo} />
-    <Header pub={pubs.pub2} />
+    <Header pub={pubs?.pub2} />
 
     <main>
       <Column className="left">
@@ -25,7 +25,7 @@ const Layout = ({ children, seo, pubs, partners, sponsored }) => (
       </Column>
       <Column className="right">
         <Row>
-          <Pub items={pubs.pub1} />
+          <Pub items={pubs?.pub1} />
         </Row>
         <Row>
           <SwiperHome
@@ -38,7 +38,7 @@ const Layout = ({ children, seo, pubs, partners, sponsored }) => (
           <ImageSlider items={partners} name="Partenaires" />
         </Row>
         <Row>
-          <Pub items={pubs.pub3} />
+          <Pub items={pubs?.pub3} />
         </Row>
         <Row>
           <Facebook />
