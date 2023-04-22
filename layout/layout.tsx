@@ -8,18 +8,16 @@ import Row from '@layout/row'
 import Meta from '@components/meta'
 import Facebook from '@components/facebook'
 import Pub from '@components/pub'
-import SwiperContainer from '@components/swiperContainer'
 import GoTop from '@components/gotop'
 import Twitter from '@components/twitter'
 import ImageSlider from '@components/image-slider'
-import { TermType } from '@utils/interfaces'
 import SwiperHome from '@components/swiperHome'
 import ShareButtons from '@components/share-buttons'
 
-const Layout = ({ children, seo }) => (
+const Layout = ({ children, seo, pubs, partners, sponsored }) => (
   <>
     <Meta seo={seo} />
-    <Header />
+    <Header pub={pubs.pub2} />
 
     <main>
       <Column className="left">
@@ -27,22 +25,20 @@ const Layout = ({ children, seo }) => (
       </Column>
       <Column className="right">
         <Row>
-          <SwiperContainer term="pub-niveau-1" component={Pub} isPub />
+          <Pub items={pubs.pub1} />
         </Row>
         <Row>
-          <SwiperContainer
-            term="sponsorisees"
-            type={TermType.Tag}
-            slides={1}
+          <SwiperHome
+            items={sponsored}
+            name="Offres sponsorisées"
             className="title-primary"
-            component={SwiperHome}
           />
         </Row>
         <Row>
-          <SwiperContainer term="partenaires" component={ImageSlider} />
+          <ImageSlider items={partners} name="Partenaires" />
         </Row>
         <Row>
-          <SwiperContainer term="pub-niveau-3" component={Pub} isPub />
+          <Pub items={pubs.pub3} />
         </Row>
         <Row>
           <Facebook />

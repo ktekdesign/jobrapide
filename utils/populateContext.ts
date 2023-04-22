@@ -30,7 +30,6 @@ export const populateTerms = async ({
 export const populatePosts = async ({
   term,
   type = TermType.Category,
-  isPub,
   postsPerPage = 10,
 }: {
   term: string
@@ -40,9 +39,8 @@ export const populatePosts = async ({
     payload: [Term, string]
   }>
   setTermsWithPosts?: Dispatch<SetStateAction<Term>>
-  isPub?: boolean
   postsPerPage?: number
 }) => {
-  const data = await getPostsHome({ term, type, isPub, postsPerPage })
+  const data = await getPostsHome({ term, type, postsPerPage })
   return data
 }

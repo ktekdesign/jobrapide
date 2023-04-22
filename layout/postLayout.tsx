@@ -4,11 +4,11 @@ import SimilarPosts from '@components/similarPosts'
 import PostBody from '@components/post-body'
 import PostHeader from '@components/post-header'
 
-const PostLayout = ({ post, posts }) => (
-  <Layout seo={post.seo}>
+const PostLayout = ({ post, posts, layout }) => (
+  <Layout {...layout}>
     <PostHeader
       title={post.title}
-      breadcrumbs={post.seo.breadcrumbs}
+      breadcrumbs={layout?.seo?.breadcrumbs}
       image={post.image}
       date={post.date}
       categories={post.categories}

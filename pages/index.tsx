@@ -6,20 +6,16 @@ import SwiperContainer from '@components/swiperContainer'
 
 import { getPage } from '@graphql/api'
 import { SwiperHome } from '@components/swiperHome'
+import addLayoutData from '@utils/addLayoutData'
 
 export const getStaticProps = async () => {
   const page = await getPage('/')
-
-  return {
-    props: {
-      page,
-    },
-    revalidate: 3600,
-  }
+  const layout = await addLayoutData(page)
+  return layout
 }
-export default function Index({ page }) {
+export default function Index(props) {
   return (
-    <Layout seo={page.seo}>
+    <Layout {...props.layout}>
       <Container>
         <Column className="w-full">
           <SwiperContainer

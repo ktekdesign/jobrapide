@@ -15,7 +15,6 @@ export const SwiperContainer = ({
   postsData = null,
   width = 0,
   height = 0,
-  isPub = false,
   postsPerPage = 10,
   component: Component,
 }) => {
@@ -36,7 +35,6 @@ export const SwiperContainer = ({
         const data = await populatePosts({
           term,
           type,
-          isPub,
           postsPerPage,
           dispatch: dispatchPosts,
         })

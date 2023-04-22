@@ -14,8 +14,6 @@ export const getStaticPaths = async () => {
   })
   return paths
 }
-const Tag = ({ term, currentPage, pages }) => (
-  <TermLayout term={term} currentPage={currentPage} pages={pages} />
-)
+const Tag = (props) => <TermLayout {...props} />
 
 export default Tag

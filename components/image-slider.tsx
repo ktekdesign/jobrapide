@@ -9,7 +9,7 @@ import 'swiper/css/bundle'
 import 'swiper/css/pagination'
 import 'swiper/css/effect-flip'
 
-export const ImageSlider = ({ items, name, width, height }) => (
+export const ImageSlider = ({ items, name, width = 0, height = 0 }) => (
   <div className="swiper-container">
     <h2 className="title-secondary">{name}</h2>
     <Swiper
@@ -32,8 +32,8 @@ export const ImageSlider = ({ items, name, width, height }) => (
       }}
       modules={[Pagination, Autoplay, EffectFlip]}
     >
-      {items?.map(({ id, uri, title, image }) => (
-        <SwiperSlide key={id}>
+      {items?.map(({ uri, title, image }, key) => (
+        <SwiperSlide key={key}>
           <Link href={uri} className="flex justify-center" target="_blank">
             <Image
               width={width || 200}

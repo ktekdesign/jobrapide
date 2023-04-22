@@ -203,23 +203,17 @@ export const getTermAndPosts = async ({ term, type, page = 1 }) => {
     return outputErrors(err)
   }
 }
-export const getPostsHome = async ({ term, type, isPub, postsPerPage }) => {
+export const getPostsHome = async ({ term, type, postsPerPage }) => {
   try {
     const typeLower = type.toLowerCase()
     const posts_query = `posts(first: ${postsPerPage}, where: { orderby: { field: DATE, order: DESC } }) {
       nodes {  
-        ${
-          isPub
-            ? 'content'
-            : `
         title
         uri
         featuredImage {
           node {
             sourceUrl
           }
-        } 
-        `
         } 
       }
     }`
@@ -473,6 +467,107 @@ export const getLatestPosts = async (category) => {
     const response = data?.posts?.nodes
 
     return preventUndefined(response)
+  } catch (err) {
+    return outputErrors(err)
+  }
+}
+
+export const getPubs = async () => {
+  try {
+    const data = await fetchAPI(
+      `
+      query Pubs {
+        posts(first: 100, where: { 
+          categoryId: 118
+          orderby: { field: DATE, order: DESC } }) {
+          nodes {  
+            content
+            categories{
+              nodes {
+                databaseId
+              }
+            }
+            } 
+          }
+        }
+    `
+    )
+
+    const pubs = data?.posts?.nodes?.map((pub) => mapPost(pub))
+    const pub1 = pubs.filter(
+      (pub) =>
+        pub.categories.findIndex((category) => category.id === 192) !== -1
+    )
+    const pub2 = pubs.filter(
+      (pub) =>
+        pub.categories.findIndex((category) => category.id === 193) !== -1
+    )
+    const pub3 = pubs.filter(
+      (pub) =>
+        pub.categories.findIndex((category) => category.id === 194) !== -1
+    )
+
+    return { pub1, pub2, pub3 }
+  } catch (err) {
+    return outputErrors(err)
+  }
+}
+
+export const getPartners = async () => {
+  try {
+    const data = await fetchAPI(
+      `
+      query Partners {
+        posts(first: 10, where: { 
+          categoryId: 88
+          orderby: { field: DATE, order: DESC } }) {
+          nodes {  
+            title
+            uri
+            featuredImage {
+              node {
+                sourceUrl
+              }
+            }
+            } 
+          }
+        }
+    `
+    )
+
+    const partners = data?.posts?.nodes?.map((pub) => mapPost(pub))
+
+    return partners
+  } catch (err) {
+    return outputErrors(err)
+  }
+}
+
+export const getSponsored = async () => {
+  try {
+    const data = await fetchAPI(
+      `
+      query Sponsored {
+        posts(first: 20, where: { 
+          tagId: "85"
+          orderby: { field: DATE, order: DESC } }) {
+          nodes {  
+            title
+            uri
+            featuredImage {
+              node {
+                sourceUrl
+              }
+            }
+            } 
+          }
+        }
+    `
+    )
+
+    const sponsored = data?.posts?.nodes?.map((pub) => mapPost(pub))
+
+    return sponsored
   } catch (err) {
     return outputErrors(err)
   }

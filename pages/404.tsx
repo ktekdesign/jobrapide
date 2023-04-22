@@ -3,9 +3,15 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Layout from '@layout/layout'
 import ArchiveTitle from '@components/archive-title'
+import addLayoutData from '@utils/addLayoutData'
 
-const PageError = () => (
-  <Layout seo={null}>
+export const getStaticProps = async () => {
+  const layout = await addLayoutData({})
+  return layout
+}
+
+const PageError = (props) => (
+  <Layout {...props.layout}>
     <Head>
       <title>Page introuvable - JobRapide</title>
       <meta

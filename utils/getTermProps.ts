@@ -1,7 +1,7 @@
 import { getTermAndPosts } from '@graphql/api'
-import { getLast, isEmpty, prev } from './manipulateArray'
-import getPagination from './getPagination'
-import { REVALIDATE } from './constants'
+import { getLast, isEmpty, prev } from '@utils/manipulateArray'
+import getPagination from '@utils/getPagination'
+import addLayoutData from '@utils/addLayoutData'
 
 export const getTermProps = async (params, type) => {
   const pageIndex = params?.slug?.findIndex((param) => param === 'page')
@@ -26,5 +26,6 @@ export const getTermProps = async (params, type) => {
     currentPage > parseInt(getLast(pages))
   )
     return { notFound: true }
-  return { props: { term, currentPage, pages, revalidate: REVALIDATE } }
+  const { seo, ...props } = term
+  return addLayoutData({ term: props, seo, currentPage, pages })
 }

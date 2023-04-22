@@ -32,8 +32,9 @@ const Meta: FC<{ seo: Seo }> = ({ seo }) => (
       <meta name="twitter:widgets:border-color" content="#000000" />
       <meta name="twitter:partner" content="tfwp" />
       <meta name="msapplication-TileImage" content="/images/logo.png" />
-
+      <link rel="icon" type="image/x-icon" href="/images/logo.png" />
       <meta name="twitter:card" content="summary" />
+
       {!isEmpty(seo) && (
         <>
           <meta name="twitter:title" content={seo.twitterTitle} />
@@ -53,7 +54,6 @@ const Meta: FC<{ seo: Seo }> = ({ seo }) => (
           />
           <meta property="og:image" content={seo.opengraphImage} />
           <title>{seo.title}</title>
-          <link rel="icon" type="image/x-icon" href="/images/logo.png" />
         </>
       )}
     </Head>

@@ -4,24 +4,20 @@ import { getAllPages, getPage } from '@graphql/api'
 import PostTitle from '@components/post-title'
 import { Page } from '@utils/interfaces'
 import { isEmpty } from '@utils/manipulateArray'
+import addLayoutData from '@utils/addLayoutData'
 
-const Page = ({ seo, title, content }) => (
-  <Layout seo={seo}>
-    <PostTitle>{title}</PostTitle>
-    <PostBody>{content}</PostBody>
+const Page = (props) => (
+  <Layout {...props.layout}>
+    <PostTitle>{props.title}</PostTitle>
+    <PostBody>{props.content}</PostBody>
   </Layout>
 )
 
 export const getStaticProps = async ({ params }) => {
   const page: Page = await getPage(`/${params?.slug}/`)
-
   if (isEmpty(page)) return { notFound: true }
-
-  return {
-    props: {
-      ...page,
-    },
-  }
+  const layout = await addLayoutData(page)
+  return layout
 }
 
 export const getStaticPaths = async () => {

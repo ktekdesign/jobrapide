@@ -12,6 +12,6 @@ export const getStaticPaths = async () => {
   return paths
 }
 
-const Post = ({ post, posts }) => <PostLayout post={post} posts={posts} />
+const Post = (props) => <PostLayout {...props} />
 
 export default Post

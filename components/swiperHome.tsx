@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import React, { FC, memo } from 'react'
 import Link from 'next/link'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -8,12 +8,19 @@ import 'swiper/css/bundle'
 import 'swiper/css/pagination'
 
 import PostPreview from '@components/post-preview'
+import { Post } from '@utils/interfaces'
 
-export const SwiperHome = ({ items, uri, name, slides, className }) => {
+export const SwiperHome: FC<{
+  items: Post[]
+  uri?: string
+  name: string
+  slides?: number
+  className?: string
+}> = ({ items, uri, name, slides = 1, className }) => {
   return (
     <div className="swiper-container bg-dark">
       <h2 className={className}>
-        <Link href={uri}>{name}</Link>
+        {uri ? <Link href={uri}>{name}</Link> : <>{name}</>}
       </h2>
       <Swiper
         pagination={{
