@@ -1,18 +1,12 @@
 import { Dispatch, SetStateAction } from 'react'
-import { actions } from '@context/dataReducer'
 import { getCategories, getPostsHome, getRegions, getTerms } from '@graphql/api'
 import { Term, TermType, TermTypePlural } from '@utils/interfaces'
 
 export const populateTerms = async ({
   type,
-  dispatch,
   setTerms,
 }: {
   type: TermTypePlural
-  dispatch?: Dispatch<{
-    type: string
-    payload: [Term[], TermTypePlural]
-  } | null>
   setTerms?: Dispatch<SetStateAction<Term[]>>
 }) => {
   const data = await (type === TermTypePlural.categories
@@ -21,7 +15,6 @@ export const populateTerms = async ({
     ? getRegions()
     : getTerms(type))
 
-  if (dispatch) dispatch({ type: actions.SET_TERMS, payload: [data, type] })
   if (setTerms) setTerms(data)
 
   return data

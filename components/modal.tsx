@@ -1,9 +1,6 @@
-import React, { memo, useEffect } from 'react'
+import React, { memo, useEffect, useState } from 'react'
 import Link from 'next/link'
 
-import { actions } from '@context/dataReducer'
-
-import useModal from '@hooks/useModal'
 import useTerms from '@hooks/useTerms'
 
 import { populateTerms } from '@utils/populateContext'
@@ -11,8 +8,11 @@ import { isEmpty } from '@utils/manipulateArray'
 import CloseIcon from '/public/images/close.svg'
 import { TermTypePlural } from '@utils/interfaces'
 import Button from '@components/form/Button'
+import Loading from './loading'
+import SearchCurriculumForm from './searchCurriculumForm'
+import SearchForm from './searchForm'
 
-const Modal = ({ children }) => {
+const Modal = ({ open, setOpen }) => {
   const {
     secteurs,
     regions,
@@ -23,60 +23,56 @@ const Modal = ({ children }) => {
     setNiveaux,
     setRegions,
   } = useTerms()
-  const { stateModal, dispatchModal } = useModal()
+  const [toggleForm, setToggleForm] = useState(false)
 
-  const closeModal = () => dispatchModal({ type: actions.SET_TOGGLE_MODAL })
-  const toggleForm = () =>
-    dispatchModal({ type: actions.SET_TOGGLE_SEARCHFRORM })
-  const { toggleModal, toggleSearchForm } = stateModal
+  const closeModal = () => setOpen(!open)
+  const changeForm = () => setToggleForm(!toggleForm)
 
   useEffect(() => {
-    if (isEmpty(secteurs))
+    if (open && isEmpty(secteurs))
       populateTerms({ type: TermTypePlural.secteurs, setTerms: setSecteurs })
-  }, [secteurs])
+  }, [secteurs, open])
 
   useEffect(() => {
-    if (isEmpty(regions))
+    if (open && isEmpty(regions))
       populateTerms({ type: TermTypePlural.regions, setTerms: setRegions })
-  }, [regions])
+  }, [regions, open])
 
   useEffect(() => {
-    if (isEmpty(categories))
+    if (open && isEmpty(categories))
       populateTerms({
         type: TermTypePlural.categories,
         setTerms: setCategories,
       })
-  }, [categories])
+  }, [categories, open])
 
   useEffect(() => {
-    if (isEmpty(niveaux))
+    if (open && isEmpty(niveaux))
       populateTerms({ type: TermTypePlural.niveaux, setTerms: setNiveaux })
-  }, [niveaux])
+  }, [niveaux, open])
 
   return (
-    <dialog onClick={closeModal} id="modal" open={toggleModal}>
+    <dialog onClick={closeModal} id="modal" open={open}>
       <div onClick={(e) => e.stopPropagation()} className="modal-inner">
         <form
           action="/search/"
-          className={
-            toggleModal ? 'modal-form animate-slideinup' : 'modal-form'
-          }
+          className={open ? 'modal-form animate-slideinup' : 'modal-form'}
         >
           <div className="modal-header">
-            <div className={toggleSearchForm ? 'flex-row-reverse' : ''}>
+            <div className={toggleForm ? 'flex-row-reverse' : ''}>
               <button
                 type="button"
-                className={toggleSearchForm ? 'notactive' : ''}
-                onClick={toggleForm}
-                disabled={!toggleSearchForm}
+                className={toggleForm ? 'notactive' : ''}
+                onClick={changeForm}
+                disabled={!toggleForm}
               >
                 Recherche par poste
               </button>
               <button
                 type="button"
-                className={!toggleSearchForm ? 'notactive' : ''}
-                onClick={toggleForm}
-                disabled={toggleSearchForm}
+                className={!toggleForm ? 'notactive' : ''}
+                onClick={changeForm}
+                disabled={toggleForm}
               >
                 Recherche par curriculum
               </button>
@@ -85,9 +81,13 @@ const Modal = ({ children }) => {
               <CloseIcon className="icon" />
             </button>
           </div>
-
-          <div className="modal-body">{children}</div>
-
+          {isEmpty(secteurs) || isEmpty(regions) || isEmpty(categories) ? (
+            <Loading />
+          ) : (
+            <div className="modal-body">
+              {toggleForm ? <SearchCurriculumForm /> : <SearchForm />}
+            </div>
+          )}
           <div className="modal-footer">
             <Link
               href="https://www.jobrapide.org/admin/"

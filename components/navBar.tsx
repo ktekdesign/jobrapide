@@ -9,12 +9,7 @@ import CloseIcon from '/public/images/close.svg'
 import UserIcon from '/public/images/user.svg'
 import SearchIcon from '/public/images/search.svg'
 
-import useModal from '@hooks/useModal'
-
-import { actions } from '@context/dataReducer'
-
-const NavBar = ({ items }) => {
-  const { dispatchModal } = useModal()
+const NavBar = ({ items, setOpen }) => {
   const [showMenu, setShowMenu] = useState(false)
   const [currentPath, setCurrentPath] = useState('')
   const router = useRouter()
@@ -86,7 +81,7 @@ const NavBar = ({ items }) => {
             <button
               onClick={(e) => {
                 e.preventDefault()
-                dispatchModal({ type: actions.SET_TOGGLE_MODAL })
+                setOpen(true)
               }}
               title="Faire une recherche"
             >

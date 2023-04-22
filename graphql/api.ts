@@ -477,11 +477,36 @@ export const getPubs = async () => {
     const data = await fetchAPI(
       `
       query Pubs {
-        posts(first: 100, where: { 
-          categoryId: 118
+        posts(first: ${process.env.NEXT_PUBLIC_MAX_PUBS}, where: { 
+          taxQuery: {
+            relation: OR,
+            taxArray: [
+              {
+                includeChildren: true
+                terms: ["192", "193", "194", "88"]
+                taxonomy: CATEGORY
+                operator: IN
+                field: ID
+              },
+              {
+                includeChildren: true
+                terms: ["85"]
+                taxonomy: TAG
+                operator: IN
+                field: ID
+              }
+            ]
+          }
           orderby: { field: DATE, order: DESC } }) {
           nodes {  
             content
+            title
+            uri
+            featuredImage {
+              node {
+                sourceUrl
+              }
+            }
             categories{
               nodes {
                 databaseId
@@ -506,8 +531,17 @@ export const getPubs = async () => {
       (pub) =>
         pub.categories.findIndex((category) => category.id === 194) !== -1
     )
+    const partners = pubs.filter(
+      (pub) => pub.categories.findIndex((category) => category.id === 88) !== -1
+    )
+    const sponsored = pubs.filter(
+      (pub) =>
+        pub.categories.findIndex((category) =>
+          [192, 193, 194, 88].includes(category.id)
+        ) === -1
+    )
 
-    return { pub1, pub2, pub3 }
+    return { pub1, pub2, pub3, partners, sponsored }
   } catch (err) {
     return outputErrors(err)
   }

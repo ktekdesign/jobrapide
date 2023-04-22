@@ -1,16 +1,12 @@
 import React, { memo } from 'react'
 
-import useModal from '@hooks/useModal'
 import useTerms from '@hooks/useTerms'
 
 import Select from '@components/form/select'
 import Input from '@components/form/input'
 
 const SearchForm = () => {
-  const { stateModal } = useModal()
   const { categories, secteurs, regions } = useTerms()
-
-  if (stateModal.toggleSearchForm) return <></>
 
   return (
     <div className="animate-slideinup">

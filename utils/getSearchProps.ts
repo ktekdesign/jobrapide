@@ -15,5 +15,14 @@ export const getSearchProps = async (query, params) => {
   })
 
   const pages = getPagination(count, currentPage)
-  return addLayoutData({ posts, pages, currentPage })
+  const uri = `/search/_page_?s=${query.s}&category=${query.category}&secteur=${query.secteur}&region=${query.region}`
+  const layout = await addLayoutData({
+    posts,
+    pages,
+    currentPage,
+    uri,
+    search: query.s,
+    isSearch: true,
+  })
+  return layout
 }

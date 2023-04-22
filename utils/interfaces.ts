@@ -1,7 +1,3 @@
-export interface InitialModalStateType {
-  toggleModal: boolean
-  toggleSearchForm: boolean
-}
 export interface Post {
   id?: number
   title: string

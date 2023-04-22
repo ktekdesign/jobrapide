@@ -3,8 +3,7 @@ import Link from 'next/link'
 import { isEmpty } from '@utils/manipulateArray'
 
 const Terms = ({ terms, name }) => {
-  const moreTerms = terms?.length > 4
-  const [hideTerms, setHideTerms] = useState(moreTerms)
+  const [hideTerms, setHideTerms] = useState(true)
 
   if (isEmpty(terms)) return <></>
 
@@ -19,7 +18,7 @@ const Terms = ({ terms, name }) => {
       ))}
 
       <small
-        className={`more-terms ${moreTerms ? '' : 'hidden'}`}
+        className={`more-terms ${terms?.length > 3 ? '' : 'hidden'}`}
         onClick={() => setHideTerms(!hideTerms)}
       >
         {hideTerms ? '... Afficher plus' : 'Afficher moins'}
