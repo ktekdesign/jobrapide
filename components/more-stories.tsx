@@ -5,6 +5,7 @@ import parse from 'html-react-parser'
 import CoverImage from '@components/cover-image'
 import Terms from '@components/terms'
 import Date from '@components/date'
+import ShareButtons from '@components/share-buttons'
 
 const MoreStories = ({ posts }) => {
   return (
@@ -41,6 +42,7 @@ const MoreStories = ({ posts }) => {
               <p className="post-list-terms">
                 <Terms terms={regions} name="Regions : " />
               </p>
+              <ShareButtons uri={uri} title={title} />
             </div>
           </article>
         )

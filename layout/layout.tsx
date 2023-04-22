@@ -14,6 +14,7 @@ import Twitter from '@components/twitter'
 import ImageSlider from '@components/image-slider'
 import { TermType } from '@utils/interfaces'
 import SwiperHome from '@components/swiperHome'
+import ShareButtons from '@components/share-buttons'
 
 const Layout = ({ children, seo }) => (
   <>
@@ -53,6 +54,7 @@ const Layout = ({ children, seo }) => (
     </main>
     <Footer />
     <GoTop />
+    <ShareButtons float />
   </>
 )
 export default memo(Layout)

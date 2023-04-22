@@ -4,6 +4,7 @@ import Date from '@components/date'
 import CoverImage from '@components/cover-image'
 import PostTitle from '@components/post-title'
 import Terms from '@components/terms'
+import ShareButtons from './share-buttons'
 
 const PostHeader = ({ title, image, date, categories, secteurs, regions }) => (
   <>
@@ -23,6 +24,7 @@ const PostHeader = ({ title, image, date, categories, secteurs, regions }) => (
     <div className="post-header-terms">
       <Terms terms={regions} name="Regions : " />
     </div>
+    <ShareButtons title={title} />
   </>
 )
 
