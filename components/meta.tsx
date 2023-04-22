@@ -53,6 +53,7 @@ const Meta: FC<{ seo: Seo }> = ({ seo }) => (
           />
           <meta property="og:image" content={seo.opengraphImage} />
           <title>{seo.title}</title>
+          <link rel="icon" type="image/x-icon" href="/images/logo.png" />
         </>
       )}
     </Head>
