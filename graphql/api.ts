@@ -41,13 +41,13 @@ title
 excerpt
 ${isPostPage ? 'content slug' : ''}
 date
-categories{
+categories(first: ${isPostPage ? 10 : 4}) {
   ${terms_response} 
 }
-secteurs{
+secteurs(first: ${isPostPage ? 10 : 4}){
   ${terms_response}
 }
-regions{
+regions(first: ${isPostPage ? 10 : 4}){
   ${terms_response}
 }
 uri
