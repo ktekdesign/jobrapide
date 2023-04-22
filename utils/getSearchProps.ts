@@ -12,6 +12,7 @@ export const getSearchProps = async (query, params) => {
     page: currentPage,
     isSearch: true,
   })
+
   const pages = getPagination(count, currentPage)
   return { posts, pages, currentPage }
 }

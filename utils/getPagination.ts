@@ -1,7 +1,6 @@
 import { getFirst, getLast, next, prev } from '@utils/manipulateArray'
 
 const PER_PAGE = parseInt(process.env.NEXT_PUBLIC_PER_PAGE)
-const MAX_PAGE = parseInt(process.env.NEXT_PUBLIC_MAX_PAGE)
 
 const getPagination = (count, currentPage) => {
   const PAGE_BREAK = 3
@@ -42,7 +41,6 @@ const getPagination = (count, currentPage) => {
   return [...first, ...middle, ...last]
 }
 
-export const getAllPages = (count) =>
-  Math.min(Math.ceil(count / PER_PAGE), MAX_PAGE)
+export const getAllPages = (count) => Math.ceil(count / PER_PAGE)
 
 export default getPagination

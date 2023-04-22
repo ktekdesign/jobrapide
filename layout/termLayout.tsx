@@ -1,25 +1,26 @@
+import { memo } from 'react'
 import Layout from '@layout/layout'
+import { preventUndefined } from '@utils/manipulateArray'
 
 import dynamic from 'next/dynamic'
 import Pagination from '@components/pagination'
 import ArchiveTitle from '@components/archive-title'
-import { isEmpty } from '@utils/manipulateArray'
-import Loading from '@components/loading'
 const MoreStories = dynamic(() => import('@components/more-stories'), {
   ssr: false,
 })
 
-const TermLayout = ({ term, currentPage, pages }) => {
-  if (isEmpty(term) || isEmpty(currentPage) || isEmpty(pages))
-    return <Loading />
+const TermLayout = ({ term, currentPage, pages }) => (
+  <Layout seo={preventUndefined(term?.seo)}>
+    <ArchiveTitle currentPage={preventUndefined(currentPage)}>
+      {preventUndefined(term?.name)}
+    </ArchiveTitle>
+    <MoreStories posts={preventUndefined(term?.posts)} />
+    <Pagination
+      pages={preventUndefined(pages)}
+      uri={preventUndefined(term?.uri)}
+      currentPage={preventUndefined(currentPage)}
+    />
+  </Layout>
+)
 
-  return (
-    <Layout seo={term.seo}>
-      <ArchiveTitle currentPage={currentPage}>{term.name}</ArchiveTitle>
-      <MoreStories posts={term.posts} />
-      <Pagination pages={pages} uri={term.uri} currentPage={currentPage} />
-    </Layout>
-  )
-}
-
-export default TermLayout
+export default memo(TermLayout)

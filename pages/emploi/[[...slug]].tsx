@@ -2,12 +2,9 @@ import { getTermProps } from '@utils/getTermProps'
 import TermLayout from '@layout/termLayout'
 import { TermType, TermTypePlural } from '@utils/interfaces'
 import { generateTermsStaticPaths } from '@utils/generateTermsStaticPaths'
-import { generateTermsStaticProps } from '@utils/generateTermsStaticProps'
 
 export const getStaticProps = async ({ params }) => {
-  const { currentPage, resolvedSlug } = generateTermsStaticProps(params)
-
-  const data = await getTermProps(resolvedSlug, TermType.Tag, currentPage)
+  const data = await getTermProps(params, TermType.Tag)
   return data
 }
 

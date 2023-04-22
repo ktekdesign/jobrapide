@@ -1,15 +1,19 @@
 import { getTermAndPosts } from '@graphql/api'
-import { TermType } from '@utils/interfaces'
-import { getLast, isEmpty } from './manipulateArray'
+import { getLast, isEmpty, prev } from './manipulateArray'
 import getPagination from './getPagination'
+import { REVALIDATE } from './constants'
 
-export const getTermProps = async (
-  resolvedUrl: string,
-  type: TermType,
-  currentPage: number
-) => {
+export const getTermProps = async (params, type) => {
+  const pageIndex = params?.slug?.findIndex((param) => param === 'page')
+  const resolvedSlug =
+    pageIndex && pageIndex !== -1
+      ? params.slug[prev(pageIndex)]
+      : getLast(params.slug)
+  const currentPage =
+    pageIndex && pageIndex !== -1 ? parseInt(getLast(params.slug)) : 1
+
   const term = await getTermAndPosts({
-    term: resolvedUrl,
+    term: resolvedSlug,
     type,
     page: currentPage,
   })
@@ -22,5 +26,5 @@ export const getTermProps = async (
     currentPage > parseInt(getLast(pages))
   )
     return { notFound: true }
-  return { props: { term, currentPage, pages, revalidate: 3600 } }
+  return { props: { term, currentPage, pages, revalidate: REVALIDATE } }
 }

@@ -154,31 +154,42 @@ export const getTermAndPosts = async ({ term, type, page = 1 }) => {
     }
   )
 
-  const taxonomy = mapTerm(data[typeLower])
+  const taxonomy = data[typeLower]
 
-  if (page > 1 && !isEmpty(taxonomy)) {
-    switch (type) {
-      case TermType.Secteur:
-        taxonomy.posts = await performSearch({
-          page,
-          secteur: taxonomy.id,
-        })
-        break
-      case TermType.Region:
-        taxonomy.posts = await performSearch({ page, region: taxonomy.id })
-        break
-      case TermType.Tag:
-        taxonomy.posts = await performSearch({ page, tag: taxonomy.id })
-        break
-      default:
-        taxonomy.posts = await performSearch({
-          page,
-          category: taxonomy.id,
-        })
-        break
+  if (!isEmpty(taxonomy)) {
+    if (type === TermType.Secteur) {
+      const { posts, count } = await performSearch({
+        page,
+        secteur: taxonomy.databaseId,
+      })
+      taxonomy.posts = posts
+      taxonomy.count = count
+
+      return mapTerm(taxonomy)
+    } else if (type === TermType.Region) {
+      const { posts } = await performSearch({
+        page,
+        region: taxonomy.databaseId,
+      })
+      taxonomy.posts = posts
+      return mapTerm(taxonomy)
+    } else if (type === TermType.Tag) {
+      const { posts } = await performSearch({
+        page,
+        tag: taxonomy.databaseId,
+      })
+      taxonomy.posts = posts
+      return mapTerm(taxonomy)
+    } else if (type === TermType.Category && page > 1) {
+      const { posts } = await performSearch({
+        page,
+        category: taxonomy.databaseId,
+      })
+      taxonomy.posts = posts
+      return mapTerm(taxonomy)
     }
   }
-  return taxonomy
+  return mapTerm(taxonomy)
 }
 export const getPostsHome = async ({ term, type, isPub, postsPerPage }) => {
   const typeLower = type.toLowerCase()
@@ -333,54 +344,46 @@ export const performSearch = async ({
   tag = null,
   isSearch = false,
 }) => {
-  const wherePagination =
-    page > 1
-      ? `offsetPagination: { size: ${PER_PAGE}, offset: ${
-          PER_PAGE * page - PER_PAGE
-        }}`
-      : ''
-  const category_query = category
-    ? `{
-    terms: ["${category}"],
-    taxonomy: CATEGORY,
-    operator: IN,
-    field: ID
-  },`
-    : ''
+  const wherePagination = `offsetPagination: { size: ${PER_PAGE}, offset: ${
+    PER_PAGE * page - PER_PAGE
+  }}`
+  const category_query = `categoryId: ${category ? category : 16},`
   const secteur_query = secteur
     ? `{
-    terms: ["${secteur}"],
-    taxonomy: SECTEUR,
-    operator: IN,
+    includeChildren: true
+    terms: ["${secteur}"]
+    taxonomy: SECTEUR
+    operator: IN
     field: ID
   },`
     : ''
   const region_query = region
     ? `{
-    terms: ["${region}"],
-    taxonomy: REGION,
-    operator: IN,
+    includeChildren: true
+    terms: ["${region}"]
+    taxonomy: REGION
+    operator: IN
     field: ID
-  },`
+  }`
     : ''
   const tag_query = tag
     ? `{
-    terms: ["${tag}"],
-    taxonomy: TAG,
-    operator: IN,
+    terms: ["${tag}"]
+    taxonomy: TAG
+    operator: IN
     field: ID
-  },`
+  }`
     : ''
-  const data = await fetchAPI(`
+  const query = `
   query search{
-    posts(
+    posts(first: 10
       where: {
-        search: "${search}"
+        ${isSearch ? `search: "${search}"` : ''}
+        ${category_query}
         ${wherePagination}
         taxQuery: {
           relation: AND,
           taxArray: [
-            ${!isEmpty(category) ? category_query : ''}
             ${!isEmpty(secteur) ? secteur_query : ''}
             ${!isEmpty(region) ? region_query : ''}
             ${!isEmpty(tag) ? tag_query : ''}
@@ -388,17 +391,37 @@ export const performSearch = async ({
         }
       }
     ){
-      ${isSearch ? `${pageInfoSearch}` : ''}
+      ${pageInfoSearch}
       ${posts_response}
     }
   }
-  `)
-  const response = data?.posts?.nodes?.map((post) => mapPost(post))
+  `
 
-  return isSearch
-    ? {
-        posts: preventUndefined(response),
-        count: preventUndefined(data.posts?.pageInfo?.offsetPagination?.total),
+  const data = await fetchAPI(query)
+  const posts = data?.posts?.nodes?.map((post) => mapPost(post))
+  const response = {
+    posts: preventUndefined(posts),
+    count: preventUndefined(data.posts?.pageInfo?.offsetPagination?.total),
+  }
+  return isSearch ? response : data
+}
+
+export const getLatestPosts = async (category) => {
+  const query = `
+  query lasts{
+    posts(first: ${process.env.NEXT_PUBLIC_MAX_POSTS_GENERATE_PAGE}
+      where: {
+        categoryId: ${category}
       }
-    : preventUndefined(response)
+    ){
+      nodes {
+        uri
+      }
+    }
+  }
+  `
+  const data = await fetchAPI(query)
+  const response = data?.posts?.nodes
+
+  return preventUndefined(response)
 }
