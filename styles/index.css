@@ -322,7 +322,7 @@ footer {
 .terms span {
   @apply mr-2 inline-block text-primary hover:text-secondary;
 }
-.terms-hide > span:nth-of-type(n + 4) {
+.terms-hide > span:nth-of-type(n + 3) {
   @apply hidden;
 }
 .terms small {
@@ -393,14 +393,13 @@ footer {
   @apply flex flex-wrap sm:flex-nowrap gap-1 md:gap-2 justify-center py-4;
 }
 .pagination-item {
-  @apply border p-2 text-center text-xs md:text-sm hover:text-white hover:bg-secondary hover:font-bold;
+  @apply border p-2 text-center text-xs leading-none flex items-center justify-center md:text-sm hover:text-white hover:bg-secondary hover:font-bold;
 }
-
 .pagination-more {
-  @apply text-slate-400 p-2 inline-block text-center text-xs md:text-sm;
+  @apply text-slate-400 p-2 leading-none flex items-center justify-center text-center text-xs md:text-sm;
 }
 .current-page {
-  @apply border p-2 inline-block bg-primary text-white font-bold text-center text-xs md:text-sm;
+  @apply border p-2 bg-primary leading-none flex items-center justify-center text-white font-bold text-center text-xs md:text-sm;
 }
 
 /* FOOTER MENU */

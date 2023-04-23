@@ -4,7 +4,6 @@ import React, { FC, SelectHTMLAttributes, memo } from 'react'
 import Label from './label'
 
 interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
-  id: string
   label: string
   options:
     | Term[]
@@ -13,13 +12,14 @@ interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
         name: string
       }[]
 }
-const Select: FC<SelectProps> = ({ id, label, options, ...props }) => {
+const Select: FC<SelectProps> = ({ label, options, ...props }) => {
   if (isEmpty(options)) return <></>
+  const { name, ...rest } = props
   return (
     <div className="row">
-      <Label htmlFor={id}>{label}</Label>
+      <Label htmlFor={name}>{label}</Label>
       <div className="relative">
-        <select id={id} name={id} className="form-select" {...props}>
+        <select id={name} name={name} className="form-select" {...rest}>
           {options?.map(({ id, name }) => (
             <option value={id} key={id}>
               {name}

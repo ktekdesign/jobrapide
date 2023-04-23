@@ -39,7 +39,7 @@ const NavBar = ({ items, setOpen }) => {
           )}
         </button>
       </div>
-      <div className={`${showMenu ? 'flex' : 'hidden'} main-menu`}>
+      <div className={`${showMenu ? 'flex' : 'hidden'} main-menu lg:flex`}>
         <ul className="menu-items">
           {items?.map((item, i) => (
             <li key={i}>

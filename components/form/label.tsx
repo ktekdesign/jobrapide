@@ -7,7 +7,11 @@ interface LabelProps extends LabelHTMLAttributes<HTMLLabelElement> {
 const Label: FC<LabelProps> = ({ children, htmlFor, ...props }) => {
   const { className, ...rest } = props
   return (
-    <label className={`form-label ${className}`} htmlFor={htmlFor} {...rest}>
+    <label
+      className={`form-label ${className ? className : ''}`}
+      htmlFor={htmlFor}
+      {...rest}
+    >
       {children}
     </label>
   )

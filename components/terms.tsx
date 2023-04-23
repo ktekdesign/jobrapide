@@ -18,7 +18,12 @@ const Terms = ({ terms, name }) => {
       ))}
 
       <small
-        className={`more-terms ${terms?.length > 3 ? '' : 'hidden'}`}
+        className={`more-terms 
+        ${
+          terms?.length >= parseInt(process.env.NEXT_PUBLIC_MAX_TERMS_BY_POST)
+            ? ''
+            : 'hidden'
+        }`}
         onClick={() => setHideTerms(!hideTerms)}
       >
         {hideTerms ? '... Afficher plus' : 'Afficher moins'}

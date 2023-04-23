@@ -1,8 +1,8 @@
 import Layout from '@layout/layout'
 
-import SimilarPosts from '@components/similarPosts'
 import PostBody from '@components/post-body'
 import PostHeader from '@components/post-header'
+import SwiperHome from '@components/swiperHome'
 
 const PostLayout = ({ post, posts, layout }) => (
   <Layout {...layout}>
@@ -16,7 +16,12 @@ const PostLayout = ({ post, posts, layout }) => (
       regions={post.regions}
     />
     <PostBody>{post.content}</PostBody>
-    <SimilarPosts posts={posts} />
+    <SwiperHome
+      items={posts}
+      slides={3}
+      name="Publications similaires"
+      className="title-secondary"
+    />
   </Layout>
 )
 

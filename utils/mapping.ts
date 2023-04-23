@@ -60,17 +60,13 @@ export const mapPost = (post): Post => {
 export const mapTerm = (term): Term => {
   if (isEmpty(term)) return null
   try {
-    const posts = term.posts?.nodes?.map((post) => mapPost(post))
-
     return {
       id: preventUndefined(term.databaseId),
       name: preventUndefined(term.name),
-      count: preventUndefined(
-        term.posts?.pageInfo?.offsetPagination?.total || term.count
-      ),
+      count: preventUndefined(term.count),
       slug: preventUndefined(term.slug),
       uri: preventUndefined(term.uri),
-      posts: preventUndefined(posts),
+      posts: preventUndefined(term.posts),
       seo: mapSeo(preventUndefined(term.seo)),
     }
   } catch (err) {

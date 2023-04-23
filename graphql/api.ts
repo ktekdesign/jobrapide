@@ -1,8 +1,9 @@
 import { TermType } from '@utils/interfaces'
-import { isEmpty, preventUndefined } from '@utils/manipulateArray'
+import { getFirst, isEmpty, preventUndefined } from '@utils/manipulateArray'
 import { mapPage, mapPost, mapTerm } from '@utils/mapping'
 import { outputErrors } from '@utils/outputErrors'
-import axios from 'axios'
+import { ApolloClient, InMemoryCache } from '@apollo/client'
+import { gql } from '@apollo/client'
 
 const API_URL = process.env.NEXT_PUBLIC_WORDPRESS_API_URL
 const PER_PAGE = parseInt(process.env.NEXT_PUBLIC_PER_PAGE)
@@ -10,52 +11,70 @@ const PER_PAGE = parseInt(process.env.NEXT_PUBLIC_PER_PAGE)
 const fetchAPI = async (query = '', variables: Record<string, string> = {}) => {
   const headers = { 'Content-Type': 'application/json' }
 
+  const client = new ApolloClient({
+    uri: API_URL,
+    cache: new InMemoryCache(),
+  })
+
   if (process.env.WORDPRESS_AUTH_REFRESH_TOKEN) {
     headers[
       'Authorization'
     ] = `Bearer ${process.env.WORDPRESS_AUTH_REFRESH_TOKEN}`
   }
-  const body = JSON.stringify({
-    query,
-    variables,
-  })
+  const body = query
+    .replaceAll('"$id"', `"${variables?.id}"`)
+    .replaceAll('"$idType"', `"${variables?.idType}"`)
 
   try {
     // WPGraphQL Plugin must be enabled
-    const { data } = await axios.post(API_URL, body, {
-      headers,
+    const { data } = await client.query({
+      query: gql`
+        ${body}
+      `,
     })
-    return data.data
+
+    return data
   } catch (err) {
     console.error(err)
-    console.error(query)
+    console.error(body)
   }
   return
 }
-const terms_response = `nodes {
+const term_response = `
   name
   uri
+`
+const terms_response = `nodes {
+  ${term_response}
 }`
 const post_response = (isPostPage = false) => `
+${isPostPage ? 'databaseId' : ''}  
 title
-excerpt
-${isPostPage ? 'content slug' : ''}
-date
-categories(first: ${isPostPage ? 10 : 4}) {
-  ${terms_response} 
-}
-secteurs(first: ${isPostPage ? 10 : 4}){
-  ${terms_response}
-}
-regions(first: ${isPostPage ? 10 : 4}){
-  ${terms_response}
-}
-uri
-featuredImage {
-  node {
-    sourceUrl
+  ${isPostPage ? 'content slug' : 'excerpt'}
+  date
+  categories(first: ${isPostPage ? 10 : 1}) {
+    nodes {
+    ${isPostPage ? 'databaseId' : ''}
+    ${term_response} 
+    }
   }
-}`
+  secteurs(first: ${
+    isPostPage ? 10 : process.env.NEXT_PUBLIC_MAX_TERMS_BY_POST
+  }){
+    ${terms_response}
+  }
+  regions(first: ${
+    isPostPage ? 10 : process.env.NEXT_PUBLIC_MAX_TERMS_BY_POST
+  }){
+    ${terms_response}
+  }
+  uri
+  featuredImage {
+    node {
+      sourceUrl
+    }
+  }`
+
 const pageInfoSearch = `pageInfo {
   offsetPagination {
       total
@@ -102,31 +121,44 @@ const seo_response = `
 
 export const getPostAndMorePosts = async (slug) => {
   try {
-    const data = await fetchAPI(
+    const { post } = await fetchAPI(
       `
-      query PostBySlug($id: ID!, $idType: PostIdType!) {
-        post(id: $id, idType: $idType) {
+      query PostBySlug {
+        post(id: "$id", idType: URI) {
           ${seo_response}
           ${post_response(true)}
-        }
-        posts(first: 4, where: { orderby: { field: DATE, order: DESC } }) {
-          ${posts_response}
         }
       }
     `,
       {
         id: slug,
-        idType: 'URI',
       }
     )
-
+    const { posts } = await fetchAPI(
+      `
+      query SimilarPosts {
+        posts(first: 3, where: { notIn: [${post.databaseId}] categoryId: ${
+        getFirst(post.categories.nodes).databaseId
+      } orderby: { field: DATE, order: DESC } }) {
+          nodes {
+            title
+            uri
+            featuredImage {
+              node {
+                sourceUrl
+              }
+            } 
+          }
+        }
+      }
+    `
+    )
     // Filter out the main post
-    data.posts = data.posts.nodes.filter((post) => post.slug !== slug)
-    // If there are still 4 posts, remove the last one
-    if (data.posts.length > 3) data.posts.pop()
-    const post = mapPost(data.post)
-    const posts = preventUndefined(data.posts.map((post) => mapPost(post)))
-    return { post: post, posts: posts }
+    const mappedPosts = preventUndefined(
+      posts.nodes.map((post) => mapPost(post))
+    )
+
+    return { post: mapPost(post), posts: mappedPosts }
   } catch (err) {
     return outputErrors(err)
   }
@@ -135,23 +167,17 @@ export const getPostAndMorePosts = async (slug) => {
 export const getTermAndPosts = async ({ term, type, page = 1 }) => {
   try {
     const typeLower = type.toLowerCase()
-    const posts_query =
-      page === 1
-        ? `posts(first: ${PER_PAGE}, where: { orderby: { field: DATE, order: DESC } }) {
-      ${posts_response}   
-    }`
-        : ''
+
     const data = await fetchAPI(
       `
-      query TermAndPosts($id: ID!) {
-        ${typeLower} (id: $id, idType: SLUG) {
+      query TermAndPosts {
+        ${typeLower} (id: "$id", idType: SLUG) {
           databaseId
           name
           count
           slug
           uri
           ${seo_response}
-          ${posts_query}
         }
       }
     `,
@@ -168,45 +194,38 @@ export const getTermAndPosts = async ({ term, type, page = 1 }) => {
           page,
           secteur: taxonomy.databaseId,
         })
-        taxonomy.posts = posts
-        taxonomy.count = count
 
-        return mapTerm(taxonomy)
+        return mapTerm({ ...taxonomy, posts, count })
       } else if (type === TermType.Region) {
-        const { posts } = await performSearch({
+        const { posts, count } = await performSearch({
           page,
           region: taxonomy.databaseId,
         })
-        taxonomy.posts = posts
-        return mapTerm(taxonomy)
+
+        return mapTerm({ ...taxonomy, posts, count })
       } else if (type === TermType.Tag) {
-        const { posts } = await performSearch({
+        const { posts, count } = await performSearch({
           page,
           tag: taxonomy.databaseId,
         })
-        taxonomy.posts = posts
-        return mapTerm(taxonomy)
-      } else if (
-        type === TermType.Category &&
-        (page > 1 || taxonomy.databaseId === 16)
-      ) {
-        const { posts } = await performSearch({
+
+        return mapTerm({ ...taxonomy, posts, count })
+      } else if (type === TermType.Category) {
+        const { posts, count } = await performSearch({
           page,
           category: taxonomy.databaseId,
         })
-        taxonomy.posts = posts
-        return mapTerm(taxonomy)
+        return mapTerm({ ...taxonomy, posts, count })
       }
     }
-    return mapTerm(taxonomy)
+    return null
   } catch (err) {
     return outputErrors(err)
   }
 }
 export const getPostsHome = async ({ term, type, postsPerPage }) => {
-  try {
-    const typeLower = type.toLowerCase()
-    const posts_query = `posts(first: ${postsPerPage}, where: { orderby: { field: DATE, order: DESC } }) {
+  const typeLower = type.toLowerCase()
+  const posts_query = `posts(first: ${postsPerPage}, where: { orderby: { field: DATE, order: DESC } }) {
       nodes {  
         title
         uri
@@ -217,10 +236,11 @@ export const getPostsHome = async ({ term, type, postsPerPage }) => {
         } 
       }
     }`
+  try {
     const data = await fetchAPI(
       `
-      query PostsHome($id: ID!) {
-        ${typeLower} (id: $id, idType: SLUG) {
+      query PostsHome {
+        ${typeLower} (id: "$id", idType: SLUG) {
           name
           uri
           ${posts_query}
@@ -233,7 +253,8 @@ export const getPostsHome = async ({ term, type, postsPerPage }) => {
     )
 
     const response = data[typeLower]
-    return mapTerm(response)
+    const posts = response?.posts?.nodes?.map((post) => mapPost(post))
+    return mapTerm({ ...response, posts })
   } catch (err) {
     return outputErrors(err)
   }
@@ -386,7 +407,7 @@ export const performSearch = async ({
   const wherePagination = `offsetPagination: { size: ${PER_PAGE}, offset: ${
     PER_PAGE * page - PER_PAGE
   }}`
-  const category_query = `categoryId: ${category ? category : 16},`
+  const category_query = `categoryId: ${!isEmpty(category) ? category : 16},`
   const secteur_query = secteur
     ? `{
     includeChildren: true
@@ -436,13 +457,14 @@ export const performSearch = async ({
   }
   `
   try {
-    const data = await fetchAPI(query)
-    const posts = data?.posts?.nodes?.map((post) => mapPost(post))
+    const { posts } = await fetchAPI(query)
+    const mappedPosts = posts?.nodes?.map((post) => mapPost(post))
     const response = {
-      posts: preventUndefined(posts),
-      count: preventUndefined(data.posts?.pageInfo?.offsetPagination?.total),
+      posts: preventUndefined(mappedPosts),
+      count: preventUndefined(posts?.pageInfo?.offsetPagination?.total),
     }
-    return isSearch ? response : data
+
+    return response
   } catch (err) {
     return outputErrors(err)
   }
