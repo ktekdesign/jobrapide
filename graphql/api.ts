@@ -223,8 +223,14 @@ export const getTermAndPosts = async ({ term, type, page = 1 }) => {
     return outputErrors(err)
   }
 }
-export const getPostsHome = async ({ term, type, postsPerPage }) => {
-  const typeLower = type.toLowerCase()
+export const getPostsHome = async ({
+  term,
+  postsPerPage,
+}: {
+  term: string
+  type?: TermType
+  postsPerPage: number
+}) => {
   const posts_query = `posts(first: ${postsPerPage}, where: { orderby: { field: DATE, order: DESC } }) {
       nodes {  
         title
@@ -240,7 +246,7 @@ export const getPostsHome = async ({ term, type, postsPerPage }) => {
     const data = await fetchAPI(
       `
       query PostsHome {
-        ${typeLower} (id: "$id", idType: SLUG) {
+        category (id: "$id", idType: SLUG) {
           name
           uri
           ${posts_query}
@@ -252,9 +258,9 @@ export const getPostsHome = async ({ term, type, postsPerPage }) => {
       }
     )
 
-    const response = data[typeLower]
-    const posts = response?.posts?.nodes?.map((post) => mapPost(post))
-    return mapTerm({ ...response, posts })
+    const { category } = data
+    const posts = category?.posts?.nodes?.map((post) => mapPost(post))
+    return mapTerm({ ...category, posts })
   } catch (err) {
     return outputErrors(err)
   }

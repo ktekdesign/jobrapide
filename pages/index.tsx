@@ -5,7 +5,6 @@ import Container from '@layout/container'
 import SwiperContainer from '@components/swiperContainer'
 
 import { getPage } from '@graphql/api'
-import { SwiperHome } from '@components/swiperHome'
 import addLayoutData from '@utils/addLayoutData'
 
 export const getStaticProps = async () => {
@@ -18,11 +17,7 @@ export default function Index(props) {
     <Layout {...props.layout}>
       <Container>
         <Column className="w-full">
-          <SwiperContainer
-            term="avis-recrutement"
-            className="title-primary"
-            component={SwiperHome}
-          />
+          <SwiperContainer term="avis-recrutement" className="title-primary" />
         </Column>
       </Container>
       <Container className="lg:pr-4">
@@ -31,7 +26,6 @@ export default function Index(props) {
             term="stage"
             slides={1}
             className="title-secondary"
-            component={SwiperHome}
             postsPerPage={5}
           />
         </Column>
@@ -40,7 +34,6 @@ export default function Index(props) {
             term="bourses-etude"
             slides={2}
             className="title-secondary"
-            component={SwiperHome}
           />
         </Column>
       </Container>
@@ -50,7 +43,6 @@ export default function Index(props) {
             term="avis-appel-offres"
             slides={2}
             className="title-primary"
-            component={SwiperHome}
           />
         </Column>
         <Column className="lg:w-1/3">
@@ -58,7 +50,6 @@ export default function Index(props) {
             term="call-for-papers"
             slides={1}
             className="title-primary"
-            component={SwiperHome}
             postsPerPage={5}
           />
         </Column>
@@ -69,7 +60,6 @@ export default function Index(props) {
             term="concours"
             slides={1}
             className="title-secondary"
-            component={SwiperHome}
             postsPerPage={5}
           />
         </Column>
@@ -78,7 +68,6 @@ export default function Index(props) {
             term="formations"
             slides={2}
             className="title-secondary"
-            component={SwiperHome}
           />
         </Column>
       </Container>
@@ -88,7 +77,6 @@ export default function Index(props) {
             term="actualites"
             slides={2}
             className="title-primary"
-            component={SwiperHome}
           />
         </Column>
         <Column className="lg:w-1/3">
@@ -96,7 +84,6 @@ export default function Index(props) {
             term="volontaire"
             slides={1}
             className="title-primary"
-            component={SwiperHome}
             postsPerPage={5}
           />
         </Column>

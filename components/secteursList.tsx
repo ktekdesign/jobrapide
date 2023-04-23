@@ -17,7 +17,7 @@ const SecteursList = ({ active }) => {
         type: TermTypePlural.secteurs,
         setTerms: setSecteurs,
       })
-  }, [secteurs, active])
+  }, [secteurs, setSecteurs, active])
 
   if (active === 1 && isEmpty(secteurs)) return <Loading />
 

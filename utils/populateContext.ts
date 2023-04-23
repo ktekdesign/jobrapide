@@ -23,16 +23,11 @@ export const populateTerms = async ({
 export const populatePosts = async ({
   term,
   type = TermType.Category,
-  postsPerPage = 10,
+  postsPerPage,
 }: {
   term: string
   type?: TermType
-  dispatch?: Dispatch<{
-    type: string
-    payload: [Term, string]
-  }>
-  setTermsWithPosts?: Dispatch<SetStateAction<Term>>
-  postsPerPage?: number
+  postsPerPage: number
 }) => {
   const data = await getPostsHome({ term, type, postsPerPage })
   return data

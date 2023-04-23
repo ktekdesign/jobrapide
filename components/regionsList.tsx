@@ -17,7 +17,7 @@ const RegionsList = ({ active }) => {
         type: TermTypePlural.regions,
         setTerms: setRegions,
       })
-  }, [active, regions])
+  }, [active, regions, setRegions])
 
   if (active === 2 && isEmpty(regions)) return <Loading />
 
