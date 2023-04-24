@@ -10,7 +10,7 @@ const Header = ({ pub }) => {
   return (
     <>
       <NavBar items={MENU_ITEMS} setOpen={setOpen} />
-      <Modal open={open} setOpen={setOpen} />
+      {open && <Modal open={open} setOpen={setOpen} />}
       <div className="pub-in-header">
         <Pub items={pub} />
       </div>

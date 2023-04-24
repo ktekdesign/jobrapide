@@ -4,6 +4,7 @@ import Loading from '@components/loading'
 import { useQuery, gql } from '@apollo/client'
 import { regionsLastQuery, regionsQuery } from '@graphql/termQueries'
 import { mapTerm } from '@utils/mapping'
+import { isEmpty } from '@utils/manipulateArray'
 
 const RegionsList = ({ active }) => {
   const QUERY = gql`
@@ -18,8 +19,11 @@ const RegionsList = ({ active }) => {
   if (loading) return <Loading />
   if (error) return <></>
 
-  const allRegions = [...data.regions.nodes, ...last.regions.nodes]
-  const regions = allRegions.map((region) => mapTerm(region))
+  const allRegions =
+    data && last ? [...data.regions.nodes, ...last.regions.nodes] : null
+  const regions = !isEmpty(allRegions)
+    ? allRegions.map((region) => mapTerm(region))
+    : null
 
   return (
     <ul className={active === 2 ? 'terms-list flex' : 'terms-list hidden'}>

@@ -13,8 +13,8 @@ const Footer = () => {
     <footer>
       <FooterTab {...{ active, setActive }} />
       <div className={active ? 'flex container' : 'hidden'}>
-        <SecteursList {...{ active }} />
-        <RegionsList {...{ active }} />
+        {active === 1 && <SecteursList {...{ active }} />}
+        {active === 2 && <RegionsList {...{ active }} />}
       </div>
       <FooterMenu items={FOOTER_MENU_ITEMS} />
       <Copyright />
