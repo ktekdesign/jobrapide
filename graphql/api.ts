@@ -387,11 +387,11 @@ export const performSearch = async ({
   }
   `
   try {
-    const { posts } = await fetchAPI(client, query)
-    const mappedPosts = posts?.nodes?.map((post) => mapPost(post))
+    const data = await fetchAPI(client, query)
+    const mappedPosts = data?.posts?.nodes?.map((post) => mapPost(post))
     const response = {
       posts: preventUndefined(mappedPosts),
-      count: preventUndefined(posts?.pageInfo?.offsetPagination?.total),
+      count: preventUndefined(data?.posts?.pageInfo?.offsetPagination?.total),
     }
 
     return response
