@@ -91,7 +91,11 @@ const ContactForm = () => {
           {...register('text')}
         ></textarea>
       </div>
-      <Button id="send-contact" type="submit">
+      <Button
+        id="send-contact"
+        label="Envoi du formulaire de contact"
+        type="submit"
+      >
         Envoyer
       </Button>
       <Alert show={showAlert} message={alertMessage} />

@@ -1,5 +1,4 @@
 import React, { memo } from 'react'
-import Link from 'next/link'
 
 import ArrowLeft from '/public/images/left.svg'
 import ArrowRight from '/public/images/right.svg'
@@ -11,6 +10,7 @@ import {
   next,
   prev,
 } from '@utils/manipulateArray'
+import SeoLink from '@components/seoLink'
 
 const Pagination = ({ pages, uri, currentPage, isSearch = false }) => {
   const url = (page) =>
@@ -24,14 +24,15 @@ const Pagination = ({ pages, uri, currentPage, isSearch = false }) => {
 
   return (
     <div className="pagination">
-      <Link
+      <SeoLink
+        label="Page précédente"
         className={`pagination-item ${
           isFirstPage(currentPage) ? 'hidden' : ''
         }`}
         href={url(prev(currentPage))}
       >
         <ArrowLeft className="icon" />
-      </Link>
+      </SeoLink>
       {pages?.map((page, i) => {
         if (page == '...') {
           return (
@@ -47,20 +48,26 @@ const Pagination = ({ pages, uri, currentPage, isSearch = false }) => {
           )
         } else {
           return (
-            <Link className="pagination-item" href={url(page)} key={i}>
+            <SeoLink
+              label={`Page ${page}`}
+              className="pagination-item"
+              href={url(page)}
+              key={i}
+            >
               {page}
-            </Link>
+            </SeoLink>
           )
         }
       })}
-      <Link
+      <SeoLink
+        label="Page suivante"
         className={`pagination-item ${
           isCurrentPage(currentPage, getLast(pages)) ? 'hidden' : ''
         }`}
         href={url(next(currentPage))}
       >
         <ArrowRight className="icon" />
-      </Link>
+      </SeoLink>
     </div>
   )
 }

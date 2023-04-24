@@ -1,7 +1,7 @@
 import { FC, memo } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
 import { isEmpty } from '@utils/manipulateArray'
+import SeoLink from '@components/seoLink'
 
 interface Props {
   title: string
@@ -26,7 +26,7 @@ const CoverImage: FC<Props> = ({
 
   return (
     <div className="feature">
-      <Link href={uri || '#'} aria-label={title}>
+      <SeoLink href={uri || '#'} label={title}>
         <Image
           width={width || 200}
           height={height || 200}
@@ -35,7 +35,7 @@ const CoverImage: FC<Props> = ({
           priority={priority}
           className={className}
         />
-      </Link>
+      </SeoLink>
     </div>
   )
 }

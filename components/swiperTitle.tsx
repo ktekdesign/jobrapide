@@ -1,5 +1,5 @@
 import React, { FC, memo } from 'react'
-import Link from 'next/link'
+import SeoLink from '@components/seoLink'
 
 export const SwiperTitle: FC<{
   uri?: string
@@ -7,7 +7,13 @@ export const SwiperTitle: FC<{
   className?: string
 }> = ({ uri, name, className }) => (
   <h2 className={className || 'title-primary'}>
-    {uri ? <Link href={uri}>{name}</Link> : <>{name}</>}
+    {uri ? (
+      <SeoLink href={uri} label={name}>
+        {name}
+      </SeoLink>
+    ) : (
+      <>{name}</>
+    )}
   </h2>
 )
 

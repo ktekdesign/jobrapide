@@ -1,6 +1,6 @@
 import React, { memo, useState } from 'react'
-import Link from 'next/link'
 import { isEmpty } from '@utils/manipulateArray'
+import SeoLink from '@components/seoLink'
 
 const Terms = ({ terms, name }) => {
   const [hideTerms, setHideTerms] = useState(true)
@@ -13,7 +13,9 @@ const Terms = ({ terms, name }) => {
 
       {terms.map(({ uri, name }, key) => (
         <span key={key}>
-          <Link href={uri}>{name}</Link>
+          <SeoLink href={uri} label={name}>
+            {name}
+          </SeoLink>
         </span>
       ))}
 

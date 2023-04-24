@@ -1,10 +1,10 @@
 import React, { memo } from 'react'
-import Link from 'next/link'
 import Loading from '@components/loading'
 import { useQuery, gql } from '@apollo/client'
 import { regionsLastQuery, regionsQuery } from '@graphql/termQueries'
 import { mapTerm } from '@utils/mapping'
 import { isEmpty } from '@utils/manipulateArray'
+import SeoLink from '@components/seoLink'
 
 const RegionsList = ({ active }) => {
   const QUERY = gql`
@@ -27,9 +27,9 @@ const RegionsList = ({ active }) => {
       <ul className={active === 2 ? 'terms-list flex' : 'terms-list hidden'}>
         {regions?.map(({ id, uri, name, count }) => (
           <li className="regions-list" key={id}>
-            <Link href={uri}>
+            <SeoLink href={uri} label={name}>
               {name} ({count})
-            </Link>
+            </SeoLink>
           </li>
         ))}
       </ul>

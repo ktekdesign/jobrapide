@@ -1,5 +1,4 @@
 import React, { memo, useEffect, useState } from 'react'
-import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 
@@ -8,6 +7,8 @@ import HomeIcon from '/public/images/home.svg'
 import CloseIcon from '/public/images/close.svg'
 import UserIcon from '/public/images/user.svg'
 import SearchIcon from '/public/images/search.svg'
+import Button from '@components/form/Button'
+import SeoLink from '@components/seoLink'
 
 const NavBar = ({ items, setOpen }) => {
   const [showMenu, setShowMenu] = useState(false)
@@ -22,43 +23,44 @@ const NavBar = ({ items, setOpen }) => {
   return (
     <nav className="navbar">
       <div className="logo">
-        <Link href="/">
+        <SeoLink href="/" label="JobRapide">
           <Image src="/images/logo.png" width={40} height={40} alt="Logo" />
           <span className={currentPath === '/' ? 'home-active' : 'home'}>
             <HomeIcon className="icon" />
             <span>{process.env.NEXT_PUBLIC_CMS_NAME}</span>
           </span>
-        </Link>
+        </SeoLink>
       </div>
       <div className="menu-mobile">
-        <button onClick={() => setShowMenu(!showMenu)}>
+        <Button label="Menu principal" onClick={() => setShowMenu(!showMenu)}>
           {showMenu ? (
             <CloseIcon className="icon" />
           ) : (
             <MenuIcon className="icon" />
           )}
-        </button>
+        </Button>
       </div>
       <div className={`${showMenu ? 'flex' : 'hidden'} main-menu lg:flex`}>
         <ul className="menu-items">
-          {items?.map((item, i) => (
+          {items?.map(({ uri, title }, i) => (
             <li key={i}>
-              <Link
-                href={item.uri}
+              <SeoLink
+                href={uri}
+                label={title}
                 className={`menu-item-link ${
-                  currentPath.startsWith(item.uri) ? 'menu-active' : ''
+                  currentPath.startsWith(uri) ? 'menu-active' : ''
                 }`}
               >
-                {item.title}
-              </Link>
+                {title}
+              </SeoLink>
             </li>
           ))}
         </ul>
         <ul className="icons-menu">
           <li className="download">
-            <Link
+            <SeoLink
+              label="Télecharger notre application Android"
               href="https://play.google.com/store/apps/details?id=com.ktekdesign.app.tchadcarriere"
-              title="Télecharger notre application Android"
               target="_blank"
             >
               <Image
@@ -67,26 +69,26 @@ const NavBar = ({ items, setOpen }) => {
                 height={64}
                 alt="download app"
               />
-            </Link>
+            </SeoLink>
           </li>
           <li className="reveal">
-            <Link
+            <SeoLink
               href="https://www.jobrapide.org/admin/"
-              title="Login / Créer un compte"
+              label="Login / Créer un compte"
             >
               <UserIcon className="icon" />
-            </Link>
+            </SeoLink>
           </li>
           <li className="reveal">
-            <button
+            <Button
               onClick={(e) => {
                 e.preventDefault()
                 setOpen(true)
               }}
-              title="Faire une recherche"
+              label="Faire une recherche"
             >
               <SearchIcon className="icon" />
-            </button>
+            </Button>
           </li>
         </ul>
       </div>

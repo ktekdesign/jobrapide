@@ -1,5 +1,4 @@
 import React, { memo, useState } from 'react'
-import Link from 'next/link'
 
 import { isEmpty } from '@utils/manipulateArray'
 import CloseIcon from '/public/images/close.svg'
@@ -14,6 +13,7 @@ import {
   getSecteursQuery,
 } from '@graphql/termQueries'
 import { mapTerm } from '@utils/mapping'
+import SeoLink from '@components/seoLink'
 
 const Modal = ({ open, setOpen }) => {
   const [toggleForm, setToggleForm] = useState(false)
@@ -54,26 +54,26 @@ const Modal = ({ open, setOpen }) => {
         >
           <div className="modal-header">
             <div className={toggleForm ? 'flex-row-reverse' : ''}>
-              <button
-                type="button"
+              <Button
+                label="Recherche par poste"
                 className={toggleForm ? 'notactive' : ''}
                 onClick={changeForm}
                 disabled={!toggleForm}
               >
                 Recherche par poste
-              </button>
-              <button
-                type="button"
+              </Button>
+              <Button
+                label="Recherche par curriculum"
                 className={!toggleForm ? 'notactive' : ''}
                 onClick={changeForm}
                 disabled={toggleForm}
               >
                 Recherche par curriculum
-              </button>
+              </Button>
             </div>
-            <button type="button" aria-label="Close" onClick={closeModal}>
+            <Button type="button" label="Close" onClick={closeModal}>
               <CloseIcon className="icon" />
-            </button>
+            </Button>
           </div>
 
           <div className="modal-body">
@@ -87,14 +87,20 @@ const Modal = ({ open, setOpen }) => {
           </div>
 
           <div className="modal-footer">
-            <Link
+            <SeoLink
               href="https://www.jobrapide.org/admin/"
               className="cta-publish-job"
+              label="Publier une Offre"
             >
               Publier une Offre / Post a Job
-            </Link>
+            </SeoLink>
 
-            <Button type="submit" id="search" className="submit">
+            <Button
+              type="submit"
+              id="search"
+              label="Recherche"
+              className="submit"
+            >
               Recherche
             </Button>
           </div>

@@ -173,7 +173,7 @@ footer {
   @apply w-full;
 }
 .tab {
-  @apply w-full flex flex-col text-base lg:flex-row;
+  @apply w-full flex text-base;
 }
 .tab li {
   @apply text-center block py-2 px-4 bg-primary hover:text-dark text-white cursor-pointer flex-grow flex-1;
@@ -292,14 +292,16 @@ footer {
 .cta-publish-job {
   @apply border-white bg-secondary border p-2 text-xs font-medium uppercase leading-normal rounded text-white shadow-lg transition duration-200 ease-in-out hover:bg-primary;
 }
+button[type='button'],
+button[type='submit'],
 .button {
   @apply inline-block rounded p-2 text-xs font-medium uppercase leading-normal text-white shadow-lg transition duration-200 ease-in-out bg-slate-400 text-dark;
 }
-.submit {
+button[type='submit'] {
   @apply bg-primary hover:bg-secondary text-white;
 }
 .terms-list {
-  @apply flex-wrap text-xs;
+  @apply flex-wrap text-xs container mx-auto;
 }
 .terms-list li {
   @apply p-1;
@@ -404,7 +406,7 @@ footer {
 
 /* FOOTER MENU */
 .navbar-footer {
-  @apply bg-primary text-white text-xs border-t-8 border-dark;
+  @apply bg-primary text-white text-sm lg:text-xs border-y-4 border-dark;
 }
 .footer-menu {
   @apply container mx-auto;

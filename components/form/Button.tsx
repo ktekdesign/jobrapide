@@ -2,15 +2,15 @@ import { ButtonHTMLAttributes, FC, ReactNode, memo } from 'react'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode
+  label: string
 }
 
-const Button: FC<ButtonProps> = ({ children, ...props }) => {
+const Button: FC<ButtonProps> = ({ children, label, ...props }) => {
   const { className, ...rest } = props
+  const args = rest || {}
+
   return (
-    <button
-      className={`button ${className || ''} ${props?.type || ''}`}
-      {...rest}
-    >
+    <button className={className || ''} aria-label={label} {...args}>
       {children}
     </button>
   )

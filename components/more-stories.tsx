@@ -1,11 +1,11 @@
 import React, { memo } from 'react'
-import Link from 'next/link'
 import parse from 'html-react-parser'
 
 import CoverImage from '@components/cover-image'
 import Terms from '@components/terms'
 import Date from '@components/date'
 import ShareButtons from '@components/share-buttons'
+import SeoLink from '@components/seoLink'
 
 const MoreStories = ({ posts }) => {
   return (
@@ -29,9 +29,9 @@ const MoreStories = ({ posts }) => {
               <p className="post-list-categories">
                 <Terms terms={categories} name="Categories : " />
               </p>
-              <Link className="archive-post-title" href={uri}>
+              <SeoLink className="archive-post-title" label={title} href={uri}>
                 {title}
-              </Link>
+              </SeoLink>
               <p className="post-list-terms">
                 <Date dateString={date} />
               </p>

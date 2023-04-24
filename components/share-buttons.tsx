@@ -1,12 +1,21 @@
 import { BASE_URL } from '@utils/constants'
 import { isEmpty } from '@utils/manipulateArray'
-import { FacebookShareButton, FacebookIcon } from 'next-share'
-import { TelegramShareButton, TelegramIcon } from 'next-share'
-import { LinkedinShareButton, LinkedinIcon } from 'next-share'
-import { WhatsappShareButton, WhatsappIcon } from 'next-share'
-import { TwitterShareButton, TwitterIcon } from 'next-share'
-import { FacebookMessengerShareButton, FacebookMessengerIcon } from 'next-share'
-import { EmailShareButton, EmailIcon } from 'next-share'
+import {
+  EmailShareButton,
+  EmailIcon,
+  FacebookMessengerShareButton,
+  FacebookMessengerIcon,
+  TwitterShareButton,
+  TwitterIcon,
+  FacebookShareButton,
+  FacebookIcon,
+  TelegramShareButton,
+  TelegramIcon,
+  LinkedinShareButton,
+  LinkedinIcon,
+  WhatsappShareButton,
+  WhatsappIcon,
+} from 'next-share'
 import { useRouter } from 'next/router'
 import { memo, useEffect, useState } from 'react'
 

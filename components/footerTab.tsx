@@ -1,7 +1,11 @@
 import React, { memo } from 'react'
 
 const FooterTab = ({ active, setActive }) => (
-  <ul className="tab">
+  <ul
+    className={`tab ${
+      active === 1 ? 'flex-col-reverse lg:flex-row' : 'flex-col lg:flex-row'
+    }`}
+  >
     <li
       className={active === 1 ? 'active' : 'secteur-tab'}
       onClick={() => setActive(1)}

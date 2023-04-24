@@ -1,5 +1,4 @@
 import React, { memo } from 'react'
-import Link from 'next/link'
 import Image from 'next/image'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -8,6 +7,7 @@ import 'swiper/css'
 import 'swiper/css/bundle'
 import 'swiper/css/pagination'
 import 'swiper/css/effect-flip'
+import SeoLink from '@components/seoLink'
 
 export const ImageSlider = ({ items, width = 0, height = 0 }) => (
   <div className="swiper-container">
@@ -33,7 +33,12 @@ export const ImageSlider = ({ items, width = 0, height = 0 }) => (
     >
       {items?.map(({ uri, title, image }, key) => (
         <SwiperSlide key={key}>
-          <Link href={uri} className="flex justify-center" target="_blank">
+          <SeoLink
+            href={uri}
+            label={title}
+            className="flex justify-center"
+            target="_blank"
+          >
             <Image
               width={width || 200}
               height={height || 200}
@@ -42,7 +47,7 @@ export const ImageSlider = ({ items, width = 0, height = 0 }) => (
               className="h-auto max-w-xs w-full"
               priority
             />
-          </Link>
+          </SeoLink>
         </SwiperSlide>
       ))}
     </Swiper>

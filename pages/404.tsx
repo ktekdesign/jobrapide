@@ -1,9 +1,9 @@
 import React from 'react'
 import Head from 'next/head'
-import Link from 'next/link'
 import Layout from '@layout/layout'
 import ArchiveTitle from '@components/archive-title'
 import addLayoutData from '@utils/addLayoutData'
+import SeoLink from '@components/seoLink'
 
 export const getStaticProps = async () => {
   const layout = await addLayoutData({})
@@ -25,9 +25,9 @@ const PageError = (props) => (
       <p>La page que vous recherchée a été supprimée ou est inexistante.</p>
 
       <div className="text-center row">
-        <Link href="/" className="button">
+        <SeoLink href="/" className="button" label="Retour">
           Retour
-        </Link>
+        </SeoLink>
       </div>
     </div>
   </Layout>

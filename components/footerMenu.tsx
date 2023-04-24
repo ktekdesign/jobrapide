@@ -1,5 +1,5 @@
 import React, { memo } from 'react'
-import Link from 'next/link'
+import SeoLink from '@components/seoLink'
 
 const FooterMenu = ({ items }) => (
   <nav className="navbar-footer">
@@ -7,7 +7,9 @@ const FooterMenu = ({ items }) => (
       <ul className="footer-menu-items">
         {items?.map(({ uri, title }, i) => (
           <li key={i}>
-            <Link href={uri}>{title}</Link>
+            <SeoLink href={uri} label={title}>
+              {title}
+            </SeoLink>
           </li>
         ))}
       </ul>

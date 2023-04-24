@@ -1,10 +1,10 @@
 import React, { memo } from 'react'
-import Link from 'next/link'
 
 import truncate from '@utils/truncate'
 import { Post } from '@utils/interfaces'
 
 import CoverImage from '@components/cover-image'
+import SeoLink from '@components/seoLink'
 
 const PostPreview = ({ title, image, uri }: Post) => (
   <>
@@ -12,7 +12,9 @@ const PostPreview = ({ title, image, uri }: Post) => (
       <CoverImage title={title} image={image} uri={uri} />
     </div>
     <h3 className="post-preview-title">
-      <Link href={uri}>{truncate(title)}</Link>
+      <SeoLink label={title} href={uri}>
+        {truncate(title)}
+      </SeoLink>
     </h3>
   </>
 )
