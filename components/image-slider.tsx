@@ -9,9 +9,8 @@ import 'swiper/css/bundle'
 import 'swiper/css/pagination'
 import 'swiper/css/effect-flip'
 
-export const ImageSlider = ({ items, name, width = 0, height = 0 }) => (
+export const ImageSlider = ({ items, width = 0, height = 0 }) => (
   <div className="swiper-container">
-    <h2 className="title-secondary">{name}</h2>
     <Swiper
       pagination={{
         clickable: true,
@@ -40,7 +39,7 @@ export const ImageSlider = ({ items, name, width = 0, height = 0 }) => (
               height={height || 200}
               alt={title}
               src={image}
-              className="max-h-max h-auto"
+              className="h-auto max-w-xs w-full"
               priority
             />
           </Link>

@@ -12,6 +12,6 @@ export const generatePostsStaticPaths = async (term, client) => {
 
   return {
     paths,
-    fallback: 'blocking',
+    fallback: true,
   }
 }

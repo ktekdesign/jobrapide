@@ -1,5 +1,4 @@
 import React, { FC, memo } from 'react'
-import Link from 'next/link'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Pagination } from 'swiper'
@@ -12,16 +11,10 @@ import { Post } from '@utils/interfaces'
 
 export const SwiperHome: FC<{
   items: Post[]
-  uri?: string
-  name: string
   slides?: number
-  className?: string
-}> = ({ items, uri, name, slides = 1, className }) => {
+}> = ({ items, slides = 1 }) => {
   return (
     <div className="swiper-container bg-dark">
-      <h2 className={className}>
-        {uri ? <Link href={uri}>{name}</Link> : <>{name}</>}
-      </h2>
       <Swiper
         pagination={{
           clickable: true,

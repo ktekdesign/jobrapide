@@ -24,6 +24,6 @@ export const generateTermsStaticPaths = async (term, client) => {
 
   return {
     paths,
-    fallback: 'blocking',
+    fallback: true,
   }
 }

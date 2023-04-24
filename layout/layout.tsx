@@ -13,6 +13,7 @@ import Twitter from '@components/twitter'
 import ImageSlider from '@components/image-slider'
 import SwiperHome from '@components/swiperHome'
 import ShareButtons from '@components/share-buttons'
+import SwiperTitle from '@components/swiperTitle'
 
 const Layout = ({ children, seo, pubs, partners, sponsored }) => (
   <>
@@ -28,14 +29,12 @@ const Layout = ({ children, seo, pubs, partners, sponsored }) => (
           <Pub items={pubs?.pub1} />
         </Row>
         <Row>
-          <SwiperHome
-            items={sponsored}
-            name="Offres sponsorisées"
-            className="title-primary"
-          />
+          <SwiperTitle name="Offres sponsorisées" />
+          <SwiperHome items={sponsored} />
         </Row>
         <Row>
-          <ImageSlider items={partners} name="Partenaires" />
+          <SwiperTitle name="Partenaires" className="title-secondary" />
+          <ImageSlider items={partners} />
         </Row>
         <Row>
           <Pub items={pubs?.pub3} />

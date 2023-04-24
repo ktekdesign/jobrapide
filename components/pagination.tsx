@@ -32,7 +32,7 @@ const Pagination = ({ pages, uri, currentPage, isSearch = false }) => {
       >
         <ArrowLeft className="icon" />
       </Link>
-      {pages.map((page, i) => {
+      {pages?.map((page, i) => {
         if (page == '...') {
           return (
             <span key={i} className="pagination-more">
