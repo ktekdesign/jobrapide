@@ -8,6 +8,17 @@ import { getPage } from '@graphql/api'
 import addLayoutData from '@utils/addLayoutData'
 
 import client from '@graphql/client'
+import {
+  queryActualite,
+  queryAppel,
+  queryAvis,
+  queryBourse,
+  queryCall,
+  queryConcours,
+  queryFormation,
+  queryStage,
+  queryVolontaire,
+} from '@graphql/homeQueries'
 
 export const getStaticProps = async () => {
   const page = await getPage('/', client)
@@ -19,49 +30,55 @@ export default function Index(props) {
     <Layout {...props.layout}>
       <Container>
         <Column className="w-full">
-          <SwiperContainer id={17} />
+          <SwiperContainer query={queryAvis} />
         </Column>
       </Container>
       <Container className="lg:pr-4">
         <Column className="lg:w-1/3 mb-4 lg:mb-0">
           <SwiperContainer
-            id={18}
+            query={queryStage}
             slides={1}
             className="title-secondary"
-            postsPerPage={5}
           />
         </Column>
         <Column className="lg:w-2/3">
-          <SwiperContainer id={20} slides={2} className="title-secondary" />
+          <SwiperContainer
+            query={queryBourse}
+            slides={2}
+            className="title-secondary"
+          />
         </Column>
       </Container>
       <Container className="lg:pr-4">
         <Column className="lg:w-2/3 mb-4 lg:mb-0">
-          <SwiperContainer id={19} slides={2} />
+          <SwiperContainer query={queryAppel} slides={2} />
         </Column>
         <Column className="lg:w-1/3">
-          <SwiperContainer id={64} slides={1} postsPerPage={5} />
+          <SwiperContainer query={queryCall} slides={1} />
         </Column>
       </Container>
       <Container className="lg:pr-4">
         <Column className="lg:w-1/3 mb-4 lg:mb-0">
           <SwiperContainer
-            id={21}
+            query={queryConcours}
             slides={1}
             className="title-secondary"
-            postsPerPage={5}
           />
         </Column>
         <Column className="lg:w-2/3">
-          <SwiperContainer id={121} slides={2} className="title-secondary" />
+          <SwiperContainer
+            query={queryFormation}
+            slides={2}
+            className="title-secondary"
+          />
         </Column>
       </Container>
       <Container className="lg:pr-4">
         <Column className="lg:w-2/3 mb-4 lg:mb-0">
-          <SwiperContainer id={23} slides={2} />
+          <SwiperContainer query={queryActualite} slides={2} />
         </Column>
         <Column className="lg:w-1/3">
-          <SwiperContainer id={22} slides={1} postsPerPage={5} />
+          <SwiperContainer query={queryVolontaire} slides={1} />
         </Column>
       </Container>
     </Layout>

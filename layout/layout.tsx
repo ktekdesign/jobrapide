@@ -26,7 +26,7 @@ const Layout = ({ children, seo }) => {
 
   const { data, loading, error } = useQuery(QUERY)
 
-  const layout = data ? getPubs(data) : null
+  const layout = getPubs(data)
 
   return (
     <>

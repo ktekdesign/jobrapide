@@ -46,7 +46,7 @@ export const regionsQuery = `
 `
 
 export const regionsLastQuery = `
-  query Region {
+  query RegionLast {
     regions (first: 100, after: "YXJyYXljb25uZWN0aW9uOjMxNQ==") {
       nodes {
         databaseId

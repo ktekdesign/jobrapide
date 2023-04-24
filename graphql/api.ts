@@ -426,6 +426,7 @@ export const getLatestPosts = async (category, client) => {
 }
 
 export const getPubs = (data) => {
+  if (isEmpty(data)) return null
   const pubs = data?.posts?.nodes?.map((pub) => mapPost(pub))
   const pub1 = pubs.filter(
     (pub) => pub.categories.findIndex((category) => category.id === 192) !== -1
