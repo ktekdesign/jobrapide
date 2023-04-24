@@ -12,21 +12,22 @@ const SecteursList = ({ active }) => {
 
   const { data, loading, error } = useQuery(QUERY)
 
-  if (loading) return <Loading />
-  if (error) return <></>
-
-  const secteurs = data.secteurs.nodes.map((secteur) => mapTerm(secteur))
+  const secteurs = data
+    ? data.secteurs.nodes.map((secteur) => mapTerm(secteur))
+    : null
 
   return (
-    <ul className={active === 1 ? 'terms-list flex' : 'terms-list hidden'}>
-      {secteurs?.map(({ id, uri, name, count }) => (
-        <li className="secteurs-list" key={id}>
-          <Link href={uri}>
-            {name} ({count})
-          </Link>
-        </li>
-      ))}
-    </ul>
+    <Loading loading={loading} error={error}>
+      <ul className={active === 1 ? 'terms-list flex' : 'terms-list hidden'}>
+        {secteurs?.map(({ id, uri, name, count }) => (
+          <li className="secteurs-list" key={id}>
+            <Link href={uri}>
+              {name} ({count})
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </Loading>
   )
 }
 export default memo(SecteursList)

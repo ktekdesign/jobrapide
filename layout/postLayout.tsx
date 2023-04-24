@@ -10,7 +10,9 @@ import Loading from '@components/loading'
 const PostLayout = ({ post, posts, layout }) => (
   <Layout {...layout}>
     {isEmpty(post) || isEmpty(posts) ? (
-      <Loading />
+      <Loading loading={true} error={false}>
+        <></>
+      </Loading>
     ) : (
       <>
         <PostHeader

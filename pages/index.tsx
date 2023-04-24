@@ -11,7 +11,7 @@ import client from '@graphql/client'
 
 export const getStaticProps = async () => {
   const page = await getPage('/', client)
-  const layout = await addLayoutData(page, client)
+  const layout = await addLayoutData(page)
   return layout
 }
 export default function Index(props) {

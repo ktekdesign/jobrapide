@@ -17,7 +17,7 @@ const Page = (props) => (
 export const getStaticProps = async ({ params }) => {
   const page: Page = await getPage(`/${params?.slug}/`, client)
   if (isEmpty(page)) return { notFound: true }
-  const layout = await addLayoutData(page, client)
+  const layout = await addLayoutData(page)
   return layout
 }
 

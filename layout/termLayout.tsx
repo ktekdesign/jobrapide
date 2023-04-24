@@ -14,7 +14,9 @@ const MoreStories = dynamic(() => import('@components/more-stories'), {
 const TermLayout = ({ term, currentPage, pages, layout }) => (
   <Layout {...layout}>
     {isEmpty(term) || isEmpty(pages) ? (
-      <Loading />
+      <Loading loading={true} error={false}>
+        <></>
+      </Loading>
     ) : (
       <>
         <ArchiveTitle currentPage={currentPage}>{term?.name}</ArchiveTitle>

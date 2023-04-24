@@ -222,6 +222,7 @@ export const getTermAndPosts = async ({ client, term, type, page = 1 }) => {
   }
 }
 export const getPostsHome = (data) => {
+  if (isEmpty(data)) return null
   const { category } = data
   const posts = category?.posts?.nodes?.map((post) => mapPost(post))
   return mapTerm({ ...category, posts })
@@ -424,78 +425,26 @@ export const getLatestPosts = async (category, client) => {
   }
 }
 
-export const getPubs = async (client) => {
-  try {
-    const data = await fetchAPI(
-      client,
-      `
-      query Pubs {
-        posts(first: ${process.env.NEXT_PUBLIC_MAX_PUBS}, where: { 
-          taxQuery: {
-            relation: OR,
-            taxArray: [
-              {
-                includeChildren: true
-                terms: ["192", "193", "194", "88"]
-                taxonomy: CATEGORY
-                operator: IN
-                field: ID
-              },
-              {
-                includeChildren: true
-                terms: ["85"]
-                taxonomy: TAG
-                operator: IN
-                field: ID
-              }
-            ]
-          }
-          orderby: { field: DATE, order: DESC } }) {
-          nodes {  
-            content
-            title
-            uri
-            featuredImage {
-              node {
-                sourceUrl
-              }
-            }
-            categories{
-              nodes {
-                databaseId
-              }
-            }
-            } 
-          }
-        }
-    `
-    )
+export const getPubs = (data) => {
+  const pubs = data?.posts?.nodes?.map((pub) => mapPost(pub))
+  const pub1 = pubs.filter(
+    (pub) => pub.categories.findIndex((category) => category.id === 192) !== -1
+  )
+  const pub2 = pubs.filter(
+    (pub) => pub.categories.findIndex((category) => category.id === 193) !== -1
+  )
+  const pub3 = pubs.filter(
+    (pub) => pub.categories.findIndex((category) => category.id === 194) !== -1
+  )
+  const partners = pubs.filter(
+    (pub) => pub.categories.findIndex((category) => category.id === 88) !== -1
+  )
+  const sponsored = pubs.filter(
+    (pub) =>
+      pub.categories.findIndex((category) =>
+        [192, 193, 194, 88].includes(category.id)
+      ) === -1
+  )
 
-    const pubs = data?.posts?.nodes?.map((pub) => mapPost(pub))
-    const pub1 = pubs.filter(
-      (pub) =>
-        pub.categories.findIndex((category) => category.id === 192) !== -1
-    )
-    const pub2 = pubs.filter(
-      (pub) =>
-        pub.categories.findIndex((category) => category.id === 193) !== -1
-    )
-    const pub3 = pubs.filter(
-      (pub) =>
-        pub.categories.findIndex((category) => category.id === 194) !== -1
-    )
-    const partners = pubs.filter(
-      (pub) => pub.categories.findIndex((category) => category.id === 88) !== -1
-    )
-    const sponsored = pubs.filter(
-      (pub) =>
-        pub.categories.findIndex((category) =>
-          [192, 193, 194, 88].includes(category.id)
-        ) === -1
-    )
-
-    return { pub1, pub2, pub3, partners, sponsored }
-  } catch (err) {
-    return outputErrors(err)
-  }
+  return { pub1, pub2, pub3, partners, sponsored }
 }

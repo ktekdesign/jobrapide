@@ -19,22 +19,19 @@ export const SwiperContainer: FC<{
 
   const { data, loading, error } = useQuery(QUERY)
 
-  if (loading) return <Loading />
-  if (error) return <></>
-
   const term = getPostsHome(data)
 
   return (
-    <>
-      <SwiperTitle uri={term.uri} name={term.name} className={className} />
+    <Loading loading={loading} error={error}>
+      <SwiperTitle uri={term?.uri} name={term?.name} className={className} />
       <SwiperHome
         {...{
-          items: term.posts,
+          items: term?.posts,
           slides,
           className,
         }}
       />
-    </>
+    </Loading>
   )
 }
 
