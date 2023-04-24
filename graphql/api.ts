@@ -2,25 +2,16 @@ import { TermType } from '@utils/interfaces'
 import { getFirst, isEmpty, preventUndefined } from '@utils/manipulateArray'
 import { mapPage, mapPost, mapTerm } from '@utils/mapping'
 import { outputErrors } from '@utils/outputErrors'
-import { ApolloClient, InMemoryCache } from '@apollo/client'
 import { gql } from '@apollo/client'
+import { categoriesQuery, regionsLastQuery, regionsQuery } from './termQueries'
 
-const API_URL = process.env.NEXT_PUBLIC_WORDPRESS_API_URL
 const PER_PAGE = parseInt(process.env.NEXT_PUBLIC_PER_PAGE)
 
-const fetchAPI = async (query = '', variables: Record<string, string> = {}) => {
-  const headers = { 'Content-Type': 'application/json' }
-
-  const client = new ApolloClient({
-    uri: API_URL,
-    cache: new InMemoryCache(),
-  })
-
-  if (process.env.WORDPRESS_AUTH_REFRESH_TOKEN) {
-    headers[
-      'Authorization'
-    ] = `Bearer ${process.env.WORDPRESS_AUTH_REFRESH_TOKEN}`
-  }
+const fetchAPI = async (
+  client,
+  query = '',
+  variables: Record<string, string> = {}
+) => {
   const body = query
     .replaceAll('"$id"', `"${variables?.id}"`)
     .replaceAll('"$idType"', `"${variables?.idType}"`)
@@ -119,9 +110,10 @@ const seo_response = `
   }
 `
 
-export const getPostAndMorePosts = async (slug) => {
+export const getPostAndMorePosts = async (slug, client) => {
   try {
     const { post } = await fetchAPI(
+      client,
       `
       query PostBySlug {
         post(id: "$id", idType: URI) {
@@ -135,6 +127,7 @@ export const getPostAndMorePosts = async (slug) => {
       }
     )
     const { posts } = await fetchAPI(
+      client,
       `
       query SimilarPosts {
         posts(first: 3, where: { notIn: [${post.databaseId}] categoryId: ${
@@ -164,11 +157,12 @@ export const getPostAndMorePosts = async (slug) => {
   }
 }
 
-export const getTermAndPosts = async ({ term, type, page = 1 }) => {
+export const getTermAndPosts = async ({ client, term, type, page = 1 }) => {
   try {
     const typeLower = type.toLowerCase()
 
     const data = await fetchAPI(
+      client,
       `
       query TermAndPosts {
         ${typeLower} (id: "$id", idType: SLUG) {
@@ -191,6 +185,7 @@ export const getTermAndPosts = async ({ term, type, page = 1 }) => {
     if (!isEmpty(taxonomy)) {
       if (type === TermType.Secteur) {
         const { posts, count } = await performSearch({
+          client,
           page,
           secteur: taxonomy.databaseId,
         })
@@ -198,6 +193,7 @@ export const getTermAndPosts = async ({ term, type, page = 1 }) => {
         return mapTerm({ ...taxonomy, posts, count })
       } else if (type === TermType.Region) {
         const { posts, count } = await performSearch({
+          client,
           page,
           region: taxonomy.databaseId,
         })
@@ -205,6 +201,7 @@ export const getTermAndPosts = async ({ term, type, page = 1 }) => {
         return mapTerm({ ...taxonomy, posts, count })
       } else if (type === TermType.Tag) {
         const { posts, count } = await performSearch({
+          client,
           page,
           tag: taxonomy.databaseId,
         })
@@ -212,6 +209,7 @@ export const getTermAndPosts = async ({ term, type, page = 1 }) => {
         return mapTerm({ ...taxonomy, posts, count })
       } else if (type === TermType.Category) {
         const { posts, count } = await performSearch({
+          client,
           page,
           category: taxonomy.databaseId,
         })
@@ -223,51 +221,15 @@ export const getTermAndPosts = async ({ term, type, page = 1 }) => {
     return outputErrors(err)
   }
 }
-export const getPostsHome = async ({
-  term,
-  postsPerPage,
-}: {
-  term: string
-  type?: TermType
-  postsPerPage: number
-}) => {
-  const posts_query = `posts(first: ${postsPerPage}, where: { orderby: { field: DATE, order: DESC } }) {
-      nodes {  
-        title
-        uri
-        featuredImage {
-          node {
-            sourceUrl
-          }
-        } 
-      }
-    }`
-  try {
-    const data = await fetchAPI(
-      `
-      query PostsHome {
-        category (id: "$id", idType: SLUG) {
-          name
-          uri
-          ${posts_query}
-        }
-      }
-    `,
-      {
-        id: term,
-      }
-    )
-
-    const { category } = data
-    const posts = category?.posts?.nodes?.map((post) => mapPost(post))
-    return mapTerm({ ...category, posts })
-  } catch (err) {
-    return outputErrors(err)
-  }
+export const getPostsHome = (data) => {
+  const { category } = data
+  const posts = category?.posts?.nodes?.map((post) => mapPost(post))
+  return mapTerm({ ...category, posts })
 }
-export const getTerms = async (type) => {
+export const getTerms = async (type, client) => {
   try {
     const data = await fetchAPI(
+      client,
       `
       query Terms {
         ${type} (first: 100) {
@@ -290,23 +252,9 @@ export const getTerms = async (type) => {
   }
 }
 
-export const getCategories = async () => {
+export const getCategories = async (client) => {
   try {
-    const data = await fetchAPI(
-      `
-      query Category {
-        categories (where: { parent: 16 }) {
-          nodes {
-            databaseId
-            name
-            slug
-            uri
-            count
-          }
-        }
-      }
-    `
-    )
+    const data = await fetchAPI(client, categoriesQuery)
     const response = data?.categories?.nodes?.map((category) =>
       mapTerm(category)
     )
@@ -316,41 +264,10 @@ export const getCategories = async () => {
   }
 }
 
-export const getRegions = async () => {
+export const getRegions = async (client) => {
   try {
-    const data = await fetchAPI(
-      `
-      query Regions {
-        regions (first: 100) {
-          pageInfo {
-            endCursor
-          }
-          nodes {
-            databaseId
-            name
-            uri
-            slug
-            count
-          }
-        }
-      }
-    `
-    )
-    const data_last = await fetchAPI(
-      `
-      query Regions_last {
-        regions (first: 100, after: "${data?.regions?.pageInfo?.endCursor}") {
-          nodes {
-            databaseId
-            name
-            uri
-            slug
-            count
-          }
-        }
-      }
-    `
-    )
+    const data = await fetchAPI(client, regionsQuery)
+    const data_last = await fetchAPI(client, regionsLastQuery)
 
     const response = preventUndefined(
       data.regions?.nodes?.map((term) => mapTerm(term))
@@ -365,9 +282,11 @@ export const getRegions = async () => {
   }
 }
 
-export const getPage = async (slug) => {
+export const getPage = async (slug, client) => {
   try {
-    const data = await fetchAPI(`
+    const data = await fetchAPI(
+      client,
+      `
       query page {
         page (id: "${slug}", idType: URI) {      
           databaseId
@@ -376,7 +295,8 @@ export const getPage = async (slug) => {
           ${seo_response}
         }
       }
-    `)
+    `
+    )
 
     const response = mapPage(data?.page)
     return response
@@ -384,9 +304,11 @@ export const getPage = async (slug) => {
     return outputErrors(err)
   }
 }
-export const getAllPages = async () => {
+export const getAllPages = async (client) => {
   try {
-    const data = await fetchAPI(`
+    const data = await fetchAPI(
+      client,
+      `
       query pages {
         pages (first: 100) { 
           nodes {     
@@ -394,7 +316,8 @@ export const getAllPages = async () => {
           }
         }
       }
-    `)
+    `
+    )
     const response = data?.pages?.nodes
     return response
   } catch (err) {
@@ -409,6 +332,7 @@ export const performSearch = async ({
   region = null,
   tag = null,
   isSearch = false,
+  client,
 }) => {
   const wherePagination = `offsetPagination: { size: ${PER_PAGE}, offset: ${
     PER_PAGE * page - PER_PAGE
@@ -463,7 +387,7 @@ export const performSearch = async ({
   }
   `
   try {
-    const { posts } = await fetchAPI(query)
+    const { posts } = await fetchAPI(client, query)
     const mappedPosts = posts?.nodes?.map((post) => mapPost(post))
     const response = {
       posts: preventUndefined(mappedPosts),
@@ -476,7 +400,7 @@ export const performSearch = async ({
   }
 }
 
-export const getLatestPosts = async (category) => {
+export const getLatestPosts = async (category, client) => {
   const query = `
   query lasts{
     posts(first: ${process.env.NEXT_PUBLIC_MAX_POSTS_GENERATE_PAGE}
@@ -491,7 +415,7 @@ export const getLatestPosts = async (category) => {
   }
   `
   try {
-    const data = await fetchAPI(query)
+    const data = await fetchAPI(client, query)
     const response = data?.posts?.nodes
 
     return preventUndefined(response)
@@ -500,9 +424,10 @@ export const getLatestPosts = async (category) => {
   }
 }
 
-export const getPubs = async () => {
+export const getPubs = async (client) => {
   try {
     const data = await fetchAPI(
+      client,
       `
       query Pubs {
         posts(first: ${process.env.NEXT_PUBLIC_MAX_PUBS}, where: { 
@@ -570,66 +495,6 @@ export const getPubs = async () => {
     )
 
     return { pub1, pub2, pub3, partners, sponsored }
-  } catch (err) {
-    return outputErrors(err)
-  }
-}
-
-export const getPartners = async () => {
-  try {
-    const data = await fetchAPI(
-      `
-      query Partners {
-        posts(first: 10, where: { 
-          categoryId: 88
-          orderby: { field: DATE, order: DESC } }) {
-          nodes {  
-            title
-            uri
-            featuredImage {
-              node {
-                sourceUrl
-              }
-            }
-            } 
-          }
-        }
-    `
-    )
-
-    const partners = data?.posts?.nodes?.map((pub) => mapPost(pub))
-
-    return partners
-  } catch (err) {
-    return outputErrors(err)
-  }
-}
-
-export const getSponsored = async () => {
-  try {
-    const data = await fetchAPI(
-      `
-      query Sponsored {
-        posts(first: 20, where: { 
-          tagId: "85"
-          orderby: { field: DATE, order: DESC } }) {
-          nodes {  
-            title
-            uri
-            featuredImage {
-              node {
-                sourceUrl
-              }
-            }
-            } 
-          }
-        }
-    `
-    )
-
-    const sponsored = data?.posts?.nodes?.map((pub) => mapPost(pub))
-
-    return sponsored
   } catch (err) {
     return outputErrors(err)
   }

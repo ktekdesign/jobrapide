@@ -3,7 +3,7 @@ import { getLast, isEmpty, prev } from '@utils/manipulateArray'
 import getPagination from '@utils/getPagination'
 import addLayoutData from '@utils/addLayoutData'
 
-export const getTermProps = async (params, type) => {
+export const getTermProps = async (params, type, client) => {
   const pageIndex = params?.slug?.findIndex((param) => param === 'page')
   const resolvedSlug =
     pageIndex && pageIndex !== -1
@@ -16,6 +16,7 @@ export const getTermProps = async (params, type) => {
     term: resolvedSlug,
     type,
     page: currentPage,
+    client,
   })
 
   if (isEmpty(term)) return { notFound: true }
@@ -27,5 +28,5 @@ export const getTermProps = async (params, type) => {
   )
     return { notFound: true }
   const { seo, ...props } = term
-  return addLayoutData({ term: props, seo, currentPage, pages })
+  return addLayoutData({ term: props, seo, currentPage, pages }, client)
 }

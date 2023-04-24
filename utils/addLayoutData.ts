@@ -2,8 +2,8 @@ import { getPubs } from '@graphql/api'
 import { REVALIDATE } from '@utils/constants'
 import { preventUndefined } from '@utils/manipulateArray'
 
-export const addLayoutData = async (props) => {
-  const { partners, sponsored, ...pubs } = await getPubs()
+export const addLayoutData = async (props, client) => {
+  const { partners, sponsored, ...pubs } = await getPubs(client)
   const { seo, isSearch, ...rest } = props
   const layout = {
     ...rest,

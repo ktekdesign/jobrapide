@@ -7,9 +7,11 @@ import SwiperContainer from '@components/swiperContainer'
 import { getPage } from '@graphql/api'
 import addLayoutData from '@utils/addLayoutData'
 
+import client from '@graphql/client'
+
 export const getStaticProps = async () => {
-  const page = await getPage('/')
-  const layout = await addLayoutData(page)
+  const page = await getPage('/', client)
+  const layout = await addLayoutData(page, client)
   return layout
 }
 export default function Index(props) {
@@ -17,37 +19,29 @@ export default function Index(props) {
     <Layout {...props.layout}>
       <Container>
         <Column className="w-full">
-          <SwiperContainer term="avis-recrutement" className="title-primary" />
+          <SwiperContainer id="17" className="title-primary" />
         </Column>
       </Container>
       <Container className="lg:pr-4">
         <Column className="lg:w-1/3 mb-4 lg:mb-0">
           <SwiperContainer
-            term="stage"
+            id="18"
             slides={1}
             className="title-secondary"
             postsPerPage={5}
           />
         </Column>
         <Column className="lg:w-2/3">
-          <SwiperContainer
-            term="bourses-etude"
-            slides={2}
-            className="title-secondary"
-          />
+          <SwiperContainer id="20" slides={2} className="title-secondary" />
         </Column>
       </Container>
       <Container className="lg:pr-4">
         <Column className="lg:w-2/3 mb-4 lg:mb-0">
-          <SwiperContainer
-            term="avis-appel-offres"
-            slides={2}
-            className="title-primary"
-          />
+          <SwiperContainer id="19" slides={2} className="title-primary" />
         </Column>
         <Column className="lg:w-1/3">
           <SwiperContainer
-            term="call-for-papers"
+            id="64"
             slides={1}
             className="title-primary"
             postsPerPage={5}
@@ -57,31 +51,23 @@ export default function Index(props) {
       <Container className="lg:pr-4">
         <Column className="lg:w-1/3 mb-4 lg:mb-0">
           <SwiperContainer
-            term="concours"
+            id="21"
             slides={1}
             className="title-secondary"
             postsPerPage={5}
           />
         </Column>
         <Column className="lg:w-2/3">
-          <SwiperContainer
-            term="formations"
-            slides={2}
-            className="title-secondary"
-          />
+          <SwiperContainer id="121" slides={2} className="title-secondary" />
         </Column>
       </Container>
       <Container className="lg:pr-4">
         <Column className="lg:w-2/3 mb-4 lg:mb-0">
-          <SwiperContainer
-            term="actualites"
-            slides={2}
-            className="title-primary"
-          />
+          <SwiperContainer id="23" slides={2} className="title-primary" />
         </Column>
         <Column className="lg:w-1/3">
           <SwiperContainer
-            term="volontaire"
+            id="22"
             slides={1}
             className="title-primary"
             postsPerPage={5}

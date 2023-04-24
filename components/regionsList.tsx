@@ -1,25 +1,25 @@
-import React, { memo, useEffect } from 'react'
+import React, { memo } from 'react'
 import Link from 'next/link'
-
-import useTerms from '@hooks/useTerms'
-
-import { populateTerms } from '@utils/populateContext'
-import { isEmpty } from '@utils/manipulateArray'
-import { TermTypePlural } from '@utils/interfaces'
 import Loading from '@components/loading'
+import { useQuery, gql } from '@apollo/client'
+import { regionsLastQuery, regionsQuery } from '@graphql/termQueries'
+import { mapTerm } from '@utils/mapping'
 
 const RegionsList = ({ active }) => {
-  const { regions, setRegions } = useTerms()
+  const QUERY = gql`
+    ${regionsQuery}
+  `
+  const QUERYLAST = gql`
+    ${regionsLastQuery}
+  `
+  const { data, loading, error } = useQuery(QUERY)
+  const { data: last } = useQuery(QUERYLAST)
 
-  useEffect(() => {
-    if (active === 2 && isEmpty(regions))
-      populateTerms({
-        type: TermTypePlural.regions,
-        setTerms: setRegions,
-      })
-  }, [active, regions, setRegions])
+  if (loading) return <Loading />
+  if (error) return <></>
 
-  if (active === 2 && isEmpty(regions)) return <Loading />
+  const allRegions = [...data.regions.nodes, ...last.regions.nodes]
+  const regions = allRegions.map((region) => mapTerm(region))
 
   return (
     <ul className={active === 2 ? 'terms-list flex' : 'terms-list hidden'}>

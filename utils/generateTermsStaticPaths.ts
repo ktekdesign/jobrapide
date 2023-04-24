@@ -1,11 +1,17 @@
+import { getCategories, getRegions, getTerms } from '@graphql/api'
 import { getAllPages } from './getPagination'
-import { populateTerms } from './populateContext'
+import { TermTypePlural } from './interfaces'
 
-export const generateTermsStaticPaths = async (term) => {
+export const generateTermsStaticPaths = async (term, client) => {
   const MAX_PAGE = parseInt(process.env.NEXT_PUBLIC_MAX_PAGE)
-  const termsPaths = await populateTerms(term)
+  const termsPaths = await (term === TermTypePlural.categories
+    ? getCategories(client)
+    : term === TermTypePlural.regions
+    ? getRegions(client)
+    : getTerms(term, client))
+
   const paths = []
-  termsPaths.map((path) => {
+  termsPaths?.map((path) => {
     paths.push({ params: { slug: [path.slug] } })
     for (
       let index = 2;
@@ -15,6 +21,7 @@ export const generateTermsStaticPaths = async (term) => {
       paths.push({ params: { slug: [path.slug, 'page', `${index}`] } })
     }
   })
+
   return {
     paths,
     fallback: 'blocking',

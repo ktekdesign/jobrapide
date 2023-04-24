@@ -4,9 +4,11 @@ import Link from 'next/link'
 import Layout from '@layout/layout'
 import ArchiveTitle from '@components/archive-title'
 import addLayoutData from '@utils/addLayoutData'
+import { initializeApollo } from '@graphql/client'
 
 export const getStaticProps = async () => {
-  const layout = await addLayoutData({})
+  const client = initializeApollo()
+  const layout = await addLayoutData({}, client)
   return layout
 }
 

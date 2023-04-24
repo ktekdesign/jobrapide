@@ -1,25 +1,21 @@
-import React, { memo, useEffect } from 'react'
+import React, { memo } from 'react'
 import Link from 'next/link'
-
-import useTerms from '@hooks/useTerms'
-
-import { populateTerms } from '@utils/populateContext'
-import { isEmpty } from '@utils/manipulateArray'
-import { TermTypePlural } from '@utils/interfaces'
 import Loading from './loading'
+import { useQuery, gql } from '@apollo/client'
+import { getSecteursQuery } from '@graphql/termQueries'
+import { mapTerm } from '@utils/mapping'
 
 const SecteursList = ({ active }) => {
-  const { secteurs, setSecteurs } = useTerms()
+  const QUERY = gql`
+    ${getSecteursQuery()}
+  `
 
-  useEffect(() => {
-    if (active === 1 && isEmpty(secteurs))
-      populateTerms({
-        type: TermTypePlural.secteurs,
-        setTerms: setSecteurs,
-      })
-  }, [secteurs, setSecteurs, active])
+  const { data, loading, error } = useQuery(QUERY)
 
-  if (active === 1 && isEmpty(secteurs)) return <Loading />
+  if (loading) return <Loading />
+  if (error) return <></>
+
+  const secteurs = data.secteurs.nodes.map((secteur) => mapTerm(secteur))
 
   return (
     <ul className={active === 1 ? 'terms-list flex' : 'terms-list hidden'}>

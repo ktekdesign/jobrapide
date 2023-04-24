@@ -1,11 +1,18 @@
 import React, { memo } from 'react'
 
-import useTerms from '@hooks/useTerms'
-
 import Select from '@components/form/select'
+import { useQuery, gql } from '@apollo/client'
+import { getNiveauxQuery } from '@graphql/termQueries'
+import { mapTerm } from '@utils/mapping'
 
-const SearchCurriculumForm = () => {
-  const { secteurs, regions, niveaux } = useTerms()
+const SearchCurriculumForm = ({ secteurs, regions }) => {
+  const QUERYNIVEAUX = gql`
+    ${getNiveauxQuery()}
+  `
+  const { data: niveauxQL } = useQuery(QUERYNIVEAUX)
+  const niveaux = niveauxQL
+    ? niveauxQL?.niveaux.nodes.map((secteur) => mapTerm(secteur))
+    : null
 
   return (
     <div className="animate-slideinup">

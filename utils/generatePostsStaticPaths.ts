@@ -1,7 +1,7 @@
 import { getLatestPosts } from '@graphql/api'
 
-export const generatePostsStaticPaths = async (term) => {
-  const postsPaths = await getLatestPosts(term)
+export const generatePostsStaticPaths = async (term, client) => {
+  const postsPaths = await getLatestPosts(term, client)
 
   const paths = postsPaths.map((path) => {
     const slugs = path.uri.split('/')

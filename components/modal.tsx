@@ -1,55 +1,49 @@
-import React, { memo, useEffect, useState } from 'react'
+import React, { memo, useState } from 'react'
 import Link from 'next/link'
 
-import useTerms from '@hooks/useTerms'
-
-import { populateTerms } from '@utils/populateContext'
 import { isEmpty } from '@utils/manipulateArray'
 import CloseIcon from '/public/images/close.svg'
-import { TermTypePlural } from '@utils/interfaces'
 import Button from '@components/form/Button'
 import Loading from './loading'
 import SearchCurriculumForm from './searchCurriculumForm'
 import SearchForm from './searchForm'
+import { useQuery, gql } from '@apollo/client'
+import {
+  regionsLastQuery,
+  regionsQuery,
+  getSecteursQuery,
+} from '@graphql/termQueries'
+import { mapTerm } from '@utils/mapping'
 
 const Modal = ({ open, setOpen }) => {
-  const {
-    secteurs,
-    regions,
-    categories,
-    niveaux,
-    setSecteurs,
-    setCategories,
-    setNiveaux,
-    setRegions,
-  } = useTerms()
   const [toggleForm, setToggleForm] = useState(false)
 
   const closeModal = () => setOpen(!open)
   const changeForm = () => setToggleForm(!toggleForm)
 
-  useEffect(() => {
-    if (open && isEmpty(secteurs))
-      populateTerms({ type: TermTypePlural.secteurs, setTerms: setSecteurs })
-  }, [secteurs, setSecteurs, open])
+  const QUERYREGIONS = gql`
+    ${regionsQuery}
+  `
+  const QUERYREGIONSLAST = gql`
+    ${regionsLastQuery}
+  `
+  const { data, loading } = useQuery(QUERYREGIONS)
+  const { data: last } = useQuery(QUERYREGIONSLAST)
 
-  useEffect(() => {
-    if (open && isEmpty(regions))
-      populateTerms({ type: TermTypePlural.regions, setTerms: setRegions })
-  }, [regions, setRegions, open])
+  const QUERYSECTEURS = gql`
+    ${getSecteursQuery()}
+  `
+  const { data: secteursQL } = useQuery(QUERYSECTEURS)
 
-  useEffect(() => {
-    if (open && isEmpty(categories))
-      populateTerms({
-        type: TermTypePlural.categories,
-        setTerms: setCategories,
-      })
-  }, [categories, setCategories, open])
+  const allRegions =
+    data && last ? [...data.regions.nodes, ...last.regions.nodes] : []
 
-  useEffect(() => {
-    if (open && isEmpty(niveaux))
-      populateTerms({ type: TermTypePlural.niveaux, setTerms: setNiveaux })
-  }, [niveaux, setNiveaux, open])
+  const regions = !isEmpty(allRegions)
+    ? allRegions?.map((region) => mapTerm(region))
+    : null
+  const secteurs = secteursQL
+    ? secteursQL?.secteurs.nodes.map((secteur) => mapTerm(secteur))
+    : null
 
   return (
     <dialog onClick={closeModal} id="modal" open={open}>
@@ -81,13 +75,16 @@ const Modal = ({ open, setOpen }) => {
               <CloseIcon className="icon" />
             </button>
           </div>
-          {isEmpty(secteurs) || isEmpty(regions) || isEmpty(categories) ? (
-            <Loading />
-          ) : (
-            <div className="modal-body">
-              {toggleForm ? <SearchCurriculumForm /> : <SearchForm />}
-            </div>
-          )}
+
+          <div className="modal-body">
+            {loading && <Loading />}
+            {toggleForm ? (
+              <SearchCurriculumForm secteurs={secteurs} regions={regions} />
+            ) : (
+              <SearchForm secteurs={secteurs} regions={regions} />
+            )}
+          </div>
+
           <div className="modal-footer">
             <Link
               href="https://www.jobrapide.org/admin/"

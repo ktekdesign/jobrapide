@@ -1,35 +1,34 @@
-import React, { memo, useEffect, useState } from 'react'
-
-import { getPostsHome } from '@graphql/api'
-import { isEmpty } from '@utils/manipulateArray'
+import React, { memo } from 'react'
 
 import Loading from '@components/loading'
 import SwiperHome from '@components/swiperHome'
+import { useQuery, gql } from '@apollo/client'
+import getHomeSliderQuery from '@graphql/homeQueries'
+import { getPostsHome } from '@graphql/api'
 
 export const SwiperContainer = ({
-  term,
+  id,
   slides = 3,
   className = '',
   postsPerPage = 10,
 }) => {
-  const [current, setCurrent] = useState(null)
+  const QUERY = gql`
+    ${getHomeSliderQuery(id, postsPerPage)}
+  `
 
-  useEffect(() => {
-    if (isEmpty(current)) {
-      getPostsHome({ term, postsPerPage }).then((data) => {
-        setCurrent(data)
-      })
-    }
-  }, [])
+  const { data, loading, error } = useQuery(QUERY)
 
-  if (isEmpty(current)) return <Loading />
+  if (loading) return <Loading />
+  if (error) return <></>
+
+  const term = getPostsHome(data)
 
   return (
     <SwiperHome
       {...{
-        items: current?.posts,
-        uri: current?.uri,
-        name: current?.name,
+        items: term.posts,
+        uri: term.uri,
+        name: term.name,
         slides,
         className,
       }}
