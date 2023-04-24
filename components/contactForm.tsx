@@ -18,8 +18,8 @@ const ContactForm = () => {
   const [showAlert, setShowAlert] = useState('sucess')
   const [alertMessage, setAlertMessage] = useState('')
   const { register, handleSubmit, reset } = useForm<Inputs>()
+
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
-    console.log(data)
     try {
       axios.post('/api/contact/', data)
       setAlertMessage('Nous vous contacterons dans les plus brefs délais')

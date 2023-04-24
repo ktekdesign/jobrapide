@@ -163,10 +163,10 @@ main {
   @apply w-full flex flex-col mb-2 mt-2;
 }
 .title-primary {
-  @apply p-4 text-white font-bold bg-primary;
+  @apply p-4 text-white font-bold bg-primary w-full;
 }
 .title-secondary {
-  @apply p-4 text-dark font-bold bg-secondary;
+  @apply p-4 text-dark font-bold bg-secondary w-full;
 }
 /* Footer CSS */
 footer {
@@ -367,6 +367,9 @@ button[type='submit'] {
 .archive-post-feature img {
   @apply object-cover w-full md:w-56;
 }
+.archive-body {
+  @apply flex flex-col gap-4;
+}
 .post-info {
   @apply sm:w-2/3 md:w-3/4 sm:ml-4 sm:mr-4 py-4 px-2 sm:px-0;
 }
@@ -416,6 +419,9 @@ button[type='submit'] {
 }
 .footer-menu-items a {
   @apply hover:font-bold hover:underline whitespace-nowrap py-1 inline-block;
+}
+.pub {
+  @apply swiper-container;
 }
 .pub-in-header {
   @apply mx-auto max-w-screen-md text-center;

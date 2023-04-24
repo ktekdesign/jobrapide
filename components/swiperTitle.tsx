@@ -1,12 +1,14 @@
-import React, { FC, memo } from 'react'
+import React, { FC, HTMLAttributes, memo } from 'react'
 import SeoLink from '@components/seoLink'
 
-export const SwiperTitle: FC<{
+interface SwiperTitleProps extends HTMLAttributes<HTMLElement> {
   uri?: string
-  name: string
-  className?: string
-}> = ({ uri, name, className }) => (
-  <h2 className={className || 'title-primary'}>
+  name?: string
+  width?: number
+  height?: number
+}
+export const SwiperTitle: FC<SwiperTitleProps> = ({ uri, name, ...props }) => (
+  <h2 className={props?.className || 'title-primary'}>
     {uri ? (
       <SeoLink href={uri} label={name}>
         {name}

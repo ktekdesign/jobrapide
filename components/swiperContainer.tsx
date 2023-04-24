@@ -1,16 +1,21 @@
-import React, { FC, memo } from 'react'
+import React, { FC, HTMLAttributes, ReactNode, memo } from 'react'
 
 import Loading from '@components/loading'
-import SwiperHome from '@components/swiperHome'
 import { useQuery, gql } from '@apollo/client'
 import { getPostsHome } from '@graphql/api'
-import SwiperTitle from './swiperTitle'
 
-export const SwiperContainer: FC<{
-  query: string
+interface SwiperContainerProps extends HTMLAttributes<HTMLElement> {
+  query?: string
   slides?: number
-  className?: string
-}> = ({ query, slides = 3, className }) => {
+  children: ReactNode
+}
+
+export const SwiperContainer: FC<SwiperContainerProps> = ({
+  children,
+  query,
+  slides = 3,
+  ...props
+}) => {
   const QUERY = gql`
     ${query}
   `
@@ -20,15 +25,18 @@ export const SwiperContainer: FC<{
   const term = getPostsHome(data)
 
   return (
-    <Loading loading={loading} error={error}>
-      <SwiperTitle uri={term?.uri} name={term?.name} className={className} />
-      <SwiperHome
-        {...{
-          items: term?.posts,
-          slides,
-          className,
-        }}
-      />
+    <Loading
+      data={{
+        items: term?.posts,
+        uri: term?.uri,
+        name: term?.name,
+        slides,
+        ...props,
+      }}
+      loading={loading}
+      error={error}
+    >
+      {children}
     </Loading>
   )
 }

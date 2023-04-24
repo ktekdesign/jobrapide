@@ -77,12 +77,12 @@ const Modal = ({ open, setOpen }) => {
           </div>
 
           <div className="modal-body">
-            <Loading loading={loading} error={false}>
-              {toggleForm ? (
-                <SearchCurriculumForm secteurs={secteurs} regions={regions} />
-              ) : (
-                <SearchForm secteurs={secteurs} regions={regions} />
-              )}
+            <Loading
+              data={{ secteurs, regions }}
+              loading={loading}
+              error={false}
+            >
+              {toggleForm ? <SearchCurriculumForm /> : <SearchForm />}
             </Loading>
           </div>
 

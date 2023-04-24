@@ -1,17 +1,16 @@
 import PostBody from '@components/post-body'
-import Layout from '@layout/layout'
 import { getAllPages, getPage } from '@graphql/api'
 import PostTitle from '@components/post-title'
 import { Page } from '@utils/interfaces'
 import { isEmpty } from '@utils/manipulateArray'
 import addLayoutData from '@utils/addLayoutData'
-import { initializeApollo } from '@graphql/client'
-const client = initializeApollo()
-const Page = (props) => (
-  <Layout {...props.layout}>
-    <PostTitle>{props.title}</PostTitle>
-    <PostBody>{props.content}</PostBody>
-  </Layout>
+import client from '@graphql/client'
+
+const Page = ({ title, content }) => (
+  <>
+    <PostTitle>{title}</PostTitle>
+    <PostBody>{content}</PostBody>
+  </>
 )
 
 export const getStaticProps = async ({ params }) => {

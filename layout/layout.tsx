@@ -18,45 +18,53 @@ import { layoutQuery } from '@graphql/layoutQuery'
 import { useQuery, gql } from '@apollo/client'
 import { getPubs } from '@graphql/api'
 import Loading from '@components/loading'
+import { isEmpty } from '@utils/manipulateArray'
 
-const Layout = ({ children, seo }) => {
+const Layout = ({ layout, children, ...props }) => {
   const QUERY = gql`
     ${layoutQuery}
   `
 
   const { data, loading, error } = useQuery(QUERY)
 
-  const layout = getPubs(data)
+  const layoutPosts = getPubs(data)
 
   return (
     <>
-      <Meta seo={seo} />
+      <Meta seo={layout?.seo} />
       <Header />
-      <Loading loading={loading} error={error}>
-        <div className="pub-in-header">
-          <Pub items={layout?.pub2} />
-        </div>
+      <Loading data={layoutPosts?.pub2} loading={loading} error={error}>
+        <Pub className="pub-in-header" />
       </Loading>
       <main>
         <Column className="left">
-          <Row>{children}</Row>
+          <Row>
+            <Loading
+              data={{ breadcrumbs: layout?.seo?.breadcrumbs, ...props }}
+              loading={isEmpty(props)}
+            >
+              {children}
+            </Loading>
+          </Row>
         </Column>
         <Column className="right">
-          <Loading loading={loading} error={error}>
-            <Row>
-              <Pub items={layout?.pub1} />
-            </Row>
-            <Row>
-              <SwiperTitle name="Offres sponsorisées" />
-              <SwiperHome items={layout?.sponsored} />
-            </Row>
-            <Row>
-              <SwiperTitle name="Partenaires" className="title-secondary" />
-              <ImageSlider items={layout?.partners} />
-            </Row>
-            <Row>
-              <Pub items={layout?.pub3} />
-            </Row>
+          <Loading data={layoutPosts?.pub1} loading={loading} error={error}>
+            <Pub className="row" />
+          </Loading>
+          <Loading
+            data={layoutPosts?.sponsored}
+            loading={loading}
+            error={error}
+          >
+            <SwiperTitle name="Offres sponsorisées" />
+            <SwiperHome className="row" />
+          </Loading>
+          <Loading data={layoutPosts?.partners} loading={loading} error={error}>
+            <SwiperTitle name="Partenaires" className="title-secondary" />
+            <ImageSlider className="row" />
+          </Loading>
+          <Loading data={layoutPosts?.pub3} loading={loading} error={error}>
+            <Pub className="row" />
           </Loading>
           <Row>
             <Facebook />

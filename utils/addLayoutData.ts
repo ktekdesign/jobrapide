@@ -2,14 +2,14 @@ import { REVALIDATE } from '@utils/constants'
 import { preventUndefined } from '@utils/manipulateArray'
 
 export const addLayoutData = async (props) => {
-  const { seo, isSearch, ...rest } = props
+  const { seo, ...rest } = props
   const layout = {
     ...rest,
     layout: {
       seo: preventUndefined(seo),
     },
   }
-  if (!isSearch) return { props: layout, revalidate: REVALIDATE }
+  if (!rest?.search) return { props: layout, revalidate: REVALIDATE }
   return { props: layout }
 }
 

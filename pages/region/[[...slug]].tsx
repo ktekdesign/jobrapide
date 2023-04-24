@@ -2,8 +2,7 @@ import { getTermProps } from '@utils/getTermProps'
 import TermLayout from '@layout/termLayout'
 import { TermType, TermTypePlural } from '@utils/interfaces'
 import { generateTermsStaticPaths } from '@utils/generateTermsStaticPaths'
-import { initializeApollo } from '@graphql/client'
-const client = initializeApollo()
+import client from '@graphql/client'
 
 export const getStaticProps = async ({ params }) => {
   const data = await getTermProps(params, TermType.Region, client)

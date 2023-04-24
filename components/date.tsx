@@ -1,13 +1,17 @@
+import { isEmpty } from '@utils/manipulateArray'
 import { parseISO } from 'date-fns'
 import React, { memo } from 'react'
 
 const Date = ({ dateString }) => {
-  const date = parseISO(dateString)
+  if (isEmpty(dateString)) return <></>
+
   return (
     <span>
       Publié :&nbsp;
       <time dateTime={dateString} className="text-primary">
-        {Intl.DateTimeFormat('fr-FR', { dateStyle: 'long' }).format(date)}
+        {Intl.DateTimeFormat('fr-FR', { dateStyle: 'long' }).format(
+          parseISO(dateString)
+        )}
       </time>
     </span>
   )

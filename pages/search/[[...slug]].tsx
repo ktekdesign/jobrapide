@@ -1,18 +1,16 @@
-import MoreStories from '@components/more-stories'
 import Pagination from '@components/pagination'
-import Layout from '@layout/layout'
 import ArchiveTitle from '@components/archive-title'
-import { initializeApollo } from '@graphql/client'
+import client from '@graphql/client'
 import { performSearch } from '@graphql/api'
 import getPagination from '@utils/getPagination'
 import addLayoutData from '@utils/addLayoutData'
+import ArchiveBody from '@components/archive-body'
 
 export const getServerSideProps = async ({ query, params, res }) => {
   res.setHeader(
     'Cache-Control',
     'public, s-maxage=3600, stale-while-revalidate=3659'
   )
-  const client = initializeApollo()
   const { s, category, secteur, region } = query
   const currentPage = parseInt(params?.slug?.pop()) || 1
   const { posts, count } = await performSearch({
@@ -21,7 +19,6 @@ export const getServerSideProps = async ({ query, params, res }) => {
     secteur,
     region,
     page: currentPage,
-    isSearch: true,
     client,
   })
 
@@ -33,19 +30,29 @@ export const getServerSideProps = async ({ query, params, res }) => {
     currentPage,
     uri,
     search: query.s,
-    isSearch: true,
   })
   return layout
 }
 
-const Search = ({ posts, pages, currentPage, uri, search, layout }) => (
-  <Layout {...layout}>
+const Search = ({ posts, pages, currentPage, uri, search }) => (
+  <>
     <ArchiveTitle
       currentPage={currentPage}
     >{`Recherche pour ${search}`}</ArchiveTitle>
-    <MoreStories posts={posts} />
-    <Pagination currentPage={currentPage} uri={uri} pages={pages} isSearch />
-  </Layout>
+    {posts.length ? (
+      <>
+        <ArchiveBody posts={posts} />
+        <Pagination
+          currentPage={currentPage}
+          uri={uri}
+          pages={pages}
+          isSearch
+        />
+      </>
+    ) : (
+      <p>Votre recherche n&apos;a retourné aucun résultat.</p>
+    )}
+  </>
 )
 
 export default Search

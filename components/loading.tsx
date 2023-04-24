@@ -1,6 +1,7 @@
+import React from 'react'
 import { memo } from 'react'
 
-const Loading = ({ children, loading, error }) => {
+const Loading = ({ children, data = null, loading, error = null }) => {
   if (error) return <></>
   if (loading)
     return (
@@ -21,6 +22,16 @@ const Loading = ({ children, loading, error }) => {
       </div>
     )
 
-  return <>{children}</>
+  return (
+    <>
+      {data
+        ? React.Children.map(children, (child) => {
+            if (React.isValidElement(child))
+              return React.cloneElement(child, { ...data })
+            return child
+          })
+        : children}
+    </>
+  )
 }
 export default memo(Loading)

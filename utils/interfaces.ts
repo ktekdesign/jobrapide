@@ -1,3 +1,5 @@
+import { HTMLAttributes } from 'react'
+
 export interface Post {
   id?: number
   title: string
@@ -64,4 +66,11 @@ export enum TermTypePlural {
   regions = 'regions',
   niveaux = 'niveaux',
   tags = 'tags',
+}
+
+export interface PostsContainerProps extends HTMLAttributes<HTMLElement> {
+  items?: Post[]
+  slides?: number
+  width?: number
+  height?: number
 }

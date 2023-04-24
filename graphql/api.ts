@@ -4,10 +4,11 @@ import { mapPage, mapPost, mapTerm } from '@utils/mapping'
 import { outputErrors } from '@utils/outputErrors'
 import { gql } from '@apollo/client'
 import { categoriesQuery, regionsLastQuery, regionsQuery } from './termQueries'
+import { ApolloClient, NormalizedCacheObject } from '@apollo/client'
 
 const PER_PAGE = parseInt(process.env.NEXT_PUBLIC_PER_PAGE)
 
-const fetchAPI = async (
+const loadFromWPGraphQL = async (
   client,
   query = '',
   variables: Record<string, string> = {}
@@ -112,7 +113,7 @@ const seo_response = `
 
 export const getPostAndMorePosts = async (slug, client) => {
   try {
-    const { post } = await fetchAPI(
+    const { post } = await loadFromWPGraphQL(
       client,
       `
       query PostBySlug {
@@ -126,7 +127,7 @@ export const getPostAndMorePosts = async (slug, client) => {
         id: slug,
       }
     )
-    const { posts } = await fetchAPI(
+    const { posts } = await loadFromWPGraphQL(
       client,
       `
       query SimilarPosts {
@@ -161,10 +162,10 @@ export const getTermAndPosts = async ({ client, term, type, page = 1 }) => {
   try {
     const typeLower = type.toLowerCase()
 
-    const data = await fetchAPI(
+    const data = await loadFromWPGraphQL(
       client,
       `
-      query TermAndPosts {
+      query ${typeLower}${term.replaceAll('-', '')}${page} {
         ${typeLower} (id: "$id", idType: SLUG) {
           databaseId
           name
@@ -229,10 +230,10 @@ export const getPostsHome = (data) => {
 }
 export const getTerms = async (type, client) => {
   try {
-    const data = await fetchAPI(
+    const data = await loadFromWPGraphQL(
       client,
       `
-      query Terms {
+      query ${type.replaceAll('-', '')} {
         ${type} (first: 100) {
           nodes {
             databaseId
@@ -255,7 +256,7 @@ export const getTerms = async (type, client) => {
 
 export const getCategories = async (client) => {
   try {
-    const data = await fetchAPI(client, categoriesQuery)
+    const data = await loadFromWPGraphQL(client, categoriesQuery)
     const response = data?.categories?.nodes?.map((category) =>
       mapTerm(category)
     )
@@ -267,8 +268,8 @@ export const getCategories = async (client) => {
 
 export const getRegions = async (client) => {
   try {
-    const data = await fetchAPI(client, regionsQuery)
-    const data_last = await fetchAPI(client, regionsLastQuery)
+    const data = await loadFromWPGraphQL(client, regionsQuery)
+    const data_last = await loadFromWPGraphQL(client, regionsLastQuery)
 
     const response = preventUndefined(
       data.regions?.nodes?.map((term) => mapTerm(term))
@@ -285,10 +286,10 @@ export const getRegions = async (client) => {
 
 export const getPage = async (slug, client) => {
   try {
-    const data = await fetchAPI(
+    const data = await loadFromWPGraphQL(
       client,
       `
-      query page {
+      query page${slug.replaceAll('-', '').replaceAll('/', '')} {
         page (id: "${slug}", idType: URI) {      
           databaseId
           title
@@ -300,6 +301,7 @@ export const getPage = async (slug, client) => {
     )
 
     const response = mapPage(data?.page)
+
     return response
   } catch (err) {
     return outputErrors(err)
@@ -307,7 +309,7 @@ export const getPage = async (slug, client) => {
 }
 export const getAllPages = async (client) => {
   try {
-    const data = await fetchAPI(
+    const data = await loadFromWPGraphQL(
       client,
       `
       query pages {
@@ -327,18 +329,26 @@ export const getAllPages = async (client) => {
 }
 export const performSearch = async ({
   page = 1,
-  search = '',
-  category = null,
-  secteur = null,
-  region = null,
-  tag = null,
-  isSearch = false,
+  search,
+  category,
+  secteur,
+  region,
+  tag,
   client,
+}: {
+  page?: number
+  search?: string
+  category?: string
+  secteur?: string
+  region?: string
+  tag?: string
+  isSearch?: boolean
+  client: ApolloClient<NormalizedCacheObject>
 }) => {
   const wherePagination = `offsetPagination: { size: ${PER_PAGE}, offset: ${
     PER_PAGE * page - PER_PAGE
   }}`
-  const category_query = `categoryId: ${!isEmpty(category) ? category : 16},`
+  const category_query = `categoryId: ${category || 16},`
   const secteur_query = secteur
     ? `{
     includeChildren: true
@@ -366,18 +376,18 @@ export const performSearch = async ({
   }`
     : ''
   const query = `
-  query search{
+  query Search${category || 16}${secteur || ''}${region || ''}${page} {
     posts(first: 10
       where: {
-        ${isSearch ? `search: "${search}"` : ''}
+        ${search ? `search: "${search}"` : ''}
         ${category_query}
         ${wherePagination}
         taxQuery: {
           relation: AND,
           taxArray: [
-            ${!isEmpty(secteur) ? secteur_query : ''}
-            ${!isEmpty(region) ? region_query : ''}
-            ${!isEmpty(tag) ? tag_query : ''}
+            ${secteur_query}
+            ${region_query}
+            ${tag_query}
           ]
         }
       }
@@ -388,7 +398,7 @@ export const performSearch = async ({
   }
   `
   try {
-    const data = await fetchAPI(client, query)
+    const data = await loadFromWPGraphQL(client, query)
     const mappedPosts = data?.posts?.nodes?.map((post) => mapPost(post))
     const response = {
       posts: preventUndefined(mappedPosts),
@@ -416,7 +426,7 @@ export const getLatestPosts = async (category, client) => {
   }
   `
   try {
-    const data = await fetchAPI(client, query)
+    const data = await loadFromWPGraphQL(client, query)
     const response = data?.posts?.nodes
 
     return preventUndefined(response)
@@ -428,24 +438,37 @@ export const getLatestPosts = async (category, client) => {
 export const getPubs = (data) => {
   if (isEmpty(data)) return null
   const pubs = data?.posts?.nodes?.map((pub) => mapPost(pub))
-  const pub1 = pubs.filter(
-    (pub) => pub.categories.findIndex((category) => category.id === 192) !== -1
-  )
-  const pub2 = pubs.filter(
-    (pub) => pub.categories.findIndex((category) => category.id === 193) !== -1
-  )
-  const pub3 = pubs.filter(
-    (pub) => pub.categories.findIndex((category) => category.id === 194) !== -1
-  )
-  const partners = pubs.filter(
-    (pub) => pub.categories.findIndex((category) => category.id === 88) !== -1
-  )
-  const sponsored = pubs.filter(
-    (pub) =>
-      pub.categories.findIndex((category) =>
-        [192, 193, 194, 88].includes(category.id)
-      ) === -1
-  )
+  const pub1 = {
+    items: pubs.filter(
+      (pub) =>
+        pub.categories.findIndex((category) => category.id === 192) !== -1
+    ),
+  }
+  const pub2 = {
+    items: pubs.filter(
+      (pub) =>
+        pub.categories.findIndex((category) => category.id === 193) !== -1
+    ),
+  }
+  const pub3 = {
+    items: pubs.filter(
+      (pub) =>
+        pub.categories.findIndex((category) => category.id === 194) !== -1
+    ),
+  }
+  const partners = {
+    items: pubs.filter(
+      (pub) => pub.categories.findIndex((category) => category.id === 88) !== -1
+    ),
+  }
+  const sponsored = {
+    items: pubs.filter(
+      (pub) =>
+        pub.categories.findIndex((category) =>
+          [192, 193, 194, 88].includes(category.id)
+        ) === -1
+    ),
+  }
 
   return { pub1, pub2, pub3, partners, sponsored }
 }

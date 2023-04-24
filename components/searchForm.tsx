@@ -1,18 +1,22 @@
-import React, { memo } from 'react'
+import React, { FC, memo } from 'react'
 
 import Select from '@components/form/select'
 import Input from '@components/form/input'
 import { useQuery, gql } from '@apollo/client'
 import { categoriesQuery } from '@graphql/termQueries'
 import { mapTerm } from '@utils/mapping'
+import { Term } from '@utils/interfaces'
 
-const SearchForm = ({ secteurs, regions }) => {
+const SearchForm: FC<{ secteurs?: Term[]; regions?: Term[] }> = ({
+  secteurs = null,
+  regions = null,
+}) => {
   const QUERYCATEGORIES = gql`
     ${categoriesQuery}
   `
   const { data: categoriesQL } = useQuery(QUERYCATEGORIES)
   const categories = categoriesQL
-    ? categoriesQL?.categories.nodes.map((secteur) => mapTerm(secteur))
+    ? categoriesQL?.categories.nodes.map((category) => mapTerm(category))
     : null
 
   return (

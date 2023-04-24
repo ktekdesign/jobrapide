@@ -10,7 +10,7 @@ const Breadcrumb = ({ breadcrumbs }) => {
   return (
     <div className="row">
       <div className="breadcrumb">
-        {breadcrumbs.map(({ text, url }, key) => (
+        {breadcrumbs?.map(({ text, url }, key) => (
           <SeoLink
             className="breadcrumb-item"
             label={text}

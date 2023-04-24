@@ -5,6 +5,7 @@ import client from '@graphql/client'
 import '@styles/index.css'
 
 import TagManager from 'react-gtm-module'
+import Layout from '@layout/layout'
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   useEffect(() => {
@@ -13,7 +14,9 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 
   return (
     <ApolloProvider client={client}>
-      <Component {...pageProps} />
+      <Layout {...pageProps}>
+        <Component />
+      </Layout>
     </ApolloProvider>
   )
 }
