@@ -1,14 +1,9 @@
-import React, { FC, HTMLAttributes, memo, useState } from 'react'
+import React, { FC, memo, useState } from 'react'
 import { isEmpty } from '@utils/manipulateArray'
 import SeoLink from '@components/seoLink'
-import { Term } from '@utils/interfaces'
+import ComponentsProps from '@utils/interfaces/components'
 
-interface TermsContainerProps extends HTMLAttributes<HTMLElement> {
-  terms?: Term[]
-  name?: string
-}
-
-const Terms: FC<TermsContainerProps> = ({ terms, name, ...props }) => {
+const Terms: FC<ComponentsProps> = ({ terms, name, ...props }) => {
   const [hideTerms, setHideTerms] = useState(true)
 
   if (isEmpty(terms)) return <></>

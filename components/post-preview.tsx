@@ -1,7 +1,7 @@
 import React, { memo } from 'react'
 
 import truncate from '@utils/truncate'
-import { Post } from '@utils/interfaces'
+import { Post } from '@utils/interfaces/data'
 
 import CoverImage from '@components/cover-image'
 import SeoLink from '@components/seoLink'

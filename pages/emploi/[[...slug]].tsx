@@ -1,6 +1,6 @@
 import { getTermProps } from '@utils/getTermProps'
 import TermLayout from '@layout/termLayout'
-import { TermType, TermTypePlural } from '@utils/interfaces'
+import { TermType, TermTypePlural } from '@utils/interfaces/data'
 import { generateTermsStaticPaths } from '@utils/generateTermsStaticPaths'
 import client from '@graphql/client'
 

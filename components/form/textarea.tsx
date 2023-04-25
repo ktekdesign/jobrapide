@@ -1,5 +1,5 @@
 import { FC, TextareaHTMLAttributes, memo } from 'react'
-import Label from './label'
+import Label from '@components/form/label'
 
 interface TextAreaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   label: string

@@ -6,13 +6,9 @@ import 'swiper/css'
 import 'swiper/css/bundle'
 import 'swiper/css/pagination'
 import 'swiper/css/effect-flip'
-import { PostsContainerProps } from '@utils/interfaces'
+import ComponentsProps from '@utils/interfaces/components'
 
-export const Pub: FC<PostsContainerProps> = ({
-  items,
-  className,
-  ...props
-}) => (
+export const Pub: FC<ComponentsProps> = ({ posts, className, ...props }) => (
   <div className={className || 'swiper-container'} {...props}>
     <Swiper
       pagination={{
@@ -34,7 +30,7 @@ export const Pub: FC<PostsContainerProps> = ({
       }}
       modules={[Pagination, Autoplay, EffectFlip]}
     >
-      {items?.map(({ content }, key) => (
+      {posts?.map(({ content }, key) => (
         <SwiperSlide key={key}>{parse(content)}</SwiperSlide>
       ))}
     </Swiper>

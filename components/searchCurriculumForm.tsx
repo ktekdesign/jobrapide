@@ -4,7 +4,7 @@ import Select from '@components/form/select'
 import { useQuery, gql } from '@apollo/client'
 import { getNiveauxQuery } from '@graphql/termQueries'
 import { mapTerm } from '@utils/mapping'
-import { Term } from '@utils/interfaces'
+import { Term } from '@utils/interfaces/data'
 
 const SearchCurriculumForm: FC<{ secteurs?: Term[]; regions?: Term[] }> = ({
   secteurs,

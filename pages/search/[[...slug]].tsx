@@ -8,6 +8,7 @@ import { useQuery, gql } from '@apollo/client'
 import { mapPost } from '@utils/mapping'
 import Loading from '@components/loading'
 import Breadcrumb from '@components/breadcrumb'
+import { useMemo } from 'react'
 
 export const getServerSideProps = async ({ query, params, res }) => {
   res.setHeader(
@@ -41,22 +42,25 @@ const Search = ({
 
   const { data, loading, error } = useQuery(QUERY)
   const posts = data?.posts?.nodes?.map((post) => mapPost(post))
-  const pages = getPagination(
-    data?.posts?.pageInfo?.offsetPagination?.total,
-    currentPage
+  const count = data?.posts?.pageInfo?.offsetPagination?.total
+
+  const pages = useMemo(
+    () => getPagination(count, currentPage),
+    [count, currentPage]
   )
+
   const uri = `/search/_page_?s=${search}&category=${category}&secteur=${secteur}&region=${region}`
 
   return (
     <Loading
-      data={{ posts, pages, currentPage, search, uri }}
+      data={{ posts, pages, currentPage, breadcrumbs, search, uri }}
       loading={loading}
       error={error}
     >
       <ArchiveTitle>{`Recherche pour ${search}`}</ArchiveTitle>
-      <Breadcrumb breadcrumbs={breadcrumbs} />
+      <Breadcrumb />
       <ArchiveBody />
-      <Pagination isSearch />
+      <Pagination />
     </Loading>
   )
 }

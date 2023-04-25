@@ -2,9 +2,11 @@ import React, { memo, useState } from 'react'
 import Button from '@components/form/Button'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import axios from 'axios'
-import { outputErrors } from '@utils/outputErrors'
-import Label from './form/label'
-import Alert from './alert'
+import Label from '@components/form/label'
+import Alert from '@components/alert'
+import useSWR from 'swr'
+import { isEmpty } from '@utils/manipulateArray'
+import Loading from '@components/loading'
 
 type Inputs = {
   name: string
@@ -15,16 +17,10 @@ type Inputs = {
 }
 
 const ContactForm = () => {
-  const [showAlert, setShowAlert] = useState('sucess')
-  const [alertMessage, setAlertMessage] = useState('')
   const { register, handleSubmit, reset } = useForm<Inputs>()
-
-  const onSubmit: SubmitHandler<Inputs> = async (data) => {
-    try {
-      axios.post('/api/contact/', data)
-      setAlertMessage('Nous vous contacterons dans les plus brefs délais')
-      setShowAlert('success')
-      setTimeout(() => setShowAlert('hidden'), 10000)
+  const [contactData, setContactData] = useState(null)
+  const fetcher = (url) =>
+    axios.post(url, contactData).then((response) => {
       reset({
         name: '',
         email: '',
@@ -32,12 +28,17 @@ const ContactForm = () => {
         subject: '',
         text: '',
       })
-    } catch (error) {
-      setAlertMessage('Une erreur est survenue')
-      setShowAlert('error')
-      return outputErrors(error)
-    }
-  }
+      setTimeout(() => setContactData(null), 10000)
+
+      return response.data
+    })
+
+  const { data, isLoading } = useSWR(
+    !isEmpty(contactData) ? '/api/contact' : null,
+    fetcher
+  )
+  console.log(data)
+  const onSubmit: SubmitHandler<Inputs> = (data) => setContactData(data)
 
   return (
     <form className="border p-4" onSubmit={handleSubmit(onSubmit)}>
@@ -91,14 +92,19 @@ const ContactForm = () => {
           {...register('text')}
         ></textarea>
       </div>
-      <Button
-        id="send-contact"
-        label="Envoi du formulaire de contact"
-        type="submit"
+      <Loading
+        data={{ show: data?.status, message: data?.message }}
+        loading={isLoading}
       >
-        Envoyer
-      </Button>
-      <Alert show={showAlert} message={alertMessage} />
+        <Alert />
+        <Button
+          id="send-contact"
+          label="Envoi du formulaire de contact"
+          type="submit"
+        >
+          Envoyer
+        </Button>
+      </Loading>
     </form>
   )
 }

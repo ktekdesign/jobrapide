@@ -5,7 +5,7 @@ import Input from '@components/form/input'
 import { useQuery, gql } from '@apollo/client'
 import { categoriesQuery } from '@graphql/termQueries'
 import { mapTerm } from '@utils/mapping'
-import { Term } from '@utils/interfaces'
+import { Term } from '@utils/interfaces/data'
 
 const SearchForm: FC<{ secteurs?: Term[]; regions?: Term[] }> = ({
   secteurs = null,

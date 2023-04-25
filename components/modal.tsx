@@ -3,9 +3,9 @@ import React, { memo, useState } from 'react'
 import { isEmpty } from '@utils/manipulateArray'
 import CloseIcon from '/public/images/close.svg'
 import Button from '@components/form/Button'
-import Loading from './loading'
-import SearchCurriculumForm from './searchCurriculumForm'
-import SearchForm from './searchForm'
+import Loading from '@components/loading'
+import SearchCurriculumForm from '@components/searchCurriculumForm'
+import SearchForm from '@components/searchForm'
 import { useQuery, gql } from '@apollo/client'
 import {
   regionsLastQuery,

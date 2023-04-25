@@ -1,6 +1,6 @@
-import { Page, Post, Seo, Term } from '@utils/interfaces'
-import { isEmpty, preventUndefined } from './manipulateArray'
-import { outputErrors } from './outputErrors'
+import { Page, Post, Seo, Term } from '@utils/interfaces/data'
+import { isEmpty, preventUndefined } from '@utils/manipulateArray'
+import { outputErrors } from '@utils/outputErrors'
 
 export const mapSeo = (seo): Seo => {
   if (isEmpty(seo)) return null

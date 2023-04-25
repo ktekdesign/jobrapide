@@ -8,10 +8,10 @@ import 'swiper/css/bundle'
 import 'swiper/css/pagination'
 import 'swiper/css/effect-flip'
 import SeoLink from '@components/seoLink'
-import { PostsContainerProps } from '@utils/interfaces'
+import ComponentsProps from '@utils/interfaces/components'
 
-export const ImageSlider: FC<PostsContainerProps> = ({
-  items,
+export const ImageSlider: FC<ComponentsProps> = ({
+  posts,
   width,
   height,
   className,
@@ -38,7 +38,7 @@ export const ImageSlider: FC<PostsContainerProps> = ({
       }}
       modules={[Pagination, Autoplay, EffectFlip]}
     >
-      {items?.map(({ uri, title, image }, key) => (
+      {posts?.map(({ uri, title, image }, key) => (
         <SwiperSlide key={key}>
           <SeoLink href={uri} label={title} target="_blank">
             <Image

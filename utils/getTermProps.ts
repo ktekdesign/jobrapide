@@ -1,6 +1,5 @@
 import { getTermAndPosts } from '@graphql/api'
 import { getLast, isEmpty, prev } from '@utils/manipulateArray'
-import getPagination from '@utils/getPagination'
 import addLayoutData from '@utils/addLayoutData'
 
 export const getTermProps = async (params, type, client) => {
@@ -20,13 +19,7 @@ export const getTermProps = async (params, type, client) => {
   })
 
   if (isEmpty(term)) return { notFound: true }
-  const pages = getPagination(term.count, currentPage)
-  if (
-    isEmpty(pages) ||
-    currentPage < 1 ||
-    currentPage > parseInt(getLast(pages))
-  )
-    return { notFound: true }
-  const { seo, ...props } = term
-  return addLayoutData({ term: props, seo, currentPage, pages })
+
+  const { seo, count, ...props } = term
+  return addLayoutData({ term: props, seo, count, currentPage })
 }

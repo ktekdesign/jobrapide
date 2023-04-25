@@ -4,7 +4,11 @@ import { BASE_URL } from '@utils/constants'
 import truncate from '@utils/truncate'
 import SeoLink from '@components/seoLink'
 
-const Breadcrumb = ({ breadcrumbs }) => {
+const Breadcrumb = ({
+  breadcrumbs,
+}: {
+  breadcrumbs?: { text: string; url: string }[]
+}) => {
   if (breadcrumbs?.length < 2) return <></>
 
   return (

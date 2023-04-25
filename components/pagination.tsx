@@ -16,15 +16,15 @@ const Pagination = ({
   pages,
   uri,
   currentPage,
-  isSearch = false,
+  search,
 }: {
   pages?: string[]
   uri?: string
   currentPage?: number
-  isSearch?: boolean
+  search?: string
 }) => {
   const url = (page) =>
-    isSearch
+    search
       ? `${
           !isFirstPage(page)
             ? uri.replace('_page_', `page/${page}/`)

@@ -7,11 +7,11 @@ import 'swiper/css/bundle'
 import 'swiper/css/pagination'
 
 import PostPreview from '@components/post-preview'
-import { PostsContainerProps } from '@utils/interfaces'
+import ComponentsProps from '@utils/interfaces/components'
 import { prev } from '@utils/manipulateArray'
 
-export const SwiperHome: FC<PostsContainerProps> = ({
-  items,
+export const SwiperHome: FC<ComponentsProps> = ({
+  posts,
   slides = 1,
   ...props
 }) => (
@@ -20,7 +20,7 @@ export const SwiperHome: FC<PostsContainerProps> = ({
       pagination={{
         clickable: true,
       }}
-      spaceBetween={30}
+      spaceBetween={10}
       autoplay={{
         delay: 5000,
         disableOnInteraction: true,
@@ -39,7 +39,7 @@ export const SwiperHome: FC<PostsContainerProps> = ({
       }}
       modules={[Pagination, Autoplay]}
     >
-      {items?.map(({ uri, title, image }, key) => (
+      {posts?.map(({ uri, title, image }, key) => (
         <SwiperSlide key={key}>
           <PostPreview title={title} image={image} uri={uri} />
         </SwiperSlide>

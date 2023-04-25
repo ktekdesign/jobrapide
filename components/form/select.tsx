@@ -1,7 +1,7 @@
-import { Term } from '@utils/interfaces'
+import { Term } from '@utils/interfaces/data'
 import { isEmpty } from '@utils/manipulateArray'
 import React, { FC, SelectHTMLAttributes, memo } from 'react'
-import Label from './label'
+import Label from '@components/form/label'
 
 interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
   label: string

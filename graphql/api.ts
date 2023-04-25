@@ -1,9 +1,13 @@
-import { TermType } from '@utils/interfaces'
+import { TermType } from '@utils/interfaces/data'
 import { getFirst, isEmpty, preventUndefined } from '@utils/manipulateArray'
 import { mapPage, mapPost, mapTerm } from '@utils/mapping'
 import { outputErrors } from '@utils/outputErrors'
 import { gql } from '@apollo/client'
-import { categoriesQuery, regionsLastQuery, regionsQuery } from './termQueries'
+import {
+  categoriesQuery,
+  regionsLastQuery,
+  regionsQuery,
+} from '@graphql/termQueries'
 import { ApolloClient, NormalizedCacheObject } from '@apollo/client'
 
 const PER_PAGE = parseInt(process.env.NEXT_PUBLIC_PER_PAGE)
@@ -456,31 +460,31 @@ export const getPubs = (data) => {
     } = data
     const pubs = nodes?.map((pub) => mapPost(pub))
     const pub1 = {
-      items: pubs?.filter(
+      posts: pubs?.filter(
         (pub) =>
           pub.categories.findIndex((category) => category.id === 192) !== -1
       ),
     }
     const pub2 = {
-      items: pubs?.filter(
+      posts: pubs?.filter(
         (pub) =>
           pub.categories.findIndex((category) => category.id === 193) !== -1
       ),
     }
     const pub3 = {
-      items: pubs?.filter(
+      posts: pubs?.filter(
         (pub) =>
           pub.categories.findIndex((category) => category.id === 194) !== -1
       ),
     }
     const partners = {
-      items: pubs?.filter(
+      posts: pubs?.filter(
         (pub) =>
           pub.categories.findIndex((category) => category.id === 88) !== -1
       ),
     }
     const sponsored = {
-      items: pubs?.filter(
+      posts: pubs?.filter(
         (pub) =>
           pub.categories.findIndex((category) =>
             [192, 193, 194, 88].includes(category.id)

@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { FC, memo } from 'react'
-import { Seo } from '@utils/interfaces'
+import { Seo } from '@utils/interfaces/data'
 import { isEmpty } from '@utils/manipulateArray'
 import Script from 'next/script'
 

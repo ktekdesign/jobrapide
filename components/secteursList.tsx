@@ -1,5 +1,5 @@
 import React, { memo } from 'react'
-import Loading from './loading'
+import Loading from '@components/loading'
 import { useQuery, gql } from '@apollo/client'
 import { getSecteursQuery } from '@graphql/termQueries'
 import { mapTerm } from '@utils/mapping'

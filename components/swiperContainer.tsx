@@ -1,16 +1,11 @@
-import React, { FC, HTMLAttributes, ReactNode, memo } from 'react'
+import React, { FC, memo } from 'react'
 
 import Loading from '@components/loading'
 import { useQuery, gql } from '@apollo/client'
 import { getPostsHome } from '@graphql/api'
+import ComponentsProps from '@utils/interfaces/components'
 
-interface SwiperContainerProps extends HTMLAttributes<HTMLElement> {
-  query?: string
-  slides?: number
-  children: ReactNode
-}
-
-export const SwiperContainer: FC<SwiperContainerProps> = ({
+export const SwiperContainer: FC<ComponentsProps> = ({
   children,
   query,
   slides = 3,
@@ -24,18 +19,16 @@ export const SwiperContainer: FC<SwiperContainerProps> = ({
 
   const term = getPostsHome(data)
 
+  const loader = {
+    posts: term?.posts,
+    uri: term?.uri,
+    name: term?.name,
+    slides,
+    ...props,
+  }
+
   return (
-    <Loading
-      data={{
-        items: term?.posts,
-        uri: term?.uri,
-        name: term?.name,
-        slides,
-        ...props,
-      }}
-      loading={loading}
-      error={error}
-    >
+    <Loading data={loader} loading={loading} error={error}>
       {children}
     </Loading>
   )

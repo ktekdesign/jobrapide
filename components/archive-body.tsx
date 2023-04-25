@@ -5,9 +5,9 @@ import Terms from '@components/terms'
 import Date from '@components/date'
 import ShareButtons from '@components/share-buttons'
 import SeoLink from '@components/seoLink'
-import { Post } from '@utils/interfaces'
+import { Post } from '@utils/interfaces/data'
 import { isEmpty } from '@utils/manipulateArray'
-import PostBody from './post-body'
+import PostBody from '@components/post-body'
 
 const ArchiveBody = ({ posts }: { posts?: Post[] }) => (
   <section className="archive-body">

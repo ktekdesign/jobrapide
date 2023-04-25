@@ -1,7 +1,7 @@
 import PostBody from '@components/post-body'
 import { getAllPages, getPage } from '@graphql/api'
 import PostTitle from '@components/post-title'
-import { Page } from '@utils/interfaces'
+import { Page } from '@utils/interfaces/data'
 import { isEmpty } from '@utils/manipulateArray'
 import addLayoutData from '@utils/addLayoutData'
 import client from '@graphql/client'

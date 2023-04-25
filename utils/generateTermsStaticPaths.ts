@@ -1,6 +1,6 @@
 import { getCategories, getRegions, getTerms } from '@graphql/api'
-import { getAllPages } from './getPagination'
-import { TermTypePlural } from './interfaces'
+import { getAllPages } from '@utils/getPagination'
+import { TermTypePlural } from '@utils/interfaces/data'
 
 export const generateTermsStaticPaths = async (term, client) => {
   const MAX_PAGE = parseInt(process.env.NEXT_PUBLIC_MAX_PAGE)
