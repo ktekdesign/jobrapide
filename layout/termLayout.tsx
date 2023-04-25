@@ -6,8 +6,9 @@ import Breadcrumb from '@components/breadcrumb'
 import ArchiveBody from '@components/archive-body'
 import Loading from '@components/loading'
 import getPagination from '@utils/getPagination'
+import { isEmpty } from '@utils/manipulateArray'
 
-const TermLayout = ({ term, currentPage, count, breadcrumbs }) => {
+const TermLayout = ({ name, posts, uri, currentPage, count, breadcrumbs }) => {
   const pages = useMemo(
     () => getPagination(count, currentPage),
     [count, currentPage]
@@ -15,12 +16,12 @@ const TermLayout = ({ term, currentPage, count, breadcrumbs }) => {
 
   return (
     <>
-      <ArchiveTitle currentPage={currentPage}>{term?.name}</ArchiveTitle>
+      <ArchiveTitle currentPage={currentPage}>{name}</ArchiveTitle>
       <Breadcrumb breadcrumbs={breadcrumbs} />
-      <Loading data={{ posts: term?.posts }} loading={!term?.posts.length}>
+      <Loading data={{ posts }} loading={isEmpty(posts)}>
         <ArchiveBody />
       </Loading>
-      <Pagination pages={pages} uri={term?.uri} currentPage={currentPage} />
+      <Pagination pages={pages} uri={uri} currentPage={currentPage} />
     </>
   )
 }
