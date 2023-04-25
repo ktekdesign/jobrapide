@@ -8,14 +8,15 @@ import TagManager from 'react-gtm-module'
 import Layout from '@layout/layout'
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
+  const { layout, ...props } = pageProps
   useEffect(() => {
     TagManager.initialize({ gtmId: 'GTM-W66949R' })
   }, [])
 
   return (
     <ApolloProvider client={client}>
-      <Layout {...pageProps}>
-        <Component />
+      <Layout {...layout}>
+        <Component {...props} />
       </Layout>
     </ApolloProvider>
   )

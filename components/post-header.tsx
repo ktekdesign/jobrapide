@@ -19,21 +19,15 @@ const PostHeader = ({
   <>
     <PostTitle>{title}</PostTitle>
     <Breadcrumb breadcrumbs={breadcrumbs} />
-    <div className="post-header-image">
-      <CoverImage title={title} image={image} />
-    </div>
-    <div className="post-header-date">
-      <Date dateString={date} />
-    </div>
-    <div className="post-header-terms">
-      <Terms terms={categories} name="Categories : " />
-    </div>
-    <div className="post-header-terms">
-      <Terms terms={secteurs} name="Domaines : " />
-    </div>
-    <div className="post-header-terms">
-      <Terms terms={regions} name="Regions : " />
-    </div>
+    <CoverImage title={title} image={image} className="post-header-image" />
+    <Date dateString={date} className="post-header-date" />
+    <Terms
+      terms={categories}
+      name="Categories : "
+      className="post-header-terms"
+    />
+    <Terms terms={secteurs} name="Domaines : " className="post-header-terms" />
+    <Terms terms={regions} name="Regions : " className="post-header-terms" />
     <ShareButtons title={title} />
   </>
 )

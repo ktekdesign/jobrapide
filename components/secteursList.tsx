@@ -20,11 +20,15 @@ const SecteursList = ({ active }) => {
     <Loading loading={loading} error={error}>
       <ul className={active === 1 ? 'terms-list flex' : 'terms-list hidden'}>
         {secteurs?.map(({ id, uri, name, count }) => (
-          <li className="secteurs-list" key={id}>
-            <SeoLink href={uri} label={name}>
-              {name} ({count})
-            </SeoLink>
-          </li>
+          <SeoLink
+            as="li"
+            className="secteurs-list"
+            key={id}
+            href={uri}
+            label={name}
+          >
+            {name} ({count})
+          </SeoLink>
         ))}
       </ul>
     </Loading>

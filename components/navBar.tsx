@@ -22,63 +22,63 @@ const NavBar = ({ items, setOpen }) => {
 
   return (
     <nav className="navbar">
-      <div className="logo">
-        <SeoLink href="/" label="JobRapide">
-          <Image src="/images/logo.png" width={40} height={40} alt="Logo" />
-          <span className={currentPath === '/' ? 'home-active' : 'home'}>
-            <HomeIcon className="icon" />
-            <span>{process.env.NEXT_PUBLIC_CMS_NAME}</span>
-          </span>
-        </SeoLink>
-      </div>
-      <div className="menu-mobile">
-        <Button label="Menu principal" onClick={() => setShowMenu(!showMenu)}>
-          {showMenu ? (
-            <CloseIcon className="icon" />
-          ) : (
-            <MenuIcon className="icon" />
-          )}
-        </Button>
-      </div>
+      <SeoLink href="/" label="JobRapide" as="div" className="logo">
+        <Image src="/images/logo.png" width={40} height={40} alt="Logo" />
+        <span className={currentPath === '/' ? 'home-active' : 'home'}>
+          <HomeIcon className="icon" />
+          <span>{process.env.NEXT_PUBLIC_CMS_NAME}</span>
+        </span>
+      </SeoLink>
+      <Button
+        className="menu-mobile"
+        label="Menu principal"
+        onClick={() => setShowMenu(!showMenu)}
+      >
+        {showMenu ? (
+          <CloseIcon className="icon" />
+        ) : (
+          <MenuIcon className="icon" />
+        )}
+      </Button>
       <div className={`${showMenu ? 'flex' : 'hidden'} main-menu lg:flex`}>
         <ul className="menu-items">
           {items?.map(({ uri, title }, i) => (
-            <li key={i}>
-              <SeoLink
-                href={uri}
-                label={title}
-                className={`menu-item-link ${
-                  currentPath.startsWith(uri) ? 'menu-active' : ''
-                }`}
-              >
-                {title}
-              </SeoLink>
-            </li>
+            <SeoLink
+              as="li"
+              key={i}
+              href={uri}
+              label={title}
+              className={`menu-item-link ${
+                currentPath.startsWith(uri) ? 'menu-active' : ''
+              }`}
+            >
+              {title}
+            </SeoLink>
           ))}
         </ul>
         <ul className="icons-menu">
-          <li className="download">
-            <SeoLink
-              label="Télecharger notre application Android"
-              href="https://play.google.com/store/apps/details?id=com.ktekdesign.app.tchadcarriere"
-              target="_blank"
-            >
-              <Image
-                src="/images/googleplay.png"
-                width={170}
-                height={64}
-                alt="download app"
-              />
-            </SeoLink>
-          </li>
-          <li className="reveal">
-            <SeoLink
-              href="https://www.jobrapide.org/admin/"
-              label="Login / Créer un compte"
-            >
-              <UserIcon className="icon" />
-            </SeoLink>
-          </li>
+          <SeoLink
+            as="li"
+            className="download"
+            label="Télecharger notre application Android"
+            href="https://play.google.com/store/apps/details?id=com.ktekdesign.app.tchadcarriere"
+            target="_blank"
+          >
+            <Image
+              src="/images/googleplay.png"
+              width={170}
+              height={64}
+              alt="download app"
+            />
+          </SeoLink>
+          <SeoLink
+            className="reveal"
+            as="li"
+            href="https://www.jobrapide.org/admin/"
+            label="Login / Créer un compte"
+          >
+            <UserIcon className="icon" />
+          </SeoLink>
           <li className="reveal">
             <Button
               onClick={(e) => {

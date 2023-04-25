@@ -181,7 +181,7 @@ export const getTermAndPosts = async ({ client, term, type, page = 1 }) => {
       }
     )
 
-    const taxonomy = data[typeLower]
+    const { [typeLower]: taxonomy } = data
 
     if (!isEmpty(taxonomy)) {
       if (type === TermType.Secteur) {
@@ -208,7 +208,7 @@ export const getTermAndPosts = async ({ client, term, type, page = 1 }) => {
         })
 
         return mapTerm({ ...taxonomy, posts, count })
-      } else if (type === TermType.Category) {
+      } else {
         const { posts, count } = await performSearch({
           client,
           page,
@@ -223,11 +223,22 @@ export const getTermAndPosts = async ({ client, term, type, page = 1 }) => {
   }
 }
 export const getPostsHome = (data) => {
-  if (isEmpty(data)) return null
-  const { category } = data
-  const posts = category?.posts?.nodes?.map((post) => mapPost(post))
-  return mapTerm({ ...category, posts })
+  if (isEmpty(data)) return data
+  try {
+    const {
+      category: {
+        posts: { nodes },
+      },
+    } = data
+    return mapTerm({
+      ...data?.category,
+      posts: nodes?.map((post) => mapPost(post)),
+    })
+  } catch (error) {
+    return outputErrors(error)
+  }
 }
+
 export const getTerms = async (type, client) => {
   try {
     const data = await loadFromWPGraphQL(
@@ -246,9 +257,8 @@ export const getTerms = async (type, client) => {
       }
     `
     )
-
-    const response = data[type]?.nodes?.map((term) => mapTerm(term))
-    return response
+    const { [type]: response } = data
+    return response?.nodes?.map((term) => mapTerm(term))
   } catch (err) {
     return outputErrors(err)
   }
@@ -257,10 +267,10 @@ export const getTerms = async (type, client) => {
 export const getCategories = async (client) => {
   try {
     const data = await loadFromWPGraphQL(client, categoriesQuery)
-    const response = data?.categories?.nodes?.map((category) =>
-      mapTerm(category)
-    )
-    return response
+    const {
+      categories: { nodes },
+    } = data
+    return nodes?.map((category) => mapTerm(category))
   } catch (err) {
     return outputErrors(err)
   }
@@ -272,10 +282,10 @@ export const getRegions = async (client) => {
     const data_last = await loadFromWPGraphQL(client, regionsLastQuery)
 
     const response = preventUndefined(
-      data.regions?.nodes?.map((term) => mapTerm(term))
+      data?.regions?.nodes?.map((term) => mapTerm(term))
     )
     const response_last = preventUndefined(
-      data_last.regions?.nodes?.map((term) => mapTerm(term))
+      data_last?.regions?.nodes?.map((term) => mapTerm(term))
     )
 
     return [...response, ...response_last]
@@ -300,9 +310,7 @@ export const getPage = async (slug, client) => {
     `
     )
 
-    const response = mapPage(data?.page)
-
-    return response
+    return mapPage(data?.page)
   } catch (err) {
     return outputErrors(err)
   }
@@ -321,8 +329,10 @@ export const getAllPages = async (client) => {
       }
     `
     )
-    const response = data?.pages?.nodes
-    return response
+    const {
+      pages: { nodes },
+    } = data
+    return nodes
   } catch (err) {
     return outputErrors(err)
   }
@@ -399,13 +409,14 @@ export const performSearch = async ({
   `
   try {
     const data = await loadFromWPGraphQL(client, query)
-    const mappedPosts = data?.posts?.nodes?.map((post) => mapPost(post))
-    const response = {
-      posts: preventUndefined(mappedPosts),
-      count: preventUndefined(data?.posts?.pageInfo?.offsetPagination?.total),
-    }
+    const {
+      posts: { nodes },
+    } = data
 
-    return response
+    return {
+      posts: nodes?.map((post) => mapPost(post)),
+      count: data?.posts?.pageInfo?.offsetPagination?.total,
+    }
   } catch (err) {
     return outputErrors(err)
   }
@@ -427,48 +438,117 @@ export const getLatestPosts = async (category, client) => {
   `
   try {
     const data = await loadFromWPGraphQL(client, query)
-    const response = data?.posts?.nodes
+    const {
+      posts: { nodes },
+    } = data
 
-    return preventUndefined(response)
+    return nodes
   } catch (err) {
     return outputErrors(err)
   }
 }
 
 export const getPubs = (data) => {
-  if (isEmpty(data)) return null
-  const pubs = data?.posts?.nodes?.map((pub) => mapPost(pub))
-  const pub1 = {
-    items: pubs.filter(
-      (pub) =>
-        pub.categories.findIndex((category) => category.id === 192) !== -1
-    ),
-  }
-  const pub2 = {
-    items: pubs.filter(
-      (pub) =>
-        pub.categories.findIndex((category) => category.id === 193) !== -1
-    ),
-  }
-  const pub3 = {
-    items: pubs.filter(
-      (pub) =>
-        pub.categories.findIndex((category) => category.id === 194) !== -1
-    ),
-  }
-  const partners = {
-    items: pubs.filter(
-      (pub) => pub.categories.findIndex((category) => category.id === 88) !== -1
-    ),
-  }
-  const sponsored = {
-    items: pubs.filter(
-      (pub) =>
-        pub.categories.findIndex((category) =>
-          [192, 193, 194, 88].includes(category.id)
-        ) === -1
-    ),
-  }
+  if (!data) return data
+  try {
+    const {
+      posts: { nodes },
+    } = data
+    const pubs = nodes?.map((pub) => mapPost(pub))
+    const pub1 = {
+      items: pubs?.filter(
+        (pub) =>
+          pub.categories.findIndex((category) => category.id === 192) !== -1
+      ),
+    }
+    const pub2 = {
+      items: pubs?.filter(
+        (pub) =>
+          pub.categories.findIndex((category) => category.id === 193) !== -1
+      ),
+    }
+    const pub3 = {
+      items: pubs?.filter(
+        (pub) =>
+          pub.categories.findIndex((category) => category.id === 194) !== -1
+      ),
+    }
+    const partners = {
+      items: pubs?.filter(
+        (pub) =>
+          pub.categories.findIndex((category) => category.id === 88) !== -1
+      ),
+    }
+    const sponsored = {
+      items: pubs?.filter(
+        (pub) =>
+          pub.categories.findIndex((category) =>
+            [192, 193, 194, 88].includes(category.id)
+          ) === -1
+      ),
+    }
 
-  return { pub1, pub2, pub3, partners, sponsored }
+    return { pub1, pub2, pub3, partners, sponsored }
+  } catch (error) {
+    outputErrors(error)
+  }
+}
+
+export const getSearchQuery = ({
+  currentPage = 1,
+  search,
+  category,
+  secteur,
+  region,
+}: {
+  currentPage?: number
+  search?: string
+  category?: string
+  secteur?: string
+  region?: string
+}) => {
+  const wherePagination = `offsetPagination: { size: ${PER_PAGE}, offset: ${
+    PER_PAGE * currentPage - PER_PAGE
+  }}`
+  const category_query = `categoryId: ${category || 16},`
+  const secteur_query = secteur
+    ? `{
+    includeChildren: true
+    terms: ["${secteur}"]
+    taxonomy: SECTEUR
+    operator: IN
+    field: ID
+  },`
+    : ''
+  const region_query = region
+    ? `{
+    includeChildren: true
+    terms: ["${region}"]
+    taxonomy: REGION
+    operator: IN
+    field: ID
+  }`
+    : ''
+
+  return `
+  query Search${category || 16}${secteur || ''}${region || ''}${currentPage} {
+    posts(first: 10
+      where: {
+        ${search ? `search: "${search}"` : ''}
+        ${category_query}
+        ${wherePagination}
+        taxQuery: {
+          relation: AND,
+          taxArray: [
+            ${secteur_query}
+            ${region_query}
+          ]
+        }
+      }
+    ){
+      ${pageInfoSearch}
+      ${posts_response}
+    }
+  }
+  `
 }

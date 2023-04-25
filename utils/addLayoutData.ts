@@ -1,16 +1,30 @@
 import { REVALIDATE } from '@utils/constants'
-import { preventUndefined } from '@utils/manipulateArray'
 
-export const addLayoutData = async (props) => {
+export const addLayoutData = (props) => {
   const { seo, ...rest } = props
+  if (rest?.search) {
+    return {
+      props: {
+        ...rest,
+        breadcrumbs: [
+          { text: 'Accueil', url: '/' },
+          { text: 'Recherche', url: '/search/' },
+        ],
+        layout: {
+          seo: null,
+        },
+      },
+    }
+  }
+  const { breadcrumbs, ...seoProps } = seo
+
   const layout = {
     ...rest,
+    breadcrumbs,
     layout: {
-      seo: preventUndefined(seo),
+      seo: seoProps,
     },
   }
-  if (!rest?.search) return { props: layout, revalidate: REVALIDATE }
-  return { props: layout }
+  return { props: layout, revalidate: REVALIDATE }
 }
-
 export default addLayoutData

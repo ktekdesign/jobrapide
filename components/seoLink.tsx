@@ -1,10 +1,34 @@
-import { memo } from 'react'
+import { FC, HTMLAttributes, ReactNode, memo } from 'react'
 import Link from 'next/link'
 
-const SeoLink = ({ children, label, href, ...props }) => (
-  <Link href={href} aria-label={label} {...props}>
-    {children}
-  </Link>
+interface LinkContainerProps extends HTMLAttributes<HTMLElement> {
+  label?: string
+  href?: string
+  as?: string
+  slides?: number
+  target?: string
+  children: ReactNode
+  innerClassName?: string
+}
+const SeoLink: FC<LinkContainerProps> = ({
+  children,
+  label,
+  href,
+  target,
+  innerClassName,
+  as: Component = 'span',
+  ...props
+}) => (
+  <Component {...props}>
+    <Link
+      href={href}
+      aria-label={label}
+      target={target || '_self'}
+      className={innerClassName || ''}
+    >
+      {children}
+    </Link>
+  </Component>
 )
 
 export default memo(SeoLink)

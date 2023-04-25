@@ -9,14 +9,14 @@ import client from '@graphql/client'
 const Page = ({ title, content }) => (
   <>
     <PostTitle>{title}</PostTitle>
-    <PostBody>{content}</PostBody>
+    <PostBody body={content} />
   </>
 )
 
 export const getStaticProps = async ({ params }) => {
   const page: Page = await getPage(`/${params?.slug}/`, client)
   if (isEmpty(page)) return { notFound: true }
-  const layout = await addLayoutData(page)
+  const layout = addLayoutData(page)
   return layout
 }
 

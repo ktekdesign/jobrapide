@@ -8,19 +8,17 @@ const Breadcrumb = ({ breadcrumbs }) => {
   if (breadcrumbs?.length < 2) return <></>
 
   return (
-    <div className="row">
-      <div className="breadcrumb">
-        {breadcrumbs?.map(({ text, url }, key) => (
-          <SeoLink
-            className="breadcrumb-item"
-            label={text}
-            key={key}
-            href={url.replaceAll('https://www.jobrapide.org', BASE_URL)}
-          >
-            {parse(truncate(text))}
-          </SeoLink>
-        ))}
-      </div>
+    <div className="row breadcrumb">
+      {breadcrumbs?.map(({ text, url }, key) => (
+        <SeoLink
+          className="breadcrumb-item"
+          label={text}
+          key={key}
+          href={url.replaceAll('https://www.jobrapide.org', BASE_URL)}
+        >
+          {parse(truncate(text))}
+        </SeoLink>
+      ))}
     </div>
   )
 }

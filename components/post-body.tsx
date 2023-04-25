@@ -1,12 +1,19 @@
-import React, { memo } from 'react'
+import React, { FC, HTMLAttributes, memo } from 'react'
 import parse from 'html-react-parser'
 
-import styles from '@styles/post-body.module.css'
 import { isEmpty } from '@utils/manipulateArray'
 
-const PostBody = ({ children }) => {
-  if (isEmpty(children)) return <></>
-  return <div className={styles.content}>{parse(children)}</div>
+interface PostBodyProps extends HTMLAttributes<HTMLElement> {
+  body: string
+  className?: string
+}
+const PostBody: FC<PostBodyProps> = ({ body, className, ...props }) => {
+  if (isEmpty(body)) return <></>
+  return (
+    <div className={className || 'content'} {...props}>
+      {parse(body)}
+    </div>
+  )
 }
 
 export default memo(PostBody)

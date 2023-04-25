@@ -12,7 +12,17 @@ import {
 } from '@utils/manipulateArray'
 import SeoLink from '@components/seoLink'
 
-const Pagination = ({ pages, uri, currentPage, isSearch = false }) => {
+const Pagination = ({
+  pages,
+  uri,
+  currentPage,
+  isSearch = false,
+}: {
+  pages?: string[]
+  uri?: string
+  currentPage?: number
+  isSearch?: boolean
+}) => {
   const url = (page) =>
     isSearch
       ? `${
@@ -40,7 +50,7 @@ const Pagination = ({ pages, uri, currentPage, isSearch = false }) => {
               {page}
             </span>
           )
-        } else if (currentPage === page) {
+        } else if (currentPage === parseInt(page)) {
           return (
             <span key={i} className="current-page">
               {page}

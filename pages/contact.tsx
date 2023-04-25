@@ -6,7 +6,7 @@ import client from '@graphql/client'
 
 export const getStaticProps = async () => {
   const page = await getPage('contact', client)
-  const layout = await addLayoutData(page)
+  const layout = addLayoutData(page)
   return layout
 }
 const Contact = () => (

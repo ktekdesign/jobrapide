@@ -18,53 +18,38 @@ import { layoutQuery } from '@graphql/layoutQuery'
 import { useQuery, gql } from '@apollo/client'
 import { getPubs } from '@graphql/api'
 import Loading from '@components/loading'
-import { isEmpty } from '@utils/manipulateArray'
 
-const Layout = ({ layout, children, ...props }) => {
+const Layout = ({ seo, children }) => {
   const QUERY = gql`
     ${layoutQuery}
   `
 
   const { data, loading, error } = useQuery(QUERY)
-
-  const layoutPosts = getPubs(data)
+  const layoutData = getPubs(data)
 
   return (
     <>
-      <Meta seo={layout?.seo} />
+      <Meta seo={seo} />
       <Header />
-      <Loading data={layoutPosts?.pub2} loading={loading} error={error}>
+      <Loading data={layoutData?.pub2} loading={loading} error={error}>
         <Pub className="pub-in-header" />
       </Loading>
       <main>
-        <Column className="left">
-          <Row>
-            <Loading
-              data={{ breadcrumbs: layout?.seo?.breadcrumbs, ...props }}
-              loading={isEmpty(props)}
-            >
-              {children}
-            </Loading>
-          </Row>
-        </Column>
+        <Column className="left">{children}</Column>
         <Column className="right">
-          <Loading data={layoutPosts?.pub1} loading={loading} error={error}>
-            <Pub className="row" />
+          <Loading data={layoutData?.pub1} loading={loading} error={error}>
+            <Pub />
           </Loading>
-          <Loading
-            data={layoutPosts?.sponsored}
-            loading={loading}
-            error={error}
-          >
+          <Loading data={layoutData?.sponsored} loading={loading} error={error}>
             <SwiperTitle name="Offres sponsorisées" />
-            <SwiperHome className="row" />
+            <SwiperHome />
           </Loading>
-          <Loading data={layoutPosts?.partners} loading={loading} error={error}>
+          <Loading data={layoutData?.partners} loading={loading} error={error}>
             <SwiperTitle name="Partenaires" className="title-secondary" />
-            <ImageSlider className="row" />
+            <ImageSlider />
           </Loading>
-          <Loading data={layoutPosts?.pub3} loading={loading} error={error}>
-            <Pub className="row" />
+          <Loading data={layoutData?.pub3} loading={loading} error={error}>
+            <Pub />
           </Loading>
           <Row>
             <Facebook />

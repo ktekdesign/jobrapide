@@ -9,7 +9,7 @@ export const getPostProps = async (slugs, prefix, client) => {
   )
   if (isEmpty(post)) return { notFound: true }
   const { seo, ...props } = post
-  const layout = await addLayoutData({
+  const layout = addLayoutData({
     post: props,
     seo,
     posts,

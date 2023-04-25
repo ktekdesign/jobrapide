@@ -23,7 +23,7 @@ import SwiperHome from '@components/swiperHome'
 
 export const getStaticProps = async () => {
   const page = await getPage('/', client)
-  const layout = await addLayoutData(page)
+  const layout = addLayoutData(page)
   return layout
 }
 const Index = () => (
@@ -36,56 +36,56 @@ const Index = () => (
         </SwiperContainer>
       </Column>
     </Container>
-    <Container className="lg:pr-4">
-      <Column className="lg:w-1/3 mb-4 lg:mb-0">
+    <Container className="md:pr-2">
+      <Column className="w-full md:w-1/2 lg:w-1/3">
         <SwiperContainer query={queryStage} slides={1}>
           <SwiperTitle className="title-secondary" />
           <SwiperHome />
         </SwiperContainer>
       </Column>
-      <Column className="lg:w-2/3">
+      <Column className="w-full md:w-1/2 lg:w-2/3">
         <SwiperContainer query={queryBourse} slides={2}>
           <SwiperTitle className="title-secondary" />
           <SwiperHome />
         </SwiperContainer>
       </Column>
     </Container>
-    <Container className="lg:pr-4">
-      <Column className="lg:w-2/3 mb-4 lg:mb-0">
+    <Container className="md:pr-2">
+      <Column className="w-full md:w-1/2 lg:w-2/3">
         <SwiperContainer query={queryAppel} slides={2}>
           <SwiperTitle />
           <SwiperHome />
         </SwiperContainer>
       </Column>
-      <Column className="lg:w-1/3">
+      <Column className="w-full md:w-1/2 lg:w-1/3">
         <SwiperContainer query={queryCall} slides={1}>
           <SwiperTitle />
           <SwiperHome />
         </SwiperContainer>
       </Column>
     </Container>
-    <Container className="lg:pr-4">
-      <Column className="lg:w-1/3 mb-4 lg:mb-0">
+    <Container className="md:pr-2">
+      <Column className="w-full md:w-1/2 lg:w-1/3">
         <SwiperContainer query={queryConcours} slides={1}>
           <SwiperTitle className="title-secondary" />
           <SwiperHome />
         </SwiperContainer>
       </Column>
-      <Column className="lg:w-2/3">
+      <Column className="w-full md:w-1/2 lg:w-2/3">
         <SwiperContainer query={queryFormation} slides={2}>
           <SwiperTitle className="title-secondary" />
           <SwiperHome />
         </SwiperContainer>
       </Column>
     </Container>
-    <Container className="lg:pr-4">
-      <Column className="lg:w-2/3 mb-4 lg:mb-0">
+    <Container className="md:pr-2">
+      <Column className="w-full md:w-1/2 lg:w-2/3">
         <SwiperContainer query={queryActualite} slides={2}>
           <SwiperTitle />
           <SwiperHome />
         </SwiperContainer>
       </Column>
-      <Column className="lg:w-1/3">
+      <Column className="w-full md:w-1/2 lg:w-1/3">
         <SwiperContainer query={queryVolontaire} slides={1}>
           <SwiperTitle />
           <SwiperHome />

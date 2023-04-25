@@ -5,16 +5,8 @@ import SwiperTitle from '@components/swiperTitle'
 
 const PostLayout = ({ post, posts, breadcrumbs }) => (
   <>
-    <PostHeader
-      title={post?.title}
-      breadcrumbs={breadcrumbs}
-      image={post?.image}
-      date={post?.date}
-      categories={post?.categories}
-      secteurs={post?.secteurs}
-      regions={post?.regions}
-    />
-    <PostBody>{post?.content}</PostBody>
+    <PostHeader {...post} breadcrumbs={breadcrumbs} />
+    <PostBody body={post?.content} />
     <SwiperTitle name="Publications similaires" className="title-secondary" />
     <SwiperHome items={posts} slides={3} />
   </>

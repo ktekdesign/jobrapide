@@ -8,14 +8,15 @@ import SeoLink from '@components/seoLink'
 
 const PostPreview = ({ title, image, uri }: Post) => (
   <>
-    <div className="post-preview-image">
-      <CoverImage title={title} image={image} uri={uri} />
-    </div>
-    <h3 className="post-preview-title">
-      <SeoLink label={title} href={uri}>
-        {truncate(title)}
-      </SeoLink>
-    </h3>
+    <CoverImage
+      title={title}
+      image={image}
+      uri={uri}
+      className="post-preview-image"
+    />
+    <SeoLink label={title} href={uri} as="h3" className="post-preview-title">
+      {truncate(title)}
+    </SeoLink>
   </>
 )
 

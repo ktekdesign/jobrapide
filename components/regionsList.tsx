@@ -26,11 +26,15 @@ const RegionsList = ({ active }) => {
     <Loading loading={loading} error={error}>
       <ul className={active === 2 ? 'terms-list flex' : 'terms-list hidden'}>
         {regions?.map(({ id, uri, name, count }) => (
-          <li className="regions-list" key={id}>
-            <SeoLink href={uri} label={name}>
-              {name} ({count})
-            </SeoLink>
-          </li>
+          <SeoLink
+            as="li"
+            key={id}
+            href={uri}
+            label={name}
+            className="regions-list"
+          >
+            {name} ({count})
+          </SeoLink>
         ))}
       </ul>
     </Loading>
