@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import PostBody from '@components/post-body'
 import PostHeader from '@components/post-header'
 import SwiperHome from '@components/swiperHome'
@@ -12,4 +13,4 @@ const PostLayout = ({ post, posts, breadcrumbs }) => (
   </>
 )
 
-export default PostLayout
+export default memo(PostLayout)
