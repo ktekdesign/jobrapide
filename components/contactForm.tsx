@@ -37,7 +37,7 @@ const ContactForm = () => {
     !isEmpty(contactData) ? '/api/contact' : null,
     fetcher
   )
-  console.log(data)
+
   const onSubmit: SubmitHandler<Inputs> = (data) => setContactData(data)
 
   return (
