@@ -4,9 +4,8 @@ import { useQuery, gql } from '@apollo/client'
 import { regionsLastQuery, regionsQuery } from '@graphql/termQueries'
 import { mapTerm } from '@utils/mapping'
 import { isEmpty } from '@utils/manipulateArray'
-import SeoLink from '@components/seoLink'
 
-const RegionsList = ({ active }) => {
+const RegionsList = ({ children }) => {
   const QUERY = gql`
     ${regionsQuery}
   `
@@ -23,20 +22,12 @@ const RegionsList = ({ active }) => {
     : null
 
   return (
-    <Loading loading={loading} error={error}>
-      <ul className={active === 2 ? 'terms-list flex' : 'terms-list hidden'}>
-        {regions?.map(({ id, uri, name }) => (
-          <SeoLink
-            as="li"
-            key={id}
-            href={uri}
-            label={name}
-            className="regions-list"
-          >
-            {name}
-          </SeoLink>
-        ))}
-      </ul>
+    <Loading
+      data={{ terms: regions, className: 'regions-list' }}
+      loading={loading}
+      error={error}
+    >
+      {children}
     </Loading>
   )
 }

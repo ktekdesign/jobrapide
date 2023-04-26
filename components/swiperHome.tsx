@@ -12,7 +12,7 @@ import { prev } from '@utils/manipulateArray'
 
 export const SwiperHome: FC<ComponentsProps> = ({
   posts,
-  slides = 1,
+  slides = 3,
   onlyImage,
   className,
   ...props

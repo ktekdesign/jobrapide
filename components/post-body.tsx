@@ -1,17 +1,14 @@
-import React, { FC, HTMLAttributes, memo } from 'react'
+import React, { FC, memo } from 'react'
 import parse from 'html-react-parser'
 
 import { isEmpty } from '@utils/manipulateArray'
+import ComponentsProps from '@utils/interfaces/components'
 
-interface PostBodyProps extends HTMLAttributes<HTMLElement> {
-  body: string
-  className?: string
-}
-const PostBody: FC<PostBodyProps> = ({ body, className, ...props }) => {
-  if (isEmpty(body)) return <></>
+const PostBody: FC<ComponentsProps> = ({ content, className, ...props }) => {
+  if (isEmpty(content)) return <></>
   return (
     <div className={className || 'content'} {...props}>
-      {parse(body)}
+      {parse(content)}
     </div>
   )
 }

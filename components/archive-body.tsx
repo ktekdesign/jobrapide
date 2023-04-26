@@ -1,15 +1,15 @@
-import React, { memo } from 'react'
+import React, { FC, memo } from 'react'
 
 import CoverImage from '@components/cover-image'
 import Terms from '@components/terms'
 import Date from '@components/date'
 import ShareButtons from '@components/share-buttons'
 import SeoLink from '@components/seoLink'
-import { Post } from '@utils/interfaces/data'
 import { isEmpty } from '@utils/manipulateArray'
 import PostBody from '@components/post-body'
+import ComponentsProps from '@utils/interfaces/components'
 
-const ArchiveBody = ({ posts }: { posts?: Post[] }) => (
+const ArchiveBody: FC<ComponentsProps> = ({ posts }) => (
   <section className="archive-body">
     {isEmpty(posts) ? (
       <p>Votre recherche n&apos;a retourné aucun résultat.</p>
@@ -42,8 +42,8 @@ const ArchiveBody = ({ posts }: { posts?: Post[] }) => (
               >
                 {title}
               </SeoLink>
-              <Date dateString={date} className="post-list-terms" />
-              <PostBody className="post-list-excerpt" body={excerpt} />
+              <Date date={date} className="post-list-terms" />
+              <PostBody className="post-list-excerpt" content={excerpt} />
               <Terms
                 className="post-list-terms"
                 terms={secteurs}

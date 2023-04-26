@@ -1,13 +1,12 @@
 import React, { memo } from 'react'
 import Loading from '@components/loading'
 import { useQuery, gql } from '@apollo/client'
-import { getSecteursQuery } from '@graphql/termQueries'
+import { secteursQuery } from '@graphql/termQueries'
 import { mapTerm } from '@utils/mapping'
-import SeoLink from '@components/seoLink'
 
-const SecteursList = ({ active }) => {
+const SecteursList = ({ children }) => {
   const QUERY = gql`
-    ${getSecteursQuery()}
+    ${secteursQuery}
   `
 
   const { data, loading, error } = useQuery(QUERY)
@@ -17,20 +16,12 @@ const SecteursList = ({ active }) => {
     : null
 
   return (
-    <Loading loading={loading} error={error}>
-      <ul className={active === 1 ? 'terms-list flex' : 'terms-list hidden'}>
-        {secteurs?.map(({ id, uri, name }) => (
-          <SeoLink
-            as="li"
-            className="secteurs-list"
-            key={id}
-            href={uri}
-            label={name}
-          >
-            {name}
-          </SeoLink>
-        ))}
-      </ul>
+    <Loading
+      data={{ terms: secteurs, className: 'secteurs-list' }}
+      loading={loading}
+      error={error}
+    >
+      {children}
     </Loading>
   )
 }

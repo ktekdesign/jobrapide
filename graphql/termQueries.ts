@@ -1,6 +1,5 @@
-const query = `
-query $termQuery {
-  $term (first: 100) {
+export const secteursQuery = `query secteursQuery {
+  secteurs (first: 100) {
     nodes {
       databaseId
       name
@@ -10,12 +9,17 @@ query $termQuery {
   }
 }
 `
-export const getSecteursQuery = () => {
-  return query.replaceAll('$term', 'secteurs')
+export const niveauxQuery = `query niveauxQuery {
+  niveaux (first: 100) {
+    nodes {
+      databaseId
+      name
+      slug
+      uri
+    }
+  }
 }
-export const getNiveauxQuery = () => {
-  return query.replaceAll('$term', 'niveaux')
-}
+`
 export const categoriesQuery = `
   query Category {
     categories (where: { parent: 16 }) {

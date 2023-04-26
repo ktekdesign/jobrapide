@@ -1,12 +1,12 @@
-import React, { FC, ReactNode, memo } from 'react'
+import React, { FC, memo } from 'react'
 import { isEmpty, isFirstPage } from '@utils/manipulateArray'
 
-const ArchiveTitle: FC<{ children: ReactNode; currentPage?: number }> = ({
-  children,
+const ArchiveTitle: FC<{ title?: string; currentPage?: number }> = ({
+  title,
   currentPage,
 }) => (
   <h1 className="archive-main-title">
-    {children}
+    {title}
     <span
       className={
         isEmpty(currentPage) || isFirstPage(currentPage) ? 'hidden' : ''

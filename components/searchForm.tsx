@@ -8,8 +8,8 @@ import { mapTerm } from '@utils/mapping'
 import { Term } from '@utils/interfaces/data'
 
 const SearchForm: FC<{ secteurs?: Term[]; regions?: Term[] }> = ({
-  secteurs = null,
-  regions = null,
+  secteurs,
+  regions,
 }) => {
   const QUERYCATEGORIES = gql`
     ${categoriesQuery}

@@ -458,38 +458,27 @@ export const getPubs = (data) => {
       posts: { nodes },
     } = data
     const pubs = nodes?.map((pub) => mapPost(pub))
-    const pub1 = {
-      posts: pubs?.filter(
-        (pub) =>
-          pub.categories.findIndex((category) => category.id === 192) !== -1
-      ),
-    }
-    const pub2 = {
-      posts: pubs?.filter(
-        (pub) =>
-          pub.categories.findIndex((category) => category.id === 193) !== -1
-      ),
-    }
-    const pub3 = {
-      posts: pubs?.filter(
-        (pub) =>
-          pub.categories.findIndex((category) => category.id === 194) !== -1
-      ),
-    }
-    const partners = {
-      posts: pubs?.filter(
-        (pub) =>
-          pub.categories.findIndex((category) => category.id === 88) !== -1
-      ),
-    }
-    const sponsored = {
-      posts: pubs?.filter(
-        (pub) =>
-          pub.categories.findIndex((category) =>
-            [192, 193, 194, 88].includes(category.id)
-          ) === -1
-      ),
-    }
+    const pub1 = pubs?.filter(
+      (pub) =>
+        pub.categories.findIndex((category) => category.id === 192) !== -1
+    )
+    const pub2 = pubs?.filter(
+      (pub) =>
+        pub.categories.findIndex((category) => category.id === 193) !== -1
+    )
+    const pub3 = pubs?.filter(
+      (pub) =>
+        pub.categories.findIndex((category) => category.id === 194) !== -1
+    )
+    const partners = pubs?.filter(
+      (pub) => pub.categories.findIndex((category) => category.id === 88) !== -1
+    )
+    const sponsored = pubs?.filter(
+      (pub) =>
+        pub.categories.findIndex((category) =>
+          [192, 193, 194, 88].includes(category.id)
+        ) === -1
+    )
 
     return { pub1, pub2, pub3, partners, sponsored }
   } catch (error) {

@@ -368,7 +368,7 @@ button[type='submit'] {
   @apply w-full;
 }
 .archive-body {
-  @apply flex flex-col gap-4;
+  @apply flex flex-col gap-y-2;
 }
 .post-info {
   @apply sm:w-2/3 md:w-3/4 sm:ml-4 sm:mr-4 py-4 px-2 sm:px-0;

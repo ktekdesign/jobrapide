@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import React, { FC, memo } from 'react'
 
 import Date from '@components/date'
 import CoverImage from '@components/cover-image'
@@ -6,8 +6,17 @@ import PostTitle from '@components/post-title'
 import Terms from '@components/terms'
 import ShareButtons from '@components/share-buttons'
 import Breadcrumb from '@components/breadcrumb'
+import ComponentsProps from '@utils/interfaces/components'
+import { BreadcrumbType, Term } from '@utils/interfaces/data'
 
-const PostHeader = ({
+interface PostHeaderProps extends ComponentsProps {
+  date?: string
+  categories?: Term[]
+  secteurs?: Term[]
+  regions?: Term[]
+  breadcrumbs?: BreadcrumbType[]
+}
+const PostHeader: FC<PostHeaderProps> = ({
   title,
   image,
   date,
@@ -27,7 +36,7 @@ const PostHeader = ({
       className="post-header-image"
       priority
     />
-    <Date dateString={date} className="post-header-date" />
+    <Date date={date} className="post-header-date" />
     <Terms
       terms={categories}
       title="Categories : "

@@ -10,7 +10,7 @@ import { useQuery, gql } from '@apollo/client'
 import {
   regionsLastQuery,
   regionsQuery,
-  getSecteursQuery,
+  secteursQuery,
 } from '@graphql/termQueries'
 import { mapTerm } from '@utils/mapping'
 import SeoLink from '@components/seoLink'
@@ -31,7 +31,7 @@ const Modal = ({ open, setOpen }) => {
   const { data: last } = useQuery(QUERYREGIONSLAST)
 
   const QUERYSECTEURS = gql`
-    ${getSecteursQuery()}
+    ${secteursQuery}
   `
   const { data: secteursQL } = useQuery(QUERYSECTEURS)
 

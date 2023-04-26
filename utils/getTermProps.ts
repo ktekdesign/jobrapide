@@ -22,7 +22,7 @@ export const getTermProps = async (params, type, client) => {
 
   const { seo, count, name, posts, uri } = term
   return addLayoutData({
-    name,
+    title: name,
     posts,
     uri,
     seo,

@@ -27,8 +27,13 @@ export interface Page {
   content: string
   seo?: Seo
 }
+export interface BreadcrumbType {
+  text: string
+  url: string
+}
+
 export interface Seo {
-  breadcrumbs: { text: string; url: string }[]
+  breadcrumbs: BreadcrumbType[]
   canonical: string
   metaDesc: string
   metaKeywords: string

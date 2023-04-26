@@ -53,11 +53,19 @@ const Search = ({
 
   return (
     <Loading
-      data={{ posts, pages, currentPage, breadcrumbs, search, uri }}
+      data={{
+        posts,
+        pages,
+        currentPage,
+        breadcrumbs,
+        search,
+        uri,
+        title: `Recherche pour ${search}`,
+      }}
       loading={loading}
       error={error}
     >
-      <ArchiveTitle>{`Recherche pour ${search}`}</ArchiveTitle>
+      <ArchiveTitle />
       <Breadcrumb />
       <ArchiveBody />
       <Pagination />

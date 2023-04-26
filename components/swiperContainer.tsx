@@ -8,7 +8,7 @@ import ComponentsProps from '@utils/interfaces/components'
 export const SwiperContainer: FC<ComponentsProps> = ({
   children,
   query,
-  slides = 3,
+  slides,
   ...props
 }) => {
   const QUERY = gql`

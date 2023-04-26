@@ -2,7 +2,7 @@ import React, { FC, memo } from 'react'
 
 import Select from '@components/form/select'
 import { useQuery, gql } from '@apollo/client'
-import { getNiveauxQuery } from '@graphql/termQueries'
+import { niveauxQuery } from '@graphql/termQueries'
 import { mapTerm } from '@utils/mapping'
 import { Term } from '@utils/interfaces/data'
 
@@ -11,12 +11,12 @@ const SearchCurriculumForm: FC<{ secteurs?: Term[]; regions?: Term[] }> = ({
   regions,
 }) => {
   const QUERYNIVEAUX = gql`
-    ${getNiveauxQuery()}
+    ${niveauxQuery}
   `
-  const { data: niveauxQL } = useQuery(QUERYNIVEAUX)
-  const niveaux = niveauxQL
-    ? niveauxQL?.niveaux.nodes.map((secteur) => mapTerm(secteur))
-    : null
+  const response = useQuery(QUERYNIVEAUX)
+  const niveaux = response?.data?.niveaux.nodes.map((secteur) =>
+    mapTerm(secteur)
+  )
 
   return (
     <div className="animate-slideinup">

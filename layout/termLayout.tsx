@@ -8,21 +8,22 @@ import Loading from '@components/loading'
 import getPagination from '@utils/getPagination'
 import { isEmpty } from '@utils/manipulateArray'
 
-const TermLayout = ({ name, posts, uri, currentPage, count, breadcrumbs }) => {
+const TermLayout = ({ title, posts, uri, currentPage, count, breadcrumbs }) => {
   const pages = useMemo(
     () => getPagination(count, currentPage),
     [count, currentPage]
   )
 
   return (
-    <>
-      <ArchiveTitle currentPage={currentPage}>{name}</ArchiveTitle>
-      <Breadcrumb breadcrumbs={breadcrumbs} />
-      <Loading data={{ posts }} loading={isEmpty(posts)}>
-        <ArchiveBody />
-      </Loading>
-      <Pagination pages={pages} uri={uri} currentPage={currentPage} />
-    </>
+    <Loading
+      data={{ posts, currentPage, title, breadcrumbs, pages, uri }}
+      loading={isEmpty(posts)}
+    >
+      <ArchiveTitle />
+      <Breadcrumb />
+      <ArchiveBody />
+      <Pagination />
+    </Loading>
   )
 }
 

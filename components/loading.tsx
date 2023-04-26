@@ -2,7 +2,6 @@ import React from 'react'
 import { memo } from 'react'
 
 const Loading = ({ children, data = null, loading, error = null }) => {
-  if (error) return <></>
   if (loading)
     return (
       <div className="border border-primary row shadow rounded-md p-4 max-w-xl w-full mx-auto">
@@ -21,6 +20,7 @@ const Loading = ({ children, data = null, loading, error = null }) => {
         </div>
       </div>
     )
+  if (error || !data) return <></>
 
   return (
     <div className="row">

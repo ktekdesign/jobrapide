@@ -1,13 +1,12 @@
-import { memo } from 'react'
+import { FC, memo } from 'react'
 import parse from 'html-react-parser'
 import { BASE_URL } from '@utils/constants'
 import truncate from '@utils/truncate'
 import SeoLink from '@components/seoLink'
+import { BreadcrumbType } from '@utils/interfaces/data'
 
-const Breadcrumb = ({
+const Breadcrumb: FC<{ breadcrumbs?: BreadcrumbType[] }> = ({
   breadcrumbs,
-}: {
-  breadcrumbs?: { text: string; url: string }[]
 }) => {
   if (breadcrumbs?.length < 2) return <></>
 

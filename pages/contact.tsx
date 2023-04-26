@@ -11,7 +11,7 @@ export const getStaticProps = async () => {
 }
 const Contact = () => (
   <>
-    <ArchiveTitle>Contact</ArchiveTitle>
+    <ArchiveTitle title="Contact" />
     <ContactForm />
   </>
 )

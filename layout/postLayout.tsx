@@ -3,13 +3,19 @@ import PostBody from '@components/post-body'
 import PostHeader from '@components/post-header'
 import SwiperHome from '@components/swiperHome'
 import SwiperTitle from '@components/swiperTitle'
+import Loading from '@components/loading'
+import { isEmpty } from '@utils/manipulateArray'
 
 const PostLayout = ({ post, posts, breadcrumbs }) => (
   <>
-    <PostHeader {...post} breadcrumbs={breadcrumbs} />
-    <PostBody body={post?.content} />
+    <Loading data={{ ...post, breadcrumbs }} loading={isEmpty(post)}>
+      <PostHeader />
+      <PostBody />
+    </Loading>
     <SwiperTitle title="Publications similaires" className="title-secondary" />
-    <SwiperHome posts={posts} slides={3} />
+    <Loading data={{ posts }} loading={isEmpty(posts)}>
+      <SwiperHome />
+    </Loading>
   </>
 )
 
