@@ -11,17 +11,24 @@ const CoverImage: FC<ComponentsProps> = ({
   width,
   height,
   priority,
+  target,
   ...props
 }) => {
   if (isEmpty(image)) return <></>
 
   return (
-    <SeoLink href={uri || '#'} label={title} as="div" {...props}>
+    <SeoLink
+      href={uri}
+      label={title}
+      as="div"
+      target={target ?? '_self'}
+      {...props}
+    >
       <picture className="feature">
         <Image
-          width={width || 200}
-          height={height || 200}
-          alt={title}
+          width={width ?? 200}
+          height={height ?? 200}
+          alt={title ?? ''}
           src={image}
           priority={priority}
         />

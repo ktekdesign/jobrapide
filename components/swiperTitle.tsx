@@ -10,9 +10,9 @@ export const SwiperTitle: FC<ComponentsProps> = ({
 }) => (
   <SeoLink
     as="h2"
-    href={uri || '#'}
+    href={uri}
     label={title}
-    className={className || 'title-primary'}
+    className={className ?? 'title-primary'}
     {...props}
   >
     {title}

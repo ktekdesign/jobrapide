@@ -13,9 +13,14 @@ import { prev } from '@utils/manipulateArray'
 export const SwiperHome: FC<ComponentsProps> = ({
   posts,
   slides = 1,
+  onlyImage,
+  className,
   ...props
 }) => (
-  <div className="swiper-container bg-dark" {...props}>
+  <div
+    className={`swiper-container ${onlyImage ? 'bg-white' : 'bg-dark'}`}
+    {...props}
+  >
     <Swiper
       pagination={{
         clickable: true,
@@ -41,7 +46,13 @@ export const SwiperHome: FC<ComponentsProps> = ({
     >
       {posts?.map(({ uri, title, image }, key) => (
         <SwiperSlide key={key}>
-          <PostPreview title={title} image={image} uri={uri} />
+          <PostPreview
+            title={title}
+            image={image}
+            uri={uri}
+            onlyImage={onlyImage}
+            className={className}
+          />
         </SwiperSlide>
       ))}
     </Swiper>

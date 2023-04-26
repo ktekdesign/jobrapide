@@ -12,5 +12,7 @@ export default interface ComponentsProps extends HTMLAttributes<HTMLElement> {
   height?: number
   query?: string
   priority?: boolean
+  onlyImage?: boolean
+  target?: string
   children?: ReactNode
 }

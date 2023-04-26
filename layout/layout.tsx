@@ -10,7 +10,6 @@ import Facebook from '@components/facebook'
 import Pub from '@components/pub'
 import GoTop from '@components/gotop'
 import Twitter from '@components/twitter'
-import ImageSlider from '@components/image-slider'
 import SwiperHome from '@components/swiperHome'
 import ShareButtons from '@components/share-buttons'
 import SwiperTitle from '@components/swiperTitle'
@@ -46,7 +45,7 @@ const Layout = ({ seo, children }) => {
           </Loading>
           <Loading data={layoutData?.partners} loading={loading} error={error}>
             <SwiperTitle title="Partenaires" className="title-secondary" />
-            <ImageSlider />
+            <SwiperHome slides={1} onlyImage className="image-slider" />
           </Loading>
           <Loading data={layoutData?.pub3} loading={loading} error={error}>
             <Pub />

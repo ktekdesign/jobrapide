@@ -8,7 +8,11 @@ const PostLayout = ({ post, posts, breadcrumbs }) => (
   <>
     <PostHeader {...post} breadcrumbs={breadcrumbs} />
     <PostBody body={post?.content} />
-    <SwiperTitle title="Publications similaires" className="title-secondary" />
+    <SwiperTitle
+      title="Publications similaires"
+      uri={post?.uri}
+      className="title-secondary"
+    />
     <SwiperHome posts={posts} slides={3} />
   </>
 )

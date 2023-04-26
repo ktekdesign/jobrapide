@@ -1,22 +1,30 @@
-import React, { memo } from 'react'
+import React, { FC, memo } from 'react'
 
 import truncate from '@utils/truncate'
-import { Post } from '@utils/interfaces/data'
 
 import CoverImage from '@components/cover-image'
 import SeoLink from '@components/seoLink'
+import ComponentsProps from '@utils/interfaces/components'
 
-const PostPreview = ({ title, image, uri }: Post) => (
+const PostPreview: FC<ComponentsProps> = ({
+  title,
+  image,
+  uri,
+  className,
+  onlyImage,
+}) => (
   <>
     <CoverImage
       title={title}
       image={image}
       uri={uri}
-      className="post-preview-image"
+      className={className ?? 'post-preview-image'}
     />
-    <SeoLink label={title} href={uri} as="h3" className="post-preview-title">
-      {truncate(title)}
-    </SeoLink>
+    {!onlyImage && (
+      <SeoLink label={title} href={uri} as="h3" className="post-preview-title">
+        {truncate(title)}
+      </SeoLink>
+    )}
   </>
 )
 

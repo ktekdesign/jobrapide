@@ -21,11 +21,11 @@ const SeoLink: FC<LinkContainerProps> = ({
 }) => (
   <Component {...props}>
     <Link
-      href={href}
-      aria-label={label}
-      title={label}
-      target={target || '_self'}
-      className={innerClassName || ''}
+      href={href ?? ''}
+      aria-label={label ?? ''}
+      title={label ?? ''}
+      target={target ?? '_self'}
+      className={innerClassName ?? ''}
     >
       {children}
     </Link>

@@ -11,6 +11,7 @@ const PostHeader = ({
   title,
   image,
   date,
+  uri,
   categories,
   secteurs,
   regions,
@@ -22,6 +23,7 @@ const PostHeader = ({
     <CoverImage
       title={title}
       image={image}
+      uri={uri}
       className="post-header-image"
       priority
     />

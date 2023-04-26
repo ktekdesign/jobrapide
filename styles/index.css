@@ -582,3 +582,10 @@ button[type='submit'] {
 .error p {
   @apply bg-red-800;
 }
+.image-slider {
+  @apply max-w-xs w-full mx-auto;
+}
+
+.image-slider img {
+  @apply w-full;
+}
