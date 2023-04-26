@@ -8,15 +8,23 @@ export const SwiperTitle: FC<ComponentsProps> = ({
   className,
   ...props
 }) => (
-  <SeoLink
-    as="h2"
-    href={uri}
-    label={title}
-    className={className ?? 'title-primary'}
-    {...props}
-  >
-    {title}
-  </SeoLink>
+  <>
+    {uri ? (
+      <SeoLink
+        as="h2"
+        href={uri}
+        label={title ?? ''}
+        className={className ?? 'title-primary'}
+        {...props}
+      >
+        {title}
+      </SeoLink>
+    ) : (
+      <h2 className={className ?? 'title-primary'} {...props}>
+        {title}
+      </h2>
+    )}
+  </>
 )
 
 export default memo(SwiperTitle)

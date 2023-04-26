@@ -19,7 +19,7 @@ const SecteursList = ({ active }) => {
   return (
     <Loading loading={loading} error={error}>
       <ul className={active === 1 ? 'terms-list flex' : 'terms-list hidden'}>
-        {secteurs?.map(({ id, uri, name, count }) => (
+        {secteurs?.map(({ id, uri, name }) => (
           <SeoLink
             as="li"
             className="secteurs-list"
@@ -27,7 +27,7 @@ const SecteursList = ({ active }) => {
             href={uri}
             label={name}
           >
-            {name} ({count})
+            {name}
           </SeoLink>
         ))}
       </ul>

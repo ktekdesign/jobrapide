@@ -18,7 +18,7 @@ const CoverImage: FC<ComponentsProps> = ({
 
   return (
     <SeoLink
-      href={uri}
+      href={uri ?? image}
       label={title}
       as="div"
       target={target ?? '_self'}

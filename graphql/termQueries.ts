@@ -6,7 +6,6 @@ query $termQuery {
       name
       slug
       uri
-      count
     }
   }
 }
@@ -25,7 +24,6 @@ export const categoriesQuery = `
         name
         slug
         uri
-        count
       }
     }
   }
@@ -39,7 +37,6 @@ export const regionsQuery = `
         name
         slug
         uri
-        count
       }
     }
   }
@@ -53,7 +50,6 @@ export const regionsLastQuery = `
         name
         slug
         uri
-        count
       }
     }
   }

@@ -178,7 +178,6 @@ export const getTermAndPosts = async ({ client, term, type, page = 1 }) => {
         ${typeLower} (id: "$id", idType: SLUG) {
           databaseId
           name
-          count
           slug
           uri
           ${seo_response}
