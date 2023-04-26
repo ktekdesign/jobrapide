@@ -10,7 +10,12 @@ const Button: FC<ButtonProps> = ({ children, label, ...props }) => {
   const args = rest || {}
 
   return (
-    <button className={className || ''} aria-label={label} {...args}>
+    <button
+      className={className || ''}
+      aria-label={label}
+      title={label}
+      {...args}
+    >
       {children}
     </button>
   )

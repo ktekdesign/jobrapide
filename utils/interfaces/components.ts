@@ -4,12 +4,13 @@ import { Post, Term } from '@utils/interfaces/data'
 export default interface ComponentsProps extends HTMLAttributes<HTMLElement> {
   posts?: Post[]
   terms?: Term[]
-  name?: string
   body?: string
   uri?: string
+  image?: string
   slides?: number
   width?: number
   height?: number
   query?: string
+  priority?: boolean
   children?: ReactNode
 }

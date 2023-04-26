@@ -17,17 +17,22 @@ const PostHeader = ({
   breadcrumbs,
 }) => (
   <>
-    <PostTitle>{title}</PostTitle>
+    <PostTitle title={title} />
     <Breadcrumb breadcrumbs={breadcrumbs} />
-    <CoverImage title={title} image={image} className="post-header-image" />
+    <CoverImage
+      title={title}
+      image={image}
+      className="post-header-image"
+      priority
+    />
     <Date dateString={date} className="post-header-date" />
     <Terms
       terms={categories}
-      name="Categories : "
+      title="Categories : "
       className="post-header-terms"
     />
-    <Terms terms={secteurs} name="Domaines : " className="post-header-terms" />
-    <Terms terms={regions} name="Regions : " className="post-header-terms" />
+    <Terms terms={secteurs} title="Domaines : " className="post-header-terms" />
+    <Terms terms={regions} title="Regions : " className="post-header-terms" />
     <ShareButtons title={title} />
   </>
 )

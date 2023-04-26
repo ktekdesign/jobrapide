@@ -8,7 +8,7 @@ import client from '@graphql/client'
 
 const Page = ({ title, content }) => (
   <>
-    <PostTitle>{title}</PostTitle>
+    <PostTitle title={title} />
     <PostBody body={content} />
   </>
 )

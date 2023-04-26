@@ -23,6 +23,7 @@ const SeoLink: FC<LinkContainerProps> = ({
     <Link
       href={href}
       aria-label={label}
+      title={label}
       target={target || '_self'}
       className={innerClassName || ''}
     >

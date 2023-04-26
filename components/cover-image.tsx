@@ -1,18 +1,10 @@
-import { FC, HTMLAttributes, memo } from 'react'
+import { FC, memo } from 'react'
 import Image from 'next/image'
 import { isEmpty } from '@utils/manipulateArray'
 import SeoLink from '@components/seoLink'
+import ComponentsProps from '@utils/interfaces/components'
 
-interface CoverImageProps extends HTMLAttributes<HTMLElement> {
-  title: string
-  image: string
-  uri?: string
-  width?: number
-  height?: number
-  priority?: boolean
-}
-
-const CoverImage: FC<CoverImageProps> = ({
+const CoverImage: FC<ComponentsProps> = ({
   title,
   image,
   uri,

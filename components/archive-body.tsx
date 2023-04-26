@@ -32,7 +32,7 @@ const ArchiveBody = ({ posts }: { posts?: Post[] }) => (
               <Terms
                 className="post-list-categories"
                 terms={categories}
-                name="Categories : "
+                title="Categories : "
               />
               <SeoLink
                 className="archive-post-title"
@@ -47,12 +47,12 @@ const ArchiveBody = ({ posts }: { posts?: Post[] }) => (
               <Terms
                 className="post-list-terms"
                 terms={secteurs}
-                name="Domaines : "
+                title="Domaines : "
               />
               <Terms
                 className="post-list-terms"
                 terms={regions}
-                name="Regions : "
+                title="Regions : "
               />
               <ShareButtons uri={uri} title={title} />
             </div>

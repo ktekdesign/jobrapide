@@ -23,13 +23,13 @@ const loadFromWPGraphQL = async (
 
   try {
     // WPGraphQL Plugin must be enabled
-    const { data } = await client.query({
+    const data = await client.query({
       query: gql`
         ${body}
       `,
     })
 
-    return data
+    return data?.data
   } catch (err) {
     console.error(err)
     console.error(body)
@@ -117,7 +117,7 @@ const seo_response = `
 
 export const getPostAndMorePosts = async (slug, client) => {
   try {
-    const { post } = await loadFromWPGraphQL(
+    const postData = await loadFromWPGraphQL(
       client,
       `
       query PostBySlug {
@@ -131,13 +131,16 @@ export const getPostAndMorePosts = async (slug, client) => {
         id: slug,
       }
     )
-    const { posts } = await loadFromWPGraphQL(
-      client,
-      `
+    if (postData) {
+      const postsData = await loadFromWPGraphQL(
+        client,
+        `
       query SimilarPosts {
-        posts(first: 3, where: { notIn: [${post.databaseId}] categoryId: ${
-        getFirst(post.categories.nodes).databaseId
-      } orderby: { field: DATE, order: DESC } }) {
+        posts(first: 3, where: { notIn: [${
+          postData?.post?.databaseId
+        }] categoryId: ${
+          getFirst(postData?.post?.categories?.nodes).databaseId
+        } orderby: { field: DATE, order: DESC } }) {
           nodes {
             title
             uri
@@ -150,13 +153,15 @@ export const getPostAndMorePosts = async (slug, client) => {
         }
       }
     `
-    )
-    // Filter out the main post
-    const mappedPosts = preventUndefined(
-      posts.nodes.map((post) => mapPost(post))
-    )
+      )
+      // Filter out the main post
+      const mappedPosts = preventUndefined(
+        postsData?.posts?.nodes?.map((post) => mapPost(post))
+      )
 
-    return { post: mapPost(post), posts: mappedPosts }
+      return { post: mapPost(postData?.post), posts: mappedPosts }
+    }
+    return null
   } catch (err) {
     return outputErrors(err)
   }
@@ -185,40 +190,49 @@ export const getTermAndPosts = async ({ client, term, type, page = 1 }) => {
       }
     )
 
-    const { [typeLower]: taxonomy } = data
+    if (!isEmpty(data)) {
+      const { [typeLower]: taxonomy } = data
 
-    if (!isEmpty(taxonomy)) {
       if (type === TermType.Secteur) {
-        const { posts, count } = await performSearch({
+        const termPosts = await performSearch({
           client,
           page,
           secteur: taxonomy.databaseId,
         })
-
-        return mapTerm({ ...taxonomy, posts, count })
+        if (termPosts) {
+          const { posts, count } = termPosts
+          return mapTerm({ ...taxonomy, posts, count })
+        }
       } else if (type === TermType.Region) {
-        const { posts, count } = await performSearch({
+        const termPosts = await performSearch({
           client,
           page,
           region: taxonomy.databaseId,
         })
-
-        return mapTerm({ ...taxonomy, posts, count })
+        if (termPosts) {
+          const { posts, count } = termPosts
+          return mapTerm({ ...taxonomy, posts, count })
+        }
       } else if (type === TermType.Tag) {
-        const { posts, count } = await performSearch({
+        const termPosts = await performSearch({
           client,
           page,
           tag: taxonomy.databaseId,
         })
-
-        return mapTerm({ ...taxonomy, posts, count })
+        if (termPosts) {
+          const { posts, count } = termPosts
+          return mapTerm({ ...taxonomy, posts, count })
+        }
       } else {
-        const { posts, count } = await performSearch({
+        const termPosts = await performSearch({
           client,
           page,
           category: taxonomy.databaseId,
         })
-        return mapTerm({ ...taxonomy, posts, count })
+        if (termPosts) {
+          const { posts, count } = termPosts
+          return mapTerm({ ...taxonomy, posts, count })
+        }
       }
     }
     return null
@@ -228,19 +242,11 @@ export const getTermAndPosts = async ({ client, term, type, page = 1 }) => {
 }
 export const getPostsHome = (data) => {
   if (isEmpty(data)) return data
-  try {
-    const {
-      category: {
-        posts: { nodes },
-      },
-    } = data
-    return mapTerm({
-      ...data?.category,
-      posts: nodes?.map((post) => mapPost(post)),
-    })
-  } catch (error) {
-    return outputErrors(error)
-  }
+
+  return mapTerm({
+    ...data?.category,
+    posts: data?.category?.posts?.nodes?.map((post) => mapPost(post)),
+  })
 }
 
 export const getTerms = async (type, client) => {
@@ -261,8 +267,11 @@ export const getTerms = async (type, client) => {
       }
     `
     )
-    const { [type]: response } = data
-    return response?.nodes?.map((term) => mapTerm(term))
+    if (data) {
+      const { [type]: response } = data
+      return response?.nodes?.map((term) => mapTerm(term))
+    }
+    return null
   } catch (err) {
     return outputErrors(err)
   }
@@ -271,10 +280,8 @@ export const getTerms = async (type, client) => {
 export const getCategories = async (client) => {
   try {
     const data = await loadFromWPGraphQL(client, categoriesQuery)
-    const {
-      categories: { nodes },
-    } = data
-    return nodes?.map((category) => mapTerm(category))
+
+    return data?.categories?.nodes?.map((category) => mapTerm(category))
   } catch (err) {
     return outputErrors(err)
   }
@@ -333,10 +340,7 @@ export const getAllPages = async (client) => {
       }
     `
     )
-    const {
-      pages: { nodes },
-    } = data
-    return nodes
+    return data?.pages?.nodes
   } catch (err) {
     return outputErrors(err)
   }
@@ -356,7 +360,6 @@ export const performSearch = async ({
   secteur?: string
   region?: string
   tag?: string
-  isSearch?: boolean
   client: ApolloClient<NormalizedCacheObject>
 }) => {
   const wherePagination = `offsetPagination: { size: ${PER_PAGE}, offset: ${
@@ -413,12 +416,9 @@ export const performSearch = async ({
   `
   try {
     const data = await loadFromWPGraphQL(client, query)
-    const {
-      posts: { nodes },
-    } = data
 
     return {
-      posts: nodes?.map((post) => mapPost(post)),
+      posts: data?.posts?.nodes?.map((post) => mapPost(post)),
       count: data?.posts?.pageInfo?.offsetPagination?.total,
     }
   } catch (err) {

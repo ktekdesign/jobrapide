@@ -7,8 +7,10 @@ import HomeIcon from '/public/images/home.svg'
 import CloseIcon from '/public/images/close.svg'
 import UserIcon from '/public/images/user.svg'
 import SearchIcon from '/public/images/search.svg'
+import PublishIcon from '/public/images/publish.svg'
 import Button from '@components/form/Button'
 import SeoLink from '@components/seoLink'
+import { ADMIN_URL, APP_URL } from '@utils/constants'
 
 const NavBar = ({ items, setOpen }) => {
   const [showMenu, setShowMenu] = useState(false)
@@ -61,7 +63,7 @@ const NavBar = ({ items, setOpen }) => {
             as="li"
             className="download"
             label="Télecharger notre application Android"
-            href="https://play.google.com/store/apps/details?id=com.ktekdesign.app.tchadcarriere"
+            href={APP_URL}
             target="_blank"
           >
             <Image
@@ -74,10 +76,18 @@ const NavBar = ({ items, setOpen }) => {
           <SeoLink
             className="reveal"
             as="li"
-            href="https://www.jobrapide.org/admin/"
+            href={ADMIN_URL}
             label="Login / Créer un compte"
           >
             <UserIcon className="icon" />
+          </SeoLink>
+          <SeoLink
+            className="reveal"
+            as="li"
+            href={ADMIN_URL}
+            label="Publier une offre / Publier un CV"
+          >
+            <PublishIcon className="icon" />
           </SeoLink>
           <li className="reveal">
             <Button

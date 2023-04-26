@@ -22,7 +22,7 @@ export const SwiperContainer: FC<ComponentsProps> = ({
   const loader = {
     posts: term?.posts,
     uri: term?.uri,
-    name: term?.name,
+    title: term?.name,
     slides,
     ...props,
   }

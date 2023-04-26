@@ -3,7 +3,7 @@ import { isEmpty } from '@utils/manipulateArray'
 import SeoLink from '@components/seoLink'
 import ComponentsProps from '@utils/interfaces/components'
 
-const Terms: FC<ComponentsProps> = ({ terms, name, ...props }) => {
+const Terms: FC<ComponentsProps> = ({ terms, title, ...props }) => {
   const [hideTerms, setHideTerms] = useState(true)
 
   if (isEmpty(terms)) return <></>
@@ -11,7 +11,7 @@ const Terms: FC<ComponentsProps> = ({ terms, name, ...props }) => {
   return (
     <p {...props}>
       <span className={hideTerms ? 'terms terms-hide' : 'terms'}>
-        {name}
+        {title}
 
         {terms?.map(({ uri, name }, key) => (
           <span key={key}>

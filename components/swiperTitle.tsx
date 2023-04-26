@@ -4,18 +4,18 @@ import ComponentsProps from '@utils/interfaces/components'
 
 export const SwiperTitle: FC<ComponentsProps> = ({
   uri,
-  name,
+  title,
   className,
   ...props
 }) => (
   <SeoLink
     as="h2"
     href={uri || '#'}
-    label={name}
+    label={title}
     className={className || 'title-primary'}
     {...props}
   >
-    {name}
+    {title}
   </SeoLink>
 )
 

@@ -41,11 +41,11 @@ const Layout = ({ seo, children }) => {
             <Pub />
           </Loading>
           <Loading data={layoutData?.sponsored} loading={loading} error={error}>
-            <SwiperTitle name="Offres sponsorisées" />
+            <SwiperTitle title="Offres sponsorisées" />
             <SwiperHome />
           </Loading>
           <Loading data={layoutData?.partners} loading={loading} error={error}>
-            <SwiperTitle name="Partenaires" className="title-secondary" />
+            <SwiperTitle title="Partenaires" className="title-secondary" />
             <ImageSlider />
           </Loading>
           <Loading data={layoutData?.pub3} loading={loading} error={error}>
