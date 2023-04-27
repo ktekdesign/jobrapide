@@ -9,6 +9,7 @@ import Layout from '@layout/layout'
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const { layout, ...props } = pageProps
+
   useEffect(() => {
     TagManager.initialize({ gtmId: 'GTM-W66949R' })
   }, [])

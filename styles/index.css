@@ -162,6 +162,9 @@ main {
 .row {
   @apply w-full flex flex-col mb-2;
 }
+.index-row {
+  @apply md:gap-x-2 md:flex-row md:pr-2 mb-0;
+}
 .title-primary {
   @apply p-4 text-white font-bold bg-primary w-full;
 }

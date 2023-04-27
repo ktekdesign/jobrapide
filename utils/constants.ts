@@ -2,6 +2,7 @@ export const REVALIDATE = parseInt(process.env.NEXT_PUBLIC_REVALIDATE) || 3600
 export const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL
 export const ADMIN_URL = process.env.NEXT_PUBLIC_ADMIN_URL
 export const APP_URL = process.env.NEXT_PUBLIC_APP_URL
+export const PER_PAGE = parseInt(process.env.NEXT_PUBLIC_PER_PAGE)
 
 export const MENU_ITEMS = [
   { title: 'Emploi', uri: '/recrutement/offres/avis-recrutement' },

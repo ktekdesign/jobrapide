@@ -1,4 +1,4 @@
-import { REVALIDATE } from '@utils/constants'
+import { PER_PAGE, REVALIDATE } from '@utils/constants'
 
 export const addLayoutData = (props) => {
   const { seo, ...rest } = props
@@ -26,6 +26,8 @@ export const addLayoutData = (props) => {
       seo: seoProps,
     },
   }
+  if (layout?.page || layout?.currentPage > PER_PAGE || layout?.post)
+    return { props: layout }
   return { props: layout, revalidate: REVALIDATE }
 }
 export default addLayoutData

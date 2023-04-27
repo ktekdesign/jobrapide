@@ -1,6 +1,5 @@
 import { getFirst, getLast, next, prev } from '@utils/manipulateArray'
-
-const PER_PAGE = parseInt(process.env.NEXT_PUBLIC_PER_PAGE)
+import { PER_PAGE } from '@utils/constants'
 
 const getPagination = (count, currentPage) => {
   const PAGE_BREAK = 3

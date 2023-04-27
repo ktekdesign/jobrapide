@@ -13,6 +13,7 @@ import { useQuery, gql } from '@apollo/client'
 import { getPubs } from '@graphql/api'
 import Loading from '@components/loading'
 import Sidebar from './sidebar'
+import defaultSeo from '@utils/data/seo.json'
 
 const Layout = ({ seo, children }) => {
   const QUERY = gql`
@@ -24,7 +25,7 @@ const Layout = ({ seo, children }) => {
 
   return (
     <>
-      <Meta seo={seo} />
+      <Meta seo={seo ?? defaultSeo} />
       <Header />
       <Loading
         data={{ posts: layoutData?.pub2 }}
