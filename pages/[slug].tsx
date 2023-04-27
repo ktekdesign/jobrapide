@@ -5,12 +5,13 @@ import { Page } from '@utils/interfaces/data'
 import { isEmpty } from '@utils/manipulateArray'
 import addLayoutData from '@utils/addLayoutData'
 import client from '@graphql/client'
+import Loading from '@components/loading'
 
-const Page = ({ title, content }) => (
-  <>
-    <PostTitle title={title} />
-    <PostBody body={content} />
-  </>
+const Page = (props) => (
+  <Loading data={props} loading={isEmpty(props)}>
+    <PostTitle />
+    <PostBody />
+  </Loading>
 )
 
 export const getStaticProps = async ({ params }) => {

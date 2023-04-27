@@ -2,7 +2,8 @@ import { REVALIDATE } from '@utils/constants'
 
 export const addLayoutData = (props) => {
   const { seo, ...rest } = props
-  if (rest?.search) {
+
+  if ('search' in rest) {
     return {
       props: {
         ...rest,

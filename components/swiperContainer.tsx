@@ -28,9 +28,11 @@ export const SwiperContainer: FC<ComponentsProps> = ({
   }
 
   return (
-    <Loading data={loader} loading={loading} error={error}>
-      {children}
-    </Loading>
+    <div className="row">
+      <Loading data={loader} loading={loading} error={error}>
+        {children}
+      </Loading>
+    </div>
   )
 }
 

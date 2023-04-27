@@ -3,7 +3,6 @@ import React, { memo, useState } from 'react'
 import { isEmpty } from '@utils/manipulateArray'
 import CloseIcon from '/public/images/close.svg'
 import Button from '@components/form/Button'
-import Loading from '@components/loading'
 import SearchCurriculumForm from '@components/searchCurriculumForm'
 import SearchForm from '@components/searchForm'
 import { useQuery, gql } from '@apollo/client'
@@ -14,8 +13,9 @@ import {
 } from '@graphql/termQueries'
 import { mapTerm } from '@utils/mapping'
 import SeoLink from '@components/seoLink'
+import OnboardingFlow from './onboardingFlow'
 
-const Modal = ({ open, setOpen }) => {
+const Modal = ({ open = false, setOpen = null }) => {
   const [toggleForm, setToggleForm] = useState(false)
 
   const closeModal = () => setOpen(!open)
@@ -77,13 +77,13 @@ const Modal = ({ open, setOpen }) => {
           </div>
 
           <div className="modal-body">
-            <Loading
-              data={{ secteurs, regions }}
+            <OnboardingFlow
+              data={{ secteurs, regions, open: toggleForm }}
               loading={loading}
-              error={false}
             >
-              {toggleForm ? <SearchCurriculumForm /> : <SearchForm />}
-            </Loading>
+              <SearchForm />
+              <SearchCurriculumForm />
+            </OnboardingFlow>
           </div>
 
           <div className="modal-footer">

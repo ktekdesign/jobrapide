@@ -23,7 +23,7 @@ const Loading = ({ children, data = null, loading, error = null }) => {
   if (error || !data) return <></>
 
   return (
-    <div className="row">
+    <>
       {data
         ? React.Children.map(children, (child) => {
             if (React.isValidElement(child))
@@ -31,7 +31,7 @@ const Loading = ({ children, data = null, loading, error = null }) => {
             return child
           })
         : children}
-    </div>
+    </>
   )
 }
 export default memo(Loading)
