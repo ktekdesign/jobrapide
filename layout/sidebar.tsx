@@ -1,46 +1,30 @@
 import Pub from '@components/pub'
-import Row from '@layout/row'
-import SwiperTitle from '@components/swiperTitle'
-import SwiperHome from '@components/swiperHome'
-import Facebook from '@components/facebook'
-import Twitter from '@components/twitter'
-import { FC, memo } from 'react'
-import { Post } from '@utils/interfaces/data'
+import { memo } from 'react'
+import { getSidebarData } from '@graphql/api'
+import { useQuery, gql } from '@apollo/client'
+import Loading from '@components/loading'
+import SwiperSidebar from '@components/swiperSidebar'
+import { sidebarQuery } from '@graphql/sidebarQuery'
 
-interface SidebarProps {
-  pub1?: Post[]
-  pub3?: Post[]
-  sponsored?: Post[]
-  partners?: Post[]
-}
-const Sidebar: FC<SidebarProps> = ({ pub1, pub3, sponsored, partners }) => (
-  <>
-    <Row>
-      <Pub posts={pub1} />
-    </Row>
-    <Row>
-      <SwiperTitle title="Offres sponsorisées" />
-      <SwiperHome posts={sponsored} slides={1} />
-    </Row>
-    <Row>
-      <SwiperTitle title="Partenaires" className="title-secondary" />
-      <SwiperHome
-        posts={partners}
-        slides={1}
+const Sidebar = () => {
+  const QUERY = gql`
+    ${sidebarQuery}
+  `
+
+  const { data, loading, error } = useQuery(QUERY)
+  const layoutData = getSidebarData(data)
+
+  return (
+    <Loading data={...layoutData} loading={loading} error={error} serial>
+      <Pub />
+      <SwiperSidebar title="Offres sponsorisées" />
+      <SwiperSidebar
         onlyImage
-        className="image-slider"
+        title="Partenaires"
+        className="title-secondary"
       />
-    </Row>
-    <Row>
-      <Pub posts={pub3} />
-    </Row>
-    <Row>
-      <Facebook />
-    </Row>
-    <Row>
-      <Twitter />
-    </Row>
-  </>
-)
-
+      <Pub />
+    </Loading>
+  )
+}
 export default memo(Sidebar)

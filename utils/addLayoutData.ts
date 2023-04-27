@@ -26,7 +26,8 @@ export const addLayoutData = (props) => {
       seo: seoProps,
     },
   }
-  if (layout?.page || layout?.currentPage > PER_PAGE || layout?.post)
+
+  if (layout?.content || layout?.currentPage > PER_PAGE)
     return { props: layout }
   return { props: layout, revalidate: REVALIDATE }
 }

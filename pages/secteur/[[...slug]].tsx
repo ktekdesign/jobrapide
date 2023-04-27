@@ -2,15 +2,14 @@ import { getTermProps } from '@utils/getTermProps'
 import TermLayout from '@layout/termLayout'
 import { TermType, TermTypePlural } from '@utils/interfaces/data'
 import { generateTermsStaticPaths } from '@utils/generateTermsStaticPaths'
-import client from '@graphql/client'
 
 export const getStaticProps = async ({ params }) => {
-  const data = await getTermProps(params, TermType.Secteur, client)
+  const data = await getTermProps(params, TermType.Secteur)
   return data
 }
 
 export const getStaticPaths = async () => {
-  const paths = await generateTermsStaticPaths(TermTypePlural.secteurs, client)
+  const paths = await generateTermsStaticPaths(TermTypePlural.secteurs)
   return paths
 }
 

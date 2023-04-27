@@ -6,9 +6,9 @@ import SwiperTitle from '@components/swiperTitle'
 import Loading from '@components/loading'
 import { isEmpty } from '@utils/manipulateArray'
 
-const PostLayout = ({ post, posts, breadcrumbs }) => (
+const PostLayout = ({ posts, breadcrumbs, ...props }) => (
   <>
-    <Loading data={{ ...post, breadcrumbs }} loading={isEmpty(post)}>
+    <Loading data={{ ...props, breadcrumbs }} loading={isEmpty(props)}>
       <PostHeader />
       <PostBody />
     </Loading>

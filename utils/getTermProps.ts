@@ -2,7 +2,7 @@ import { getTermAndPosts } from '@graphql/api'
 import { getLast, isEmpty, prev } from '@utils/manipulateArray'
 import addLayoutData from '@utils/addLayoutData'
 
-export const getTermProps = async (params, type, client) => {
+export const getTermProps = async (params, type) => {
   const pageIndex = params?.slug?.findIndex((param) => param === 'page')
   const resolvedSlug =
     pageIndex && pageIndex !== -1
@@ -15,7 +15,6 @@ export const getTermProps = async (params, type, client) => {
     term: resolvedSlug,
     type,
     page: currentPage,
-    client,
   })
 
   if (isEmpty(term)) return { notFound: true }

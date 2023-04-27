@@ -6,6 +6,8 @@ import '@styles/index.css'
 
 import TagManager from 'react-gtm-module'
 import Layout from '@layout/layout'
+import defaultSeo from '@utils/data/seo.json'
+import Meta from '@components/meta'
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const { layout, ...props } = pageProps
@@ -15,11 +17,14 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   }, [])
 
   return (
-    <ApolloProvider client={client}>
-      <Layout {...layout}>
-        <Component {...props} />
-      </Layout>
-    </ApolloProvider>
+    <>
+      <Meta seo={layout?.seo ?? defaultSeo} />
+      <ApolloProvider client={client}>
+        <Layout>
+          <Component {...props} />
+        </Layout>
+      </ApolloProvider>
+    </>
   )
 }
 

@@ -1,7 +1,13 @@
 import React from 'react'
 import { memo } from 'react'
 
-const Loading = ({ children, data = null, loading, error = null }) => {
+const Loading = ({
+  children,
+  data = null,
+  loading,
+  error = null,
+  serial = false,
+}) => {
   if (loading)
     return (
       <div className="border border-primary row shadow rounded-md p-4 max-w-xl w-full mx-auto">
@@ -25,9 +31,15 @@ const Loading = ({ children, data = null, loading, error = null }) => {
   return (
     <>
       {data
-        ? React.Children.map(children, (child) => {
-            if (React.isValidElement(child))
+        ? React.Children.map(children, (child, key) => {
+            if (React.isValidElement(child)) {
+              if (serial) {
+                const datas = Object.values(data)
+
+                return React.cloneElement(child, datas[key])
+              }
               return React.cloneElement(child, { ...data })
+            }
             return child
           })
         : children}
