@@ -1,13 +1,8 @@
-import { getCategories, getRegions, getTerms } from '@graphql/api'
-import { TermTypePlural } from '@utils/interfaces/data'
+import { getCategoriesWithoutChildren } from '@graphql/api'
 import { MAX_PAGES } from '@utils/constants'
 
-export const generateTermsStaticPaths = async (term, isPage = true) => {
-  const termsPaths = await (term === TermTypePlural.categories
-    ? getCategories()
-    : term === TermTypePlural.regions
-    ? getRegions()
-    : getTerms(term))
+export const generateOthersCategoriesStaticPaths = async (isPage = true) => {
+  const termsPaths = await getCategoriesWithoutChildren()
 
   const paths = []
   termsPaths?.map((path) => {

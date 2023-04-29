@@ -1,6 +1,6 @@
-export const queryAvis = `
+export const queryHome = `
 query PostsHomeAvis {
-  category (id: 17, idType: DATABASE_ID) {
+  avis: category (id: 17, idType: DATABASE_ID) {
     name
     uri
     posts(first: 10, where: { orderby: { field: DATE, order: DESC } }) {
@@ -15,12 +15,7 @@ query PostsHomeAvis {
         }
       }
   }
-}
-`
-
-export const queryStage = `
-query PostsHomeStage {
-  category (id: 18, idType: DATABASE_ID) {
+  stage: category (id: 18, idType: DATABASE_ID) {
     name
     uri
     posts(first: 5, where: { orderby: { field: DATE, order: DESC } }) {
@@ -35,12 +30,7 @@ query PostsHomeStage {
         }
       }
   }
-}
-`
-
-export const queryBourse = `
-query PostsHomeBourse {
-  category (id: 20, idType: DATABASE_ID) {
+  bourse: category (id: 20, idType: DATABASE_ID) {
     name
     uri
     posts(first: 10, where: { orderby: { field: DATE, order: DESC } }) {
@@ -55,12 +45,7 @@ query PostsHomeBourse {
         }
       }
   }
-}
-`
-
-export const queryAppel = `
-query PostsHomeAppel {
-  category (id: 19, idType: DATABASE_ID) {
+  appel: category (id: 19, idType: DATABASE_ID) {
     name
     uri
     posts(first: 10, where: { orderby: { field: DATE, order: DESC } }) {
@@ -75,12 +60,7 @@ query PostsHomeAppel {
         }
       }
   }
-}
-`
-
-export const queryCall = `
-query PostsHomeCall {
-  category (id: 64, idType: DATABASE_ID) {
+  call: category (id: 64, idType: DATABASE_ID) {
     name
     uri
     posts(first: 5, where: { orderby: { field: DATE, order: DESC } }) {
@@ -95,12 +75,7 @@ query PostsHomeCall {
         }
       }
   }
-}
-`
-
-export const queryConcours = `
-query PostsHomeConcours {
-  category (id: 21, idType: DATABASE_ID) {
+  concours: category (id: 21, idType: DATABASE_ID) {
     name
     uri
     posts(first: 5, where: { orderby: { field: DATE, order: DESC } }) {
@@ -115,12 +90,7 @@ query PostsHomeConcours {
         }
       }
   }
-}
-`
-
-export const queryFormation = `
-query PostsHomeFormation {
-  category (id: 121, idType: DATABASE_ID) {
+  formation: category (id: 121, idType: DATABASE_ID) {
     name
     uri
     posts(first: 10, where: { orderby: { field: DATE, order: DESC } }) {
@@ -135,12 +105,7 @@ query PostsHomeFormation {
         }
       }
   }
-}
-`
-
-export const queryActualite = `
-query PostsHomeActualite {
-  category (id: 23, idType: DATABASE_ID) {
+  actualites: category (id: 23, idType: DATABASE_ID) {
     name
     uri
     posts(first: 10, where: { orderby: { field: DATE, order: DESC } }) {
@@ -155,12 +120,7 @@ query PostsHomeActualite {
         }
       }
   }
-}
-`
-
-export const queryVolontaire = `
-query PostsHomeVolontaire {
-  category (id: 22, idType: DATABASE_ID) {
+  volontaire: category (id: 22, idType: DATABASE_ID) {
     name
     uri
     posts(first: 5, where: { orderby: { field: DATE, order: DESC } }) {

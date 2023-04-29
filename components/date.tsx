@@ -7,11 +7,11 @@ interface DateContainerProps extends ComponentsProps {
   date?: string
 }
 
-const Date: FC<DateContainerProps> = ({ date, ...props }) => {
-  if (isEmpty(date)) return <></>
-
-  return (
-    <p {...props}>
+const Date: FC<DateContainerProps> = ({ date, className }) =>
+  isEmpty(date) ? (
+    <></>
+  ) : (
+    <p className={className}>
       <span>
         Publié :&nbsp;
         <time dateTime={date} className="text-primary">
@@ -22,6 +22,5 @@ const Date: FC<DateContainerProps> = ({ date, ...props }) => {
       </span>
     </p>
   )
-}
 
 export default memo(Date)

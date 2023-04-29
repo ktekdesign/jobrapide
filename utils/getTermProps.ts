@@ -1,18 +1,10 @@
 import { getTermAndPosts } from '@graphql/api'
-import { getLast, isEmpty, prev } from '@utils/manipulateArray'
+import { isEmpty } from '@utils/manipulateArray'
 import addLayoutData from '@utils/addLayoutData'
 
-export const getTermProps = async (params, type) => {
-  const pageIndex = params?.slug?.findIndex((param) => param === 'page')
-  const resolvedSlug =
-    pageIndex && pageIndex !== -1
-      ? params.slug[prev(pageIndex)]
-      : getLast(params.slug)
-  const currentPage =
-    pageIndex && pageIndex !== -1 ? parseInt(getLast(params.slug)) : 1
-
+export const getTermProps = async (slug, type, currentPage = 1) => {
   const term = await getTermAndPosts({
-    term: resolvedSlug,
+    term: slug,
     type,
     page: currentPage,
   })

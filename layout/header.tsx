@@ -10,8 +10,7 @@ const Header = () => {
   return (
     <>
       <NavBar items={MENU_ITEMS} setOpen={setOpen} />
-      <OnboardingFlow data={{ open, setOpen }} loading={false}>
-        <></>
+      <OnboardingFlow isModal active={Number(open)} data={{ setOpen }}>
         <Modal />
       </OnboardingFlow>
     </>

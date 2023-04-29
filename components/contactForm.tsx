@@ -1,12 +1,9 @@
-import React, { memo, useState } from 'react'
+import React, { memo } from 'react'
 import Button from '@components/form/Button'
-import { useForm, SubmitHandler } from 'react-hook-form'
-import axios from 'axios'
 import Label from '@components/form/label'
 import Alert from '@components/alert'
-import useSWR from 'swr'
-import { isEmpty } from '@utils/manipulateArray'
 import Loading from '@components/loading'
+import useFormData from '@hooks/useFormData'
 
 type Inputs = {
   name: string
@@ -16,32 +13,22 @@ type Inputs = {
   text: string
 }
 
+const initialData = {
+  name: '',
+  email: '',
+  number: '',
+  subject: '',
+  text: '',
+}
+
 const ContactForm = () => {
-  const { register, handleSubmit, reset } = useForm<Inputs>()
-  const [contactData, setContactData] = useState(null)
-  const fetcher = (url) =>
-    axios.post(url, contactData).then((response) => {
-      reset({
-        name: '',
-        email: '',
-        number: '',
-        subject: '',
-        text: '',
-      })
-      setTimeout(() => setContactData(null), 10000)
-
-      return response.data
-    })
-
-  const { data, isLoading } = useSWR(
-    !isEmpty(contactData) ? '/api/contact' : null,
-    fetcher
+  const { data, isLoading, handleSubmit, register } = useFormData<Inputs>(
+    '/api/contact',
+    initialData
   )
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => setContactData(data)
-
   return (
-    <form className="border p-4" onSubmit={handleSubmit(onSubmit)}>
+    <form className="border p-4" onSubmit={handleSubmit}>
       <div className="row">
         <Label htmlFor="name">Nom</Label>
         <input
@@ -101,6 +88,7 @@ const ContactForm = () => {
           id="send-contact"
           label="Envoi du formulaire de contact"
           type="submit"
+          disabled={isLoading}
         >
           Envoyer
         </Button>

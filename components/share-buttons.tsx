@@ -22,7 +22,6 @@ import { memo, useEffect, useState } from 'react'
 const ShareButtons = ({
   uri = '',
   title = '',
-  hashtag = '',
   round = false,
   size = 32,
   float = false,
@@ -42,7 +41,7 @@ const ShareButtons = ({
           : 'inline-share-buttons share-buttons'
       }
     >
-      <FacebookShareButton url={url} quote={title} hashtag={hashtag}>
+      <FacebookShareButton url={url} quote={title}>
         <FacebookIcon size={size} round={round} />
       </FacebookShareButton>
 

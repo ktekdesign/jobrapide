@@ -5,12 +5,10 @@ import truncate from '@utils/truncate'
 import SeoLink from '@components/seoLink'
 import { BreadcrumbType } from '@utils/interfaces/data'
 
-const Breadcrumb: FC<{ breadcrumbs?: BreadcrumbType[] }> = ({
-  breadcrumbs,
-}) => {
-  if (breadcrumbs?.length < 2) return <></>
-
-  return (
+const Breadcrumb: FC<{ breadcrumbs?: BreadcrumbType[] }> = ({ breadcrumbs }) =>
+  breadcrumbs?.length < 2 ? (
+    <></>
+  ) : (
     <div className="row breadcrumb">
       {breadcrumbs?.map(({ text, url }, key) => (
         <SeoLink
@@ -24,5 +22,5 @@ const Breadcrumb: FC<{ breadcrumbs?: BreadcrumbType[] }> = ({
       ))}
     </div>
   )
-}
+
 export default memo(Breadcrumb)

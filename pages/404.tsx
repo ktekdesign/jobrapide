@@ -13,19 +13,11 @@ const PageError = () => (
       />
     </Head>
 
-    <div className="border border-gray-500 p-8">
-      <ArchiveTitle title="Error 404 : page introuvable" />
-      <p>La page que vous recherchée a été supprimée ou est inexistante.</p>
-      <SeoLink
-        as="div"
-        className="text-center row"
-        href="/"
-        innerClassName="button"
-        label="Retour"
-      >
-        Retour
-      </SeoLink>
-    </div>
+    <ArchiveTitle title="Error 404 : page introuvable" />
+    <p>La page que vous recherchée a été supprimée ou est inexistante.</p>
+    <SeoLink as="div" href="/" innerClassName="button" label="Retour">
+      Retour
+    </SeoLink>
   </>
 )
 

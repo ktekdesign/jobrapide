@@ -1,5 +1,5 @@
 import { AppProps } from 'next/app'
-import { useEffect } from 'react'
+import { Suspense, useEffect } from 'react'
 import { ApolloProvider } from '@apollo/client'
 import client from '@graphql/client'
 import '@styles/index.css'
@@ -17,14 +17,14 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   }, [])
 
   return (
-    <>
+    <Suspense fallback="...">
       <Meta seo={layout?.seo ?? defaultSeo} />
       <ApolloProvider client={client}>
         <Layout>
           <Component {...props} />
         </Layout>
       </ApolloProvider>
-    </>
+    </Suspense>
   )
 }
 

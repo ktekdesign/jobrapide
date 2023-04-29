@@ -4,15 +4,16 @@ import { TermType, TermTypePlural } from '@utils/interfaces/data'
 import { generateTermsStaticPaths } from '@utils/generateTermsStaticPaths'
 
 export const getStaticProps = async ({ params }) => {
-  const data = await getTermProps(params, TermType.Secteur)
+  const { slug } = params
+  const data = await getTermProps(slug, TermType.Tag)
   return data
 }
 
 export const getStaticPaths = async () => {
-  const paths = await generateTermsStaticPaths(TermTypePlural.secteurs)
+  const paths = await generateTermsStaticPaths(TermTypePlural.tags, false)
   return paths
 }
 
-const Secteur = (props) => <TermLayout {...props} />
+const Term = (props) => <TermLayout {...props} />
 
-export default Secteur
+export default Term

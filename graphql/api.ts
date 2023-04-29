@@ -6,9 +6,11 @@ import { gql } from '@apollo/client'
 import client from '@graphql/client'
 import {
   categoriesQuery,
-  regionsLastQuery,
+  categoriesWhithoutChildrenQuery,
   regionsQuery,
 } from '@graphql/termQueries'
+import { filterTerms } from '@utils/filterTerms'
+import { MAX_PAGES, MAX_TERMS } from '@utils/constants'
 
 const PER_PAGE = parseInt(process.env.NEXT_PUBLIC_PER_PAGE)
 
@@ -53,14 +55,10 @@ title
     ${term_response} 
     }
   }
-  secteurs(first: ${
-    isPostPage ? 10 : process.env.NEXT_PUBLIC_MAX_TERMS_BY_POST
-  }){
+  secteurs(first: ${isPostPage ? 10 : MAX_TERMS}){
     ${terms_response}
   }
-  regions(first: ${
-    isPostPage ? 10 : process.env.NEXT_PUBLIC_MAX_TERMS_BY_POST
-  }){
+  regions(first: ${isPostPage ? 10 : MAX_TERMS}){
     ${terms_response}
   }
   uri
@@ -231,14 +229,6 @@ export const getTermAndPosts = async ({ term, type, page = 1 }) => {
     return outputErrors(err)
   }
 }
-export const getPostsHome = (data) => {
-  if (isEmpty(data)) return data
-
-  return mapTerm({
-    ...data?.category,
-    posts: data?.category?.posts?.nodes?.map((post) => mapPost(post)),
-  })
-}
 
 export const getTerms = async (type) => {
   try {
@@ -276,20 +266,19 @@ export const getCategories = async () => {
     return outputErrors(err)
   }
 }
+export const getCategoriesWithoutChildren = async () => {
+  try {
+    const data = await loadFromWPGraphQL(categoriesWhithoutChildrenQuery)
 
+    return data?.categories?.nodes?.map((category) => mapTerm(category))
+  } catch (err) {
+    return outputErrors(err)
+  }
+}
 export const getRegions = async () => {
   try {
     const data = await loadFromWPGraphQL(regionsQuery)
-    const data_last = await loadFromWPGraphQL(regionsLastQuery)
-
-    const response = preventUndefined(
-      data?.regions?.nodes?.map((term) => mapTerm(term))
-    )
-    const response_last = preventUndefined(
-      data_last?.regions?.nodes?.map((term) => mapTerm(term))
-    )
-
-    return [...response, ...response_last]
+    return filterTerms(data)
   } catch (err) {
     return outputErrors(err)
   }
@@ -398,7 +387,7 @@ export const performSearch = async ({
 export const getLatestPosts = async (category) => {
   const query = `
   query lasts{
-    posts(first: ${process.env.NEXT_PUBLIC_MAX_POSTS_GENERATE_PAGE}
+    posts(first: ${MAX_PAGES}
       where: {
         categoryId: ${category}
       }
@@ -411,11 +400,7 @@ export const getLatestPosts = async (category) => {
   `
   try {
     const data = await loadFromWPGraphQL(query)
-    const {
-      posts: { nodes },
-    } = data
-
-    return nodes
+    return data?.posts?.nodes
   } catch (err) {
     return outputErrors(err)
   }

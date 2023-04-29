@@ -13,10 +13,10 @@ const CoverImage: FC<ComponentsProps> = ({
   priority,
   target,
   ...props
-}) => {
-  if (isEmpty(image)) return <></>
-
-  return (
+}) =>
+  isEmpty(image) ? (
+    <></>
+  ) : (
     <SeoLink
       href={uri ?? image}
       label={title}
@@ -35,6 +35,5 @@ const CoverImage: FC<ComponentsProps> = ({
       </picture>
     </SeoLink>
   )
-}
 
 export default memo(CoverImage)

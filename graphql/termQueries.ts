@@ -43,17 +43,22 @@ export const regionsQuery = `
         uri
       }
     }
-  }
-`
-
-export const regionsLastQuery = `
-  query RegionLast {
-    regions (first: 100, after: "YXJyYXljb25uZWN0aW9uOjMxNQ==") {
+    last: regions (first: 100, after: "YXJyYXljb25uZWN0aW9uOjMxNQ==") {
       nodes {
         databaseId
         name
         slug
         uri
+      }
+    }
+  }
+`
+
+export const categoriesWhithoutChildrenQuery = `
+  query Category {
+    categories (where: { hideEmpty: true, childless: true, excludeTree:["16", "88", "192", "193", "194", "349"] }) {
+      nodes {
+        slug
       }
     }
   }

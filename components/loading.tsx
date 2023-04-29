@@ -30,19 +30,17 @@ const Loading = ({
 
   return (
     <>
-      {data
-        ? React.Children.map(children, (child, key) => {
-            if (React.isValidElement(child)) {
-              if (serial) {
-                const datas = Object.values(data)
+      {React.Children.map(children, (child, key) => {
+        if (React.isValidElement(child)) {
+          if (serial) {
+            const datas = Object.values(data)
 
-                return React.cloneElement(child, datas[key])
-              }
-              return React.cloneElement(child, { ...data })
-            }
-            return child
-          })
-        : children}
+            return React.cloneElement(child, datas[key])
+          }
+          return React.cloneElement(child, { ...data })
+        }
+        return <div className="row">{child}</div>
+      })}
     </>
   )
 }
