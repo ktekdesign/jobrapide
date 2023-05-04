@@ -156,42 +156,43 @@ export const getTermAndPosts = async ({ term, type, page = 1 }) => {
 
     if (!isEmpty(data)) {
       const { [typeLower]: taxonomy } = data
+      const termId = taxonomy.databaseId
 
       if (type === TermType.Secteur) {
         const termPosts = await performSearch({
           page,
-          secteur: taxonomy.databaseId,
+          secteur: termId,
         })
         if (termPosts) {
-          const { posts, count } = termPosts
-          return mapTerm({ ...taxonomy, posts, count })
+          const { posts } = termPosts
+          return { ...mapTerm({ ...taxonomy, posts }), secteur: termId }
         }
       } else if (type === TermType.Region) {
         const termPosts = await performSearch({
           page,
-          region: taxonomy.databaseId,
+          region: termId,
         })
         if (termPosts) {
-          const { posts, count } = termPosts
-          return mapTerm({ ...taxonomy, posts, count })
+          const { posts } = termPosts
+          return { ...mapTerm({ ...taxonomy, posts }), region: termId }
         }
       } else if (type === TermType.Tag) {
         const termPosts = await performSearch({
           page,
-          tag: taxonomy.databaseId,
+          tag: termId,
         })
         if (termPosts) {
-          const { posts, count } = termPosts
-          return mapTerm({ ...taxonomy, posts, count })
+          const { posts } = termPosts
+          return { ...mapTerm({ ...taxonomy, posts }), tag: termId }
         }
       } else {
         const termPosts = await performSearch({
           page,
-          category: taxonomy.databaseId,
+          category: termId,
         })
         if (termPosts) {
-          const { posts, count } = termPosts
-          return mapTerm({ ...taxonomy, posts, count })
+          const { posts } = termPosts
+          return { ...mapTerm({ ...taxonomy, posts }), category: termId }
         }
       }
     }
@@ -338,7 +339,6 @@ export const performSearch = async ({
         }
       }
     ){
-      ${pageInfoSearch}
       ${posts_response}
     }
   }
@@ -348,8 +348,72 @@ export const performSearch = async ({
 
     return {
       posts: data?.posts?.nodes?.map((post) => mapPost(post)),
-      count: data?.posts?.pageInfo?.offsetPagination?.total,
     }
+  } catch (err) {
+    return outputErrors(err)
+  }
+}
+
+export const getTermPostsCount = async ({
+  category,
+  secteur,
+  region,
+  tag,
+}: {
+  category?: string
+  secteur?: string
+  region?: string
+  tag?: string
+}) => {
+  const category_query = `categoryId: ${category || 16},`
+  const secteur_query = secteur
+    ? `{
+    includeChildren: true
+    terms: ["${secteur}"]
+    taxonomy: SECTEUR
+    operator: IN
+    field: ID
+  },`
+    : ''
+  const region_query = region
+    ? `{
+    includeChildren: true
+    terms: ["${region}"]
+    taxonomy: REGION
+    operator: IN
+    field: ID
+  }`
+    : ''
+  const tag_query = tag
+    ? `{
+    terms: ["${tag}"]
+    taxonomy: TAG
+    operator: IN
+    field: ID
+  }`
+    : ''
+  const query = `
+  query TermTotal${category || 16}${secteur || ''}${region || ''} {
+    posts(where: {
+        ${category_query}
+        taxQuery: {
+          relation: AND,
+          taxArray: [
+            ${secteur_query}
+            ${region_query}
+            ${tag_query}
+          ]
+        }
+      }
+    ){
+      ${pageInfoSearch}
+    }
+  }
+  `
+  try {
+    const data = await loadFromWPGraphQL(query)
+
+    return data?.posts?.pageInfo?.offsetPagination?.total
   } catch (err) {
     return outputErrors(err)
   }

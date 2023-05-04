@@ -11,13 +11,11 @@ export const getTermProps = async (slug, type, currentPage = 1) => {
 
   if (isEmpty(term)) return { notFound: true }
 
-  const { seo, count, name, posts, uri } = term
+  const { name: title, ...props } = term
+
   return addLayoutData({
-    title: name,
-    posts,
-    uri,
-    seo,
-    count,
+    title,
     currentPage,
+    ...props,
   })
 }

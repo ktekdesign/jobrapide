@@ -12,7 +12,6 @@ const OnboardingFlow = ({
     <></>
   ) : data ? (
     <Loading data={data} loading={loading}>
-      {console.log(active)}
       {active && isModal ? children : Children.toArray(children)[active]}
     </Loading>
   ) : (
