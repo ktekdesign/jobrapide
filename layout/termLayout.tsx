@@ -1,13 +1,12 @@
-import { memo, useEffect, useMemo, useState } from 'react'
+import { memo } from 'react'
 
 import Pagination from '@components/pagination'
 import ArchiveTitle from '@components/archive-title'
 import Breadcrumb from '@components/breadcrumb'
 import ArchiveBody from '@components/archive-body'
 import Loading from '@components/loading'
-import getPagination from '@utils/getPagination'
 import { isEmpty } from '@utils/manipulateArray'
-import { getTermPostsCount } from '@graphql/api'
+import usePagination from '@hooks/usePagination'
 
 const TermLayout = ({
   title,
@@ -20,19 +19,7 @@ const TermLayout = ({
   category,
   tag,
 }) => {
-  const [pages, setPages] = useState([])
-  const [count, setCount] = useState(0)
-
-  useEffect(() => {
-    getTermPostsCount({ secteur, region, category, tag }).then((response) =>
-      setCount(response)
-    )
-  }, [secteur, region, category, tag])
-
-  useMemo(
-    () => setPages(getPagination(count, currentPage)),
-    [count, currentPage]
-  )
+  const pages = usePagination({ secteur, region, category, tag, currentPage })
 
   return (
     <>
