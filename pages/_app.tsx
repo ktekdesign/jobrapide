@@ -8,12 +8,14 @@ import TagManager from 'react-gtm-module'
 import Layout from '@layout/layout'
 import defaultSeo from '@utils/data/seo.json'
 import Meta from '@components/meta'
+import getTokenApp from 'messaging-next'
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const { layout, ...props } = pageProps
 
   useEffect(() => {
     TagManager.initialize({ gtmId: 'GTM-W66949R' })
+    getTokenApp()
   }, [])
 
   return (

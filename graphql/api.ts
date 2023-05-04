@@ -1,5 +1,5 @@
 import { TermType } from '@utils/interfaces/data'
-import { getFirst, isEmpty, preventUndefined } from '@utils/manipulateArray'
+import { isEmpty } from '@utils/manipulateArray'
 import { mapPage, mapPost, mapTerm } from '@utils/mapping'
 import { outputErrors } from '@utils/outputErrors'
 import { gql } from '@apollo/client'
@@ -127,41 +127,12 @@ export const getPostAndMorePosts = async (slug) => {
         id: slug,
       }
     )
-    if (postData) {
-      const postsData = await loadFromWPGraphQL(
-        `
-      query SimilarPosts {
-        posts(first: 3, where: { notIn: [${
-          postData?.post?.databaseId
-        }] categoryId: ${
-          getFirst(postData?.post?.categories?.nodes).databaseId
-        } orderby: { field: DATE, order: DESC } }) {
-          nodes {
-            title
-            uri
-            featuredImage {
-              node {
-                sourceUrl
-              }
-            } 
-          }
-        }
-      }
-    `
-      )
-      // Filter out the main post
-      const mappedPosts = preventUndefined(
-        postsData?.posts?.nodes?.map((post) => mapPost(post))
-      )
 
-      return { post: mapPost(postData?.post), posts: mappedPosts }
-    }
-    return null
+    return { post: mapPost(postData?.post) }
   } catch (err) {
     return outputErrors(err)
   }
 }
-
 export const getTermAndPosts = async ({ term, type, page = 1 }) => {
   try {
     const typeLower = type.toLowerCase()

@@ -1,20 +1,23 @@
 import Pub from '@components/pub'
-import { memo } from 'react'
+import { memo, useMemo, useState } from 'react'
 import { useQuery, gql } from '@apollo/client'
 import Loading from '@components/loading'
 import { sidebarHeaderQuery } from '@graphql/sidebarHeaderQuery'
 import { mapPost } from '@utils/mapping'
 
 const SidebarHeader = () => {
+  const [posts, setPosts] = useState()
   const QUERY = gql`
     ${sidebarHeaderQuery}
   `
+  const { data } = useQuery(QUERY)
 
-  const { data, loading, error } = useQuery(QUERY)
-  const posts = data?.posts?.nodes?.map((pub) => mapPost(pub))
+  useMemo(() => {
+    setPosts(data?.posts?.nodes?.map((pub) => mapPost(pub)))
+  }, [data?.posts?.nodes])
 
   return (
-    <Loading data={{ posts }} loading={loading} error={error}>
+    <Loading data={{ posts }} loading={!posts}>
       <Pub className="pub-in-header" />
     </Loading>
   )

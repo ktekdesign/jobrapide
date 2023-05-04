@@ -1,4 +1,4 @@
-import { memo, useMemo } from 'react'
+import { memo, useMemo, useState } from 'react'
 
 import Pagination from '@components/pagination'
 import ArchiveTitle from '@components/archive-title'
@@ -9,8 +9,9 @@ import getPagination from '@utils/getPagination'
 import { isEmpty } from '@utils/manipulateArray'
 
 const TermLayout = ({ title, posts, uri, currentPage, count, breadcrumbs }) => {
-  const pages = useMemo(
-    () => getPagination(count, currentPage),
+  const [pages, setPages] = useState([])
+  useMemo(
+    () => setPages(getPagination(count, currentPage)),
     [count, currentPage]
   )
 

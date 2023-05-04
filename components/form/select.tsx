@@ -1,16 +1,13 @@
-import { Term } from '@utils/interfaces/data'
 import { isEmpty } from '@utils/manipulateArray'
 import React, { FC, SelectHTMLAttributes, memo } from 'react'
 import Label from '@components/form/label'
 
 interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
   label: string
-  options:
-    | Term[]
-    | {
-        id: number | string
-        name: string
-      }[]
+  options: {
+    id?: number | string
+    name?: string
+  }[]
 }
 const Select: FC<SelectProps> = ({ label, options, ...props }) => {
   if (isEmpty(options)) return <></>
