@@ -359,11 +359,13 @@ export const getTermPostsCount = async ({
   secteur,
   region,
   tag,
+  search,
 }: {
   category?: string
   secteur?: string
   region?: string
   tag?: string
+  search?: string
 }) => {
   const category_query = `categoryId: ${category || 16},`
   const secteur_query = secteur
@@ -395,6 +397,7 @@ export const getTermPostsCount = async ({
   const query = `
   query TermTotal${category || 16}${secteur || ''}${region || ''} {
     posts(where: {
+        ${search ? `search: "${search}"` : ''}
         ${category_query}
         taxQuery: {
           relation: AND,
@@ -525,7 +528,6 @@ export const getSearchQuery = ({
         }
       }
     ){
-      ${pageInfoSearch}
       ${posts_response}
     }
   }

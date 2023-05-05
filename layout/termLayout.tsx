@@ -6,7 +6,6 @@ import Breadcrumb from '@components/breadcrumb'
 import ArchiveBody from '@components/archive-body'
 import Loading from '@components/loading'
 import { isEmpty } from '@utils/manipulateArray'
-import usePagination from '@hooks/usePagination'
 
 const TermLayout = ({
   title,
@@ -19,21 +18,17 @@ const TermLayout = ({
   category,
   tag,
 }) => {
-  const pages = usePagination({ secteur, region, category, tag, currentPage })
-
   return (
     <>
       <Loading
-        data={{ posts, currentPage, title, breadcrumbs, pages, uri }}
+        data={{ posts, currentPage, title, breadcrumbs }}
         loading={isEmpty(posts)}
       >
         <ArchiveTitle />
         <Breadcrumb />
         <ArchiveBody />
       </Loading>
-      <Loading data={{ pages, uri, currentPage }} loading={isEmpty(pages)}>
-        <Pagination />
-      </Loading>
+      <Pagination {...{ secteur, region, category, tag, uri, currentPage }} />
     </>
   )
 }

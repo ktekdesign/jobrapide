@@ -11,6 +11,7 @@ import Facebook from '@components/facebook'
 import Twitter from '@components/twitter'
 import Row from './row'
 import SidebarHeader from './sidebarHeader'
+import NotificationSignal from 'messaging-next'
 
 const Layout = ({ children }) => (
   <>
@@ -31,6 +32,7 @@ const Layout = ({ children }) => (
     <Footer />
     <GoTop />
     <ShareButtons float />
+    <NotificationSignal />
   </>
 )
 

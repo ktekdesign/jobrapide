@@ -1,16 +1,24 @@
 import { getTermPostsCount } from '@graphql/api'
 import getPagination from '@utils/getPagination'
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 
-const usePagination = ({ secteur, region, category, tag, currentPage }) => {
+const usePagination = ({
+  secteur,
+  region,
+  category,
+  tag,
+  currentPage,
+  search,
+}) => {
   const [pages, setPages] = useState([])
   const [count, setCount] = useState(0)
 
-  useMemo(() => {
-    getTermPostsCount({ secteur, region, category, tag }).then((response) =>
-      setCount(response)
+  useEffect(() => {
+    if (!secteur && !region && !category && !tag && !search) return
+    getTermPostsCount({ secteur, region, category, tag, search }).then(
+      (response) => setCount(response)
     )
-  }, [secteur, region, category, tag])
+  }, [secteur, region, category, tag, search])
 
   useMemo(
     () => setPages(getPagination(count, currentPage)),

@@ -592,3 +592,10 @@ button[type='submit'] {
 .image-slider img {
   @apply w-full;
 }
+
+.notification-bell {
+  @apply fixed border-dark cursor-pointer z-20 bottom-10 left-10 bg-secondary p-4 rounded-full text-white;
+}
+.notification-bell svg {
+  @apply h-8 w-8;
+}
