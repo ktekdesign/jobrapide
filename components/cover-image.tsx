@@ -1,8 +1,8 @@
 import { FC, memo } from 'react'
-import Image from 'next/image'
 import { isEmpty } from '@utils/manipulateArray'
 import SeoLink from '@components/seoLink'
 import ComponentsProps from '@utils/interfaces/components'
+import ImageWithFallback from './image-with-fallback'
 
 const CoverImage: FC<ComponentsProps> = ({
   title,
@@ -25,7 +25,7 @@ const CoverImage: FC<ComponentsProps> = ({
       {...props}
     >
       <picture className="feature">
-        <Image
+        <ImageWithFallback
           width={width ?? 200}
           height={height ?? 200}
           alt={title ?? ''}

@@ -12,13 +12,24 @@ import Twitter from '@components/twitter'
 import Row from './row'
 import SidebarHeader from './sidebarHeader'
 import NotificationSignal from 'messaging-next'
+import { ErrorBoundary } from 'react-error-boundary'
 
 const Layout = ({ children }) => (
   <>
     <Header />
     <SidebarHeader />
     <main>
-      <Column className="left">{children}</Column>
+      <Column className="left">
+        <ErrorBoundary
+          fallback={
+            <div>
+              Il s&apos;est produit une erreur. Veuiller actualiser la page.
+            </div>
+          }
+        >
+          {children}
+        </ErrorBoundary>
+      </Column>
       <Column className="right">
         <Sidebar />
         <Row>
