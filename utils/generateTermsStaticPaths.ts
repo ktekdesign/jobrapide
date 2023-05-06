@@ -1,4 +1,4 @@
-import { getCategories, getRegions, getTerms } from '@graphql/api'
+import { getCategories, getRegions, getSecteurs } from '@graphql/api'
 import { TermTypePlural } from '@utils/interfaces/data'
 
 export const generateTermsStaticPaths = async (term, isPage = true) => {
@@ -6,16 +6,11 @@ export const generateTermsStaticPaths = async (term, isPage = true) => {
     ? getCategories()
     : term === TermTypePlural.regions
     ? getRegions()
-    : getTerms(term))
+    : getSecteurs())
 
-  const paths = []
-  termsPaths?.map((path) => {
-    if (isPage) {
-      paths.push({ params: { slug: path.slug, id: '2' } })
-    } else {
-      paths.push({ params: { slug: path.slug } })
-    }
-  })
+  const paths = isPage
+    ? termsPaths?.map((path) => ({ params: { slug: path.slug, id: '2' } }))
+    : termsPaths?.map((path) => ({ params: { slug: path.slug } }))
 
   return {
     paths,

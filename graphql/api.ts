@@ -7,7 +7,6 @@ import client from '@graphql/client'
 import {
   categoriesQuery,
   categoriesWhithoutChildrenQuery,
-  regionsQuery,
 } from '@graphql/termQueries'
 import { filterTerms } from '@utils/filterTerms'
 import { MAX_PAGES, MAX_TERMS } from '@utils/constants'
@@ -249,7 +248,34 @@ export const getCategoriesWithoutChildren = async () => {
 }
 export const getRegions = async () => {
   try {
-    const data = await loadFromWPGraphQL(regionsQuery)
+    const data = await loadFromWPGraphQL(`query Region {
+      regions (first: 10) {
+        nodes {
+          databaseId
+          name
+          slug
+          uri
+        }
+      }
+    }`)
+    return filterTerms(data)
+  } catch (err) {
+    return outputErrors(err)
+  }
+}
+
+export const getSecteurs = async () => {
+  try {
+    const data = await loadFromWPGraphQL(`query Secteur {
+      secteurs (first: 10) {
+        nodes {
+          databaseId
+          name
+          slug
+          uri
+        }
+      }
+    }`)
     return filterTerms(data)
   } catch (err) {
     return outputErrors(err)
