@@ -1,6 +1,5 @@
 import { getCategories, getRegions, getTerms } from '@graphql/api'
 import { TermTypePlural } from '@utils/interfaces/data'
-import { MAX_PAGES } from '@utils/constants'
 
 export const generateTermsStaticPaths = async (term, isPage = true) => {
   const termsPaths = await (term === TermTypePlural.categories
@@ -12,9 +11,7 @@ export const generateTermsStaticPaths = async (term, isPage = true) => {
   const paths = []
   termsPaths?.map((path) => {
     if (isPage) {
-      for (let index = 2; index <= MAX_PAGES; index++) {
-        paths.push({ params: { slug: path.slug, id: `${index}` } })
-      }
+      paths.push({ params: { slug: path.slug, id: '2' } })
     } else {
       paths.push({ params: { slug: path.slug } })
     }

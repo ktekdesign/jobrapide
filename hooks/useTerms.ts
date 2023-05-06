@@ -6,11 +6,9 @@ import {
   secteursQuery,
 } from '@graphql/termQueries'
 import { filterTerms } from '@utils/filterTerms'
-import { Term } from '@utils/interfaces/data'
-import { useMemo, useState } from 'react'
+import { useMemo } from 'react'
 
 export const useTerms = (name, isActive = true) => {
-  const [terms, setTerms] = useState([] as Term[])
   const query =
     name === 'secteurs'
       ? secteursQuery
@@ -26,7 +24,7 @@ export const useTerms = (name, isActive = true) => {
 
   const { data, loading, error } = useQuery(QUERY)
 
-  useMemo(() => setTerms(filterTerms(data)), [data])
+  const terms = useMemo(() => filterTerms(data), [data])
 
   return { data: { terms }, loading, error }
 }

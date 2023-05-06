@@ -6,16 +6,14 @@ import SwiperHome from '@components/swiperHome'
 import { useQuery, gql } from '@apollo/client'
 import Loading from '@components/loading'
 import { filterPostsHome } from '@utils/filterPostsHome'
-import { useMemo, useState } from 'react'
-import { Term } from '@utils/interfaces/data'
+import { useMemo } from 'react'
 
 const Index = () => {
-  const [terms, setTerms] = useState([] as Term[])
   const QUERY = gql`
     ${queryHome}
   `
   const { data, loading, error } = useQuery(QUERY)
-  useMemo(() => setTerms(filterPostsHome(data)), [data])
+  const terms = useMemo(() => filterPostsHome(data), [data])
 
   return (
     <div className="flex flex-wrap">

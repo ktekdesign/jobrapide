@@ -56,13 +56,28 @@ export default function NotificationSignal() {
       })
   }, [])
   const requestPermission = () => {
-    Notification.requestPermission().then((permission) => {
-      if (permission === 'granted') {
-        console.log('Notification permission granted.')
-      } else {
-        console.log('Unable to get permission to notify.')
-      }
-    })
+    if (!('Notification' in window)) {
+      // Check if the browser supports notifications
+      console.log('This browser does not support desktop notification')
+    } else if (Notification.permission === 'granted') {
+      // Check whether notification permissions have already been granted;
+      // if so, create a notification
+      new Notification(
+        'Vous recevrez desormais les notifications de nouvelles publications de JobRapide'
+      )
+      // …
+    } else if (Notification.permission !== 'denied') {
+      // We need to ask the user for permission
+      Notification.requestPermission().then((permission) => {
+        // If the user accepts, let's create a notification
+        if (permission === 'granted') {
+          new Notification(
+            'Vous recevrez desormais les notifications de nouvelles publications de JobRapide'
+          )
+          // …
+        }
+      })
+    }
   }
   useEffect(() => getTokenApp(), [getTokenApp])
   console.log(token)

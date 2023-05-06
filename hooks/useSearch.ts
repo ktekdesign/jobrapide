@@ -11,7 +11,7 @@ const useSearch = ({ currentPage, search, category, secteur, region }) => {
   const { data, loading, error } = useQuery(QUERY)
   const posts = useMemo(
     () => data?.posts?.nodes?.map((post) => mapPost(post)),
-    [data?.posts?.nodes]
+    [data]
   )
 
   const uri = `/search/_page_?s=${search}&category=${category}&secteur=${secteur}&region=${region}`

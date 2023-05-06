@@ -10,7 +10,6 @@ const usePagination = ({
   currentPage,
   search,
 }) => {
-  const [pages, setPages] = useState([])
   const [count, setCount] = useState(0)
 
   useEffect(() => {
@@ -20,8 +19,8 @@ const usePagination = ({
     )
   }, [secteur, region, category, tag, search])
 
-  useMemo(
-    () => setPages(getPagination(count, currentPage)),
+  const pages = useMemo(
+    () => getPagination(count, currentPage),
     [count, currentPage]
   )
   return pages

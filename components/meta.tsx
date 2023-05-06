@@ -34,12 +34,18 @@ const Meta: FC<{ seo: Seo }> = ({ seo }) => (
       <meta name="msapplication-TileImage" content="/images/logo.png" />
       <link rel="icon" type="image/x-icon" href="/images/logo.png" />
       <meta name="twitter:card" content="summary" />
-
+      <meta name="theme-color" content="#18a096" />
       {!isEmpty(seo) && (
         <>
-          <meta name="twitter:title" content={seo.twitterTitle} />
+          <meta
+            name="twitter:title"
+            content={seo.twitterTitle ?? seo.opengraphTitle}
+          />
           <meta name="twitter:site" content="@tchadcarriere" />
-          <meta name="twitter:description" content={seo.twitterDescription} />
+          <meta
+            name="twitter:description"
+            content={seo.twitterDescription ?? seo.opengraphDescription}
+          />
           <meta httpEquiv="last-modified" content={seo.opengraphModifiedTime} />
           <meta name="description" content={seo.metaDesc} />
           <link rel="canonical" href={seo.canonical} />

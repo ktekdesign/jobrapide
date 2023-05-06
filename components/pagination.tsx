@@ -65,15 +65,12 @@ const Pagination = ({
         <ArrowLeft className="icon" />
       </SeoLink>
       {pages?.map((page, i) => {
-        if (page == '...') {
+        if (page === '...' || currentPage === parseInt(page)) {
           return (
-            <span key={i} className="pagination-more">
-              {page}
-            </span>
-          )
-        } else if (currentPage === parseInt(page)) {
-          return (
-            <span key={i} className="current-page">
+            <span
+              key={i}
+              className={page === '...' ? 'pagination-more' : 'current-page'}
+            >
               {page}
             </span>
           )
