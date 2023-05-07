@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import React from 'react'
 
 import Footer from '@layout/footer'
 import Header from '@layout/header'
@@ -47,4 +47,4 @@ const Layout = ({ children }) => (
   </>
 )
 
-export default memo(Layout)
+export default Layout

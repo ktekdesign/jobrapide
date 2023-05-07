@@ -1,5 +1,3 @@
-import { memo } from 'react'
-
 import Pagination from '@components/pagination'
 import ArchiveTitle from '@components/archive-title'
 import Breadcrumb from '@components/breadcrumb'
@@ -17,20 +15,18 @@ const TermLayout = ({
   region,
   category,
   tag,
-}) => {
-  return (
-    <>
-      <Loading
-        data={{ posts, currentPage, title, breadcrumbs }}
-        loading={isEmpty(posts)}
-      >
-        <ArchiveTitle />
-        <Breadcrumb />
-        <ArchiveBody />
-      </Loading>
-      <Pagination {...{ secteur, region, category, tag, uri, currentPage }} />
-    </>
-  )
-}
+}) => (
+  <>
+    <Loading
+      data={{ posts, currentPage, title, breadcrumbs }}
+      loading={isEmpty(posts)}
+    >
+      <ArchiveTitle />
+      <Breadcrumb />
+      <ArchiveBody />
+    </Loading>
+    <Pagination {...{ secteur, region, category, tag, uri, currentPage }} />
+  </>
+)
 
-export default memo(TermLayout)
+export default TermLayout

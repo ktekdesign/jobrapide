@@ -1,4 +1,3 @@
-import { memo } from 'react'
 import PostBody from '@components/post-body'
 import PostHeader from '@components/post-header'
 import Loading from '@components/loading'
@@ -15,4 +14,4 @@ const PostLayout = ({ breadcrumbs, ...props }) => (
   </>
 )
 
-export default memo(PostLayout)
+export default PostLayout
