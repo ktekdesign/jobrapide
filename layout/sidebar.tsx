@@ -5,6 +5,7 @@ import { useQuery, gql } from '@apollo/client'
 import Loading from '@components/loading'
 import SwiperSidebar from '@components/swiperSidebar'
 import { sidebarQuery } from '@graphql/sidebarQuery'
+import Adsense from '@components/adsense'
 
 const Sidebar = () => {
   const QUERY = gql`
@@ -15,16 +16,19 @@ const Sidebar = () => {
   const layoutData = useMemo(() => getSidebarData(data), [data])
 
   return (
-    <Loading data={...layoutData} loading={loading} serial>
-      <Pub />
-      <SwiperSidebar title="Offres sponsorisées" />
-      <SwiperSidebar
-        onlyImage
-        title="Partenaires"
-        className="title-secondary"
-      />
-      <Pub />
-    </Loading>
+    <>
+      <Loading data={...layoutData} loading={loading} serial>
+        <Pub />
+        <SwiperSidebar title="Offres sponsorisées" />
+        <SwiperSidebar
+          onlyImage
+          title="Partenaires"
+          className="title-secondary"
+        />
+        <Pub />
+      </Loading>
+      <Adsense />
+    </>
   )
 }
 export default memo(Sidebar)

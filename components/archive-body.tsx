@@ -14,51 +14,36 @@ const ArchiveBody: FC<ComponentsProps> = ({ posts }) => (
     {isEmpty(posts) ? (
       <p>Votre recherche n&apos;a retourné aucun résultat.</p>
     ) : (
-      posts.map(
-        (
-          { image, title, categories, uri, excerpt, date, secteurs, regions },
-          key
-        ) => (
-          <article className="archive" key={key}>
-            <CoverImage
-              image={image}
-              title={title}
-              width={450}
-              height={300}
-              uri={uri}
-              className="archive-post-feature"
+      posts.map(({ image, title, categories, uri, excerpt, date }, key) => (
+        <article className="archive" key={key}>
+          <CoverImage
+            image={image}
+            title={title}
+            width={450}
+            height={300}
+            uri={uri}
+            className="archive-post-feature"
+          />
+          <div className="post-info">
+            <Terms
+              className="post-list-categories"
+              terms={categories}
+              title="Categories : "
             />
-            <div className="post-info">
-              <Terms
-                className="post-list-categories"
-                terms={categories}
-                title="Categories : "
-              />
-              <SeoLink
-                className="archive-post-title"
-                label={title}
-                href={uri}
-                as="h3"
-              >
-                {title}
-              </SeoLink>
-              <Date date={date} className="post-list-terms" />
-              <PostBody className="post-list-excerpt" content={excerpt} />
-              <Terms
-                className="post-list-terms"
-                terms={secteurs}
-                title="Domaines : "
-              />
-              <Terms
-                className="post-list-terms"
-                terms={regions}
-                title="Regions : "
-              />
-              <ShareButtons uri={uri} title={title} />
-            </div>
-          </article>
-        )
-      )
+            <SeoLink
+              className="archive-post-title"
+              label={title}
+              href={uri}
+              as="h3"
+            >
+              {title}
+            </SeoLink>
+            <Date date={date} className="post-list-terms" />
+            <PostBody className="post-list-excerpt" content={excerpt} />
+            <ShareButtons uri={uri} title={title} />
+          </div>
+        </article>
+      ))
     )}
   </section>
 )

@@ -209,7 +209,7 @@ footer {
   @apply border-white bg-secondary text-dark border font-bold rounded px-2 hover:text-primary;
 }
 .menu-item-link {
-  @apply block lg:inline-block text-white hover:text-dark hover:font-bold py-2 active:text-slate-400;
+  @apply block lg:inline-block text-white hover:text-dark font-bold py-2 active:text-slate-400;
 }
 .menu-items {
   @apply text-sm flex justify-between flex-wrap lg:flex-row lg:items-center lg:gap-x-2 xl:gap-x-4;
@@ -419,10 +419,16 @@ button[type='submit'] {
   @apply container mx-auto;
 }
 .footer-menu-items {
-  @apply flex flex-wrap justify-center gap-x-2 lg:justify-between w-full items-center lg:flex-nowrap;
+  @apply flex flex-wrap justify-center w-full items-center lg:flex-nowrap;
+}
+.footer-menu-items li {
+  @apply flex justify-between items-center py-1 after:w-1 after:h-1 after:rounded-full after:mx-2 after:bg-white;
+}
+.footer-menu-items li:last-of-type {
+  @apply after:hidden;
 }
 .footer-menu-items a {
-  @apply hover:font-bold hover:underline whitespace-nowrap py-1 inline-block;
+  @apply hover:font-bold hover:underline whitespace-nowrap inline-block;
 }
 .pub-in-header {
   @apply mx-auto max-w-screen-md text-center w-full swiper-container;
@@ -483,7 +489,7 @@ button[type='submit'] {
   @apply flex flex-row flex-wrap py-4 gap-x-1;
 }
 .breadcrumb-item {
-  @apply text-primary font-bold text-xs flex items-center gap-x-1 after:w-1 after:h-1 after:rounded-full after:bg-primary;
+  @apply text-primary font-bold text-xs flex items-center gap-x-1 after:content-['>'] after:text-primary;
 }
 .breadcrumb-item:last-of-type {
   @apply font-light text-dark italic after:hidden cursor-text;

@@ -9,7 +9,7 @@ import {
   categoriesWhithoutChildrenQuery,
 } from '@graphql/termQueries'
 import { filterTerms } from '@utils/filterTerms'
-import { MAX_PAGES, MAX_TERMS } from '@utils/constants'
+import { MAX_PAGES } from '@utils/constants'
 
 const PER_PAGE = parseInt(process.env.NEXT_PUBLIC_PER_PAGE)
 
@@ -54,11 +54,16 @@ title
     ${term_response} 
     }
   }
-  secteurs(first: ${isPostPage ? 10 : MAX_TERMS}){
+  ${
+    isPostPage
+      ? `
+  secteurs(first: 10){
     ${terms_response}
   }
-  regions(first: ${isPostPage ? 10 : MAX_TERMS}){
+  regions(first: 10){
     ${terms_response}
+  }`
+      : ''
   }
   uri
   featuredImage {

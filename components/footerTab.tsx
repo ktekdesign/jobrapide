@@ -10,13 +10,13 @@ const FooterTab = ({ active, setActive }) => (
       className={active === 1 ? 'active' : 'secteur-tab'}
       onClick={() => setActive(1)}
     >
-      <span>Emplois par secteur / Jobs by sector</span>
+      <span>Emplois par secteur</span>
     </li>
     <li
       className={active === 2 ? 'active' : 'region-tab'}
       onClick={() => setActive(2)}
     >
-      <span>Emplois par région / Jobs by region</span>
+      <span>Emplois par région</span>
     </li>
   </ul>
 )

@@ -13,11 +13,13 @@ import Row from './row'
 import SidebarHeader from './sidebarHeader'
 import NotificationSignal from 'messaging-next'
 import { ErrorBoundary } from 'react-error-boundary'
+import Adsense from '@components/adsense'
 
 const Layout = ({ children }) => (
   <>
     <Header />
     <SidebarHeader />
+    <Adsense />
     <main>
       <Column className="left">
         <ErrorBoundary
@@ -32,6 +34,7 @@ const Layout = ({ children }) => (
       </Column>
       <Column className="right">
         <Sidebar />
+        <Adsense />
         <Row>
           <Facebook />
         </Row>
@@ -40,6 +43,7 @@ const Layout = ({ children }) => (
         </Row>
       </Column>
     </main>
+    <Adsense />
     <Footer />
     <GoTop />
     <ShareButtons float />

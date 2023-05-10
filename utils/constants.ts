@@ -7,10 +7,10 @@ export const MAX_PAGES = parseInt(process.env.NEXT_PUBLIC_MAX_PAGE)
 export const MAX_TERMS = parseInt(process.env.NEXT_PUBLIC_MAX_TERMS_BY_POST)
 
 export const MENU_ITEMS = [
-  { title: 'Emploi', uri: '/recrutement/offres/avis-recrutement' },
-  { title: 'Stage', uri: '/recrutement/offres/stage' },
+  { title: 'Emplois', uri: '/recrutement/offres/avis-recrutement' },
+  { title: 'Stages', uri: '/recrutement/offres/stage' },
   {
-    title: "Avis d'appel d'offres",
+    title: "Avis d'Appels d'Offres",
     uri: '/recrutement/offres/avis-appel-offres',
   },
   { title: 'Bourses', uri: '/recrutement/offres/bourses-etude' },
