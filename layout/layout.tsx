@@ -34,7 +34,9 @@ const Layout = ({ children }) => (
       </Column>
       <Column className="right">
         <Sidebar />
-        <GAdSense />
+        <Row>
+          <GAdSense />
+        </Row>
         <Row>
           <Facebook />
         </Row>
