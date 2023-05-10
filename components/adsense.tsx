@@ -1,7 +1,7 @@
 import { Adsense } from '@ctrl/react-adsense'
 
 const GAdSense = ({ variant }: { variant?: string }) => (
-  <div className="inner-container row">
+  <div className="adsense">
     {variant === 'sponsored' ? (
       <Adsense
         client="ca-pub-6631438162509513"

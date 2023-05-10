@@ -608,3 +608,6 @@ button[type='submit'] {
 .notification-bell svg {
   @apply h-8 w-8;
 }
+.adsense {
+  @apply max-w-screen-xl mx-auto mb-2 w-full;
+}

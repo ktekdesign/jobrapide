@@ -5,7 +5,6 @@ import { useQuery, gql } from '@apollo/client'
 import Loading from '@components/loading'
 import SwiperSidebar from '@components/swiperSidebar'
 import { sidebarQuery } from '@graphql/sidebarQuery'
-import Adsense from '@components/adsense'
 
 const Sidebar = () => {
   const QUERY = gql`
@@ -27,7 +26,6 @@ const Sidebar = () => {
         />
         <Pub />
       </Loading>
-      <Adsense />
     </>
   )
 }
