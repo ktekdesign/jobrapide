@@ -1,37 +1,23 @@
-import parse from 'html-react-parser'
-import { memo, useEffect, useState } from 'react'
+import { Adsense } from '@ctrl/react-adsense'
 
-const Adsense = ({ variant }: { variant?: string }) => {
-  const [adsense, setAdsense] = useState('')
+const GAdSense = ({ variant }: { variant?: string }) => (
+  <div className="row">
+    {variant === 'sponsored' ? (
+      <Adsense
+        client="ca-pub-6631438162509513"
+        slot="2682415108"
+        style={{ display: 'block' }}
+        format="autorelaxed"
+      />
+    ) : (
+      <Adsense
+        client="ca-pub-6631438162509513"
+        slot="6940028987"
+        style={{ display: 'block' }}
+        format="auto"
+      />
+    )}
+  </div>
+)
 
-  useEffect(() => {
-    if (variant === 'sponsored') {
-      setAdsense(`<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6631438162509513"
-        crossorigin="anonymous"></script>
-   <ins class="adsbygoogle"
-        style="display:block"
-        data-ad-format="autorelaxed"
-        data-ad-client="ca-pub-6631438162509513"
-        data-ad-slot="2682415108"></ins>
-   <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-   </script>`)
-    } else {
-      setAdsense(`<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6631438162509513"
-            crossorigin="anonymous"></script>
-        <ins class="adsbygoogle"
-            style="display:block"
-            data-ad-client="ca-pub-6631438162509513"
-            data-ad-slot="6940028987"
-            data-ad-format="auto"
-            data-full-width-responsive="true"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>`)
-    }
-  }, [variant])
-
-  return <div className="inner-container row">{parse(adsense)}</div>
-}
-
-export default memo(Adsense)
+export default GAdSense

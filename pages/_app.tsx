@@ -8,6 +8,7 @@ import TagManager from 'react-gtm-module'
 import Layout from '@layout/layout'
 import defaultSeo from '@utils/data/seo.json'
 import Meta from '@components/meta'
+import Script from 'next/script'
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const { layout, ...props } = pageProps
@@ -18,6 +19,10 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 
   return (
     <>
+      <Script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+      ></Script>
       <Meta seo={layout?.seo ?? defaultSeo} />
       <ApolloProvider client={client}>
         <Layout>

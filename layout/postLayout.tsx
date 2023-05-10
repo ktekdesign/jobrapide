@@ -3,17 +3,17 @@ import PostHeader from '@components/post-header'
 import Loading from '@components/loading'
 import SimilarPosts from '@components/similarPosts'
 import { getFirst } from '@utils/manipulateArray'
-import Adsense from '@components/adsense'
+import GAdSense from '@components/adsense'
 
 const PostLayout = ({ breadcrumbs, ...props }) => (
   <>
     <Loading data={{ ...props, breadcrumbs }} loading={!props}>
       <PostHeader />
-      <Adsense />
+      <GAdSense />
       <PostBody />
     </Loading>
     <SimilarPosts id={props?.id} categoryId={getFirst(props?.categories)?.id} />
-    <Adsense variant="sponsored" />
+    <GAdSense variant="sponsored" />
   </>
 )
 
