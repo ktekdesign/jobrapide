@@ -319,7 +319,10 @@ button[type='submit'] {
   @apply md:w-1/3;
 }
 .feature img {
-  @apply w-full flex object-scale-down h-48 sm:h-60 md:h-72 lg:h-48;
+  @apply w-auto object-scale-down mx-auto h-auto lg:h-48;
+}
+.swiper-container .feature img {
+  @apply h-48 sm:h-60 md:h-72 lg:h-48;
 }
 .terms {
   @apply mb-2 block text-dark;

@@ -1,5 +1,5 @@
 import parse from 'html-react-parser'
-import { useEffect, useState } from 'react'
+import { memo, useEffect, useState } from 'react'
 
 const Adsense = ({ variant }: { variant?: string }) => {
   const [adsense, setAdsense] = useState('')
@@ -34,4 +34,4 @@ const Adsense = ({ variant }: { variant?: string }) => {
   return <div className="inner-container row">{parse(adsense)}</div>
 }
 
-export default Adsense
+export default memo(Adsense)
