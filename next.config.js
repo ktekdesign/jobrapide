@@ -38,15 +38,16 @@ module.exports = {
   reactStrictMode: true,
   trailingSlash: true,
   images: {
-    domains: [
-      process.env.NEXT_PUBLIC_WORDPRESS_API_URL.match(
-        /(?!(w+)\.)\w*(?:\w+\.)+\w+/
-      )[0], // Valid WP Image domain.
-      '0.gravatar.com',
-      '1.gravatar.com',
-      '2.gravatar.com',
-      'secure.gravatar.com',
-      'www.jobrapide.org',
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**.jobrapide.org',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.gravatar.com',
+      },
     ],
+    formats: ['image/avif', 'image/webp'],
   },
 }

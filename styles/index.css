@@ -313,10 +313,10 @@ button[type='submit'] {
   @apply hover:font-bold transition-all duration-200;
 }
 .regions-list {
-  @apply w-1/2 md:w-1/5;
+  @apply w-1/2 md:w-1/5 lg:w-1/6;
 }
 .secteurs-list {
-  @apply md:w-1/3;
+  @apply md:w-1/3 lg:w-1/4;
 }
 .feature img {
   @apply w-auto object-scale-down mx-auto h-auto lg:h-48;

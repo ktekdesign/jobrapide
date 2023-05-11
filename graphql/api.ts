@@ -479,6 +479,7 @@ export const getSidebarData = (data) => {
   if (!data) return data
   try {
     const pubs = data?.pubs?.nodes?.map((pub) => mapPost(pub))
+
     const pub1 = {
       posts: pubs?.filter(
         (pub) =>
@@ -497,6 +498,7 @@ export const getSidebarData = (data) => {
           pub.categories.findIndex((category) => category.id === 88) !== -1
       ),
     }
+
     const sponsored = {
       posts: data?.sponsored?.nodes?.map((pub) => mapPost(pub)),
     }

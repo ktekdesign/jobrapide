@@ -35,15 +35,21 @@ export const mapSeo = (seo): Seo => {
 }
 export const mapPost = (post): Post => {
   if (isEmpty(post)) return null
+
   try {
     const categories = post.categories?.nodes?.map((term) => mapTerm(term))
     const secteurs = post.secteurs?.nodes?.map((term) => mapTerm(term))
     const regions = post.regions?.nodes?.map((term) => mapTerm(term))
+    const imageUrl = post.featuredImage?.node?.sourceUrl
+    const image = `${imageUrl?.replace(
+      'wp-content/uploads',
+      'wp-content/webp-express/webp-images/uploads'
+    )}.webp`
 
     return {
       id: preventUndefined(post.databaseId),
       title: preventUndefined(post.title),
-      image: preventUndefined(post.featuredImage?.node.sourceUrl),
+      image,
       date: preventUndefined(post.date),
       excerpt: preventUndefined(post.excerpt),
       content: preventUndefined(post.content),
