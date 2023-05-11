@@ -7,6 +7,11 @@ import { useQuery, gql } from '@apollo/client'
 import Loading from '@components/loading'
 import { filterPostsHome } from '@utils/filterPostsHome'
 import { useMemo } from 'react'
+import addLayoutData from '@utils/addLayoutData'
+
+export const getStaticProps = async () => {
+  return addLayoutData({})
+}
 
 const Index = () => {
   const QUERY = gql`

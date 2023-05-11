@@ -13,7 +13,7 @@ import { MAX_PAGES } from '@utils/constants'
 
 const PER_PAGE = parseInt(process.env.NEXT_PUBLIC_PER_PAGE)
 
-const loadFromWPGraphQL = async (
+export const loadFromWPGraphQL = async (
   query = '',
   variables: Record<string, string> = {}
 ) => {
@@ -472,40 +472,6 @@ export const getLatestPosts = async (category) => {
     return data?.posts?.nodes
   } catch (err) {
     return outputErrors(err)
-  }
-}
-
-export const getSidebarData = (data) => {
-  if (!data) return data
-  try {
-    const pubs = data?.pubs?.nodes?.map((pub) => mapPost(pub))
-
-    const pub1 = {
-      posts: pubs?.filter(
-        (pub) =>
-          pub.categories.findIndex((category) => category.id === 192) !== -1
-      ),
-    }
-    const pub3 = {
-      posts: pubs?.filter(
-        (pub) =>
-          pub.categories.findIndex((category) => category.id === 194) !== -1
-      ),
-    }
-    const partners = {
-      posts: pubs?.filter(
-        (pub) =>
-          pub.categories.findIndex((category) => category.id === 88) !== -1
-      ),
-    }
-
-    const sponsored = {
-      posts: data?.sponsored?.nodes?.map((pub) => mapPost(pub)),
-    }
-
-    return { pub1, sponsored, partners, pub3 }
-  } catch (error) {
-    outputErrors(error)
   }
 }
 

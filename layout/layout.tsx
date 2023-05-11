@@ -1,24 +1,25 @@
-import React from 'react'
-
 import Footer from '@layout/footer'
 import Header from '@layout/header'
 import Column from '@layout/column'
 
 import GoTop from '@components/gotop'
 import ShareButtons from '@components/share-buttons'
-import Sidebar from './sidebar'
 import Facebook from '@components/facebook'
 import Twitter from '@components/twitter'
 import Row from './row'
-import SidebarHeader from './sidebarHeader'
 import NotificationSignal from 'messaging-next'
 import { ErrorBoundary } from 'react-error-boundary'
 import GAdSense from '@components/adsense'
+import Pub from '@components/pub'
+import SwiperSidebar from '@components/swiperSidebar'
+import Meta from '@components/meta'
+import defaultSeo from '@utils/data/seo.json'
 
-const Layout = ({ children }) => (
+const Layout = ({ children, layout }) => (
   <>
+    <Meta seo={layout?.seo ?? defaultSeo} />
     <Header />
-    <SidebarHeader />
+    <Pub className="pub-in-header" posts={layout?.pub2} />
     <GAdSense />
     <main>
       <Column className="left">
@@ -33,7 +34,26 @@ const Layout = ({ children }) => (
         </ErrorBoundary>
       </Column>
       <Column className="right">
-        <Sidebar />
+        <Row>
+          <Pub posts={layout?.pub1} />
+        </Row>
+        <Row>
+          <SwiperSidebar
+            title="Offres sponsorisées"
+            posts={layout?.sponsored}
+          />
+        </Row>
+        <Row>
+          <SwiperSidebar
+            onlyImage
+            title="Partenaires"
+            className="title-secondary"
+            posts={layout?.partners}
+          />
+        </Row>
+        <Row>
+          <Pub posts={layout?.pub3} />
+        </Row>
         <Row>
           <Facebook />
         </Row>

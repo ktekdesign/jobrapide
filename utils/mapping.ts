@@ -52,7 +52,13 @@ export const mapPost = (post): Post => {
       image,
       date: preventUndefined(post.date),
       excerpt: preventUndefined(post.excerpt),
-      content: preventUndefined(post.content),
+      content: preventUndefined(
+        post?.content
+          ?.replaceAll('uploads', 'webp-express/webp-images/uploads')
+          .replaceAll('.png', '.png.webp')
+          .replaceAll('.jpg', '.jpg.webp')
+          .replaceAll('.jpeg', '.jpeg.webp')
+      ),
       uri: preventUndefined(post.uri),
       categories: preventUndefined(categories),
       secteurs: preventUndefined(secteurs),

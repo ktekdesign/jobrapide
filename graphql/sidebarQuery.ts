@@ -1,6 +1,6 @@
 export const sidebarQuery = `
       query Sidebar {
-        pubs: posts(first: 20, where: { categoryIn: ["192", "194", "88"]
+        pubs: posts(first: 20, where: { categoryIn: ["192", "193", "194", "88"]
           orderby: { field: DATE, order: DESC } }) {
           nodes {  
             content

@@ -32,14 +32,7 @@ export const Pub: FC<ComponentsProps> = ({ posts, className, ...props }) => (
         modules={[Pagination, Autoplay, EffectFlip]}
       >
         {posts?.map(({ content }, key) => (
-          <SwiperSlide key={key}>
-            {parse(
-              content
-                .replaceAll('uploads', 'webp-express/webp-images/uploads')
-                .replaceAll('.png', '.png.webp')
-                .replaceAll('.jpg', '.jpg.webp')
-            )}
-          </SwiperSlide>
+          <SwiperSlide key={key}>{parse(content)}</SwiperSlide>
         ))}
       </Swiper>
     </div>

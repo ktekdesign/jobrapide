@@ -1,23 +1,19 @@
 import { Adsense } from '@ctrl/react-adsense'
+import { memo } from 'react'
 
-const GAdSense = ({ variant }: { variant?: string }) => (
-  <div className="adsense">
-    {variant === 'sponsored' ? (
+const GAdSense = ({ variant }: { variant?: string }) => {
+  if (process.env.NODE_ENV !== 'production') return <></>
+
+  return (
+    <div className="adsense">
       <Adsense
         client="ca-pub-6631438162509513"
-        slot="2682415108"
+        slot={variant === 'sponsored' ? '2682415108' : '6940028987'}
         style={{ display: 'block' }}
-        format="autorelaxed"
+        format={variant === 'sponsored' ? 'autorelaxed' : 'auto'}
       />
-    ) : (
-      <Adsense
-        client="ca-pub-6631438162509513"
-        slot="6940028987"
-        style={{ display: 'block' }}
-        format="auto"
-      />
-    )}
-  </div>
-)
+    </div>
+  )
+}
 
-export default GAdSense
+export default memo(GAdSense)
