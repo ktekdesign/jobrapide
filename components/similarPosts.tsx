@@ -6,6 +6,7 @@ import { mapPost } from '@utils/mapping'
 import SwiperContainer from './swiperContainer'
 import SwiperTitle from './swiperTitle'
 import SwiperHome from './swiperHome'
+import { isEmpty } from '@utils/manipulateArray'
 
 const SimilarPosts = ({ id, categoryId }) => {
   const QUERY = gql`
@@ -17,7 +18,7 @@ const SimilarPosts = ({ id, categoryId }) => {
     () => data?.posts?.nodes?.map((post) => mapPost(post)),
     [data]
   )
-
+  if (isEmpty(posts)) return <></>
   return (
     <SwiperContainer posts={posts} title="Publications similaires">
       <SwiperTitle className="title-secondary" />
