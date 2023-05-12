@@ -502,7 +502,9 @@ button[type='submit'] {
 .content {
   @apply text-sm leading-relaxed;
 }
-
+.content * {
+  @apply max-w-full whitespace-normal;
+}
 .content p,
 .content ul,
 .content ol,

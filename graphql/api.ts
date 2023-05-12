@@ -8,6 +8,8 @@ import categories from '@utils/data/categories.json'
 import { gql } from '@apollo/client'
 import client from '@graphql/client'
 import { PER_PAGE } from '@utils/constants'
+import { queryHome } from './homeQueries'
+import { filterPostsHome } from '@utils/filterPostsHome'
 
 export const loadFromWPGraphQL = async (
   query = '',
@@ -189,7 +191,14 @@ export const getTermAndPosts = async ({ term, type, page = 1 }) => {
     return outputErrors(err)
   }
 }
-
+export const getPostsHome = async () => {
+  try {
+    const data = await loadFromWPGraphQL(queryHome)
+    return { terms: filterPostsHome(data) }
+  } catch (error) {
+    outputErrors(error)
+  }
+}
 export const getPage = async (slug) => {
   try {
     const data = await loadFromWPGraphQL(
