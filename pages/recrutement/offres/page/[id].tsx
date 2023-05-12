@@ -8,13 +8,10 @@ export const getStaticProps = async ({ params }) => {
   return data
 }
 
-export const getStaticPaths = () => {
-  const paths = [{ params: { id: '2' } }]
-  return {
-    paths,
-    fallback: true,
-  }
-}
+export const getStaticPaths = () => ({
+  paths: [{ params: { id: '2' } }],
+  fallback: true,
+})
 
 const Term = (props) => <TermLayout {...props} />
 

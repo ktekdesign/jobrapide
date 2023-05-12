@@ -5,8 +5,42 @@
     "count": null,
     "slug": "3",
     "uri": "/niveau/3/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "+ 3",
+          "url": "https://www.jobrapide.org/niveau/3/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/niveau/3/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "+ 3 Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/niveau/3/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/niveau/3/\",\"url\":\"https://www.jobrapide.org/niveau/3/\",\"name\":\"+ 3 Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/niveau/3/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/niveau/3/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"+ 3\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "+ 3 Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 474,
@@ -14,8 +48,42 @@
     "count": null,
     "slug": "5",
     "uri": "/niveau/5/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "+ 5",
+          "url": "https://www.jobrapide.org/niveau/5/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/niveau/5/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "+ 5 Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/niveau/5/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/niveau/5/\",\"url\":\"https://www.jobrapide.org/niveau/5/\",\"name\":\"+ 5 Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/niveau/5/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/niveau/5/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"+ 5\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "+ 5 Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 482,
@@ -23,8 +91,42 @@
     "count": null,
     "slug": "4",
     "uri": "/niveau/4/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "+4",
+          "url": "https://www.jobrapide.org/niveau/4/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/niveau/4/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "+4 Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/niveau/4/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/niveau/4/\",\"url\":\"https://www.jobrapide.org/niveau/4/\",\"name\":\"+4 Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/niveau/4/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/niveau/4/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"+4\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "+4 Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 491,
@@ -32,8 +134,42 @@
     "count": null,
     "slug": "7",
     "uri": "/niveau/7/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "+7",
+          "url": "https://www.jobrapide.org/niveau/7/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/niveau/7/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "+7 Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/niveau/7/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/niveau/7/\",\"url\":\"https://www.jobrapide.org/niveau/7/\",\"name\":\"+7 Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/niveau/7/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/niveau/7/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"+7\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "+7 Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 197,
@@ -41,8 +177,42 @@
     "count": null,
     "slug": "bac",
     "uri": "/niveau/bac/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "BAC",
+          "url": "https://www.jobrapide.org/amp/niveau/bac/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/amp/niveau/bac/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "BAC Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/amp/niveau/bac/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/amp/niveau/bac/\",\"url\":\"https://www.jobrapide.org/amp/niveau/bac/\",\"name\":\"BAC Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/amp/niveau/bac/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/amp/niveau/bac/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"BAC\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "BAC Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 199,
@@ -50,8 +220,42 @@
     "count": null,
     "slug": "bac-2",
     "uri": "/niveau/bac-2/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "BAC + 2",
+          "url": "https://www.jobrapide.org/niveau/bac-2/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/niveau/bac-2/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "BAC + 2 Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/niveau/bac-2/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/niveau/bac-2/\",\"url\":\"https://www.jobrapide.org/niveau/bac-2/\",\"name\":\"BAC + 2 Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/niveau/bac-2/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/niveau/bac-2/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"BAC + 2\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "BAC + 2 Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 200,
@@ -59,8 +263,42 @@
     "count": null,
     "slug": "bac-3",
     "uri": "/niveau/bac-3/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "BAC + 3",
+          "url": "https://www.jobrapide.org/niveau/bac-3/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/niveau/bac-3/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "BAC + 3 Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/niveau/bac-3/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/niveau/bac-3/\",\"url\":\"https://www.jobrapide.org/niveau/bac-3/\",\"name\":\"BAC + 3 Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/niveau/bac-3/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/niveau/bac-3/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"BAC + 3\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "BAC + 3 Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 201,
@@ -68,8 +306,42 @@
     "count": null,
     "slug": "bac-4",
     "uri": "/niveau/bac-4/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "BAC + 4",
+          "url": "https://www.jobrapide.org/niveau/bac-4/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/niveau/bac-4/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "BAC + 4 Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/niveau/bac-4/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/niveau/bac-4/\",\"url\":\"https://www.jobrapide.org/niveau/bac-4/\",\"name\":\"BAC + 4 Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/niveau/bac-4/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/niveau/bac-4/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"BAC + 4\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "BAC + 4 Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 202,
@@ -77,8 +349,42 @@
     "count": null,
     "slug": "bac-5",
     "uri": "/niveau/bac-5/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "BAC + 5",
+          "url": "https://www.jobrapide.org/amp/niveau/bac-5/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/amp/niveau/bac-5/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "BAC + 5 Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/amp/niveau/bac-5/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/amp/niveau/bac-5/\",\"url\":\"https://www.jobrapide.org/amp/niveau/bac-5/\",\"name\":\"BAC + 5 Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/amp/niveau/bac-5/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/amp/niveau/bac-5/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"BAC + 5\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "BAC + 5 Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 203,
@@ -86,8 +392,42 @@
     "count": null,
     "slug": "bac-6",
     "uri": "/niveau/bac-6/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "BAC + 6",
+          "url": "https://www.jobrapide.org/niveau/bac-6/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/niveau/bac-6/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "BAC + 6 Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/niveau/bac-6/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/niveau/bac-6/\",\"url\":\"https://www.jobrapide.org/niveau/bac-6/\",\"name\":\"BAC + 6 Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/niveau/bac-6/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/niveau/bac-6/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"BAC + 6\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "BAC + 6 Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 204,
@@ -95,8 +435,42 @@
     "count": null,
     "slug": "bac-7-et",
     "uri": "/niveau/bac-7-et/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "BAC + 7 et +",
+          "url": "https://www.jobrapide.org/niveau/bac-7-et/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/niveau/bac-7-et/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "BAC + 7 et + Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/niveau/bac-7-et/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/niveau/bac-7-et/\",\"url\":\"https://www.jobrapide.org/niveau/bac-7-et/\",\"name\":\"BAC + 7 et + Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/niveau/bac-7-et/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/niveau/bac-7-et/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"BAC + 7 et +\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "BAC + 7 et + Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 445,
@@ -104,8 +478,42 @@
     "count": null,
     "slug": "bac3",
     "uri": "/niveau/bac3/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "BAC+3",
+          "url": "https://www.jobrapide.org/niveau/bac3/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/niveau/bac3/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "BAC+3 Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/niveau/bac3/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/niveau/bac3/\",\"url\":\"https://www.jobrapide.org/niveau/bac3/\",\"name\":\"BAC+3 Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/niveau/bac3/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/niveau/bac3/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"BAC+3\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "BAC+3 Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 483,
@@ -113,8 +521,42 @@
     "count": null,
     "slug": "bac4",
     "uri": "/niveau/bac4/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "BAC+4",
+          "url": "https://www.jobrapide.org/niveau/bac4/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/niveau/bac4/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "BAC+4 Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/niveau/bac4/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/niveau/bac4/\",\"url\":\"https://www.jobrapide.org/niveau/bac4/\",\"name\":\"BAC+4 Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/niveau/bac4/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/niveau/bac4/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"BAC+4\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "BAC+4 Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 484,
@@ -122,8 +564,42 @@
     "count": null,
     "slug": "bac5",
     "uri": "/niveau/bac5/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "BAC+5",
+          "url": "https://www.jobrapide.org/niveau/bac5/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/niveau/bac5/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "BAC+5 Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/niveau/bac5/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/niveau/bac5/\",\"url\":\"https://www.jobrapide.org/niveau/bac5/\",\"name\":\"BAC+5 Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/niveau/bac5/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/niveau/bac5/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"BAC+5\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "BAC+5 Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 485,
@@ -131,8 +607,42 @@
     "count": null,
     "slug": "bac7",
     "uri": "/niveau/bac7/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "BAC+7",
+          "url": "https://www.jobrapide.org/niveau/bac7/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/niveau/bac7/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "BAC+7 Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/niveau/bac7/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/niveau/bac7/\",\"url\":\"https://www.jobrapide.org/niveau/bac7/\",\"name\":\"BAC+7 Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/niveau/bac7/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/niveau/bac7/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"BAC+7\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "BAC+7 Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 196,
@@ -140,8 +650,42 @@
     "count": null,
     "slug": "bepc",
     "uri": "/niveau/bepc/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "BEPC",
+          "url": "https://www.jobrapide.org/niveau/bepc/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/niveau/bepc/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "BEPC Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/niveau/bepc/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/niveau/bepc/\",\"url\":\"https://www.jobrapide.org/niveau/bepc/\",\"name\":\"BEPC Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/niveau/bepc/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/niveau/bepc/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"BEPC\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "BEPC Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 195,
@@ -149,7 +693,41 @@
     "count": null,
     "slug": "cept",
     "uri": "/niveau/cept/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "CEPT",
+          "url": "https://www.jobrapide.org/niveau/cept/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/niveau/cept/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "CEPT Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/niveau/cept/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/niveau/cept/\",\"url\":\"https://www.jobrapide.org/niveau/cept/\",\"name\":\"CEPT Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/niveau/cept/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/niveau/cept/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"CEPT\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "CEPT Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   }
 ]

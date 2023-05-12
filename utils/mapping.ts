@@ -78,6 +78,7 @@ export const mapTerm = (term): Term => {
       count: preventUndefined(term.count),
       slug: preventUndefined(term.slug),
       uri: preventUndefined(term.uri),
+      parentId: preventUndefined(term.parentDatabaseId),
       posts: preventUndefined(term.posts),
       seo: mapSeo(preventUndefined(term.seo)),
     }

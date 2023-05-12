@@ -5,8 +5,42 @@
     "count": null,
     "slug": "achat-transport-logistique",
     "uri": "/secteur/achat-transport-logistique/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Achat - Transport - Logistique",
+          "url": "https://www.jobrapide.org/secteur/achat-transport-logistique/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/secteur/achat-transport-logistique/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Achat - Transport - Logistique Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/secteur/achat-transport-logistique/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/secteur/achat-transport-logistique/\",\"url\":\"https://www.jobrapide.org/secteur/achat-transport-logistique/\",\"name\":\"Achat - Transport - Logistique Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/secteur/achat-transport-logistique/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/secteur/achat-transport-logistique/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Achat - Transport - Logistique\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Achat - Transport - Logistique Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 49,
@@ -14,8 +48,42 @@
     "count": null,
     "slug": "administration-ressources-humaines-planification",
     "uri": "/secteur/administration-ressources-humaines-planification/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Administration - Ressources humaines - Planification",
+          "url": "https://www.jobrapide.org/secteur/administration-ressources-humaines-planification/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/secteur/administration-ressources-humaines-planification/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Administration - Ressources humaines - Planification Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/secteur/administration-ressources-humaines-planification/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/secteur/administration-ressources-humaines-planification/\",\"url\":\"https://www.jobrapide.org/secteur/administration-ressources-humaines-planification/\",\"name\":\"Administration - Ressources humaines - Planification Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/secteur/administration-ressources-humaines-planification/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/secteur/administration-ressources-humaines-planification/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Administration - Ressources humaines - Planification\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Administration - Ressources humaines - Planification Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 119,
@@ -23,8 +91,42 @@
     "count": null,
     "slug": "aeronautique-gestion-des-aeroports-circulation-aerienne",
     "uri": "/secteur/aeronautique-gestion-des-aeroports-circulation-aerienne/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Aéronautique - Gestion des aéroports - Météorologie",
+          "url": "https://www.jobrapide.org/secteur/aeronautique-gestion-des-aeroports-circulation-aerienne/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/secteur/aeronautique-gestion-des-aeroports-circulation-aerienne/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Aéronautique - Gestion des aéroports - Météorologie Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/secteur/aeronautique-gestion-des-aeroports-circulation-aerienne/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/secteur/aeronautique-gestion-des-aeroports-circulation-aerienne/\",\"url\":\"https://www.jobrapide.org/secteur/aeronautique-gestion-des-aeroports-circulation-aerienne/\",\"name\":\"A\\u00e9ronautique - Gestion des a\\u00e9roports - M\\u00e9t\\u00e9orologie Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/secteur/aeronautique-gestion-des-aeroports-circulation-aerienne/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/secteur/aeronautique-gestion-des-aeroports-circulation-aerienne/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"A\\u00e9ronautique - Gestion des a\\u00e9roports - M\\u00e9t\\u00e9orologie\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Aéronautique - Gestion des aéroports - Météorologie Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 50,
@@ -32,8 +134,42 @@
     "count": null,
     "slug": "agriculture-elevage-peche-environnement",
     "uri": "/secteur/agriculture-elevage-peche-environnement/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Agriculture - Elevage - Peche - Environnement",
+          "url": "https://www.jobrapide.org/secteur/agriculture-elevage-peche-environnement/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/secteur/agriculture-elevage-peche-environnement/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Agriculture - Elevage - Peche - Environnement Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/secteur/agriculture-elevage-peche-environnement/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/secteur/agriculture-elevage-peche-environnement/\",\"url\":\"https://www.jobrapide.org/secteur/agriculture-elevage-peche-environnement/\",\"name\":\"Agriculture - Elevage - Peche - Environnement Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/secteur/agriculture-elevage-peche-environnement/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/secteur/agriculture-elevage-peche-environnement/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Agriculture - Elevage - Peche - Environnement\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Agriculture - Elevage - Peche - Environnement Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 51,
@@ -41,8 +177,42 @@
     "count": null,
     "slug": "banque-assurance-finance",
     "uri": "/secteur/banque-assurance-finance/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Banque - Assurance - Finance",
+          "url": "https://www.jobrapide.org/amp/secteur/banque-assurance-finance/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/amp/secteur/banque-assurance-finance/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Banque - Assurance - Finance Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/amp/secteur/banque-assurance-finance/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/amp/secteur/banque-assurance-finance/\",\"url\":\"https://www.jobrapide.org/amp/secteur/banque-assurance-finance/\",\"name\":\"Banque - Assurance - Finance Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/amp/secteur/banque-assurance-finance/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/amp/secteur/banque-assurance-finance/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Banque - Assurance - Finance\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Banque - Assurance - Finance Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 52,
@@ -50,8 +220,42 @@
     "count": null,
     "slug": "btp-immobilier-architecture-urbanisme",
     "uri": "/secteur/btp-immobilier-architecture-urbanisme/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "BTP (Génie civil - Génie rural - Architecture - Urbanisme - etc.)",
+          "url": "https://www.jobrapide.org/amp/secteur/btp-immobilier-architecture-urbanisme/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/amp/secteur/btp-immobilier-architecture-urbanisme/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "BTP (Génie civil - Génie rural - Architecture - Urbanisme - etc.) Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/amp/secteur/btp-immobilier-architecture-urbanisme/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/amp/secteur/btp-immobilier-architecture-urbanisme/\",\"url\":\"https://www.jobrapide.org/amp/secteur/btp-immobilier-architecture-urbanisme/\",\"name\":\"BTP (G\\u00e9nie civil - G\\u00e9nie rural - Architecture - Urbanisme - etc.) Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/amp/secteur/btp-immobilier-architecture-urbanisme/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/amp/secteur/btp-immobilier-architecture-urbanisme/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"BTP (G\\u00e9nie civil - G\\u00e9nie rural - Architecture - Urbanisme - etc.)\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "BTP (Génie civil - Génie rural - Architecture - Urbanisme - etc.) Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 87,
@@ -59,8 +263,42 @@
     "count": null,
     "slug": "chauffeur-mecanicien-auto-moto-groupe-reparateur-electronique",
     "uri": "/secteur/chauffeur-mecanicien-auto-moto-groupe-reparateur-electronique/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Chauffeur - Mécanicien Auto/groupe - Réparateur Electronique",
+          "url": "https://www.jobrapide.org/amp/secteur/chauffeur-mecanicien-auto-moto-groupe-reparateur-electronique/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/amp/secteur/chauffeur-mecanicien-auto-moto-groupe-reparateur-electronique/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Chauffeur - Mécanicien Auto/groupe - Réparateur Electronique Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/amp/secteur/chauffeur-mecanicien-auto-moto-groupe-reparateur-electronique/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/amp/secteur/chauffeur-mecanicien-auto-moto-groupe-reparateur-electronique/\",\"url\":\"https://www.jobrapide.org/amp/secteur/chauffeur-mecanicien-auto-moto-groupe-reparateur-electronique/\",\"name\":\"Chauffeur - M\\u00e9canicien Auto/groupe - R\\u00e9parateur Electronique Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/amp/secteur/chauffeur-mecanicien-auto-moto-groupe-reparateur-electronique/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/amp/secteur/chauffeur-mecanicien-auto-moto-groupe-reparateur-electronique/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Chauffeur - M\\u00e9canicien Auto/groupe - R\\u00e9parateur Electronique\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Chauffeur - Mécanicien Auto/groupe - Réparateur Electronique Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 105,
@@ -68,8 +306,42 @@
     "count": null,
     "slug": "chimie-biologie",
     "uri": "/secteur/chimie-biologie/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Chimie - Biologie - Laboratoire",
+          "url": "https://www.jobrapide.org/secteur/chimie-biologie/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/secteur/chimie-biologie/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Chimie - Biologie - Laboratoire Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/secteur/chimie-biologie/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/secteur/chimie-biologie/\",\"url\":\"https://www.jobrapide.org/secteur/chimie-biologie/\",\"name\":\"Chimie - Biologie - Laboratoire Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/secteur/chimie-biologie/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/secteur/chimie-biologie/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Chimie - Biologie - Laboratoire\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Chimie - Biologie - Laboratoire Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 65,
@@ -77,8 +349,42 @@
     "count": null,
     "slug": "communication-journalisme-relations-internationales",
     "uri": "/secteur/communication-journalisme-relations-internationales/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Communication - Journalisme - Relations Internationales",
+          "url": "https://www.jobrapide.org/secteur/communication-journalisme-relations-internationales/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/secteur/communication-journalisme-relations-internationales/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Communication - Journalisme - Relations Internationales Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/secteur/communication-journalisme-relations-internationales/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/secteur/communication-journalisme-relations-internationales/\",\"url\":\"https://www.jobrapide.org/secteur/communication-journalisme-relations-internationales/\",\"name\":\"Communication - Journalisme - Relations Internationales Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/secteur/communication-journalisme-relations-internationales/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/secteur/communication-journalisme-relations-internationales/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Communication - Journalisme - Relations Internationales\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Communication - Journalisme - Relations Internationales Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 54,
@@ -86,8 +392,42 @@
     "count": null,
     "slug": "comptabilite-gestion-audit",
     "uri": "/secteur/comptabilite-gestion-audit/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Comptabilité - Gestion - Audit - Gestion de projets",
+          "url": "https://www.jobrapide.org/secteur/comptabilite-gestion-audit/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/secteur/comptabilite-gestion-audit/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Comptabilité - Gestion - Audit - Gestion de projets Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/secteur/comptabilite-gestion-audit/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/secteur/comptabilite-gestion-audit/\",\"url\":\"https://www.jobrapide.org/secteur/comptabilite-gestion-audit/\",\"name\":\"Comptabilit\\u00e9 - Gestion - Audit - Gestion de projets Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/secteur/comptabilite-gestion-audit/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/secteur/comptabilite-gestion-audit/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Comptabilit\\u00e9 - Gestion - Audit - Gestion de projets\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Comptabilité - Gestion - Audit - Gestion de projets Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 55,
@@ -95,8 +435,42 @@
     "count": null,
     "slug": "direction-coordination",
     "uri": "/secteur/direction-coordination/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Direction - Coordination",
+          "url": "https://www.jobrapide.org/amp/secteur/direction-coordination/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/amp/secteur/direction-coordination/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Direction - Coordination Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/amp/secteur/direction-coordination/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/amp/secteur/direction-coordination/\",\"url\":\"https://www.jobrapide.org/amp/secteur/direction-coordination/\",\"name\":\"Direction - Coordination Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/amp/secteur/direction-coordination/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/amp/secteur/direction-coordination/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Direction - Coordination\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Direction - Coordination Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 56,
@@ -104,8 +478,42 @@
     "count": null,
     "slug": "droit-fiscalite-gouvernance",
     "uri": "/secteur/droit-fiscalite-gouvernance/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Droit - Fiscalité - Gouvernance - Politique",
+          "url": "https://www.jobrapide.org/amp/secteur/droit-fiscalite-gouvernance/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/amp/secteur/droit-fiscalite-gouvernance/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Droit - Fiscalité - Gouvernance - Politique Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/amp/secteur/droit-fiscalite-gouvernance/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/amp/secteur/droit-fiscalite-gouvernance/\",\"url\":\"https://www.jobrapide.org/amp/secteur/droit-fiscalite-gouvernance/\",\"name\":\"Droit - Fiscalit\\u00e9 - Gouvernance - Politique Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/amp/secteur/droit-fiscalite-gouvernance/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/amp/secteur/droit-fiscalite-gouvernance/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Droit - Fiscalit\\u00e9 - Gouvernance - Politique\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Droit - Fiscalité - Gouvernance - Politique Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 81,
@@ -113,8 +521,42 @@
     "count": null,
     "slug": "eau-hygiene-assainissement-hydraulique",
     "uri": "/secteur/eau-hygiene-assainissement-hydraulique/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Eau - Hygiène - Assainissement - Hydraulique",
+          "url": "https://www.jobrapide.org/secteur/eau-hygiene-assainissement-hydraulique/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/secteur/eau-hygiene-assainissement-hydraulique/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Eau - Hygiène - Assainissement - Hydraulique Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/secteur/eau-hygiene-assainissement-hydraulique/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/secteur/eau-hygiene-assainissement-hydraulique/\",\"url\":\"https://www.jobrapide.org/secteur/eau-hygiene-assainissement-hydraulique/\",\"name\":\"Eau - Hygi\\u00e8ne - Assainissement - Hydraulique Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/secteur/eau-hygiene-assainissement-hydraulique/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/secteur/eau-hygiene-assainissement-hydraulique/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Eau - Hygi\\u00e8ne - Assainissement - Hydraulique\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Eau - Hygiène - Assainissement - Hydraulique Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 57,
@@ -122,8 +564,42 @@
     "count": null,
     "slug": "economie-statistique-demographie",
     "uri": "/secteur/economie-statistique-demographie/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Economie - Statistique - Démographie",
+          "url": "https://www.jobrapide.org/amp/secteur/economie-statistique-demographie/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/amp/secteur/economie-statistique-demographie/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Economie - Statistique - Démographie Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/amp/secteur/economie-statistique-demographie/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/amp/secteur/economie-statistique-demographie/\",\"url\":\"https://www.jobrapide.org/amp/secteur/economie-statistique-demographie/\",\"name\":\"Economie - Statistique - D\\u00e9mographie Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/amp/secteur/economie-statistique-demographie/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/amp/secteur/economie-statistique-demographie/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Economie - Statistique - D\\u00e9mographie\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Economie - Statistique - Démographie Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 92,
@@ -131,8 +607,42 @@
     "count": null,
     "slug": "education",
     "uri": "/secteur/education/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Education - Formation - Pédagogie - Archiviste",
+          "url": "https://www.jobrapide.org/amp/secteur/education/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/amp/secteur/education/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Education - Formation - Pédagogie - Archiviste Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/amp/secteur/education/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/amp/secteur/education/\",\"url\":\"https://www.jobrapide.org/amp/secteur/education/\",\"name\":\"Education - Formation - P\\u00e9dagogie - Archiviste Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/amp/secteur/education/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/amp/secteur/education/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Education - Formation - P\\u00e9dagogie - Archiviste\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Education - Formation - Pédagogie - Archiviste Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 58,
@@ -140,8 +650,42 @@
     "count": null,
     "slug": "electromecanique-reparation",
     "uri": "/secteur/electromecanique-reparation/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Electricité - Electromécanique - Réparation - Industrie",
+          "url": "https://www.jobrapide.org/secteur/electromecanique-reparation/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/secteur/electromecanique-reparation/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Electricité - Electromécanique - Réparation - Industrie Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/secteur/electromecanique-reparation/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/secteur/electromecanique-reparation/\",\"url\":\"https://www.jobrapide.org/secteur/electromecanique-reparation/\",\"name\":\"Electricit\\u00e9 - Electrom\\u00e9canique - R\\u00e9paration - Industrie Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/secteur/electromecanique-reparation/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/secteur/electromecanique-reparation/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Electricit\\u00e9 - Electrom\\u00e9canique - R\\u00e9paration - Industrie\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Electricité - Electromécanique - Réparation - Industrie Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 82,
@@ -149,8 +693,42 @@
     "count": null,
     "slug": "energie-petrole-autresressourcesnaturelles",
     "uri": "/secteur/energie-petrole-autresressourcesnaturelles/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Energie - Petrole - Autres Ressources Naturelles",
+          "url": "https://www.jobrapide.org/amp/secteur/energie-petrole-autresressourcesnaturelles/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/amp/secteur/energie-petrole-autresressourcesnaturelles/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Energie - Petrole - Autres Ressources Naturelles Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/amp/secteur/energie-petrole-autresressourcesnaturelles/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/amp/secteur/energie-petrole-autresressourcesnaturelles/\",\"url\":\"https://www.jobrapide.org/amp/secteur/energie-petrole-autresressourcesnaturelles/\",\"name\":\"Energie - Petrole - Autres Ressources Naturelles Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/amp/secteur/energie-petrole-autresressourcesnaturelles/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/amp/secteur/energie-petrole-autresressourcesnaturelles/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Energie - Petrole - Autres Ressources Naturelles\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Energie - Petrole - Autres Ressources Naturelles Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 101,
@@ -158,8 +736,42 @@
     "count": null,
     "slug": "genre-assistance-humanitaire-developpement-international",
     "uri": "/secteur/genre-assistance-humanitaire-developpement-international/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Genre - Assistance humanitaire - Développement international",
+          "url": "https://www.jobrapide.org/secteur/genre-assistance-humanitaire-developpement-international/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/secteur/genre-assistance-humanitaire-developpement-international/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Genre - Assistance humanitaire - Développement international Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/secteur/genre-assistance-humanitaire-developpement-international/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/secteur/genre-assistance-humanitaire-developpement-international/\",\"url\":\"https://www.jobrapide.org/secteur/genre-assistance-humanitaire-developpement-international/\",\"name\":\"Genre - Assistance humanitaire - D\\u00e9veloppement international Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/secteur/genre-assistance-humanitaire-developpement-international/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/secteur/genre-assistance-humanitaire-developpement-international/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Genre - Assistance humanitaire - D\\u00e9veloppement international\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Genre - Assistance humanitaire - Développement international Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 86,
@@ -167,8 +779,42 @@
     "count": null,
     "slug": "geographie-geologie-mine",
     "uri": "/secteur/geographie-geologie-mine/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Géographie - Géologie - Mine - Topographie",
+          "url": "https://www.jobrapide.org/amp/secteur/geographie-geologie-mine/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/amp/secteur/geographie-geologie-mine/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Géographie - Géologie - Mine - Topographie Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/amp/secteur/geographie-geologie-mine/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/amp/secteur/geographie-geologie-mine/\",\"url\":\"https://www.jobrapide.org/amp/secteur/geographie-geologie-mine/\",\"name\":\"G\\u00e9ographie - G\\u00e9ologie - Mine - Topographie Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/amp/secteur/geographie-geologie-mine/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/amp/secteur/geographie-geologie-mine/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"G\\u00e9ographie - G\\u00e9ologie - Mine - Topographie\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Géographie - Géologie - Mine - Topographie Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 53,
@@ -176,8 +822,42 @@
     "count": null,
     "slug": "graphisme-art-culture",
     "uri": "/secteur/graphisme-art-culture/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Graphisme – Art – Culture - Photo - Video",
+          "url": "https://www.jobrapide.org/secteur/graphisme-art-culture/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/secteur/graphisme-art-culture/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Graphisme – Art – Culture - Photo - Video Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/secteur/graphisme-art-culture/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/secteur/graphisme-art-culture/\",\"url\":\"https://www.jobrapide.org/secteur/graphisme-art-culture/\",\"name\":\"Graphisme \\u2013 Art \\u2013 Culture - Photo - Video Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/secteur/graphisme-art-culture/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/secteur/graphisme-art-culture/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Graphisme \\u2013 Art \\u2013 Culture - Photo - Video\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Graphisme – Art – Culture - Photo - Video Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 104,
@@ -185,8 +865,42 @@
     "count": null,
     "slug": "habillement-cosmetique-coiffure",
     "uri": "/secteur/habillement-cosmetique-coiffure/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Habillement - Cosmétique - Coiffure",
+          "url": "https://www.jobrapide.org/secteur/habillement-cosmetique-coiffure/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/secteur/habillement-cosmetique-coiffure/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Habillement - Cosmétique - Coiffure Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/secteur/habillement-cosmetique-coiffure/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/secteur/habillement-cosmetique-coiffure/\",\"url\":\"https://www.jobrapide.org/secteur/habillement-cosmetique-coiffure/\",\"name\":\"Habillement - Cosm\\u00e9tique - Coiffure Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/secteur/habillement-cosmetique-coiffure/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/secteur/habillement-cosmetique-coiffure/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Habillement - Cosm\\u00e9tique - Coiffure\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Habillement - Cosmétique - Coiffure Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 59,
@@ -194,8 +908,42 @@
     "count": null,
     "slug": "hotellerie-restauration-tourisme",
     "uri": "/secteur/hotellerie-restauration-tourisme/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Hotellerie - Restauration - Tourisme - Voyage",
+          "url": "https://www.jobrapide.org/secteur/hotellerie-restauration-tourisme/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/secteur/hotellerie-restauration-tourisme/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Hotellerie - Restauration - Tourisme - Voyage Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/secteur/hotellerie-restauration-tourisme/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/secteur/hotellerie-restauration-tourisme/\",\"url\":\"https://www.jobrapide.org/secteur/hotellerie-restauration-tourisme/\",\"name\":\"Hotellerie - Restauration - Tourisme - Voyage Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/secteur/hotellerie-restauration-tourisme/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/secteur/hotellerie-restauration-tourisme/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Hotellerie - Restauration - Tourisme - Voyage\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Hotellerie - Restauration - Tourisme - Voyage Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 60,
@@ -203,8 +951,42 @@
     "count": null,
     "slug": "informatique-telecommunication",
     "uri": "/secteur/informatique-telecommunication/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Informatique - Télécommunication - Electronique",
+          "url": "https://www.jobrapide.org/secteur/informatique-telecommunication/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/secteur/informatique-telecommunication/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Informatique - Télécommunication - Electronique Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/secteur/informatique-telecommunication/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/secteur/informatique-telecommunication/\",\"url\":\"https://www.jobrapide.org/secteur/informatique-telecommunication/\",\"name\":\"Informatique - T\\u00e9l\\u00e9communication - Electronique Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/secteur/informatique-telecommunication/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/secteur/informatique-telecommunication/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Informatique - T\\u00e9l\\u00e9communication - Electronique\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Informatique - Télécommunication - Electronique Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 91,
@@ -212,8 +994,42 @@
     "count": null,
     "slug": "langue-litterature-interpretariat-histoire",
     "uri": "/secteur/langue-litterature-interpretariat-histoire/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Langue - Littérature - Interprétariat - Histoire - Philosophie",
+          "url": "https://www.jobrapide.org/secteur/langue-litterature-interpretariat-histoire/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/secteur/langue-litterature-interpretariat-histoire/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Langue - Littérature - Interprétariat - Histoire - Philosophie Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/secteur/langue-litterature-interpretariat-histoire/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/secteur/langue-litterature-interpretariat-histoire/\",\"url\":\"https://www.jobrapide.org/secteur/langue-litterature-interpretariat-histoire/\",\"name\":\"Langue - Litt\\u00e9rature - Interpr\\u00e9tariat - Histoire - Philosophie Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/secteur/langue-litterature-interpretariat-histoire/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/secteur/langue-litterature-interpretariat-histoire/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Langue - Litt\\u00e9rature - Interpr\\u00e9tariat - Histoire - Philosophie\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Langue - Littérature - Interprétariat - Histoire - Philosophie Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 463,
@@ -221,8 +1037,42 @@
     "count": null,
     "slug": "maconnerie-plomberie-peintre-menuiserie-jardinier",
     "uri": "/secteur/maconnerie-plomberie-peintre-menuiserie-jardinier/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Maçonnerie - Plomberie - Peintre - Menuiserie - Jardinier",
+          "url": "https://www.jobrapide.org/secteur/maconnerie-plomberie-peintre-menuiserie-jardinier/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/secteur/maconnerie-plomberie-peintre-menuiserie-jardinier/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Maçonnerie - Plomberie - Peintre - Menuiserie - Jardinier Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/secteur/maconnerie-plomberie-peintre-menuiserie-jardinier/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/secteur/maconnerie-plomberie-peintre-menuiserie-jardinier/\",\"url\":\"https://www.jobrapide.org/secteur/maconnerie-plomberie-peintre-menuiserie-jardinier/\",\"name\":\"Ma\\u00e7onnerie - Plomberie - Peintre - Menuiserie - Jardinier Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/secteur/maconnerie-plomberie-peintre-menuiserie-jardinier/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/secteur/maconnerie-plomberie-peintre-menuiserie-jardinier/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Ma\\u00e7onnerie - Plomberie - Peintre - Menuiserie - Jardinier\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Maçonnerie - Plomberie - Peintre - Menuiserie - Jardinier Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 61,
@@ -230,8 +1080,42 @@
     "count": null,
     "slug": "marketing-vente-distribution",
     "uri": "/secteur/marketing-vente-distribution/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Marketing - Vente - Distribution - Commerce international",
+          "url": "https://www.jobrapide.org/secteur/marketing-vente-distribution/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/secteur/marketing-vente-distribution/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Marketing - Vente - Distribution - Commerce international Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/secteur/marketing-vente-distribution/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/secteur/marketing-vente-distribution/\",\"url\":\"https://www.jobrapide.org/secteur/marketing-vente-distribution/\",\"name\":\"Marketing - Vente - Distribution - Commerce international Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/secteur/marketing-vente-distribution/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/secteur/marketing-vente-distribution/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Marketing - Vente - Distribution - Commerce international\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Marketing - Vente - Distribution - Commerce international Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 106,
@@ -239,8 +1123,42 @@
     "count": null,
     "slug": "mathematique-physique-astronomie",
     "uri": "/secteur/mathematique-physique-astronomie/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Mathématique - Physique - Astronomie",
+          "url": "https://www.jobrapide.org/amp/secteur/mathematique-physique-astronomie/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/amp/secteur/mathematique-physique-astronomie/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Mathématique - Physique - Astronomie Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/amp/secteur/mathematique-physique-astronomie/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/amp/secteur/mathematique-physique-astronomie/\",\"url\":\"https://www.jobrapide.org/amp/secteur/mathematique-physique-astronomie/\",\"name\":\"Math\\u00e9matique - Physique - Astronomie Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/amp/secteur/mathematique-physique-astronomie/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/amp/secteur/mathematique-physique-astronomie/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Math\\u00e9matique - Physique - Astronomie\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Mathématique - Physique - Astronomie Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 471,
@@ -248,8 +1166,42 @@
     "count": null,
     "slug": "planton-menagere-service-nettoyage-nounou",
     "uri": "/secteur/planton-menagere-service-nettoyage-nounou/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Planton – Ménagère – Service nettoyage - Nounou",
+          "url": "https://www.jobrapide.org/secteur/planton-menagere-service-nettoyage-nounou/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/secteur/planton-menagere-service-nettoyage-nounou/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Planton – Ménagère – Service nettoyage - Nounou Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/secteur/planton-menagere-service-nettoyage-nounou/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/secteur/planton-menagere-service-nettoyage-nounou/\",\"url\":\"https://www.jobrapide.org/secteur/planton-menagere-service-nettoyage-nounou/\",\"name\":\"Planton \\u2013 M\\u00e9nag\\u00e8re \\u2013 Service nettoyage - Nounou Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/secteur/planton-menagere-service-nettoyage-nounou/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/secteur/planton-menagere-service-nettoyage-nounou/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Planton \\u2013 M\\u00e9nag\\u00e8re \\u2013 Service nettoyage - Nounou\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Planton – Ménagère – Service nettoyage - Nounou Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 62,
@@ -257,8 +1209,42 @@
     "count": null,
     "slug": "sante-social-nutrition-santepublique-pharmacie-veterinaire",
     "uri": "/secteur/sante-social-nutrition-santepublique-pharmacie-veterinaire/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Santé - Nutrition - Santé Publique - Pharmacie - Vétérinaire",
+          "url": "https://www.jobrapide.org/amp/secteur/sante-social-nutrition-santepublique-pharmacie-veterinaire/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/amp/secteur/sante-social-nutrition-santepublique-pharmacie-veterinaire/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Santé - Nutrition - Santé Publique - Pharmacie - Vétérinaire Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/amp/secteur/sante-social-nutrition-santepublique-pharmacie-veterinaire/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/amp/secteur/sante-social-nutrition-santepublique-pharmacie-veterinaire/\",\"url\":\"https://www.jobrapide.org/amp/secteur/sante-social-nutrition-santepublique-pharmacie-veterinaire/\",\"name\":\"Sant\\u00e9 - Nutrition - Sant\\u00e9 Publique - Pharmacie - V\\u00e9t\\u00e9rinaire Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/amp/secteur/sante-social-nutrition-santepublique-pharmacie-veterinaire/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/amp/secteur/sante-social-nutrition-santepublique-pharmacie-veterinaire/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Sant\\u00e9 - Nutrition - Sant\\u00e9 Publique - Pharmacie - V\\u00e9t\\u00e9rinaire\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Santé - Nutrition - Santé Publique - Pharmacie - Vétérinaire Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 68,
@@ -266,8 +1252,42 @@
     "count": null,
     "slug": "secretariat-receptionniste-hotesse",
     "uri": "/secteur/secretariat-receptionniste-hotesse/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Secrétariat - Réceptionniste - Hôtesse",
+          "url": "https://www.jobrapide.org/secteur/secretariat-receptionniste-hotesse/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/secteur/secretariat-receptionniste-hotesse/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Secrétariat - Réceptionniste - Hôtesse Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/secteur/secretariat-receptionniste-hotesse/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/secteur/secretariat-receptionniste-hotesse/\",\"url\":\"https://www.jobrapide.org/secteur/secretariat-receptionniste-hotesse/\",\"name\":\"Secr\\u00e9tariat - R\\u00e9ceptionniste - H\\u00f4tesse Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/secteur/secretariat-receptionniste-hotesse/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/secteur/secretariat-receptionniste-hotesse/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Secr\\u00e9tariat - R\\u00e9ceptionniste - H\\u00f4tesse\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Secrétariat - Réceptionniste - Hôtesse Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 63,
@@ -275,8 +1295,42 @@
     "count": null,
     "slug": "securite",
     "uri": "/secteur/securite/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Sécurité - Armée - Armée de l'air",
+          "url": "https://www.jobrapide.org/amp/secteur/securite/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/amp/secteur/securite/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Sécurité - Armée - Armée de l'air Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/amp/secteur/securite/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/amp/secteur/securite/\",\"url\":\"https://www.jobrapide.org/amp/secteur/securite/\",\"name\":\"S\\u00e9curit\\u00e9 - Arm\\u00e9e - Arm\\u00e9e de l'air Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/amp/secteur/securite/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/amp/secteur/securite/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"S\\u00e9curit\\u00e9 - Arm\\u00e9e - Arm\\u00e9e de l'air\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Sécurité - Armée - Armée de l'air Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 107,
@@ -284,8 +1338,42 @@
     "count": null,
     "slug": "sociologie-anthropologie-psychologie-theologie",
     "uri": "/secteur/sociologie-anthropologie-psychologie-theologie/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Sociologie - Psychologie - Théologie - Sciences Sociales",
+          "url": "https://www.jobrapide.org/secteur/sociologie-anthropologie-psychologie-theologie/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/secteur/sociologie-anthropologie-psychologie-theologie/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Sociologie - Psychologie - Théologie - Sciences Sociales Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/secteur/sociologie-anthropologie-psychologie-theologie/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/secteur/sociologie-anthropologie-psychologie-theologie/\",\"url\":\"https://www.jobrapide.org/secteur/sociologie-anthropologie-psychologie-theologie/\",\"name\":\"Sociologie - Psychologie - Th\\u00e9ologie - Sciences Sociales Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/secteur/sociologie-anthropologie-psychologie-theologie/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/secteur/sociologie-anthropologie-psychologie-theologie/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Sociologie - Psychologie - Th\\u00e9ologie - Sciences Sociales\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Sociologie - Psychologie - Théologie - Sciences Sociales Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 441,
@@ -293,7 +1381,41 @@
     "count": null,
     "slug": "sports-football-basket-ball-arts-martiaux-athletisme-etc",
     "uri": "/secteur/sports-football-basket-ball-arts-martiaux-athletisme-etc/",
+    "parentId": null,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Sports (Football, basket-ball, arts martiaux, athlétisme, etc.)",
+          "url": "https://www.jobrapide.org/secteur/sports-football-basket-ball-arts-martiaux-athletisme-etc/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/secteur/sports-football-basket-ball-arts-martiaux-athletisme-etc/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Sports (Football, basket-ball, arts martiaux, athlétisme, etc.) Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/secteur/sports-football-basket-ball-arts-martiaux-athletisme-etc/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/secteur/sports-football-basket-ball-arts-martiaux-athletisme-etc/\",\"url\":\"https://www.jobrapide.org/secteur/sports-football-basket-ball-arts-martiaux-athletisme-etc/\",\"name\":\"Sports (Football, basket-ball, arts martiaux, athl\\u00e9tisme, etc.) Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/secteur/sports-football-basket-ball-arts-martiaux-athletisme-etc/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/secteur/sports-football-basket-ball-arts-martiaux-athletisme-etc/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Sports (Football, basket-ball, arts martiaux, athl\\u00e9tisme, etc.)\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Sports (Football, basket-ball, arts martiaux, athlétisme, etc.) Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   }
 ]

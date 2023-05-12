@@ -1,12 +1,94 @@
 [
   {
+    "id": 23,
+    "name": "Actualités",
+    "count": null,
+    "slug": "actualites",
+    "uri": "/recrutement/actualites/",
+    "parentId": null,
+    "posts": null,
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Actualités",
+          "url": "https://www.jobrapide.org/recrutement/actualites/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/recrutement/actualites/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Actualités Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/recrutement/actualites/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/recrutement/actualites/\",\"url\":\"https://www.jobrapide.org/recrutement/actualites/\",\"name\":\"Actualit\\u00e9s Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/recrutement/actualites/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/recrutement/actualites/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Actualit\\u00e9s\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Actualités Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
+  },
+  {
     "id": 19,
     "name": "Avis d'appel d'offres",
     "count": null,
     "slug": "avis-appel-offres",
     "uri": "/recrutement/offres/avis-appel-offres/",
+    "parentId": 16,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Offres",
+          "url": "https://www.jobrapide.org/recrutement/offres/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Avis d'appel d'offres",
+          "url": "https://www.jobrapide.org/recrutement/offres/avis-appel-offres/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/recrutement/offres/avis-appel-offres/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": "Consultez gratuitement des centaines d’avis d’avis d’appel d’offres et saisissez les meilleures opportunités pour travailler les expériences de votre cabinet ou entreprise au niveau national et international.",
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Avis d'appel d'offres Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/recrutement/offres/avis-appel-offres/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/recrutement/offres/avis-appel-offres/\",\"url\":\"https://www.jobrapide.org/recrutement/offres/avis-appel-offres/\",\"name\":\"Avis d'appel d'offres Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/recrutement/offres/avis-appel-offres/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/recrutement/offres/avis-appel-offres/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Offres\",\"item\":\"https://www.jobrapide.org/recrutement/offres/\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Avis d'appel d'offres\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Avis d'appel d'offres Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 17,
@@ -14,8 +96,47 @@
     "count": null,
     "slug": "avis-recrutement",
     "uri": "/recrutement/offres/avis-recrutement/",
+    "parentId": 16,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Offres",
+          "url": "https://www.jobrapide.org/recrutement/offres/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Avis de recrutement",
+          "url": "https://www.jobrapide.org/recrutement/offres/avis-recrutement/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/recrutement/offres/avis-recrutement/",
+      "metaDesc": "Consultez gratuitement des dizaines d'avis de recrutement au Tchad et à l'étranger pour réussir votre insertion professionnelle.",
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": "Consultez gratuitement des dizaines d'avis de recrutement au Tchad et à l'étranger pour réussir votre insertion professionnelle.",
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Avis de recrutement au Tchad et à l'étranger - TchadCarriere",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/recrutement/offres/avis-recrutement/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/recrutement/offres/avis-recrutement/\",\"url\":\"https://www.jobrapide.org/recrutement/offres/avis-recrutement/\",\"name\":\"Avis de recrutement au Tchad et \\u00e0 l'\\u00e9tranger - TchadCarriere\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"description\":\"Consultez gratuitement des dizaines d'avis de recrutement au Tchad et \\u00e0 l'\\u00e9tranger pour r\\u00e9ussir votre insertion professionnelle.\",\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/recrutement/offres/avis-recrutement/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/recrutement/offres/avis-recrutement/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Offres\",\"item\":\"https://www.jobrapide.org/recrutement/offres/\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Avis de recrutement\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Avis de recrutement au Tchad et à l'étranger - TchadCarriere",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 20,
@@ -23,8 +144,47 @@
     "count": null,
     "slug": "bourses-etude",
     "uri": "/recrutement/offres/bourses-etude/",
+    "parentId": 16,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Offres",
+          "url": "https://www.jobrapide.org/recrutement/offres/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Bourse d'étude",
+          "url": "https://www.jobrapide.org/recrutement/offres/bourses-etude/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/recrutement/offres/bourses-etude/",
+      "metaDesc": "Consultez gratuitement toutes les offres de bourse d'étude au Tchad et à l'étranger. Profitez des meilleures opportunités pour conclure vos études.",
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": "Consultez gratuitement toutes les offres de bourse d'étude au Tchad et à l'étranger. Profitez des meilleures opportunités pour conclure vos études.",
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Bourse d'étude au Tchad et à l'étranger - TchadCarriere.com",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/recrutement/offres/bourses-etude/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/recrutement/offres/bourses-etude/\",\"url\":\"https://www.jobrapide.org/recrutement/offres/bourses-etude/\",\"name\":\"Bourse d'\\u00e9tude au Tchad et \\u00e0 l'\\u00e9tranger - TchadCarriere.com\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"description\":\"Consultez gratuitement toutes les offres de bourse d'\\u00e9tude au Tchad et \\u00e0 l'\\u00e9tranger. Profitez des meilleures opportunit\\u00e9s pour conclure vos \\u00e9tudes.\",\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/recrutement/offres/bourses-etude/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/recrutement/offres/bourses-etude/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Offres\",\"item\":\"https://www.jobrapide.org/recrutement/offres/\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Bourse d'\\u00e9tude\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Bourse d'étude au Tchad et à l'étranger - TchadCarriere.com",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 64,
@@ -32,8 +192,47 @@
     "count": null,
     "slug": "call-for-papers",
     "uri": "/recrutement/offres/call-for-papers/",
+    "parentId": 16,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Offres",
+          "url": "https://www.jobrapide.org/recrutement/offres/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Call for Papers",
+          "url": "https://www.jobrapide.org/recrutement/offres/call-for-papers/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/recrutement/offres/call-for-papers/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Call for Papers Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/recrutement/offres/call-for-papers/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/recrutement/offres/call-for-papers/\",\"url\":\"https://www.jobrapide.org/recrutement/offres/call-for-papers/\",\"name\":\"Call for Papers Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/recrutement/offres/call-for-papers/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/recrutement/offres/call-for-papers/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Offres\",\"item\":\"https://www.jobrapide.org/recrutement/offres/\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Call for Papers\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Call for Papers Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 21,
@@ -41,8 +240,138 @@
     "count": null,
     "slug": "concours",
     "uri": "/recrutement/offres/concours/",
+    "parentId": 16,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Offres",
+          "url": "https://www.jobrapide.org/recrutement/offres/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Concours",
+          "url": "https://www.jobrapide.org/recrutement/offres/concours/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/recrutement/offres/concours/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Concours Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/recrutement/offres/concours/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/recrutement/offres/concours/\",\"url\":\"https://www.jobrapide.org/recrutement/offres/concours/\",\"name\":\"Concours Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/recrutement/offres/concours/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/recrutement/offres/concours/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Offres\",\"item\":\"https://www.jobrapide.org/recrutement/offres/\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Concours\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Concours Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
+  },
+  {
+    "id": 94,
+    "name": "Conseils de TchadCarriere",
+    "count": null,
+    "slug": "conseils-de-tchadcarriere",
+    "uri": "/recrutement/conseils-de-tchadcarriere/",
+    "parentId": null,
+    "posts": null,
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Conseils de TchadCarriere",
+          "url": "https://www.jobrapide.org/recrutement/conseils-de-tchadcarriere/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/recrutement/conseils-de-tchadcarriere/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Conseils de TchadCarriere Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/recrutement/conseils-de-tchadcarriere/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/recrutement/conseils-de-tchadcarriere/\",\"url\":\"https://www.jobrapide.org/recrutement/conseils-de-tchadcarriere/\",\"name\":\"Conseils de TchadCarriere Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/recrutement/conseils-de-tchadcarriere/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/recrutement/conseils-de-tchadcarriere/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Conseils de TchadCarriere\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Conseils de TchadCarriere Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
+  },
+  {
+    "id": 96,
+    "name": "Entretien d'embauche",
+    "count": null,
+    "slug": "entretien-dembauche",
+    "uri": "/recrutement/conseils-de-tchadcarriere/entretien-dembauche/",
+    "parentId": 94,
+    "posts": null,
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Conseils de TchadCarriere",
+          "url": "https://www.jobrapide.org/recrutement/conseils-de-tchadcarriere/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Entretien d'embauche",
+          "url": "https://www.jobrapide.org/recrutement/conseils-de-tchadcarriere/entretien-dembauche/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/recrutement/conseils-de-tchadcarriere/entretien-dembauche/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Entretien d'embauche Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/recrutement/conseils-de-tchadcarriere/entretien-dembauche/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/recrutement/conseils-de-tchadcarriere/entretien-dembauche/\",\"url\":\"https://www.jobrapide.org/recrutement/conseils-de-tchadcarriere/entretien-dembauche/\",\"name\":\"Entretien d'embauche Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/recrutement/conseils-de-tchadcarriere/entretien-dembauche/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/recrutement/conseils-de-tchadcarriere/entretien-dembauche/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Conseils de TchadCarriere\",\"item\":\"https://www.jobrapide.org/recrutement/conseils-de-tchadcarriere/\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Entretien d'embauche\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Entretien d'embauche Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 121,
@@ -50,8 +379,272 @@
     "count": null,
     "slug": "formations",
     "uri": "/recrutement/offres/formations/",
+    "parentId": 16,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Offres",
+          "url": "https://www.jobrapide.org/recrutement/offres/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Formations",
+          "url": "https://www.jobrapide.org/recrutement/offres/formations/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/recrutement/offres/formations/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Formations Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/recrutement/offres/formations/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/recrutement/offres/formations/\",\"url\":\"https://www.jobrapide.org/recrutement/offres/formations/\",\"name\":\"Formations Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/recrutement/offres/formations/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/recrutement/offres/formations/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Offres\",\"item\":\"https://www.jobrapide.org/recrutement/offres/\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Formations\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Formations Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
+  },
+  {
+    "id": 95,
+    "name": "Lettre de motivation",
+    "count": null,
+    "slug": "lettre-de-motivation",
+    "uri": "/recrutement/conseils-de-tchadcarriere/lettre-de-motivation/",
+    "parentId": 94,
+    "posts": null,
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Conseils de TchadCarriere",
+          "url": "https://www.jobrapide.org/recrutement/conseils-de-tchadcarriere/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Lettre de motivation",
+          "url": "https://www.jobrapide.org/recrutement/conseils-de-tchadcarriere/lettre-de-motivation/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/recrutement/conseils-de-tchadcarriere/lettre-de-motivation/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Lettre de motivation Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/recrutement/conseils-de-tchadcarriere/lettre-de-motivation/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/recrutement/conseils-de-tchadcarriere/lettre-de-motivation/\",\"url\":\"https://www.jobrapide.org/recrutement/conseils-de-tchadcarriere/lettre-de-motivation/\",\"name\":\"Lettre de motivation Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/recrutement/conseils-de-tchadcarriere/lettre-de-motivation/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/recrutement/conseils-de-tchadcarriere/lettre-de-motivation/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Conseils de TchadCarriere\",\"item\":\"https://www.jobrapide.org/recrutement/conseils-de-tchadcarriere/\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Lettre de motivation\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Lettre de motivation Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
+  },
+  {
+    "id": 1,
+    "name": "Non classé",
+    "count": null,
+    "slug": "non-classe",
+    "uri": "/recrutement/non-classe/",
+    "parentId": null,
+    "posts": null,
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Non classé",
+          "url": "https://www.jobrapide.org/recrutement/non-classe/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/recrutement/non-classe/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Non classé Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/recrutement/non-classe/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/recrutement/non-classe/\",\"url\":\"https://www.jobrapide.org/recrutement/non-classe/\",\"name\":\"Non class\\u00e9 Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/recrutement/non-classe/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/recrutement/non-classe/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Non class\\u00e9\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Non classé Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
+  },
+  {
+    "id": 117,
+    "name": "Obtenir une bourse",
+    "count": null,
+    "slug": "obtenir-une-bourse",
+    "uri": "/recrutement/conseils-de-tchadcarriere/obtenir-une-bourse/",
+    "parentId": 94,
+    "posts": null,
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Conseils de TchadCarriere",
+          "url": "https://www.jobrapide.org/recrutement/conseils-de-tchadcarriere/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Obtenir une bourse",
+          "url": "https://www.jobrapide.org/recrutement/conseils-de-tchadcarriere/obtenir-une-bourse/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/recrutement/conseils-de-tchadcarriere/obtenir-une-bourse/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Obtenir une bourse Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/recrutement/conseils-de-tchadcarriere/obtenir-une-bourse/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/recrutement/conseils-de-tchadcarriere/obtenir-une-bourse/\",\"url\":\"https://www.jobrapide.org/recrutement/conseils-de-tchadcarriere/obtenir-une-bourse/\",\"name\":\"Obtenir une bourse Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/recrutement/conseils-de-tchadcarriere/obtenir-une-bourse/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/recrutement/conseils-de-tchadcarriere/obtenir-une-bourse/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Conseils de TchadCarriere\",\"item\":\"https://www.jobrapide.org/recrutement/conseils-de-tchadcarriere/\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Obtenir une bourse\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Obtenir une bourse Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
+  },
+  {
+    "id": 16,
+    "name": "Offres",
+    "count": null,
+    "slug": "offres",
+    "uri": "/recrutement/offres/",
+    "parentId": null,
+    "posts": null,
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Offres",
+          "url": "https://www.jobrapide.org/recrutement/offres/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/recrutement/offres/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Offres Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/recrutement/offres/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/recrutement/offres/\",\"url\":\"https://www.jobrapide.org/recrutement/offres/\",\"name\":\"Offres Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/recrutement/offres/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/recrutement/offres/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Offres\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Offres Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
+  },
+  {
+    "id": 118,
+    "name": "Publicité",
+    "count": null,
+    "slug": "publicite",
+    "uri": "/recrutement/publicite/",
+    "parentId": null,
+    "posts": null,
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Publicité",
+          "url": "https://www.jobrapide.org/recrutement/publicite/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/recrutement/publicite/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Publicité Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/recrutement/publicite/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/recrutement/publicite/\",\"url\":\"https://www.jobrapide.org/recrutement/publicite/\",\"name\":\"Publicit\\u00e9 Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/recrutement/publicite/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/recrutement/publicite/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Publicit\\u00e9\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Publicité Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 18,
@@ -59,8 +652,47 @@
     "count": null,
     "slug": "stage",
     "uri": "/recrutement/offres/stage/",
+    "parentId": 16,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Offres",
+          "url": "https://www.jobrapide.org/recrutement/offres/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Stage",
+          "url": "https://www.jobrapide.org/recrutement/offres/stage/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/recrutement/offres/stage/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Stage Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/recrutement/offres/stage/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/recrutement/offres/stage/\",\"url\":\"https://www.jobrapide.org/recrutement/offres/stage/\",\"name\":\"Stage Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/recrutement/offres/stage/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/recrutement/offres/stage/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Offres\",\"item\":\"https://www.jobrapide.org/recrutement/offres/\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Stage\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Stage Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   },
   {
     "id": 22,
@@ -68,7 +700,46 @@
     "count": null,
     "slug": "volontaire",
     "uri": "/recrutement/offres/volontaire/",
+    "parentId": 16,
     "posts": null,
-    "seo": null
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Offres",
+          "url": "https://www.jobrapide.org/recrutement/offres/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Volontaire",
+          "url": "https://www.jobrapide.org/recrutement/offres/volontaire/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/recrutement/offres/volontaire/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Volontaire Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/recrutement/offres/volontaire/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/recrutement/offres/volontaire/\",\"url\":\"https://www.jobrapide.org/recrutement/offres/volontaire/\",\"name\":\"Volontaire Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/recrutement/offres/volontaire/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/recrutement/offres/volontaire/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Offres\",\"item\":\"https://www.jobrapide.org/recrutement/offres/\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Volontaire\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Volontaire Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
   }
 ]

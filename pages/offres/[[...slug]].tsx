@@ -7,10 +7,8 @@ export const getStaticProps = async ({ params }) => {
 
   return data
 }
-export const getStaticPaths = async () => {
-  const paths = await generatePostsStaticPaths(16)
-  return paths
-}
+export const getStaticPaths = () => generatePostsStaticPaths(16)
+
 const Post = (props) => <PostLayout {...props} />
 
 export default Post

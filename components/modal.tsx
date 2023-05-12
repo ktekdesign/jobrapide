@@ -50,7 +50,14 @@ const Modal = ({ setOpen = null }) => {
 
           <div className="modal-body">
             <OnboardingFlow
-              data={{ secteurs, regions, niveaux, categories }}
+              data={{
+                secteurs,
+                regions,
+                niveaux,
+                categories: categories.filter(
+                  (category) => category.parentId === 16
+                ),
+              }}
               active={Number(toggleForm)}
             >
               <SearchForm />

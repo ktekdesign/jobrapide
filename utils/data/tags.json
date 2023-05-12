@@ -1,0 +1,389 @@
+[
+  {
+    "id": 486,
+    "name": "BAC+3",
+    "count": null,
+    "slug": "bac3",
+    "uri": "/emploi/bac3/",
+    "parentId": null,
+    "posts": null,
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "BAC+3",
+          "url": "https://www.jobrapide.org/emploi/bac3/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/emploi/bac3/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "BAC+3 Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/emploi/bac3/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/emploi/bac3/\",\"url\":\"https://www.jobrapide.org/emploi/bac3/\",\"name\":\"BAC+3 Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/emploi/bac3/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/emploi/bac3/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"BAC+3\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "BAC+3 Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
+  },
+  {
+    "id": 212,
+    "name": "Education",
+    "count": null,
+    "slug": "education",
+    "uri": "/emploi/education/",
+    "parentId": null,
+    "posts": null,
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Education",
+          "url": "https://www.jobrapide.org/emploi/education/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/emploi/education/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Education Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/emploi/education/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/emploi/education/\",\"url\":\"https://www.jobrapide.org/emploi/education/\",\"name\":\"Education Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/emploi/education/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/emploi/education/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Education\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Education Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
+  },
+  {
+    "id": 209,
+    "name": "Gestion",
+    "count": null,
+    "slug": "gestion",
+    "uri": "/emploi/gestion/",
+    "parentId": null,
+    "posts": null,
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Gestion",
+          "url": "https://www.jobrapide.org/emploi/gestion/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/emploi/gestion/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Gestion Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/emploi/gestion/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/emploi/gestion/\",\"url\":\"https://www.jobrapide.org/emploi/gestion/\",\"name\":\"Gestion Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/emploi/gestion/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/emploi/gestion/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Gestion\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Gestion Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
+  },
+  {
+    "id": 211,
+    "name": "Logistique",
+    "count": null,
+    "slug": "logistique",
+    "uri": "/emploi/logistique/",
+    "parentId": null,
+    "posts": null,
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Logistique",
+          "url": "https://www.jobrapide.org/emploi/logistique/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/emploi/logistique/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Logistique Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/emploi/logistique/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/emploi/logistique/\",\"url\":\"https://www.jobrapide.org/emploi/logistique/\",\"name\":\"Logistique Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/emploi/logistique/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/emploi/logistique/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Logistique\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Logistique Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
+  },
+  {
+    "id": 205,
+    "name": "Nutrition",
+    "count": null,
+    "slug": "nutrition",
+    "uri": "/emploi/nutrition/",
+    "parentId": null,
+    "posts": null,
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Nutrition",
+          "url": "https://www.jobrapide.org/emploi/nutrition/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/emploi/nutrition/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Nutrition Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/emploi/nutrition/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/emploi/nutrition/\",\"url\":\"https://www.jobrapide.org/emploi/nutrition/\",\"name\":\"Nutrition Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/emploi/nutrition/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/emploi/nutrition/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Nutrition\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Nutrition Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
+  },
+  {
+    "id": 85,
+    "name": "Offre sponsorisée",
+    "count": null,
+    "slug": "sponsorisees",
+    "uri": "/emploi/sponsorisees/",
+    "parentId": null,
+    "posts": null,
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Offre sponsorisée",
+          "url": "https://www.jobrapide.org/emploi/sponsorisees/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/emploi/sponsorisees/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Offre sponsorisée Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/emploi/sponsorisees/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/emploi/sponsorisees/\",\"url\":\"https://www.jobrapide.org/emploi/sponsorisees/\",\"name\":\"Offre sponsoris\\u00e9e Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/emploi/sponsorisees/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/emploi/sponsorisees/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Offre sponsoris\\u00e9e\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Offre sponsorisée Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
+  },
+  {
+    "id": 213,
+    "name": "Santé",
+    "count": null,
+    "slug": "sante",
+    "uri": "/emploi/sante/",
+    "parentId": null,
+    "posts": null,
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Santé",
+          "url": "https://www.jobrapide.org/emploi/sante/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/emploi/sante/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Santé Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/emploi/sante/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/emploi/sante/\",\"url\":\"https://www.jobrapide.org/emploi/sante/\",\"name\":\"Sant\\u00e9 Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/emploi/sante/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/emploi/sante/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Sant\\u00e9\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Santé Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
+  },
+  {
+    "id": 210,
+    "name": "Science Sociale",
+    "count": null,
+    "slug": "science-sociale",
+    "uri": "/emploi/science-sociale/",
+    "parentId": null,
+    "posts": null,
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Science Sociale",
+          "url": "https://www.jobrapide.org/emploi/science-sociale/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/emploi/science-sociale/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Science Sociale Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/emploi/science-sociale/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/emploi/science-sociale/\",\"url\":\"https://www.jobrapide.org/emploi/science-sociale/\",\"name\":\"Science Sociale Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/emploi/science-sociale/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/emploi/science-sociale/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Science Sociale\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Science Sociale Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
+  },
+  {
+    "id": 207,
+    "name": "Technologie et l'innovation",
+    "count": null,
+    "slug": "technologie-et-linnovation",
+    "uri": "/emploi/technologie-et-linnovation/",
+    "parentId": null,
+    "posts": null,
+    "seo": {
+      "breadcrumbs": [
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Accueil",
+          "url": "https://www.jobrapide.org/"
+        },
+        {
+          "__typename": "SEOPostTypeBreadcrumbs",
+          "text": "Technologie et l'innovation",
+          "url": "https://www.jobrapide.org/emploi/technologie-et-linnovation/"
+        }
+      ],
+      "canonical": "https://www.jobrapide.org/emploi/technologie-et-linnovation/",
+      "metaDesc": null,
+      "metaKeywords": null,
+      "metaRobotsNofollow": "follow",
+      "metaRobotsNoindex": "index",
+      "opengraphAuthor": null,
+      "opengraphDescription": null,
+      "opengraphImage": null,
+      "opengraphModifiedTime": null,
+      "opengraphPublishedTime": null,
+      "opengraphPublisher": null,
+      "opengraphSiteName": "JobRapide",
+      "opengraphTitle": "Technologie et l'innovation Archives - JobRapide",
+      "opengraphType": "article",
+      "opengraphUrl": "https://www.jobrapide.org/emploi/technologie-et-linnovation/",
+      "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.jobrapide.org/emploi/technologie-et-linnovation/\",\"url\":\"https://www.jobrapide.org/emploi/technologie-et-linnovation/\",\"name\":\"Technologie et l'innovation Archives - JobRapide\",\"isPartOf\":{\"@id\":\"https://www.jobrapide.org/#website\"},\"breadcrumb\":{\"@id\":\"https://www.jobrapide.org/emploi/technologie-et-linnovation/#breadcrumb\"},\"inLanguage\":\"fr-FR\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.jobrapide.org/emploi/technologie-et-linnovation/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Accueil\",\"item\":\"https://www.jobrapide.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Technologie et l'innovation\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.jobrapide.org/#website\",\"url\":\"https://www.jobrapide.org/\",\"name\":\"JobRapide\",\"description\":\"Les meilleurs emplois et profils de candidat dans le monde\",\"publisher\":{\"@id\":\"https://www.jobrapide.org/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.jobrapide.org/?s={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"fr-FR\"},{\"@type\":\"Organization\",\"@id\":\"https://www.jobrapide.org/#organization\",\"name\":\"JOBRAPIDE\",\"url\":\"https://www.jobrapide.org/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"fr-FR\",\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\",\"url\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"contentUrl\":\"https://www.jobrapide.org/wp-content/uploads/2022/03/logo-job-rapide-officiel.png\",\"width\":150,\"height\":150,\"caption\":\"JOBRAPIDE\"},\"image\":{\"@id\":\"https://www.jobrapide.org/#/schema/logo/image/\"},\"sameAs\":[\"https://www.facebook.com/BoursesOpportunites/\",\"https://twitter.com/TchadCarriere\"]}]}",
+      "title": "Technologie et l'innovation Archives - JobRapide",
+      "twitterDescription": null,
+      "twitterImage": null,
+      "twitterTitle": null
+    }
+  }
+]

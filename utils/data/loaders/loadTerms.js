@@ -4,6 +4,7 @@ import {
   niveauxQuery,
   regionsQuery,
   secteursQuery,
+  tagsQuery,
 } from '../../../graphql/termQueries'
 import { filterTerms } from '../../filterTerms'
 import { outputErrors } from '../../outputErrors'
@@ -17,6 +18,8 @@ const loadTerms = async (name) => {
       ? regionsQuery
       : name === 'niveaux'
       ? niveauxQuery
+      : name === 'tags'
+      ? tagsQuery
       : categoriesQuery
 
   try {
@@ -33,4 +36,5 @@ export default async function load() {
   await loadTerms('regions')
   await loadTerms('categories')
   await loadTerms('niveaux')
+  await loadTerms('tags')
 }

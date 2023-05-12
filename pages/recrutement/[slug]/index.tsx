@@ -9,10 +9,7 @@ export const getStaticProps = async ({ params }) => {
   return data
 }
 
-export const getStaticPaths = async () => {
-  const paths = await generateOthersCategoriesStaticPaths(false)
-  return paths
-}
+export const getStaticPaths = () => generateOthersCategoriesStaticPaths(false)
 
 const Term = (props) => <TermLayout {...props} />
 
