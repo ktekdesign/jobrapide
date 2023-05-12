@@ -194,7 +194,7 @@ export const getTermAndPosts = async ({ term, type, page = 1 }) => {
 export const getPostsHome = async () => {
   try {
     const data = await loadFromWPGraphQL(queryHome)
-    return { terms: filterPostsHome(data) }
+    return filterPostsHome(data)
   } catch (error) {
     outputErrors(error)
   }

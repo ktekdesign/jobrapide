@@ -1,12 +1,12 @@
 import { PER_PAGE, REVALIDATE } from '@utils/constants'
-import isMoreThanOneDay from '@utils/isMoreThanOneDay'
 import sidebarData from '@utils/data/sidebar.json'
 import loadSidebar from './data/loaders/loadSidebar'
+import isMoreThan from './isMoreThan'
 
 export const addLayoutData = (props) => {
   const { seo, ...rest } = props
 
-  if (isMoreThanOneDay(sidebarData?.writedAt)) loadSidebar()
+  if (isMoreThan(sidebarData?.writedAt)) loadSidebar()
 
   if ('search' in rest) {
     return {

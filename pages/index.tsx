@@ -4,16 +4,18 @@ import SwiperTitle from '@components/swiperTitle'
 import SwiperHome from '@components/swiperHome'
 import Loading from '@components/loading'
 import addLayoutData from '@utils/addLayoutData'
-import { getPostsHome } from '@graphql/api'
+import home from '@utils/data/home.json'
+import loadHome from '@utils/data/loaders/loadHome'
+import isMoreThan from '@utils/isMoreThan'
 
 export const getStaticProps = async () => {
-  const terms = await getPostsHome()
-  return addLayoutData(terms)
+  if (isMoreThan(home.writedAt, 7200000)) loadHome()
+  return addLayoutData({})
 }
 
-const Index = ({ terms }) => (
+const Index = () => (
   <div className="flex flex-wrap">
-    <Loading data={terms} loading={false} serial>
+    <Loading data={home.posts} loading={false} serial>
       <SwiperContainer>
         <SwiperTitle />
         <SwiperHome />
