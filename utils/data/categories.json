@@ -1,0 +1,74 @@
+[
+  {
+    "id": 19,
+    "name": "Avis d'appel d'offres",
+    "count": null,
+    "slug": "avis-appel-offres",
+    "uri": "/recrutement/offres/avis-appel-offres/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 17,
+    "name": "Avis de recrutement",
+    "count": null,
+    "slug": "avis-recrutement",
+    "uri": "/recrutement/offres/avis-recrutement/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 20,
+    "name": "Bourse d'étude",
+    "count": null,
+    "slug": "bourses-etude",
+    "uri": "/recrutement/offres/bourses-etude/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 64,
+    "name": "Call for Papers",
+    "count": null,
+    "slug": "call-for-papers",
+    "uri": "/recrutement/offres/call-for-papers/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 21,
+    "name": "Concours",
+    "count": null,
+    "slug": "concours",
+    "uri": "/recrutement/offres/concours/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 121,
+    "name": "Formations",
+    "count": null,
+    "slug": "formations",
+    "uri": "/recrutement/offres/formations/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 18,
+    "name": "Stage",
+    "count": null,
+    "slug": "stage",
+    "uri": "/recrutement/offres/stage/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 22,
+    "name": "Volontaire",
+    "count": null,
+    "slug": "volontaire",
+    "uri": "/recrutement/offres/volontaire/",
+    "posts": null,
+    "seo": null
+  }
+]

@@ -1,0 +1,155 @@
+[
+  {
+    "id": 473,
+    "name": "+ 3",
+    "count": null,
+    "slug": "3",
+    "uri": "/niveau/3/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 474,
+    "name": "+ 5",
+    "count": null,
+    "slug": "5",
+    "uri": "/niveau/5/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 482,
+    "name": "+4",
+    "count": null,
+    "slug": "4",
+    "uri": "/niveau/4/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 491,
+    "name": "+7",
+    "count": null,
+    "slug": "7",
+    "uri": "/niveau/7/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 197,
+    "name": "BAC",
+    "count": null,
+    "slug": "bac",
+    "uri": "/niveau/bac/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 199,
+    "name": "BAC + 2",
+    "count": null,
+    "slug": "bac-2",
+    "uri": "/niveau/bac-2/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 200,
+    "name": "BAC + 3",
+    "count": null,
+    "slug": "bac-3",
+    "uri": "/niveau/bac-3/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 201,
+    "name": "BAC + 4",
+    "count": null,
+    "slug": "bac-4",
+    "uri": "/niveau/bac-4/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 202,
+    "name": "BAC + 5",
+    "count": null,
+    "slug": "bac-5",
+    "uri": "/niveau/bac-5/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 203,
+    "name": "BAC + 6",
+    "count": null,
+    "slug": "bac-6",
+    "uri": "/niveau/bac-6/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 204,
+    "name": "BAC + 7 et +",
+    "count": null,
+    "slug": "bac-7-et",
+    "uri": "/niveau/bac-7-et/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 445,
+    "name": "BAC+3",
+    "count": null,
+    "slug": "bac3",
+    "uri": "/niveau/bac3/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 483,
+    "name": "BAC+4",
+    "count": null,
+    "slug": "bac4",
+    "uri": "/niveau/bac4/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 484,
+    "name": "BAC+5",
+    "count": null,
+    "slug": "bac5",
+    "uri": "/niveau/bac5/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 485,
+    "name": "BAC+7",
+    "count": null,
+    "slug": "bac7",
+    "uri": "/niveau/bac7/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 196,
+    "name": "BEPC",
+    "count": null,
+    "slug": "bepc",
+    "uri": "/niveau/bepc/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 195,
+    "name": "CEPT",
+    "count": null,
+    "slug": "cept",
+    "uri": "/niveau/cept/",
+    "posts": null,
+    "seo": null
+  }
+]

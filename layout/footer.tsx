@@ -6,8 +6,8 @@ import FooterMenu from '@components/footerMenu'
 import FooterTab from '@components/footerTab'
 import TermsList from '@components/termsList'
 import OnboardingFlow from '@components/onboardingFlow'
-import Loading from '@components/loading'
-import { useTerms } from '@hooks/useTerms'
+import secteurs from '@utils/data/secteurs.json'
+import regions from '@utils/data/regions.json'
 
 const Footer = () => {
   const [active, setActive] = useState(0)
@@ -16,12 +16,8 @@ const Footer = () => {
       <FooterTab {...{ active, setActive }} />
       <OnboardingFlow active={active}>
         <></>
-        <Loading {...useTerms('secteurs', active === 1)}>
-          <TermsList className="secteurs-list" />
-        </Loading>
-        <Loading {...useTerms('regions', active === 2)}>
-          <TermsList className="regions-list" />
-        </Loading>
+        <TermsList terms={secteurs} className="secteurs-list" />
+        <TermsList terms={regions} className="regions-list" />
       </OnboardingFlow>
       <FooterMenu items={FOOTER_MENU_ITEMS} />
       <Copyright />

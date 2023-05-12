@@ -6,16 +6,18 @@ import SearchCurriculumForm from '@components/searchCurriculumForm'
 import SearchForm from '@components/searchForm'
 import SeoLink from '@components/seoLink'
 import OnboardingFlow from '@components/onboardingFlow'
-import { useTerms } from '@hooks/useTerms'
+import secteurs from '@utils/data/secteurs.json'
+import regions from '@utils/data/regions.json'
+import niveaux from '@utils/data/niveaux.json'
+import categories from '@utils/data/categories.json'
+
+import { ADMIN_URL } from '@utils/constants'
 
 const Modal = ({ setOpen = null }) => {
   const [toggleForm, setToggleForm] = useState(false)
 
   const closeModal = () => setOpen(false)
   const changeForm = () => setToggleForm(!toggleForm)
-
-  const { data: secteurs } = useTerms('secteurs')
-  const { data: regions, loading } = useTerms('regions')
 
   return (
     <dialog onClick={closeModal} id="modal" open={true}>
@@ -48,9 +50,8 @@ const Modal = ({ setOpen = null }) => {
 
           <div className="modal-body">
             <OnboardingFlow
-              data={{ secteurs: secteurs?.terms, regions: regions?.terms }}
+              data={{ secteurs, regions, niveaux, categories }}
               active={Number(toggleForm)}
-              loading={loading}
             >
               <SearchForm />
               <SearchCurriculumForm />
@@ -59,7 +60,7 @@ const Modal = ({ setOpen = null }) => {
 
           <div className="modal-footer">
             <SeoLink
-              href="https://www.jobrapide.org/admin/"
+              href={ADMIN_URL}
               className="cta-publish-job"
               label="Publier une Offre"
             >

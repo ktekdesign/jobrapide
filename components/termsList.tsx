@@ -1,8 +1,7 @@
-import React, { FC, memo } from 'react'
+import React, { memo } from 'react'
 import SeoLink from '@components/seoLink'
-import ComponentsProps from '@utils/interfaces/components'
 
-const TermsList: FC<ComponentsProps> = ({ terms, className }) => (
+const TermsList = ({ terms, className }) => (
   <ul className="terms-list flex">
     {terms?.map(({ id, uri, name }) => (
       <SeoLink

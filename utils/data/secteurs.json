@@ -1,0 +1,299 @@
+[
+  {
+    "id": 48,
+    "name": "Achat - Transport - Logistique",
+    "count": null,
+    "slug": "achat-transport-logistique",
+    "uri": "/secteur/achat-transport-logistique/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 49,
+    "name": "Administration - Ressources humaines - Planification",
+    "count": null,
+    "slug": "administration-ressources-humaines-planification",
+    "uri": "/secteur/administration-ressources-humaines-planification/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 119,
+    "name": "Aéronautique - Gestion des aéroports - Météorologie",
+    "count": null,
+    "slug": "aeronautique-gestion-des-aeroports-circulation-aerienne",
+    "uri": "/secteur/aeronautique-gestion-des-aeroports-circulation-aerienne/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 50,
+    "name": "Agriculture - Elevage - Peche - Environnement",
+    "count": null,
+    "slug": "agriculture-elevage-peche-environnement",
+    "uri": "/secteur/agriculture-elevage-peche-environnement/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 51,
+    "name": "Banque - Assurance - Finance",
+    "count": null,
+    "slug": "banque-assurance-finance",
+    "uri": "/secteur/banque-assurance-finance/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 52,
+    "name": "BTP (Génie civil - Génie rural - Architecture - Urbanisme - etc.)",
+    "count": null,
+    "slug": "btp-immobilier-architecture-urbanisme",
+    "uri": "/secteur/btp-immobilier-architecture-urbanisme/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 87,
+    "name": "Chauffeur - Mécanicien Auto/groupe - Réparateur Electronique",
+    "count": null,
+    "slug": "chauffeur-mecanicien-auto-moto-groupe-reparateur-electronique",
+    "uri": "/secteur/chauffeur-mecanicien-auto-moto-groupe-reparateur-electronique/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 105,
+    "name": "Chimie - Biologie - Laboratoire",
+    "count": null,
+    "slug": "chimie-biologie",
+    "uri": "/secteur/chimie-biologie/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 65,
+    "name": "Communication - Journalisme - Relations Internationales",
+    "count": null,
+    "slug": "communication-journalisme-relations-internationales",
+    "uri": "/secteur/communication-journalisme-relations-internationales/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 54,
+    "name": "Comptabilité - Gestion - Audit - Gestion de projets",
+    "count": null,
+    "slug": "comptabilite-gestion-audit",
+    "uri": "/secteur/comptabilite-gestion-audit/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 55,
+    "name": "Direction - Coordination",
+    "count": null,
+    "slug": "direction-coordination",
+    "uri": "/secteur/direction-coordination/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 56,
+    "name": "Droit - Fiscalité - Gouvernance - Politique",
+    "count": null,
+    "slug": "droit-fiscalite-gouvernance",
+    "uri": "/secteur/droit-fiscalite-gouvernance/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 81,
+    "name": "Eau - Hygiène - Assainissement - Hydraulique",
+    "count": null,
+    "slug": "eau-hygiene-assainissement-hydraulique",
+    "uri": "/secteur/eau-hygiene-assainissement-hydraulique/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 57,
+    "name": "Economie - Statistique - Démographie",
+    "count": null,
+    "slug": "economie-statistique-demographie",
+    "uri": "/secteur/economie-statistique-demographie/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 92,
+    "name": "Education - Formation - Pédagogie - Archiviste",
+    "count": null,
+    "slug": "education",
+    "uri": "/secteur/education/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 58,
+    "name": "Electricité - Electromécanique - Réparation - Industrie",
+    "count": null,
+    "slug": "electromecanique-reparation",
+    "uri": "/secteur/electromecanique-reparation/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 82,
+    "name": "Energie - Petrole - Autres Ressources Naturelles",
+    "count": null,
+    "slug": "energie-petrole-autresressourcesnaturelles",
+    "uri": "/secteur/energie-petrole-autresressourcesnaturelles/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 101,
+    "name": "Genre - Assistance humanitaire - Développement international",
+    "count": null,
+    "slug": "genre-assistance-humanitaire-developpement-international",
+    "uri": "/secteur/genre-assistance-humanitaire-developpement-international/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 86,
+    "name": "Géographie - Géologie - Mine - Topographie",
+    "count": null,
+    "slug": "geographie-geologie-mine",
+    "uri": "/secteur/geographie-geologie-mine/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 53,
+    "name": "Graphisme – Art – Culture - Photo - Video",
+    "count": null,
+    "slug": "graphisme-art-culture",
+    "uri": "/secteur/graphisme-art-culture/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 104,
+    "name": "Habillement - Cosmétique - Coiffure",
+    "count": null,
+    "slug": "habillement-cosmetique-coiffure",
+    "uri": "/secteur/habillement-cosmetique-coiffure/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 59,
+    "name": "Hotellerie - Restauration - Tourisme - Voyage",
+    "count": null,
+    "slug": "hotellerie-restauration-tourisme",
+    "uri": "/secteur/hotellerie-restauration-tourisme/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 60,
+    "name": "Informatique - Télécommunication - Electronique",
+    "count": null,
+    "slug": "informatique-telecommunication",
+    "uri": "/secteur/informatique-telecommunication/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 91,
+    "name": "Langue - Littérature - Interprétariat - Histoire - Philosophie",
+    "count": null,
+    "slug": "langue-litterature-interpretariat-histoire",
+    "uri": "/secteur/langue-litterature-interpretariat-histoire/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 463,
+    "name": "Maçonnerie - Plomberie - Peintre - Menuiserie - Jardinier",
+    "count": null,
+    "slug": "maconnerie-plomberie-peintre-menuiserie-jardinier",
+    "uri": "/secteur/maconnerie-plomberie-peintre-menuiserie-jardinier/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 61,
+    "name": "Marketing - Vente - Distribution - Commerce international",
+    "count": null,
+    "slug": "marketing-vente-distribution",
+    "uri": "/secteur/marketing-vente-distribution/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 106,
+    "name": "Mathématique - Physique - Astronomie",
+    "count": null,
+    "slug": "mathematique-physique-astronomie",
+    "uri": "/secteur/mathematique-physique-astronomie/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 471,
+    "name": "Planton – Ménagère – Service nettoyage - Nounou",
+    "count": null,
+    "slug": "planton-menagere-service-nettoyage-nounou",
+    "uri": "/secteur/planton-menagere-service-nettoyage-nounou/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 62,
+    "name": "Santé - Nutrition - Santé Publique - Pharmacie - Vétérinaire",
+    "count": null,
+    "slug": "sante-social-nutrition-santepublique-pharmacie-veterinaire",
+    "uri": "/secteur/sante-social-nutrition-santepublique-pharmacie-veterinaire/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 68,
+    "name": "Secrétariat - Réceptionniste - Hôtesse",
+    "count": null,
+    "slug": "secretariat-receptionniste-hotesse",
+    "uri": "/secteur/secretariat-receptionniste-hotesse/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 63,
+    "name": "Sécurité - Armée - Armée de l'air",
+    "count": null,
+    "slug": "securite",
+    "uri": "/secteur/securite/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 107,
+    "name": "Sociologie - Psychologie - Théologie - Sciences Sociales",
+    "count": null,
+    "slug": "sociologie-anthropologie-psychologie-theologie",
+    "uri": "/secteur/sociologie-anthropologie-psychologie-theologie/",
+    "posts": null,
+    "seo": null
+  },
+  {
+    "id": 441,
+    "name": "Sports (Football, basket-ball, arts martiaux, athlétisme, etc.)",
+    "count": null,
+    "slug": "sports-football-basket-ball-arts-martiaux-athletisme-etc",
+    "uri": "/secteur/sports-football-basket-ball-arts-martiaux-athletisme-etc/",
+    "posts": null,
+    "seo": null
+  }
+]
