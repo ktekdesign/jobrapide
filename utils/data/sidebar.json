@@ -1,5 +1,4 @@
 {
-  "writedAt": "2023-05-11T22:25:21.030Z",
   "pub1": [
     {
       "id": null,
@@ -16,6 +15,7 @@
           "count": null,
           "slug": null,
           "uri": null,
+          "parentId": null,
           "posts": null,
           "seo": null
         }
@@ -39,6 +39,7 @@
           "count": null,
           "slug": null,
           "uri": null,
+          "parentId": null,
           "posts": null,
           "seo": null
         }
@@ -64,6 +65,7 @@
           "count": null,
           "slug": null,
           "uri": null,
+          "parentId": null,
           "posts": null,
           "seo": null
         }
@@ -89,6 +91,7 @@
           "count": null,
           "slug": null,
           "uri": null,
+          "parentId": null,
           "posts": null,
           "seo": null
         }
@@ -112,6 +115,7 @@
           "count": null,
           "slug": null,
           "uri": null,
+          "parentId": null,
           "posts": null,
           "seo": null
         }
@@ -137,6 +141,7 @@
           "count": null,
           "slug": null,
           "uri": null,
+          "parentId": null,
           "posts": null,
           "seo": null
         }

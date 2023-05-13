@@ -3,8 +3,9 @@ import { FC, memo } from 'react'
 import { Seo } from '@utils/interfaces/data'
 import { isEmpty } from '@utils/manipulateArray'
 import Script from 'next/script'
+import defaultSeo from '@utils/data/seo.json'
 
-const Meta: FC<{ seo: Seo }> = ({ seo }) => (
+const Meta: FC<{ seo: Seo }> = ({ seo = defaultSeo }) => (
   <>
     <Head>
       <meta httpEquiv="Content-Type" content="text/html; charset=utf8" />

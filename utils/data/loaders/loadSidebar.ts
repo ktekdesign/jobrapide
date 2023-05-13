@@ -34,7 +34,6 @@ const loadSidebar = async () => {
     fsPromise.writeFile(
       'utils/data/sidebar.json',
       JSON.stringify({
-        writedAt: new Date(),
         pub1,
         pub2,
         pub3,

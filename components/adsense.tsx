@@ -2,7 +2,7 @@ import { Adsense } from '@ctrl/react-adsense'
 import { memo } from 'react'
 
 const GAdSense = ({ variant }: { variant?: string }) => {
-  //if (process.env.NODE_ENV !== 'production') return <></>
+  if (process.env.NODE_ENV !== 'production') return <></>
 
   return (
     <div className="adsense">

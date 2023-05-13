@@ -319,7 +319,7 @@ button[type='submit'] {
   @apply md:w-1/3 lg:w-1/4;
 }
 .feature img {
-  @apply w-auto object-scale-down mx-auto h-auto lg:h-48;
+  @apply w-auto object-scale-down mx-auto h-auto lg:h-48 text-transparent;
 }
 .swiper-container .feature img {
   @apply h-48 sm:h-60 md:h-72 lg:h-48;

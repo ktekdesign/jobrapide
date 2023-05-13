@@ -26,7 +26,6 @@ const ImageWithFallback = ({
       onError={setError}
       src={error ? fallback : src}
       {...props}
-      unoptimized
     />
   )
 }

@@ -11,4 +11,9 @@ export const isEmpty = (elt) => {
   if (elt instanceof Array) return elt.length === 0
   return elt === null
 }
-export const preventUndefined = (obj) => (isEmpty(obj) ? null : obj)
+export const preventUndefined = (obj) =>
+  isEmpty(obj)
+    ? null
+    : typeof obj === 'string'
+    ? obj.replaceAll('TchadCarriere', 'JobRapide')
+    : obj

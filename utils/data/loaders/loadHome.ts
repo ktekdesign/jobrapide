@@ -6,10 +6,8 @@ const loadHome = async () => {
   try {
     const data = await getPostsHome()
 
-    fsPromise.writeFile(
-      'utils/data/home.json',
-      JSON.stringify({ writedAt: new Date(), posts: data })
-    )
+    fsPromise.writeFile('utils/data/home.json', JSON.stringify(data))
+    fsPromise.writeFile('utils/data/update.json', JSON.stringify(new Date()))
   } catch (error) {
     outputErrors(error)
   }

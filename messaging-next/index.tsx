@@ -75,11 +75,12 @@ export default function NotificationSignal() {
     }
   }
   useEffect(() => getTokenApp(), [getTokenApp])
-  console.log(token)
-  if (!token)
-    return (
-      <div className="notification-bell" onClick={requestPermission}>
-        <Bell className="h-6 w-6" />
-      </div>
-    )
+
+  if (token) return <></>
+
+  return (
+    <div className="notification-bell" onClick={requestPermission}>
+      <Bell className="h-6 w-6" />
+    </div>
+  )
 }

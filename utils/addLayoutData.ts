@@ -1,12 +1,16 @@
 import { PER_PAGE, REVALIDATE } from '@utils/constants'
-import sidebarData from '@utils/data/sidebar.json'
-import loadSidebar from './data/loaders/loadSidebar'
-import isMoreThan from './isMoreThan'
+import loadSidebar from '@utils/data/loaders/loadSidebar'
+import isMoreThan from '@utils/isMoreThan'
+import loadHome from '@utils/data/loaders/loadHome'
+import update from '@utils/data/update.json'
 
 export const addLayoutData = (props) => {
   const { seo, ...rest } = props
 
-  if (isMoreThan(sidebarData?.writedAt)) loadSidebar()
+  if (isMoreThan(update, 7200000)) {
+    loadSidebar()
+    loadHome()
+  }
 
   if ('search' in rest) {
     return {
@@ -18,20 +22,21 @@ export const addLayoutData = (props) => {
         ],
         layout: {
           seo: null,
-          ...sidebarData,
         },
       },
     }
   }
 
-  const { breadcrumbs, ...seoProps } = seo ?? {}
+  const { breadcrumbs, ...seoProps } = seo
+
+  if (rest?.currentPage > 1)
+    seoProps.title = `${seoProps.title} - Page ${rest.currentPage}`
 
   const layout = {
     ...rest,
-    breadcrumbs: breadcrumbs ?? null,
+    breadcrumbs,
     layout: {
-      seo: seoProps?.title ? seoProps : null,
-      ...sidebarData,
+      seo: seoProps,
     },
   }
 

@@ -12,14 +12,12 @@ import { ErrorBoundary } from 'react-error-boundary'
 import GAdSense from '@components/adsense'
 import Pub from '@components/pub'
 import SwiperSidebar from '@components/swiperSidebar'
-import Meta from '@components/meta'
-import defaultSeo from '@utils/data/seo.json'
+import sidebar from '@utils/data/sidebar.json'
 
-const Layout = ({ children, layout }) => (
+const Layout = ({ children }) => (
   <>
-    <Meta seo={layout?.seo ?? defaultSeo} />
     <Header />
-    <Pub className="pub-in-header" posts={layout?.pub2} />
+    <Pub className="pub-in-header" posts={sidebar?.pub2} />
     <GAdSense />
     <main>
       <Column className="left">
@@ -35,12 +33,12 @@ const Layout = ({ children, layout }) => (
       </Column>
       <Column className="right">
         <Row>
-          <Pub posts={layout?.pub1} />
+          <Pub posts={sidebar?.pub1} />
         </Row>
         <Row>
           <SwiperSidebar
             title="Offres sponsorisées"
-            posts={layout?.sponsored}
+            posts={sidebar?.sponsored}
           />
         </Row>
         <Row>
@@ -48,11 +46,11 @@ const Layout = ({ children, layout }) => (
             onlyImage
             title="Partenaires"
             className="title-secondary"
-            posts={layout?.partners}
+            posts={sidebar?.partners}
           />
         </Row>
         <Row>
-          <Pub posts={layout?.pub3} />
+          <Pub posts={sidebar?.pub3} />
         </Row>
         <Row>
           <Facebook />

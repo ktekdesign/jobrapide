@@ -7,6 +7,7 @@ import '@styles/index.css'
 import TagManager from 'react-gtm-module'
 import Layout from '@layout/layout'
 import Script from 'next/script'
+import Meta from '@components/meta'
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const { layout, ...props } = pageProps
@@ -21,8 +22,9 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
       ></Script>
+      <Meta seo={layout?.seo} />
       <ApolloProvider client={client}>
-        <Layout layout={layout}>
+        <Layout>
           <Component {...props} />
         </Layout>
       </ApolloProvider>
