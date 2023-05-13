@@ -52,8 +52,8 @@ module.exports = {
           isDev,
           permissionsPolicy: false,
           contentSecurityPolicy: {
+            mergeDefaultDirectives: true,
             'connect-src': [
-              "'self'",
               '*.google-analytics.com',
               '*.googleapis.com',
               '*.google.com',
@@ -61,7 +61,7 @@ module.exports = {
               '*.googlesyndication.com',
               '*.jobrapide.org',
             ],
-            'font-src': "'self' data:",
+            'font-src': 'data:',
             'frame-src': [
               '*.g.doubleclick.net',
               '*.twitter.com',
@@ -71,7 +71,6 @@ module.exports = {
               '*.googleadservices.com',
             ],
             'img-src': [
-              "'self'",
               '*.jobrapide.org',
               '*.twitter.com',
               '*.facebook.com',
@@ -81,7 +80,6 @@ module.exports = {
               '*.g.doubleclick.net',
             ],
             'script-src': [
-              "'self'",
               '*.twitter.com',
               '*.facebook.net',
               '*.googleapis.com',
@@ -91,7 +89,6 @@ module.exports = {
               '*.googlesyndication.com',
               '*.googleadservices.com',
             ],
-            'style-src': "'self'",
           },
         }),
       },
