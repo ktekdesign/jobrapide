@@ -9,7 +9,6 @@ import { gql } from '@apollo/client'
 import client from '@graphql/client'
 import { PER_PAGE } from '@utils/constants'
 import { queryHome } from './homeQueries'
-import { filterPostsHome } from '@utils/filterPostsHome'
 
 export const loadFromWPGraphQL = async (
   query = '',
@@ -194,7 +193,14 @@ export const getTermAndPosts = async ({ term, type, page = 1 }) => {
 export const getPostsHome = async () => {
   try {
     const data = await loadFromWPGraphQL(queryHome)
-    return filterPostsHome(data)
+    const terms = data
+      ? Object.values(data).map(({ posts, name, uri }) => ({
+          title: name,
+          uri,
+          posts: posts.nodes?.map((post) => mapPost(post)),
+        }))
+      : null
+    return { terms }
   } catch (error) {
     outputErrors(error)
   }

@@ -206,10 +206,10 @@ footer {
   @apply lg:border-white lg:bg-secondary lg:border;
 }
 .menu-item-link.menu-active {
-  @apply border-white bg-secondary text-dark border font-bold rounded px-2 hover:text-primary;
+  @apply py-2 border-white bg-secondary text-dark border font-bold rounded px-2 hover:text-primary;
 }
 .menu-item-link {
-  @apply block lg:inline-block text-white hover:text-dark font-bold py-2 active:text-slate-400;
+  @apply block lg:inline-block leading-none text-white hover:text-dark font-bold py-2 lg:py-0 active:text-slate-400;
 }
 .menu-items {
   @apply text-sm flex justify-between flex-wrap lg:flex-row lg:items-center lg:gap-x-2 xl:gap-x-4;
@@ -611,7 +611,7 @@ button[type='submit'] {
   @apply h-8 w-8;
 }
 .adsense {
-  @apply max-w-screen-lg mx-auto mb-2 w-full px-8 lg:px-0;
+  @apply max-w-screen-lg mb-2 w-full mx-4 lg:mx-auto;
 }
 main .adsense {
   @apply px-0;

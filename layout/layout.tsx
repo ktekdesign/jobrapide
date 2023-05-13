@@ -18,7 +18,9 @@ const Layout = ({ children }) => (
   <>
     <Header />
     <Pub className="pub-in-header" posts={sidebar?.pub2} />
-    <GAdSense />
+    <Row>
+      <GAdSense />
+    </Row>
     <main>
       <Column className="left">
         <ErrorBoundary
@@ -60,7 +62,9 @@ const Layout = ({ children }) => (
         </Row>
       </Column>
     </main>
-    <GAdSense />
+    <Row>
+      <GAdSense />
+    </Row>
     <Footer />
     <GoTop />
     <ShareButtons float />

@@ -3,11 +3,17 @@ import SwiperContainer from '@components/swiperContainer'
 import SwiperTitle from '@components/swiperTitle'
 import SwiperHome from '@components/swiperHome'
 import Loading from '@components/loading'
-import home from '@utils/data/home.json'
+import addLayoutData from '@utils/addLayoutData'
+import { getPostsHome } from '@graphql/api'
 
-const Index = () => (
+export const getStaticProps = async () => {
+  const terms = await getPostsHome()
+  return addLayoutData(terms)
+}
+
+const Index = ({ terms }) => (
   <div className="flex flex-wrap">
-    <Loading data={home} loading={false} serial>
+    <Loading data={terms} loading={false} serial>
       <SwiperContainer>
         <SwiperTitle />
         <SwiperHome />

@@ -6,7 +6,9 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install",
-    "postbuild": "next-sitemap"
+    "postbuild": "next-sitemap",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@apollo/client": "^3.7.12",
@@ -39,6 +41,13 @@
     "typescript": "^4.7.4"
   },
   "devDependencies": {
+    "@storybook/addon-essentials": "^7.0.11",
+    "@storybook/addon-interactions": "^7.0.11",
+    "@storybook/addon-links": "^7.0.11",
+    "@storybook/blocks": "^7.0.11",
+    "@storybook/nextjs": "^7.0.11",
+    "@storybook/react": "^7.0.11",
+    "@storybook/testing-library": "^0.0.14-next.2",
     "@svgr/webpack": "^7.0.0",
     "@types/lodash-es": "^4.17.7",
     "@typescript-eslint/eslint-plugin": "^5.58.0",
@@ -49,6 +58,7 @@
     "husky": "^8.0.0",
     "postcss": "8.4.14",
     "prettier": "^2.8.7",
+    "storybook": "^7.0.11",
     "tailwindcss": "^3.0.24"
   }
 }
