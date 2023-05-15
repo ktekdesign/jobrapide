@@ -1,7 +1,7 @@
 import { PER_PAGE, REVALIDATE } from '@utils/constants'
 
 export const addLayoutData = (data) => {
-  const { seoProps, ...rest } = data
+  const { seo: seoProps, ...rest } = data
 
   if ('search' in rest) {
     return {

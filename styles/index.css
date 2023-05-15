@@ -611,7 +611,7 @@ button[type='submit'] {
   @apply h-8 w-8;
 }
 .adsense {
-  @apply max-w-screen-lg mb-2 w-full mx-4 lg:mx-auto;
+  @apply max-w-screen-lg mb-2 w-full mx-auto;
 }
 main .adsense {
   @apply px-0;
