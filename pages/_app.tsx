@@ -18,10 +18,12 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 
   return (
     <>
-      <Script
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-      ></Script>
+      {process.env.NEXT_PUBLIC_SITE_URL !== 'https://v2.jobrapide.org' && (
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+        ></Script>
+      )}
       <Meta seo={layout?.seo} />
       <ApolloProvider client={client}>
         <Layout>

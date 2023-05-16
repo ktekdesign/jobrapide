@@ -1,6 +1,6 @@
-import { memo, useMemo } from 'react'
+import { memo, useEffect, useState } from 'react'
 
-import { gql, useQuery } from '@apollo/client'
+import { gql, useLazyQuery } from '@apollo/client'
 import { similarQuery } from '@graphql/similarQuery'
 import { mapPost } from '@utils/mapping'
 import SwiperContainer from './swiperContainer'
@@ -13,11 +13,14 @@ const SimilarPosts = ({ id, categoryId }) => {
     ${similarQuery.replace('$id', id).replace('$categoryId', categoryId)}
   `
 
-  const { data } = useQuery(QUERY)
-  const posts = useMemo(
-    () => data?.posts?.nodes?.map((post) => mapPost(post)),
-    [data]
-  )
+  const [getPosts] = useLazyQuery(QUERY)
+  const [posts, setPosts] = useState(null)
+  useEffect(() => {
+    getPosts().then(({ data }) =>
+      setPosts(data?.posts?.nodes?.map((post) => mapPost(post)))
+    )
+  }, [getPosts])
+
   if (isEmpty(posts)) return <></>
   return (
     <SwiperContainer posts={posts} title="Publications similaires">

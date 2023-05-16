@@ -15,7 +15,12 @@ export const mapSeo = (seo): Seo => {
       metaRobotsNoindex: preventUndefined(seo.metaRobotsNoindex),
       opengraphAuthor: preventUndefined(seo.opengraphAuthor),
       opengraphDescription: preventUndefined(seo.opengraphDescription),
-      opengraphImage: preventUndefined(seo.opengraphImage?.sourceUrl),
+      opengraphImage: `${preventUndefined(
+        seo.opengraphImage.sourceUrl
+      )?.replace(
+        'wp-content/uploads',
+        'wp-content/webp-express/webp-images/uploads'
+      )}.webp`,
       opengraphModifiedTime: preventUndefined(seo.opengraphModifiedTime),
       opengraphPublishedTime: preventUndefined(seo.opengraphPublishedTime),
       opengraphPublisher: preventUndefined(seo.opengraphPublisher),
@@ -26,7 +31,10 @@ export const mapSeo = (seo): Seo => {
       schema: preventUndefined(seo.schema?.raw),
       title: preventUndefined(seo.title),
       twitterDescription: preventUndefined(seo.twitterDescription),
-      twitterImage: preventUndefined(seo.twitterImage?.sourceUrl),
+      twitterImage: `${preventUndefined(seo.twitterImage?.sourceUrl)?.replace(
+        'wp-content/uploads',
+        'wp-content/webp-express/webp-images/uploads'
+      )}.webp`,
       twitterTitle: preventUndefined(seo.twitterTitle),
     }
   } catch (err) {
