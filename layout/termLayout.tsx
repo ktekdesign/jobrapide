@@ -3,7 +3,7 @@ import ArchiveTitle from '@components/archive-title'
 import Breadcrumb from '@components/breadcrumb'
 import ArchiveBody from '@components/archive-body'
 import Loading from '@components/loading'
-import { isEmpty } from '@utils/manipulateArray'
+import { memo } from 'react'
 
 const TermLayout = ({
   title,
@@ -17,10 +17,7 @@ const TermLayout = ({
   tag,
 }) => (
   <>
-    <Loading
-      data={{ posts, currentPage, title, breadcrumbs }}
-      loading={isEmpty(posts)}
-    >
+    <Loading data={{ posts, currentPage, title, breadcrumbs }} loading={!posts}>
       <ArchiveTitle />
       <Breadcrumb />
       <ArchiveBody />
@@ -29,4 +26,4 @@ const TermLayout = ({
   </>
 )
 
-export default TermLayout
+export default memo(TermLayout)

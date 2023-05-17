@@ -18,7 +18,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 
   return (
     <>
-      {process.env.NEXT_PUBLIC_SITE_URL !== 'https://v2.jobrapide.org' && (
+      {process.env.NEXT_PUBLIC_SITE_URL === 'https://v2.jobrapide.org' && (
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"

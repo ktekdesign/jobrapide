@@ -25,7 +25,7 @@ const NavBar = ({ items, setOpen }) => {
   return (
     <nav className="navbar">
       <SeoLink href="/" label="JobRapide" as="div" className="logo">
-        <Image src="/images/logo.png" width={40} height={40} alt="Logo" />
+        <Image src="/images/logo.webp" width={40} height={40} alt="Logo" />
         <span className={currentPath === '/' ? 'home-active' : 'home'}>
           <HomeIcon className="icon" />
           <span>{process.env.NEXT_PUBLIC_CMS_NAME}</span>
@@ -67,7 +67,7 @@ const NavBar = ({ items, setOpen }) => {
             target="_blank"
           >
             <Image
-              src="/images/googleplay.png"
+              src="/images/googleplay.webp"
               width={170}
               height={64}
               alt="download app"

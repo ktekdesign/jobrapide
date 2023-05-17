@@ -4,7 +4,7 @@
   "metaRobotsNofollow": "follow",
   "metaRobotsNoindex": "index",
   "opengraphDescription": "Retrouvez toutes les offres de stage, de bourses d'étude et d'emplois au Tchad et à l'étranger. Trouvez également les candidats idéaux pour renforcer votre équipe. Publiez gratuitement vos offres d'emplois et de bourses",
-  "opengraphImage": "https://v2.jobrapide.org/images/logo.png",
+  "opengraphImage": "https://v2.jobrapide.org/images/logo.webp",
   "opengraphPublisher": "https://www.facebook.com/BoursesOpportunites/",
   "opengraphSiteName": "JobRapide",
   "opengraphTitle": "Offres d'emplois, Bourses d'étude, Stage, Formations",
@@ -14,7 +14,7 @@
   "schema": null,
   "title": "Offres d'emplois, Bourses d'étude, Stage, Formations",
   "twitterDescription": "Retrouvez toutes les offres de stage, de bourses d'étude et d'emplois au Tchad et à l'étranger. Trouvez également les candidats idéaux pour renforcer votre équipe. Publiez gratuitement vos offres d'emplois et de bourses",
-  "twitterImage": "https://v2.jobrapide.org/images/logo.png",
+  "twitterImage": "https://v2.jobrapide.org/images/logo.webp",
   "twitterSiteName": "JobRapide",
   "twitterTitle": "Offres d'emplois, Bourses d'étude, Stage, Formations"
 }

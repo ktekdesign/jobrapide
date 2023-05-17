@@ -12,6 +12,7 @@ const PostPreview: FC<ComponentsProps> = ({
   uri,
   className,
   onlyImage,
+  priority,
 }) => (
   <>
     <CoverImage
@@ -19,6 +20,7 @@ const PostPreview: FC<ComponentsProps> = ({
       image={image}
       uri={uri}
       className={className ?? 'post-preview-image'}
+      priority={priority}
     />
     {!onlyImage && (
       <SeoLink label={title} href={uri} as="h3" className="post-preview-title">

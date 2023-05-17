@@ -2,40 +2,54 @@ import { Page, Post, Seo, Term } from '@utils/interfaces/data'
 import { isEmpty, preventUndefined } from '@utils/manipulateArray'
 import { outputErrors } from '@utils/outputErrors'
 
+const replaceUrl = (url) =>
+  preventUndefined(url?.replace('www.jobrapide.org', 'v2.jobrapide.org'))
+
+const getOptimizedImageUrl = (url: string) => {
+  if (
+    !url ||
+    (!url.includes('.png') &&
+      !url.includes('.jpg') &&
+      !url.includes('.jpeg') &&
+      !url.includes('.webp'))
+  )
+    return '/images/logo.webp'
+  const imageUrl = preventUndefined(
+    url?.replace(
+      'wp-content/uploads',
+      'wp-content/webp-express/webp-images/uploads'
+    )
+  )
+  return imageUrl ? `${imageUrl}.webp` : null
+}
 export const mapSeo = (seo): Seo => {
   if (isEmpty(seo)) return null
 
   try {
     return {
       breadcrumbs: preventUndefined(seo.breadcrumbs),
-      canonical: preventUndefined(seo.canonical),
+      canonical: replaceUrl(seo.canonical),
       metaDesc: preventUndefined(seo.metaDesc),
       metaKeywords: preventUndefined(seo.metaKeywords),
       metaRobotsNofollow: preventUndefined(seo.metaRobotsNofollow),
       metaRobotsNoindex: preventUndefined(seo.metaRobotsNoindex),
       opengraphAuthor: preventUndefined(seo.opengraphAuthor),
       opengraphDescription: preventUndefined(seo.opengraphDescription),
-      opengraphImage: `${preventUndefined(
-        seo.opengraphImage.sourceUrl
-      )?.replace(
-        'wp-content/uploads',
-        'wp-content/webp-express/webp-images/uploads'
-      )}.webp`,
+      opengraphImage: getOptimizedImageUrl(seo.opengraphImage?.sourceUrl),
       opengraphModifiedTime: preventUndefined(seo.opengraphModifiedTime),
       opengraphPublishedTime: preventUndefined(seo.opengraphPublishedTime),
       opengraphPublisher: preventUndefined(seo.opengraphPublisher),
       opengraphSiteName: preventUndefined(seo.opengraphSiteName),
       opengraphTitle: preventUndefined(seo.opengraphTitle),
       opengraphType: preventUndefined(seo.opengraphType),
-      opengraphUrl: preventUndefined(seo.opengraphUrl),
+      opengraphUrl: replaceUrl(seo.opengraphUrl),
       schema: preventUndefined(seo.schema?.raw),
       title: preventUndefined(seo.title),
-      twitterDescription: preventUndefined(seo.twitterDescription),
-      twitterImage: `${preventUndefined(seo.twitterImage?.sourceUrl)?.replace(
-        'wp-content/uploads',
-        'wp-content/webp-express/webp-images/uploads'
-      )}.webp`,
-      twitterTitle: preventUndefined(seo.twitterTitle),
+      twitterDescription: preventUndefined(
+        seo.twitterDescription ?? seo.opengraphDescription
+      ),
+      twitterImage: replaceUrl(seo.twitterImage?.sourceUrl),
+      twitterTitle: preventUndefined(seo.twitterTitle ?? seo.title),
     }
   } catch (err) {
     return outputErrors(err)
@@ -48,16 +62,11 @@ export const mapPost = (post): Post => {
     const categories = post.categories?.nodes?.map((term) => mapTerm(term))
     const secteurs = post.secteurs?.nodes?.map((term) => mapTerm(term))
     const regions = post.regions?.nodes?.map((term) => mapTerm(term))
-    const imageUrl = post.featuredImage?.node?.sourceUrl
-    const image = `${imageUrl?.replace(
-      'wp-content/uploads',
-      'wp-content/webp-express/webp-images/uploads'
-    )}.webp`
 
     return {
       id: preventUndefined(post.databaseId),
       title: preventUndefined(post.title),
-      image,
+      image: getOptimizedImageUrl(post.featuredImage?.node?.sourceUrl),
       date: preventUndefined(post.date),
       excerpt: preventUndefined(post.excerpt),
       content: preventUndefined(

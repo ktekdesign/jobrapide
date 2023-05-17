@@ -2,12 +2,7 @@ import React, { FC, memo } from 'react'
 import SeoLink from '@components/seoLink'
 import ComponentsProps from '@utils/interfaces/components'
 
-export const SwiperTitle: FC<ComponentsProps> = ({
-  uri,
-  title,
-  className,
-  ...props
-}) => (
+export const SwiperTitle: FC<ComponentsProps> = ({ uri, title, className }) => (
   <>
     {uri ? (
       <SeoLink
@@ -15,14 +10,11 @@ export const SwiperTitle: FC<ComponentsProps> = ({
         href={uri}
         label={title ?? ''}
         className={className ?? 'title-primary'}
-        {...props}
       >
         {title}
       </SeoLink>
     ) : (
-      <h2 className={className ?? 'title-primary'} {...props}>
-        {title}
-      </h2>
+      <h2 className={className ?? 'title-primary'}>{title}</h2>
     )}
   </>
 )

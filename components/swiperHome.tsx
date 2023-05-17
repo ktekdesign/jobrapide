@@ -14,13 +14,10 @@ export const SwiperHome: FC<ComponentsProps> = ({
   posts,
   slides = 3,
   onlyImage,
+  priority,
   className,
-  ...props
 }) => (
-  <div
-    className={`swiper-container ${onlyImage ? 'bg-white' : 'bg-dark'}`}
-    {...props}
-  >
+  <div className={`swiper-container ${onlyImage ? 'bg-white' : 'bg-dark'}`}>
     <Swiper
       pagination={{
         clickable: true,
@@ -52,6 +49,7 @@ export const SwiperHome: FC<ComponentsProps> = ({
             uri={uri}
             onlyImage={onlyImage}
             className={className}
+            priority={priority && key < 3}
           />
         </SwiperSlide>
       ))}

@@ -1,4 +1,4 @@
-import { PER_PAGE, REVALIDATE } from '@utils/constants'
+import { REVALIDATE } from '@utils/constants'
 
 export const addLayoutData = (data) => {
   const { seo: seoProps, ...rest } = data
@@ -33,7 +33,13 @@ export const addLayoutData = (data) => {
     }
   }
   const props = layout()
-  if (props.content || props.currentPage > PER_PAGE) return { props }
+  if (props.content || props.currentPage > 10 || props.tag) return { props }
+
+  const { secteur, region } = props
+
+  if (secteur || region || props.currentPage > 3)
+    return { props, revalidate: 172800 }
+
   return { props, revalidate: REVALIDATE }
 }
 export default addLayoutData

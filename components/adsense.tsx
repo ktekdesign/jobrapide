@@ -1,10 +1,10 @@
 import { Adsense } from '@ctrl/react-adsense'
 import { memo } from 'react'
 
-const GAdSense = ({ variant }: { variant?: string }) =>
-  process.env.NEXT_PUBLIC_SITE_URL !== 'https://v2.jobrapide.org' ? (
-    <></>
-  ) : (
+const GAdSense = ({ variant }: { variant?: string }) => {
+  if (process.env.NEXT_PUBLIC_SITE_URL !== 'https://v2.jobrapide.org')
+    return <></>
+  return (
     <div className="adsense">
       <Adsense
         client="ca-pub-6631438162509513"
@@ -14,5 +14,6 @@ const GAdSense = ({ variant }: { variant?: string }) =>
       />
     </div>
   )
+}
 
 export default memo(GAdSense)

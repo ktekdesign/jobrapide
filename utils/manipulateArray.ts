@@ -12,7 +12,7 @@ export const isEmpty = (elt) => {
   return elt === null
 }
 export const preventUndefined = (obj) =>
-  isEmpty(obj)
+  isEmpty(obj) || obj === 'undefined'
     ? null
     : typeof obj === 'string'
     ? obj.replaceAll('TchadCarriere', 'JobRapide')

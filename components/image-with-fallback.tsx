@@ -1,6 +1,6 @@
 import { memo, useEffect, useState } from 'react'
 import Image, { ImageProps } from 'next/image'
-import fallbackImage from '/public/images/logo.png'
+import fallbackImage from '/public/images/logo.webp'
 
 interface ImageWithFallbackProps extends ImageProps {
   fallback?: ImageProps['src']

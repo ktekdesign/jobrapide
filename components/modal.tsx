@@ -1,4 +1,10 @@
-import React, { memo, useState } from 'react'
+import React, {
+  Dispatch,
+  SetStateAction,
+  memo,
+  useCallback,
+  useState,
+} from 'react'
 
 import CloseIcon from '/public/images/close.svg'
 import Button from '@components/form/Button'
@@ -13,11 +19,15 @@ import categories from '@utils/data/categories.json'
 
 import { ADMIN_URL } from '@utils/constants'
 
-const Modal = ({ setOpen = null }) => {
+const Modal = ({
+  setOpen,
+}: {
+  setOpen?: Dispatch<SetStateAction<boolean>>
+}) => {
   const [toggleForm, setToggleForm] = useState(false)
 
-  const closeModal = () => setOpen(false)
-  const changeForm = () => setToggleForm(!toggleForm)
+  const closeModal = useCallback(() => setOpen(false), [setOpen])
+  const changeForm = useCallback(() => setToggleForm(!toggleForm), [toggleForm])
 
   return (
     <dialog onClick={closeModal} id="modal" open={true}>

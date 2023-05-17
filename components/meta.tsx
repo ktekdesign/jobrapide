@@ -32,8 +32,8 @@ const Meta: FC<{ seo: Seo }> = ({ seo = defaultSeo }) => (
       <meta name="twitter:widgets:link-color" content="#000000" />
       <meta name="twitter:widgets:border-color" content="#000000" />
       <meta name="twitter:partner" content="tfwp" />
-      <meta name="msapplication-TileImage" content="/images/logo.png" />
-      <link rel="icon" type="image/x-icon" href="/images/logo.png" />
+      <meta name="msapplication-TileImage" content="/images/logo.webp" />
+      <link rel="icon" type="image/x-icon" href="/images/logo.webp" />
       <meta name="twitter:card" content="summary" />
       <meta name="theme-color" content="#18a096" />
       {!isEmpty(seo) && (

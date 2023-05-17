@@ -14,7 +14,7 @@ import Pub from '@components/pub'
 import SwiperSidebar from '@components/swiperSidebar'
 import { sidebarQuery } from '@graphql/sidebarQuery'
 import { gql, useLazyQuery } from '@apollo/client'
-import { useEffect, useState } from 'react'
+import { memo, useEffect, useState } from 'react'
 import { mapPost } from '@utils/mapping'
 
 const Layout = ({ children }) => {
@@ -118,4 +118,4 @@ const Layout = ({ children }) => {
   )
 }
 
-export default Layout
+export default memo(Layout)

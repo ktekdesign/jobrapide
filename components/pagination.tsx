@@ -1,4 +1,4 @@
-import React, { memo, useCallback } from 'react'
+import React, { memo, useCallback, useMemo } from 'react'
 
 import ArrowLeft from '/public/images/left.svg'
 import ArrowRight from '/public/images/right.svg'
@@ -12,6 +12,7 @@ import {
 } from '@utils/manipulateArray'
 import SeoLink from '@components/seoLink'
 import usePagination from '@hooks/usePagination'
+import getPagination from '@utils/getPagination'
 
 const Pagination = ({
   secteur,
@@ -31,14 +32,18 @@ const Pagination = ({
   currentPage?: number
   search?: string
 }) => {
-  const pages = usePagination({
+  const count = usePagination({
     secteur,
     region,
     category,
     tag,
-    currentPage,
     search,
   })
+
+  const pages = useMemo(
+    () => getPagination(count, currentPage),
+    [count, currentPage]
+  )
 
   const url = useCallback(
     (page) =>

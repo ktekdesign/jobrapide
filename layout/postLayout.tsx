@@ -4,6 +4,7 @@ import Loading from '@components/loading'
 import SimilarPosts from '@components/similarPosts'
 import { getFirst } from '@utils/manipulateArray'
 import GAdSense from '@components/adsense'
+import { memo } from 'react'
 
 const PostLayout = ({ breadcrumbs, ...props }) => (
   <>
@@ -17,4 +18,4 @@ const PostLayout = ({ breadcrumbs, ...props }) => (
   </>
 )
 
-export default PostLayout
+export default memo(PostLayout)

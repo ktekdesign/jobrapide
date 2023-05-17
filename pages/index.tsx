@@ -5,6 +5,7 @@ import SwiperHome from '@components/swiperHome'
 import Loading from '@components/loading'
 import addLayoutData from '@utils/addLayoutData'
 import { getPostsHome } from '@graphql/api'
+import { memo } from 'react'
 
 export const getStaticProps = async () => {
   const terms = await getPostsHome()
@@ -16,7 +17,7 @@ const Index = ({ terms }) => (
     <Loading data={terms} loading={false} serial>
       <SwiperContainer>
         <SwiperTitle />
-        <SwiperHome />
+        <SwiperHome priority />
       </SwiperContainer>
       <SwiperContainer slides={1} className="w-full md:w-1/2 lg:w-1/3">
         <SwiperTitle className="title-secondary" />
@@ -53,4 +54,4 @@ const Index = ({ terms }) => (
     </Loading>
   </div>
 )
-export default Index
+export default memo(Index)
