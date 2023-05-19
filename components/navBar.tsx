@@ -1,9 +1,8 @@
-import React, { memo, useEffect, useState } from 'react'
+import React, { memo, useCallback, useState, useTransition } from 'react'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 
 import MenuIcon from '/public/images/menu.svg'
-import HomeIcon from '/public/images/home.svg'
 import CloseIcon from '/public/images/close.svg'
 import UserIcon from '/public/images/user.svg'
 import SearchIcon from '/public/images/search.svg'
@@ -14,44 +13,64 @@ import { ADMIN_URL, APP_URL } from '@utils/constants'
 
 const NavBar = ({ items, setOpen }) => {
   const [showMenu, setShowMenu] = useState(false)
-  const [currentPath, setCurrentPath] = useState('')
   const router = useRouter()
+  const [isPending, startTransition] = useTransition()
 
-  useEffect(() => {
-    setCurrentPath(router.asPath)
-    setShowMenu(false)
-  }, [router])
+  const closeMenu = useCallback(
+    () =>
+      startTransition(() => {
+        setShowMenu(false)
+      }),
+    []
+  )
+  const toggleMenu = useCallback(
+    () =>
+      startTransition(() => {
+        setShowMenu(!showMenu)
+      }),
+    [showMenu]
+  )
+  const openModal = useCallback(
+    () =>
+      startTransition(() => {
+        setOpen(true)
+      }),
+    [setOpen]
+  )
 
   return (
-    <nav className="navbar">
-      <SeoLink href="/" label="JobRapide" as="div" className="logo">
+    <nav className={`navbar ${isPending ? 'bg-slate-500' : ''}`}>
+      <SeoLink
+        onClick={closeMenu}
+        href="/"
+        label="JobRapide"
+        as="div"
+        className="logo"
+      >
         <Image src="/images/logo.webp" width={40} height={40} alt="Logo" />
-        <span className={currentPath === '/' ? 'home-active' : 'home'}>
-          <HomeIcon className="icon" />
-          <span>{process.env.NEXT_PUBLIC_CMS_NAME}</span>
+        <span className={router.asPath === '/' ? 'home-active' : 'home'}>
+          {process.env.NEXT_PUBLIC_CMS_NAME}
         </span>
       </SeoLink>
       <Button
         className="menu-mobile"
         label="Menu principal"
-        onClick={() => setShowMenu(!showMenu)}
+        onClick={toggleMenu}
       >
-        {showMenu ? (
-          <CloseIcon className="icon" />
-        ) : (
-          <MenuIcon className="icon" />
-        )}
+        <CloseIcon className={`icon${!showMenu ? ' hidden' : ''}`} />
+        <MenuIcon className={`icon${showMenu ? ' hidden' : ''}`} />
       </Button>
-      <div className={`${showMenu ? 'flex' : 'hidden'} main-menu lg:flex`}>
+      <div className={`${(showMenu && 'flex') || 'hidden'} main-menu lg:flex`}>
         <ul className="menu-items">
-          {items?.map(({ uri, title }, i) => (
+          {items?.map(({ uri, title }, key) => (
             <SeoLink
               as="li"
-              key={i}
+              key={key}
               href={uri}
               label={title}
-              className={`menu-item-link ${
-                currentPath.startsWith(uri) ? 'menu-active' : ''
+              onClick={closeMenu}
+              className={`menu-item-link${
+                (router.asPath === uri && ' menu-active') || ''
               }`}
             >
               {title}
@@ -90,13 +109,7 @@ const NavBar = ({ items, setOpen }) => {
             <PublishIcon className="icon" />
           </SeoLink>
           <li className="reveal">
-            <Button
-              onClick={(e) => {
-                e.preventDefault()
-                setOpen(true)
-              }}
-              label="Faire une recherche"
-            >
+            <Button onClick={openModal} label="Faire une recherche">
               <SearchIcon className="icon" />
             </Button>
           </li>

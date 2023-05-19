@@ -22,11 +22,14 @@ const PostPreview: FC<ComponentsProps> = ({
       className={className ?? 'post-preview-image'}
       priority={priority}
     />
-    {!onlyImage && (
-      <SeoLink label={title} href={uri} as="h3" className="post-preview-title">
-        {truncate(title)}
-      </SeoLink>
-    )}
+    <SeoLink
+      label={title}
+      href={uri}
+      as="h3"
+      className={`post-preview-title ${(onlyImage && 'hidden') || ''}`}
+    >
+      {title && truncate(title)}
+    </SeoLink>
   </>
 )
 

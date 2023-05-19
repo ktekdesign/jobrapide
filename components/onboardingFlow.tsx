@@ -1,21 +1,8 @@
 import { Children, memo } from 'react'
 import Loading from './loading'
 
-const OnboardingFlow = ({
-  children,
-  data = null,
-  active = 0,
-  isModal = false,
-  loading = false,
-}) =>
-  isModal && !active ? (
-    <></>
-  ) : data ? (
-    <Loading data={data} loading={loading}>
-      {active && isModal ? children : Children.toArray(children)[active]}
-    </Loading>
-  ) : (
-    <>{active && isModal ? children : Children.toArray(children)[active]}</>
-  )
+const OnboardingFlow = ({ data = null, children, active = 0 }) => (
+  <Loading data={data}>{Children.toArray(children)[active]}</Loading>
+)
 
 export default memo(OnboardingFlow)

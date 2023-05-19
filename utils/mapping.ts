@@ -1,9 +1,10 @@
 import { Page, Post, Seo, Term } from '@utils/interfaces/data'
 import { isEmpty, preventUndefined } from '@utils/manipulateArray'
 import { outputErrors } from '@utils/outputErrors'
+import { BASE_DOMAIN, BASE_URL } from '@utils/constants'
 
 const replaceUrl = (url) =>
-  preventUndefined(url?.replace('www.jobrapide.org', 'v2.jobrapide.org'))
+  preventUndefined(url?.replace('www.jobrapide.org', BASE_DOMAIN))
 
 const getOptimizedImageUrl = (url: string) => {
   if (
@@ -25,9 +26,16 @@ const getOptimizedImageUrl = (url: string) => {
 export const mapSeo = (seo): Seo => {
   if (isEmpty(seo)) return null
 
+  const breadcrumbs = preventUndefined(
+    seo.breadcrumbs?.map(({ text, url }) => ({
+      text,
+      url: url.replace('https://www.jobrapide.org', BASE_URL),
+    }))
+  )
+
   try {
     return {
-      breadcrumbs: preventUndefined(seo.breadcrumbs),
+      breadcrumbs,
       canonical: replaceUrl(seo.canonical),
       metaDesc: preventUndefined(seo.metaDesc),
       metaKeywords: preventUndefined(seo.metaKeywords),
@@ -80,7 +88,7 @@ export const mapPost = (post): Post => {
       categories: preventUndefined(categories),
       secteurs: preventUndefined(secteurs),
       regions: preventUndefined(regions),
-      seo: mapSeo(preventUndefined(post.seo)),
+      seo: mapSeo(post.seo),
     }
   } catch (err) {
     return outputErrors(err)
@@ -97,7 +105,7 @@ export const mapTerm = (term): Term => {
       uri: preventUndefined(term.uri),
       parentId: preventUndefined(term.parentDatabaseId),
       posts: preventUndefined(term.posts),
-      seo: mapSeo(preventUndefined(term.seo)),
+      seo: mapSeo(term.seo),
     }
   } catch (err) {
     return outputErrors(err)

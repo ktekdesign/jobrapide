@@ -1,24 +1,37 @@
-import React, { memo } from 'react'
+import React, { memo, useCallback, useTransition } from 'react'
 
-const FooterTab = ({ active, setActive }) => (
-  <ul
-    className={`tab ${
-      active === 1 ? 'flex-col-reverse lg:flex-row' : 'flex-col lg:flex-row'
-    }`}
-  >
-    <li
-      className={active === 1 ? 'active' : 'secteur-tab'}
-      onClick={() => setActive(1)}
-    >
-      <span>Emplois par secteur</span>
-    </li>
-    <li
-      className={active === 2 ? 'active' : 'region-tab'}
-      onClick={() => setActive(2)}
-    >
-      <span>Emplois par région</span>
-    </li>
-  </ul>
-)
+const FooterTab = ({
+  active,
+  setActive,
+  items = ['Emplois par secteur', 'Emplois par région'],
+}) => {
+  const [isPending, startTransition] = useTransition()
 
+  const getActive = useCallback(
+    (e) =>
+      startTransition(() => {
+        setActive(Number(e.target.dataset.order))
+      }),
+    [setActive]
+  )
+
+  return (
+    <ul
+      className={`flex-col${
+        (active === 1 && '-reverse') || ''
+      } tab lg:flex-row${(isPending && ' bg-dark') || ''}`}
+    >
+      {items?.map((item, key) => (
+        <li
+          data-active={active === key}
+          data-order={key}
+          onClick={getActive}
+          key={key}
+        >
+          {item}
+        </li>
+      ))}
+    </ul>
+  )
+}
 export default memo(FooterTab)

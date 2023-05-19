@@ -1,36 +1,26 @@
 import { FC, memo } from 'react'
-import parse from 'html-react-parser'
-import { BASE_URL } from '@utils/constants'
-import truncate from '@utils/truncate'
 import SeoLink from '@components/seoLink'
 import { BreadcrumbType } from '@utils/interfaces/data'
 import { prev } from '@utils/manipulateArray'
+import parse from 'html-react-parser'
 
-const Breadcrumb: FC<{ breadcrumbs?: BreadcrumbType[]; length?: number }> = ({
+const Breadcrumb: FC<{ breadcrumbs?: BreadcrumbType[] }> = ({
   breadcrumbs,
-  length = breadcrumbs?.length ?? 0,
-}) =>
-  length < 2 ? (
-    <></>
-  ) : (
-    <div className="row breadcrumb">
-      {breadcrumbs?.map(({ text, url }, key) =>
-        key === prev(length) ? (
-          <span key={key} className="breadcrumb-item">
-            {parse(truncate(text))}
-          </span>
-        ) : (
-          <SeoLink
-            className="breadcrumb-item"
-            label={text}
-            key={key}
-            href={url.replaceAll('https://www.jobrapide.org', BASE_URL)}
-          >
-            {parse(text)}
-          </SeoLink>
-        )
-      )}
-    </div>
-  )
+}) => (
+  <div className="breadcrumb">
+    {breadcrumbs?.length > 1 &&
+      breadcrumbs?.map(({ text, url }, key) => (
+        <SeoLink
+          className="breadcrumb-item"
+          label={text}
+          active={Number(key === prev(breadcrumbs?.length))}
+          key={key}
+          href={url}
+        >
+          {text && parse(text)}
+        </SeoLink>
+      ))}
+  </div>
+)
 
 export default memo(Breadcrumb)

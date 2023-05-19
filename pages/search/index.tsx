@@ -27,7 +27,7 @@ const Search = ({
   region,
   breadcrumbs,
 }) => {
-  const { posts, loading, error, uri } = useSearch({
+  const { posts, uri } = useSearch({
     currentPage,
     search,
     category,
@@ -46,8 +46,7 @@ const Search = ({
           uri,
           title: `Recherche pour ${search}`,
         }}
-        loading={loading}
-        error={error}
+        loading={!posts}
       >
         <ArchiveTitle />
         <Breadcrumb />

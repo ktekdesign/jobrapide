@@ -1,21 +1,23 @@
 import { getSearchQuery } from '@graphql/api'
-import { useQuery, gql } from '@apollo/client'
+import { gql, useLazyQuery } from '@apollo/client'
 import { mapPost } from '@utils/mapping'
-import { useMemo } from 'react'
+import { useEffect, useState } from 'react'
 
 const useSearch = ({ currentPage, search, category, secteur, region }) => {
   const QUERY = gql`
     ${getSearchQuery({ currentPage, search, category, secteur, region })}
   `
 
-  const { data, loading, error } = useQuery(QUERY)
-  const posts = useMemo(
-    () => data?.posts?.nodes?.map((post) => mapPost(post)),
-    [data]
-  )
+  const [getPosts] = useLazyQuery(QUERY)
+  const [posts, setPosts] = useState(null)
+  useEffect(() => {
+    getPosts().then(({ data }) =>
+      setPosts(data.posts?.nodes?.map((post) => mapPost(post)))
+    )
+  }, [getPosts])
 
   const uri = `/search/_page_?s=${search}&category=${category}&secteur=${secteur}&region=${region}`
-  return { posts, loading, error, uri }
+  return { posts, uri }
 }
 
 export default useSearch

@@ -20,7 +20,6 @@ const PostHeader: FC<PostHeaderProps> = ({
   title,
   image,
   date,
-  uri,
   categories,
   secteurs,
   regions,
@@ -32,7 +31,6 @@ const PostHeader: FC<PostHeaderProps> = ({
     <CoverImage
       title={title}
       image={image}
-      uri={uri}
       className="post-header-image"
       priority
     />

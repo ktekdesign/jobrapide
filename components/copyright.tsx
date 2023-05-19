@@ -1,9 +1,7 @@
 import React, { memo } from 'react'
 import SeoLink from '@components/seoLink'
 
-const currentYear = new Date().getFullYear()
-
-export const Copyright = () => (
+const Copyright = ({ currentYear = new Date().getFullYear() }) => (
   <div className="copyright">
     &copy; Copyright 2017 - {currentYear} | JobRapide | Tous Droits Réservés. |
     Développé par :&nbsp;

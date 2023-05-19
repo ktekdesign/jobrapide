@@ -12,52 +12,11 @@ import { ErrorBoundary } from 'react-error-boundary'
 import GAdSense from '@components/adsense'
 import Pub from '@components/pub'
 import SwiperSidebar from '@components/swiperSidebar'
-import { sidebarQuery } from '@graphql/sidebarQuery'
-import { gql, useLazyQuery } from '@apollo/client'
-import { memo, useEffect, useState } from 'react'
-import { mapPost } from '@utils/mapping'
+import { memo } from 'react'
+import useSidebar from '@hooks/useSidebar'
 
 const Layout = ({ children }) => {
-  const GET_SIDEBAR = gql`
-    ${sidebarQuery}
-  `
-  const [loadSidebar] = useLazyQuery(GET_SIDEBAR)
-  const [sidebar, setSidebar] = useState(null)
-  useEffect(() => {
-    loadSidebar().then(({ data }) => {
-      const pubs = data.pubs?.nodes?.map((pub) => mapPost(pub))
-
-      const pub1 = pubs?.filter(
-        (pub) =>
-          pub.categories.findIndex((category) => category.id === 192) !== -1
-      )
-
-      const pub2 = pubs?.filter(
-        (pub) =>
-          pub.categories.findIndex((category) => category.id === 193) !== -1
-      )
-
-      const pub3 = pubs?.filter(
-        (pub) =>
-          pub.categories.findIndex((category) => category.id === 194) !== -1
-      )
-
-      const partners = pubs?.filter(
-        (pub) =>
-          pub.categories.findIndex((category) => category.id === 88) !== -1
-      )
-
-      const sponsored = data?.sponsored?.nodes?.map((pub) => mapPost(pub))
-
-      setSidebar({
-        pub1,
-        pub2,
-        pub3,
-        partners,
-        sponsored,
-      })
-    })
-  }, [loadSidebar])
+  const sidebar = useSidebar()
 
   return (
     <>

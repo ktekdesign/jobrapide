@@ -11,7 +11,7 @@ export const SwiperContainer: FC<ComponentsProps> = ({
   slides,
   className,
 }) => (
-  <div className={`p-1 lg:pt-0 lg:pb-2 ${className ?? 'w-full'}`}>
+  <div className={`swiper-container-home ${className ?? 'w-full'}`}>
     <Loading data={{ title, posts, uri, slides }} loading={!posts}>
       {children}
     </Loading>

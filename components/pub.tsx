@@ -32,7 +32,7 @@ export const Pub: FC<ComponentsProps> = ({ posts, className, ...props }) => (
         modules={[Pagination, Autoplay, EffectFlip]}
       >
         {posts?.map(({ content }, key) => (
-          <SwiperSlide key={key}>{parse(content)}</SwiperSlide>
+          <SwiperSlide key={key}>{content && parse(content)}</SwiperSlide>
         ))}
       </Swiper>
     </div>

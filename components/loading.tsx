@@ -4,7 +4,7 @@ import { memo } from 'react'
 const Loading = ({
   children,
   data = null,
-  loading,
+  loading = false,
   error = null,
   serial = false,
 }) => {
@@ -26,7 +26,7 @@ const Loading = ({
         </div>
       </div>
     )
-  if (error || !data) return <></>
+  if (error) return <></>
 
   return (
     <>

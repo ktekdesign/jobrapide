@@ -1,5 +1,6 @@
 import { FC, HTMLAttributes, ReactNode, memo } from 'react'
 import Link from 'next/link'
+import OnboardingFlow from './onboardingFlow'
 
 interface LinkContainerProps extends HTMLAttributes<HTMLElement> {
   label?: string
@@ -9,6 +10,7 @@ interface LinkContainerProps extends HTMLAttributes<HTMLElement> {
   target?: string
   children: ReactNode
   innerClassName?: string
+  active?: number
 }
 const SeoLink: FC<LinkContainerProps> = ({
   children,
@@ -17,18 +19,22 @@ const SeoLink: FC<LinkContainerProps> = ({
   target,
   innerClassName,
   as: Component = 'span',
+  active = 0,
   ...props
 }) => (
   <Component {...props}>
-    <Link
-      href={href ?? ''}
-      aria-label={label ?? ''}
-      title={label ?? ''}
-      target={target ?? '_self'}
-      className={innerClassName ?? ''}
-    >
-      {children}
-    </Link>
+    <OnboardingFlow active={active}>
+      <Link
+        href={href ?? ''}
+        aria-label={label ?? ''}
+        title={label ?? ''}
+        target={target ?? '_self'}
+        className={innerClassName ?? ''}
+      >
+        {children}
+      </Link>
+      <>{children}</>
+    </OnboardingFlow>
   </Component>
 )
 

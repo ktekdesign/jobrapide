@@ -1,34 +1,28 @@
-import React, { FC, memo, useState } from 'react'
-import { isEmpty } from '@utils/manipulateArray'
+import React, { FC, memo, useCallback, useState } from 'react'
 import SeoLink from '@components/seoLink'
 import ComponentsProps from '@utils/interfaces/components'
 
-const Terms: FC<ComponentsProps> = ({ terms, title, ...props }) => {
+const Terms: FC<ComponentsProps> = ({ terms, title, className, ...props }) => {
   const [hideTerms, setHideTerms] = useState(true)
-
-  if (isEmpty(terms)) return <></>
+  const toggleTerms = useCallback(() => setHideTerms(!hideTerms), [hideTerms])
 
   return (
-    <p {...props}>
-      <span className={hideTerms ? 'terms terms-hide' : 'terms'}>
-        {title}
-
+    <p
+      className={`${className || ''}${(!terms && ' hidden') || ' terms'}`}
+      {...props}
+    >
+      {title}
+      <span className={hideTerms ? 'terms-hide' : ''}>
         {terms?.map(({ uri, name }, key) => (
-          <span key={key}>
-            <SeoLink href={uri} label={name}>
-              {name}
-            </SeoLink>
-          </span>
+          <SeoLink key={key} href={uri} label={name}>
+            {name}
+          </SeoLink>
         ))}
 
         <small
           className={`more-terms 
-          ${
-            terms?.length >= parseInt(process.env.NEXT_PUBLIC_MAX_TERMS_BY_POST)
-              ? ''
-              : 'hidden'
-          }`}
-          onClick={() => setHideTerms(!hideTerms)}
+          ${(terms?.length < 3 && 'hidden') || ''}`}
+          onClick={toggleTerms}
         >
           {hideTerms ? '... Afficher plus' : 'Afficher moins'}
         </small>

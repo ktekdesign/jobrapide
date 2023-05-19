@@ -1,7 +1,8 @@
 import React, { memo } from 'react'
 import SeoLink from '@components/seoLink'
+import { FOOTER_MENU_ITEMS } from '@utils/constants'
 
-const FooterMenu = ({ items }) => (
+const FooterMenu = ({ items = FOOTER_MENU_ITEMS }) => (
   <nav className="navbar-footer">
     <div className="footer-menu">
       <ul className="footer-menu-items">

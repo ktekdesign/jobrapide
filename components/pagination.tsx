@@ -49,15 +49,14 @@ const Pagination = ({
     (page) =>
       search !== undefined
         ? `${
-            !isFirstPage(page)
-              ? uri.replace('_page_', `page/${page}/`)
-              : uri.replace('_page_', '')
+            isFirstPage(page)
+              ? uri.replace('_page_', '')
+              : uri.replace('_page_', `page/${page}/`)
           }`
         : `${uri}${!isFirstPage(page) ? `page/${page}/` : ''}`,
     [search, uri]
   )
 
-  if (!pages) return <></>
   return (
     <div className="pagination">
       <SeoLink
@@ -69,29 +68,23 @@ const Pagination = ({
       >
         <ArrowLeft className="icon" />
       </SeoLink>
-      {pages?.map((page, i) => {
-        if (page === '...' || currentPage === parseInt(page)) {
-          return (
-            <span
-              key={i}
-              className={page === '...' ? 'pagination-more' : 'current-page'}
-            >
-              {page}
-            </span>
-          )
-        } else {
-          return (
-            <SeoLink
-              label={`Page ${page}`}
-              className="pagination-item"
-              href={url(page)}
-              key={i}
-            >
-              {page}
-            </SeoLink>
-          )
-        }
-      })}
+      {pages?.map((page, key) => (
+        <SeoLink
+          label={`Page ${page}`}
+          className={
+            page === '...'
+              ? 'pagination-more'
+              : currentPage === parseInt(page)
+              ? 'current-page'
+              : 'pagination-item'
+          }
+          active={Number(page === '...' || currentPage === parseInt(page))}
+          href={url(page)}
+          key={key}
+        >
+          {page}
+        </SeoLink>
+      ))}
       <SeoLink
         label="Page suivante"
         className={`pagination-item ${
