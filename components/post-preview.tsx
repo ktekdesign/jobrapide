@@ -5,6 +5,7 @@ import truncate from '@utils/truncate'
 import CoverImage from '@components/cover-image'
 import SeoLink from '@components/seoLink'
 import ComponentsProps from '@utils/interfaces/components'
+import Translate from './translate'
 
 const PostPreview: FC<ComponentsProps> = ({
   title,
@@ -28,7 +29,7 @@ const PostPreview: FC<ComponentsProps> = ({
       as="h3"
       className={`post-preview-title ${(onlyImage && 'hidden') || ''}`}
     >
-      {title && truncate(title)}
+      <Translate text={truncate(title)} />
     </SeoLink>
   </>
 )

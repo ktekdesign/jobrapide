@@ -1,5 +1,6 @@
 import React, { memo } from 'react'
 import SeoLink from '@components/seoLink'
+import Translate from '@components/translate'
 
 const TermsList = ({ terms, className }) => (
   <ul className="terms-list flex">

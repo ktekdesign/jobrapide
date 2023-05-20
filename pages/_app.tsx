@@ -8,6 +8,7 @@ import TagManager from 'react-gtm-module'
 import Layout from '@layout/layout'
 import Script from 'next/script'
 import Meta from '@components/meta'
+import TranslateProvider from '@context/translateProvider'
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const { layout, ...props } = pageProps
@@ -26,9 +27,11 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       )}
       <Meta seo={layout?.seo} />
       <ApolloProvider client={client}>
-        <Layout>
-          <Component {...props} />
-        </Layout>
+        <TranslateProvider>
+          <Layout>
+            <Component {...props} />
+          </Layout>
+        </TranslateProvider>
       </ApolloProvider>
     </>
   )

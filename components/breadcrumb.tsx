@@ -2,7 +2,7 @@ import { FC, memo } from 'react'
 import SeoLink from '@components/seoLink'
 import { BreadcrumbType } from '@utils/interfaces/data'
 import { prev } from '@utils/manipulateArray'
-import parse from 'html-react-parser'
+import Translate from './translate'
 
 const Breadcrumb: FC<{ breadcrumbs?: BreadcrumbType[] }> = ({
   breadcrumbs,
@@ -17,7 +17,7 @@ const Breadcrumb: FC<{ breadcrumbs?: BreadcrumbType[] }> = ({
           key={key}
           href={url}
         >
-          {text && parse(text)}
+          <Translate text={text} />
         </SeoLink>
       ))}
   </div>

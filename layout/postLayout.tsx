@@ -7,13 +7,13 @@ import GAdSense from '@components/adsense'
 import { memo } from 'react'
 import useSimilarPosts from '@hooks/useSimilarPosts'
 
-const PostLayout = ({ breadcrumbs, ...props }) => (
+const PostLayout = ({ content, ...props }) => (
   <>
-    <Loading data={{ ...props, breadcrumbs }} loading={!props}>
+    <Loading data={{ ...props }} loading={!props}>
       <PostHeader />
-      <GAdSense />
-      <PostBody />
     </Loading>
+    <GAdSense />
+    <PostBody content={content} />
     <SimilarPosts
       posts={useSimilarPosts({
         id: props?.id,

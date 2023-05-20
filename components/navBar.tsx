@@ -10,6 +10,7 @@ import PublishIcon from '/public/images/publish.svg'
 import Button from '@components/form/Button'
 import SeoLink from '@components/seoLink'
 import { ADMIN_URL, APP_URL } from '@utils/constants'
+import Translate from './translate'
 
 const NavBar = ({ items, setOpen }) => {
   const [showMenu, setShowMenu] = useState(false)
@@ -70,7 +71,7 @@ const NavBar = ({ items, setOpen }) => {
               label={title}
               onClick={closeMenu}
               className={`menu-item-link${
-                (router.asPath === uri && ' menu-active') || ''
+                (router.asPath.startsWith(uri) && ' menu-active') || ''
               }`}
             >
               {title}

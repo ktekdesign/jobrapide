@@ -1,7 +1,7 @@
 import React, { FC, memo } from 'react'
 import SeoLink from '@components/seoLink'
 import ComponentsProps from '@utils/interfaces/components'
-import parse from 'html-react-parser'
+import Translate from './translate'
 
 export const SwiperTitle: FC<ComponentsProps> = ({ uri, title, className }) => (
   <SeoLink
@@ -11,7 +11,7 @@ export const SwiperTitle: FC<ComponentsProps> = ({ uri, title, className }) => (
     active={Number(!uri)}
     className={className ?? 'title-primary'}
   >
-    {title && parse(title)}
+    <Translate text={title} />
   </SeoLink>
 )
 
