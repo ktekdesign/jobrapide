@@ -1,10 +1,9 @@
-import { FC, HTMLAttributes, ReactNode, memo } from 'react'
+import { FC, LinkHTMLAttributes, ReactNode, memo } from 'react'
 import Link from 'next/link'
-import OnboardingFlow from './onboardingFlow'
+import OnboardingFlow from '@components/onboardingFlow'
 
-interface LinkContainerProps extends HTMLAttributes<HTMLElement> {
+interface LinkContainerProps extends LinkHTMLAttributes<HTMLAnchorElement> {
   label?: string
-  href?: string
   as?: string
   slides?: number
   target?: string
@@ -22,8 +21,8 @@ const SeoLink: FC<LinkContainerProps> = ({
   active = 0,
   ...props
 }) => (
-  <Component {...props}>
-    <OnboardingFlow active={active}>
+  <OnboardingFlow active={active}>
+    <Component {...props}>
       <Link
         href={href ?? ''}
         aria-label={label ?? ''}
@@ -33,9 +32,19 @@ const SeoLink: FC<LinkContainerProps> = ({
       >
         {children}
       </Link>
-      <>{children}</>
-    </OnboardingFlow>
-  </Component>
+    </Component>
+    <Component {...props}>{children}</Component>
+    <Link
+      href={href ?? ''}
+      aria-label={label ?? ''}
+      title={label ?? ''}
+      target={target ?? '_self'}
+      className={innerClassName ?? ''}
+      {...props}
+    >
+      {children}
+    </Link>
+  </OnboardingFlow>
 )
 
 export default memo(SeoLink)

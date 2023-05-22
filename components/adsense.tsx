@@ -1,21 +1,26 @@
-import { Adsense } from '@ctrl/react-adsense'
-import { memo } from 'react'
+import { Adsense as GAdSense } from '@ctrl/react-adsense'
+import { Suspense, memo } from 'react'
 
-const GAdSense = ({ variant }: { variant?: string }) => (
-  <div className="adsense">
-    <Adsense
-      client="ca-pub-6631438162509513"
-      slot={variant === 'sponsored' ? '2682415108' : '6940028987'}
-      style={{
-        display: `${
-          process.env.NEXT_PUBLIC_SITE_URL === 'https://v2.jobrapide.org'
-            ? 'block'
-            : 'none'
-        }`,
-      }}
-      format={variant === 'sponsored' ? 'autorelaxed' : 'auto'}
-    />
-  </div>
+const AdSense = (props) => (
+  <Suspense>
+    <div className="adsense">
+      <GAdSense
+        client="ca-pub-6631438162509513"
+        slot="6940028987"
+        layout="responsive"
+        data-full-width-responsive="true"
+        style={{
+          display: `${
+            process.env.NEXT_PUBLIC_SITE_URL === 'https://v2.jobrapide.org'
+              ? 'block'
+              : 'none'
+          }`,
+        }}
+        format="auto"
+        {...props}
+      />
+    </div>
+  </Suspense>
 )
 
-export default memo(GAdSense)
+export default memo(AdSense)

@@ -3,7 +3,7 @@ import React, { FC, memo } from 'react'
 import Loading from '@components/loading'
 import ComponentsProps from '@utils/interfaces/components'
 
-export const SwiperContainer: FC<ComponentsProps> = ({
+const SwiperContainer: FC<ComponentsProps> = ({
   children,
   title,
   posts,
@@ -11,7 +11,7 @@ export const SwiperContainer: FC<ComponentsProps> = ({
   slides,
   className,
 }) => (
-  <div className={`swiper-container-home ${className ?? 'w-full'}`}>
+  <div data-swiper="home" {...{ className }}>
     <Loading data={{ title, posts, uri, slides }} loading={!posts}>
       {children}
     </Loading>

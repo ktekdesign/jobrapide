@@ -14,18 +14,18 @@ const CoverImage: FC<ComponentsProps> = ({
   ...props
 }) => (
   <SeoLink
-    href={uri ?? image}
+    href={uri}
     label={title}
     as="div"
     active={Number(!uri)}
-    target={target ?? '_self'}
+    target={target}
     {...props}
   >
     <picture className="feature">
       <ImageWithFallback
         width={width ?? 200}
         height={height ?? 200}
-        alt={title ?? ''}
+        alt={title}
         src={image}
         priority={priority}
       />

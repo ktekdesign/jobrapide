@@ -11,9 +11,6 @@ export const addLayoutData = (data) => {
           { text: 'Accueil', url: '/' },
           { text: 'Recherche', url: '/search/' },
         ],
-        layout: {
-          seo: null,
-        },
       },
     }
   }

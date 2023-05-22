@@ -1,11 +1,11 @@
 import React, { FC, memo } from 'react'
 
 import ComponentsProps from '@utils/interfaces/components'
-import Translate from './translate'
+import parse from 'html-react-parser'
 
-const PostBody: FC<ComponentsProps> = ({ content, className, ...props }) => (
-  <div className={className || 'content'} {...props}>
-    <Translate text={content} />
+const PostBody: FC<ComponentsProps> = ({ content, ...props }) => (
+  <div className="content" {...props}>
+    {content && parse(content)}
   </div>
 )
 

@@ -1,33 +1,27 @@
 import React, { FC, memo, useCallback, useState } from 'react'
 import SeoLink from '@components/seoLink'
 import ComponentsProps from '@utils/interfaces/components'
-import Translate from './translate'
 
-const Terms: FC<ComponentsProps> = ({ terms, title, className, ...props }) => {
+const Terms: FC<ComponentsProps> = ({ terms, title, ...props }) => {
   const [hideTerms, setHideTerms] = useState(true)
   const toggleTerms = useCallback(() => setHideTerms(!hideTerms), [hideTerms])
 
   return (
-    <p
-      className={`${className || ''}${(!terms && ' hidden') || ' terms'}`}
-      {...props}
-    >
-      <Translate text={title} />
-      <span className={hideTerms ? 'terms-hide' : ''}>
+    <p data-hidden={!terms} data-terms={!!terms} {...props}>
+      {title}
+      <span data-terms-hidden={hideTerms}>
         {terms?.map(({ uri, name }, key) => (
           <SeoLink key={key} href={uri} label={name}>
-            <Translate text={name} />
+            {name}
           </SeoLink>
         ))}
 
         <small
-          className={`more-terms 
-          ${(terms?.length < 3 && 'hidden') || ''}`}
+          data-hidden={terms?.length < 3}
+          className="more-terms"
           onClick={toggleTerms}
         >
-          <Translate
-            text={hideTerms ? '... Afficher plus' : 'Afficher moins'}
-          />
+          {hideTerms ? '... Afficher plus' : 'Afficher moins'}
         </small>
       </span>
     </p>

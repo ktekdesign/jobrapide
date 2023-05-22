@@ -1,5 +1,5 @@
 import { memo, useCallback } from 'react'
-import useTranslate from '@hooks/useTranslate'
+//import useTranslate from '@hooks/useTranslate'
 
 const Translate = ({ text, isSafe }: { text: string; isSafe?: boolean }) => {
   const parseHtml = useCallback(
@@ -13,12 +13,12 @@ const Translate = ({ text, isSafe }: { text: string; isSafe?: boolean }) => {
     [isSafe]
   )
 
-  const { translated, lang } = useTranslate(text)
+  //const { translated, lang } = useTranslate(text)
 
-  if (text && lang === 'fr')
-    return <>{typeof text === 'string' && parseHtml(text)}</>
+  //if (text && lang === 'fr')
+  return <>{typeof text === 'string' && parseHtml(text)}</>
 
-  return <>{translated instanceof Array && parseHtml(translated.join(''))}</>
+  //return <>{translated instanceof Array && parseHtml(translated.join(''))}</>
 }
 
 export default memo(Translate)

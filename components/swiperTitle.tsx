@@ -1,17 +1,17 @@
 import React, { FC, memo } from 'react'
 import SeoLink from '@components/seoLink'
 import ComponentsProps from '@utils/interfaces/components'
-import Translate from './translate'
 
-export const SwiperTitle: FC<ComponentsProps> = ({ uri, title, className }) => (
+const SwiperTitle: FC<ComponentsProps> = ({ uri, title, className }) => (
   <SeoLink
     as="h2"
     href={uri}
-    label={title ?? ''}
+    label={title}
     active={Number(!uri)}
-    className={className ?? 'title-primary'}
+    data-primary="true"
+    {...{ className }}
   >
-    <Translate text={title} />
+    {title}
   </SeoLink>
 )
 

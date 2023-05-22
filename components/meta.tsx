@@ -17,7 +17,7 @@ const Meta: FC<{ seo?: Seo }> = ({ seo = defaultSeo }) => (
       <meta name="revisit-after" content="15 days" />
       <meta name="doc-class" content="Completed" />
       <meta name="doc-rights" content="Public" />
-      <meta name="viewport" content="width=device-width, user-scalable=yes" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta
         name="robots"
         content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
@@ -67,6 +67,12 @@ const Meta: FC<{ seo?: Seo }> = ({ seo = defaultSeo }) => (
     <Script type="application/ld+json" id="schema">
       {typeof seo?.schema === 'string' && JSON.parse(seo.schema)}
     </Script>
+    {process.env.NEXT_PUBLIC_SITE_URL === 'https://v2.jobrapide.org' && (
+      <Script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+      />
+    )}
   </>
 )
 

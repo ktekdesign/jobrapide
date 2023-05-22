@@ -84,4 +84,4 @@ const useTranslate = (text) => {
   return { translated, lang }
 }
 
-export default useTranslate
+//export default useTranslate

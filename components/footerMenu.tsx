@@ -1,7 +1,6 @@
 import React, { memo } from 'react'
 import SeoLink from '@components/seoLink'
 import { FOOTER_MENU_ITEMS } from '@utils/constants'
-import Translate from '@components/translate'
 
 const FooterMenu = ({ items = FOOTER_MENU_ITEMS }) => (
   <nav className="navbar-footer">

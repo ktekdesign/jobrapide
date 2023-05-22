@@ -1,50 +1,15 @@
-import { gql, useLazyQuery } from '@apollo/client'
+import { gql, useQuery } from '@apollo/client'
 import { sidebarQuery } from '@graphql/sidebarQuery'
-import { mapPost } from '@utils/mapping'
-import { useEffect, useState } from 'react'
+import { filterSidebar } from '@utils/filterSidebar'
+import { useMemo } from 'react'
 
 const useSidebar = () => {
   const GET_SIDEBAR = gql`
     ${sidebarQuery}
   `
-  const [loadSidebar] = useLazyQuery(GET_SIDEBAR)
-  const [sidebar, setSidebar] = useState(null)
+  const { data } = useQuery(GET_SIDEBAR)
 
-  useEffect(() => {
-    loadSidebar().then(({ data }) => {
-      const pubs = data.pubs?.nodes?.map((pub) => mapPost(pub))
-
-      const pub1 = pubs?.filter(
-        (pub) =>
-          pub.categories.findIndex((category) => category.id === 192) !== -1
-      )
-
-      const pub2 = pubs?.filter(
-        (pub) =>
-          pub.categories.findIndex((category) => category.id === 193) !== -1
-      )
-
-      const pub3 = pubs?.filter(
-        (pub) =>
-          pub.categories.findIndex((category) => category.id === 194) !== -1
-      )
-
-      const partners = pubs?.filter(
-        (pub) =>
-          pub.categories.findIndex((category) => category.id === 88) !== -1
-      )
-
-      const sponsored = data?.sponsored?.nodes?.map((pub) => mapPost(pub))
-
-      setSidebar({
-        pub1,
-        pub2,
-        pub3,
-        partners,
-        sponsored,
-      })
-    })
-  }, [loadSidebar])
+  const sidebar = useMemo(() => filterSidebar(data), [data])
 
   return sidebar
 }

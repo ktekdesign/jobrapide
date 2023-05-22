@@ -5,7 +5,6 @@ import {
   onMessage,
 } from 'firebase/messaging'
 import { initializeApp } from 'firebase/app'
-import Bell from '/public/images/bell.svg'
 import { useCallback, useEffect, useState } from 'react'
 
 export function getMessagingObject() {
@@ -31,7 +30,7 @@ export function deleteTokenApp() {
 }
 
 export default function NotificationSignal() {
-  const [token, setToken] = useState('')
+  const [token, setToken] = useState(false)
   const getTokenApp = useCallback(() => {
     const firebaseApp = initializeApp({
       apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -46,19 +45,19 @@ export default function NotificationSignal() {
     getToken(messaging, { vapidKey: process.env.NEXT_PUBLIC_VAPID_KEY })
       .then((currentToken) => {
         if (currentToken) {
-          setToken(currentToken)
+          setToken(true)
         } else {
           requestPermission()
         }
       })
       .catch(() => {
-        setToken('No disturb')
+        setToken(true)
       })
   }, [])
   const requestPermission = () => {
     if (!('Notification' in window)) {
       // Check if the browser supports notifications
-      setToken('Not supported')
+      setToken(true)
     } else if (Notification.permission !== 'denied') {
       // We need to ask the user for permission
       Notification.requestPermission().then((permission) => {
@@ -71,16 +70,12 @@ export default function NotificationSignal() {
         }
       })
     } else {
-      setToken('No disturb')
+      setToken(true)
     }
   }
-  useEffect(() => getTokenApp(), [getTokenApp])
+  useEffect(() => {
+    if (!token) getTokenApp()
+  }, [getTokenApp, token])
 
-  if (token) return <></>
-
-  return (
-    <div className="notification-bell" onClick={requestPermission}>
-      <Bell className="h-6 w-6" />
-    </div>
-  )
+  return <></>
 }

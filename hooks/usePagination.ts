@@ -1,21 +1,42 @@
-import { gql, useLazyQuery } from '@apollo/client'
-import { getQuery } from '@graphql/countQuery'
-import { useEffect, useState } from 'react'
+import { useCallback, useMemo } from 'react'
+import usePaginationCount from './usePaginationCount'
+import getPagination from '@utils/getPagination'
+import { isFirstPage } from '@utils/manipulateArray'
 
-const usePagination = ({ secteur, region, category, tag, search }) => {
-  const query = gql`
-    ${getQuery({ secteur, region, category, tag, search })}
-  `
-  const [getCount] = useLazyQuery(query)
-  const [count, setCount] = useState(0)
+const usePagination = ({
+  secteur,
+  region,
+  category,
+  tag,
+  search,
+  currentPage,
+  uri,
+}) => {
+  const [deferredCount] = usePaginationCount({
+    secteur,
+    region,
+    category,
+    tag,
+    search,
+  })
 
-  useEffect(() => {
-    getCount().then((response) =>
-      setCount(Number(response?.data?.posts?.pageInfo?.offsetPagination?.total))
-    )
-  }, [getCount])
+  const pages = useMemo(
+    () => getPagination(deferredCount, currentPage),
+    [deferredCount, currentPage]
+  )
 
-  return count
+  const url = useCallback(
+    (page) =>
+      search !== undefined
+        ? `${
+            isFirstPage(page)
+              ? uri.replace('_page_', '')
+              : uri.replace('_page_', `page/${page}/`)
+          }`
+        : `${uri}${!isFirstPage(page) ? `page/${page}/` : ''}`,
+    [search, uri]
+  )
+  return { pages, url }
 }
 
 export default usePagination

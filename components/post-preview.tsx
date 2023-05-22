@@ -5,31 +5,30 @@ import truncate from '@utils/truncate'
 import CoverImage from '@components/cover-image'
 import SeoLink from '@components/seoLink'
 import ComponentsProps from '@utils/interfaces/components'
-import Translate from './translate'
 
 const PostPreview: FC<ComponentsProps> = ({
   title,
   image,
   uri,
-  className,
   onlyImage,
-  priority,
+  ...props
 }) => (
   <>
     <CoverImage
       title={title}
       image={image}
       uri={uri}
-      className={className ?? 'post-preview-image'}
-      priority={priority}
+      data-preview="post-preview-image"
+      {...props}
     />
     <SeoLink
       label={title}
       href={uri}
       as="h3"
-      className={`post-preview-title ${(onlyImage && 'hidden') || ''}`}
+      data-hidden={onlyImage}
+      className="post-preview-title"
     >
-      <Translate text={truncate(title)} />
+      {truncate(title)}
     </SeoLink>
   </>
 )

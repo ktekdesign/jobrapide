@@ -1,80 +1,52 @@
+import { Suspense, memo } from 'react'
 import Footer from '@layout/footer'
 import Header from '@layout/header'
 import Column from '@layout/column'
+import Row from '@layout/row'
 
-import GoTop from '@components/gotop'
-import ShareButtons from '@components/share-buttons'
+import Sidebar from './sidebar'
 import Facebook from '@components/facebook'
 import Twitter from '@components/twitter'
-import Row from './row'
+
+import ShareButtons from '@components/share-buttons'
 import NotificationSignal from 'messaging-next'
-import { ErrorBoundary } from 'react-error-boundary'
-import GAdSense from '@components/adsense'
-import Pub from '@components/pub'
-import SwiperSidebar from '@components/swiperSidebar'
-import { memo } from 'react'
-import useSidebar from '@hooks/useSidebar'
+import GoTop from '@components/gotop'
+import TagManagerLoader from '@components/tag-manager-loader'
+import AdSense from '@components/adsense'
+import PubHeader from '@components/pub-header'
 
-const Layout = ({ children }) => {
-  const sidebar = useSidebar()
-
-  return (
-    <>
+const Layout = ({ children }) => (
+  <>
+    <Suspense>
       <Header />
-      <Pub className="pub-in-header" posts={sidebar?.pub2} />
-      <Row>
-        <GAdSense />
-      </Row>
-      <main>
-        <Column className="left">
-          <ErrorBoundary
-            fallback={
-              <div>
-                Il s&apos;est produit une erreur. Veuiller actualiser la page.
-              </div>
-            }
-          >
-            {children}
-          </ErrorBoundary>
-        </Column>
-        <Column className="right">
-          <Row>
-            <Pub posts={sidebar?.pub1} />
-          </Row>
-          <Row>
-            <SwiperSidebar
-              title="Offres sponsorisées"
-              posts={sidebar?.sponsored}
-            />
-          </Row>
-          <Row>
-            <SwiperSidebar
-              onlyImage
-              title="Partenaires"
-              className="title-secondary"
-              posts={sidebar?.partners}
-            />
-          </Row>
-          <Row>
-            <Pub posts={sidebar?.pub3} />
-          </Row>
+      <PubHeader />
+      <AdSense />
+    </Suspense>
+    <main>
+      <Column className="left">{children}</Column>
+      <Column className="right">
+        <Suspense>
+          <Sidebar />
           <Row>
             <Facebook />
           </Row>
           <Row>
             <Twitter />
           </Row>
-        </Column>
-      </main>
-      <Row>
-        <GAdSense />
-      </Row>
-      <Footer />
+        </Suspense>
+      </Column>
+    </main>
+    <Suspense>
+      <AdSense />
       <GoTop />
       <ShareButtons float />
       <NotificationSignal />
-    </>
-  )
-}
+      <Footer />
+    </Suspense>
+    <Suspense>
+      <TagManagerLoader />
+    </Suspense>
+  </>
+)
 
 export default memo(Layout)

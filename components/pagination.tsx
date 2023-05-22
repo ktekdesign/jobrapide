@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useMemo } from 'react'
+import React, { memo } from 'react'
 
 import ArrowLeft from '/public/images/left.svg'
 import ArrowRight from '/public/images/right.svg'
@@ -12,7 +12,6 @@ import {
 } from '@utils/manipulateArray'
 import SeoLink from '@components/seoLink'
 import usePagination from '@hooks/usePagination'
-import getPagination from '@utils/getPagination'
 
 const Pagination = ({
   secteur,
@@ -32,38 +31,22 @@ const Pagination = ({
   currentPage?: number
   search?: string
 }) => {
-  const count = usePagination({
+  const { pages, url } = usePagination({
     secteur,
     region,
     category,
     tag,
+    uri,
+    currentPage,
     search,
   })
-
-  const pages = useMemo(
-    () => getPagination(count, currentPage),
-    [count, currentPage]
-  )
-
-  const url = useCallback(
-    (page) =>
-      search !== undefined
-        ? `${
-            isFirstPage(page)
-              ? uri.replace('_page_', '')
-              : uri.replace('_page_', `page/${page}/`)
-          }`
-        : `${uri}${!isFirstPage(page) ? `page/${page}/` : ''}`,
-    [search, uri]
-  )
 
   return (
     <div className="pagination">
       <SeoLink
         label="Page précédente"
-        className={`pagination-item ${
-          isFirstPage(currentPage) ? 'hidden' : ''
-        }`}
+        data-hidden={isFirstPage(currentPage)}
+        className="pagination-item"
         href={url(prev(currentPage))}
       >
         <ArrowLeft className="icon" />
@@ -71,13 +54,9 @@ const Pagination = ({
       {pages?.map((page, key) => (
         <SeoLink
           label={`Page ${page}`}
-          className={
-            page === '...'
-              ? 'pagination-more'
-              : currentPage === parseInt(page)
-              ? 'current-page'
-              : 'pagination-item'
-          }
+          data-current={currentPage === parseInt(page)}
+          data-page={page}
+          className="pagination-item"
           active={Number(page === '...' || currentPage === parseInt(page))}
           href={url(page)}
           key={key}
@@ -87,9 +66,8 @@ const Pagination = ({
       ))}
       <SeoLink
         label="Page suivante"
-        className={`pagination-item ${
-          isCurrentPage(currentPage, getLast(pages)) ? 'hidden' : ''
-        }`}
+        data-hidden={isCurrentPage(currentPage, getLast(pages))}
+        className="pagination-item"
         href={url(next(currentPage))}
       >
         <ArrowRight className="icon" />
