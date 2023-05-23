@@ -22,7 +22,7 @@ const initialData = {
 }
 
 const ContactForm = () => {
-  const { data, isLoading, handleSubmit, register } = useFormData<Inputs>(
+  const { data, handleSubmit, register } = useFormData<Inputs>(
     '/api/contact',
     initialData
   )
@@ -79,16 +79,12 @@ const ContactForm = () => {
           {...register('text')}
         ></textarea>
       </div>
-      <Loading
-        data={{ show: data?.status, message: data?.message }}
-        loading={isLoading}
-      >
+      <Loading data={{ show: data?.status, message: data?.message }}>
         <Alert />
         <Button
           id="send-contact"
           label="Envoi du formulaire de contact"
           type="submit"
-          disabled={isLoading}
         >
           Envoyer
         </Button>
