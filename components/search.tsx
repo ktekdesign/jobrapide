@@ -3,7 +3,7 @@ import Button from '@components/form/Button'
 import SeoLink from '@components/seoLink'
 import SearchCurriculumForm from '@components/searchCurriculumForm'
 import SearchForm from '@components/searchForm'
-import OnboardingFlow from '@components/onboardingFlow'
+import OnboardingFlow from '@components/loaders/onboardingFlow'
 import { memo, useCallback, useState } from 'react'
 import secteurs from '@utils/data/secteurs.json'
 import regions from '@utils/data/regions.json'
@@ -43,7 +43,7 @@ const Search = () => {
         <SeoLink
           href={ADMIN_URL}
           className="cta-publish-job"
-          label="Publier une Offre"
+          title="Publier une Offre"
         >
           Publier une Offre / Post a Job
         </SeoLink>

@@ -6,7 +6,7 @@ import secteurs from './data/secteurs.json'
 export const generateTermsStaticPaths = (term, isPage = true) => {
   const termsPaths =
     term === TermTypePlural.categories
-      ? categories.filter((category) => category.parentId === 16)
+      ? categories.filter((category) => category.parentid === 16)
       : term === TermTypePlural.regions
       ? regions.slice(0, 2)
       : secteurs.slice(0, 2)

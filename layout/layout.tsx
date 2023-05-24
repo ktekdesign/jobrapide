@@ -3,8 +3,8 @@ import Footer from '@layout/footer'
 import Header from '@layout/header'
 import Column from '@layout/column'
 import Row from '@layout/row'
+import Sidebar from '@layout/sidebar'
 
-import Sidebar from './sidebar'
 import Facebook from '@components/facebook'
 import Twitter from '@components/twitter'
 

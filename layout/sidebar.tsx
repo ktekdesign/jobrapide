@@ -1,7 +1,7 @@
 import Pub from '@components/pub'
-import SwiperSidebar from '@components/swiperSidebar'
 import Row from './row'
 import useSidebar from '@hooks/useSidebar'
+import SwiperHome from '@components/swiperHome'
 
 const Sidebar = () => {
   const { pub1, pub3, partners, sponsored } = useSidebar()
@@ -12,15 +12,12 @@ const Sidebar = () => {
         <Pub className="pub" posts={pub1} />
       </Row>
       <Row>
-        <SwiperSidebar title="Offres sponsorisées" posts={sponsored} />
+        <h3 className="title-primary">Offres sponsorisées</h3>
+        <SwiperHome slides={1} posts={sponsored} />
       </Row>
       <Row>
-        <SwiperSidebar
-          onlyImage
-          title="Partenaires"
-          className="title-secondary"
-          posts={partners}
-        />
+        <h3 className="title-secondary">Partenaires</h3>
+        <SwiperHome slides={1} onlyImage posts={partners} />
       </Row>
       <Row>
         <Pub className="pub" posts={pub3} />

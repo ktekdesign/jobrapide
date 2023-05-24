@@ -640,7 +640,7 @@ button[type='submit'] {
   @apply h-8 w-8;
 }
 .adsense {
-  @apply mb-2 mx-auto w-full;
+  @apply mb-2 mx-auto w-full min-h-[250px];
 }
 main .adsense {
   @apply px-0;

@@ -10,7 +10,7 @@ const IconMenu = ({ children }) => (
     <SeoLink
       as="li"
       className="download"
-      label="Télecharger notre application Android"
+      title="Télecharger notre application Android"
       href={APP_URL}
       target="_blank"
     >
@@ -25,7 +25,7 @@ const IconMenu = ({ children }) => (
       className="reveal"
       as="li"
       href={ADMIN_URL}
-      label="Login / Créer un compte"
+      title="Login / Créer un compte"
     >
       <UserIcon className="icon" />
     </SeoLink>
@@ -33,7 +33,7 @@ const IconMenu = ({ children }) => (
       className="reveal"
       as="li"
       href={ADMIN_URL}
-      label="Publier une offre / Publier un CV"
+      title="Publier une offre / Publier un CV"
     >
       <PublishIcon className="icon" />
     </SeoLink>

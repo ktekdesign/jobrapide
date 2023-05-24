@@ -4,6 +4,7 @@ export const sidebarQuery = `
           orderby: { field: DATE, order: DESC } }) {
           nodes {  
             content
+            title
             uri
               featuredImage {
                 node {

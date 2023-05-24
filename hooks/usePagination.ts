@@ -10,9 +10,9 @@ const usePagination = ({
   tag,
   search,
   currentPage,
-  uri,
+  href,
 }) => {
-  const [deferredCount] = usePaginationCount({
+  const count = usePaginationCount({
     secteur,
     region,
     category,
@@ -21,8 +21,8 @@ const usePagination = ({
   })
 
   const pages = useMemo(
-    () => getPagination(deferredCount, currentPage),
-    [deferredCount, currentPage]
+    () => getPagination(count, currentPage),
+    [count, currentPage]
   )
 
   const url = useCallback(
@@ -30,11 +30,11 @@ const usePagination = ({
       search !== undefined
         ? `${
             isFirstPage(page)
-              ? uri.replace('_page_', '')
-              : uri.replace('_page_', `page/${page}/`)
+              ? href.replace('_page_', '')
+              : href.replace('_page_', `page/${page}/`)
           }`
-        : `${uri}${!isFirstPage(page) ? `page/${page}/` : ''}`,
-    [search, uri]
+        : `${href}${!isFirstPage(page) ? `page/${page}/` : ''}`,
+    [search, href]
   )
   return { pages, url }
 }

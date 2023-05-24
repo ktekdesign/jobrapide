@@ -15,7 +15,7 @@ const PageError = () => (
 
     <ArchiveTitle title="Error 404 : page introuvable" />
     <p>Votre recherche n&apos;a retourné aucun résultat.</p>
-    <SeoLink as="div" href="/" innerClassName="button" label="Retour">
+    <SeoLink as="div" href="/" innerClassName="button" title="Retour">
       Retour
     </SeoLink>
   </>

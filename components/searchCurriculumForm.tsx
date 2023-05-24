@@ -10,9 +10,9 @@ const SearchCurriculumForm: FC<{
   niveaux?: Term[]
 }> = ({ secteurs, regions }) => (
   <div className="animate-slideinup">
-    <Select options={niveaux} id="niveau" label="Niveau" />
-    <Select options={secteurs} id="secteur" label="Domaine" />
-    <Select options={regions} id="region" label="Region" />
+    <Select options={niveaux} name="niveau" title="Niveau" />
+    <Select options={secteurs} name="secteur" title="Domaine" />
+    <Select options={regions} name="region" title="Region" />
   </div>
 )
 

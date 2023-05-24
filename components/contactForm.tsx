@@ -2,7 +2,7 @@ import React, { memo } from 'react'
 import Button from '@components/form/Button'
 import Label from '@components/form/label'
 import Alert from '@components/alert'
-import Loading from '@components/loading'
+import Loading from '@components/loaders/loading'
 import useFormData from '@hooks/useFormData'
 
 type Inputs = {

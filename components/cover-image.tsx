@@ -1,30 +1,21 @@
-import { FC, memo } from 'react'
+import { memo } from 'react'
 import SeoLink from '@components/seoLink'
-import ComponentsProps from '@utils/interfaces/components'
 import ImageWithFallback from './image-with-fallback'
 
-const CoverImage: FC<ComponentsProps> = ({
-  title,
+const CoverImage = ({
+  title = 'JobRapide',
   image,
-  uri,
-  width,
-  height,
-  priority,
-  target,
+  href = '',
+  width = 200,
+  height = 200,
+  priority = false,
   ...props
 }) => (
-  <SeoLink
-    href={uri}
-    label={title}
-    as="div"
-    active={Number(!uri)}
-    target={target}
-    {...props}
-  >
+  <SeoLink href={href} title={title} as="div" {...props}>
     <picture className="feature">
       <ImageWithFallback
-        width={width ?? 200}
-        height={height ?? 200}
+        width={width}
+        height={height}
         alt={title}
         src={image}
         priority={priority}

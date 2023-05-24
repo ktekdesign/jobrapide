@@ -1,5 +1,5 @@
 import { memo } from 'react'
-import OnboardingFlow from './onboardingFlow'
+import OnboardingFlow from '@components/loaders/onboardingFlow'
 import TermsList from './termsList'
 
 const TabDetails = ({ deferredActive }) => (

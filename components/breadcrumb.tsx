@@ -1,25 +1,20 @@
 import { FC, memo } from 'react'
 import SeoLink from '@components/seoLink'
 import { BreadcrumbType } from '@utils/interfaces/data'
-import { prev } from '@utils/manipulateArray'
+import MappedComponent from '@components/loaders/mapped-component'
+import ParsedComponent from '@components/parsed-component'
+import ConditionalComponent from '@components/loaders/conditional-component'
 
 const Breadcrumb: FC<{ breadcrumbs?: BreadcrumbType[] }> = ({
   breadcrumbs,
 }) => (
-  <div className="breadcrumb">
-    {breadcrumbs?.length > 1 &&
-      breadcrumbs.map(({ text, url }, key) => (
-        <SeoLink
-          className="breadcrumb-item"
-          label={text}
-          active={Number(key === prev(breadcrumbs.length))}
-          key={key}
-          href={url}
-        >
-          {text}
-        </SeoLink>
-      ))}
-  </div>
+  <ConditionalComponent cond={breadcrumbs?.length > 1} className="breadcrumb">
+    <MappedComponent items={breadcrumbs}>
+      <SeoLink className="breadcrumb-item" as="small">
+        <ParsedComponent />
+      </SeoLink>
+    </MappedComponent>
+  </ConditionalComponent>
 )
 
 export default memo(Breadcrumb)

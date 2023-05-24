@@ -1,5 +1,5 @@
 import { Children, memo } from 'react'
-import Loading from './loading'
+import Loading from '@components/loaders/loading'
 
 const OnboardingFlow = ({ data = null, children, active = 0 }) =>
   data ? (

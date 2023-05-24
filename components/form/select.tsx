@@ -1,27 +1,24 @@
-import { isEmpty } from '@utils/manipulateArray'
-import React, { FC, SelectHTMLAttributes, memo } from 'react'
+import { memo, useId } from 'react'
 import Label from '@components/form/label'
+import MappedComponent from '@components/loaders/mapped-component'
+import ParsedComponent from '@components/parsed-component'
+import { getSelectProps } from '@utils/getSelectProps'
+import ConditionalComponent from '@components/loaders/conditional-component'
+import LoaderComponent from '@components/loaders/loader'
 
-interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
-  label: string
-  options: {
-    id?: number | string
-    name?: string
-  }[]
-}
-const Select: FC<SelectProps> = ({ label, options, ...props }) => {
-  if (isEmpty(options)) return <></>
-  const { name, ...rest } = props
+const Select = ({ title, options, ...props }) => {
+  const id = useId()
+
   return (
-    <div className="row">
-      <Label htmlFor={name}>{label}</Label>
+    <ConditionalComponent cond={options.length} className="row">
+      <Label htmlFor={id}>{title}</Label>
       <div className="relative">
-        <select id={name} name={name} className="form-select" {...rest}>
-          {options?.map(({ id, name }) => (
-            <option value={id} key={id}>
-              {name}
-            </option>
-          ))}
+        <select id={id} className="form-select" {...props}>
+          <MappedComponent items={getSelectProps(options)}>
+            <LoaderComponent as="option">
+              <ParsedComponent />
+            </LoaderComponent>
+          </MappedComponent>
         </select>
         <div className="form-select-icon">
           <svg
@@ -33,8 +30,7 @@ const Select: FC<SelectProps> = ({ label, options, ...props }) => {
           </svg>
         </div>
       </div>
-    </div>
+    </ConditionalComponent>
   )
 }
-
 export default memo(Select)

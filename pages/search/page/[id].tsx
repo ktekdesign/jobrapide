@@ -2,7 +2,7 @@ import Pagination from '@components/pagination'
 import ArchiveTitle from '@components/archive-title'
 import addLayoutData from '@utils/addLayoutData'
 import ArchiveBody from '@components/archive-body'
-import Loading from '@components/loading'
+import Loading from '@components/loaders/loading'
 import Breadcrumb from '@components/breadcrumb'
 import useSearch from '@hooks/useSearch'
 

@@ -1,11 +1,11 @@
 [
   {
     "id": 486,
-    "name": "BAC+3",
+    "title": "BAC+3",
     "count": null,
     "slug": "bac3",
-    "uri": "/emploi/bac3/",
-    "parentId": null,
+    "href": "/emploi/bac3/",
+    "parentid": null,
     "posts": null,
     "seo": {
       "breadcrumbs": [
@@ -44,11 +44,11 @@
   },
   {
     "id": 212,
-    "name": "Education",
+    "title": "Education",
     "count": null,
     "slug": "education",
-    "uri": "/emploi/education/",
-    "parentId": null,
+    "href": "/emploi/education/",
+    "parentid": null,
     "posts": null,
     "seo": {
       "breadcrumbs": [
@@ -87,11 +87,11 @@
   },
   {
     "id": 209,
-    "name": "Gestion",
+    "title": "Gestion",
     "count": null,
     "slug": "gestion",
-    "uri": "/emploi/gestion/",
-    "parentId": null,
+    "href": "/emploi/gestion/",
+    "parentid": null,
     "posts": null,
     "seo": {
       "breadcrumbs": [
@@ -130,11 +130,11 @@
   },
   {
     "id": 211,
-    "name": "Logistique",
+    "title": "Logistique",
     "count": null,
     "slug": "logistique",
-    "uri": "/emploi/logistique/",
-    "parentId": null,
+    "href": "/emploi/logistique/",
+    "parentid": null,
     "posts": null,
     "seo": {
       "breadcrumbs": [
@@ -173,11 +173,11 @@
   },
   {
     "id": 205,
-    "name": "Nutrition",
+    "title": "Nutrition",
     "count": null,
     "slug": "nutrition",
-    "uri": "/emploi/nutrition/",
-    "parentId": null,
+    "href": "/emploi/nutrition/",
+    "parentid": null,
     "posts": null,
     "seo": {
       "breadcrumbs": [
@@ -216,11 +216,11 @@
   },
   {
     "id": 85,
-    "name": "Offre sponsorisée",
+    "title": "Offre sponsorisée",
     "count": null,
     "slug": "sponsorisees",
-    "uri": "/emploi/sponsorisees/",
-    "parentId": null,
+    "href": "/emploi/sponsorisees/",
+    "parentid": null,
     "posts": null,
     "seo": {
       "breadcrumbs": [
@@ -259,11 +259,11 @@
   },
   {
     "id": 213,
-    "name": "Santé",
+    "title": "Santé",
     "count": null,
     "slug": "sante",
-    "uri": "/emploi/sante/",
-    "parentId": null,
+    "href": "/emploi/sante/",
+    "parentid": null,
     "posts": null,
     "seo": {
       "breadcrumbs": [
@@ -302,11 +302,11 @@
   },
   {
     "id": 210,
-    "name": "Science Sociale",
+    "title": "Science Sociale",
     "count": null,
     "slug": "science-sociale",
-    "uri": "/emploi/science-sociale/",
-    "parentId": null,
+    "href": "/emploi/science-sociale/",
+    "parentid": null,
     "posts": null,
     "seo": {
       "breadcrumbs": [
@@ -345,11 +345,11 @@
   },
   {
     "id": 207,
-    "name": "Technologie et l'innovation",
+    "title": "Technologie et l'innovation",
     "count": null,
     "slug": "technologie-et-linnovation",
-    "uri": "/emploi/technologie-et-linnovation/",
-    "parentId": null,
+    "href": "/emploi/technologie-et-linnovation/",
+    "parentid": null,
     "posts": null,
     "seo": {
       "breadcrumbs": [

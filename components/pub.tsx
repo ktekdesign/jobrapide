@@ -1,12 +1,8 @@
-import React, { FC, Fragment, memo } from 'react'
-import parse from 'html-react-parser'
+import { FC, memo } from 'react'
 import { EffectFlip } from 'swiper'
-import 'swiper/css'
-import 'swiper/css/bundle'
-import 'swiper/css/pagination'
-import 'swiper/css/effect-flip'
 import ComponentsProps from '@utils/interfaces/components'
 import SwiperController from './swiper-controller'
+import ParsedComponent from './parsed-component'
 
 const Pub: FC<ComponentsProps> = ({ posts, className }) => (
   <SwiperController
@@ -18,10 +14,9 @@ const Pub: FC<ComponentsProps> = ({ posts, className }) => (
       },
     }}
     modules={[EffectFlip]}
+    posts={posts}
   >
-    {posts?.map(({ content }, key) => (
-      <Fragment key={key}>{content && parse(content)}</Fragment>
-    ))}
+    <ParsedComponent />
   </SwiperController>
 )
 

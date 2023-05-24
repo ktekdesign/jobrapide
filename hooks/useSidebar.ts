@@ -1,17 +1,21 @@
 import { gql, useQuery } from '@apollo/client'
 import { sidebarQuery } from '@graphql/sidebarQuery'
 import { filterSidebar } from '@utils/filterSidebar'
-import { useMemo } from 'react'
+import { useEffect, useState } from 'react'
 
 const useSidebar = () => {
+  const [sidebar, setSidebar] = useState(null)
   const GET_SIDEBAR = gql`
     ${sidebarQuery}
   `
   const { data } = useQuery(GET_SIDEBAR)
 
-  const sidebar = useMemo(() => filterSidebar(data), [data])
+  useEffect(() => {
+    const largeScreen = document.body.clientWidth >= 1024
+    setSidebar(filterSidebar(data, largeScreen))
+  }, [data])
 
-  return sidebar
+  return sidebar || {}
 }
 
 export default useSidebar

@@ -1,12 +1,8 @@
 import React, { FC, memo } from 'react'
 
-import 'swiper/css'
-import 'swiper/css/bundle'
-import 'swiper/css/pagination'
-
 import PostPreview from '@components/post-preview'
 import ComponentsProps from '@utils/interfaces/components'
-import SwiperController from './swiper-controller'
+import SwiperController from '@components/swiper-controller'
 
 const SwiperHome: FC<ComponentsProps> = ({
   posts,
@@ -16,18 +12,12 @@ const SwiperHome: FC<ComponentsProps> = ({
   className,
 }) => (
   <div {...{ className: onlyImage && 'onlyImage' }}>
-    <SwiperController className="swiper-container" slides={slides}>
-      {posts?.map(({ uri, title, image }, key) => (
-        <PostPreview
-          key={key}
-          title={title}
-          image={image}
-          uri={uri}
-          onlyImage={onlyImage}
-          className={className}
-          priority={priority && key < 3}
-        />
-      ))}
+    <SwiperController
+      posts={posts}
+      className="swiper-container"
+      slides={slides}
+    >
+      <PostPreview {...{ className, priority }} />
     </SwiperController>
   </div>
 )

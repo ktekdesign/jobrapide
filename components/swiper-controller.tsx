@@ -11,7 +11,8 @@ export const SwiperController = ({
   children,
   className,
   slides = 1,
-  modules = null,
+  modules = [],
+  posts,
   ...props
 }) => (
   <Suspense>
@@ -37,17 +38,16 @@ export const SwiperController = ({
             slidesPerView: slides,
           },
         }}
-        modules={
-          modules
-            ? [...[Pagination, Autoplay], ...modules]
-            : [Pagination, Autoplay]
-        }
+        modules={[Pagination, Autoplay, ...modules]}
         {...props}
       >
-        {Children.map(children, (child) => {
-          if (isValidElement(child))
-            return <SwiperSlide>{cloneElement(child)}</SwiperSlide>
-        })}
+        {posts?.map((post, key) => (
+          <SwiperSlide key={key}>
+            {Children.map(children, (child) => (
+              <>{isValidElement(child) && cloneElement(child, { ...post })}</>
+            ))}
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   </Suspense>

@@ -1,11 +1,11 @@
 import { FC, Suspense, memo } from 'react'
-import CoverImage from './cover-image'
-import PostBody from './post-body'
-import SeoLink from './seoLink'
-import ShareButtons from './share-buttons'
-import Terms from './terms'
+import CoverImage from '@components/cover-image'
+import SeoLink from '@components/seoLink'
+import ShareButtons from '@components/share-buttons'
+import Terms from 'components/terms'
 import Date from '@components/date'
 import { Post } from '@utils/interfaces/data'
+import ParsedComponent from '@components/parsed-component'
 
 interface ArchivePostType extends Post {
   priority?: boolean
@@ -15,7 +15,7 @@ const ArchivePost: FC<ArchivePostType> = ({
   image,
   title,
   categories,
-  uri,
+  href,
   excerpt,
   date,
   priority,
@@ -23,11 +23,8 @@ const ArchivePost: FC<ArchivePostType> = ({
   <Suspense>
     <article className="archive">
       <CoverImage
-        image={image}
-        title={title}
-        uri={uri}
+        {...{ image, title, href, priority }}
         className="archive-post-feature"
-        priority={priority}
       />
       <div className="post-info">
         <Terms
@@ -35,17 +32,14 @@ const ArchivePost: FC<ArchivePostType> = ({
           terms={categories}
           title="Categories : "
         />
-        <SeoLink
-          className="archive-post-title"
-          label={title}
-          href={uri}
-          as="h3"
-        >
-          {title}
+        <SeoLink className="archive-post-title" {...{ title, href }} as="h3">
+          <ParsedComponent title={title} />
         </SeoLink>
         <Date date={date} className="post-list-terms" />
-        <PostBody className="post-list-excerpt" content={excerpt} />
-        <ShareButtons uri={uri} title={title} />
+        <div className="post-list-excerpt">
+          <ParsedComponent text={excerpt} />
+        </div>
+        <ShareButtons {...{ href, title }} />
       </div>
     </article>
   </Suspense>

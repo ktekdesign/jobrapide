@@ -3,8 +3,12 @@ import { memo } from 'react'
 
 const TagManager = dynamic(
   () =>
-    import('react-gtm-module').then((mod) =>
-      mod.initialize({ gtmId: 'GTM-W66949R' })
+    import('react-gtm-module-nonce').then((mod) =>
+      mod.initialize({
+        gtmId: 'GTM-W66949R',
+        nonce: 'random123',
+        cookie_flags: 'SameSite=None;Secure',
+      })
     ),
   {
     ssr: false,

@@ -28,8 +28,8 @@ export const mapSeo = (seo): Seo => {
 
   const breadcrumbs = preventUndefined(
     seo.breadcrumbs?.map(({ text, url }) => ({
-      text,
-      url: url.replace('https://www.jobrapide.org', BASE_URL),
+      title: text,
+      href: url.replace('https://www.jobrapide.org', BASE_URL),
     }))
   )
 
@@ -77,14 +77,14 @@ export const mapPost = (post): Post => {
       image: getOptimizedImageUrl(post.featuredImage?.node?.sourceUrl),
       date: preventUndefined(post.date),
       excerpt: preventUndefined(post.excerpt),
-      content: preventUndefined(
+      text: preventUndefined(
         post?.content
           ?.replaceAll('uploads', 'webp-express/webp-images/uploads')
           .replaceAll('.png', '.png.webp')
           .replaceAll('.jpg', '.jpg.webp')
           .replaceAll('.jpeg', '.jpeg.webp')
       ),
-      uri: preventUndefined(post.uri),
+      href: preventUndefined(post.uri),
       categories: preventUndefined(categories),
       secteurs: preventUndefined(secteurs),
       regions: preventUndefined(regions),
@@ -99,11 +99,11 @@ export const mapTerm = (term): Term => {
   try {
     return {
       id: preventUndefined(term.databaseId),
-      name: preventUndefined(term.name),
+      title: preventUndefined(term.name ?? term.title),
       count: preventUndefined(term.count),
       slug: preventUndefined(term.slug),
-      uri: preventUndefined(term.uri),
-      parentId: preventUndefined(term.parentDatabaseId),
+      href: preventUndefined(term.href ?? term.uri),
+      parentid: preventUndefined(term.parentDatabaseId),
       posts: preventUndefined(term.posts),
       seo: mapSeo(term.seo),
     }
@@ -118,7 +118,7 @@ export const mapPage = (page): Page => {
     return {
       id: preventUndefined(page.databaseId),
       title: preventUndefined(page.title),
-      content: preventUndefined(page.content),
+      text: preventUndefined(page.content),
       seo: mapSeo(preventUndefined(page.seo)),
     }
   } catch (err) {

@@ -1,11 +1,11 @@
 [
   {
     "id": 473,
-    "name": "+ 3",
+    "title": "+ 3",
     "count": null,
     "slug": "3",
-    "uri": "/niveau/3/",
-    "parentId": null,
+    "href": "/niveau/3/",
+    "parentid": null,
     "posts": null,
     "seo": {
       "breadcrumbs": [
@@ -44,11 +44,11 @@
   },
   {
     "id": 474,
-    "name": "+ 5",
+    "title": "+ 5",
     "count": null,
     "slug": "5",
-    "uri": "/niveau/5/",
-    "parentId": null,
+    "href": "/niveau/5/",
+    "parentid": null,
     "posts": null,
     "seo": {
       "breadcrumbs": [
@@ -87,11 +87,11 @@
   },
   {
     "id": 482,
-    "name": "+4",
+    "title": "+4",
     "count": null,
     "slug": "4",
-    "uri": "/niveau/4/",
-    "parentId": null,
+    "href": "/niveau/4/",
+    "parentid": null,
     "posts": null,
     "seo": {
       "breadcrumbs": [
@@ -130,11 +130,11 @@
   },
   {
     "id": 491,
-    "name": "+7",
+    "title": "+7",
     "count": null,
     "slug": "7",
-    "uri": "/niveau/7/",
-    "parentId": null,
+    "href": "/niveau/7/",
+    "parentid": null,
     "posts": null,
     "seo": {
       "breadcrumbs": [
@@ -173,11 +173,11 @@
   },
   {
     "id": 197,
-    "name": "BAC",
+    "title": "BAC",
     "count": null,
     "slug": "bac",
-    "uri": "/niveau/bac/",
-    "parentId": null,
+    "href": "/niveau/bac/",
+    "parentid": null,
     "posts": null,
     "seo": {
       "breadcrumbs": [
@@ -216,11 +216,11 @@
   },
   {
     "id": 199,
-    "name": "BAC + 2",
+    "title": "BAC + 2",
     "count": null,
     "slug": "bac-2",
-    "uri": "/niveau/bac-2/",
-    "parentId": null,
+    "href": "/niveau/bac-2/",
+    "parentid": null,
     "posts": null,
     "seo": {
       "breadcrumbs": [
@@ -259,11 +259,11 @@
   },
   {
     "id": 200,
-    "name": "BAC + 3",
+    "title": "BAC + 3",
     "count": null,
     "slug": "bac-3",
-    "uri": "/niveau/bac-3/",
-    "parentId": null,
+    "href": "/niveau/bac-3/",
+    "parentid": null,
     "posts": null,
     "seo": {
       "breadcrumbs": [
@@ -302,11 +302,11 @@
   },
   {
     "id": 201,
-    "name": "BAC + 4",
+    "title": "BAC + 4",
     "count": null,
     "slug": "bac-4",
-    "uri": "/niveau/bac-4/",
-    "parentId": null,
+    "href": "/niveau/bac-4/",
+    "parentid": null,
     "posts": null,
     "seo": {
       "breadcrumbs": [
@@ -345,11 +345,11 @@
   },
   {
     "id": 202,
-    "name": "BAC + 5",
+    "title": "BAC + 5",
     "count": null,
     "slug": "bac-5",
-    "uri": "/niveau/bac-5/",
-    "parentId": null,
+    "href": "/niveau/bac-5/",
+    "parentid": null,
     "posts": null,
     "seo": {
       "breadcrumbs": [
@@ -388,11 +388,11 @@
   },
   {
     "id": 203,
-    "name": "BAC + 6",
+    "title": "BAC + 6",
     "count": null,
     "slug": "bac-6",
-    "uri": "/niveau/bac-6/",
-    "parentId": null,
+    "href": "/niveau/bac-6/",
+    "parentid": null,
     "posts": null,
     "seo": {
       "breadcrumbs": [
@@ -431,11 +431,11 @@
   },
   {
     "id": 204,
-    "name": "BAC + 7 et +",
+    "title": "BAC + 7 et +",
     "count": null,
     "slug": "bac-7-et",
-    "uri": "/niveau/bac-7-et/",
-    "parentId": null,
+    "href": "/niveau/bac-7-et/",
+    "parentid": null,
     "posts": null,
     "seo": {
       "breadcrumbs": [
@@ -474,11 +474,11 @@
   },
   {
     "id": 445,
-    "name": "BAC+3",
+    "title": "BAC+3",
     "count": null,
     "slug": "bac3",
-    "uri": "/niveau/bac3/",
-    "parentId": null,
+    "href": "/niveau/bac3/",
+    "parentid": null,
     "posts": null,
     "seo": {
       "breadcrumbs": [
@@ -517,11 +517,11 @@
   },
   {
     "id": 483,
-    "name": "BAC+4",
+    "title": "BAC+4",
     "count": null,
     "slug": "bac4",
-    "uri": "/niveau/bac4/",
-    "parentId": null,
+    "href": "/niveau/bac4/",
+    "parentid": null,
     "posts": null,
     "seo": {
       "breadcrumbs": [
@@ -560,11 +560,11 @@
   },
   {
     "id": 484,
-    "name": "BAC+5",
+    "title": "BAC+5",
     "count": null,
     "slug": "bac5",
-    "uri": "/niveau/bac5/",
-    "parentId": null,
+    "href": "/niveau/bac5/",
+    "parentid": null,
     "posts": null,
     "seo": {
       "breadcrumbs": [
@@ -603,11 +603,11 @@
   },
   {
     "id": 485,
-    "name": "BAC+7",
+    "title": "BAC+7",
     "count": null,
     "slug": "bac7",
-    "uri": "/niveau/bac7/",
-    "parentId": null,
+    "href": "/niveau/bac7/",
+    "parentid": null,
     "posts": null,
     "seo": {
       "breadcrumbs": [
@@ -646,11 +646,11 @@
   },
   {
     "id": 196,
-    "name": "BEPC",
+    "title": "BEPC",
     "count": null,
     "slug": "bepc",
-    "uri": "/niveau/bepc/",
-    "parentId": null,
+    "href": "/niveau/bepc/",
+    "parentid": null,
     "posts": null,
     "seo": {
       "breadcrumbs": [
@@ -689,11 +689,11 @@
   },
   {
     "id": 195,
-    "name": "CEPT",
+    "title": "CEPT",
     "count": null,
     "slug": "cept",
-    "uri": "/niveau/cept/",
-    "parentId": null,
+    "href": "/niveau/cept/",
+    "parentid": null,
     "posts": null,
     "seo": {
       "breadcrumbs": [

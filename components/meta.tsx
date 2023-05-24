@@ -17,7 +17,13 @@ const Meta: FC<{ seo?: Seo }> = ({ seo = defaultSeo }) => (
       <meta name="revisit-after" content="15 days" />
       <meta name="doc-class" content="Completed" />
       <meta name="doc-rights" content="Public" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link
+        rel="preconnect"
+        href="https://www.jobrapide.org/"
+        crossOrigin="anonymous"
+      />
+      <link rel="dns-prefetch" href="https://www.jobrapide.org/" />
+      <meta name="viewport" content="width=device-width,initial-scale=1" />
       <meta
         name="robots"
         content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
@@ -70,6 +76,7 @@ const Meta: FC<{ seo?: Seo }> = ({ seo = defaultSeo }) => (
     {process.env.NEXT_PUBLIC_SITE_URL === 'https://v2.jobrapide.org' && (
       <Script
         async
+        nonce="random123"
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
       />
     )}

@@ -1,7 +1,5 @@
 import { memo } from 'react'
 
-import SwiperContainer from './swiperContainer'
-import SwiperTitle from './swiperTitle'
 import SwiperHome from './swiperHome'
 import useSimilarPosts from '@hooks/useSimilarPosts'
 
@@ -11,10 +9,10 @@ const SimilarPosts = ({ id, categoryId }) => {
     categoryId,
   })
   return (
-    <SwiperContainer posts={posts} title="Publications similaires">
-      <SwiperTitle className="title-secondary" />
-      <SwiperHome />
-    </SwiperContainer>
+    <>
+      <h3 className="title-secondary">Publications similaires</h3>
+      <SwiperHome posts={posts} />
+    </>
   )
 }
 

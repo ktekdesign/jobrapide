@@ -1,11 +1,11 @@
 [
   {
     "id": 23,
-    "name": "Actualités",
+    "title": "Actualités",
     "count": null,
     "slug": "actualites",
-    "uri": "/recrutement/actualites/",
-    "parentId": null,
+    "href": "/recrutement/actualites/",
+    "parentid": null,
     "posts": null,
     "seo": {
       "breadcrumbs": [
@@ -44,11 +44,11 @@
   },
   {
     "id": 19,
-    "name": "Avis d'appel d'offres",
+    "title": "Avis d'appel d'offres",
     "count": null,
     "slug": "avis-appel-offres",
-    "uri": "/recrutement/offres/avis-appel-offres/",
-    "parentId": 16,
+    "href": "/recrutement/offres/avis-appel-offres/",
+    "parentid": 16,
     "posts": null,
     "seo": {
       "breadcrumbs": [
@@ -92,11 +92,11 @@
   },
   {
     "id": 17,
-    "name": "Avis de recrutement",
+    "title": "Avis de recrutement",
     "count": null,
     "slug": "avis-recrutement",
-    "uri": "/recrutement/offres/avis-recrutement/",
-    "parentId": 16,
+    "href": "/recrutement/offres/avis-recrutement/",
+    "parentid": 16,
     "posts": null,
     "seo": {
       "breadcrumbs": [
@@ -140,11 +140,11 @@
   },
   {
     "id": 20,
-    "name": "Bourse d'étude",
+    "title": "Bourse d'étude",
     "count": null,
     "slug": "bourses-etude",
-    "uri": "/recrutement/offres/bourses-etude/",
-    "parentId": 16,
+    "href": "/recrutement/offres/bourses-etude/",
+    "parentid": 16,
     "posts": null,
     "seo": {
       "breadcrumbs": [
@@ -188,11 +188,11 @@
   },
   {
     "id": 64,
-    "name": "Call for Papers",
+    "title": "Call for Papers",
     "count": null,
     "slug": "call-for-papers",
-    "uri": "/recrutement/offres/call-for-papers/",
-    "parentId": 16,
+    "href": "/recrutement/offres/call-for-papers/",
+    "parentid": 16,
     "posts": null,
     "seo": {
       "breadcrumbs": [
@@ -236,11 +236,11 @@
   },
   {
     "id": 21,
-    "name": "Concours",
+    "title": "Concours",
     "count": null,
     "slug": "concours",
-    "uri": "/recrutement/offres/concours/",
-    "parentId": 16,
+    "href": "/recrutement/offres/concours/",
+    "parentid": 16,
     "posts": null,
     "seo": {
       "breadcrumbs": [
@@ -284,11 +284,11 @@
   },
   {
     "id": 94,
-    "name": "Conseils de TchadCarriere",
+    "title": "Conseils de TchadCarriere",
     "count": null,
     "slug": "conseils-de-tchadcarriere",
-    "uri": "/recrutement/conseils-de-tchadcarriere/",
-    "parentId": null,
+    "href": "/recrutement/conseils-de-tchadcarriere/",
+    "parentid": null,
     "posts": null,
     "seo": {
       "breadcrumbs": [
@@ -327,11 +327,11 @@
   },
   {
     "id": 96,
-    "name": "Entretien d'embauche",
+    "title": "Entretien d'embauche",
     "count": null,
     "slug": "entretien-dembauche",
-    "uri": "/recrutement/conseils-de-tchadcarriere/entretien-dembauche/",
-    "parentId": 94,
+    "href": "/recrutement/conseils-de-tchadcarriere/entretien-dembauche/",
+    "parentid": 94,
     "posts": null,
     "seo": {
       "breadcrumbs": [
@@ -375,11 +375,11 @@
   },
   {
     "id": 121,
-    "name": "Formations",
+    "title": "Formations",
     "count": null,
     "slug": "formations",
-    "uri": "/recrutement/offres/formations/",
-    "parentId": 16,
+    "href": "/recrutement/offres/formations/",
+    "parentid": 16,
     "posts": null,
     "seo": {
       "breadcrumbs": [
@@ -423,11 +423,11 @@
   },
   {
     "id": 95,
-    "name": "Lettre de motivation",
+    "title": "Lettre de motivation",
     "count": null,
     "slug": "lettre-de-motivation",
-    "uri": "/recrutement/conseils-de-tchadcarriere/lettre-de-motivation/",
-    "parentId": 94,
+    "href": "/recrutement/conseils-de-tchadcarriere/lettre-de-motivation/",
+    "parentid": 94,
     "posts": null,
     "seo": {
       "breadcrumbs": [
@@ -471,11 +471,11 @@
   },
   {
     "id": 1,
-    "name": "Non classé",
+    "title": "Non classé",
     "count": null,
     "slug": "non-classe",
-    "uri": "/recrutement/non-classe/",
-    "parentId": null,
+    "href": "/recrutement/non-classe/",
+    "parentid": null,
     "posts": null,
     "seo": {
       "breadcrumbs": [
@@ -514,11 +514,11 @@
   },
   {
     "id": 117,
-    "name": "Obtenir une bourse",
+    "title": "Obtenir une bourse",
     "count": null,
     "slug": "obtenir-une-bourse",
-    "uri": "/recrutement/conseils-de-tchadcarriere/obtenir-une-bourse/",
-    "parentId": 94,
+    "href": "/recrutement/conseils-de-tchadcarriere/obtenir-une-bourse/",
+    "parentid": 94,
     "posts": null,
     "seo": {
       "breadcrumbs": [
@@ -562,11 +562,11 @@
   },
   {
     "id": 16,
-    "name": "Offres",
+    "title": "Offres",
     "count": null,
     "slug": "offres",
-    "uri": "/recrutement/offres/",
-    "parentId": null,
+    "href": "/recrutement/offres/",
+    "parentid": null,
     "posts": null,
     "seo": {
       "breadcrumbs": [
@@ -605,11 +605,11 @@
   },
   {
     "id": 118,
-    "name": "Publicité",
+    "title": "Publicité",
     "count": null,
     "slug": "publicite",
-    "uri": "/recrutement/publicite/",
-    "parentId": null,
+    "href": "/recrutement/publicite/",
+    "parentid": null,
     "posts": null,
     "seo": {
       "breadcrumbs": [
@@ -648,11 +648,11 @@
   },
   {
     "id": 18,
-    "name": "Stage",
+    "title": "Stage",
     "count": null,
     "slug": "stage",
-    "uri": "/recrutement/offres/stage/",
-    "parentId": 16,
+    "href": "/recrutement/offres/stage/",
+    "parentid": 16,
     "posts": null,
     "seo": {
       "breadcrumbs": [
@@ -696,11 +696,11 @@
   },
   {
     "id": 22,
-    "name": "Volontaire",
+    "title": "Volontaire",
     "count": null,
     "slug": "volontaire",
-    "uri": "/recrutement/offres/volontaire/",
-    "parentId": 16,
+    "href": "/recrutement/offres/volontaire/",
+    "parentid": 16,
     "posts": null,
     "seo": {
       "breadcrumbs": [

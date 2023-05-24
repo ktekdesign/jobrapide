@@ -18,7 +18,7 @@ const Pagination = ({
   region,
   category,
   tag,
-  uri,
+  href,
   currentPage,
   search,
 }: {
@@ -27,7 +27,7 @@ const Pagination = ({
   category?: number
   tag?: number
   pages?: string[]
-  uri?: string
+  href?: string
   currentPage?: number
   search?: string
 }) => {
@@ -36,7 +36,7 @@ const Pagination = ({
     region,
     category,
     tag,
-    uri,
+    href,
     currentPage,
     search,
   })
@@ -44,7 +44,7 @@ const Pagination = ({
   return (
     <div className="pagination">
       <SeoLink
-        label="Page précédente"
+        title="Page précédente"
         data-hidden={isFirstPage(currentPage)}
         className="pagination-item"
         href={url(prev(currentPage))}
@@ -53,7 +53,7 @@ const Pagination = ({
       </SeoLink>
       {pages?.map((page, key) => (
         <SeoLink
-          label={`Page ${page}`}
+          title={`Page ${page}`}
           data-current={currentPage === parseInt(page)}
           data-page={page}
           className="pagination-item"
@@ -65,7 +65,7 @@ const Pagination = ({
         </SeoLink>
       ))}
       <SeoLink
-        label="Page suivante"
+        title="Page suivante"
         data-hidden={isCurrentPage(currentPage, getLast(pages))}
         className="pagination-item"
         href={url(next(currentPage))}

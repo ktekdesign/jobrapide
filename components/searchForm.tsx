@@ -6,7 +6,7 @@ import { Term } from '@utils/interfaces/data'
 import categories from '@utils/data/categories.json'
 
 const filteredCategories = categories.filter(
-  (category) => category.parentId === 16
+  (category) => category.parentid === 16
 )
 
 const SearchForm: FC<{
@@ -15,9 +15,9 @@ const SearchForm: FC<{
 }> = ({ secteurs, regions }) => (
   <div className="animate-slideinup">
     <Input name="s" label="Fonction" />
-    <Select label="Categorie" options={filteredCategories} name="category" />
-    <Select label="Secteur" options={secteurs} name="secteur" />
-    <Select label="Region" options={regions} name="region" />
+    <Select title="Categorie" options={filteredCategories} name="category" />
+    <Select title="Secteur" options={secteurs} name="secteur" />
+    <Select title="Region" options={regions} name="region" />
   </div>
 )
 

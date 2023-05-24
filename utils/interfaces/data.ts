@@ -1,11 +1,11 @@
 export interface Post {
   id?: number
-  title: string
-  image: string
+  title?: string
+  image?: string
   date?: string
   excerpt?: string
-  content?: string
-  uri: string
+  text?: string
+  href?: string
   categories?: Term[]
   secteurs?: Term[]
   regions?: Term[]
@@ -13,23 +13,23 @@ export interface Post {
 }
 export interface Term {
   id?: number
-  name?: string
+  title?: string
   count?: number
   slug?: string
-  uri: string
-  parentId?: number
+  href: string
+  parentid?: number
   posts?: Post[]
   seo?: Seo
 }
 export interface Page {
   id: number
   title: string
-  content: string
+  text: string
   seo?: Seo
 }
 export interface BreadcrumbType {
-  text: string
-  url: string
+  title: string
+  href?: string
 }
 
 export interface Seo {

@@ -1,50 +1,50 @@
 import { FC, LinkHTMLAttributes, ReactNode, memo } from 'react'
 import Link from 'next/link'
-import OnboardingFlow from '@components/onboardingFlow'
+import OnboardingFlow from '@components/loaders/onboardingFlow'
+import LoaderComponent from '@components/loaders/loader'
 
 interface LinkContainerProps extends LinkHTMLAttributes<HTMLAnchorElement> {
-  label?: string
   as?: string
-  slides?: number
   target?: string
   children: ReactNode
   innerClassName?: string
   active?: number
+  data?: Omit<LinkContainerProps, 'LinkHTMLAttributes' | 'children'>
 }
 const SeoLink: FC<LinkContainerProps> = ({
   children,
-  label,
+  title,
   href,
   target,
   innerClassName,
-  as: Component = 'span',
-  active = 0,
+  as: Component = 'a',
+  data,
   ...props
-}) => (
-  <OnboardingFlow active={active}>
-    <Component {...props}>
+}) => {
+  const CustomLink = ({ children, ...props }) => (
+    <OnboardingFlow active={Number(!href)}>
       <Link
-        href={href ?? ''}
-        aria-label={label ?? ''}
-        title={label ?? ''}
-        target={target ?? '_self'}
+        {...{ href, target, title }}
+        aria-label={title}
         className={innerClassName ?? ''}
+        {...props}
       >
         {children}
       </Link>
-    </Component>
-    <Component {...props}>{children}</Component>
-    <Link
-      href={href ?? ''}
-      aria-label={label ?? ''}
-      title={label ?? ''}
-      target={target ?? '_self'}
-      className={innerClassName ?? ''}
-      {...props}
-    >
-      {children}
-    </Link>
-  </OnboardingFlow>
-)
+      <>{children}</>
+    </OnboardingFlow>
+  )
+
+  return (
+    <OnboardingFlow active={Number(Component === 'a')}>
+      <Component {...props}>
+        <CustomLink>
+          <LoaderComponent {...{ ...data, title }}>{children}</LoaderComponent>
+        </CustomLink>
+      </Component>
+      <CustomLink {...props}>{children}</CustomLink>
+    </OnboardingFlow>
+  )
+}
 
 export default memo(SeoLink)

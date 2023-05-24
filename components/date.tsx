@@ -1,5 +1,5 @@
 import { parseISO } from 'date-fns'
-import React, { FC, memo } from 'react'
+import { FC, memo } from 'react'
 
 const Date: FC<{
   date: string
@@ -8,9 +8,8 @@ const Date: FC<{
   <p {...{ className }}>
     Publié :&nbsp;
     <time dateTime={date} className="text-primary">
-      {Intl.DateTimeFormat('fr', { dateStyle: 'long' }).format(
-        date && parseISO(date)
-      )}
+      {date &&
+        Intl.DateTimeFormat('fr', { dateStyle: 'long' }).format(parseISO(date))}
     </time>
   </p>
 )

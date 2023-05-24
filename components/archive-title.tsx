@@ -8,7 +8,7 @@ const ArchiveTitle: FC<{ title?: string; currentPage?: number }> = ({
   <h1 className="archive-main-title">
     {title}
     {currentPage && !isFirstPage(currentPage) && (
-      <>&nbsp;/ {`Page ${currentPage}`}</>
+      <> / {`Page ${currentPage}`}</>
     )}
   </h1>
 )

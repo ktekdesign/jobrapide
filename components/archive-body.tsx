@@ -2,12 +2,13 @@ import React, { FC, memo } from 'react'
 
 import ComponentsProps from '@utils/interfaces/components'
 import ArchivePost from './archive-post'
+import MappedComponent from '@components/loaders/mapped-component'
 
 const ArchiveBody: FC<ComponentsProps> = ({ posts }) => (
   <section className="archive-body">
-    {posts.map((post, key) => (
-      <ArchivePost {...post} priority={key < 2} key={key} />
-    ))}
+    <MappedComponent items={posts}>
+      <ArchivePost />
+    </MappedComponent>
   </section>
 )
 
