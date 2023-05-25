@@ -11,7 +11,6 @@ import Twitter from '@components/twitter'
 import ShareButtons from '@components/share-buttons'
 import NotificationSignal from 'messaging-next'
 import GoTop from '@components/gotop'
-import TagManagerLoader from '@components/tag-manager-loader'
 import AdSense from '@components/adsense'
 import PubHeader from '@components/pub-header'
 
@@ -42,9 +41,6 @@ const Layout = ({ children }) => (
       <ShareButtons float />
       <NotificationSignal />
       <Footer />
-    </Suspense>
-    <Suspense>
-      <TagManagerLoader />
     </Suspense>
   </>
 )

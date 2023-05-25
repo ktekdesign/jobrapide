@@ -12,7 +12,7 @@ const useSidebar = () => {
 
   useEffect(() => {
     const largeScreen = document.body.clientWidth >= 1024
-    setSidebar(filterSidebar(data, largeScreen))
+    setSidebar({ ...filterSidebar(data), largeScreen })
   }, [data])
 
   return sidebar || {}

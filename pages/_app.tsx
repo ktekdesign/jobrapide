@@ -6,13 +6,15 @@ import '@styles/index.css'
 import Layout from '@layout/layout'
 import Meta from '@components/meta'
 
-const MyApp = ({ Component, pageProps }: AppProps) => (
-  <ApolloProvider client={client}>
-    <Meta seo={pageProps.layout?.seo} />
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
-  </ApolloProvider>
-)
+const MyApp = ({ Component, pageProps }: AppProps) => {
+  return (
+    <ApolloProvider client={client}>
+      <Meta seo={pageProps.layout?.seo} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </ApolloProvider>
+  )
+}
 
 export default MyApp

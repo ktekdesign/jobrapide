@@ -1,10 +1,9 @@
-import { FC, memo } from 'react'
+import { memo } from 'react'
 import { EffectFlip } from 'swiper'
-import ComponentsProps from '@utils/interfaces/components'
 import SwiperController from './swiper-controller'
-import ParsedComponent from './parsed-component'
+import CoverImage from './cover-image'
 
-const Pub: FC<ComponentsProps> = ({ posts, className }) => (
+const Pub = ({ posts, priority, className }) => (
   <SwiperController
     className={className || 'swiper-container'}
     effect="flip"
@@ -14,9 +13,9 @@ const Pub: FC<ComponentsProps> = ({ posts, className }) => (
       },
     }}
     modules={[EffectFlip]}
-    posts={posts}
+    posts={posts?.map(({ image, href }) => ({ image, href }))}
   >
-    <ParsedComponent />
+    <CoverImage priority={priority} />
   </SwiperController>
 )
 

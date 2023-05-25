@@ -1,21 +1,11 @@
 import { mapPost } from './mapping'
 
-export const filterSidebar = (data, largeScreen = false) => {
+export const filterSidebar = (data) => {
   const pubs = data?.pubs?.nodes?.map((pub) => mapPost(pub))
 
-  const filteredPub1 = pubs?.filter(
+  const pub1 = pubs?.filter(
     (pub) => pub.categories.findIndex((category) => category.id === 192) !== -1
   )
-  const pub1 = largeScreen
-    ? filteredPub1?.map((pub, key) => {
-        if (key === 0)
-          return {
-            ...pub,
-            text: pub.text.replaceAll('<img', "<img fetchpriority='high'"),
-          }
-        return pub
-      })
-    : filteredPub1
 
   const pub2 = pubs?.filter(
     (pub) => pub.categories.findIndex((category) => category.id === 193) !== -1

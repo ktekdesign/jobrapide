@@ -52,7 +52,7 @@ module.exports = {
           isDev,
           permissionsPolicy: false,
           contentSecurityPolicy: {
-            reportOnly: true,
+            reportOnly: process.env.NODE_ENV !== 'production',
             mergeDefaultDirectives: true,
             'connect-src': [
               '*.google-analytics.com',
@@ -61,6 +61,7 @@ module.exports = {
               '*.google-analytics.com',
               '*.googlesyndication.com',
               '*.jobrapide.org',
+              '*.gstatic.com',
               'https://*.analytics.google.com',
               'https://*.googletagmanager.com',
             ],
@@ -72,6 +73,7 @@ module.exports = {
               '*.googlesyndication.com',
               '*.google.com',
               '*.googleadservices.com',
+              'https://*.googletagmanager.com',
             ],
             'img-src': [
               '*.jobrapide.org',
@@ -286,9 +288,9 @@ module.exports = {
               '*.googleadservices.com',
               '*.google-analytics.com',
               'https://*.googletagmanager.com',
-              "'nonce-random123'",
+              "'nonce-jobrapidenoneForce'",
             ],
-            'style-src': ['*.gstatic.com'],
+            'style-src': ['*.gstatic.com', "'nonce-jobrapidenoneForce'"],
           },
         }),
       },
@@ -301,7 +303,6 @@ module.exports = {
     },
   },
   images: {
-    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',

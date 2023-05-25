@@ -4,12 +4,12 @@ import useSidebar from '@hooks/useSidebar'
 import SwiperHome from '@components/swiperHome'
 
 const Sidebar = () => {
-  const { pub1, pub3, partners, sponsored } = useSidebar()
+  const { pub1, pub3, partners, sponsored, largeScreen } = useSidebar()
 
   return (
     <>
       <Row>
-        <Pub className="pub" posts={pub1} />
+        <Pub priority={largeScreen} className="pub" posts={pub1} />
       </Row>
       <Row>
         <h3 className="title-primary">Offres sponsorisées</h3>
@@ -20,7 +20,7 @@ const Sidebar = () => {
         <SwiperHome slides={1} onlyImage posts={partners} />
       </Row>
       <Row>
-        <Pub className="pub" posts={pub3} />
+        <Pub priority={false} className="pub" posts={pub3} />
       </Row>
     </>
   )
