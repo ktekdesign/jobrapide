@@ -12,7 +12,13 @@ const ImageWithFallback = ({ alt, src, ...props }: ImageWithFallbackProps) => {
 
   return (
     <OnboardingFlow active={Number(logo)}>
-      <Image alt={alt} onError={onError} src={src} {...props} />
+      <Image
+        alt={alt}
+        className="relative"
+        onError={onError}
+        src={src}
+        {...props}
+      />
       <Logo {...props} />
     </OnboardingFlow>
   )

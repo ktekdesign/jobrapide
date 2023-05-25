@@ -5,7 +5,7 @@ import Logo from './logo'
 const LogoMenu = ({ router, ...props }) => (
   <div className="logo">
     <SeoLink title="JobRapide" href="/">
-      <Logo />
+      <Logo width={40} height={40} />
     </SeoLink>
     <SeoLink
       title="JobRapide"

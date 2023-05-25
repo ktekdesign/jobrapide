@@ -7,6 +7,7 @@ import {
   isValidElement,
   memo,
 } from 'react'
+import OnboardingFlow from './onboardingFlow'
 
 interface LoaderProps extends HTMLAttributes<HTMLElement> {
   as?: string
@@ -18,13 +19,25 @@ const LoaderComponent: FC<LoaderProps> = ({
   as: Component = 'span',
   className,
   ...props
-}) => (
-  <Component {...{ className, ...props }}>
-    {Children.map(children, (child) => {
-      if (isValidElement(child)) return cloneElement(child, { ...props })
-      return <>{child}</>
-    })}
-  </Component>
-)
+}) => {
+  const FormattedChildren = ({ children }) => {
+    return (
+      <>
+        {Children.map(children, (child) => {
+          if (isValidElement(child)) return cloneElement(child, { ...props })
+          return <>{child}</>
+        })}
+      </>
+    )
+  }
+  return (
+    <OnboardingFlow active={Number(Component === 'span')}>
+      <Component {...{ className, ...props }}>
+        <FormattedChildren>{children}</FormattedChildren>
+      </Component>
+      <FormattedChildren>{children}</FormattedChildren>
+    </OnboardingFlow>
+  )
+}
 
 export default memo(LoaderComponent)

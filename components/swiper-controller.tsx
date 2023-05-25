@@ -12,6 +12,7 @@ export const SwiperController = ({
   className,
   slides = 1,
   modules = [],
+  priority = false,
   posts,
   ...props
 }) => (
@@ -44,7 +45,13 @@ export const SwiperController = ({
         {posts?.map((post, key) => (
           <SwiperSlide key={key}>
             {Children.map(children, (child) => (
-              <>{isValidElement(child) && cloneElement(child, { ...post })}</>
+              <>
+                {isValidElement(child) &&
+                  cloneElement(child, {
+                    ...post,
+                    priority: priority && key < 2,
+                  })}
+              </>
             ))}
           </SwiperSlide>
         ))}
