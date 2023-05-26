@@ -1,12 +1,9 @@
 import { memo, startTransition, useState } from 'react'
-import Image, { ImageProps } from 'next/image'
+import Image from 'next/image'
 import OnboardingFlow from '@components/loaders/onboardingFlow'
 import Logo from '@components/logo'
 
-interface ImageWithFallbackProps extends ImageProps {
-  fallback?: ImageProps['src']
-}
-const ImageWithFallback = ({ alt, src, ...props }: ImageWithFallbackProps) => {
+const ImageWithFallback = ({ alt, src, ...props }) => {
   const [logo, setLogo] = useState(false)
   const onError = () => startTransition(() => setLogo(true))
 
