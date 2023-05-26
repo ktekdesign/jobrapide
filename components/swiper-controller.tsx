@@ -44,7 +44,9 @@ export const SwiperController = ({
       >
         {posts?.map((post, key) => (
           <SwiperSlide key={key}>
-            <LoaderComponent {...post}>{children}</LoaderComponent>
+            <LoaderComponent {...{ order: key, ...post }}>
+              {children}
+            </LoaderComponent>
           </SwiperSlide>
         ))}
       </Swiper>

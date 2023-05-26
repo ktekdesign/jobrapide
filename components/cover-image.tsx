@@ -9,6 +9,7 @@ const CoverImage = ({
   href = '',
   priority = false,
   unoptimized = true,
+  order = 0,
   ...props
 }) => (
   <StringComponent cond={!!image}>
@@ -19,7 +20,7 @@ const CoverImage = ({
           quality={75}
           alt={title}
           src={image}
-          {...{ priority, unoptimized }}
+          {...{ priority: priority && order < 3, unoptimized }}
         />
       </picture>
     </SeoLink>
