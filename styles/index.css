@@ -270,8 +270,8 @@ footer {
 .swiperContainer {
   @apply min-h-[282px] bg-dark max-w-screen-xl w-full shadow-lg hover:border hover:bg-slate-700 hover:shadow-2xl transition-all duration-200;
 }
-.swiperContainer img {
-  @apply max-h-[200px];
+.swiperContainer .feature {
+  @apply h-[200px];
 }
 .onlyImage .swiperContainer {
   @apply bg-white min-h-[192px];
@@ -281,7 +281,7 @@ div[data-swiper='home'] {
 }
 .pub,
 .pub .feature {
-  @apply w-[240px] min-h-[190px] xl:w-full xl:min-h-[250px] mx-auto items-start;
+  @apply w-[240px] h-[190px] xl:w-full xl:h-[250px] mx-auto items-start;
 }
 
 .swiperContainer h2 a {
