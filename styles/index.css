@@ -270,6 +270,9 @@ footer {
 .swiperContainer {
   @apply min-h-[282px] bg-dark max-w-screen-xl w-full shadow-lg hover:border hover:bg-slate-700 hover:shadow-2xl transition-all duration-200;
 }
+.swiperContainer img {
+  @apply max-h-[200px];
+}
 .onlyImage .swiperContainer {
   @apply bg-white min-h-[192px];
 }
@@ -466,7 +469,7 @@ button[type='submit'] {
   @apply sm:flex justify-center lg:block;
 }
 [data-preview='post-preview-image'] {
-  @apply mb-5 bg-white w-full min-h-[200px];
+  @apply mb-5 bg-white w-full h-[200px];
 }
 .post-preview-title {
   @apply text-sm mb-3 leading-snug px-2 text-center lg:text-left;
