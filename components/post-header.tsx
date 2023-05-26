@@ -26,9 +26,7 @@ const PostHeader: FC<PostHeaderProps> = ({
   breadcrumbs,
 }) => (
   <>
-    <h1 className="post-title">
-      <ParsedComponent title={title} />
-    </h1>
+    <ParsedComponent as="h1" className="post-title" title={title} />
     <Breadcrumb breadcrumbs={breadcrumbs} />
     <CoverImage
       title={title}

@@ -3,21 +3,18 @@ import Label from '@components/form/label'
 import MappedComponent from '@components/loaders/mapped-component'
 import ParsedComponent from '@components/parsed-component'
 import { getSelectProps } from '@utils/getSelectProps'
-import ConditionalComponent from '@components/loaders/conditional-component'
-import LoaderComponent from '@components/loaders/loader'
+import StringComponent from '@components/loaders/string-component'
 
 const Select = ({ title, options, ...props }) => {
   const id = useId()
 
   return (
-    <ConditionalComponent cond={options.length} className="row">
+    <StringComponent cond={options?.length} className="row">
       <Label htmlFor={id}>{title}</Label>
       <div className="relative">
         <select id={id} className="form-select" {...props}>
           <MappedComponent items={getSelectProps(options)}>
-            <LoaderComponent as="option">
-              <ParsedComponent />
-            </LoaderComponent>
+            <ParsedComponent as="option" />
           </MappedComponent>
         </select>
         <div className="form-select-icon">
@@ -30,7 +27,7 @@ const Select = ({ title, options, ...props }) => {
           </svg>
         </div>
       </div>
-    </ConditionalComponent>
+    </StringComponent>
   )
 }
 export default memo(Select)

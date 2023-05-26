@@ -16,8 +16,8 @@ const useSearch = ({ currentPage, search, category, secteur, region }) => {
     )
   }, [getPosts])
 
-  const uri = `/search/_page_?s=${search}&category=${category}&secteur=${secteur}&region=${region}`
-  return { posts, uri }
+  const href = `/search/_page_?s=${search}&category=${category}&secteur=${secteur}&region=${region}`
+  return { posts, href }
 }
 
 export default useSearch

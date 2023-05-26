@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import React, { FC, memo } from 'react'
 
 import ArrowLeft from '/public/images/left.svg'
 import ArrowRight from '/public/images/right.svg'
@@ -13,15 +13,7 @@ import {
 import SeoLink from '@components/seoLink'
 import usePagination from '@hooks/usePagination'
 
-const Pagination = ({
-  secteur,
-  region,
-  category,
-  tag,
-  href,
-  currentPage,
-  search,
-}: {
+interface PaginationProps {
   secteur?: number
   region?: number
   category?: number
@@ -30,6 +22,16 @@ const Pagination = ({
   href?: string
   currentPage?: number
   search?: string
+}
+
+const Pagination: FC<PaginationProps> = ({
+  secteur,
+  region,
+  category,
+  tag,
+  href,
+  currentPage,
+  search,
 }) => {
   const { pages, url } = usePagination({
     secteur,
@@ -44,6 +46,7 @@ const Pagination = ({
   return (
     <div className="pagination">
       <SeoLink
+        as="span"
         title="Page précédente"
         data-hidden={isFirstPage(currentPage)}
         className="pagination-item"
@@ -53,6 +56,7 @@ const Pagination = ({
       </SeoLink>
       {pages?.map((page, key) => (
         <SeoLink
+          as="span"
           title={`Page ${page}`}
           data-current={currentPage === parseInt(page)}
           data-page={page}
@@ -66,6 +70,7 @@ const Pagination = ({
       ))}
       <SeoLink
         title="Page suivante"
+        as="span"
         data-hidden={isCurrentPage(currentPage, getLast(pages))}
         className="pagination-item"
         href={url(next(currentPage))}

@@ -5,15 +5,18 @@ import '@styles/index.css'
 
 import Layout from '@layout/layout'
 import Meta from '@components/meta'
+import { Suspense } from 'react'
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
-    <ApolloProvider client={client}>
+    <Suspense>
       <Meta seo={pageProps.layout?.seo} />
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </ApolloProvider>
+      <ApolloProvider client={client}>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </ApolloProvider>
+    </Suspense>
   )
 }
 

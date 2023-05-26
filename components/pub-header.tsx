@@ -4,7 +4,16 @@ import useSidebar from '@hooks/useSidebar'
 
 const PubHeader = () => {
   const { pub2 } = useSidebar()
-  return <Pub className="pub-in-header" priority={true} posts={pub2} />
+  return (
+    <div className="pub-in-header">
+      <Pub
+        className="pub-in-header"
+        priority
+        unoptimized={false}
+        posts={pub2}
+      />
+    </div>
+  )
 }
 
 export default memo(PubHeader)

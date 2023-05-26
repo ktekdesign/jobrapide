@@ -24,7 +24,7 @@ const ArchivePost: FC<ArchivePostType> = ({
     <article className="archive">
       <CoverImage
         {...{ image, title, href, priority }}
-        className="archive-post-feature"
+        className="archive-post-feature relative"
       />
       <div className="post-info">
         <Terms
@@ -36,9 +36,11 @@ const ArchivePost: FC<ArchivePostType> = ({
           <ParsedComponent title={title} />
         </SeoLink>
         <Date date={date} className="post-list-terms" />
-        <div className="post-list-excerpt">
-          <ParsedComponent text={excerpt} />
-        </div>
+        <ParsedComponent
+          className="post-list-excerpt"
+          as="div"
+          text={excerpt}
+        />
         <ShareButtons {...{ href, title }} />
       </div>
     </article>

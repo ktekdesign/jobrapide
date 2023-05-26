@@ -12,13 +12,8 @@ const SwiperHome: FC<ComponentsProps> = ({
   className,
 }) => (
   <div {...{ className: onlyImage && 'onlyImage' }}>
-    <SwiperController
-      posts={posts}
-      className="swiper-container"
-      slides={slides}
-      priority={priority}
-    >
-      <PostPreview {...{ className }} />
+    <SwiperController posts={posts} slides={slides}>
+      <PostPreview {...{ className, priority }} />
     </SwiperController>
   </div>
 )

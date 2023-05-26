@@ -70,53 +70,14 @@ const Meta: FC<{ seo?: Seo }> = ({ seo = defaultSeo }) => (
       <meta property="og:image" content={seo.opengraphImage} />
       <title>{seo.title}</title>
     </Head>
-    <Script type="application/ld+json" id="schema">
+    <Script
+      nonce="jobrapidenoneForce"
+      async
+      type="application/ld+json"
+      id="schema"
+    >
       {typeof seo?.schema === 'string' && JSON.parse(seo.schema)}
     </Script>
-    {process.env.NEXT_PUBLIC_SITE_URL === 'https://v2.jobrapide.org' && (
-      <Script
-        async
-        nonce="jobrapidenoneForce"
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-      />
-    )}
-    <Script
-      async
-      strategy="afterInteractive"
-      nonce="jobrapidenoneForce"
-      src="https://www.googletagmanager.com/gtag/js?id=GTM-W66949R"
-    ></Script>
-    <Script strategy="afterInteractive" nonce="jobrapidenoneForce" id="gtm">
-      {`
-           window.dataLayer = window.dataLayer || [];
-           function gtag(){dataLayer.push(arguments);}
-           gtag('js', new Date());
-           gtag('config', 'GTM-W66949R',{ 'debug_mode':true });
-        `}
-    </Script>
-
-    <Script
-      strategy="afterInteractive"
-      id="translate-google"
-      nonce="jobrapidenoneForce"
-      async
-      type="text/javascript"
-    >
-      {`function googleTranslateElementInit() {
-            new google.translate.TranslateElement(
-                {pageLanguage: 'fr', includedLanguages: 'en,it,fr,ru,tr', autoDisplay: false, layout: google.translate.TranslateElement.InlineLayout.SIMPLE},
-                'google_translate_element'
-            );
-        }`}
-    </Script>
-
-    <Script
-      strategy="afterInteractive"
-      type="text/javascript"
-      nonce="jobrapidenoneForce"
-      async
-      src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-    />
   </>
 )
 

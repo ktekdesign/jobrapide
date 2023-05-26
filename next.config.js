@@ -297,12 +297,13 @@ module.exports = {
     ]
   },
   trailingSlash: true,
-  compiler: {
+  /* compiler: {
     removeConsole: {
       exclude: ['error'],
     },
-  },
+  }, */
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',

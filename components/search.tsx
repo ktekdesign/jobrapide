@@ -42,6 +42,7 @@ const Search = () => {
       <div className="modal-footer">
         <SeoLink
           href={ADMIN_URL}
+          as="span"
           className="cta-publish-job"
           title="Publier une Offre"
         >

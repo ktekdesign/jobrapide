@@ -28,7 +28,7 @@ const Search = ({
   region,
   breadcrumbs,
 }) => {
-  const { posts, uri } = useSearch({
+  const { posts, href } = useSearch({
     currentPage,
     search,
     category,
@@ -44,7 +44,7 @@ const Search = ({
           currentPage,
           breadcrumbs,
           search,
-          uri,
+          href,
           title: `Recherche pour ${search}`,
         }}
         loading={!posts}
@@ -54,7 +54,7 @@ const Search = ({
         <ArchiveBody />
       </Loading>
       <Pagination
-        {...{ secteur, region, category, currentPage, search, uri }}
+        {...{ secteur, region, category, currentPage, search, href }}
       />
     </>
   )

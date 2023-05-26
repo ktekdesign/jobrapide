@@ -30,8 +30,8 @@ const usePagination = ({
       search !== undefined
         ? `${
             isFirstPage(page)
-              ? href.replace('_page_', '')
-              : href.replace('_page_', `page/${page}/`)
+              ? href?.replace('_page_', '')
+              : href?.replace('_page_', `page/${page}/`)
           }`
         : `${href}${!isFirstPage(page) ? `page/${page}/` : ''}`,
     [search, href]

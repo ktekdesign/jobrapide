@@ -1,15 +1,12 @@
-import { Children, Fragment, cloneElement, isValidElement, memo } from 'react'
+import { memo } from 'react'
+import LoaderComponent from '@components/loaders/loader'
 
 const MappedComponent = ({ children, items, ...props }) => (
   <>
     {items?.map((item, key) => (
-      <Fragment key={key}>
-        {Children.map(children, (child) => {
-          if (isValidElement(child))
-            return cloneElement(child, { ...item, ...props })
-          return <>{child}</>
-        })}
-      </Fragment>
+      <LoaderComponent key={key} {...{ ...item, ...props }}>
+        {children}
+      </LoaderComponent>
     ))}
   </>
 )

@@ -3,20 +3,24 @@ import Footer from '@layout/footer'
 import Header from '@layout/header'
 import Column from '@layout/column'
 import Row from '@layout/row'
-import Sidebar from '@layout/sidebar'
 
 import Facebook from '@components/facebook'
 import Twitter from '@components/twitter'
 
-import ShareButtons from '@components/share-buttons'
 import NotificationSignal from 'messaging-next'
 import GoTop from '@components/gotop'
 import AdSense from '@components/adsense'
-import PubHeader from '@components/pub-header'
+import dynamic from 'next/dynamic'
+
+const Sidebar = dynamic(() => import('@layout/sidebar'))
+const InlineScripts = dynamic(() => import('@components/inline-scripts'))
+const PubHeader = dynamic(() => import('@components/pub-header'))
+const ShareButtons = dynamic(() => import('@components/share-buttons'))
 
 const Layout = ({ children }) => (
   <>
     <Suspense>
+      <InlineScripts nonce="jobrapidenoneForce" />
       <Header />
       <PubHeader />
       <AdSense />

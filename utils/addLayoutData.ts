@@ -8,8 +8,8 @@ export const addLayoutData = (data) => {
       props: {
         ...props,
         breadcrumbs: [
-          { text: 'Accueil', url: '/' },
-          { text: 'Recherche', url: '/search/' },
+          { text: 'Accueil', href: '/' },
+          { text: 'Recherche', href: '/search/' },
         ],
       },
     }

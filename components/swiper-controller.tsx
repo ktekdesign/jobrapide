@@ -1,4 +1,4 @@
-import { Children, Suspense, cloneElement, isValidElement, memo } from 'react'
+import { Suspense, memo } from 'react'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Pagination } from 'swiper'
@@ -6,13 +6,13 @@ import 'swiper/css'
 import 'swiper/css/bundle'
 import 'swiper/css/pagination'
 import { prev } from '@utils/manipulateArray'
+import LoaderComponent from '@components/loaders/loader'
 
 export const SwiperController = ({
   children,
-  className,
+  className = 'swiperContainer',
   slides = 1,
   modules = [],
-  priority = false,
   posts,
   ...props
 }) => (
@@ -44,15 +44,7 @@ export const SwiperController = ({
       >
         {posts?.map((post, key) => (
           <SwiperSlide key={key}>
-            {Children.map(children, (child) => (
-              <>
-                {isValidElement(child) &&
-                  cloneElement(child, {
-                    ...post,
-                    priority: priority && key < 2,
-                  })}
-              </>
-            ))}
+            <LoaderComponent {...post}>{children}</LoaderComponent>
           </SwiperSlide>
         ))}
       </Swiper>

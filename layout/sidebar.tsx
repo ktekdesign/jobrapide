@@ -8,8 +8,13 @@ const Sidebar = () => {
 
   return (
     <>
-      <Row>
-        <Pub priority={largeScreen} className="pub" posts={pub1} />
+      <Row className="pub">
+        <Pub
+          priority={largeScreen}
+          unoptimized={false}
+          className="pub"
+          posts={pub1}
+        />
       </Row>
       <Row>
         <h3 className="title-primary">Offres sponsorisées</h3>
@@ -20,7 +25,7 @@ const Sidebar = () => {
         <SwiperHome slides={1} onlyImage posts={partners} />
       </Row>
       <Row>
-        <Pub priority={false} className="pub" posts={pub3} />
+        <Pub className="pub" posts={pub3} />
       </Row>
     </>
   )

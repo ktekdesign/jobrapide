@@ -1,28 +1,29 @@
 import { memo } from 'react'
 import SeoLink from '@components/seoLink'
 import ImageWithFallback from './image-with-fallback'
-import ConditionalComponent from './loaders/conditional-component'
+import StringComponent from './loaders/string-component'
 
 const CoverImage = ({
   title = 'JobRapide',
   image = '',
   href = '',
   priority = false,
+  unoptimized = true,
   ...props
 }) => (
-  <ConditionalComponent isFragment cond={!!image}>
-    <SeoLink href={href} title={title} as="div" {...props}>
+  <StringComponent cond={!!image}>
+    <SeoLink as="div" {...{ href, title, ...props }}>
       <picture className="feature">
         <ImageWithFallback
           fill
           quality={75}
           alt={title}
           src={image}
-          priority={priority}
+          {...{ priority, unoptimized }}
         />
       </picture>
     </SeoLink>
-  </ConditionalComponent>
+  </StringComponent>
 )
 
 export default memo(CoverImage)
