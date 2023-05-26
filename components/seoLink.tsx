@@ -1,35 +1,41 @@
-import { FC, HTMLAttributes, ReactNode, memo } from 'react'
+import { FC, LinkHTMLAttributes, ReactNode, memo } from 'react'
 import Link from 'next/link'
+import OnboardingFlow from '@components/loaders/onboardingFlow'
+import LoaderComponent from '@components/loaders/loader'
+import StringComponent from './loaders/string-component'
 
-interface LinkContainerProps extends HTMLAttributes<HTMLElement> {
-  label?: string
-  href?: string
+interface LinkContainerProps extends LinkHTMLAttributes<HTMLAnchorElement> {
   as?: string
-  slides?: number
   target?: string
   children: ReactNode
-  innerClassName?: string
+  linkClassName?: string
+  className?: string
+  active?: number
+  data?: Omit<LinkContainerProps, 'LinkHTMLAttributes' | 'children'>
 }
 const SeoLink: FC<LinkContainerProps> = ({
   children,
-  label,
+  title,
   href,
   target,
-  innerClassName,
-  as: Component = 'span',
+  className,
+  linkClassName,
+  as,
   ...props
 }) => (
-  <Component {...props}>
-    <Link
-      href={href ?? ''}
-      aria-label={label ?? ''}
-      title={label ?? ''}
-      target={target ?? '_self'}
-      className={innerClassName ?? ''}
-    >
-      {children}
-    </Link>
-  </Component>
+  <StringComponent {...{ className, as, ...props }}>
+    <OnboardingFlow active={Number(!href)}>
+      <Link
+        {...{ href, target, title }}
+        aria-label={title}
+        className={linkClassName ?? ''}
+        {...props}
+      >
+        <LoaderComponent {...{ ...props, title }}>{children}</LoaderComponent>
+      </Link>
+      <>{children}</>
+    </OnboardingFlow>
+  </StringComponent>
 )
 
 export default memo(SeoLink)

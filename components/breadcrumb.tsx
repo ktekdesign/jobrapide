@@ -1,36 +1,27 @@
 import { FC, memo } from 'react'
-import parse from 'html-react-parser'
-import { BASE_URL } from '@utils/constants'
-import truncate from '@utils/truncate'
 import SeoLink from '@components/seoLink'
 import { BreadcrumbType } from '@utils/interfaces/data'
-import { prev } from '@utils/manipulateArray'
+import MappedComponent from '@components/loaders/mapped-component'
+import ParsedComponent from '@components/parsed-component'
+import LoaderComponent from './loaders/loader'
+import StringComponent from './loaders/string-component'
 
-const Breadcrumb: FC<{ breadcrumbs?: BreadcrumbType[]; length?: number }> = ({
+const Breadcrumb: FC<{ breadcrumbs?: BreadcrumbType[] }> = ({
   breadcrumbs,
-  length = breadcrumbs?.length ?? 0,
-}) =>
-  length < 2 ? (
-    <></>
-  ) : (
-    <div className="row breadcrumb">
-      {breadcrumbs?.map(({ text, url }, key) =>
-        key === prev(length) ? (
-          <span key={key} className="breadcrumb-item">
-            {parse(truncate(text))}
-          </span>
-        ) : (
-          <SeoLink
-            className="breadcrumb-item"
-            label={text}
-            key={key}
-            href={url.replaceAll('https://www.jobrapide.org', BASE_URL)}
-          >
-            {parse(text)}
-          </SeoLink>
-        )
-      )}
-    </div>
-  )
+}) => (
+  <StringComponent
+    as="div"
+    cond={breadcrumbs?.length > 1}
+    className="breadcrumb"
+  >
+    <MappedComponent items={breadcrumbs}>
+      <SeoLink className="breadcrumb-item" as="span">
+        <LoaderComponent>
+          <ParsedComponent />
+        </LoaderComponent>
+      </SeoLink>
+    </MappedComponent>
+  </StringComponent>
+)
 
 export default memo(Breadcrumb)

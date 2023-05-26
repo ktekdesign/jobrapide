@@ -196,7 +196,7 @@ export const getPostsHome = async () => {
     const terms = data
       ? Object.values(data).map(({ posts, name, uri }) => ({
           title: name,
-          uri,
+          href: uri,
           posts: posts.nodes?.map((post) => mapPost(post)),
         }))
       : null

@@ -1,32 +1,17 @@
-import { memo, useEffect, useState } from 'react'
-import Image, { ImageProps } from 'next/image'
-import fallbackImage from '/public/images/logo.webp'
+import { memo, startTransition, useState } from 'react'
+import Image from 'next/image'
+import OnboardingFlow from '@components/loaders/onboardingFlow'
+import Logo from '@components/logo'
 
-interface ImageWithFallbackProps extends ImageProps {
-  fallback?: ImageProps['src']
-}
-const ImageWithFallback = ({
-  fallback = fallbackImage,
-  alt,
-  src,
-  ...props
-}: ImageWithFallbackProps) => {
-  const [error, setError] = useState<React.SyntheticEvent<
-    HTMLImageElement,
-    Event
-  > | null>(null)
-
-  useEffect(() => {
-    setError(null)
-  }, [src])
+const ImageWithFallback = ({ alt, src, ...props }) => {
+  const [logo, setLogo] = useState(false)
+  const onError = () => startTransition(() => setLogo(true))
 
   return (
-    <Image
-      alt={alt}
-      onError={setError}
-      src={error ? fallback : src}
-      {...props}
-    />
+    <OnboardingFlow active={Number(logo)}>
+      <Image onError={onError} {...{ alt, src, ...props }} />
+      <Logo {...props} />
+    </OnboardingFlow>
   )
 }
 

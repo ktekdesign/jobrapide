@@ -2,7 +2,7 @@ import Pagination from '@components/pagination'
 import ArchiveTitle from '@components/archive-title'
 import addLayoutData from '@utils/addLayoutData'
 import ArchiveBody from '@components/archive-body'
-import Loading from '@components/loading'
+import Loading from '@components/loaders/loading'
 import Breadcrumb from '@components/breadcrumb'
 import useSearch from '@hooks/useSearch'
 
@@ -27,14 +27,14 @@ const Search = ({
   region,
   breadcrumbs,
 }) => {
-  const { posts, loading, error, uri } = useSearch({
+  const { posts, href } = useSearch({
     currentPage,
     search,
     category,
     secteur,
     region,
   })
-
+  console.log(breadcrumbs)
   return (
     <>
       <Loading
@@ -43,18 +43,16 @@ const Search = ({
           currentPage,
           breadcrumbs,
           search,
-          uri,
           title: `Recherche pour ${search}`,
         }}
-        loading={loading}
-        error={error}
+        loading={!posts}
       >
         <ArchiveTitle />
         <Breadcrumb />
         <ArchiveBody />
       </Loading>
       <Pagination
-        {...{ secteur, region, category, currentPage, search, uri }}
+        {...{ secteur, region, category, currentPage, search, href }}
       />
     </>
   )

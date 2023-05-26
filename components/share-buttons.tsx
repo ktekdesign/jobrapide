@@ -35,11 +35,10 @@ const ShareButtons = ({
 
   return (
     <div
-      className={
-        float
-          ? 'float-share-buttons share-buttons'
-          : 'inline-share-buttons share-buttons'
+      className={`share-buttons ${
+        float ? 'float-share-buttons' : 'inline-share-buttons share-buttons'
       }
+      `}
     >
       <FacebookShareButton url={url} quote={title}>
         <FacebookIcon size={size} round={round} />

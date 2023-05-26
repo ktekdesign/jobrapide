@@ -1,16 +1,17 @@
-import PostBody from '@components/post-body'
 import { getPage } from '@graphql/api'
 import PostTitle from '@components/post-title'
 import { Page } from '@utils/interfaces/data'
 import { isEmpty } from '@utils/manipulateArray'
 import addLayoutData from '@utils/addLayoutData'
-import Loading from '@components/loading'
+import ParsedComponent from '@components/parsed-component'
 
-const Page = (props) => (
-  <Loading data={props} loading={isEmpty(props)}>
-    <PostTitle />
-    <PostBody />
-  </Loading>
+const Page = ({ title, text }) => (
+  <>
+    <PostTitle title={title} />
+    <div className="content">
+      <ParsedComponent text={text} />
+    </div>
+  </>
 )
 
 export const getStaticProps = async ({ params }) => {

@@ -1,15 +1,9 @@
 import React, { FC, memo } from 'react'
-import parse from 'html-react-parser'
-import { isEmpty } from '@utils/manipulateArray'
 import ComponentsProps from '@utils/interfaces/components'
+import ParsedComponent from './parsed-component'
 
-const PostTitle: FC<ComponentsProps> = ({ title, ...props }) => {
-  if (isEmpty(title)) return <></>
-  return (
-    <h1 className="post-title" {...props}>
-      {parse(title)}
-    </h1>
-  )
-}
+const PostTitle: FC<ComponentsProps> = ({ title, ...props }) => (
+  <ParsedComponent as="h1" className="post-title" title={title} {...props} />
+)
 
 export default memo(PostTitle)

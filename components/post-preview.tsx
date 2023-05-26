@@ -1,32 +1,30 @@
 import React, { FC, memo } from 'react'
 
-import truncate from '@utils/truncate'
-
 import CoverImage from '@components/cover-image'
 import SeoLink from '@components/seoLink'
 import ComponentsProps from '@utils/interfaces/components'
+import ParsedComponent from './parsed-component'
 
 const PostPreview: FC<ComponentsProps> = ({
   title,
   image,
-  uri,
-  className,
+  href,
   onlyImage,
-  priority,
+  ...props
 }) => (
   <>
     <CoverImage
-      title={title}
-      image={image}
-      uri={uri}
-      className={className ?? 'post-preview-image'}
-      priority={priority}
+      data-preview="post-preview-image"
+      {...{ title, image, href, ...props }}
     />
-    {!onlyImage && (
-      <SeoLink label={title} href={uri} as="h3" className="post-preview-title">
-        {truncate(title)}
-      </SeoLink>
-    )}
+    <SeoLink
+      {...{ title, href }}
+      as="h3"
+      data-hidden={onlyImage}
+      className="post-preview-title"
+    >
+      <ParsedComponent isTruncate title={title} />
+    </SeoLink>
   </>
 )
 

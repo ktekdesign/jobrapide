@@ -1,10 +1,9 @@
-import React from 'react'
-import { memo } from 'react'
+import React, { Children, cloneElement, isValidElement, memo } from 'react'
 
 const Loading = ({
   children,
   data = null,
-  loading,
+  loading = false,
   error = null,
   serial = false,
 }) => {
@@ -26,20 +25,20 @@ const Loading = ({
         </div>
       </div>
     )
-  if (error || !data) return <></>
+  if (error) return <></>
 
   return (
     <>
-      {React.Children.map(children, (child, key) => {
-        if (React.isValidElement(child)) {
+      {Children.map(children, (child, key) => {
+        if (isValidElement(child)) {
           if (serial) {
             const datas = Object.values(data)
 
-            return React.cloneElement(child, datas[key])
+            return cloneElement(child, datas[key])
           }
-          return React.cloneElement(child, { ...data })
+          return cloneElement(child, { ...data })
         }
-        return <div className="row">{child}</div>
+        return <>{child}</>
       })}
     </>
   )

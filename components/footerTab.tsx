@@ -1,23 +1,24 @@
 import React, { memo } from 'react'
 
-const FooterTab = ({ active, setActive }) => (
-  <ul
-    className={`tab ${
-      active === 1 ? 'flex-col-reverse lg:flex-row' : 'flex-col lg:flex-row'
-    }`}
-  >
-    <li
-      className={active === 1 ? 'active' : 'secteur-tab'}
-      onClick={() => setActive(1)}
-    >
-      <span>Emplois par secteur</span>
-    </li>
-    <li
-      className={active === 2 ? 'active' : 'region-tab'}
-      onClick={() => setActive(2)}
-    >
-      <span>Emplois par région</span>
-    </li>
+const TAB_ITEMS = ['Emplois par secteur', 'Emplois par région']
+
+const FooterTab = ({
+  deferredActive,
+  getActive,
+  isPending,
+  items = TAB_ITEMS,
+}) => (
+  <ul data-loading={isPending} data-active={deferredActive} className="tab">
+    {items?.map((item, key) => (
+      <li
+        data-active={deferredActive === key}
+        data-order={key}
+        onClick={getActive}
+        key={key}
+      >
+        {item}
+      </li>
+    ))}
   </ul>
 )
 

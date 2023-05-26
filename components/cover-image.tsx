@@ -1,39 +1,30 @@
-import { FC, memo } from 'react'
-import { isEmpty } from '@utils/manipulateArray'
+import { memo } from 'react'
 import SeoLink from '@components/seoLink'
-import ComponentsProps from '@utils/interfaces/components'
-import ImageWithFallback from './image-with-fallback'
+import ImageWithFallback from '@components/image-with-fallback'
+import StringComponent from '@components/loaders/string-component'
 
-const CoverImage: FC<ComponentsProps> = ({
-  title,
-  image,
-  uri,
-  width,
-  height,
-  priority,
-  target,
+const CoverImage = ({
+  title = 'JobRapide',
+  image = '',
+  href = '',
+  priority = false,
+  unoptimized = true,
+  order = 0,
   ...props
-}) =>
-  isEmpty(image) ? (
-    <></>
-  ) : (
-    <SeoLink
-      href={uri ?? image}
-      label={title}
-      as="div"
-      target={target ?? '_self'}
-      {...props}
-    >
+}) => (
+  <StringComponent cond={!!image}>
+    <SeoLink as="div" {...{ href, title, ...props }}>
       <picture className="feature">
         <ImageWithFallback
-          width={width ?? 200}
-          height={height ?? 200}
-          alt={title ?? ''}
+          fill
+          quality={75}
+          alt={title}
           src={image}
-          priority={priority}
+          {...{ priority: priority && order < 3, unoptimized }}
         />
       </picture>
     </SeoLink>
-  )
+  </StringComponent>
+)
 
 export default memo(CoverImage)

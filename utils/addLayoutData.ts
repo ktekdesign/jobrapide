@@ -1,45 +1,43 @@
 import { REVALIDATE } from '@utils/constants'
 
 export const addLayoutData = (data) => {
-  const { seo: seoProps, ...rest } = data
+  const { seo: seoProps, ...props } = data
 
-  if ('search' in rest) {
+  if ('search' in props) {
     return {
       props: {
-        ...rest,
+        ...props,
         breadcrumbs: [
-          { text: 'Accueil', url: '/' },
-          { text: 'Recherche', url: '/search/' },
+          { text: 'Accueil', href: '/' },
+          { text: 'Recherche', href: '/search/' },
         ],
-        layout: {
-          seo: null,
-        },
       },
     }
   }
   const layout = () => {
-    if (!seoProps) return rest
+    if (!seoProps) return props
     const { breadcrumbs, ...seo } = seoProps
 
-    if (rest?.currentPage > 1)
-      seo.title = `${seo.title} - Page ${rest.currentPage}`
+    if (props?.currentPage > 1)
+      seo.title = `${seo.title} - Page ${props.currentPage}`
 
     return {
-      ...rest,
+      ...props,
       breadcrumbs: breadcrumbs ?? null,
       layout: {
         seo,
       },
     }
   }
-  const props = layout()
-  if (props.content || props.currentPage > 10 || props.tag) return { props }
+  const layoutProps = layout()
+  if (layoutProps.text || layoutProps.currentPage > 10 || layoutProps.tag)
+    return { props: layoutProps }
 
-  const { secteur, region } = props
+  const { secteur, region } = layoutProps
 
-  if (secteur || region || props.currentPage > 3)
-    return { props, revalidate: 172800 }
+  if (secteur || region || layoutProps.currentPage > 3)
+    return { props: layoutProps, revalidate: 259200 }
 
-  return { props, revalidate: REVALIDATE }
+  return { props: layoutProps, revalidate: REVALIDATE }
 }
 export default addLayoutData

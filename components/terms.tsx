@@ -1,34 +1,27 @@
-import React, { FC, memo, useState } from 'react'
-import { isEmpty } from '@utils/manipulateArray'
+import React, { FC, memo, useCallback, useState } from 'react'
 import SeoLink from '@components/seoLink'
 import ComponentsProps from '@utils/interfaces/components'
+import MappedComponent from '@components/loaders/mapped-component'
+import ParsedComponent from './parsed-component'
 
 const Terms: FC<ComponentsProps> = ({ terms, title, ...props }) => {
   const [hideTerms, setHideTerms] = useState(true)
-
-  if (isEmpty(terms)) return <></>
+  const toggleTerms = useCallback(() => setHideTerms(!hideTerms), [hideTerms])
 
   return (
-    <p {...props}>
-      <span className={hideTerms ? 'terms terms-hide' : 'terms'}>
-        {title}
-
-        {terms?.map(({ uri, name }, key) => (
-          <span key={key}>
-            <SeoLink href={uri} label={name}>
-              {name}
-            </SeoLink>
-          </span>
-        ))}
+    <p data-terms={!!terms} {...props}>
+      {title}
+      <span data-terms-hidden={hideTerms}>
+        <MappedComponent items={terms}>
+          <SeoLink as="span">
+            <ParsedComponent />
+          </SeoLink>
+        </MappedComponent>
 
         <small
-          className={`more-terms 
-          ${
-            terms?.length >= parseInt(process.env.NEXT_PUBLIC_MAX_TERMS_BY_POST)
-              ? ''
-              : 'hidden'
-          }`}
-          onClick={() => setHideTerms(!hideTerms)}
+          data-hidden={terms?.length < 3}
+          className="more-terms"
+          onClick={toggleTerms}
         >
           {hideTerms ? '... Afficher plus' : 'Afficher moins'}
         </small>

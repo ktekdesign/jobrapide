@@ -5,7 +5,7 @@ export default interface ComponentsProps extends HTMLAttributes<HTMLElement> {
   posts?: Post[]
   terms?: Term[]
   data?: Term[] | Post[]
-  uri?: string
+  href?: string
   image?: string
   slides?: number
   width?: number

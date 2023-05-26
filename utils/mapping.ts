@@ -1,9 +1,10 @@
 import { Page, Post, Seo, Term } from '@utils/interfaces/data'
 import { isEmpty, preventUndefined } from '@utils/manipulateArray'
 import { outputErrors } from '@utils/outputErrors'
+import { BASE_DOMAIN, BASE_URL } from '@utils/constants'
 
 const replaceUrl = (url) =>
-  preventUndefined(url?.replace('www.jobrapide.org', 'v2.jobrapide.org'))
+  preventUndefined(url?.replace('www.jobrapide.org', BASE_DOMAIN))
 
 const getOptimizedImageUrl = (url: string) => {
   if (
@@ -25,9 +26,16 @@ const getOptimizedImageUrl = (url: string) => {
 export const mapSeo = (seo): Seo => {
   if (isEmpty(seo)) return null
 
+  const breadcrumbs = preventUndefined(
+    seo.breadcrumbs?.map(({ text, url }) => ({
+      title: text,
+      href: url.replace('https://www.jobrapide.org', BASE_URL),
+    }))
+  )
+
   try {
     return {
-      breadcrumbs: preventUndefined(seo.breadcrumbs),
+      breadcrumbs,
       canonical: replaceUrl(seo.canonical),
       metaDesc: preventUndefined(seo.metaDesc),
       metaKeywords: preventUndefined(seo.metaKeywords),
@@ -69,18 +77,18 @@ export const mapPost = (post): Post => {
       image: getOptimizedImageUrl(post.featuredImage?.node?.sourceUrl),
       date: preventUndefined(post.date),
       excerpt: preventUndefined(post.excerpt),
-      content: preventUndefined(
+      text: preventUndefined(
         post?.content
           ?.replaceAll('uploads', 'webp-express/webp-images/uploads')
           .replaceAll('.png', '.png.webp')
           .replaceAll('.jpg', '.jpg.webp')
           .replaceAll('.jpeg', '.jpeg.webp')
       ),
-      uri: preventUndefined(post.uri),
+      href: preventUndefined(post.uri),
       categories: preventUndefined(categories),
       secteurs: preventUndefined(secteurs),
       regions: preventUndefined(regions),
-      seo: mapSeo(preventUndefined(post.seo)),
+      seo: mapSeo(post.seo),
     }
   } catch (err) {
     return outputErrors(err)
@@ -91,13 +99,13 @@ export const mapTerm = (term): Term => {
   try {
     return {
       id: preventUndefined(term.databaseId),
-      name: preventUndefined(term.name),
+      title: preventUndefined(term.name ?? term.title),
       count: preventUndefined(term.count),
       slug: preventUndefined(term.slug),
-      uri: preventUndefined(term.uri),
-      parentId: preventUndefined(term.parentDatabaseId),
+      href: preventUndefined(term.href ?? term.uri),
+      parentid: preventUndefined(term.parentDatabaseId),
       posts: preventUndefined(term.posts),
-      seo: mapSeo(preventUndefined(term.seo)),
+      seo: mapSeo(term.seo),
     }
   } catch (err) {
     return outputErrors(err)
@@ -110,7 +118,7 @@ export const mapPage = (page): Page => {
     return {
       id: preventUndefined(page.databaseId),
       title: preventUndefined(page.title),
-      content: preventUndefined(page.content),
+      text: preventUndefined(page.content),
       seo: mapSeo(preventUndefined(page.seo)),
     }
   } catch (err) {

@@ -1,107 +1,25 @@
-import React, { memo, useEffect, useState } from 'react'
-import Image from 'next/image'
-import { useRouter } from 'next/router'
+import React, { memo, useCallback, useState, useTransition } from 'react'
+import MobileMenuClose from './mobile-menu-close'
+import Menu from './menu'
 
-import MenuIcon from '/public/images/menu.svg'
-import HomeIcon from '/public/images/home.svg'
-import CloseIcon from '/public/images/close.svg'
-import UserIcon from '/public/images/user.svg'
-import SearchIcon from '/public/images/search.svg'
-import PublishIcon from '/public/images/publish.svg'
-import Button from '@components/form/Button'
-import SeoLink from '@components/seoLink'
-import { ADMIN_URL, APP_URL } from '@utils/constants'
-
-const NavBar = ({ items, setOpen }) => {
+const NavBar = ({ children }) => {
   const [showMenu, setShowMenu] = useState(false)
-  const [currentPath, setCurrentPath] = useState('')
-  const router = useRouter()
+  const [isPending, startTransition] = useTransition()
 
-  useEffect(() => {
-    setCurrentPath(router.asPath)
-    setShowMenu(false)
-  }, [router])
+  const toggleMenu = useCallback(
+    (e) =>
+      startTransition(() =>
+        setShowMenu(!e.target.dataset.toggle ? !showMenu : false)
+      ),
+    [showMenu]
+  )
 
   return (
-    <nav className="navbar">
-      <SeoLink href="/" label="JobRapide" as="div" className="logo">
-        <Image src="/images/logo.webp" width={40} height={40} alt="Logo" />
-        <span className={currentPath === '/' ? 'home-active' : 'home'}>
-          <HomeIcon className="icon" />
-          <span>{process.env.NEXT_PUBLIC_CMS_NAME}</span>
-        </span>
-      </SeoLink>
-      <Button
-        className="menu-mobile"
-        label="Menu principal"
-        onClick={() => setShowMenu(!showMenu)}
-      >
-        {showMenu ? (
-          <CloseIcon className="icon" />
-        ) : (
-          <MenuIcon className="icon" />
-        )}
-      </Button>
-      <div className={`${showMenu ? 'flex' : 'hidden'} main-menu lg:flex`}>
-        <ul className="menu-items">
-          {items?.map(({ uri, title }, i) => (
-            <SeoLink
-              as="li"
-              key={i}
-              href={uri}
-              label={title}
-              className={`menu-item-link ${
-                currentPath.startsWith(uri) ? 'menu-active' : ''
-              }`}
-            >
-              {title}
-            </SeoLink>
-          ))}
-        </ul>
-        <ul className="icons-menu">
-          <SeoLink
-            as="li"
-            className="download"
-            label="Télecharger notre application Android"
-            href={APP_URL}
-            target="_blank"
-          >
-            <Image
-              src="/images/googleplay.webp"
-              width={170}
-              height={64}
-              alt="download app"
-            />
-          </SeoLink>
-          <SeoLink
-            className="reveal"
-            as="li"
-            href={ADMIN_URL}
-            label="Login / Créer un compte"
-          >
-            <UserIcon className="icon" />
-          </SeoLink>
-          <SeoLink
-            className="reveal"
-            as="li"
-            href={ADMIN_URL}
-            label="Publier une offre / Publier un CV"
-          >
-            <PublishIcon className="icon" />
-          </SeoLink>
-          <li className="reveal">
-            <Button
-              onClick={(e) => {
-                e.preventDefault()
-                setOpen(true)
-              }}
-              label="Faire une recherche"
-            >
-              <SearchIcon className="icon" />
-            </Button>
-          </li>
-        </ul>
-      </div>
+    <nav data-loading={isPending} className="navbar">
+      <MobileMenuClose onClick={toggleMenu} toggle={Number(showMenu)} />
+      <Menu onClick={toggleMenu} toggle={!showMenu}>
+        {children}
+      </Menu>
     </nav>
   )
 }

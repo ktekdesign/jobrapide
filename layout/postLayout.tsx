@@ -1,21 +1,21 @@
-import PostBody from '@components/post-body'
 import PostHeader from '@components/post-header'
-import Loading from '@components/loading'
 import SimilarPosts from '@components/similarPosts'
 import { getFirst } from '@utils/manipulateArray'
-import GAdSense from '@components/adsense'
-import { memo } from 'react'
+import { Suspense, memo } from 'react'
+import AdSense from '@components/adsense'
+import SponsoredAdSense from '@components/adsense-sponsored'
+import ParsedComponent from '@components/parsed-component'
 
-const PostLayout = ({ breadcrumbs, ...props }) => (
-  <>
-    <Loading data={{ ...props, breadcrumbs }} loading={!props}>
-      <PostHeader />
-      <GAdSense />
-      <PostBody />
-    </Loading>
-    <SimilarPosts id={props?.id} categoryId={getFirst(props?.categories)?.id} />
-    <GAdSense variant="sponsored" />
-  </>
+const PostLayout = ({ id, text, ...props }) => (
+  <Suspense>
+    <PostHeader {...props} />
+    <AdSense />
+    <div className="content">
+      <ParsedComponent text={text} />
+    </div>
+    <SimilarPosts id={id} categoryId={getFirst(props?.categories)?.id} />
+    <SponsoredAdSense />
+  </Suspense>
 )
 
 export default memo(PostLayout)

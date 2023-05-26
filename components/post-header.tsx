@@ -2,12 +2,12 @@ import React, { FC, memo } from 'react'
 
 import Date from '@components/date'
 import CoverImage from '@components/cover-image'
-import PostTitle from '@components/post-title'
 import Terms from '@components/terms'
 import ShareButtons from '@components/share-buttons'
 import Breadcrumb from '@components/breadcrumb'
 import ComponentsProps from '@utils/interfaces/components'
 import { BreadcrumbType, Term } from '@utils/interfaces/data'
+import ParsedComponent from './parsed-component'
 
 interface PostHeaderProps extends ComponentsProps {
   date?: string
@@ -20,21 +20,19 @@ const PostHeader: FC<PostHeaderProps> = ({
   title,
   image,
   date,
-  uri,
   categories,
   secteurs,
   regions,
   breadcrumbs,
 }) => (
   <>
-    <PostTitle title={title} />
+    <ParsedComponent as="h1" className="post-title" title={title} />
     <Breadcrumb breadcrumbs={breadcrumbs} />
     <CoverImage
       title={title}
       image={image}
-      uri={uri}
+      active={1}
       className="post-header-image"
-      priority
     />
     <Date date={date} className="post-header-date" />
     <Terms
