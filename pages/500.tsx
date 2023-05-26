@@ -15,7 +15,7 @@ const PageError = () => (
       Il s&apos;est produit une erreur critique au niveau de nos serveurs. Nous
       ferons une investigation pour résoudre le problème.
     </p>
-    <SeoLink as="div" href="/" innerClassName="button" title="Retour">
+    <SeoLink as="div" href="/" linkClassName="button" title="Retour">
       Retour
     </SeoLink>
   </>

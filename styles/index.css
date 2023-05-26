@@ -280,14 +280,9 @@ div[data-swiper='home'] {
 .pub .feature {
   @apply w-[240px] min-h-[190px] xl:w-full xl:min-h-[250px] mx-auto items-start;
 }
-.pub .feature img {
-  @apply w-[240px] min-h-[190px] xl:w-[300px] xl:min-h-[250px];
-}
+
 .swiperContainer h2 a {
   @apply hover:underline;
-}
-.swiperContainer img {
-  @apply mx-auto w-full sm:w-auto sm:h-auto;
 }
 
 /* Modal */
@@ -348,13 +343,10 @@ button[type='submit'] {
   @apply md:w-1/3 lg:w-1/4;
 }
 .feature {
-  @apply w-full h-full min-h-[200px] flex justify-center items-center relative;
+  @apply w-full min-h-[200px] flex justify-center items-center relative;
 }
 .feature img {
-  @apply w-auto object-contain mx-auto h-auto lg:h-48 max-h-48 text-transparent;
-}
-.swiperContainer .feature img {
-  @apply h-48 sm:h-60 md:h-72 lg:h-48;
+  @apply object-contain;
 }
 [data-terms='true'] {
   @apply mb-2 block text-dark;
@@ -404,9 +396,6 @@ button[type='submit'] {
 }
 .archive-post-feature a {
   @apply w-full flex min-h-[200px];
-}
-.archive-post-feature img {
-  @apply w-full;
 }
 .archive-body {
   @apply flex flex-col gap-y-2;
@@ -471,9 +460,6 @@ button[type='submit'] {
 .pub-in-header,
 .pub-in-header .feature {
   @apply w-full min-h-[48px] max-w-screen-md sm:min-h-[96px] md:min-h-[115px] mx-auto text-center;
-}
-.pub-in-header .feature img {
-  @apply w-auto h-12 sm:w-auto max-w-full md:max-w-screen-md sm:h-20 md:h-28 mx-auto;
 }
 
 .facebook > div.widget-sm {
@@ -646,10 +632,6 @@ button[type='submit'] {
 }
 .image-slider {
   @apply max-w-xs w-full mx-auto;
-}
-
-.image-slider img {
-  @apply w-full;
 }
 
 .notification-bell {

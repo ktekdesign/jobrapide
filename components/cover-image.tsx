@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import SeoLink from '@components/seoLink'
-import ImageWithFallback from './image-with-fallback'
-import StringComponent from './loaders/string-component'
+import ImageWithFallback from '@components/image-with-fallback'
+import StringComponent from '@components/loaders/string-component'
 
 const CoverImage = ({
   title = 'JobRapide',

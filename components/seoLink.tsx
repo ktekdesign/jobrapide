@@ -8,7 +8,7 @@ interface LinkContainerProps extends LinkHTMLAttributes<HTMLAnchorElement> {
   as?: string
   target?: string
   children: ReactNode
-  innerClassName?: string
+  linkClassName?: string
   className?: string
   active?: number
   data?: Omit<LinkContainerProps, 'LinkHTMLAttributes' | 'children'>
@@ -19,7 +19,7 @@ const SeoLink: FC<LinkContainerProps> = ({
   href,
   target,
   className,
-  innerClassName,
+  linkClassName,
   as,
   ...props
 }) => (
@@ -28,7 +28,7 @@ const SeoLink: FC<LinkContainerProps> = ({
       <Link
         {...{ href, target, title }}
         aria-label={title}
-        className={innerClassName ?? ''}
+        className={linkClassName ?? ''}
         {...props}
       >
         <LoaderComponent {...{ ...props, title }}>{children}</LoaderComponent>
