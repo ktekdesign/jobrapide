@@ -10,9 +10,17 @@ function useFormData<T>(url, initialData = null) {
   const onSubmit: SubmitHandler<T> = (data) => {
     fetchData({ url, data, method: 'POST' })
       .then((response) => {
-        reset(initialData)
-        setError(null)
-        setData(response)
+        if (response.message === 'self-signed certificate') {
+          setError('error')
+        } else {
+          reset(initialData)
+          setError(null)
+          setData(response)
+        }
+        setTimeout(() => {
+          setError(null)
+          setData(null)
+        }, 10000)
       })
       .catch(() => setError('error'))
   }
