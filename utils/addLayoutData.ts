@@ -36,7 +36,7 @@ export const addLayoutData = (data) => {
   const { secteur, region } = layoutProps
 
   if (secteur || region || layoutProps.currentPage > 3)
-    return { props: layoutProps, revalidate: 259200 }
+    return { props: layoutProps, revalidate: 345600 }
 
   return { props: layoutProps, revalidate: REVALIDATE }
 }

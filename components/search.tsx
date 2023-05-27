@@ -5,11 +5,14 @@ import SearchCurriculumForm from '@components/searchCurriculumForm'
 import SearchForm from '@components/searchForm'
 import OnboardingFlow from '@components/loaders/onboardingFlow'
 import { memo, useCallback, useState } from 'react'
-import secteurs from '@utils/data/secteurs.json'
-import regions from '@utils/data/regions.json'
+import useTerms from '@hooks/useTerms'
 
 const Search = () => {
   const [active, setActive] = useState(false)
+  const secteurs = useTerms('secteurs')
+  const regions = useTerms('regions')
+  const categories = useTerms('categories')
+  const niveaux = useTerms('niveaux')
 
   const changeForm = useCallback(() => setActive(!active), [active])
 
@@ -31,6 +34,8 @@ const Search = () => {
           data={{
             secteurs,
             regions,
+            categories,
+            niveaux,
           }}
           active={Number(active)}
         >

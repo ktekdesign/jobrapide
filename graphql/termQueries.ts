@@ -59,7 +59,7 @@ export const niveauxQuery = `query niveauxQuery {
 `
 export const categoriesQuery = `
   query Category {
-    categories (first: 30, where: { hideEmpty: true, excludeTree:["88", "192", "193", "194", "349"] }) {
+    categories (first: 30, where: { hideEmpty: true, parent: 16 }) {
       nodes {
         databaseId
         parentDatabaseId
