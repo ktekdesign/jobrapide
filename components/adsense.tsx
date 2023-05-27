@@ -1,29 +1,27 @@
+import { Adsense as GAdSense } from '@ctrl/react-adsense'
 import { Suspense, memo } from 'react'
-import StringComponent from './loaders/string-component'
-import Script from 'next/script'
+import StringComponent from '@components/loaders/string-component'
 
 const AdSense = (props) => (
-  <Suspense>
+  <div className="adsense">
     <StringComponent
-      as="div"
-      className="adsense"
       cond={process.env.NEXT_PUBLIC_SITE_URL === 'https://v2.jobrapide.org'}
     >
-      <ins
-        className="adsbygoogle"
-        style={{ display: 'block' }}
-        data-ad-client="ca-pub-6631438162509513"
-        data-ad-slot="6940028987"
-        data-ad-format="auto"
-        data-ad-layout="responsive"
-        data-full-width-responsive="true"
-        {...props}
-      />
-      <Script id="google-adsense" nonce="jobrapidenoneForce">
-        {`(adsbygoogle = window.adsbygoogle || []).push({});`}
-      </Script>
+      <Suspense>
+        <GAdSense
+          client="ca-pub-6631438162509513"
+          slot="6940028987"
+          layout="responsive"
+          data-full-width-responsive="true"
+          style={{
+            display: 'block',
+          }}
+          format="auto"
+          {...props}
+        />
+      </Suspense>
     </StringComponent>
-  </Suspense>
+  </div>
 )
 
 export default memo(AdSense)
