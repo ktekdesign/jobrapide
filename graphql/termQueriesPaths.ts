@@ -40,11 +40,6 @@ export const regionsPathsQuery = `
         slug
       }
     }
-    last: regions (first: 100, after: "YXJyYXljb25uZWN0aW9uOjMxNQ==") {
-      nodes {
-        slug
-      }
-    }
   }
 `
 
