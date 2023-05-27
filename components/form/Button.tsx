@@ -1,23 +1,24 @@
-import { ButtonHTMLAttributes, FC, ReactNode, memo } from 'react'
+import {
+  ButtonHTMLAttributes,
+  LegacyRef,
+  ReactNode,
+  forwardRef,
+  memo,
+} from 'react'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode
   label: string
 }
-
-const Button: FC<ButtonProps> = ({ children, label, ...props }) => {
-  const { className, ...rest } = props
-  const args = rest || {}
-
-  return (
-    <button
-      className={className || ''}
-      aria-label={label}
-      title={label}
-      {...args}
-    >
+// eslint-disable-next-line react/display-name
+const Button = forwardRef(
+  (
+    { children, label, ...props }: ButtonProps,
+    ref: LegacyRef<HTMLInputElement>
+  ) => (
+    <button aria-label={label} title={label} ref={ref} {...props}>
       {children}
     </button>
   )
-}
+)
 export default memo(Button)
