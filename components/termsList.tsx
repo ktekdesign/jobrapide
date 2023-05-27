@@ -1,12 +1,11 @@
 import React, { memo } from 'react'
 import SeoLink from '@components/seoLink'
-import secteurs from '@utils/data/secteurs.json'
-import regions from '@utils/data/regions.json'
 import MappedComponent from '@components/loaders/mapped-component'
 import ParsedComponent from './parsed-component'
+import useTerms from '@hooks/useTerms'
 
 const TermsList = ({ className, name }) => {
-  const items = name === 'secteurs' ? secteurs : regions
+  const items = useTerms(name)
   return (
     <ul className="terms-list flex">
       <MappedComponent items={items}>

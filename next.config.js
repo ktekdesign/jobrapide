@@ -11,9 +11,11 @@ if (!process.env.NEXT_PUBLIC_WORDPRESS_API_URL) {
 }
 
 const isDev = process.env.NODE_ENV !== 'production'
-
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+})
 /** @type {import('next').NextConfig} */
-module.exports = {
+module.exports = withBundleAnalyzer({
   webpack(config) {
     // Grab the existing rule that handles SVG imports
     const fileLoaderRule = config.module.rules.find((rule) =>
@@ -322,4 +324,4 @@ module.exports = {
     ],
     formats: ['image/avif', 'image/webp'],
   },
-}
+})

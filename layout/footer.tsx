@@ -9,7 +9,6 @@ import React, {
 import Copyright from '@components/copyright'
 import FooterMenu from '@components/footerMenu'
 import FooterTab from '@components/footerTab'
-import { isNumber } from 'lodash'
 import dynamic from 'next/dynamic'
 
 const TabDetails = dynamic(() => import('@components/tab-details'), {
@@ -32,7 +31,7 @@ const Footer = () => {
   return (
     <footer>
       <FooterTab {...{ deferredActive, getActive, isPending }} />
-      {isNumber(active) && <TabDetails deferredActive={deferredActive} />}
+      {active !== null && <TabDetails deferredActive={deferredActive} />}
       <FooterMenu />
       <Copyright />
     </footer>

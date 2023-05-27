@@ -1,14 +1,26 @@
 import { TermType } from '@utils/interfaces/data'
 import { mapPage, mapPost, mapTerm } from '@utils/mapping'
 import { outputErrors } from '@utils/outputErrors'
-import secteurs from '@utils/data/secteurs.json'
-import regions from '@utils/data/regions.json'
-import tags from '@utils/data/tags.json'
-import categories from '@utils/data/categories.json'
 import { gql } from '@apollo/client'
 import client from '@graphql/client'
 import { PER_PAGE } from '@utils/constants'
 import { queryHome } from './homeQueries'
+import {
+  categoriesQuery,
+  niveauxQuery,
+  regionsQuery,
+  secteursQuery,
+  tagsQuery,
+} from './termQueries'
+import { filterTerms } from '@utils/filterTerms'
+import {
+  categoriesPathsQuery,
+  niveauxPathsQuery,
+  othersCategoriesPathsQuery,
+  regionsPathsQuery,
+  secteursPathsQuery,
+  tagsPathsQuery,
+} from './termQueriesPaths'
 
 export const loadFromWPGraphQL = async (
   query = '',
@@ -134,56 +146,67 @@ export const getPostAndMorePosts = async (slug) => {
     return outputErrors(err)
   }
 }
-export const getTermAndPosts = async ({ term, type, page = 1 }) => {
+export const getTermAndPosts = async ({
+  slug,
+  type,
+  currentPage: page = 1,
+}) => {
   try {
+    const query = `query term {
+      termNode(
+      id: "${slug}"
+      idType: SLUG
+      taxonomy: ${type}
+      ) {
+        databaseId
+        name
+        uri
+        slug
+      }}`
+    const data = await loadFromWPGraphQL(query)
+
+    const mappedTerm = mapTerm(data?.termNode)
+    if (!mappedTerm) return null
+    const termId = mappedTerm?.id.toString()
     if (type === TermType.Secteur) {
-      const secteur = secteurs.find((secteur) => secteur.slug === term)
-      if (!secteur) return null
-      const secteurId = secteur?.id.toString()
       const termPosts = await performSearch({
         page,
-        secteur: secteurId,
+        secteur: termId,
       })
       if (termPosts)
         return {
-          ...mapTerm({ ...secteur, posts: termPosts?.posts }),
-          secteur: secteurId,
+          ...mapTerm({ ...mappedTerm, posts: termPosts?.posts }),
+          secteur: termId,
         }
     } else if (type === TermType.Region) {
-      const region = regions.find((region) => region.slug === term)
-      if (!region) return null
-      const regionId = region?.id.toString()
       const termPosts = await performSearch({
         page,
-        region: regionId,
+        region: termId,
       })
       if (termPosts)
         return {
-          ...mapTerm({ ...region, posts: termPosts?.posts }),
-          region: regionId,
+          ...mapTerm({ ...mappedTerm, posts: termPosts?.posts }),
+          region: termId,
         }
     } else if (type === TermType.Tag) {
-      const tag = tags.find((tag) => tag.slug === term)
-      if (!tag) return null
-      const tagId = tag.id.toString()
       const termPosts = await performSearch({
         page,
-        tag: tagId,
-      })
-      if (termPosts)
-        return { ...mapTerm({ ...tag, posts: termPosts?.posts }), tag: tagId }
-    } else {
-      const category = categories.find((category) => category.slug === term)
-      if (!category) return null
-      const categoryId = category.id.toString()
-      const termPosts = await performSearch({
-        page,
-        category: categoryId,
+        tag: termId,
       })
       if (termPosts)
         return {
-          ...mapTerm({ ...category, posts: termPosts?.posts }),
-          category: categoryId,
+          ...mapTerm({ ...mappedTerm, posts: termPosts?.posts }),
+          tag: termId,
+        }
+    } else {
+      const termPosts = await performSearch({
+        page,
+        category: termId,
+      })
+      if (termPosts)
+        return {
+          ...mapTerm({ ...mappedTerm, posts: termPosts?.posts }),
+          category: termId,
         }
     }
   } catch (err) {
@@ -449,4 +472,45 @@ export const getSearchQuery = ({
     }
   }
   `
+}
+
+export const getTerms = async (name) => {
+  const query =
+    name === 'secteurs'
+      ? secteursQuery
+      : name === 'regions'
+      ? regionsQuery
+      : name === 'niveaux'
+      ? niveauxQuery
+      : name === 'tags'
+      ? tagsQuery
+      : categoriesQuery
+
+  try {
+    const data = await loadFromWPGraphQL(query)
+    return filterTerms(data)
+  } catch (err) {
+    return outputErrors(err)
+  }
+}
+export const getTermsPaths = async (name, isOther = false) => {
+  const query =
+    name === 'secteurs'
+      ? secteursPathsQuery
+      : name === 'regions'
+      ? regionsPathsQuery
+      : name === 'niveaux'
+      ? niveauxPathsQuery
+      : name === 'tags'
+      ? tagsPathsQuery
+      : isOther
+      ? othersCategoriesPathsQuery
+      : categoriesPathsQuery
+
+  try {
+    const data = await loadFromWPGraphQL(query)
+    return filterTerms(data)
+  } catch (err) {
+    return outputErrors(err)
+  }
 }

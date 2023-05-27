@@ -257,7 +257,7 @@ footer {
 .logo span {
   @apply font-semibold text-xl flex lg:hidden xl:flex;
 }
-.home[data-active='true'] {
+.logo a[data-active='true'] {
   @apply lg:border-white lg:bg-secondary lg:border lg:font-bold lg:rounded lg:p-1 gap-2 flex text-dark lg:hover:text-primary;
 }
 .home {
@@ -270,18 +270,19 @@ footer {
 .swiperContainer {
   @apply min-h-[282px] bg-dark max-w-screen-xl w-full shadow-lg hover:border hover:bg-slate-700 hover:shadow-2xl transition-all duration-200;
 }
+
 .swiperContainer .feature {
   @apply h-[200px];
 }
 .onlyImage .swiperContainer {
-  @apply bg-white min-h-[192px];
+  @apply bg-white h-[210px] min-h-[200px];
 }
 div[data-swiper='home'] {
   @apply p-1 lg:pt-0 lg:pb-2 w-full;
 }
 .pub,
 .pub .feature {
-  @apply w-[240px] h-[190px] xl:w-full xl:h-[250px] mx-auto items-start;
+  @apply w-[240px] h-[190px] xl:w-full xl:h-[250px] mx-auto items-start relative;
 }
 
 .swiperContainer h2 a {

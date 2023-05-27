@@ -1,9 +1,7 @@
-import categories from './data/categories.json'
+import { getTermsPaths } from '@graphql/api'
 
-export const generateOthersCategoriesStaticPaths = (isPage = true) => {
-  const termsPaths = categories
-    .filter((category) => category.parentid !== 16 && category.id !== 16)
-    .slice(0, 2)
+export const generateOthersCategoriesStaticPaths = async (isPage = true) => {
+  const termsPaths = await getTermsPaths('CATEGORY', true)
 
   const paths = isPage
     ? termsPaths?.map((path) => ({ params: { slug: path.slug, id: '2' } }))
