@@ -3,7 +3,7 @@ import { memo, useCallback, useState } from 'react'
 import NavBar from '@components/navBar'
 import IconMenu from '@components/icons-menu'
 import SearchIconButton from '@components/search-icon-button'
-import DynamicHeader from './dynamicHeader'
+import DynamicHeader from '@layout/dynamicHeader'
 
 const Header = () => {
   const [open, setOpen] = useState(false)
@@ -11,12 +11,13 @@ const Header = () => {
   const toggleModal = useCallback(() => {
     setOpen(!open)
   }, [open])
+
   return (
     <NavBar>
       <IconMenu>
         <SearchIconButton onClick={toggleModal} />
       </IconMenu>
-      <DynamicHeader open={open} onClick={toggleModal} />
+      {open && <DynamicHeader open={open} onClick={toggleModal} />}
     </NavBar>
   )
 }

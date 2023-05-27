@@ -35,6 +35,9 @@ const InlineScripts = ({ nonce }) => (
       nonce={nonce}
       src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
     />
+    <Script id="google-adsense" nonce={nonce}>
+      {`(adsbygoogle = window.adsbygoogle || []).push({});`}
+    </Script>
   </LoaderComponent>
 )
 

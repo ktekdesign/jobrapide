@@ -616,20 +616,13 @@ button[type='submit'] {
 .pub-post img {
   @apply w-full;
 }
-.alert {
-  @apply hidden items-center text-white fixed z-40 top-1/2 left-10 right-10 lg:left-1/4 lg:w-1/2 before:left-0 before:right-0 before:top-0 before:bottom-0 before:bg-dark before:opacity-50 before:fixed before:content-[''] before:active:hidden before:active:content-none;
-}
-.alert p {
-  @apply flex px-4 py-8 text-sm font-bold rounded w-full border border-secondary z-50;
-}
-.success {
-  @apply flex;
-}
-.success p {
-  @apply bg-primary;
-}
+.success,
 .error {
-  @apply flex;
+  @apply flex items-center text-white fixed z-40 top-1/2 left-10 right-10 lg:left-1/4 lg:w-1/2 before:left-0 before:right-0 before:top-0 before:bottom-0 before:bg-dark before:opacity-50 before:fixed before:content-[''] before:active:hidden before:active:content-none;
+}
+.success p,
+.error p {
+  @apply flex bg-primary px-4 py-8 text-sm font-bold rounded w-full border border-secondary z-50;
 }
 .error p {
   @apply bg-red-800;

@@ -23,11 +23,10 @@ const Contact = async (req: NextApiRequest, res: NextApiResponse) => {
 
     if (info.messageId)
       return res.status(200).json({
-        status: 'success',
         message: 'Nous vous contacterons dans les plus brefs délais.',
       })
   } catch (err) {
-    return res.status(500).send(err?.message)
+    return res.status(500).json({ message: err?.message })
   }
 }
 

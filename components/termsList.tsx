@@ -1,18 +1,21 @@
 import React, { memo } from 'react'
 import SeoLink from '@components/seoLink'
 import MappedComponent from '@components/loaders/mapped-component'
-import ParsedComponent from './parsed-component'
+import ParsedComponent from '@components/parsed-component'
 import useTerms from '@hooks/useTerms'
+import Loading from '@components/loaders/loading'
 
-const TermsList = ({ className, name }) => {
+const TermsList = ({ name, ...props }) => {
   const items = useTerms(name)
   return (
     <ul className="terms-list flex">
-      <MappedComponent items={items}>
-        <SeoLink as="li" {...{ className }}>
-          <ParsedComponent />
-        </SeoLink>
-      </MappedComponent>
+      <Loading data={{ items }} loading={!items.length}>
+        <MappedComponent>
+          <SeoLink as="li" {...props}>
+            <ParsedComponent />
+          </SeoLink>
+        </MappedComponent>
+      </Loading>
     </ul>
   )
 }

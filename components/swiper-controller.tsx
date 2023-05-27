@@ -2,9 +2,6 @@ import { Suspense, memo } from 'react'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Pagination } from 'swiper'
-import 'swiper/css'
-import 'swiper/css/bundle'
-import 'swiper/css/pagination'
 import { prev } from '@utils/manipulateArray'
 import LoaderComponent from '@components/loaders/loader'
 

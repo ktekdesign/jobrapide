@@ -1,21 +1,19 @@
-import { FC, InputHTMLAttributes, memo } from 'react'
+import { InputHTMLAttributes, LegacyRef, forwardRef, memo, useId } from 'react'
 import Label from '@components/form/label'
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label: string
 }
-const Input: FC<InputProps> = ({ label, ...props }) => {
-  const { className, name, ...rest } = props
-  return (
-    <div className="row">
-      <Label htmlFor={name}>{label}</Label>
-      <input
-        id={name}
-        name={name}
-        className={`form-input ${className}`}
-        {...rest}
-      />
-    </div>
-  )
-}
+// eslint-disable-next-line react/display-name
+const Input = forwardRef(
+  ({ label, ...props }: InputProps, ref: LegacyRef<HTMLInputElement>) => {
+    const id = useId()
+    return (
+      <div className="row">
+        <Label htmlFor={id}>{label}</Label>
+        <input id={id} className="form-input" ref={ref} {...props} />
+      </div>
+    )
+  }
+)
 export default memo(Input)

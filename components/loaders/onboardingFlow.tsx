@@ -1,10 +1,13 @@
 import { Children, memo } from 'react'
-import LoaderComponent from '@components/loaders/loader'
+import Loading from './loading'
 
-const OnboardingFlow = ({ data = null, children, active = 0 }) => (
-  <LoaderComponent {...data}>
-    {Children.toArray(children)[active]}
-  </LoaderComponent>
+const OnboardingFlow = ({
+  data = null,
+  loading = false,
+  children,
+  active = 0,
+}) => (
+  <Loading {...{ data, loading }}>{Children.toArray(children)[active]}</Loading>
 )
 
 export default memo(OnboardingFlow)
