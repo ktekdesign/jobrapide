@@ -9,7 +9,7 @@ const Select = ({ title, options, ...props }) => {
   const id = useId()
 
   return (
-    <StringComponent cond={options?.length} className="row">
+    <StringComponent as="div" cond={options?.length} className="row">
       <Label htmlFor={id}>{title}</Label>
       <div className="relative">
         <select id={id} className="form-select" {...props}>
