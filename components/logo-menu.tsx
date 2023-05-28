@@ -2,7 +2,7 @@ import SeoLink from './seoLink'
 import { memo } from 'react'
 import Logo from './logo'
 
-const LogoMenu = ({ router, ...props }) => (
+const LogoMenu = ({ path, ...props }) => (
   <div className="logo">
     <SeoLink title="JobRapide" href="/">
       <Logo width={40} height={40} />
@@ -11,7 +11,7 @@ const LogoMenu = ({ router, ...props }) => (
       title="JobRapide"
       href="/"
       data-toggle="true"
-      data-active={router === '/'}
+      data-active={path === '/'}
       className="home"
       {...props}
     >

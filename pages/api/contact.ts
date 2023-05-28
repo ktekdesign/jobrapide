@@ -1,7 +1,6 @@
 import nodemailer from 'nodemailer'
-import { NextApiRequest, NextApiResponse } from 'next'
 
-const Contact = async (req: NextApiRequest, res: NextApiResponse) => {
+const Contact = async (req, res) => {
   try {
     const transporter = nodemailer.createTransport({
       host: '51.75.255.123',

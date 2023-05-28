@@ -299,6 +299,7 @@ module.exports = withBundleAnalyzer({
               "'unsafe-inline'",
               "'unsafe-hashes'",
             ],
+            'object-src': ['data:', "'unsafe-inline'", "'unsafe-hashes'"],
           },
         }),
       },

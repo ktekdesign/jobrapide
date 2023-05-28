@@ -7,12 +7,8 @@ const InlineScripts = ({ nonce }) => (
     {process.env.NEXT_PUBLIC_SITE_URL === 'https://v2.jobrapide.org' && (
       <Script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" />
     )}
-    <Script
-      async
-      nonce={nonce}
-      src="https://www.googletagmanager.com/gtag/js?id=GTM-W66949R"
-    ></Script>
-    <Script async nonce={nonce} id="gtm">
+    <Script src="https://www.googletagmanager.com/gtag/js?id=GTM-W66949R"></Script>
+    <Script id="gtm">
       {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -21,7 +17,7 @@ const InlineScripts = ({ nonce }) => (
             `}
     </Script>
 
-    <Script async id="translate-google" nonce={nonce}>
+    <Script id="translate-google">
       {`function googleTranslateElementInit() {
                 new google.translate.TranslateElement(
                     {pageLanguage: 'fr', includedLanguages: 'en,it,fr,ru,tr', autoDisplay: false, layout: google.translate.TranslateElement.InlineLayout.SIMPLE},
@@ -30,12 +26,8 @@ const InlineScripts = ({ nonce }) => (
             }`}
     </Script>
 
-    <Script
-      async
-      nonce={nonce}
-      src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-    />
-    <Script id="google-adsense" nonce={nonce}>
+    <Script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" />
+    <Script id="google-adsense">
       {`(adsbygoogle = window.adsbygoogle || []).push({});`}
     </Script>
   </LoaderComponent>
