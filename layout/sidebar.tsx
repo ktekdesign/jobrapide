@@ -3,6 +3,7 @@ import Row from './row'
 import useSidebar from '@hooks/useSidebar'
 import SwiperHome from '@components/swiperHome'
 import Adsense from '@components/adsense'
+import { Suspense } from 'react'
 
 const Sidebar = () => {
   const { pub1, pub3, partners, sponsored, largeScreen } = useSidebar()
@@ -10,12 +11,14 @@ const Sidebar = () => {
   return (
     <>
       <Row>
-        <Pub
-          priority={largeScreen}
-          unoptimized={false}
-          className="pub"
-          posts={pub1}
-        />
+        <Suspense>
+          <Pub
+            priority={largeScreen}
+            unoptimized={false}
+            className="pub"
+            posts={pub1}
+          />
+        </Suspense>
       </Row>
       <Row>
         <h3 className="title-primary">Offres sponsorisées</h3>
@@ -27,7 +30,9 @@ const Sidebar = () => {
         <SwiperHome slides={1} onlyImage posts={partners} />
       </Row>
       <Row>
-        <Pub className="pub" posts={pub3} />
+        <Suspense>
+          <Pub className="pub" posts={pub3} />
+        </Suspense>
       </Row>
     </>
   )

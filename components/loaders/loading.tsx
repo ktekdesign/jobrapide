@@ -1,10 +1,4 @@
-import React, {
-  Children,
-  Suspense,
-  cloneElement,
-  isValidElement,
-  memo,
-} from 'react'
+import React, { Children, cloneElement, isValidElement, memo } from 'react'
 
 const Loading = ({
   children,
@@ -34,7 +28,7 @@ const Loading = ({
   if (error) return <></>
 
   return (
-    <Suspense>
+    <>
       {Children.map(children, (child, key) => {
         if (isValidElement(child)) {
           if (serial) {
@@ -46,7 +40,7 @@ const Loading = ({
         }
         return <>{child}</>
       })}
-    </Suspense>
+    </>
   )
 }
 export default memo(Loading)

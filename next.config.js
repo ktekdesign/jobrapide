@@ -290,6 +290,7 @@ module.exports = withBundleAnalyzer({
               '*.googleadservices.com',
               '*.google-analytics.com',
               '*.googleapis.com',
+              'vercel.live',
               "'nonce-jobrapidenoneForce'",
             ],
             'style-src': [

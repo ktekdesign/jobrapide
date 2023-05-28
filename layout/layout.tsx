@@ -16,10 +16,12 @@ import PubHeader from '@components/pub-header'
 import ShareButtons from '@components/share-buttons'
 
 const Layout = ({ children }) => (
-  <>
+  <Suspense>
     <InlineScripts nonce="jobrapidenoneForce" />
     <Header />
-    <PubHeader />
+    <Suspense>
+      <PubHeader />
+    </Suspense>
     <Adsense />
     <main>
       <Column className="left">{children}</Column>
@@ -34,13 +36,13 @@ const Layout = ({ children }) => (
       </Column>
     </main>
     <Adsense />
-    <GoTop />
-    <Suspense>
-      <ShareButtons float />
-    </Suspense>
-    <NotificationSignal />
     <Footer />
-  </>
+    <Suspense>
+      <GoTop />
+      <ShareButtons float />
+      <NotificationSignal />
+    </Suspense>
+  </Suspense>
 )
 
 export default memo(Layout)

@@ -9,18 +9,14 @@ import ParsedComponent from '@components/parsed-component'
 const PostLayout = ({ id, text, ...props }) => (
   <Suspense>
     <PostHeader {...props} />
-    <Suspense>
-      <AdSense />
-    </Suspense>
+    <AdSense />
     <div className="content">
       <ParsedComponent text={text} />
     </div>
     <Suspense>
       <SimilarPosts id={id} categoryId={getFirst(props?.categories)?.id} />
     </Suspense>
-    <Suspense>
-      <SponsoredAdSense />
-    </Suspense>
+    <SponsoredAdSense />
   </Suspense>
 )
 
