@@ -1,19 +1,22 @@
 import React, { memo } from 'react'
+import MappedComponent from './loaders/mapped-component'
+import FooterTabItem from './footer-tab-item'
 
-const TAB_ITEMS = ['Emplois par secteur', 'Emplois par région']
+const TAB_ITEMS = [
+  { title: 'Emplois par secteur' },
+  { title: 'Emplois par région' },
+]
 
 const FooterTab = ({ active, getActive, isPending, items = TAB_ITEMS }) => (
-  <ul data-loading={isPending} data-active={active} className="tab">
-    {items?.map((item, key) => (
-      <li
-        data-active={active === key}
-        data-order={key}
-        onClick={getActive}
-        key={key}
-      >
-        {item}
-      </li>
-    ))}
+  <ul className="tab">
+    <MappedComponent
+      onClick={getActive}
+      data-loading={isPending}
+      active={active}
+      items={items}
+    >
+      <FooterTabItem />
+    </MappedComponent>
   </ul>
 )
 

@@ -6,9 +6,11 @@ import Terms from 'components/terms'
 import Date from '@components/date'
 import { Post } from '@utils/interfaces/data'
 import ParsedComponent from '@components/parsed-component'
+import Adsense from './adsense'
 
 interface ArchivePostType extends Post {
   priority?: boolean
+  order?: number
 }
 
 const ArchivePost: FC<ArchivePostType> = ({
@@ -19,6 +21,7 @@ const ArchivePost: FC<ArchivePostType> = ({
   excerpt,
   date,
   priority,
+  order,
 }) => (
   <Suspense>
     <article className="archive">
@@ -44,6 +47,7 @@ const ArchivePost: FC<ArchivePostType> = ({
         <ShareButtons {...{ href, title }} />
       </div>
     </article>
+    {order === 4 && <Adsense />}
   </Suspense>
 )
 
