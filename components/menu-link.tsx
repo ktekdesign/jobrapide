@@ -1,5 +1,5 @@
 import { memo } from 'react'
-import SeoLink from './seoLink'
+import SeoLink from '@components/seoLink'
 
 const MenuLink = ({ path = '', href = '', title = '', ...props }) => (
   <SeoLink
