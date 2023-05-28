@@ -18,7 +18,7 @@ const Pub = ({
       },
     }}
     modules={[EffectFlip]}
-    posts={posts?.map(({ image, href }) => ({ image, href }))}
+    posts={posts}
   >
     <CoverImage {...{ priority, unoptimized }} />
   </SwiperController>

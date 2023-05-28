@@ -146,17 +146,13 @@ export const getPostAndMorePosts = async (slug) => {
     return outputErrors(err)
   }
 }
-export const getTermAndPosts = async ({
-  slug,
-  type,
-  currentPage: page = 1,
-}) => {
+export const getTermAndPosts = async ({ slug, type, currentPage = 1 }) => {
   const lowerCaseType = type.toLowerCase()
   try {
     const query = `query term${lowerCaseType}${slug.replaceAll(
       '-',
       '_'
-    )}${page} {
+    )}${currentPage} {
       ${lowerCaseType}(
       id: "${slug}"
       idType: SLUG
@@ -174,7 +170,7 @@ export const getTermAndPosts = async ({
     const termId = mappedTerm?.id.toString()
     if (type === TermType.Secteur) {
       const termPosts = await performSearch({
-        page,
+        page: currentPage,
         secteur: termId,
       })
       if (termPosts)
@@ -185,7 +181,7 @@ export const getTermAndPosts = async ({
         }
     } else if (type === TermType.Region) {
       const termPosts = await performSearch({
-        page,
+        page: currentPage,
         region: termId,
       })
       if (termPosts)
@@ -196,7 +192,7 @@ export const getTermAndPosts = async ({
         }
     } else if (type === TermType.Tag) {
       const termPosts = await performSearch({
-        page,
+        page: currentPage,
         tag: termId,
       })
       if (termPosts)
@@ -207,7 +203,7 @@ export const getTermAndPosts = async ({
         }
     } else {
       const termPosts = await performSearch({
-        page,
+        page: currentPage,
         category: termId,
       })
       if (termPosts)
@@ -272,6 +268,7 @@ export const performSearch = async ({
   region?: string
   tag?: string
 }) => {
+  if (!page) return null
   const wherePagination = `offsetPagination: { size: ${PER_PAGE}, offset: ${
     PER_PAGE * page - PER_PAGE
   }}`

@@ -12,6 +12,8 @@ import {
 } from '@utils/manipulateArray'
 import SeoLink from '@components/seoLink'
 import usePagination from '@hooks/usePagination'
+import MappedComponent from './loaders/mapped-component'
+import PaginationItem from './pagination-item'
 
 interface PaginationProps {
   secteur?: number
@@ -54,20 +56,9 @@ const Pagination: FC<PaginationProps> = ({
       >
         <ArrowLeft className="icon" />
       </SeoLink>
-      {pages?.map((page, key) => (
-        <SeoLink
-          as="span"
-          title={`Page ${page}`}
-          data-current={currentPage === parseInt(page)}
-          data-page={page}
-          className="pagination-item"
-          active={Number(page === '...' || currentPage === parseInt(page))}
-          href={url(page)}
-          key={key}
-        >
-          {page}
-        </SeoLink>
-      ))}
+      <MappedComponent items={pages} url={url}>
+        <PaginationItem />
+      </MappedComponent>
       <SeoLink
         title="Page suivante"
         as="span"

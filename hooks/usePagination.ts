@@ -26,14 +26,16 @@ const usePagination = ({
   )
 
   const url = useCallback(
-    (page) =>
-      search !== undefined
-        ? `${
-            isFirstPage(page)
-              ? href?.replace('_page_', '')
-              : href?.replace('_page_', `page/${page}/`)
-          }`
-        : `${href}${!isFirstPage(page) ? `page/${page}/` : ''}`,
+    (page) => {
+      if (!page || page === '...' || Number(page) < 1) return null
+      if (search !== undefined)
+        return `${
+          isFirstPage(page)
+            ? href?.replace('_page_', '')
+            : href?.replace('_page_', `page/${page}/`)
+        }`
+      return `${href}${!isFirstPage(page) ? `page/${page}/` : ''}`
+    },
     [search, href]
   )
   return { pages, url }
