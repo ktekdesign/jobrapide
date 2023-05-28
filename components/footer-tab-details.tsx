@@ -1,7 +1,11 @@
 import React, { memo, useCallback, useState, useTransition } from 'react'
 
 import FooterTab from '@components/footerTab'
-import TabDetails from '@components/tab-details'
+import dynamic from 'next/dynamic'
+
+const TabDetails = dynamic(() => import('@components/tab-details'), {
+  ssr: false,
+})
 
 const FooterTabDetails = () => {
   const [active, setActive] = useState(null)
@@ -18,7 +22,7 @@ const FooterTabDetails = () => {
   return (
     <>
       <FooterTab {...{ active, getActive, isPending }} />
-      <TabDetails active={active} />
+      {active !== null && <TabDetails active={active} />}
     </>
   )
 }

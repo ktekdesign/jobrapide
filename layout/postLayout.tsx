@@ -13,7 +13,9 @@ const PostLayout = ({ id, text, ...props }) => (
     <div className="content">
       <ParsedComponent text={text} />
     </div>
-    <SimilarPosts id={id} categoryId={getFirst(props?.categories)?.id} />
+    <Suspense>
+      <SimilarPosts id={id} categoryId={getFirst(props?.categories)?.id} />
+    </Suspense>
     <SponsoredAdSense />
   </Suspense>
 )

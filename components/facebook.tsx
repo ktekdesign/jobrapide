@@ -29,14 +29,16 @@ const Facebook = () => {
         >
           Suivez-nous sur Facebook
         </SeoLink>
-        <FacebookProvider appId="298566774007251">
-          <Page
-            href="https://www.facebook.com/tchadcarriere"
-            tabs="timeline"
-            height={400}
-            adaptContainerWidth
-          />
-        </FacebookProvider>
+        {active && (
+          <FacebookProvider appId="298566774007251">
+            <Page
+              href="https://www.facebook.com/tchadcarriere"
+              tabs="timeline"
+              height={400}
+              adaptContainerWidth
+            />
+          </FacebookProvider>
+        )}
       </OnboardingFlow>
     </div>
   )

@@ -4,12 +4,13 @@ import { memo } from 'react'
 import MainMenu from '@components/main-menu'
 
 const Menu = ({ children, toggle, ...props }) => {
-  const { asPath: router } = useRouter()
+  const router = useRouter()
+
   return (
     <>
-      <LogoMenu {...props} router={router} />
+      <LogoMenu path={router.asPath} {...props} />
       <div data-toggle={toggle} className="main-menu">
-        <MainMenu {...props} router={router} />
+        <MainMenu path={router.asPath} {...props} />
         {children}
       </div>
     </>

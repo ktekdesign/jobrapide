@@ -290,6 +290,7 @@ module.exports = withBundleAnalyzer({
               '*.googleadservices.com',
               '*.google-analytics.com',
               '*.googleapis.com',
+              'vercel.live',
               "'nonce-jobrapidenoneForce'",
             ],
             'style-src': [
@@ -299,6 +300,7 @@ module.exports = withBundleAnalyzer({
               "'unsafe-inline'",
               "'unsafe-hashes'",
             ],
+            'object-src': ['data:', "'unsafe-inline'", "'unsafe-hashes'"],
           },
         }),
       },

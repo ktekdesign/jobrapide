@@ -151,21 +151,25 @@ export const getTermAndPosts = async ({
   type,
   currentPage: page = 1,
 }) => {
+  const lowerCaseType = type.toLowerCase()
   try {
-    const query = `query term {
-      termNode(
+    const query = `query term${lowerCaseType}${slug.replaceAll(
+      '-',
+      '_'
+    )}${page} {
+      ${lowerCaseType}(
       id: "${slug}"
       idType: SLUG
-      taxonomy: ${type}
       ) {
         databaseId
         name
         uri
         slug
+        ${seo_response}
       }}`
     const data = await loadFromWPGraphQL(query)
 
-    const mappedTerm = mapTerm(data?.termNode)
+    const mappedTerm = mapTerm(data[lowerCaseType])
     if (!mappedTerm) return null
     const termId = mappedTerm?.id.toString()
     if (type === TermType.Secteur) {
@@ -175,7 +179,8 @@ export const getTermAndPosts = async ({
       })
       if (termPosts)
         return {
-          ...mapTerm({ ...mappedTerm, posts: termPosts?.posts }),
+          ...mappedTerm,
+          posts: termPosts?.posts,
           secteur: termId,
         }
     } else if (type === TermType.Region) {
@@ -185,7 +190,8 @@ export const getTermAndPosts = async ({
       })
       if (termPosts)
         return {
-          ...mapTerm({ ...mappedTerm, posts: termPosts?.posts }),
+          ...mappedTerm,
+          posts: termPosts?.posts,
           region: termId,
         }
     } else if (type === TermType.Tag) {
@@ -195,7 +201,8 @@ export const getTermAndPosts = async ({
       })
       if (termPosts)
         return {
-          ...mapTerm({ ...mappedTerm, posts: termPosts?.posts }),
+          ...mappedTerm,
+          posts: termPosts?.posts,
           tag: termId,
         }
     } else {
@@ -205,7 +212,8 @@ export const getTermAndPosts = async ({
       })
       if (termPosts)
         return {
-          ...mapTerm({ ...mappedTerm, posts: termPosts?.posts }),
+          ...mappedTerm,
+          posts: termPosts?.posts,
           category: termId,
         }
     }

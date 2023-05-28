@@ -2,6 +2,7 @@ import { getTermProps } from '@utils/getTermProps'
 import TermLayout from '@layout/termLayout'
 import { TermType, TermTypePlural } from '@utils/interfaces/data'
 import { generateTermsStaticPaths } from '@utils/generateTermsStaticPaths'
+import { memo } from 'react'
 
 export const getStaticProps = async ({ params }) => {
   const { slug } = params
@@ -14,4 +15,4 @@ export const getStaticPaths = async () =>
 
 const Term = (props) => <TermLayout {...props} />
 
-export default Term
+export default memo(Term)

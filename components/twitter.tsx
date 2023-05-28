@@ -27,11 +27,13 @@ const Twitter = () => {
         >
           Suivez-nous sur Twitter
         </SeoLink>
-        <TwitterTimelineEmbed
-          sourceType="profile"
-          screenName="tchadcarriere"
-          options={{ height: 400 }}
-        />
+        {active && (
+          <TwitterTimelineEmbed
+            sourceType="profile"
+            screenName="tchadcarriere"
+            options={{ height: 400 }}
+          />
+        )}
       </OnboardingFlow>
     </div>
   )

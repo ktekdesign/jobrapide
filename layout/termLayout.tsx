@@ -2,7 +2,8 @@ import Pagination from '@components/pagination'
 import ArchiveTitle from '@components/archive-title'
 import Breadcrumb from '@components/breadcrumb'
 import ArchiveBody from '@components/archive-body'
-import { memo } from 'react'
+import { Suspense, memo } from 'react'
+import Loading from '@components/loaders/loading'
 
 const TermLayout = ({
   title,
@@ -16,10 +17,14 @@ const TermLayout = ({
   tag,
 }) => (
   <>
-    <ArchiveTitle title={title} />
-    <Breadcrumb breadcrumbs={breadcrumbs} />
-    <ArchiveBody posts={posts} />
-    <Pagination {...{ secteur, region, category, tag, href, currentPage }} />
+    <Loading data={{ title, breadcrumbs, posts }} loading={!posts}>
+      <ArchiveTitle />
+      <Breadcrumb />
+      <ArchiveBody />
+    </Loading>
+    <Suspense>
+      <Pagination {...{ secteur, region, category, tag, href, currentPage }} />
+    </Suspense>
   </>
 )
 

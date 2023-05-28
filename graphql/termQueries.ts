@@ -1,38 +1,3 @@
-const seo_response = `
-  seo {
-    breadcrumbs {
-        text
-        url
-    }
-    canonical
-    metaDesc
-    metaKeywords
-    metaRobotsNofollow
-    metaRobotsNoindex
-    opengraphAuthor
-    opengraphDescription
-    opengraphImage { 
-        sourceUrl
-    }
-    opengraphModifiedTime
-    opengraphPublishedTime
-    opengraphPublisher
-    opengraphSiteName
-    opengraphTitle
-    opengraphType
-    opengraphUrl
-    schema {
-        raw
-    }
-    title
-    twitterDescription
-    twitterImage {
-        sourceUrl
-    }
-    twitterTitle
-  }
-`
-
 export const secteursQuery = `query secteursQuery {
   secteurs (first: 100) {
     nodes {
@@ -40,7 +5,6 @@ export const secteursQuery = `query secteursQuery {
       name
       slug
       uri
-      ${seo_response}
     }
   }
 }
@@ -52,7 +16,6 @@ export const niveauxQuery = `query niveauxQuery {
       name
       slug
       uri
-      ${seo_response}
     }
   }
 }
@@ -66,7 +29,6 @@ export const categoriesQuery = `
         name
         slug
         uri
-        ${seo_response}
       }
     }
   }
@@ -80,7 +42,6 @@ export const regionsQuery = `
         name
         slug
         uri
-        ${seo_response}
       }
     }
     last: regions (first: 100, after: "YXJyYXljb25uZWN0aW9uOjMxNQ==") {
@@ -89,7 +50,6 @@ export const regionsQuery = `
         name
         slug
         uri
-        ${seo_response}
       }
     }
   }
@@ -111,7 +71,6 @@ export const tagsQuery = `query tagsQuery {
       name
       slug
       uri
-      ${seo_response}
     }
   }
 }
