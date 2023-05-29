@@ -6,27 +6,24 @@ import Row from '@layout/row'
 
 import Facebook from '@components/facebook'
 import Twitter from '@components/twitter'
-
-import NotificationSignal from 'messaging-next'
 import GoTop from '@components/gotop'
 import Adsense from '@components/adsense'
 import InlineScripts from '@components/inline-scripts'
 import ShareButtons from '@components/share-buttons'
 import Pub from '@components/pub'
 import SwiperHome from '@components/swiperHome'
+import NotificationSignal from 'messaging-next'
 
 const Layout = ({ children, sidebar }) => (
   <Suspense>
     <InlineScripts nonce="jobrapidenoneForce" />
     <Header />
-    <Suspense>
-      <Pub
-        className="pub-in-header"
-        priority
-        unoptimized={false}
-        posts={sidebar?.pub2}
-      />
-    </Suspense>
+    <Pub
+      className="pub-in-header"
+      priority
+      unoptimized={false}
+      posts={sidebar?.pub2}
+    />
     <Adsense />
     <main>
       <Column className="left">{children}</Column>
@@ -61,11 +58,9 @@ const Layout = ({ children, sidebar }) => (
     </main>
     <Adsense />
     <Footer />
-    <Suspense>
-      <GoTop />
-      <ShareButtons float />
-      <NotificationSignal />
-    </Suspense>
+    <GoTop />
+    <ShareButtons float />
+    <NotificationSignal />
   </Suspense>
 )
 
