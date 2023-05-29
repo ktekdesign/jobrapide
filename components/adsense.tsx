@@ -1,11 +1,6 @@
+import { Adsense as GAdSense } from '@ctrl/react-adsense'
 import { memo } from 'react'
 import StringComponent from '@components/loaders/string-component'
-import dynamic from 'next/dynamic'
-
-const GAdSense = dynamic(
-  () => import('@ctrl/react-adsense').then((mod) => mod.Adsense),
-  { ssr: false }
-)
 
 const AdSense = (props) => (
   <StringComponent

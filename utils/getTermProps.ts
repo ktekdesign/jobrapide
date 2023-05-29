@@ -11,7 +11,7 @@ export const getTermProps = async (slug, type, currentPage = 1) => {
 
   if (isEmpty(term)) return { notFound: true }
 
-  return addLayoutData({
+  return await addLayoutData({
     currentPage,
     ...term,
   })

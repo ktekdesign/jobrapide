@@ -21,6 +21,8 @@ import {
   secteursPathsQuery,
   tagsPathsQuery,
 } from './termQueriesPaths'
+import { sidebarQuery } from './sidebarQuery'
+import { filterSidebar } from '@utils/filterSidebar'
 
 export const loadFromWPGraphQL = async (
   query = '',
@@ -252,7 +254,15 @@ export const getPage = async (slug) => {
     return outputErrors(err)
   }
 }
+export const getSidebar = async () => {
+  try {
+    const data = await loadFromWPGraphQL(sidebarQuery)
 
+    return filterSidebar(data)
+  } catch (err) {
+    return outputErrors(err)
+  }
+}
 export const performSearch = async ({
   page = 1,
   search,

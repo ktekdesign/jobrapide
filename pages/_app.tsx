@@ -10,15 +10,18 @@ import Layout from '@layout/layout'
 import Meta from '@components/meta'
 import { Suspense } from 'react'
 
-const MyApp = ({ Component, pageProps }: AppProps) => (
-  <Suspense>
-    <Meta seo={pageProps.layout?.seo} />
-    <ApolloProvider client={client}>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </ApolloProvider>
-  </Suspense>
-)
+const MyApp = ({ Component, pageProps }: AppProps) => {
+  const { layout, ...props } = pageProps
 
+  return (
+    <Suspense>
+      <Meta seo={layout?.seo} />
+      <ApolloProvider client={client}>
+        <Layout sidebar={layout?.sidebar}>
+          <Component {...props} />
+        </Layout>
+      </ApolloProvider>
+    </Suspense>
+  )
+}
 export default MyApp

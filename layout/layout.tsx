@@ -10,23 +10,47 @@ import Twitter from '@components/twitter'
 import NotificationSignal from 'messaging-next'
 import GoTop from '@components/gotop'
 import Adsense from '@components/adsense'
-import Sidebar from '@layout/sidebar'
 import InlineScripts from '@components/inline-scripts'
-import PubHeader from '@components/pub-header'
 import ShareButtons from '@components/share-buttons'
+import Pub from '@components/pub'
+import SwiperHome from '@components/swiperHome'
 
-const Layout = ({ children }) => (
+const Layout = ({ children, sidebar }) => (
   <Suspense>
     <InlineScripts nonce="jobrapidenoneForce" />
     <Header />
     <Suspense>
-      <PubHeader />
+      <Pub
+        className="pub-in-header"
+        priority
+        unoptimized={false}
+        posts={sidebar?.pub2}
+      />
     </Suspense>
     <Adsense />
     <main>
       <Column className="left">{children}</Column>
       <Column className="right">
-        <Sidebar />
+        <Row>
+          <Pub
+            priority
+            unoptimized={false}
+            className="pub"
+            posts={sidebar?.pub1}
+          />
+        </Row>
+        <Row>
+          <h3 className="title-primary">Offres sponsorisées</h3>
+          <SwiperHome slides={1} posts={sidebar?.sponsored} />
+        </Row>
+        <Adsense />
+        <Row>
+          <h3 className="title-secondary">Partenaires</h3>
+          <SwiperHome slides={1} onlyImage posts={sidebar?.partners} />
+        </Row>
+        <Row>
+          <Pub className="pub" posts={sidebar?.pub3} />
+        </Row>
         <Row>
           <Facebook />
         </Row>

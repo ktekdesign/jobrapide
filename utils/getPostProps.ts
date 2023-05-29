@@ -8,7 +8,7 @@ export const getPostProps = async (slugs, prefix) => {
   if (isEmpty(postPage?.post)) return { notFound: true }
 
   const { post } = postPage
-  const layout = addLayoutData({
+  const layout = await addLayoutData({
     ...post,
   })
   return layout
