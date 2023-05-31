@@ -8,17 +8,15 @@ import ParsedComponent from '@components/parsed-component'
 const Page = ({ title, text }) => (
   <>
     <PostTitle title={title} />
-    <div className="content">
-      <ParsedComponent text={text} />
-    </div>
+    <ParsedComponent as="div" className="content" text={text} />
   </>
 )
 
 export const getStaticProps = async ({ params }) => {
   const page: Page = await getPage(`/${params?.slug}/`)
   if (isEmpty(page)) return { notFound: true }
-  const layout = addLayoutData(page)
-  return layout
+
+  return await addLayoutData(page, params.slug)
 }
 
 export const getStaticPaths = async () => {

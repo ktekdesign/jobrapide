@@ -1,8 +1,8 @@
 import { memo } from 'react'
-import GAdSense from '@components/adsense'
+import AdSense from '@components/adsense'
 
-const SponsoredAdSense = () => (
-  <GAdSense slot="2682415108" format="autorelaxed" />
+const SponsoredAdSense = (props) => (
+  <AdSense slot="2682415108" format="autorelaxed" {...props} />
 )
 
 export default memo(SponsoredAdSense)

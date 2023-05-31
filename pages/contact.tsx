@@ -5,8 +5,8 @@ import addLayoutData from '@utils/addLayoutData'
 
 export const getStaticProps = async () => {
   const page = await getPage('contact')
-  const layout = addLayoutData(page)
-  return layout
+
+  return await addLayoutData(page, 'contact')
 }
 const Contact = () => (
   <>

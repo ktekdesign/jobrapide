@@ -7,10 +7,11 @@ import StringComponent from './loaders/string-component'
 interface LinkContainerProps extends LinkHTMLAttributes<HTMLAnchorElement> {
   as?: string
   target?: string
-  children: ReactNode
+  children?: ReactNode
   linkClassName?: string
   className?: string
   active?: number
+  route?: string
   data?: Omit<LinkContainerProps, 'LinkHTMLAttributes' | 'children'>
 }
 const SeoLink: FC<LinkContainerProps> = ({
@@ -21,19 +22,28 @@ const SeoLink: FC<LinkContainerProps> = ({
   className,
   linkClassName,
   as,
+  route,
   ...props
 }) => (
-  <StringComponent {...{ className, as, ...props }}>
+  <StringComponent
+    data-active={href?.includes(route)}
+    {...{ className, as, ...props }}
+  >
     <OnboardingFlow active={Number(!href)}>
       <Link
         {...{ href, target, title }}
+        prefetch={false}
         aria-label={title}
         className={linkClassName ?? ''}
         {...props}
       >
-        <LoaderComponent {...{ ...props, title }}>{children}</LoaderComponent>
+        {!children ? (
+          title
+        ) : (
+          <LoaderComponent {...{ ...props, title }}>{children}</LoaderComponent>
+        )}
       </Link>
-      <>{children}</>
+      <>{!children ? title : children}</>
     </OnboardingFlow>
   </StringComponent>
 )

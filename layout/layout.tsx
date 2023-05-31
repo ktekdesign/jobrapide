@@ -6,27 +6,48 @@ import Row from '@layout/row'
 
 import Facebook from '@components/facebook'
 import Twitter from '@components/twitter'
-
-import NotificationSignal from 'messaging-next'
 import GoTop from '@components/gotop'
 import Adsense from '@components/adsense'
-import Sidebar from '@layout/sidebar'
 import InlineScripts from '@components/inline-scripts'
-import PubHeader from '@components/pub-header'
 import ShareButtons from '@components/share-buttons'
+import Pub from '@components/pub'
+import SwiperHome from '@components/swiperHome'
+import NotificationSignal from 'messaging-next'
 
-const Layout = ({ children }) => (
+const Layout = ({ children, route, sidebar }) => (
   <Suspense>
     <InlineScripts nonce="jobrapidenoneForce" />
-    <Header />
-    <Suspense>
-      <PubHeader />
-    </Suspense>
+    <Header route={route} />
+    <Pub
+      className="pub-in-header"
+      priority
+      unoptimized={false}
+      posts={sidebar?.pub2}
+    />
     <Adsense />
     <main>
       <Column className="left">{children}</Column>
       <Column className="right">
-        <Sidebar />
+        <Row>
+          <Pub
+            priority
+            unoptimized={false}
+            className="pub"
+            posts={sidebar?.pub1}
+          />
+        </Row>
+        <Row>
+          <h3 className="title-primary">Offres sponsorisées</h3>
+          <SwiperHome slides={1} posts={sidebar?.sponsored} />
+        </Row>
+        <Adsense />
+        <Row>
+          <h3 className="title-secondary">Partenaires</h3>
+          <SwiperHome slides={1} onlyImage posts={sidebar?.partners} />
+        </Row>
+        <Row>
+          <Pub className="pub" posts={sidebar?.pub3} />
+        </Row>
         <Row>
           <Facebook />
         </Row>
@@ -36,12 +57,10 @@ const Layout = ({ children }) => (
       </Column>
     </main>
     <Adsense />
-    <Footer />
-    <Suspense>
-      <GoTop />
-      <ShareButtons float />
-      <NotificationSignal />
-    </Suspense>
+    <Footer route={route} />
+    <GoTop />
+    <ShareButtons float />
+    <NotificationSignal />
   </Suspense>
 )
 

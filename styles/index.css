@@ -335,10 +335,10 @@ button[type='submit'] {
   @apply flex-wrap text-xs container mx-auto;
 }
 .terms-list li {
-  @apply p-1;
+  @apply p-1 hover:font-bold transition-all duration-200;
 }
-.terms-list a {
-  @apply hover:font-bold transition-all duration-200;
+.terms-list [data-active='true'] {
+  @apply font-bold;
 }
 .regions-list {
   @apply w-1/2 md:w-1/5 lg:w-1/6;
@@ -351,6 +351,9 @@ button[type='submit'] {
 }
 .feature img {
   @apply object-contain;
+}
+.post-header-image .feature {
+  @apply min-h-[300px];
 }
 [data-terms='true'] {
   @apply mb-2 block text-dark;

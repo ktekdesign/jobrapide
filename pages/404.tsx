@@ -2,8 +2,14 @@ import React from 'react'
 import Head from 'next/head'
 import ArchiveTitle from '@components/archive-title'
 import SeoLink from '@components/seoLink'
+import addLayoutData from '@utils/addLayoutData'
 
-const PageError = () => (
+export const getStaticProps = async () => {
+  return await addLayoutData({
+    text: 'Votre recherche n&apos;a retourné aucun résultat.',
+  })
+}
+const PageError = ({ text }) => (
   <>
     <Head>
       <title>Page introuvable - JobRapide</title>
@@ -14,7 +20,7 @@ const PageError = () => (
     </Head>
 
     <ArchiveTitle title="Error 404 : page introuvable" />
-    <p>Votre recherche n&apos;a retourné aucun résultat.</p>
+    <p>{text}</p>
     <SeoLink as="div" href="/" linkClassName="button" title="Retour">
       Retour
     </SeoLink>

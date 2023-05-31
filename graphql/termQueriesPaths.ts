@@ -16,7 +16,7 @@ export const niveauxPathsQuery = `query niveauxQuery {
 `
 export const categoriesPathsQuery = `
   query Category {
-    categories (first: 1, where: { hideEmpty: true, parent: 16 }) {
+    categories (first: 10, where: { hideEmpty: true, parent: 16, excludeTree:["17", "18", "19", "20"] }) {
       nodes {
         slug
       }

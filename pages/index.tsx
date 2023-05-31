@@ -8,7 +8,7 @@ import LoaderComponent from '@components/loaders/loader'
 
 export const getStaticProps = async () => {
   const terms = await getPostsHome()
-  return addLayoutData(terms)
+  return await addLayoutData({ ...terms, id: 1 })
 }
 
 const Index = ({ terms }) => (

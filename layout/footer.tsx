@@ -4,9 +4,9 @@ import Copyright from '@components/copyright'
 import FooterMenu from '@components/footerMenu'
 import FooterTabDetails from '@components/footer-tab-details'
 
-const Footer = () => (
+const Footer = ({ route }) => (
   <footer>
-    <FooterTabDetails />
+    <FooterTabDetails route={route} />
     <FooterMenu />
     <Copyright />
   </footer>
