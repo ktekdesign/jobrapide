@@ -34,7 +34,7 @@ const Search = ({
     secteur,
     region,
   })
-  console.log(breadcrumbs)
+
   return (
     <>
       <Loading
