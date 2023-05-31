@@ -1,4 +1,4 @@
-import { getPostAndMorePosts } from '@graphql/api'
+import getPostAndMorePosts from '@graphql/api/getPostAndMorePosts'
 import { isEmpty } from '@utils/manipulateArray'
 import addLayoutData from '@utils/addLayoutData'
 

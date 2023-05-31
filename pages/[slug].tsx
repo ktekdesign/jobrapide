@@ -1,4 +1,4 @@
-import { getPage } from '@graphql/api'
+import getPage from '@graphql/api/getPage'
 import PostTitle from '@components/post-title'
 import { Page } from '@utils/interfaces/data'
 import { isEmpty } from '@utils/manipulateArray'

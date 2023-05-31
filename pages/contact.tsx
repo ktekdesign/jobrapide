@@ -1,6 +1,6 @@
 import ContactForm from '@components/contactForm'
 import ArchiveTitle from '@components/archive-title'
-import { getPage } from '@graphql/api'
+import getPage from '@graphql/api/getPage'
 import addLayoutData from '@utils/addLayoutData'
 
 export const getStaticProps = async () => {

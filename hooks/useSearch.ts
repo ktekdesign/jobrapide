@@ -1,20 +1,14 @@
-import { getSearchQuery } from '@graphql/api'
-import { gql, useLazyQuery } from '@apollo/client'
+import getSearchQuery from '@graphql/api/getSearchQuery'
+import { gql, useQuery } from '@apollo/client'
 import { mapPost } from '@utils/mapping'
-import { useEffect, useState } from 'react'
 
 const useSearch = ({ currentPage, search, category, secteur, region }) => {
   const QUERY = gql`
     ${getSearchQuery({ currentPage, search, category, secteur, region })}
   `
 
-  const [getPosts] = useLazyQuery(QUERY)
-  const [posts, setPosts] = useState(null)
-  useEffect(() => {
-    getPosts().then(({ data }) =>
-      setPosts(data.posts?.nodes?.map((post) => mapPost(post)))
-    )
-  }, [getPosts])
+  const { data } = useQuery(QUERY)
+  const posts = data.posts?.nodes?.map((post) => mapPost(post))
 
   const href = `/search/_page_?s=${search}&category=${category}&secteur=${secteur}&region=${region}`
   return { posts, href }

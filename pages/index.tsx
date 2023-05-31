@@ -2,7 +2,7 @@ import SwiperTitle from '@components/swiperTitle'
 import SwiperHome from '@components/swiperHome'
 import Loading from '@components/loaders/loading'
 import addLayoutData from '@utils/addLayoutData'
-import { getPostsHome } from '@graphql/api'
+import getPostsHome from '@graphql/api/getPostsHome'
 import { memo } from 'react'
 import LoaderComponent from '@components/loaders/loader'
 
