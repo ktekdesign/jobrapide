@@ -7,7 +7,7 @@ const TabDetails = dynamic(() => import('@components/tab-details'), {
   ssr: false,
 })
 
-const FooterTabDetails = () => {
+const FooterTabDetails = ({ route }) => {
   const [active, setActive] = useState(null)
   const [isPending, startTransition] = useTransition()
 
@@ -22,7 +22,7 @@ const FooterTabDetails = () => {
   return (
     <>
       <FooterTab {...{ active, getActive, isPending }} />
-      {active !== null && <TabDetails active={active} />}
+      {active !== null && <TabDetails route={route} active={active} />}
     </>
   )
 }

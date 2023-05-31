@@ -1,14 +1,14 @@
 import SeoLink from '@components/seoLink'
 import { memo } from 'react'
 
-const PaginationItem = ({ page = '1', currentPage = 1, url = null }) => (
+const PaginationItem = ({ page = '1', current = 1, url = null }) => (
   <SeoLink
     as="span"
     title={`Page ${page}`}
-    data-current={currentPage === parseInt(page)}
+    data-current={current === parseInt(page)}
     data-page={page}
     className="pagination-item"
-    active={Number(page === '...' || currentPage === parseInt(page))}
+    active={Number(page === '...' || current === parseInt(page))}
     href={url(page)}
   >
     {page}

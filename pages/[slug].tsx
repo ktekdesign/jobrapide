@@ -16,7 +16,7 @@ export const getStaticProps = async ({ params }) => {
   const page: Page = await getPage(`/${params?.slug}/`)
   if (isEmpty(page)) return { notFound: true }
 
-  return await addLayoutData(page)
+  return await addLayoutData(page, params.slug)
 }
 
 export const getStaticPaths = async () => {

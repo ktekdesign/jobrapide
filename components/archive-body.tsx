@@ -1,10 +1,9 @@
-import React, { FC, memo } from 'react'
+import React, { memo } from 'react'
 
-import ComponentsProps from '@utils/interfaces/components'
 import ArchivePost from './archive-post'
 import MappedComponent from '@components/loaders/mapped-component'
 
-const ArchiveBody: FC<ComponentsProps> = ({ posts }) => (
+const ArchiveBody = ({ posts = null }) => (
   <section className="archive-body">
     <MappedComponent items={posts}>
       <ArchivePost />

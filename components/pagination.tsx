@@ -56,8 +56,8 @@ const Pagination: FC<PaginationProps> = ({
       >
         <ArrowLeft className="icon" />
       </SeoLink>
-      <MappedComponent items={pages} url={url}>
-        <PaginationItem />
+      <MappedComponent items={pages}>
+        <PaginationItem current={currentPage} url={url} />
       </MappedComponent>
       <SeoLink
         title="Page suivante"

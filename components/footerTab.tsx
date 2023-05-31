@@ -9,13 +9,12 @@ const TAB_ITEMS = [
 
 const FooterTab = ({ active, getActive, isPending, items = TAB_ITEMS }) => (
   <ul className="tab">
-    <MappedComponent
-      onClick={getActive}
-      data-loading={isPending}
-      active={active}
-      items={items}
-    >
-      <FooterTabItem />
+    <MappedComponent items={items}>
+      <FooterTabItem
+        onClick={getActive}
+        data-loading={isPending}
+        active={active}
+      />
     </MappedComponent>
   </ul>
 )

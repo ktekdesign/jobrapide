@@ -4,6 +4,7 @@ import CoverImage from '@components/cover-image'
 import SeoLink from '@components/seoLink'
 import ComponentsProps from '@utils/interfaces/components'
 import ParsedComponent from './parsed-component'
+import resizeImage from '@utils/resizeImage'
 
 const PostPreview: FC<ComponentsProps> = ({
   title,
@@ -15,7 +16,8 @@ const PostPreview: FC<ComponentsProps> = ({
   <>
     <CoverImage
       data-preview="post-preview-image"
-      {...{ title, image, href, ...props }}
+      image={resizeImage({ height: 200, src: image })}
+      {...{ title, href, ...props }}
     />
     <SeoLink
       {...{ title, href }}

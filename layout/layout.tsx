@@ -14,10 +14,10 @@ import Pub from '@components/pub'
 import SwiperHome from '@components/swiperHome'
 import NotificationSignal from 'messaging-next'
 
-const Layout = ({ children, sidebar }) => (
+const Layout = ({ children, route, sidebar }) => (
   <Suspense>
     <InlineScripts nonce="jobrapidenoneForce" />
-    <Header />
+    <Header route={route} />
     <Pub
       className="pub-in-header"
       priority
@@ -57,7 +57,7 @@ const Layout = ({ children, sidebar }) => (
       </Column>
     </main>
     <Adsense />
-    <Footer />
+    <Footer route={route} />
     <GoTop />
     <ShareButtons float />
     <NotificationSignal />

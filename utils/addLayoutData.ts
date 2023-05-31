@@ -1,26 +1,28 @@
 import { getSidebar } from '@graphql/api'
 import { REVALIDATE } from '@utils/constants'
 
-export const addLayoutData = async (data) => {
-  const { seo: seoProps, ...props } = data
+export const addLayoutData = async (data, pageSlug = null) => {
   const sidebar = await getSidebar()
 
-  if ('search' in props) {
+  if ('search' in data) {
     return {
       props: {
-        ...props,
+        ...data,
         breadcrumbs: [
           { text: 'Accueil', href: '/' },
           { text: 'Recherche', href: '/search/' },
         ],
         layout: {
           sidebar,
+          pageSlug,
         },
       },
     }
   }
   const layout = () => {
-    if (!seoProps) return { ...props, layout: { sidebar } }
+    const { seo: seoProps, ...props } = data
+
+    if (!seoProps) return { ...props, pageSlug, layout: { sidebar } }
     const { breadcrumbs, ...seo } = seoProps
 
     if (props?.currentPage > 1)
@@ -28,23 +30,30 @@ export const addLayoutData = async (data) => {
 
     return {
       ...props,
-      breadcrumbs: breadcrumbs,
+      breadcrumbs,
       layout: {
         seo,
         sidebar,
+        pageSlug,
       },
     }
   }
   const layoutProps = layout()
 
-  if (layoutProps.text || layoutProps.currentPage > 10 || layoutProps.tag)
+  const { category, tag, id, parentid, currentPage, text } = layoutProps
+
+  if (
+    text ||
+    currentPage > 10 ||
+    tag ||
+    (category && parentid !== 16 && id !== 23)
+  ) {
     return { props: layoutProps }
+  }
 
-  const { secteur, region } = layoutProps
+  if ([1, 17, 18, 19, 20].includes(id))
+    return { props: layoutProps, revalidate: REVALIDATE }
 
-  if (secteur || region || layoutProps.currentPage > 3)
-    return { props: layoutProps, revalidate: 604800 }
-
-  return { props: layoutProps, revalidate: REVALIDATE }
+  return { props: layoutProps, revalidate: 604800 }
 }
 export default addLayoutData

@@ -7,10 +7,12 @@ import Date from '@components/date'
 import { Post } from '@utils/interfaces/data'
 import ParsedComponent from '@components/parsed-component'
 import Adsense from './adsense'
+import resizeImage from '@utils/resizeImage'
 
 interface ArchivePostType extends Post {
   priority?: boolean
   order?: number
+  route?: string
 }
 
 const ArchivePost: FC<ArchivePostType> = ({
@@ -26,7 +28,8 @@ const ArchivePost: FC<ArchivePostType> = ({
   <Suspense>
     <article className="archive">
       <CoverImage
-        {...{ image, title, href, priority }}
+        image={resizeImage({ height: 200, src: image })}
+        {...{ title, href, priority }}
         className="archive-post-feature relative"
       />
       <div className="post-info">

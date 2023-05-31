@@ -17,8 +17,8 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     <Suspense>
       <Meta seo={layout?.seo} />
       <ApolloProvider client={client}>
-        <Layout sidebar={layout?.sidebar}>
-          <Component {...props} />
+        <Layout route={layout?.pageSlug} sidebar={layout?.sidebar}>
+          <Component {...{ route: layout?.pageSlug, ...props }} />
         </Layout>
       </ApolloProvider>
     </Suspense>

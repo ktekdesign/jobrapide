@@ -163,6 +163,7 @@ export const getTermAndPosts = async ({ slug, type, currentPage = 1 }) => {
         name
         uri
         slug
+        ${lowerCaseType === 'category' ? 'parentDatabaseId' : ''}
         ${seo_response}
       }}`
     const data = await loadFromWPGraphQL(query)

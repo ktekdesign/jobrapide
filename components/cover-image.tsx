@@ -17,7 +17,6 @@ const CoverImage = ({
       <picture className="feature">
         <ImageWithFallback
           fill
-          quality={75}
           alt={title}
           src={image}
           {...{ priority: priority && order < 3, unoptimized }}
