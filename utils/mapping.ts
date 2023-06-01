@@ -7,14 +7,14 @@ const replaceUrl = (url) =>
   preventUndefined(url?.replace('www.jobrapide.org', BASE_DOMAIN))
 
 const getOptimizedImageUrl = (url: string) => {
-  if (!url) return 'https://v2.jobrapide.org/images/logo.webp'
   if (
-    !url.includes('.png') &&
-    !url.includes('.jpg') &&
-    !url.includes('.jpeg') &&
-    !url.includes('.webp')
+    !url ||
+    (!url.includes('.png') &&
+      !url.includes('.jpg') &&
+      !url.includes('.jpeg') &&
+      !url.includes('.webp'))
   )
-    return url
+    return null
   const imageUrl = preventUndefined(
     url?.replace(
       'wp-content/uploads',

@@ -20,8 +20,9 @@ const nonce = crypto
   .digest('base64')
 const isDev = process.env.NODE_ENV !== 'production'
 const ContentSecurityPolicy = `
+  base-uri 'self';
   default-src 'self';
-  script-src 'self' 'nonce-${nonce}' 'strict-dynamic' 'unsafe-inline'${
+  script-src 'self' 'nonce-${nonce}' 'strict-dynamic' https: 'unsafe-inline'${
   isDev ? " 'unsafe-eval'" : ''
 };
   child-src 'self';
