@@ -4,7 +4,7 @@ import OnboardingFlow from '@components/loaders/onboardingFlow'
 import Logo from '@components/logo'
 
 const ImageWithFallback = ({ alt, src, ...props }) => {
-  const [logo, setLogo] = useState(false)
+  const [logo, setLogo] = useState(!src)
   const onError = () => startTransition(() => setLogo(true))
 
   return (

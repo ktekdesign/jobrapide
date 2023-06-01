@@ -1,12 +1,7 @@
-import { FC, HTMLAttributes, ReactNode, memo } from 'react'
+import { memo } from 'react'
 
-interface StringComponentProps extends HTMLAttributes<HTMLElement> {
-  as?: string
-  cond?: boolean
-  children: ReactNode
-}
-const StringComponent: FC<StringComponentProps> = ({
-  as: Component,
+const StringComponent = ({
+  as: Component = null,
   cond = true,
   children,
   ...props

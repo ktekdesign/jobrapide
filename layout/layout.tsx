@@ -1,6 +1,4 @@
 import { Suspense, memo } from 'react'
-import Footer from '@layout/footer'
-import Header from '@layout/header'
 import Column from '@layout/column'
 import Row from '@layout/row'
 
@@ -8,17 +6,14 @@ import Facebook from '@components/facebook'
 import Twitter from '@components/twitter'
 import GoTop from '@components/gotop'
 import Adsense from '@components/adsense'
-import InlineScripts from '@components/inline-scripts'
 import ShareButtons from '@components/share-buttons'
 import Pub from '@components/pub'
 import SwiperHome from '@components/swiperHome'
 import NotificationSignal from 'messaging-next'
 
-const Layout = ({ children, route, sidebar }) => (
+const Layout = ({ children, sidebar }) => (
   <>
     <Suspense>
-      <InlineScripts nonce="jobrapidenoneForce" />
-      <Header route={route} />
       <Pub
         className="pub-in-header"
         priority
@@ -60,7 +55,6 @@ const Layout = ({ children, route, sidebar }) => (
     </main>
     <Adsense />
     <Suspense>
-      <Footer route={route} />
       <GoTop />
       <ShareButtons float />
       <NotificationSignal />

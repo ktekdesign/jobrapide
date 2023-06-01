@@ -12,7 +12,7 @@ const CoverImage = ({
   order = 0,
   ...props
 }) => (
-  <StringComponent cond={!!image}>
+  <StringComponent>
     <SeoLink as="div" {...{ href, title, ...props }}>
       <picture className="feature">
         <ImageWithFallback

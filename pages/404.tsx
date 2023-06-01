@@ -5,9 +5,12 @@ import SeoLink from '@components/seoLink'
 import addLayoutData from '@utils/addLayoutData'
 
 export const getStaticProps = async () => {
-  return await addLayoutData({
-    text: 'Votre recherche n&apos;a retourné aucun résultat.',
-  })
+  return await addLayoutData(
+    {
+      text: 'Votre recherche n&apos;a retourné aucun résultat.',
+    },
+    '404'
+  )
 }
 const PageError = ({ text }) => (
   <>
