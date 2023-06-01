@@ -15,7 +15,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 
   return (
     <>
-      <InlineScripts nonce={process.env.nonce} />
+      <InlineScripts />
       <Meta seo={layout?.seo} />
       <Header route={layout?.pageSlug} />
       <Layout sidebar={layout?.sidebar}>

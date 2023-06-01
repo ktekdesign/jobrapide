@@ -21,7 +21,7 @@ const nonce = crypto
 const isDev = process.env.NODE_ENV !== 'production'
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'nonce-${nonce}' 'strict-dynamic' https: 'unsafe-inline'${
+  script-src 'self' 'nonce-${nonce}' 'strict-dynamic' 'unsafe-inline'${
   isDev ? " 'unsafe-eval'" : ''
 };
   child-src 'self';
