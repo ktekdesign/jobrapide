@@ -2,8 +2,8 @@ import SwiperTitle from '@components/swiperTitle'
 import SwiperHome from '@components/swiperHome'
 import Loading from '@components/loaders/loading'
 import addLayoutData from '@utils/addLayoutData'
-import { getPostsHome } from '@graphql/api'
-import { Suspense, memo } from 'react'
+import getPostsHome from '@graphql/api/getPostsHome'
+import { memo } from 'react'
 import LoaderComponent from '@components/loaders/loader'
 
 export const getStaticProps = async () => {
@@ -12,7 +12,7 @@ export const getStaticProps = async () => {
 }
 
 const Index = ({ terms }) => (
-  <Suspense>
+  <>
     <div className="flex flex-wrap">
       <Loading data={terms} loading={false} serial>
         <LoaderComponent as="div" data-swiper="home">
@@ -85,6 +85,6 @@ const Index = ({ terms }) => (
         </LoaderComponent>
       </Loading>
     </div>
-  </Suspense>
+  </>
 )
 export default memo(Index)

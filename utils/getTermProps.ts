@@ -1,4 +1,4 @@
-import { getTermAndPosts } from '@graphql/api'
+import getTermAndPosts from '@graphql/api/getTermAndPosts'
 import { isEmpty } from '@utils/manipulateArray'
 import addLayoutData from '@utils/addLayoutData'
 

@@ -1,4 +1,4 @@
-import { getTermsPaths } from '@graphql/api'
+import getTermsPaths from '@graphql/api/getTermsPaths'
 
 export const generateOthersCategoriesStaticPaths = async (isPage = true) => {
   const termsPaths = await getTermsPaths('CATEGORY', true)

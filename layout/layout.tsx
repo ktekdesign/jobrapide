@@ -15,15 +15,17 @@ import SwiperHome from '@components/swiperHome'
 import NotificationSignal from 'messaging-next'
 
 const Layout = ({ children, route, sidebar }) => (
-  <Suspense>
-    <InlineScripts nonce="jobrapidenoneForce" />
-    <Header route={route} />
-    <Pub
-      className="pub-in-header"
-      priority
-      unoptimized={false}
-      posts={sidebar?.pub2}
-    />
+  <>
+    <Suspense>
+      <InlineScripts nonce="jobrapidenoneForce" />
+      <Header route={route} />
+      <Pub
+        className="pub-in-header"
+        priority
+        unoptimized={false}
+        posts={sidebar?.pub2}
+      />
+    </Suspense>
     <Adsense />
     <main>
       <Column className="left">{children}</Column>
@@ -57,11 +59,13 @@ const Layout = ({ children, route, sidebar }) => (
       </Column>
     </main>
     <Adsense />
-    <Footer route={route} />
-    <GoTop />
-    <ShareButtons float />
-    <NotificationSignal />
-  </Suspense>
+    <Suspense>
+      <Footer route={route} />
+      <GoTop />
+      <ShareButtons float />
+      <NotificationSignal />
+    </Suspense>
+  </>
 )
 
 export default memo(Layout)

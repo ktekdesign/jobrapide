@@ -50,7 +50,7 @@ const Pagination: FC<PaginationProps> = ({
       <SeoLink
         as="span"
         title="Page précédente"
-        data-hidden={isFirstPage(currentPage)}
+        data-hidden={pages.length === 1 || isFirstPage(currentPage)}
         className="pagination-item"
         href={url(prev(currentPage))}
       >
@@ -62,7 +62,9 @@ const Pagination: FC<PaginationProps> = ({
       <SeoLink
         title="Page suivante"
         as="span"
-        data-hidden={isCurrentPage(currentPage, getLast(pages))}
+        data-hidden={
+          pages.length === 1 || isCurrentPage(currentPage, getLast(pages))
+        }
         className="pagination-item"
         href={url(next(currentPage))}
       >

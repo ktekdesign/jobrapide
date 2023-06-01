@@ -1,4 +1,4 @@
-import { getLatestPosts } from '@graphql/api'
+import getLatestPosts from '@graphql/api/getLatestPosts'
 
 export const generatePostsStaticPaths = async (term) => {
   const postsPaths = await getLatestPosts(term)

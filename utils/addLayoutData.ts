@@ -1,4 +1,4 @@
-import { getSidebar } from '@graphql/api'
+import getSidebar from '@graphql/api/getSidebar'
 import { REVALIDATE } from '@utils/constants'
 
 export const addLayoutData = async (data, pageSlug = null) => {
