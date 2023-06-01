@@ -5,9 +5,12 @@ import SeoLink from '@components/seoLink'
 import addLayoutData from '@utils/addLayoutData'
 
 export const getStaticProps = async () => {
-  return await addLayoutData({
-    text: 'Il s&apos;est produit une erreur critique au niveau de nos serveurs. Nous ferons une investigation pour résoudre le problème.',
-  })
+  return await addLayoutData(
+    {
+      text: 'Il s&apos;est produit une erreur critique au niveau de nos serveurs. Nous ferons une investigation pour résoudre le problème.',
+    },
+    '500'
+  )
 }
 const PageError = ({ text }) => (
   <>

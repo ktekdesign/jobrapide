@@ -1,13 +1,14 @@
 import getSearchQuery from '@graphql/api/getSearchQuery'
 import { gql, useQuery } from '@apollo/client'
 import { mapPost } from '@utils/mapping'
+import client from '@graphql/client'
 
 const useSearch = ({ currentPage, search, category, secteur, region }) => {
   const QUERY = gql`
     ${getSearchQuery({ currentPage, search, category, secteur, region })}
   `
 
-  const { data } = useQuery(QUERY)
+  const { data } = useQuery(QUERY, { client })
   const posts = data?.posts?.nodes?.map((post) => mapPost(post))
 
   const href = `/search/_page_?s=${search}&category=${category}&secteur=${secteur}&region=${region}`

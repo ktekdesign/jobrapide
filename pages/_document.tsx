@@ -8,7 +8,6 @@ export default function Document() {
         <div id="google_translate_element"></div>
         <noscript>
           <iframe
-            nonce="jobrapidenoneForce"
             src="https://www.googletagmanager.com/ns.html?id=GTM-W66949R"
             height="0"
             width="0"

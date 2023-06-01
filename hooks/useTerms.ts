@@ -7,6 +7,7 @@ import {
   tagsQuery,
 } from '@graphql/termQueries'
 import { filterTerms } from '@utils/filterTerms'
+import client from '@graphql/client'
 
 const useTerms = (name) => {
   const query =
@@ -23,7 +24,8 @@ const useTerms = (name) => {
   const { data } = useQuery(
     gql`
       ${query}
-    `
+    `,
+    { client }
   )
   const terms = filterTerms(data)
   return terms
