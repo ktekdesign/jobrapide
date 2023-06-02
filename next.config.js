@@ -66,7 +66,6 @@ module.exports = withBundleAnalyzer({
   env: {
     nonce,
   },
-  reactStrictMode: true,
   swcMinify: true,
   // Adding policies:
   async headers() {
