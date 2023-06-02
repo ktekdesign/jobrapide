@@ -1,14 +1,13 @@
-import { gql, useQuery } from '@apollo/client'
 import { similarQuery } from '@graphql/similarQuery'
 import { mapPost } from '@utils/mapping'
-import client from '@graphql/client'
+import useClientQuery from '@hooks/useClientQuery'
 
 const useSimilarPosts = ({ id, categoryId }) => {
-  const QUERY = gql`
-    ${similarQuery.replace('$id', id).replace('$categoryId', categoryId)}
-  `
+  const QUERY = `${similarQuery
+    .replace('$id', id)
+    .replace('$categoryId', categoryId)}`
 
-  const { data } = useQuery(QUERY, { client })
+  const data = useClientQuery(QUERY)
 
   return data?.posts?.nodes?.map((post) => mapPost(post))
 }

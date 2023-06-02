@@ -28,7 +28,7 @@ export const getStaticPaths = async () => {
       { params: { slug: 'propriete-intellectuelle' } },
       { params: { slug: 'qui-sommes-nous' } },
     ],
-    fallback: true,
+    fallback: false,
   }
 }
 

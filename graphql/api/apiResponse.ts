@@ -56,9 +56,6 @@ export const seo_response = `
     metaRobotsNoindex
     opengraphAuthor
     opengraphDescription
-    opengraphImage { 
-        sourceUrl
-    }
     opengraphModifiedTime
     opengraphPublishedTime
     opengraphPublisher
@@ -71,9 +68,6 @@ export const seo_response = `
     }
     title
     twitterDescription
-    twitterImage {
-        sourceUrl
-    }
     twitterTitle
   }
 `

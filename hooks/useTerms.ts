@@ -1,4 +1,3 @@
-import { gql, useQuery } from '@apollo/client'
 import {
   categoriesQuery,
   niveauxQuery,
@@ -7,7 +6,7 @@ import {
   tagsQuery,
 } from '@graphql/termQueries'
 import { filterTerms } from '@utils/filterTerms'
-import client from '@graphql/client'
+import useClientQuery from '@hooks/useClientQuery'
 
 const useTerms = (name) => {
   const query =
@@ -21,14 +20,9 @@ const useTerms = (name) => {
       ? tagsQuery
       : categoriesQuery
 
-  const { data } = useQuery(
-    gql`
-      ${query}
-    `,
-    { client }
-  )
-  const terms = filterTerms(data)
-  return terms
+  const data = useClientQuery(query)
+
+  return filterTerms(data)
 }
 
 export default useTerms

@@ -32,7 +32,7 @@ const ContentSecurityPolicy = `
   font-src 'self' data:;
   connect-src 'self' *.google-analytics.com *.googleapis.com *.google.com *.google-analytics.com *.googlesyndication.com *.jobrapide.org *.gstatic.com *.analytics.google.com *.googletagmanager.com;
   frame-src *.g.doubleclick.net *.twitter.com *.facebook.com *.googlesyndication.com *.google.com *.googleadservices.com *.googletagmanager.com;
-  img-src 'self' *.jobrapide.org *.twitter.com *.facebook.com *.googleadservices.com *.googlesyndication.com *.googleapis.com *.gstatic.com *.google.com *.g.doubleclick.net *.google-analytics.com *.googletagmanager.com;
+  img-src 'self' *.jobrapide.org *.twitter.com *.facebook.com *.googleadservices.com *.googlesyndication.com *.googleapis.com *.gstatic.com *.google.com *.g.doubleclick.net *.google-analytics.com *.googletagmanager.com *.atdmt.com;
 `
 /** @type {import('next').NextConfig} */
 module.exports = withBundleAnalyzer({
@@ -66,7 +66,6 @@ module.exports = withBundleAnalyzer({
   env: {
     nonce,
   },
-  reactStrictMode: true,
   swcMinify: true,
   // Adding policies:
   async headers() {
