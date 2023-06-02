@@ -1,10 +1,7 @@
 import { gql } from '@apollo/client'
 import client from '@graphql/client'
 
-const loadFromWPGraphQL = async (
-  query = '',
-  variables: Record<string, string> = {}
-) => {
+const loadFromWPGraphQL = async (query = '', variables = null) => {
   const body = query
     .replaceAll('"$id"', `"${variables?.id}"`)
     .replaceAll('"$idType"', `"${variables?.idType}"`)

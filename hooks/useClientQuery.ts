@@ -6,7 +6,11 @@ const useClientQuery = (query) => {
     gql`
       ${query}
     `,
-    { client }
+    {
+      client,
+      fetchPolicy: 'cache-first', // Used for first execution
+      nextFetchPolicy: 'cache-only', // Used for subsequent executions
+    }
   )
 
   return data

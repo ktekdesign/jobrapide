@@ -43,7 +43,7 @@ export const mapSeo = (seo, image = null): Seo => {
       metaRobotsNoindex: preventUndefined(seo.metaRobotsNoindex),
       opengraphAuthor: preventUndefined(seo.opengraphAuthor),
       opengraphDescription: preventUndefined(seo.opengraphDescription),
-      opengraphImage: image,
+      opengraphImage: image || '/images/logo.webp',
       opengraphModifiedTime: preventUndefined(seo.opengraphModifiedTime),
       opengraphPublishedTime: preventUndefined(seo.opengraphPublishedTime),
       opengraphPublisher: preventUndefined(seo.opengraphPublisher),
@@ -56,7 +56,7 @@ export const mapSeo = (seo, image = null): Seo => {
       twitterDescription: preventUndefined(
         seo.twitterDescription ?? seo.opengraphDescription
       ),
-      twitterImage: image,
+      twitterImage: image || '/images/logo.webp',
       twitterTitle: preventUndefined(seo.twitterTitle ?? seo.title),
     }
   } catch (err) {
