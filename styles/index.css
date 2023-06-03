@@ -643,7 +643,7 @@ article {
   @apply h-8 w-8;
 }
 .adsense,
-.adsbygoogle {
+.adsContainer {
   @apply my-2 mx-auto w-full min-h-[250px] max-w-screen-lg;
 }
 main .adsense {
