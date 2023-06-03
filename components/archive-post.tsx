@@ -51,7 +51,7 @@ const ArchivePost: FC<ArchivePostType> = ({
         <ShareButtons {...{ href, title }} />
       </div>
     </article>
-    <StringComponent className="adsense" cond={order === 4}>
+    <StringComponent cond={order === 4}>
       <Adsense />
     </StringComponent>
   </>

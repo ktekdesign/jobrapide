@@ -9,9 +9,7 @@ import Adsense from '@components/adsense'
 const PostLayout = ({ id, text, ...props }) => (
   <>
     <PostHeader {...props} />
-    <div className="adsense">
-      <Adsense />
-    </div>
+    <Adsense />
     <ParsedComponent as="div" className="content" text={text} />
     <SponsoredAdSense />
     <SimilarPosts id={id} categoryId={getFirst(props?.categories)?.id} />
