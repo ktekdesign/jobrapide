@@ -5,10 +5,8 @@ import Row from '@layout/row'
 import Facebook from '@components/facebook'
 import Twitter from '@components/twitter'
 import GoTop from '@components/gotop'
-import ShareButtons from '@components/share-buttons'
 import Pub from '@components/pub'
 import SwiperHome from '@components/swiperHome'
-import NotificationSignal from 'messaging-next'
 import DeferredLoader from '@components/deferred-loader'
 
 const Layout = ({ children, sidebar }) => (
@@ -35,8 +33,6 @@ const Layout = ({ children, sidebar }) => (
     </main>
     <div className="adsense" />
     <GoTop />
-    <ShareButtons float />
-    <NotificationSignal />
     <DeferredLoader />
   </>
 )
