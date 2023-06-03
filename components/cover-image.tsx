@@ -8,7 +8,6 @@ const CoverImage = ({
   image = '',
   href = '',
   priority = false,
-  unoptimized = true,
   order = 0,
   ...props
 }) => (
@@ -19,7 +18,7 @@ const CoverImage = ({
           fill
           alt={title}
           src={image}
-          {...{ priority: priority && order < 3, unoptimized }}
+          {...{ priority: priority && order < 3 }}
         />
       </picture>
     </SeoLink>

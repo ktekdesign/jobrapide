@@ -1,4 +1,4 @@
-import { FC, Suspense, memo } from 'react'
+import { FC, memo } from 'react'
 import CoverImage from '@components/cover-image'
 import SeoLink from '@components/seoLink'
 import ShareButtons from '@components/share-buttons'
@@ -6,8 +6,8 @@ import Terms from 'components/terms'
 import Date from '@components/date'
 import { Post } from '@utils/interfaces/data'
 import ParsedComponent from '@components/parsed-component'
-import Adsense from './adsense'
 import resizeImage from '@utils/resizeImage'
+import StringComponent from '@components/loaders/string-component'
 
 interface ArchivePostType extends Post {
   priority?: boolean
@@ -25,8 +25,8 @@ const ArchivePost: FC<ArchivePostType> = ({
   priority,
   order,
 }) => (
-  <Suspense>
-    <article className="archive">
+  <>
+    <article>
       <CoverImage
         image={resizeImage({ height: 200, src: image })}
         {...{ title, href, priority }}
@@ -50,8 +50,8 @@ const ArchivePost: FC<ArchivePostType> = ({
         <ShareButtons {...{ href, title }} />
       </div>
     </article>
-    {order === 4 && <Adsense />}
-  </Suspense>
+    <StringComponent as="div" className="adsense" cond={order === 4} />
+  </>
 )
 
 export default memo(ArchivePost)

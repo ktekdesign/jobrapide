@@ -11,11 +11,13 @@ const SwiperHome: FC<ComponentsProps> = ({
   priority,
   className,
 }) => (
-  <div {...{ className: onlyImage && 'onlyImage' }}>
-    <SwiperController posts={posts} slides={slides}>
-      <PostPreview {...{ className, priority }} />
-    </SwiperController>
-  </div>
+  <SwiperController
+    {...{ className: onlyImage && 'onlyImage' }}
+    posts={posts}
+    slides={slides}
+  >
+    <PostPreview {...{ className, priority, onlyImage }} />
+  </SwiperController>
 )
 
 export default memo(SwiperHome)

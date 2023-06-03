@@ -5,6 +5,7 @@ import SeoLink from '@components/seoLink'
 import ComponentsProps from '@utils/interfaces/components'
 import ParsedComponent from './parsed-component'
 import resizeImage from '@utils/resizeImage'
+import StringComponent from './loaders/string-component'
 
 const PostPreview: FC<ComponentsProps> = ({
   title,
@@ -19,14 +20,11 @@ const PostPreview: FC<ComponentsProps> = ({
       image={resizeImage({ height: 200, src: image })}
       {...{ title, href, ...props }}
     />
-    <SeoLink
-      {...{ title, href }}
-      as="h3"
-      data-hidden={onlyImage}
-      className="post-preview-title"
-    >
-      <ParsedComponent isTruncate title={title} />
-    </SeoLink>
+    <StringComponent cond={!onlyImage}>
+      <SeoLink {...{ title, href }} as="h3" className="post-preview-title">
+        <ParsedComponent isTruncate title={title} />
+      </SeoLink>
+    </StringComponent>
   </>
 )
 

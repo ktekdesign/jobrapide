@@ -1,8 +1,5 @@
 import { AppProps } from 'next/app'
 import '@styles/index.css'
-import 'swiper/css'
-import 'swiper/css/bundle'
-import 'swiper/css/pagination'
 
 import Layout from '@layout/layout'
 import Meta from '@components/meta'
