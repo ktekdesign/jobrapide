@@ -14,11 +14,14 @@ const DeferredLoader = () => {
 
   useEffect(() => {
     setRefs([].slice.call(document?.body?.getElementsByClassName('adsense')))
+  }, [])
+
+  useEffect(() => {
     if (window)
       window.addEventListener('scroll', () => {
         if (!refWindow) setRefWindow(true)
       })
-  }, [])
+  }, [refWindow])
 
   return (
     <Fragment>
