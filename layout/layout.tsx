@@ -9,7 +9,7 @@ import ShareButtons from '@components/share-buttons'
 import Pub from '@components/pub'
 import SwiperHome from '@components/swiperHome'
 import NotificationSignal from 'messaging-next'
-import AdsenseLoader from '@components/adsense-loader'
+import DeferredLoader from '@components/deferred-loader'
 
 const Layout = ({ children, sidebar }) => (
   <>
@@ -37,7 +37,7 @@ const Layout = ({ children, sidebar }) => (
     <GoTop />
     <ShareButtons float />
     <NotificationSignal />
-    <AdsenseLoader />
+    <DeferredLoader />
   </>
 )
 
