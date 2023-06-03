@@ -6,6 +6,7 @@ import Terms from 'components/terms'
 import Date from '@components/date'
 import { Post } from '@utils/interfaces/data'
 import ParsedComponent from '@components/parsed-component'
+import Adsense from './adsense'
 import resizeImage from '@utils/resizeImage'
 import StringComponent from '@components/loaders/string-component'
 
@@ -50,7 +51,9 @@ const ArchivePost: FC<ArchivePostType> = ({
         <ShareButtons {...{ href, title }} />
       </div>
     </article>
-    <StringComponent as="div" className="adsense" cond={order === 4} />
+    <StringComponent className="adsense" cond={order === 4}>
+      <Adsense />
+    </StringComponent>
   </>
 )
 
