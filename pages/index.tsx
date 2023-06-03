@@ -12,79 +12,43 @@ export const getStaticProps = async () => {
 }
 
 const Index = ({ terms }) => (
-  <>
-    <div className="flex flex-wrap">
-      <Loading data={terms} loading={false} serial>
-        <LoaderComponent as="div" data-swiper="home">
-          <SwiperTitle />
-          <SwiperHome priority />
-        </LoaderComponent>
-        <LoaderComponent
-          as="div"
-          data-swiper="home"
-          className="w-full md:w-1/2 lg:w-1/3"
-        >
-          <SwiperTitle className="title-secondary" />
-          <SwiperHome slides={1} />
-        </LoaderComponent>
-        <LoaderComponent
-          as="div"
-          data-swiper="home"
-          className="w-full md:w-1/2 lg:w-2/3"
-        >
-          <SwiperTitle className="title-secondary" />
-          <SwiperHome slides={2} />
-        </LoaderComponent>
-        <LoaderComponent
-          as="div"
-          data-swiper="home"
-          className="w-full md:w-1/2 lg:w-2/3"
-        >
-          <SwiperTitle />
-          <SwiperHome slides={2} />
-        </LoaderComponent>
-        <LoaderComponent
-          as="div"
-          data-swiper="home"
-          className="w-full md:w-1/2 lg:w-1/3"
-        >
-          <SwiperTitle />
-          <SwiperHome slides={1} />
-        </LoaderComponent>
-        <LoaderComponent
-          as="div"
-          data-swiper="home"
-          className="w-full md:w-1/2 lg:w-1/3"
-        >
-          <SwiperTitle className="title-secondary" />
-          <SwiperHome slides={1} />
-        </LoaderComponent>
-        <LoaderComponent
-          as="div"
-          data-swiper="home"
-          className="w-full md:w-1/2 lg:w-2/3"
-        >
-          <SwiperTitle className="title-secondary" />
-          <SwiperHome slides={2} />
-        </LoaderComponent>
-        <LoaderComponent
-          as="div"
-          data-swiper="home"
-          className="w-full md:w-1/2 lg:w-2/3"
-        >
-          <SwiperTitle />
-          <SwiperHome slides={2} />
-        </LoaderComponent>
-        <LoaderComponent
-          as="div"
-          data-swiper="home"
-          className="w-full md:w-1/2 lg:w-1/3"
-        >
-          <SwiperTitle />
-          <SwiperHome slides={1} />
-        </LoaderComponent>
-      </Loading>
-    </div>
-  </>
+  <Loading data={terms} loading={false} serial>
+    <LoaderComponent as="div" className="main-3">
+      <SwiperTitle />
+      <SwiperHome priority />
+    </LoaderComponent>
+    <LoaderComponent as="div" className="main-1">
+      <SwiperTitle className="title-secondary" />
+      <SwiperHome slides={1} />
+    </LoaderComponent>
+    <LoaderComponent as="div" className="main-2">
+      <SwiperTitle className="title-secondary" />
+      <SwiperHome slides={2} />
+    </LoaderComponent>
+    <LoaderComponent as="div" className="main-2">
+      <SwiperTitle />
+      <SwiperHome slides={2} />
+    </LoaderComponent>
+    <LoaderComponent as="div" className="main-1">
+      <SwiperTitle />
+      <SwiperHome slides={1} />
+    </LoaderComponent>
+    <LoaderComponent as="div" className="main-1">
+      <SwiperTitle className="title-secondary" />
+      <SwiperHome slides={1} />
+    </LoaderComponent>
+    <LoaderComponent as="div" className="main-2">
+      <SwiperTitle className="title-secondary" />
+      <SwiperHome slides={2} />
+    </LoaderComponent>
+    <LoaderComponent as="div" className="main-2">
+      <SwiperTitle />
+      <SwiperHome slides={2} />
+    </LoaderComponent>
+    <LoaderComponent as="div" className="main-1">
+      <SwiperTitle />
+      <SwiperHome slides={1} />
+    </LoaderComponent>
+  </Loading>
 )
 export default memo(Index)

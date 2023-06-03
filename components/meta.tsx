@@ -23,7 +23,10 @@ const Meta: FC<{ seo?: Seo }> = ({ seo = defaultSeo }) => (
         crossOrigin="anonymous"
       />
       <link rel="dns-prefetch" href="https://www.jobrapide.org/" />
-      <meta name="viewport" content="width=device-width,initial-scale=1" />
+      <meta
+        name="viewport"
+        content="width=device-width,initial-scale=1, minimum-scale=1"
+      />
       <meta
         name="robots"
         content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"

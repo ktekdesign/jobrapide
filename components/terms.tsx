@@ -3,13 +3,19 @@ import SeoLink from '@components/seoLink'
 import ComponentsProps from '@utils/interfaces/components'
 import MappedComponent from '@components/loaders/mapped-component'
 import ParsedComponent from './parsed-component'
+import StringComponent from './loaders/string-component'
 
 const Terms: FC<ComponentsProps> = ({ terms, title, ...props }) => {
   const [hideTerms, setHideTerms] = useState(true)
   const toggleTerms = useCallback(() => setHideTerms(!hideTerms), [hideTerms])
 
   return (
-    <p data-terms={!!terms} {...props}>
+    <StringComponent
+      as="p"
+      cond={!!terms?.length}
+      data-terms={!!terms}
+      {...props}
+    >
       {title}
       <span data-terms-hidden={hideTerms}>
         <MappedComponent items={terms}>
@@ -26,7 +32,7 @@ const Terms: FC<ComponentsProps> = ({ terms, title, ...props }) => {
           {hideTerms ? '... Afficher plus' : 'Afficher moins'}
         </small>
       </span>
-    </p>
+    </StringComponent>
   )
 }
 

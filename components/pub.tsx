@@ -1,14 +1,9 @@
 import { memo } from 'react'
 import { EffectFlip } from 'swiper'
-import SwiperController from './swiper-controller'
-import CoverImage from './cover-image'
+import SwiperController from '@components/swiper-controller'
+import CoverImage from '@components/cover-image'
 
-const Pub = ({
-  posts,
-  priority = false,
-  unoptimized = true,
-  className = 'swiperContainer',
-}) => (
+const Pub = ({ posts, priority = false, className = 'swiperContainer' }) => (
   <SwiperController
     className={className}
     effect="flip"
@@ -20,7 +15,7 @@ const Pub = ({
     modules={[EffectFlip]}
     posts={posts}
   >
-    <CoverImage {...{ priority, unoptimized }} />
+    <CoverImage {...{ priority }} />
   </SwiperController>
 )
 

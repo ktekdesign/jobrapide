@@ -3,7 +3,7 @@ import { memo } from 'react'
 const StringComponent = ({
   as: Component = null,
   cond = true,
-  children,
+  children = null,
   ...props
 }) => {
   if (!cond) return <></>
