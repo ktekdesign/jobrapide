@@ -469,6 +469,9 @@ article {
 .footer-menu-items a {
   @apply hover:font-bold hover:underline sm:whitespace-nowrap text-center;
 }
+.pub-in-header {
+  @apply row;
+}
 .pub-in-header,
 .pub-in-header .feature {
   @apply w-full min-h-[48px] max-w-screen-md sm:min-h-[96px] md:min-h-[115px] mx-auto text-center;
