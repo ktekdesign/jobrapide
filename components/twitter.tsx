@@ -16,7 +16,7 @@ const Twitter = () => {
   }
 
   return (
-    <div className="twitter">
+    <div className="row">
       <OnboardingFlow active={active}>
         <SeoLink
           href="https://www.twitter.com/@tchadcarriere"

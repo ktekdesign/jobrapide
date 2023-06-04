@@ -4,7 +4,6 @@ import Breadcrumb from '@components/breadcrumb'
 import ArchiveBody from '@components/archive-body'
 import { memo } from 'react'
 import Loading from '@components/loaders/loading'
-import Row from '@layout/row'
 
 const TermLayout = ({
   title,
@@ -23,9 +22,7 @@ const TermLayout = ({
       <Breadcrumb />
       <ArchiveBody />
     </Loading>
-    <Row>
-      <Pagination {...{ secteur, region, category, tag, href, currentPage }} />
-    </Row>
+    <Pagination {...{ secteur, region, category, tag, href, currentPage }} />
   </>
 )
 
