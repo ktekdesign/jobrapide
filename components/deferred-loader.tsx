@@ -14,12 +14,10 @@ const DeferredLoader = () => {
   const [refs, setRefs] = useState(null)
 
   useEffect(() => {
-    setTimeout(() => {
-      const ids = [].slice
-        .call(document?.body?.getElementsByClassName('adsense'))
-        .map((id) => ({ id }))
-      setRefs(ids)
-    }, 3000)
+    const ids = [].slice
+      .call(document?.body?.getElementsByClassName('adsense'))
+      .map((id) => ({ id }))
+    setRefs(ids)
   }, [])
 
   return (
