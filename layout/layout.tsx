@@ -6,9 +6,7 @@ import dynamic from 'next/dynamic'
 
 const Pub = dynamic(() => import('@components/pub'))
 const Sidebar = dynamic(() => import('@layout/sidebar'))
-const Adsense = dynamic(() => import('@components/adsense'), {
-  ssr: false,
-})
+const Adsense = dynamic(() => import('@components/adsense'))
 const InlineScripts = dynamic(() => import('@components/inline-scripts'), {
   ssr: false,
 })
@@ -39,7 +37,11 @@ const Layout = ({ children, pub2, ...props }) => (
         <Twitter />
       </div>
     </main>
-    <div className="adsense" />
+    <div className="adsContainer">
+      <Suspense>
+        <Adsense />
+      </Suspense>
+    </div>
     <Suspense>
       <FloatComponent />
     </Suspense>

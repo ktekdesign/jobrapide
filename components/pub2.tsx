@@ -10,6 +10,9 @@ const Pub2 = ({ posts }) => (
       priority={document?.body?.clientWidth >= 1024}
       className="pub"
       posts={posts}
+      unoptimized={false}
+      width={300}
+      height={250}
     />
   </Suspense>
 )

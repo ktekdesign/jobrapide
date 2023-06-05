@@ -9,7 +9,7 @@ import { Post } from '@utils/interfaces/data'
 import ParsedComponent from '@components/parsed-component'
 import StringComponent from '@components/loaders/string-component'
 
-const Adsense = dynamic(() => import('@components/adsense'), { ssr: false })
+const Adsense = dynamic(() => import('@components/adsense'))
 
 interface ArchivePostType extends Post {
   priority?: boolean
