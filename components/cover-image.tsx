@@ -9,17 +9,17 @@ const CoverImage = ({
   priority = false,
   linkClassName = 'feature',
   unoptimized = true,
-  width = null,
-  height = null,
+  width = 0,
+  height = 0,
   order = 0,
   ...props
 }) => (
   <SeoLink {...{ href, title, linkClassName, ...props }}>
     <ImageWithFallback
-      {...{ width, height, fill: !width && !height }}
+      {...{ width: width, height: height, fill: !width && !height }}
       alt={title}
       src={image}
-      {...{ priority: priority && order < 3, unoptimized }}
+      {...{ priority: priority && order === 0, unoptimized }}
     />
   </SeoLink>
 )

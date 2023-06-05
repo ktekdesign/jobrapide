@@ -21,7 +21,7 @@ const Sidebar = (props) => (
       <SwiperHome slides={1} onlyImage posts={props?.partners} />
     </Suspense>
     <Suspense>
-      <Pub className="pub" posts={props?.pub3} />
+      <Pub className="pub" posts={props?.pub3} width={300} height={250} />
     </Suspense>
   </>
 )
