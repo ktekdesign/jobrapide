@@ -5,21 +5,21 @@ class CSPNextScript extends NextScript {
     return super
       .getScripts(files)
       .map((script) =>
-        cloneElement(script, { nonce: process.env.nonce, async: true })
+        cloneElement(script, { nonce: process.env.nonce, defer: true })
       )
   }
   getPolyfillScripts() {
     return super
       .getPolyfillScripts()
       .map((script) =>
-        cloneElement(script, { nonce: process.env.nonce, async: true })
+        cloneElement(script, { nonce: process.env.nonce, defer: true })
       )
   }
   getDynamicChunks(files) {
     return super
       .getDynamicChunks(files)
       .map((script) =>
-        cloneElement(script, { nonce: process.env.nonce, async: true })
+        cloneElement(script, { nonce: process.env.nonce, defer: true })
       )
   }
 }
@@ -28,21 +28,21 @@ class CSPHead extends Head {
     return super
       .getScripts(files)
       .map((script) =>
-        cloneElement(script, { nonce: process.env.nonce, async: true })
+        cloneElement(script, { nonce: process.env.nonce, defer: true })
       )
   }
   getPolyfillScripts() {
     return super
       .getPolyfillScripts()
       .map((script) =>
-        cloneElement(script, { nonce: process.env.nonce, async: true })
+        cloneElement(script, { nonce: process.env.nonce, defer: true })
       )
   }
   getDynamicChunks(files) {
     return super
       .getDynamicChunks(files)
       .map((script) =>
-        cloneElement(script, { nonce: process.env.nonce, async: true })
+        cloneElement(script, { nonce: process.env.nonce, defer: true })
       )
   }
 }

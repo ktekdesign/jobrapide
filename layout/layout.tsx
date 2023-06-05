@@ -5,7 +5,9 @@ import Twitter from '@components/twitter'
 import dynamic from 'next/dynamic'
 
 const Pub = dynamic(() => import('@components/pub'))
-const Sidebar = dynamic(() => import('@layout/sidebar'))
+const Sidebar = dynamic(() => import('@layout/sidebar'), {
+  ssr: false,
+})
 const Adsense = dynamic(() => import('@components/adsense'))
 const InlineScripts = dynamic(() => import('@components/inline-scripts'), {
   ssr: false,

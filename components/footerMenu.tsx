@@ -6,15 +6,11 @@ import ParsedComponent from '@components/parsed-component'
 
 const FooterMenu = ({ items = FOOTER_MENU_ITEMS }) => (
   <nav className="navbar-footer">
-    <div className="footer-menu">
-      <ul className="footer-menu-items">
-        <MappedComponent items={items}>
-          <SeoLink as="li">
-            <ParsedComponent />
-          </SeoLink>
-        </MappedComponent>
-      </ul>
-    </div>
+    <MappedComponent as="ul" className="footer-menu-items" items={items}>
+      <SeoLink as="li">
+        <ParsedComponent />
+      </SeoLink>
+    </MappedComponent>
   </nav>
 )
 

@@ -8,7 +8,11 @@ const SwiperHome = dynamic(() => import('@components/swiperHome'))
 const Sidebar = (props) => (
   <>
     <Suspense>
-      <Pub priority className="pub" posts={props?.pub1} />
+      <Pub
+        priority={document?.body?.clientWidth >= 1024}
+        className="pub"
+        posts={props?.pub1}
+      />
     </Suspense>
     <h3 className="title-primary">Offres sponsorisées</h3>
     <Suspense>

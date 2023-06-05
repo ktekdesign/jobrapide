@@ -1,10 +1,6 @@
-import Pagination from '@components/pagination'
-import ArchiveTitle from '@components/archive-title'
 import addLayoutData from '@utils/addLayoutData'
-import ArchiveBody from '@components/archive-body'
-import Loading from '@components/loaders/loading'
-import Breadcrumb from '@components/breadcrumb'
 import useSearch from '@hooks/useSearch'
+import TermLayout from '@layout/termLayout'
 
 export const getServerSideProps = async ({ query }) => {
   const { s: search, category, secteur, region } = query
@@ -36,25 +32,19 @@ const Search = ({
   })
 
   return (
-    <>
-      <Loading
-        data={{
-          posts,
-          currentPage,
-          breadcrumbs,
-          search,
-          title: `Recherche pour ${search}`,
-        }}
-        loading={!posts}
-      >
-        <ArchiveTitle />
-        <Breadcrumb />
-        <ArchiveBody />
-      </Loading>
-      <Pagination
-        {...{ secteur, region, category, currentPage, search, href }}
-      />
-    </>
+    <TermLayout
+      {...{
+        posts,
+        currentPage,
+        breadcrumbs,
+        search,
+        category,
+        secteur,
+        region,
+        href,
+        title: `Recherche pour ${search}`,
+      }}
+    />
   )
 }
 export default Search
