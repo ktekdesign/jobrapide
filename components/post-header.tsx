@@ -30,6 +30,7 @@ const PostHeader: FC<PostHeaderProps> = ({
     <ParsedComponent as="h1" className="post-title" title={title} />
     <Breadcrumb breadcrumbs={breadcrumbs} />
     <CoverImage
+      as="picture"
       title={title}
       image={resizeImage({ height: 300, src: image })}
       active={1}

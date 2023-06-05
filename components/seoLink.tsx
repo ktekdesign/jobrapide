@@ -20,7 +20,7 @@ const SeoLink: FC<LinkContainerProps> = ({
   href,
   target,
   className,
-  linkClassName,
+  linkClassName = '',
   as,
   route,
   ...props
@@ -34,7 +34,7 @@ const SeoLink: FC<LinkContainerProps> = ({
         {...{ href, target, title }}
         prefetch={false}
         aria-label={title}
-        className={linkClassName ?? ''}
+        className={linkClassName}
         {...props}
       >
         {!children ? (

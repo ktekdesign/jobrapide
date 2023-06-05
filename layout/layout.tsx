@@ -5,13 +5,22 @@ import Twitter from '@components/twitter'
 import dynamic from 'next/dynamic'
 
 const Pub = dynamic(() => import('@components/pub'))
-const Sidebar = dynamic(() => import('@layout/sidebar'), { ssr: false })
+const Sidebar = dynamic(() => import('@layout/sidebar'))
 const Adsense = dynamic(() => import('@components/adsense'))
+const InlineScripts = dynamic(() => import('@components/inline-scripts'), {
+  ssr: false,
+})
+const FloatComponent = dynamic(() => import('@components/floatComponents'), {
+  ssr: false,
+})
 
-const Layout = ({ children, sidebar }) => (
+const Layout = ({ children, pub2, ...props }) => (
   <>
     <Suspense>
-      <Pub className="pub-in-header" priority posts={sidebar?.pub2} />
+      <InlineScripts />
+    </Suspense>
+    <Suspense>
+      <Pub className="pub-in-header" priority posts={pub2} />
     </Suspense>
     <Suspense>
       <Adsense />
@@ -20,13 +29,16 @@ const Layout = ({ children, sidebar }) => (
       <div className="left">{children}</div>
       <div className="right">
         <Suspense>
-          <Sidebar sidebar={sidebar} />
+          <Sidebar {...props} />
         </Suspense>
         <Facebook />
         <Twitter />
       </div>
     </main>
     <div className="adsense" />
+    <Suspense>
+      <FloatComponent />
+    </Suspense>
   </>
 )
 

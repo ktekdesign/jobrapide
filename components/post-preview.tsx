@@ -16,7 +16,7 @@ const PostPreview: FC<ComponentsProps> = ({
 }) => (
   <>
     <CoverImage
-      data-preview="post-preview-image"
+      linkClassName="post-preview-image"
       image={resizeImage({ height: 200, src: image })}
       {...{ title, href, ...props }}
     />
