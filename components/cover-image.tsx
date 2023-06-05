@@ -1,28 +1,24 @@
 import { memo } from 'react'
 import SeoLink from '@components/seoLink'
 import ImageWithFallback from '@components/image-with-fallback'
-import StringComponent from '@components/loaders/string-component'
 
 const CoverImage = ({
   title = 'JobRapide',
   image = '',
   href = '',
   priority = false,
+  linkClassName = 'feature',
   order = 0,
   ...props
 }) => (
-  <StringComponent>
-    <SeoLink as="div" {...{ href, title, ...props }}>
-      <picture className="feature">
-        <ImageWithFallback
-          fill
-          alt={title}
-          src={image}
-          {...{ priority: priority && order < 3 }}
-        />
-      </picture>
-    </SeoLink>
-  </StringComponent>
+  <SeoLink {...{ href, title, linkClassName, ...props }}>
+    <ImageWithFallback
+      fill
+      alt={title}
+      src={image}
+      {...{ priority: priority && order < 3 }}
+    />
+  </SeoLink>
 )
 
 export default memo(CoverImage)

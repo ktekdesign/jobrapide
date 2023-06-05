@@ -1,4 +1,5 @@
-import { FC, memo } from 'react'
+import { FC, Suspense, memo } from 'react'
+import dynamic from 'next/dynamic'
 import CoverImage from '@components/cover-image'
 import SeoLink from '@components/seoLink'
 import ShareButtons from '@components/share-buttons'
@@ -6,9 +7,12 @@ import Terms from 'components/terms'
 import Date from '@components/date'
 import { Post } from '@utils/interfaces/data'
 import ParsedComponent from '@components/parsed-component'
-import Adsense from './adsense'
+
 import resizeImage from '@utils/resizeImage'
-import StringComponent from '@components/loaders/string-component'
+const StringComponent = dynamic(() => import('./loaders/string-component'), {
+  ssr: false,
+})
+const Adsense = dynamic(() => import('@components/adsense'), { ssr: false })
 
 interface ArchivePostType extends Post {
   priority?: boolean
@@ -31,7 +35,7 @@ const ArchivePost: FC<ArchivePostType> = ({
       <CoverImage
         image={resizeImage({ height: 200, src: image })}
         {...{ title, href, priority }}
-        className="archive-post-feature relative"
+        linkClassName="archive-post-feature relative"
       />
       <div className="post-info">
         <Terms
@@ -51,9 +55,11 @@ const ArchivePost: FC<ArchivePostType> = ({
         <ShareButtons {...{ href, title }} />
       </div>
     </article>
-    <StringComponent cond={order === 4}>
-      <Adsense />
-    </StringComponent>
+    <Suspense>
+      <StringComponent cond={order === 4}>
+        <Adsense />
+      </StringComponent>
+    </Suspense>
   </>
 )
 

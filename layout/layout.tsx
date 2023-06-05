@@ -10,6 +10,9 @@ const Adsense = dynamic(() => import('@components/adsense'))
 const InlineScripts = dynamic(() => import('@components/inline-scripts'), {
   ssr: false,
 })
+const FloatComponent = dynamic(() => import('@components/floatComponents'), {
+  ssr: false,
+})
 
 const Layout = ({ children, pub2, ...props }) => (
   <>
@@ -33,6 +36,9 @@ const Layout = ({ children, pub2, ...props }) => (
       </div>
     </main>
     <div className="adsense" />
+    <Suspense>
+      <FloatComponent />
+    </Suspense>
   </>
 )
 

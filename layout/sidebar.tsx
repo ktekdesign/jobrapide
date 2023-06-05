@@ -4,9 +4,6 @@ import dynamic from 'next/dynamic'
 
 const Pub = dynamic(() => import('@components/pub'))
 const SwiperHome = dynamic(() => import('@components/swiperHome'))
-const FloatComponent = dynamic(() => import('@components/floatComponents'), {
-  ssr: false,
-})
 
 const Sidebar = (props) => (
   <>
@@ -24,9 +21,6 @@ const Sidebar = (props) => (
     </Suspense>
     <Suspense>
       <Pub className="pub" posts={props?.pub3} />
-    </Suspense>
-    <Suspense>
-      <FloatComponent />
     </Suspense>
   </>
 )
