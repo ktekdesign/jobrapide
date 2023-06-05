@@ -1,5 +1,5 @@
 import React, { FC, memo } from 'react'
-import { isFirstPage } from '@utils/manipulateArray'
+import StringComponent from './loaders/string-component'
 
 const ArchiveTitle: FC<{ title?: string; currentPage?: number }> = ({
   title,
@@ -7,9 +7,9 @@ const ArchiveTitle: FC<{ title?: string; currentPage?: number }> = ({
 }) => (
   <h1 className="archive-main-title">
     {title}
-    {currentPage && !isFirstPage(currentPage) && (
-      <> / {`Page ${currentPage}`}</>
-    )}
+    <StringComponent cond={currentPage > 1}>
+      &nbsp;/ {`Page ${currentPage}`}
+    </StringComponent>
   </h1>
 )
 

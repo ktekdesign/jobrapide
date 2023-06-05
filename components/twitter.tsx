@@ -1,4 +1,4 @@
-import React, { memo, startTransition, useState } from 'react'
+import React, { Suspense, memo, startTransition, useState } from 'react'
 import SeoLink from './seoLink'
 import OnboardingFlow from '@components/loaders/onboardingFlow'
 import dynamic from 'next/dynamic'
@@ -16,26 +16,26 @@ const Twitter = () => {
   }
 
   return (
-    <div className="row">
-      <OnboardingFlow active={active}>
-        <SeoLink
-          href="https://www.twitter.com/@tchadcarriere"
-          as="h4"
-          target="_blank"
-          className="title-secondary"
-          onClick={onClick}
-        >
-          Suivez-nous sur Twitter
-        </SeoLink>
-        {active && (
+    <OnboardingFlow active={active}>
+      <SeoLink
+        href="https://www.twitter.com/@tchadcarriere"
+        as="h4"
+        target="_blank"
+        className="title-secondary row"
+        onClick={onClick}
+      >
+        Suivez-nous sur Twitter
+      </SeoLink>
+      <div className="row">
+        <Suspense>
           <TwitterTimelineEmbed
             sourceType="profile"
             screenName="tchadcarriere"
             options={{ height: 400 }}
           />
-        )}
-      </OnboardingFlow>
-    </div>
+        </Suspense>
+      </div>
+    </OnboardingFlow>
   )
 }
 

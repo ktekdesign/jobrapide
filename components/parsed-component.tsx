@@ -9,15 +9,10 @@ const ParsedComponent = ({
   isTruncate = false,
   ...props
 }) => {
-  const textToParse =
-    text && typeof text === 'string'
-      ? text
-      : title && typeof title === 'string'
-      ? title
-      : ''
+  const textToParse = text || title || ''
 
   return (
-    <StringComponent {...props}>
+    <StringComponent cond={typeof textToParse === 'string'} {...props}>
       {parse(isTruncate ? truncate(textToParse) : textToParse)}
     </StringComponent>
   )

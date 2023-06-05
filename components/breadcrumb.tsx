@@ -3,25 +3,20 @@ import SeoLink from '@components/seoLink'
 import { BreadcrumbType } from '@utils/interfaces/data'
 import MappedComponent from '@components/loaders/mapped-component'
 import ParsedComponent from '@components/parsed-component'
-import LoaderComponent from './loaders/loader'
-import StringComponent from './loaders/string-component'
 
 const Breadcrumb: FC<{ breadcrumbs?: BreadcrumbType[] }> = ({
   breadcrumbs,
 }) => (
-  <StringComponent
+  <MappedComponent
     as="div"
     cond={breadcrumbs?.length > 1}
     className="breadcrumb"
+    items={breadcrumbs}
   >
-    <MappedComponent items={breadcrumbs}>
-      <SeoLink className="breadcrumb-item" as="span">
-        <LoaderComponent>
-          <ParsedComponent />
-        </LoaderComponent>
-      </SeoLink>
-    </MappedComponent>
-  </StringComponent>
+    <SeoLink className="breadcrumb-item" as="span">
+      <ParsedComponent />
+    </SeoLink>
+  </MappedComponent>
 )
 
 export default memo(Breadcrumb)

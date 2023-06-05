@@ -1,4 +1,4 @@
-import React, { memo, startTransition, useState } from 'react'
+import React, { Suspense, memo, startTransition, useState } from 'react'
 import SeoLink from './seoLink'
 import OnboardingFlow from '@components/loaders/onboardingFlow'
 import dynamic from 'next/dynamic'
@@ -18,18 +18,18 @@ const Facebook = () => {
     startTransition(() => setActive(1))
   }
   return (
-    <div className="facebook row">
-      <OnboardingFlow active={active}>
-        <SeoLink
-          href="https://www.facebook.com/tchadcarriere"
-          as="h4"
-          target="_blank"
-          className="title-primary"
-          onClick={onClick}
-        >
-          Suivez-nous sur Facebook
-        </SeoLink>
-        {active && (
+    <OnboardingFlow active={active}>
+      <SeoLink
+        href="https://www.facebook.com/tchadcarriere"
+        as="h4"
+        target="_blank"
+        className="title-primary row"
+        onClick={onClick}
+      >
+        Suivez-nous sur Facebook
+      </SeoLink>
+      <div className="facebook row">
+        <Suspense>
           <FacebookProvider appId="298566774007251">
             <Page
               href="https://www.facebook.com/tchadcarriere"
@@ -38,9 +38,9 @@ const Facebook = () => {
               adaptContainerWidth
             />
           </FacebookProvider>
-        )}
-      </OnboardingFlow>
-    </div>
+        </Suspense>
+      </div>
+    </OnboardingFlow>
   )
 }
 

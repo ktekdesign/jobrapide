@@ -8,15 +8,13 @@ const TAB_ITEMS = [
 ]
 
 const FooterTab = ({ active, getActive, isPending, items = TAB_ITEMS }) => (
-  <ul className="tab">
-    <MappedComponent items={items}>
-      <FooterTabItem
-        onClick={getActive}
-        data-loading={isPending}
-        active={active}
-      />
-    </MappedComponent>
-  </ul>
+  <MappedComponent as="ul" className="tab" items={items}>
+    <FooterTabItem
+      onClick={getActive}
+      data-loading={isPending}
+      active={active}
+    />
+  </MappedComponent>
 )
 
 export default memo(FooterTab)

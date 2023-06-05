@@ -37,7 +37,6 @@ const Search = () => {
             categories,
             niveaux,
           }}
-          loading={!regions.length || !secteurs.length || !categories.length}
           active={Number(active)}
         >
           <SearchForm />

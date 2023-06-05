@@ -24,13 +24,14 @@ const Terms: FC<ComponentsProps> = ({ terms, title, ...props }) => {
           </SeoLink>
         </MappedComponent>
 
-        <small
-          data-hidden={terms?.length < 3}
+        <StringComponent
+          as="small"
+          cond={terms?.length > 2}
           className="more-terms"
           onClick={toggleTerms}
         >
           {hideTerms ? '... Afficher plus' : 'Afficher moins'}
-        </small>
+        </StringComponent>
       </span>
     </StringComponent>
   )

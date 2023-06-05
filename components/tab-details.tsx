@@ -2,10 +2,10 @@ import { memo } from 'react'
 import OnboardingFlow from '@components/loaders/onboardingFlow'
 import TermsList from './termsList'
 
-const TabDetails = ({ active, route }) => (
+const TabDetails = ({ active, ...props }) => (
   <OnboardingFlow active={active}>
-    <TermsList route={route} name="secteurs" className="secteurs-list" />
-    <TermsList route={route} name="regions" className="regions-list" />
+    <TermsList name="secteurs" className="secteurs-list" {...props} />
+    <TermsList name="regions" className="regions-list" {...props} />
   </OnboardingFlow>
 )
 
