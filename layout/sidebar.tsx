@@ -8,9 +8,11 @@ const SwiperHome = dynamic(() => import('@components/swiperHome'))
 
 const Sidebar = (props) => (
   <>
-    <Suspense>
-      <Pub2 posts={props?.pub1} />
-    </Suspense>
+    <div className="pub">
+      <Suspense>
+        <Pub2 posts={props?.pub1} />
+      </Suspense>
+    </div>
     <h3 className="title-primary">Offres sponsorisées</h3>
     <Suspense>
       <SwiperHome slides={1} posts={props?.sponsored} />
@@ -21,7 +23,7 @@ const Sidebar = (props) => (
       <SwiperHome slides={1} onlyImage posts={props?.partners} />
     </Suspense>
     <Suspense>
-      <Pub className="pub" posts={props?.pub3} width={300} height={250} />
+      <Pub className="pub" posts={props?.pub3} />
     </Suspense>
   </>
 )

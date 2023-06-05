@@ -7,11 +7,8 @@ import Terms from 'components/terms'
 import Date from '@components/date'
 import { Post } from '@utils/interfaces/data'
 import ParsedComponent from '@components/parsed-component'
+import StringComponent from '@components/loaders/string-component'
 
-import resizeImage from '@utils/resizeImage'
-const StringComponent = dynamic(() => import('./loaders/string-component'), {
-  ssr: false,
-})
 const Adsense = dynamic(() => import('@components/adsense'), { ssr: false })
 
 interface ArchivePostType extends Post {
@@ -33,8 +30,7 @@ const ArchivePost: FC<ArchivePostType> = ({
   <>
     <article>
       <CoverImage
-        image={resizeImage({ height: 200, src: image })}
-        {...{ title, href, priority }}
+        {...{ image, title, href, priority }}
         linkClassName="archive-post-feature relative"
       />
       <div className="post-info">
@@ -55,11 +51,11 @@ const ArchivePost: FC<ArchivePostType> = ({
         <ShareButtons {...{ href, title }} />
       </div>
     </article>
-    <Suspense>
-      <StringComponent cond={order === 4}>
+    <StringComponent as="div" className="adsContainer" cond={order === 4}>
+      <Suspense>
         <Adsense />
-      </StringComponent>
-    </Suspense>
+      </Suspense>
+    </StringComponent>
   </>
 )
 

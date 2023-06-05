@@ -19,7 +19,7 @@ const CoverImage = ({
       {...{ width: width, height: height, fill: !width && !height }}
       alt={title}
       src={image}
-      {...{ priority: priority && order === 0, unoptimized }}
+      {...{ priority: priority && order < 2, unoptimized }}
     />
   </SeoLink>
 )

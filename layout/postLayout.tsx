@@ -10,13 +10,17 @@ const Adsense = dynamic(() => import('@components/adsense'), { ssr: false })
 const PostLayout = ({ id, text, ...props }) => (
   <>
     <PostHeader {...props} />
-    <Suspense>
-      <Adsense />
-    </Suspense>
+    <div className="adsContainer">
+      <Suspense>
+        <Adsense />
+      </Suspense>
+    </div>
     <ParsedComponent as="div" className="content" text={text} />
-    <Suspense>
-      <Adsense slot="2682415108" format="autorelaxed" />
-    </Suspense>
+    <div className="adsContainer">
+      <Suspense>
+        <Adsense slot="2682415108" format="autorelaxed" />
+      </Suspense>
+    </div>
     <SimilarPosts id={id} categoryId={getFirst(props?.categories)?.id} />
   </>
 )
