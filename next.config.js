@@ -88,7 +88,6 @@ module.exports = withBundleAnalyzer({
     },
   },
   images: {
-    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',

@@ -34,7 +34,7 @@ const SwiperHomeContainer = ({
         className={secondary ? 'title-secondary' : 'title-primary'}
         title={title}
       />
-      <SwiperHome {...{ posts, slides, priority }} />
+      <SwiperHome {...{ posts, slides, priority, unoptimized: false }} />
     </div>
     <Suspense>
       <StringComponent cond={order === 4}>

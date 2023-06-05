@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic'
 const CoverImage = dynamic(() => import('@components/cover-image'))
 const SwiperController = dynamic(() => import('@components/swiper-controller'))
 
-const Pub = ({ posts, priority = false, className = 'swiperContainer' }) => (
+const Pub = ({ posts, className = 'swiperContainer', ...props }) => (
   <Suspense>
     <SwiperController
       className={className}
@@ -17,7 +17,7 @@ const Pub = ({ posts, priority = false, className = 'swiperContainer' }) => (
       modules={[EffectFlip]}
       posts={posts}
     >
-      <CoverImage {...{ priority }} />
+      <CoverImage {...props} />
     </SwiperController>
   </Suspense>
 )

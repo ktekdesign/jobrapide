@@ -1,6 +1,9 @@
-import Script from 'next/script'
-import LoaderComponent from '@components/loaders/loader'
+import dynamic from 'next/dynamic'
 import { memo } from 'react'
+const Script = dynamic(() => import('next/script'), { ssr: false })
+const LoaderComponent = dynamic(() => import('@components/loaders/loader'), {
+  ssr: false,
+})
 
 const InlineScripts = ({ nonce = process.env.nonce }) => (
   <LoaderComponent
