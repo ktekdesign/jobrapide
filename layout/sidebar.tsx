@@ -3,16 +3,13 @@ import { Suspense, memo } from 'react'
 import dynamic from 'next/dynamic'
 
 const Pub = dynamic(() => import('@components/pub'))
+const Pub2 = dynamic(() => import('@components/pub2'), { ssr: false })
 const SwiperHome = dynamic(() => import('@components/swiperHome'))
 
 const Sidebar = (props) => (
   <>
     <Suspense>
-      <Pub
-        priority={document?.body?.clientWidth >= 1024}
-        className="pub"
-        posts={props?.pub1}
-      />
+      <Pub2 posts={props?.pub1} />
     </Suspense>
     <h3 className="title-primary">Offres sponsorisées</h3>
     <Suspense>
