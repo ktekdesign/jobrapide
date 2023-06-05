@@ -4,7 +4,6 @@ import CoverImage from '@components/cover-image'
 import SeoLink from '@components/seoLink'
 import ComponentsProps from '@utils/interfaces/components'
 import ParsedComponent from './parsed-component'
-import resizeImage from '@utils/resizeImage'
 import StringComponent from './loaders/string-component'
 
 const PostPreview: FC<ComponentsProps> = ({
@@ -17,8 +16,9 @@ const PostPreview: FC<ComponentsProps> = ({
   <>
     <CoverImage
       linkClassName="post-preview-image"
-      image={resizeImage({ height: 200, src: image })}
-      {...{ title, href, ...props }}
+      width={170}
+      height={0}
+      {...{ title, image, href, ...props }}
     />
     <StringComponent cond={!onlyImage}>
       <SeoLink {...{ title, href }} as="h3" className="post-preview-title">

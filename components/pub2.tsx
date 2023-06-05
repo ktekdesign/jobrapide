@@ -11,6 +11,8 @@ const Pub2 = ({ posts }) => (
       className="pub"
       posts={posts}
       unoptimized={false}
+      width={300}
+      height={250}
     />
   </Suspense>
 )
