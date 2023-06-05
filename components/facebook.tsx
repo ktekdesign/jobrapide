@@ -18,7 +18,7 @@ const Facebook = () => {
     startTransition(() => setActive(1))
   }
   return (
-    <div className="facebook">
+    <div className="facebook row">
       <OnboardingFlow active={active}>
         <SeoLink
           href="https://www.facebook.com/tchadcarriere"

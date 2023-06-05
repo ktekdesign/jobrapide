@@ -1,25 +1,33 @@
-import { createPortal } from 'react-dom'
-import { Fragment, memo, useEffect, useState } from 'react'
+import { Suspense, memo, useEffect, useState } from 'react'
 import dynamic from 'next/dynamic'
 
-const Adsense = dynamic(() => import('@components/adsense'))
-
-const Translate = dynamic(() => import('@components/translate'))
+const Adsense = dynamic(() => import('@components/adsense'), { ssr: false })
+const Portal = dynamic(() => import('@components/loaders/portal'), {
+  ssr: false,
+})
+const MappedComponent = dynamic(
+  () => import('@components/loaders/mapped-component'),
+  { ssr: false }
+)
 
 const DeferredLoader = () => {
   const [refs, setRefs] = useState(null)
 
   useEffect(() => {
-    setRefs([].slice.call(document?.body?.getElementsByClassName('adsense')))
+    const ids = [].slice
+      .call(document?.body?.getElementsByClassName('adsense'))
+      .map((id) => ({ id }))
+    setRefs(ids)
   }, [])
 
   return (
-    <Fragment>
-      {refs?.map((ref, key) => (
-        <Fragment key={key}>{createPortal(<Adsense />, ref)}</Fragment>
-      ))}
-      <Translate />
-    </Fragment>
+    <Suspense>
+      <MappedComponent cond={!!refs} items={refs}>
+        <Portal>
+          <Adsense />
+        </Portal>
+      </MappedComponent>
+    </Suspense>
   )
 }
 

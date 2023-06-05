@@ -1,23 +1,24 @@
-import React, { FC, memo } from 'react'
+import { Suspense, memo } from 'react'
+import dynamic from 'next/dynamic'
+const PostPreview = dynamic(() => import('@components/post-preview'))
+const SwiperController = dynamic(() => import('@components/swiper-controller'))
 
-import PostPreview from '@components/post-preview'
-import ComponentsProps from '@utils/interfaces/components'
-import SwiperController from '@components/swiper-controller'
-
-const SwiperHome: FC<ComponentsProps> = ({
-  posts,
+const SwiperHome = ({
+  posts = null,
   slides = 3,
-  onlyImage,
-  priority,
-  className,
+  onlyImage = false,
+  priority = false,
+  ...props
 }) => (
-  <SwiperController
-    {...{ className: onlyImage && 'onlyImage' }}
-    posts={posts}
-    slides={slides}
-  >
-    <PostPreview {...{ className, priority, onlyImage }} />
-  </SwiperController>
+  <Suspense>
+    <SwiperController
+      {...{ className: onlyImage ? 'onlyImage' : 'swiperContainer' }}
+      posts={posts}
+      slides={slides}
+    >
+      <PostPreview {...{ ...props, priority, onlyImage }} />
+    </SwiperController>
+  </Suspense>
 )
 
 export default memo(SwiperHome)

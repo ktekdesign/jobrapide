@@ -2,9 +2,7 @@ import { memo } from 'react'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Pagination } from 'swiper'
-import { prev } from '@utils/manipulateArray'
 import LoaderComponent from '@components/loaders/loader'
-import Row from '@layout/row'
 
 export const SwiperController = ({
   children,
@@ -14,14 +12,14 @@ export const SwiperController = ({
   posts,
   ...props
 }) => (
-  <Row {...{ className }}>
+  <div className={className}>
     <Swiper
       pagination={{
         clickable: true,
       }}
       spaceBetween={10}
       autoplay={{
-        delay: 15000,
+        delay: 5000,
         disableOnInteraction: true,
         pauseOnMouseEnter: true,
       }}
@@ -30,7 +28,7 @@ export const SwiperController = ({
           slidesPerView: 1,
         },
         640: {
-          slidesPerView: prev(slides) || 1,
+          slidesPerView: slides - 1 || 1,
         },
         1024: {
           slidesPerView: slides,
@@ -47,7 +45,7 @@ export const SwiperController = ({
         </SwiperSlide>
       ))}
     </Swiper>
-  </Row>
+  </div>
 )
 
 export default memo(SwiperController)
