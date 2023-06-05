@@ -3,12 +3,10 @@ import { Suspense, memo } from 'react'
 import SwiperHome from './swiperHome'
 import SwiperTitle from './swiperTitle'
 import { Post } from '@utils/interfaces/data'
+import StringComponent from '@components/loaders/string-component'
 import dynamic from 'next/dynamic'
 
-const StringComponent = dynamic(() => import('./loaders/string-component'), {
-  ssr: false,
-})
-const Adsense = dynamic(() => import('@components/adsense'), { ssr: false })
+const Adsense = dynamic(() => import('@components/adsense'))
 
 const SwiperHomeContainer = ({
   secondary,
@@ -17,6 +15,7 @@ const SwiperHomeContainer = ({
   title,
   posts,
   innerClass,
+  href,
   order,
   ...props
 }: {
@@ -25,6 +24,7 @@ const SwiperHomeContainer = ({
   slides?: number
   priority?: boolean
   posts?: Post[]
+  href?: string
   order?: number
   innerClass?: string
 }) => (
@@ -33,14 +33,24 @@ const SwiperHomeContainer = ({
       <SwiperTitle
         className={secondary ? 'title-secondary' : 'title-primary'}
         title={title}
+        href={href}
       />
-      <SwiperHome {...{ posts, slides, priority, unoptimized: false }} />
+      <SwiperHome
+        {...{
+          posts,
+          slides,
+          priority,
+          unoptimized: !priority,
+          width: priority ? 170 : 0,
+          height: 0,
+        }}
+      />
     </div>
-    <Suspense>
-      <StringComponent cond={order === 4}>
+    <StringComponent as="div" className="adsContainer" cond={order === 4}>
+      <Suspense>
         <Adsense />
-      </StringComponent>
-    </Suspense>
+      </Suspense>
+    </StringComponent>
   </>
 )
 

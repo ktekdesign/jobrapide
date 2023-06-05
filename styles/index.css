@@ -452,7 +452,7 @@ article {
 
 /* FOOTER MENU */
 .navbar-footer {
-  @apply bg-dark text-white text-sm lg:text-xs border-y-4 border-dark;
+  @apply bg-dark text-base text-white border-y-4 border-dark;
 }
 .footer-menu {
   @apply container mx-auto;

@@ -6,9 +6,6 @@ const ShareButtons = dynamic(() => import('@components/share-buttons'), {
 })
 const GoTop = dynamic(() => import('@components/gotop'), { ssr: false })
 const Script = dynamic(() => import('next/script'), { ssr: false })
-const DeferredLoader = dynamic(() => import('@components/deferred-loader'), {
-  ssr: false,
-})
 
 const FloatComponent = ({ nonce = process.env.nonce }) => {
   const [ref, setRef] = useState(null)
@@ -27,7 +24,6 @@ const FloatComponent = ({ nonce = process.env.nonce }) => {
         />
         <ShareButtons float />
         <GoTop />
-        <DeferredLoader />
       </Suspense>
     )
   )

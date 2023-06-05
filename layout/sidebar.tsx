@@ -5,23 +5,30 @@ import dynamic from 'next/dynamic'
 const Pub = dynamic(() => import('@components/pub'))
 const Pub2 = dynamic(() => import('@components/pub2'), { ssr: false })
 const SwiperHome = dynamic(() => import('@components/swiperHome'))
+const Adsense = dynamic(() => import('@components/adsense'))
 
 const Sidebar = (props) => (
   <>
-    <Suspense>
-      <Pub2 posts={props?.pub1} />
-    </Suspense>
+    <div className="pub">
+      <Suspense>
+        <Pub2 posts={props?.pub1} />
+      </Suspense>
+    </div>
     <h3 className="title-primary">Offres sponsorisées</h3>
     <Suspense>
       <SwiperHome slides={1} posts={props?.sponsored} />
     </Suspense>
-    <div className="adsense" />
+    <div className="adsContainer">
+      <Suspense>
+        <Adsense />
+      </Suspense>
+    </div>
     <h3 className="title-secondary">Partenaires</h3>
     <Suspense>
       <SwiperHome slides={1} onlyImage posts={props?.partners} />
     </Suspense>
     <Suspense>
-      <Pub className="pub" posts={props?.pub3} width={300} height={250} />
+      <Pub className="pub" posts={props?.pub3} />
     </Suspense>
   </>
 )

@@ -22,9 +22,11 @@ const Layout = ({ children, pub2, ...props }) => (
     <Suspense>
       <Pub className="pub-in-header" priority posts={pub2} />
     </Suspense>
-    <Suspense>
-      <Adsense />
-    </Suspense>
+    <div className="adsContainer">
+      <Suspense>
+        <Adsense />
+      </Suspense>
+    </div>
     <main>
       <div className="left">{children}</div>
       <div className="right">
@@ -35,7 +37,11 @@ const Layout = ({ children, pub2, ...props }) => (
         <Twitter />
       </div>
     </main>
-    <div className="adsense" />
+    <div className="adsContainer">
+      <Suspense>
+        <Adsense />
+      </Suspense>
+    </div>
     <Suspense>
       <FloatComponent />
     </Suspense>

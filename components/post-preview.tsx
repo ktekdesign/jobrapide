@@ -16,8 +16,6 @@ const PostPreview: FC<ComponentsProps> = ({
   <>
     <CoverImage
       linkClassName="post-preview-image"
-      width={170}
-      height={0}
       {...{ title, image, href, ...props }}
     />
     <StringComponent cond={!onlyImage}>
