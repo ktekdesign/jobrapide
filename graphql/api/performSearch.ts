@@ -74,9 +74,7 @@ const performSearch = async ({
   try {
     const data = await loadFromWPGraphQL(query)
 
-    return {
-      posts: data?.posts?.nodes?.map((post) => mapPost(post)),
-    }
+    return data?.posts?.nodes?.map((post) => mapPost(post))
   } catch (err) {
     return outputErrors(err)
   }

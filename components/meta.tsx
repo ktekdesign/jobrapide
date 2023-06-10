@@ -23,6 +23,30 @@ const Meta: FC<{ seo?: Seo }> = ({ seo = defaultSeo }) => (
         crossOrigin="anonymous"
       />
       <link rel="dns-prefetch" href="https://www.jobrapide.org/" />
+      <link
+        rel="preconnect"
+        href="https://pagead2.googlesyndication.com/"
+        crossOrigin="anonymous"
+      />
+      <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com/" />
+      <link rel="dns-prefetch" href="https://www.googletagservices.com/" />
+      <link
+        rel="preconnect"
+        href="https://www.googletagservices.com/"
+        crossOrigin="anonymous"
+      />
+      <link rel="dns-prefetch" href="https://www.googletagmanager.com/" />
+      <link
+        rel="preconnect"
+        href="https://www.googletagmanager.com/"
+        crossOrigin="anonymous"
+      />
+      <link rel="dns-prefetch" href="https://www.gstatic.com/" />
+      <link
+        rel="preconnect"
+        href="https://www.gstatic.com/"
+        crossOrigin="anonymous"
+      />
       <meta
         name="viewport"
         content="width=device-width,initial-scale=1, minimum-scale=1"

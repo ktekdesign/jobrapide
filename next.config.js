@@ -21,15 +21,13 @@ const nonce = crypto
 const isDev = process.env.NODE_ENV !== 'production'
 const ContentSecurityPolicy = `
   base-uri 'self';
-  default-src 'self';
+  default-src 'self' data:;
   script-src 'self' 'nonce-${nonce}' 'strict-dynamic' https: 'unsafe-inline'${
   isDev ? " 'unsafe-eval'" : ''
 };
-  child-src 'self';
   style-src 'self'${
     isDev ? " 'unsafe-inline'" : ''
   } *.gstatic.com *.googleapis.com *.googlesyndication.com 'unsafe-inline';
-  font-src 'self' data:;
   connect-src 'self' *.google-analytics.com *.googleapis.com *.google.com *.google-analytics.com *.googlesyndication.com *.jobrapide.org *.gstatic.com *.analytics.google.com *.googletagmanager.com;
   frame-src *.g.doubleclick.net *.twitter.com *.facebook.com *.googlesyndication.com *.google.com *.googleadservices.com *.googletagmanager.com;
   img-src 'self' *.jobrapide.org *.twitter.com *.facebook.com *.googleadservices.com *.googlesyndication.com *.googleapis.com *.gstatic.com *.google.com *.g.doubleclick.net *.google-analytics.com *.googletagmanager.com *.atdmt.com;
