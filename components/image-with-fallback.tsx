@@ -1,7 +1,5 @@
-import { memo, startTransition, useState } from 'react'
+import { useState } from 'react'
 import Image from 'next/image'
-import OnboardingFlow from '@components/loaders/onboardingFlow'
-import Logo from '@components/logo'
 
 const ImageWithFallback = ({
   alt,
@@ -10,18 +8,11 @@ const ImageWithFallback = ({
   unoptimized = true,
   ...props
 }) => {
-  const [logo, setLogo] = useState(!src)
-  const onError = () => startTransition(() => setLogo(true))
+  const [logo, setLogo] = useState(src)
+  const onError = () => setLogo('/images/logo.webp')
 
   return (
-    <OnboardingFlow active={Number(logo)}>
-      <Image
-        onError={onError}
-        {...{ alt, src, priority, unoptimized, ...props }}
-      />
-      <Logo {...props} />
-    </OnboardingFlow>
+    <Image {...{ onError, alt, src: logo, priority, unoptimized, ...props }} />
   )
 }
-
-export default memo(ImageWithFallback)
+export default ImageWithFallback

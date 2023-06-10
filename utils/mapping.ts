@@ -14,7 +14,7 @@ const getOptimizedImageUrl = (url: string) => {
       !url.includes('.jpeg') &&
       !url.includes('.webp'))
   )
-    return null
+    return '/images/logo.webp'
   const imageUrl = preventUndefined(
     url?.replace(
       'wp-content/uploads',
@@ -104,7 +104,7 @@ export const mapTerm = (term): Term => {
       slug: preventUndefined(term.slug),
       href: preventUndefined(term.href ?? term.uri),
       parentid: preventUndefined(term.parentDatabaseId),
-      posts: preventUndefined(term.posts),
+      posts: preventUndefined(term.posts?.nodes?.map((post) => mapPost(post))),
       seo: mapSeo(term.seo),
     }
   } catch (err) {
