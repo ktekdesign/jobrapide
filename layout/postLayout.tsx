@@ -18,7 +18,7 @@ const PostLayout = ({ id, text, ...props }) => (
     <ParsedComponent as="div" className="content" text={text} />
     <div className="adsContainer">
       <Suspense>
-        <Adsense slot="2682415108" format="autorelaxed" />
+        <Adsense data-ad-slot="2682415108" data-ad-format="autorelaxed" />
       </Suspense>
     </div>
     <SimilarPosts id={id} categoryId={getFirst(props?.categories)?.id} />

@@ -1,48 +1,97 @@
 import { Html, Head, Main, NextScript } from 'next/document'
-import { cloneElement } from 'react'
+import { Children, cloneElement, isValidElement } from 'react'
 class CSPNextScript extends NextScript {
+  getPreNextScripts() {
+    return cloneElement(super.getPreNextScripts(), {
+      nonce: process.env.nonce,
+      async: true,
+    })
+  }
   getScripts(files) {
     return super
       .getScripts(files)
       .map((script) =>
-        cloneElement(script, { nonce: process.env.nonce, defer: true })
+        cloneElement(script, { nonce: process.env.nonce, async: true })
       )
   }
   getPolyfillScripts() {
     return super
       .getPolyfillScripts()
       .map((script) =>
-        cloneElement(script, { nonce: process.env.nonce, defer: true })
+        cloneElement(script, { nonce: process.env.nonce, async: true })
       )
   }
   getDynamicChunks(files) {
     return super
       .getDynamicChunks(files)
       .map((script) =>
-        cloneElement(script, { nonce: process.env.nonce, defer: true })
+        cloneElement(script, { nonce: process.env.nonce, async: true })
       )
   }
 }
 class CSPHead extends Head {
+  getPreloadDynamicChunks() {
+    return super
+      .getPreloadDynamicChunks()
+      ?.map((chunk) =>
+        cloneElement(chunk, { nonce: process.env.nonce, async: true })
+      )
+  }
+  getPreloadMainLinks(files) {
+    return super
+      .getPreloadMainLinks(files)
+      ?.map((file) =>
+        cloneElement(file, { nonce: process.env.nonce, async: true })
+      )
+  }
+  getBeforeInteractiveInlineScripts() {
+    return super
+      .getBeforeInteractiveInlineScripts()
+      ?.map((file) => cloneElement(file, { nonce: process.env.nonce }))
+  }
+  getPreNextScripts() {
+    return cloneElement(super.getPreNextScripts(), {
+      nonce: process.env.nonce,
+      async: true,
+    })
+  }
+  getCssLinks(files) {
+    return super
+      .getCssLinks(files)
+      ?.map((style) => cloneElement(style, { nonce: process.env.nonce }))
+  }
+  makeStylesheetInert(node) {
+    return super.makeStylesheetInert(node)?.map((children) => {
+      {
+        Children.map(children, (child) => {
+          if (isValidElement(child))
+            return cloneElement(child, { ...{ nonce: process.env.nonce } })
+          return <>{child}</>
+        })
+      }
+      return <>{children}</>
+    })
+  }
+
   getScripts(files) {
     return super
       .getScripts(files)
-      .map((script) =>
-        cloneElement(script, { nonce: process.env.nonce, defer: true })
+      ?.map((script) =>
+        cloneElement(script, { nonce: process.env.nonce, async: true })
       )
   }
   getPolyfillScripts() {
     return super
       .getPolyfillScripts()
-      .map((script) =>
-        cloneElement(script, { nonce: process.env.nonce, defer: true })
+      ?.map((script) =>
+        cloneElement(script, { nonce: process.env.nonce, async: true })
       )
   }
   getDynamicChunks(files) {
     return super
       .getDynamicChunks(files)
-      .map((script) =>
-        cloneElement(script, { nonce: process.env.nonce, defer: true })
+      ?.map((script) =>
+        cloneElement(script, { nonce: process.env.nonce, async: true })
       )
   }
 }
