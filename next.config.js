@@ -21,15 +21,16 @@ const nonce = crypto
 const isDev = process.env.NODE_ENV !== 'production'
 const ContentSecurityPolicy = `
   base-uri 'self';
-  default-src 'self' data:;
+  default-src 'self';
   script-src 'self' 'nonce-${nonce}' 'strict-dynamic' https: 'unsafe-inline'${
   isDev ? " 'unsafe-eval'" : ''
 };
   style-src 'self'${
     isDev ? " 'unsafe-inline'" : ''
-  } *.gstatic.com *.googleapis.com *.googlesyndication.com 'unsafe-inline';
-  connect-src 'self' *.google-analytics.com *.googleapis.com *.google.com *.google-analytics.com *.googlesyndication.com *.jobrapide.org *.gstatic.com *.analytics.google.com *.googletagmanager.com;
-  frame-src *.g.doubleclick.net *.twitter.com *.facebook.com *.googlesyndication.com *.google.com *.googleadservices.com *.googletagmanager.com;
+  } *.gstatic.com *.googleapis.com *.googlesyndication.com *.g.doubleclick.net 'unsafe-inline';
+  font-src 'self' data:;
+  connect-src 'self' *.g.doubleclick.net *.google-analytics.com *.googleapis.com *.google.com *.google-analytics.com *.googlesyndication.com *.jobrapide.org *.gstatic.com *.analytics.google.com *.googletagmanager.com;
+  frame-src 'self' *.g.doubleclick.net *.twitter.com *.facebook.com *.googlesyndication.com *.google.com *.googleadservices.com *.googletagmanager.com;
   img-src 'self' *.jobrapide.org *.twitter.com *.facebook.com *.googleadservices.com *.googlesyndication.com *.googleapis.com *.gstatic.com *.google.com *.g.doubleclick.net *.google-analytics.com *.googletagmanager.com *.atdmt.com;
 `
 /** @type {import('next').NextConfig} */
