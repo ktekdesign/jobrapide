@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "@apollo/client": "^3.7.12",
-    "@ctrl/react-adsense": "^1.7.0",
     "@next/bundle-analyzer": "^13.4.4",
     "firebase": "^9.21.0",
     "graphql": "^16.6.0",

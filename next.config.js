@@ -23,7 +23,7 @@ const ContentSecurityPolicy = `
   base-uri 'self';
   default-src 'self';
   script-src 'self' 'nonce-${nonce}' 'strict-dynamic' https: 'unsafe-inline'${
-  isDev ? " 'unsafe-eval'" : ''
+  isDev ? " http: 'unsafe-eval'" : ''
 };
   style-src 'self'${
     isDev ? " 'unsafe-inline'" : ''
