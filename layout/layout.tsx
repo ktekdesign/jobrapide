@@ -2,11 +2,11 @@ import { Suspense, memo } from 'react'
 
 import Facebook from '@components/facebook'
 import Twitter from '@components/twitter'
+import Pub from '@components/pub'
+import Sidebar from '@layout/sidebar'
+import Adsense from '@components/adsense'
 import dynamic from 'next/dynamic'
 
-const Pub = dynamic(() => import('@components/pub'))
-const Sidebar = dynamic(() => import('@layout/sidebar'))
-const Adsense = dynamic(() => import('@components/adsense'))
 const InlineScripts = dynamic(() => import('@components/inline-scripts'), {
   ssr: false,
 })
@@ -17,15 +17,10 @@ const FloatComponent = dynamic(() => import('@components/floatComponents'), {
 const Layout = ({ children, pub2, ...props }) => (
   <>
     <Suspense>
-      <InlineScripts />
-    </Suspense>
-    <Suspense>
       <Pub className="pub-in-header" priority posts={pub2} />
     </Suspense>
     <div className="adsContainer">
-      <Suspense>
-        <Adsense />
-      </Suspense>
+      <Adsense />
     </div>
     <main>
       <div className="left">{children}</div>
@@ -38,12 +33,13 @@ const Layout = ({ children, pub2, ...props }) => (
       </div>
     </main>
     <div className="adsContainer">
-      <Suspense>
-        <Adsense />
-      </Suspense>
+      <Adsense />
     </div>
     <Suspense>
       <FloatComponent />
+    </Suspense>
+    <Suspense>
+      <InlineScripts />
     </Suspense>
   </>
 )

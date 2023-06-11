@@ -14,7 +14,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 const Button = forwardRef(
   (
     { children, label, ...props }: ButtonProps,
-    ref: LegacyRef<HTMLInputElement>
+    ref: LegacyRef<HTMLButtonElement>
   ) => (
     <button aria-label={label} title={label} ref={ref} {...props}>
       {children}
