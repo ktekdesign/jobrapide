@@ -19,9 +19,7 @@ const Sidebar = (props) => (
       <SwiperHome slides={1} posts={props?.sponsored} />
     </Suspense>
     <div className="adsContainer">
-      <Suspense>
-        <Adsense />
-      </Suspense>
+      <Adsense />
     </div>
     <h3 className="title-secondary">Partenaires</h3>
     <Suspense>

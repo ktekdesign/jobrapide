@@ -120,6 +120,36 @@ a:not([href*='#']),
 button {
   @apply focus:animate-pulse;
 }
+/* Animation CSS Magic SLide */
+.animate-slideinRight {
+  animation: slideinRight 0.5s;
+  @apply relative;
+}
+@keyframes slideinRight {
+  0% {
+    right: -300px;
+    opacity: 0;
+  }
+  100% {
+    right: 0;
+    opacity: 1;
+  }
+}
+.animate-slideinLeft {
+  animation: slideinLeft 0.5s;
+  @apply relative;
+}
+@keyframes slideinLeft {
+  0% {
+    left: -300px;
+    opacity: 0;
+  }
+  100% {
+    leftt: 0;
+    opacity: 1;
+  }
+}
+/* Fin Animation Magic Slide */
 /* Animation CSS */
 .animate-slideinup {
   animation: slideinup 0.5s;

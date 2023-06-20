@@ -8,7 +8,7 @@ const ImageWithFallback = ({
   unoptimized = true,
   ...props
 }) => {
-  const [logo, setLogo] = useState(src)
+  const [logo, setLogo] = useState(src || '/images/logo.webp')
   const onError = () => setLogo('/images/logo.webp')
 
   return (

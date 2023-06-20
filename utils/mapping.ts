@@ -6,23 +6,6 @@ import { BASE_DOMAIN, BASE_URL } from '@utils/constants'
 const replaceUrl = (url) =>
   preventUndefined(url?.replace('www.jobrapide.org', BASE_DOMAIN))
 
-const getOptimizedImageUrl = (url: string) => {
-  if (
-    !url ||
-    (!url.includes('.png') &&
-      !url.includes('.jpg') &&
-      !url.includes('.jpeg') &&
-      !url.includes('.webp'))
-  )
-    return '/images/logo.webp'
-  const imageUrl = preventUndefined(
-    url?.replace(
-      'wp-content/uploads',
-      'wp-content/webp-express/webp-images/uploads'
-    )
-  )
-  return imageUrl ? `${imageUrl}.webp` : null
-}
 export const mapSeo = (seo, image = null): Seo => {
   if (isEmpty(seo)) return null
 
@@ -70,19 +53,15 @@ export const mapPost = (post): Post => {
     const categories = post.categories?.nodes?.map((term) => mapTerm(term))
     const secteurs = post.secteurs?.nodes?.map((term) => mapTerm(term))
     const regions = post.regions?.nodes?.map((term) => mapTerm(term))
-    const image = getOptimizedImageUrl(post.featuredImage?.node?.sourceUrl)
+    const image = preventUndefined(post.featuredImage?.node?.sourceUrl)
     return {
       id: preventUndefined(post.databaseId),
       title: preventUndefined(post.title),
-      image,
+      image: image,
       date: preventUndefined(post.date),
       excerpt: preventUndefined(post.excerpt),
       text: preventUndefined(
-        post?.content
-          ?.replaceAll('uploads', 'webp-express/webp-images/uploads')
-          .replaceAll('.png', '.png.webp')
-          .replaceAll('.jpg', '.jpg.webp')
-          .replaceAll('.jpeg', '.jpeg.webp')
+        post?.content?.replaceAll('src=', 'loading="lazy" src=')
       ),
       href: preventUndefined(post.uri),
       categories: preventUndefined(categories),
