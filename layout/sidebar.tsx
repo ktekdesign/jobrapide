@@ -1,11 +1,11 @@
 import { Suspense, memo } from 'react'
+import Adsense from '@components/adsense'
 
 import dynamic from 'next/dynamic'
 
 const Pub = dynamic(() => import('@components/pub'))
 const Pub2 = dynamic(() => import('@components/pub2'), { ssr: false })
 const SwiperHome = dynamic(() => import('@components/swiperHome'))
-const Adsense = dynamic(() => import('@components/adsense'))
 
 const Sidebar = (props) => (
   <>
