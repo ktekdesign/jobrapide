@@ -682,7 +682,10 @@ article {
   @apply mx-auto w-full min-h-[250px] max-w-screen-lg;
 }
 .adsContainer {
-  @apply container mb-2 mx-auto grid place-items-center min-h-[250px];
+  @apply container mb-2 mx-auto min-h-[250px];
+}
+.adsbygoogle {
+  @apply mx-auto;
 }
 main .adsense {
   @apply px-0;
