@@ -66,6 +66,15 @@ module.exports = withBundleAnalyzer({
     nonce,
   },
   swcMinify: true,
+  async redirects() {
+    return [
+      {
+        source: '/amp/:path*',
+        destination: '/:path*',
+        permanent: true,
+      },
+    ]
+  },
   // Adding policies:
   async headers() {
     return [
