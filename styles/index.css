@@ -682,7 +682,7 @@ article {
   @apply mx-auto w-full min-h-[250px] max-w-screen-lg;
 }
 .adsContainer {
-  @apply container mb-2 mx-auto min-h-[250px];
+  @apply container mb-2 mx-auto min-h-[250px] max-w-[1200px];
 }
 .adsbygoogle {
   @apply mx-auto;
