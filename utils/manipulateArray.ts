@@ -17,3 +17,12 @@ export const preventUndefined = (obj) =>
     : typeof obj === 'string'
     ? obj.replaceAll('TchadCarriere', 'JobRapide')
     : obj
+
+export const getOptimizedImageUrl = (url: string) => {
+  if (!url) return
+  const imageUrl = url.replace(
+    'wp-content/uploads',
+    'wp-content/webp-express/webp-images/uploads'
+  )
+  return `${imageUrl}.webp`
+}

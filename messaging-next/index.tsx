@@ -5,6 +5,7 @@ import {
   onMessage,
 } from 'firebase/messaging'
 import { initializeApp } from 'firebase/app'
+import { getAnalytics } from 'firebase/analytics'
 import { useCallback, useEffect, useState } from 'react'
 
 export function getMessagingObject() {
@@ -41,10 +42,17 @@ export default function NotificationSignal() {
       messagingSenderId: '1033278726825',
       appId: '1:1033278726825:web:753a3246709b23f7b13fb8',
     })
+    getAnalytics(firebaseApp)
     const messaging = getMessaging(firebaseApp)
+
+    onMessage(messaging, (payload) => {
+      console.log('Message received. ', payload)
+      // ...
+    })
     getToken(messaging, { vapidKey: process.env.NEXT_PUBLIC_VAPID_KEY })
       .then((currentToken) => {
         if (currentToken) {
+          console.error(currentToken)
           setToken(true)
         } else {
           requestPermission()
