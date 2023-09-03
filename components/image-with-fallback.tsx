@@ -1,18 +1,11 @@
 import { useState } from 'react'
 import Image from 'next/image'
+import { getOptimizedImageUrl } from '@utils/manipulateArray'
 
-const ImageWithFallback = ({
-  alt,
-  src,
-  priority = false,
-  unoptimized = true,
-  ...props
-}) => {
-  const [logo, setLogo] = useState(src || '/images/logo.webp')
-  const onError = () => setLogo('/images/logo.webp')
+const ImageWithFallback = ({ alt, src, ...props }) => {
+  const [image, setImage] = useState(getOptimizedImageUrl(src))
+  const onError = () => setImage(src)
 
-  return (
-    <Image {...{ onError, alt, src: logo, priority, unoptimized, ...props }} />
-  )
+  return <Image {...{ onError, alt, src: image, ...props }} />
 }
 export default ImageWithFallback
