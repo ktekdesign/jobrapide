@@ -38,7 +38,6 @@ const SwiperHomeContainer = ({
           posts,
           slides,
           priority,
-          unoptimized: !priority,
           width: priority ? 170 : 0,
           height: 0,
         }}
