@@ -6,7 +6,7 @@ import { BASE_DOMAIN, BASE_URL } from '@utils/constants'
 const replaceUrl = (url) =>
   preventUndefined(url?.replace('www.jobrapide.org', BASE_DOMAIN))
 
-export const mapSeo = (seo, image = null): Seo => {
+export const mapSeo = (seo, image = '/images/logo.webp'): Seo => {
   if (isEmpty(seo)) return null
 
   const breadcrumbs = preventUndefined(
@@ -26,7 +26,7 @@ export const mapSeo = (seo, image = null): Seo => {
       metaRobotsNoindex: preventUndefined(seo.metaRobotsNoindex),
       opengraphAuthor: preventUndefined(seo.opengraphAuthor),
       opengraphDescription: preventUndefined(seo.opengraphDescription),
-      opengraphImage: image || '/images/logo.webp',
+      opengraphImage: image,
       opengraphModifiedTime: preventUndefined(seo.opengraphModifiedTime),
       opengraphPublishedTime: preventUndefined(seo.opengraphPublishedTime),
       opengraphPublisher: preventUndefined(seo.opengraphPublisher),
@@ -39,7 +39,7 @@ export const mapSeo = (seo, image = null): Seo => {
       twitterDescription: preventUndefined(
         seo.twitterDescription ?? seo.opengraphDescription
       ),
-      twitterImage: image || '/images/logo.webp',
+      twitterImage: image,
       twitterTitle: preventUndefined(seo.twitterTitle ?? seo.title),
     }
   } catch (err) {
@@ -53,11 +53,11 @@ export const mapPost = (post): Post => {
     const categories = post.categories?.nodes?.map((term) => mapTerm(term))
     const secteurs = post.secteurs?.nodes?.map((term) => mapTerm(term))
     const regions = post.regions?.nodes?.map((term) => mapTerm(term))
-    const image = preventUndefined(post.featuredImage?.node?.sourceUrl)
+    const image = post.featuredImage?.node?.sourceUrl
     return {
       id: preventUndefined(post.databaseId),
       title: preventUndefined(post.title),
-      image: image,
+      image: preventUndefined(image),
       date: preventUndefined(post.date),
       excerpt: preventUndefined(post.excerpt),
       text: preventUndefined(

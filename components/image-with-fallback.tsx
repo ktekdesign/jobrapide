@@ -3,9 +3,13 @@ import Image from 'next/image'
 import { getOptimizedImageUrl } from '@utils/manipulateArray'
 
 const ImageWithFallback = ({ alt, src, ...props }) => {
-  const [image, setImage] = useState(getOptimizedImageUrl(src))
-  const onError = () => setImage(src)
+  const [image, setImage] = useState(false)
+  const onError = () => setImage(true)
 
-  return <Image {...{ onError, alt, src: image, ...props }} />
+  if (!src) return <></>
+  if (image) return <Image {...{ alt, src, ...props }} />
+  return (
+    <Image {...{ onError, alt, src: getOptimizedImageUrl(src), ...props }} />
+  )
 }
 export default ImageWithFallback

@@ -1,12 +1,10 @@
-import { Suspense, memo } from 'react'
+import { memo } from 'react'
 
-import SwiperHome from './swiperHome'
-import SwiperTitle from './swiperTitle'
+import SwiperHome from '@components/swiperHome'
+import SwiperTitle from '@components/swiperTitle'
 import { Post } from '@utils/interfaces/data'
 import StringComponent from '@components/loaders/string-component'
-import dynamic from 'next/dynamic'
-
-const Adsense = dynamic(() => import('@components/adsense'))
+import Adsense from '@components/adsense'
 
 const SwiperHomeContainer = ({
   secondary,
@@ -47,9 +45,7 @@ const SwiperHomeContainer = ({
       />
     </div>
     <StringComponent as="div" className="adsContainer" cond={order === 4}>
-      <Suspense>
-        <Adsense />
-      </Suspense>
+      <Adsense />
     </StringComponent>
   </>
 )
