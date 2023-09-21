@@ -4,28 +4,28 @@ class CSPNextScript extends NextScript {
   getPreNextScripts() {
     return cloneElement(super.getPreNextScripts(), {
       nonce: process.env.nonce,
-      async: true,
+      defer: true,
     })
   }
   getScripts(files) {
     return super
       .getScripts(files)
       .map((script) =>
-        cloneElement(script, { nonce: process.env.nonce, async: true })
+        cloneElement(script, { nonce: process.env.nonce, defer: true })
       )
   }
   getPolyfillScripts() {
     return super
       .getPolyfillScripts()
       .map((script) =>
-        cloneElement(script, { nonce: process.env.nonce, async: true })
+        cloneElement(script, { nonce: process.env.nonce, defer: true })
       )
   }
   getDynamicChunks(files) {
     return super
       .getDynamicChunks(files)
       .map((script) =>
-        cloneElement(script, { nonce: process.env.nonce, async: true })
+        cloneElement(script, { nonce: process.env.nonce, defer: true })
       )
   }
 }
@@ -34,14 +34,14 @@ class CSPHead extends Head {
     return super
       .getPreloadDynamicChunks()
       ?.map((chunk) =>
-        cloneElement(chunk, { nonce: process.env.nonce, async: true })
+        cloneElement(chunk, { nonce: process.env.nonce, defer: true })
       )
   }
   getPreloadMainLinks(files) {
     return super
       .getPreloadMainLinks(files)
       ?.map((file) =>
-        cloneElement(file, { nonce: process.env.nonce, async: true })
+        cloneElement(file, { nonce: process.env.nonce, defer: true })
       )
   }
   getBeforeInteractiveInlineScripts() {
@@ -52,7 +52,7 @@ class CSPHead extends Head {
   getPreNextScripts() {
     return cloneElement(super.getPreNextScripts(), {
       nonce: process.env.nonce,
-      async: true,
+      defer: true,
     })
   }
   getCssLinks(files) {
@@ -77,21 +77,21 @@ class CSPHead extends Head {
     return super
       .getScripts(files)
       ?.map((script) =>
-        cloneElement(script, { nonce: process.env.nonce, async: true })
+        cloneElement(script, { nonce: process.env.nonce, defer: true })
       )
   }
   getPolyfillScripts() {
     return super
       .getPolyfillScripts()
       ?.map((script) =>
-        cloneElement(script, { nonce: process.env.nonce, async: true })
+        cloneElement(script, { nonce: process.env.nonce, defer: true })
       )
   }
   getDynamicChunks(files) {
     return super
       .getDynamicChunks(files)
       ?.map((script) =>
-        cloneElement(script, { nonce: process.env.nonce, async: true })
+        cloneElement(script, { nonce: process.env.nonce, defer: true })
       )
   }
 }

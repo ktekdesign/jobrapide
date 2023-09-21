@@ -8,7 +8,6 @@ import Breadcrumb from '@components/breadcrumb'
 import ComponentsProps from '@utils/interfaces/components'
 import { BreadcrumbType, Term } from '@utils/interfaces/data'
 import ParsedComponent from './parsed-component'
-import resizeImage from '@utils/resizeImage'
 
 interface PostHeaderProps extends ComponentsProps {
   date?: string
@@ -32,8 +31,9 @@ const PostHeader: FC<PostHeaderProps> = ({
     <CoverImage
       as="picture"
       title={title}
-      image={resizeImage({ height: 300, src: image })}
+      image={image}
       active={1}
+      priority
       className="post-header-image"
     />
     <Date date={date} className="post-header-date" />
