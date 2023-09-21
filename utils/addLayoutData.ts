@@ -1,8 +1,7 @@
-import getSidebar from '@graphql/api/getSidebar'
 import { REVALIDATE } from '@utils/constants'
 
-const layout = (data, pageSlug, sidebar) => {
-  if (!data?.seo) return { ...data, pageSlug, layout: { sidebar } }
+const layout = (data, pageSlug) => {
+  if (!data?.seo) return { ...data, layout: { pageSlug } }
 
   const { seo: seoProps, ...props } = data
 
@@ -16,15 +15,12 @@ const layout = (data, pageSlug, sidebar) => {
     breadcrumbs,
     layout: {
       seo,
-      sidebar,
       pageSlug,
     },
   }
 }
 
 const addLayoutData = async (data, pageSlug = null) => {
-  const sidebar = await getSidebar()
-
   if ('search' in data) {
     return {
       props: {
@@ -34,14 +30,13 @@ const addLayoutData = async (data, pageSlug = null) => {
           { text: 'Recherche', href: '/search/' },
         ],
         layout: {
-          sidebar,
           pageSlug,
         },
       },
     }
   }
 
-  const layoutProps = layout(data, pageSlug, sidebar)
+  const layoutProps = layout(data, pageSlug)
 
   const { category, tag, id, parentid, currentPage, text } = layoutProps
 

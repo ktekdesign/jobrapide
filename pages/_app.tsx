@@ -13,9 +13,11 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     <>
       <Meta seo={layout?.seo} />
       <Header route={layout?.pageSlug} />
-      <Layout {...layout?.sidebar}>
+
+      <Layout>
         <Component {...props} />
       </Layout>
+
       <Footer route={layout?.pageSlug} />
     </>
   )
