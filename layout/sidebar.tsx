@@ -23,7 +23,7 @@ const Sidebar = (props) => (
     </div>
     <h3 className="title-secondary">Partenaires</h3>
     <Suspense>
-      <SwiperHome slides={1} onlyImage posts={props?.partners} />
+      <Pub className="pub" posts={props?.partners} />
     </Suspense>
     <Suspense>
       <Pub className="pub" posts={props?.pub3} />

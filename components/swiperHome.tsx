@@ -7,16 +7,17 @@ const SwiperHome = ({
   posts = null,
   slides = 3,
   onlyImage = false,
-  priority = false,
   ...props
-}) => (
-  <SwiperController
-    {...{ className: onlyImage ? 'onlyImage' : 'swiperContainer' }}
-    posts={posts}
-    slides={slides}
-  >
-    <PostPreview {...{ ...props, priority, onlyImage }} />
-  </SwiperController>
-)
-
+}) => {
+  console.log(posts)
+  return (
+    <SwiperController
+      {...{ className: onlyImage ? 'onlyImage' : 'swiperContainer' }}
+      posts={posts}
+      slides={slides}
+    >
+      <PostPreview onlyImage {...props} />
+    </SwiperController>
+  )
+}
 export default memo(SwiperHome)

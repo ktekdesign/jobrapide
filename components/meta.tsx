@@ -4,7 +4,10 @@ import { Seo } from '@utils/interfaces/data'
 import Script from 'next/script'
 import defaultSeo from '@utils/data/seo.json'
 
-const Meta: FC<{ seo?: Seo }> = ({ seo = defaultSeo }) => (
+const Meta: FC<{ seo?: Seo; nonce?: string }> = ({
+  seo = defaultSeo,
+  nonce = process.env.nonce,
+}) => (
   <>
     <Head>
       <meta httpEquiv="Content-Type" content="text/html; charset=utf8" />
@@ -97,12 +100,7 @@ const Meta: FC<{ seo?: Seo }> = ({ seo = defaultSeo }) => (
       <meta property="og:image" content={seo.opengraphImage} />
       <title>{seo.title}</title>
     </Head>
-    <Script
-      nonce="jobrapidenoneForce"
-      async
-      type="application/ld+json"
-      id="schema"
-    >
+    <Script nonce={nonce} defer type="application/ld+json" id="schema">
       {typeof seo?.schema === 'string' && JSON.parse(seo.schema)}
     </Script>
   </>

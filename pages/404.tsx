@@ -2,14 +2,17 @@ import React from 'react'
 import Head from 'next/head'
 import ArchiveTitle from '@components/archive-title'
 import SeoLink from '@components/seoLink'
-import addLayoutData from '@utils/addLayoutData'
+import getSidebar from '@graphql/api/getSidebar'
+import getLayoutProps from '@utils/getLayoutProps'
 
 export const getStaticProps = async () => {
-  return await addLayoutData(
+  const sidebar = await getSidebar()
+  return getLayoutProps(
     {
       text: 'Votre recherche n&apos;a retourné aucun résultat.',
     },
-    '404'
+    '404',
+    sidebar
   )
 }
 const PageError = ({ text }) => (
