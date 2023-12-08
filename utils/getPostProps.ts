@@ -1,19 +1,17 @@
 import getPostAndMorePosts from '@graphql/api/getPostAndMorePosts'
 import { isEmpty } from '@utils/manipulateArray'
-import addLayoutData from '@utils/addLayoutData'
+import getSidebar from '@graphql/api/getSidebar'
+import getLayoutProps from './getLayoutProps'
 
 export const getPostProps = async (slugs, prefix) => {
   const pageSlug = `${prefix}${slugs.join('/')}`
-  const postPage = await getPostAndMorePosts(pageSlug)
+  const [postPage, sidebar] = await Promise.all([
+    getPostAndMorePosts(pageSlug),
+    getSidebar(),
+  ])
 
   if (isEmpty(postPage?.post)) return { notFound: true }
 
   const { post } = postPage
-  const layout = await addLayoutData(
-    {
-      ...post,
-    },
-    pageSlug
-  )
-  return layout
+  return getLayoutProps(post, pageSlug, sidebar)
 }

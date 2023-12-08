@@ -3,10 +3,12 @@ import { Suspense, memo } from 'react'
 import Facebook from '@components/facebook'
 import Twitter from '@components/twitter'
 import Pub from '@components/pub'
-import Sidebar from '@layout/sidebar'
 import Adsense from '@components/adsense'
 import dynamic from 'next/dynamic'
 
+const Sidebar = dynamic(() => import('@layout/sidebar'), {
+  ssr: false,
+})
 const InlineScripts = dynamic(() => import('@components/inline-scripts'), {
   ssr: false,
 })

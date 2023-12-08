@@ -1,8 +1,8 @@
 import getPage from '@graphql/api/getPage'
-import { Page } from '@utils/interfaces/data'
 import { isEmpty } from '@utils/manipulateArray'
-import addLayoutData from '@utils/addLayoutData'
 import ParsedComponent from '@components/parsed-component'
+import getSidebar from '@graphql/api/getSidebar'
+import getLayoutProps from '@utils/getLayoutProps'
 
 const Page = ({ title, text }) => (
   <>
@@ -12,10 +12,13 @@ const Page = ({ title, text }) => (
 )
 
 export const getStaticProps = async ({ params }) => {
-  const page: Page = await getPage(`/${params?.slug}/`)
+  const [page, sidebar] = await Promise.all([
+    getPage(`/${params?.slug}/`),
+    getSidebar(),
+  ])
   if (isEmpty(page)) return { notFound: true }
 
-  return await addLayoutData(page, params.slug)
+  return getLayoutProps(page, params.slug, sidebar)
 }
 
 export const getStaticPaths = async () => {

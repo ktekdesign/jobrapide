@@ -1,12 +1,13 @@
 import ContactForm from '@components/contactForm'
 import ArchiveTitle from '@components/archive-title'
 import getPage from '@graphql/api/getPage'
-import addLayoutData from '@utils/addLayoutData'
+import getSidebar from '@graphql/api/getSidebar'
+import getLayoutProps from '@utils/getLayoutProps'
 
 export const getStaticProps = async () => {
-  const page = await getPage('contact')
+  const [page, sidebar] = await Promise.all([getPage('contact'), getSidebar()])
 
-  return await addLayoutData(page, 'contact')
+  return getLayoutProps(page, 'contact', sidebar)
 }
 const Contact = () => (
   <>

@@ -9,22 +9,22 @@ import Adsense from '@components/adsense'
 const SwiperHomeContainer = ({
   secondary,
   slides,
-  priority,
   title,
   posts,
   innerClass,
   href,
   order,
+  priority,
   ...props
 }: {
   secondary?: boolean
   title?: string
   slides?: number
-  priority?: boolean
   posts?: Post[]
   href?: string
   order?: number
   innerClass?: string
+  priority?: boolean
 }) => (
   <>
     <div className={innerClass} {...props}>
@@ -37,9 +37,9 @@ const SwiperHomeContainer = ({
         {...{
           posts,
           slides,
-          priority,
-          width: priority ? 170 : 0,
+          width: 170,
           height: 0,
+          priority,
         }}
       />
     </div>

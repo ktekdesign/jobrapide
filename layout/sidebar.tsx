@@ -1,33 +1,22 @@
-import { Suspense, memo } from 'react'
+import { memo } from 'react'
 import Adsense from '@components/adsense'
 
-import dynamic from 'next/dynamic'
-
-const Pub = dynamic(() => import('@components/pub'))
-const Pub2 = dynamic(() => import('@components/pub2'), { ssr: false })
-const SwiperHome = dynamic(() => import('@components/swiperHome'))
+import Pub from '@components/pub'
+import SwiperHome from '@components/swiperHome'
 
 const Sidebar = (props) => (
   <>
     <div className="pub">
-      <Suspense>
-        <Pub2 posts={props?.pub1} />
-      </Suspense>
+      <Pub priority={document?.body?.clientWidth >= 1024} posts={props?.pub1} />
     </div>
     <h3 className="title-primary">Offres sponsorisées</h3>
-    <Suspense>
-      <SwiperHome slides={1} posts={props?.sponsored} />
-    </Suspense>
+    <SwiperHome slides={1} posts={props?.sponsored} />
     <div className="adsContainer">
       <Adsense />
     </div>
     <h3 className="title-secondary">Partenaires</h3>
-    <Suspense>
-      <SwiperHome slides={1} onlyImage posts={props?.partners} />
-    </Suspense>
-    <Suspense>
-      <Pub className="pub" posts={props?.pub3} />
-    </Suspense>
+    <Pub className="pub" posts={props?.partners} />
+    <Pub className="pub" posts={props?.pub3} />
   </>
 )
 

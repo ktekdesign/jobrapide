@@ -1,21 +1,26 @@
 import getTermAndPosts from '@graphql/api/getTermAndPosts'
 import { isEmpty } from '@utils/manipulateArray'
-import addLayoutData from '@utils/addLayoutData'
+import getSidebar from '@graphql/api/getSidebar'
+import getLayoutProps from './getLayoutProps'
 
 export const getTermProps = async (slug, type, currentPage = 1) => {
-  const term = await getTermAndPosts({
-    slug,
-    type,
-    currentPage,
-  })
+  const [term, sidebar] = await Promise.all([
+    getTermAndPosts({
+      slug,
+      type,
+      currentPage,
+    }),
+    getSidebar(),
+  ])
 
   if (isEmpty(term)) return { notFound: true }
 
-  return await addLayoutData(
+  return getLayoutProps(
     {
       currentPage,
       ...term,
     },
-    slug
+    slug,
+    sidebar
   )
 }

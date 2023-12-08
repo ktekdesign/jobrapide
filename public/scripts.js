@@ -17,3 +17,7 @@ function gtag() {
 }
 gtag('js', new Date())
 gtag('config', 'GTM-W66949R', { debug_mode: true })
+
+document.addEventListener('contextmenu', function (event) {
+  event.preventDefault()
+})
