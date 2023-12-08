@@ -304,7 +304,9 @@ footer {
 .swiperContainer {
   @apply row min-h-[282px] bg-dark max-w-screen-xl w-full shadow-lg hover:border hover:bg-slate-700 hover:shadow-2xl transition-all duration-200;
 }
-
+.pub .swiperContainer {
+  @apply bg-transparent shadow-none;
+}
 .swiperContainer .feature,
 .onlyImage .feature {
   @apply h-[200px];

@@ -9,12 +9,9 @@ export const getStaticProps = async () => {
   return getLayoutProps({ ...terms, id: 1 }, null, sidebar)
 }
 
-const Index = ({ terms }) => {
-  console.log(terms)
-  return (
-    <MappedComponent items={terms}>
-      <SwiperHomeContainer />
-    </MappedComponent>
-  )
-}
+const Index = ({ terms }) => (
+  <MappedComponent items={terms}>
+    <SwiperHomeContainer />
+  </MappedComponent>
+)
 export default Index
