@@ -29,9 +29,9 @@ const ContentSecurityPolicy = `
     isDev ? " 'unsafe-inline'" : ''
   } *.gstatic.com *.googleapis.com *.googlesyndication.com *.g.doubleclick.net 'unsafe-inline';
   font-src 'self' data:;
-  connect-src 'self' *.g.doubleclick.net *.google-analytics.com *.googleapis.com *.google.com *.google-analytics.com *.googlesyndication.com *.jobrapide.org *.gstatic.com *.analytics.google.com *.googletagmanager.com;
-  frame-src 'self' *.g.doubleclick.net *.twitter.com *.facebook.com *.googlesyndication.com *.google.com *.googleadservices.com *.googletagmanager.com;
-  img-src 'self' data: *.jobrapide.org *.twitter.com *.facebook.com *.googleadservices.com *.googlesyndication.com *.googleapis.com *.gstatic.com *.google.com *.g.doubleclick.net *.google-analytics.com *.googletagmanager.com *.atdmt.com;
+  connect-src 'self' *.g.doubleclick.net *.google-analytics.com *.googleapis.com *.google.com *.google-analytics.com *.googlesyndication.com *.jobrapide.org *.gstatic.com *.analytics.google.com *.googletagmanager.com *.cdn.ftd.agency;
+  frame-src 'self' *.g.doubleclick.net *.twitter.com *.facebook.com *.googlesyndication.com *.google.com *.googleadservices.com *.googletagmanager.com *.cdn.ftd.agency;
+  img-src 'self' data: *.jobrapide.org *.twitter.com *.facebook.com *.googleadservices.com *.googlesyndication.com *.googleapis.com *.gstatic.com *.google.com *.g.doubleclick.net *.google-analytics.com *.googletagmanager.com *.atdmt.com *.cdn.ftd.agency;
 `
 /** @type {import('next').NextConfig} */
 module.exports = withBundleAnalyzer({

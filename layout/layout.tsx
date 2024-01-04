@@ -18,6 +18,7 @@ const FloatComponent = dynamic(() => import('@components/floatComponents'), {
 
 const Layout = ({ children, pub2, ...props }) => (
   <>
+    <div id="zone_1276733290"></div>
     <Suspense>
       <Pub className="pub-in-header" priority posts={pub2} />
     </Suspense>
@@ -37,12 +38,8 @@ const Layout = ({ children, pub2, ...props }) => (
     <div className="adsContainer">
       <Adsense />
     </div>
-    <Suspense>
-      <FloatComponent />
-    </Suspense>
-    <Suspense>
-      <InlineScripts />
-    </Suspense>
+    <FloatComponent />
+    <InlineScripts />
   </>
 )
 
