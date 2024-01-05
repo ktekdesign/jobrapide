@@ -208,7 +208,11 @@ main {
 }
 /* Footer CSS */
 footer {
-  @apply w-full;
+  @apply w-full pb-[90px];
+}
+#zone_1276733290,
+.f75776 {
+  z-index: 9999999999999999999999999 !important;
 }
 .tab {
   @apply w-full flex text-base flex-col lg:flex-row;
