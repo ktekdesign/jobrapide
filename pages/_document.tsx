@@ -100,7 +100,8 @@ export default function Document() {
     <Html lang="fr">
       <CSPHead />
       <body>
-        <div id="google_translate_element"></div>
+        <div id="zone_1563271694" />
+        <div id="google_translate_element" />
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-W66949R"

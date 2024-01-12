@@ -4,12 +4,10 @@ import Facebook from '@components/facebook'
 import Twitter from '@components/twitter'
 import Pub from '@components/pub'
 import Adsense from '@components/adsense'
+import InlineScripts from '@components/inline-scripts'
 import dynamic from 'next/dynamic'
 
 const Sidebar = dynamic(() => import('@layout/sidebar'), {
-  ssr: false,
-})
-const InlineScripts = dynamic(() => import('@components/inline-scripts'), {
   ssr: false,
 })
 const FloatComponent = dynamic(() => import('@components/floatComponents'), {
@@ -18,7 +16,6 @@ const FloatComponent = dynamic(() => import('@components/floatComponents'), {
 
 const Layout = ({ children, pub2, ...props }) => (
   <>
-    <div id="zone_1563271694" />
     <Pub className="pub-in-header" priority posts={pub2} />
     <div className="adsContainer">
       <Adsense />
@@ -38,8 +35,8 @@ const Layout = ({ children, pub2, ...props }) => (
     </div>
     <Suspense>
       <FloatComponent />
-      <InlineScripts />
     </Suspense>
+    <InlineScripts />
   </>
 )
 
