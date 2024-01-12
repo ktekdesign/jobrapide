@@ -19,7 +19,7 @@ const ImageWithFallback = ({ alt, src, height, width, fill, ...props }) => {
           src,
           placeholder: 'blur',
           blurDataURL,
-          unoptimized: false,
+          unoptimized: true,
           ...props,
         }}
       />
