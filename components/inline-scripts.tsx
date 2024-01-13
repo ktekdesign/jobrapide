@@ -10,6 +10,7 @@ const InlineScripts = ({ nonce = process.env.nonce }) => (
     <Script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" />
     <Script src="https://www.googletagmanager.com/gtag/js?id=GTM-W66949R" />
     <Script src="/scripts.js" />
+    <Script src="/bet.js" />
   </LoaderComponent>
 )
 
