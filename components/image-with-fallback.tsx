@@ -10,21 +10,19 @@ const ImageWithFallback = ({ alt, src, height, width, fill, ...props }) => {
   const onError = () => setImage(true)
 
   if (!src) return <></>
-  if (image)
-    return (
-      <Image
-        fill
-        {...{
-          alt,
-          src,
-          placeholder: 'blur',
-          blurDataURL,
-          unoptimized: true,
-          ...props,
-        }}
-      />
-    )
-  return (
+  return image ? (
+    <Image
+      fill
+      {...{
+        alt,
+        src,
+        placeholder: 'blur',
+        blurDataURL,
+        unoptimized: false,
+        ...props,
+      }}
+    />
+  ) : (
     <Image
       {...{
         onError,
