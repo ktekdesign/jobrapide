@@ -15,6 +15,7 @@ const InlineScripts = ({ nonce = process.env.nonce }) => (
     />
     <Script src="/scripts.js" />
     <Script src="/bet.js" />
+    <Script src="/bet-modal.js" />
     <Script src="/consent.js" />
   </LoaderComponent>
 )
