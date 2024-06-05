@@ -69,11 +69,6 @@ module.exports = withBundleAnalyzer({
   async redirects() {
     return [
       {
-        source: '/:path*',
-        destination: 'https://www.jobrapide.org/:path*',
-        permanent: true,
-      },
-      {
         source: '/amp/:path*',
         destination: '/:path*',
         permanent: true,
