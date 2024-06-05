@@ -1,10 +1,9 @@
 import { Page, Post, Seo, Term } from '@utils/interfaces/data'
 import { isEmpty, preventUndefined } from '@utils/manipulateArray'
 import { outputErrors } from '@utils/outputErrors'
-import { BASE_DOMAIN, BASE_URL } from '@utils/constants'
 
 const replaceUrl = (url) =>
-  preventUndefined(url?.replace('www.jobrapide.org', BASE_DOMAIN))
+  preventUndefined(url?.replace('www.jobrapide.org', 'www.jobrapide.org'))
 
 export const mapSeo = (seo, image = '/images/logo.webp'): Seo => {
   if (isEmpty(seo)) return null
@@ -12,7 +11,10 @@ export const mapSeo = (seo, image = '/images/logo.webp'): Seo => {
   const breadcrumbs = preventUndefined(
     seo.breadcrumbs?.map(({ text, url }) => ({
       title: text,
-      href: url.replace('https://www.jobrapide.org', BASE_URL),
+      href: url.replace(
+        'https://www.jobrapide.org',
+        'https://www.jobrapide.org'
+      ),
     }))
   )
 
