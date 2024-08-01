@@ -14,7 +14,6 @@ const InlineScripts = ({ nonce = process.env.nonce }) => (
       src="https://fundingchoicesmessages.google.com/i/pub-6631438162509513?ers=1"
     />
     <Script src="/scripts.js" />
-    <Script src="/bet-modal.js" />
     <Script src="/consent.js" />
   </LoaderComponent>
 )
