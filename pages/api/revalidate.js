@@ -9,7 +9,6 @@ export default async function handler(req, res) {
   try {
     // this should be the actual path not a rewritten path
     // e.g. for "/blog/[slug]" this should be "/blog/post-1"
-    let revalidate = null
     if (req.body.id) {
       const id = req.body.id
       const query = `query revalidate {
@@ -23,15 +22,14 @@ export default async function handler(req, res) {
     }
         `
       const data = await loadFromWPGraphQL(query)
-      revalidate = await res.revalidate(data.post.uri)
+      await res.revalidate(data.post.uri)
     } else {
-      revalidate = await res.revalidate(req.body.path)
+      await res.revalidate(req.body.path)
     }
-    return res.json({ revalidated: true, value: revalidate })
+    return res.json({ revalidated: true })
   } catch (err) {
     // If there was an error, Next.js will continue
     // to show the last successfully generated page
-    console.log(err)
     return res.status(500).send('Error revalidating')
   }
 }
